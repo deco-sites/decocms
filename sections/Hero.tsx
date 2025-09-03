@@ -1,4 +1,4 @@
-import type { ImageWidget } from "apps/admin/widgets.ts";
+// Removed ImageWidget import as header was removed from Hero component
 
 export interface Props {
   /** @title Título Principal */
@@ -11,8 +11,6 @@ export interface Props {
   secondaryButtonText?: string;
   /** @title Texto de Créditos */
   creditsText?: string;
-  /** @title Logo */
-  logo?: ImageWidget;
 }
 
 export default function Hero({
@@ -20,73 +18,29 @@ export default function Hero({
   subtitle = "Prototype in chat, ship in code, and run & monetize agentic apps in production.",
   primaryButtonText = "Create your first app",
   secondaryButtonText = "Explore apps",
-  creditsText = "Start with $2 in credits. No card required.",
-  logo = "https://s3-alpha-sig.figma.com/img/d291/4b40/dffbbda162eba5dab3486f69f8bb74d9?Expires=1757894400&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=rAS6WZsdwbc5gu7joqX6Gi6v7K7-0-G~Xn3oMP0cREu4raOABqrzwWk~VwYdDXa509KIHqSTACelkzxvIC8OVjK7rjNzORddvmoDCKhzmUYInMO9h~6ncgZNrhh6uz71-l33Syow8S4iSZBIZTCiWLHNVsaT-SQkpBJAelFHjXIcSPNI2MhvIk~SzKrtra85BDCvow~6HfLZdhQPdKDldtaUNgLF-bp9f~P1W3VvKvxRk0hOkwpKBvOxGFg4eDArMmiywuoJWmZ8JeMR4fQeUFLGtkNk7BfP3f6xLa1~A4nA7Qdf-e4pF7mDcMFiKmoeQb6PKgLvqCNvIxeV~tb7kA__"
+  creditsText = "Start with $2 in credits. No card required."
 }: Props) {
   return (
-    <section class="bg-[#F1F0EF] rounded-t-[24px] min-h-screen flex flex-col">
-      {/* Header */}
-      <header class="flex items-center justify-between px-10 py-4">
-        {/* Logo */}
-        <div class="flex items-center justify-center w-10 h-10 p-2">
-          <img 
-            src={logo} 
-            alt="deco logo" 
-            class="w-7 h-7"
-          />
-        </div>
-
-        {/* Navigation */}
-        <nav class="flex items-center bg-[#E7E5E4] rounded-2xl p-1 gap-12">
-          <div class="flex items-center gap-2">
-            <button class="flex items-center gap-2 px-4 py-1.5 rounded-full text-sm text-[#28251F]">
-              Apps
-            </button>
-            <button class="flex items-center gap-2 px-4 py-1.5 rounded-full text-sm text-[#28251F]">
-              Use Cases
-            </button>
-            <button class="flex items-center gap-2 px-4 py-1.5 rounded-full text-sm text-[#28251F]">
-              Pricing
-            </button>
-            <button class="flex items-center gap-2 px-4 py-1.5 rounded-full text-sm text-[#28251F]">
-              Docs
-            </button>
-            <button class="flex items-center gap-2 px-4 py-1.5 rounded-full text-sm text-[#28251F]">
-              Community
-            </button>
-            <button class="flex items-center gap-2 px-4 py-1.5 rounded-full text-sm text-[#28251F]">
-              Resources
-            </button>
-          </div>
-          
-          {/* CTA Button */}
-          <button class="bg-[#D0EC1A] text-[#074019] px-4 py-1.5 rounded-xl flex items-center justify-center w-10 h-10">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M10 4L10 16M4 10L16 10" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </button>
-        </nav>
-      </header>
-
+    <section class="bg-[#F1F0EF] rounded-t-[24px] h-[calc(100vh-88px)] flex flex-col w-full">
       {/* Main Content */}
-      <main class="flex-1 flex flex-col items-center justify-center px-8 py-16 max-w-[800px] mx-auto text-center">
-        <div class="space-y-6">
+      <main class="flex-1 flex flex-col justify-center px-20 py-8">
+        <div class="space-y-6 max-w-[800px]">
           {/* Title */}
-          <h1 class="text-5xl font-medium text-[#1C1917] leading-[48px] tracking-[-0.96px]">
+                      <h1 class="text-[64px] font-medium text-[#1C1917] leading-[64px] tracking-[-0.96px] text-left">
             {title}
           </h1>
 
           {/* Subtitle */}
-          <p class="text-xl text-[#1C1917] leading-7 max-w-[619px]">
+          <p class="text-xl text-[#1C1917] leading-7 max-w-[619px] text-left">
             {subtitle}
           </p>
 
           {/* Buttons */}
-          <div class="flex items-center gap-6 justify-center">
-            <button class="bg-[#D0EC1A] text-[#074019] px-16 py-6 rounded-xl text-xl font-medium">
+          <div class="flex items-center gap-6">
+            <button type="button" class="bg-[#D0EC1A] text-[#074019] px-16 py-6 rounded-xl text-xl font-medium">
               {primaryButtonText}
             </button>
-            <button class="bg-[#E7E5E4] text-[#78716E] px-16 py-6 rounded-xl text-xl font-medium">
+            <button type="button" class="bg-[#E7E5E4] text-[#78716E] px-16 py-6 rounded-xl text-xl font-medium">
               {secondaryButtonText}
             </button>
           </div>
@@ -94,25 +48,46 @@ export default function Hero({
       </main>
 
       {/* Footer */}
-      <footer class="flex items-center justify-between px-20 py-12">
+      <footer class="w-full">
         {/* Credits Info */}
-        <div class="flex items-center gap-6 bg-[#FAF9F7] rounded-tr-2xl px-8 py-12">
-          {/* Decorative dots */}
-          <div class="w-8 h-8 relative">
-            <div class="absolute inset-0 grid grid-cols-4 gap-0.5">
-              {Array.from({ length: 16 }).map((_, i) => (
-                <div key={i} class="w-0.5 h-0.5 bg-[#D0EC1A] rounded-full"></div>
-              ))}
-            </div>
-          </div>
+        <div class="flex items-center gap-6 bg-[#FAF9F7] rounded-tr-2xl px-8 py-6 w-fit">
+          {/* Decorative icon */}
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="14.8008" width="2.39469" height="2.39461" fill="#D0EC1A"/>
+            <rect x="14.8047" y="2.39258" width="2.39469" height="2.39461" fill="#D0EC1A"/>
+            <rect x="21.9883" y="2.35889" width="2.39469" height="2.39461" fill="#D0EC1A"/>
+            <rect x="27.2461" y="7.61914" width="2.39469" height="2.39461" fill="#D0EC1A"/>
+            <rect x="29.6055" y="14.8018" width="2.39469" height="2.39461" fill="#D0EC1A"/>
+            <rect x="27.2148" y="14.8018" width="2.39469" height="2.39461" fill="#D0EC1A"/>
+            <rect x="27.25" y="21.9863" width="2.39469" height="2.39461" fill="#D0EC1A"/>
+            <rect x="21.9883" y="27.2446" width="2.39469" height="2.39461" fill="#D0EC1A"/>
+            <rect x="14.8047" y="27.2119" width="2.39469" height="2.39461" fill="#D0EC1A"/>
+            <rect x="14.8047" y="29.6055" width="2.39469" height="2.39461" fill="#D0EC1A"/>
+            <rect x="7.61719" y="27.2471" width="2.39469" height="2.39461" fill="#D0EC1A"/>
+            <rect x="2.35938" y="21.9868" width="2.39469" height="2.39461" fill="#D0EC1A"/>
+            <rect y="14.8022" width="2.39469" height="2.39461" fill="#D0EC1A"/>
+            <rect x="2.39453" y="14.8037" width="2.39469" height="2.39461" fill="#D0EC1A"/>
+            <rect x="2.36328" y="7.61865" width="2.39469" height="2.39461" fill="#D0EC1A"/>
+            <rect x="7.62109" y="9.79541" width="2.39469" height="2.39461" fill="#D0EC1A"/>
+            <rect width="2.39469" height="2.39461" transform="matrix(1 0 0 -1 7.62109 21.9863)" fill="#D0EC1A"/>
+            <rect width="2.39469" height="2.39461" transform="matrix(-1 0 0 1 24.3828 9.79639)" fill="#D0EC1A"/>
+            <rect width="2.39469" height="2.39461" transform="matrix(-1 0 0 1 17.1953 12.4087)" fill="#D0EC1A"/>
+            <rect width="2.39469" height="2.39461" transform="matrix(-1 0 0 1 17.1953 17.1982)" fill="#D0EC1A"/>
+            <rect width="2.39469" height="2.39461" transform="matrix(-1 0 0 1 17.1953 14.8032)" fill="#D0EC1A"/>
+            <rect width="2.39469" height="2.39461" transform="matrix(-1 0 0 1 14.8047 14.8032)" fill="#D0EC1A"/>
+            <rect width="2.39469" height="2.39461" transform="matrix(-1 0 0 1 19.5938 14.8032)" fill="#D0EC1A"/>
+            <rect x="24.3828" y="21.9868" width="2.39469" height="2.39461" transform="rotate(180 24.3828 21.9868)" fill="#D0EC1A"/>
+            <rect x="7.62109" y="2.35986" width="2.39469" height="2.39461" fill="#D0EC1A"/>
+            <rect x="10.0156" y="7.40039" width="2.39469" height="2.39461" fill="#D0EC1A"/>
+            <rect width="2.39469" height="2.39461" transform="matrix(1 0 0 -1 10.0156 24.3804)" fill="#D0EC1A"/>
+            <rect width="2.39469" height="2.39461" transform="matrix(-1 0 0 1 21.9883 7.40137)" fill="#D0EC1A"/>
+            <rect x="21.9922" y="24.3799" width="2.39469" height="2.39461" transform="rotate(180 21.9922 24.3799)" fill="#D0EC1A"/>
+          </svg>
           
-          <p class="text-sm text-[#28251F] flex-1">
+          <p class="text-[18px] leading-[21px] text-[#28251F]">
             {creditsText}
           </p>
         </div>
-
-        {/* Decorative corner */}
-        <div class="w-4 h-4 bg-[#FAF9F7]"></div>
       </footer>
     </section>
   );

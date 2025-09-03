@@ -4,7 +4,31 @@
   "path": "/",
   "sections": [
     {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "site/sections/Header.tsx"
+      }
+    },
+    {
       "__resolveType": "site/sections/Hero.tsx"
+    },
+    {
+      "__resolveType": "site/sections/Statement.tsx"
+    },
+    {
+      "__resolveType": "site/sections/Features.tsx"
+    },
+    {
+      "__resolveType": "site/sections/OnePlatformTwoSurfaces.tsx"
+    },
+    {
+      "__resolveType": "site/sections/FAQ.tsx"
+    },
+    {
+      "__resolveType": "site/sections/FinalCTA.tsx"
+    },
+    {
+      "__resolveType": "site/sections/Footer.tsx"
     }
   ]
 }
