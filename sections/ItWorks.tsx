@@ -3,12 +3,12 @@ export interface Props {
     /**
      * @format rich-text
      * @description The description of name.
-     * @default It Works!
+    * @default Tavano é foda!
      */
     name?: string;
     count?: number;
 }
-export default function Section({ name = "It Works!", count = 0 }: Props) {
+export default function Section({ name = "Tavano é foda!", count = 0 }: Props) {
     /**
      * useSection is a nice hook for getting the HTMX link to render this section,
      * but with the following Props

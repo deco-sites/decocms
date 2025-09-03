@@ -13,6 +13,9 @@ export default defineApp(async (_req, ctx) => {
         {/* Enable View Transitions API */}
         <meta name="view-transition" content="same-origin"/>
 
+        {/* Typekit Font */}
+        <link rel="stylesheet" href="https://use.typekit.net/msc6uga.css"/>
+
         {/* Tailwind v3 CSS file */}
         <link href={asset(`/styles.css?revision=${revision}`)} rel="stylesheet"/>
 
