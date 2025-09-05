@@ -197,6 +197,22 @@
         {
           "question": "How much does DecoCMS cost?",
           "answer": "You start with $2 in free credits — no credit card required. After that, pricing is usage-based, so you only pay per run, with full transparency and real-time cost tracking in your dashboard."
+        },
+        {
+          "question": "How does the DecoCMS SDK work for developers?",
+          "answer": "The DecoCMS SDK lets you build, extend, and manage agents, workflows, and UIs in TypeScript. It integrates seamlessly with the CLI, enabling local development, testing, and edge deployment from a single codebase."
+        },
+        {
+          "question": "What is the Context Mesh, and why is it important?",
+          "answer": "The Context Mesh is DecoCMS’s governed layer for connecting data, tools, and models. It provides typed connectors with built-in policy routing, RBAC, observability, and spend controls — ensuring the right context is delivered safely every time."
+        },
+        {
+          "question": "Does DecoCMS support edge deployment?",
+          "answer": "Yes. DecoCMS ships agents, workflows, and UIs to the edge automatically, ensuring low latency and global performance by default. You can manage environments, preview builds, and deploy updates directly from the CLI."
+        },
+        {
+          "question": "How does DecoCMS integrate with Git?",
+          "answer": "DecoCMS uses a Git-backed workflow by default. Every change to agents, workflows, and UIs is versioned, allowing you to branch, review, and merge updates just like any modern development stack. This ensures full traceability and safe collaboration between teams."
         }
       ]
     },
