@@ -1,0 +1,22 @@
+{
+  "name": "collections/blog/posts/8dae26f06734",
+  "__resolveType": "blog/loaders/Blogpost.ts",
+  "post": {
+    "authors": [],
+    "categories": [],
+    "imageCarousel": {
+      "banners": []
+    },
+    "extraProps": [],
+    "aggregateRating": {
+      "@type": "AggregateRating"
+    },
+    "review": [],
+    "contentRating": [],
+    "interactionStatistic": {
+      "@type": "InteractionCounter",
+      "video": null,
+      "image": null
+    }
+  }
+}

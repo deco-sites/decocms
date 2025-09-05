@@ -1,0 +1,8 @@
+{
+  "name": "collections/blog/categories/293e087a59ee",
+  "__resolveType": "blog/loaders/Category.ts",
+  "category": {
+    "name": "Integrations",
+    "slug": "integrations"
+  }
+}

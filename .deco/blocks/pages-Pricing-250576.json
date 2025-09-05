@@ -1,0 +1,213 @@
+{
+  "name": "Pricing",
+  "path": "/pricing",
+  "sections": [
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "site/sections/Header.tsx"
+      }
+    },
+    {
+      "__resolveType": "site/sections/PricingPlans.tsx",
+      "title": "Simple pricing",
+      "subtitle": "Test deco.chat for free. No credit card required.",
+      "plans": [
+        {
+          "name": "Free",
+          "price": 0,
+          "seats": 1,
+          "description": "For hobbyist projects by solo devs.",
+          "image": "https://assets.decocache.com/decochatweb/09f53b34-1d83-4a02-bc65-b0d62ebd1728/Free-Plan.svg",
+          "buttonText": "Start for free",
+          "buttonUrl": "https://deco.chat/login",
+          "features": [
+            {
+              "name": "AI Usage Rate",
+              "icon": "bolt",
+              "highlight": true,
+              "highlightText": "20% markup"
+            },
+            {
+              "name": "Tap-up credits",
+              "icon": "add_chart"
+            },
+            {
+              "name": "$2 AI credits",
+              "icon": "attach_money"
+            }
+          ]
+        },
+        {
+          "name": "Starter",
+          "price": 500,
+          "priceText": "converted into AI credits",
+          "seats": 10,
+          "description": "Small product teams ready for launch",
+          "image": "https://assets.decocache.com/decochatweb/ffc1cf73-7160-4e76-b4d3-7bdf5ba54316/Starter-Plan.svg",
+          "buttonText": "Choose plan",
+          "buttonUrl": "https://deco.chat/login",
+          "features": [
+            {
+              "name": "Optimized AI Usage Rate",
+              "icon": "bolt",
+              "highlight": true,
+              "highlightText": "15% markup"
+            },
+            {
+              "name": "Support via ticket — no SLA",
+              "icon": "support_agent"
+            },
+            {
+              "name": "Weekly Office Hours",
+              "icon": "groups"
+            },
+            {
+              "name": "Premium support for $1k",
+              "icon": "diamond"
+            }
+          ]
+        },
+        {
+          "name": "Growth",
+          "price": 2500,
+          "priceText": "converted into AI credits",
+          "seats": 50,
+          "description": "For businesses growing AI operations",
+          "image": "https://assets.decocache.com/decochatweb/4176c9dd-a2df-4b97-8c17-6438a9e9193d/Growth-Plan.svg",
+          "buttonText": "Choose plan",
+          "buttonUrl": "https://deco.chat/login",
+          "features": [
+            {
+              "name": "Better AI Usage Rate",
+              "icon": "bolt",
+              "highlight": true,
+              "highlightText": "10% markup"
+            },
+            {
+              "name": "Manage different workspaces",
+              "icon": "workspaces"
+            },
+            {
+              "name": "Support via ticket with SLA",
+              "icon": "support_agent"
+            },
+            {
+              "name": "Success Team support with SLA",
+              "icon": "military_tech"
+            },
+            {
+              "name": "1h/ week of dedicated technical support",
+              "icon": "build"
+            }
+          ]
+        },
+        {
+          "name": "Scale",
+          "price": 7500,
+          "priceText": "converted into AI credits",
+          "seats": 100,
+          "description": "For organizations deploying AI at scale",
+          "image": "https://assets.decocache.com/decochatweb/f6a8c324-9c71-4b90-8d77-5d2b3e2b1f61/Scale-Plan.svg",
+          "buttonText": "Choose plan",
+          "buttonUrl": "https://deco.chat/login",
+          "features": [
+            {
+              "name": "Best AI Usage Rate",
+              "icon": "bolt",
+              "highlight": true,
+              "highlightText": "5% markup"
+            },
+            {
+              "name": "Manage different workspaces",
+              "icon": "workspaces"
+            },
+            {
+              "name": "Support via ticket with priority SLA",
+              "icon": "support_agent"
+            },
+            {
+              "name": "Dedicated Success Team",
+              "icon": "supervisor_account"
+            },
+            {
+              "name": "3h/ week of dedicated technical support",
+              "icon": "build"
+            }
+          ]
+        }
+      ],
+      "customPlan": {
+        "title": "Need more scale?",
+        "backgroundImage": "https://assets.decocache.com/decochatweb/94564998-9caf-4388-a4f6-5a8eeb83efe0/Custom.svg",
+        "features": [
+          {
+            "name": "500+ Builder Seats",
+            "icon": "person"
+          },
+          {
+            "name": "Self-hosting options",
+            "icon": "dns"
+          },
+          {
+            "name": "Custom integrations",
+            "icon": "extension"
+          },
+          {
+            "name": "BYOK (Bring Your Own Keys)",
+            "icon": "key"
+          }
+        ],
+        "buttonText": "Let's talk!",
+        "buttonUrl": "mailto:bruna@deco.cx"
+      }
+    },
+    {
+      "__resolveType": "site/sections/ModelsTable.tsx",
+      "title": "AI Models Pricing",
+      "description": "Use all models inside of Agents, Workflows and UIs.",
+      "modelsToShow": [
+        "gpt-4.1-mini",
+        "gemini-2.5-pro",
+        "gemini-2.5-flash-lite-preview-06-17",
+        "claude-sonnet-4-20250514",
+        "claude-3-7-sonnet-20250219",
+        "gpt-4.1",
+        "gpt-4.1-nano",
+        "o3-mini",
+        "grok-4"
+      ],
+      "providerConfigs": [
+        {
+          "name": "OpenAI",
+          "customIcon": "https://assets.decocache.com/decochatweb/766a5ca9-693d-4838-ad21-4fce95533993/OpenAI.svg"
+        },
+        {
+          "name": "Anthropic",
+          "customIcon": "https://assets.decocache.com/decochatweb/3387feba-78a7-4561-95fa-91a2fe896feb/Claude-3.5-Sonnet.svg"
+        },
+        {
+          "name": "Vertex",
+          "customIcon": "https://assets.decocache.com/decochatweb/0d0bc5a6-0c21-4d16-9c09-a3ad37297eec/google-gemini.svg"
+        },
+        {
+          "name": "Google"
+        },
+        {
+          "name": "xAI",
+          "customIcon": "https://assets.decocache.com/decochatweb/4ad8453a-7e4b-44a2-810e-6cb0543edd6c/xai.svg"
+        }
+      ]
+    },
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "Footer"
+      }
+    }
+  ],
+  "seo": {
+    "__resolveType": "website/sections/Seo/SeoV2.tsx"
+  },
+  "__resolveType": "website/pages/Page.tsx"
+}

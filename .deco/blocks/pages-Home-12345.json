@@ -6,26 +6,211 @@
     {
       "__resolveType": "website/sections/Rendering/Lazy.tsx",
       "section": {
-        "__resolveType": "site/sections/Header.tsx"
+        "__resolveType": "site/sections/Header.tsx",
+        "menuItems": [
+          {
+            "label": "Pricing",
+            "href": "/pricing"
+          },
+          {
+            "label": "Docs",
+            "href": "https://docs.deco.page/"
+          },
+          {
+            "label": "Community",
+            "href": "https://decocms.com/discord/"
+          },
+          {
+            "label": "Blog",
+            "href": "/blog"
+          }
+        ]
       }
     },
     {
-      "__resolveType": "site/sections/Hero.tsx"
+      "__resolveType": "site/sections/Hero.tsx",
+      "icons": [
+        "https://assets.decocache.com/decocms/e37e5504-fd97-4318-b554-334bef9cf0c2/whatsapp.png",
+        "https://assets.decocache.com/decocms/016d6fd8-3395-4267-a4fe-bc10ba1e728e/sheets.png",
+        "https://assets.decocache.com/decocms/1152c0ec-fc39-4a31-bd54-9229fa40836a/notion.png",
+        "https://assets.decocache.com/decocms/bd9c7ae5-28fb-421d-add0-02fdc93431a1/jira.png",
+        "https://assets.decocache.com/decocms/5b3bfcaa-8e5b-4dc0-bcd3-df601a2d4684/integration.png",
+        "https://assets.decocache.com/decocms/452b8f22-f11e-4b6f-8934-2e58419ea705/integration-1.png",
+        "https://assets.decocache.com/decocms/ddcd9385-de10-4cd0-93df-cdbcc7a83021/github.png",
+        "https://assets.decocache.com/decocms/5213e98e-7409-403f-8644-a47c0874b7f5/drive.png",
+        "https://assets.decocache.com/decocms/1d97a513-09e5-402a-9bec-2ef2d99db9ed/discord.png",
+        "https://assets.decocache.com/decocms/b0efa01a-1532-446a-97e9-903be7286459/coda.png",
+        "https://assets.decocache.com/decocms/c89fe4f8-df33-4cfe-ba20-696a37b3b3a4/airtable.png",
+        "https://assets.decocache.com/decocms/07b013d3-947c-4eae-ba13-e1babe93ee1e/calendar.png"
+      ]
     },
     {
-      "__resolveType": "site/sections/Statement.tsx"
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "site/sections/TextMedia.tsx"
+      }
     },
     {
-      "__resolveType": "site/sections/Features.tsx"
+      "__resolveType": "site/sections/Features.tsx",
+      "features": [
+        {
+          "items": [
+            {
+              "0": "M",
+              "1": "C",
+              "2": "P",
+              "3": "-",
+              "4": "n",
+              "5": "a",
+              "6": "t",
+              "7": "i",
+              "8": "v",
+              "9": "e",
+              "10": " ",
+              "11": "c",
+              "12": "o",
+              "13": "n",
+              "14": "n",
+              "15": "e",
+              "16": "c",
+              "17": "t",
+              "18": "o",
+              "19": "r",
+              "20": "s",
+              "name": "MCP-native connectors",
+              "image": "https://assets.decocache.com/decocms/51bca6f7-6ebf-4ecd-911b-66d35e0e3a15/Frame-2147224099.png"
+            },
+            {
+              "0": "P",
+              "1": "o",
+              "2": "l",
+              "3": "i",
+              "4": "c",
+              "5": "y",
+              "6": " ",
+              "7": "r",
+              "8": "o",
+              "9": "u",
+              "10": "t",
+              "11": "i",
+              "12": "n",
+              "13": "g",
+              "14": " ",
+              "15": "&",
+              "16": " ",
+              "17": "R",
+              "18": "B",
+              "19": "A",
+              "20": "C",
+              "name": "Policy routing & RBAC",
+              "image": "https://assets.decocache.com/decocms/90204766-f087-42f7-869a-190decbe087e/fasdfs.png"
+            },
+            {
+              "name": "Spend caps & budgets"
+            },
+            {
+              "name": "Audit trail"
+            }
+          ],
+          "title": "Connect your context",
+          "description": "Unify data, tools and models with policy, RBAC and observability — your agents always get the right context, safely.",
+          "imagePosition": "right"
+        },
+        {
+          "items": [
+            {
+              "name": "Logs & traces"
+            },
+            {
+              "name": "Error analytics"
+            },
+            {
+              "name": "Cost per step & budgets"
+            },
+            {
+              "name": "Roles, approvals & tenancy"
+            }
+          ],
+          "imagePosition": "left",
+          "title": "Govern & observe your runs",
+          "description": "No vibe debugging: logs, traces, error analytics and cost-per-step to optimize quality and spend, with roles, approvals and tenancy."
+        },
+        {
+          "items": [
+            {
+              "name": "One-click installs"
+            },
+            {
+              "name": "Publish modules"
+            },
+            {
+              "name": "Per-run billing (wallet)"
+            },
+            {
+              "name": "Templates & packages"
+            }
+          ],
+          "imagePosition": "right",
+          "title": "Reuse & monetize with our marketplace",
+          "description": "Install ready-made modules — or publish your own. Wallet-based per-run billing turns apps into revenue."
+        }
+      ],
+      "title": "One place to build, run, and monetize your agents",
+      "subtitle": "Govern access, trace every step, and turn reusable modules into paid products."
     },
     {
-      "__resolveType": "site/sections/OnePlatformTwoSurfaces.tsx"
+      "__resolveType": "site/sections/OnePlatformTwoSurfaces.tsx",
+      "title": "One platform, two surfaces",
+      "subtitle": "Prototype in natural language. Scale in code.",
+      "features": [
+        "Versioning & Git-native",
+        "Governance built-in",
+        "Fast Global Edge Deploy",
+        "Open & extensible"
+      ],
+      "card1Title": "Natural‑language builderfor business users",
+      "card2Title": "Open‑source TypeScript SDK for devs"
     },
     {
-      "__resolveType": "site/sections/FAQ.tsx"
+      "__resolveType": "site/sections/FAQ.tsx",
+      "faqItems": [
+        {
+          "question": "What is DecoCMS, and how is it different from other AI app builders?",
+          "answer": "DecoCMS is an open-source Context CMS — a control plane and runtime for building, running, and monetizing AI-powered agentic apps. Unlike traditional app builders, it unifies context, governance, observability, and monetization in one platform."
+        },
+        {
+          "question": "Do I need to be a developer to use DecoCMS?",
+          "answer": "Not at all. Business teams can create prompts, workflows, and agents without writing code, while developers can extend, customize, and deploy advanced capabilities using our TypeScript SDK and CLI."
+        },
+        {
+          "question": "How does DecoCMS handle governance and observability?",
+          "answer": "Every run is fully traced, auditable, and secure. DecoCMS includes role-based access control (RBAC), spend caps, error analytics, and per-step cost visibility — ensuring safe operations and compliance by default."
+        },
+        {
+          "question": "Can I self-host DecoCMS or bring my own keys (BYOK)?",
+          "answer": "Yes. DecoCMS is open-source and fully portable. You can self-host it on your infrastructure, bring your own API keys, and maintain full control over your data and costs."
+        },
+        {
+          "question": "Can I ensure my data stays private and secure when self-hosting DecoCMS?",
+          "answer": "Absolutely. When you self-host DecoCMS, your data, models, and keys stay fully under your control. DecoCMS never stores or transmits your data unless you explicitly configure it to."
+        },
+        {
+          "question": "How much does DecoCMS cost?",
+          "answer": "You start with $2 in free credits — no credit card required. After that, pricing is usage-based, so you only pay per run, with full transparency and real-time cost tracking in your dashboard."
+        }
+      ]
     },
     {
-      "__resolveType": "site/sections/FinalCTA.tsx"
+      "__resolveType": "site/sections/FinalCTA.tsx",
+      "title": "Join our thriving community of Al builders",
+      "primaryButton": {
+        "text": "Join our Discord community",
+        "url": "https://decocms.com/discord/"
+      },
+      "secondaryButton": {
+        "text": "Get started building",
+        "url": "https://deco.new/"
+      }
     },
     {
       "__resolveType": "site/sections/Footer.tsx"

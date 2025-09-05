@@ -1,0 +1,8 @@
+{
+  "name": "collections/blog/categories/f1db0eddd45d",
+  "__resolveType": "blog/loaders/Category.ts",
+  "category": {
+    "name": "Product",
+    "slug": "product"
+  }
+}

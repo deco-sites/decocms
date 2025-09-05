@@ -34,31 +34,69 @@ export type AvailableIcons =
   | "Trash"
   | "FilterList"
   | "WhatsApp"
-  | "ArrowsPointingOut";
+  | "ArrowsPointingOut"
+  | "Linkedin"
+  | "XTwitter"
+  | "Link"
+  | "LinkedinOutline"
+  | "FacebookOutline"
+  | "TwitterOutline";
 
-interface Props extends JSX.SVGAttributes<SVGSVGElement> {
+interface IconProps {
   /**
-   * Symbol id from element to render. Take a look at `/static/icons.svg`.
-   *
-   * Example: <Icon id="Bell" />
+   * @title Nome do ícone
+   * @description O nome do ícone do Material Design a ser exibido
    */
-  id: AvailableIcons;
-  size?: number;
+  name: string;
+  /**
+   * @title Tamanho do ícone
+   * @description Tamanho do ícone (xs, small, medium, large, xl, immense)
+   */
+  size?: "xs" | "small" | "medium" | "large" | "xl" | "xxl" | "immense";
+  /**
+   * @title Classes adicionais
+   * @description Classes CSS adicionais para estilizar o ícone
+   */
+  class?: string;
 }
 
-function Icon(
-  { id, strokeWidth = 16, size, width, height, ...otherProps }: Props,
-) {
+export default function Icon({
+  name,
+  size = "medium",
+  class: className = "",
+}: IconProps) {
+  const sizeClasses = {
+    xs: "text-xs", // 12px
+    small: "text-sm", // 14px
+    medium: "text-base", // 16px
+    large: "text-lg", // 18px
+    xl: "text-xl", // 20px
+    xxl: "text-2xl", // 32px
+    immense: "text-8xl", // 80px
+  };
+
+  const sizeValues = {
+    xs: "12px",
+    small: "14px",
+    medium: "16px",
+    large: "18px",
+    xl: "20px",
+    xxl: "32px",
+    immense: "80px",
+  };
+
   return (
-    <svg
-      {...otherProps}
-      width={width ?? size}
-      height={height ?? size}
-      strokeWidth={strokeWidth}
+    <span
+      class={`material-symbols-rounded ${sizeClasses[size]} ${className}`}
+      style={`font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0; font-size: ${
+        sizeValues[size]
+      } !important;`}
     >
-      <use href={asset(`/sprites.svg#${id}`)} />
-    </svg>
+      {name}
+    </span>
   );
 }
 
-export default Icon;
+// Exemplo de utilização:
+// <Icon name="home" size="medium" class="text-primary-dark" />
+// Para tamanhos customizados: <Icon name="home" class="text-2xl text-primary-dark" />

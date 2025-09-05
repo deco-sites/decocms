@@ -1,0 +1,9 @@
+{
+  "name": "collections/blog/authors/c5ccf420327f",
+  "__resolveType": "blog/loaders/Author.ts",
+  "author": {
+    "name": "Dex",
+    "email": "dex@deco.cx",
+    "avatar": "https://assets.decocache.com/decochatweb/f5421247-4516-48be-8352-54300a81f319/dex.png"
+  }
+}

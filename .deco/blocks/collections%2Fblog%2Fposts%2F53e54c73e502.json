@@ -1,0 +1,48 @@
+{
+  "name": "collections/blog/posts/53e54c73e502",
+  "__resolveType": "blog/loaders/Blogpost.ts",
+  "post": {
+    "authors": [
+      {
+        "name": "Dex",
+        "email": "dex@deco.cx",
+        "avatar": "https://assets.decocache.com/decochatweb/f5421247-4516-48be-8352-54300a81f319/dex.png"
+      }
+    ],
+    "categories": [
+      {
+        "name": "Stories",
+        "slug": "story"
+      },
+      {
+        "name": "Product",
+        "slug": "product"
+      },
+      {
+        "name": "Integrations",
+        "slug": "integrations"
+      }
+    ],
+    "imageCarousel": {
+      "banners": []
+    },
+    "extraProps": [],
+    "aggregateRating": {
+      "@type": "AggregateRating"
+    },
+    "review": [],
+    "contentRating": [],
+    "interactionStatistic": {
+      "@type": "InteractionCounter",
+      "video": null,
+      "image": null
+    },
+    "title": "Da epifania ao zap: por que decidi enfiar um Agent de IA dentro do WhatsApp — e como você pode fazer o mesmo em três cliques",
+    "excerpt": "Este não é um post de marketing. É um diário de bordo sobre a obsessão de colocar inteligência artificial onde ela realmente faz sentido: dentro do app que todos nós abrimos dezenas de vezes por dia.",
+    "content": "<h1><strong><span>Da epifania ao zap: por que decidi enfiar um Agent de IA dentro do WhatsApp — e como você pode fazer o mesmo em três cliques</span></strong></h1><blockquote><p><em><span>Este não é um post de marketing. É um diário de bordo sobre a obsessão de colocar inteligência artificial onde ela realmente faz sentido: dentro do app que todos nós abrimos dezenas de vezes por dia.</span></em></p></blockquote><p></p><h2><strong><span>Tudo começa com o celular mentindo pra mim</span></strong></h2><p><span>Domingo, 02:14 da manhã. Eu deveria estar dormindo; em vez disso, o </span><strong><span>relatório de tempo de uso</span></strong><span> do meu celular esfrega na minha cara: </span><em><span>12 h 37 min de WhatsApp na última semana</span></em><span>. Não sou exceção — o Brasil inteiro respira bolhas verdes. Se a IA nasceu para reduzir atrito, </span><strong><span>por que diabos ela ainda vive numa aba separada do navegador?</span></strong></p><p><span>A ficha caiu mais ou menos assim:</span></p><ol><li><p><span>A geração </span><em><span>vibe‑coder</span></em><span> já prototipa software falando com o teclado.</span></p></li><li><p><span>Mesmo assim, quando querem </span><em><span>usar</span></em><span> o que criaram, precisam colar URL, lembrar login, abrir Chrome, as vezes até descobrir como fazer pra hospedar algo.</span></p></li><li><p><span>E eu, que me gabo de construir ferramentas “para humanos”, estava aceitando isso como normal.</span></p></li></ol><p><span>Vergonha — e motivação.</span></p><p></p><h2><strong><span>Meu passado me condena (ou: construir bots de WhatsApp em 2018 foi dolorido)</span></strong></h2><p><span>Flashback rápido: em 2018 montei um bot que mandava previsão de estoque pro meu time de logística. </span><strong><span>Quatro semanas</span></strong><span> só pra lidar com webhooks da Meta, certificados, aprovação de template. Funcionou, mas parecia instalar um Win95 inteiro só pra abrir o Paint.</span></p><p><span>Corta para 2025. Hoje temos </span><strong><span>MCP</span></strong><span> (Model Context Protocol) — um cinto de utilidades elegante pros nossos Agents — e uma stack que expõe tudo via API. A única peça que faltava era... adivinhe: WhatsApp sem burocracia.</span></p><p></p><h2><strong><span>Sprint insone, pizza fria, e a pergunta certa</span></strong></h2><blockquote><p><em><span>“E se fosse literalmente ‘next, next, finish’?”</span></em></p></blockquote><p><span>Essa frase saiu no stand‑up de terça, ficou ecoando. Na sequência:</span></p><ul><li><p><span>Uma noite de código em cima do </span><em><span>business‑account onboarding</span></em><span>.</span></p></li><li><p><span>Shell script pra automatizar número sandbox.</span></p></li><li><p><span>UI mínima: digita número → gera QR → fim.</span></p></li></ul><p><strong><span>Setenta e duas horas depois</span></strong><span> mandei um “oi” pro meu próprio Agent pelo zap. Ele respondeu puxando compromissos do meu Google Calendar via MCP. Abri um grupo com o time, print na call, gargalhada coletiva. Sabíamos que dali não tinha volta.</span></p><p></p><h2><strong><span>Como funciona hoje (sem slides, obviamente)</span></strong></h2><ol><li><p><strong><span>Crie ou escolha</span></strong><span> um Agent no painel do </span><a target=\"_blank\" rel=\"noopener noreferrer nofollow\" href=\"http://Deco.chat\"><span>Deco.chat</span></a><span>.</span></p></li><li><p><span>Clique em </span><strong><span>WhatsApp</span></strong><span>.</span></p></li><li><p><span>Digite seu número</span><br></p></li></ol><p><span>Pronto, clicando no número novamente ou mandando msg para o nosso número</span></p><p><strong><span>Você</span></strong><span>, conversando no zap, </span><strong><span>com o software que acabou de inventar</span></strong><span>. Sem pedir benção pra ninguém.</span></p><p><span>Compartilhar? Só encaminhar nosso número pro amigo, cliente ou grupo da família.</span></p><p></p><h2><strong><span>Por que isso é maior do que parece</span></strong></h2><ul><li><p><strong><span>On‑boarding zero</span></strong><span> — IA encontra o usuário onde ele já está.</span></p></li><li><p><strong><span>Inclusão real</span></strong><span> — tua tia que acha “prompt” nome de sobremesa agora consegue automatizar planilha.</span></p></li><li><p><strong><span>Loop de feedback instantâneo</span></strong><span> — testar, ajustar e publicar vira papo de dezenas de minutos, não sprints.</span></p></li></ul><p><span>E claro, a peça grande: </span><strong><span>o Agent deixa de ser interface alternativa e vira interface principal</span></strong><span>.</span></p><p></p><h2><strong><span>O próximo passo lógico</span></strong></h2><p><span>Já estamos brincando com </span><strong><span>Instagram DMs, Slack e Microsoft Teams</span></strong><span> no mesmo esquema plug‑and‑play. Minha aposta? Interfaces conversacionais vão comer o front‑end tradicional </span><strong><span>naquilo que elas fazem melhor: resolver pequenas tarefas em contexto</span></strong><span>.</span></p><p></p><h2><strong><span>Epílogo</span></strong></h2><p><span>Se você já vive esse futuro junto comigo, cria tua conta no </span><a target=\"_blank\" rel=\"noopener noreferrer nofollow\" href=\"http://Deco.chat\"><span>Deco.chat</span></a><span> (grátis), conecta teu número e me conta o que quebrou. Não prometo funnels, prometo </span><em><span>curiosidade crônica</span></em><span>.</span></p><p><span>Nos vemos no zap. 😉</span></p><p></p>",
+    "slug": "epifania-ao-zap",
+    "date": "2025-05-30",
+    "seo": {},
+    "image": "https://assets.decocache.com/decochatweb/8ae16f26-79bb-4460-9a96-ec942a144e20/zapp.png"
+  }
+}

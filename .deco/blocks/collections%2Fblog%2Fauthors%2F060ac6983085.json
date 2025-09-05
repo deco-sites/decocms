@@ -1,0 +1,9 @@
+{
+  "name": "collections/blog/authors/060ac6983085",
+  "__resolveType": "blog/loaders/Author.ts",
+  "author": {
+    "name": "Lucis",
+    "email": "lucis@deco.cx",
+    "avatar": "https://assets.decocache.com/decochatweb/e303b012-a894-4e1e-9d9d-d277e846bd6c/lucis.png"
+  }
+}

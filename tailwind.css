@@ -9,6 +9,18 @@
     font-family: var(--font-family);
   }
 
+  /* Global text selection colors */
+  ::selection {
+    background-color: #F1FE9F;
+    color: #8CAA25;
+  }
+
+  /* Firefox selection */
+  ::-moz-selection {
+    background-color: #F1FE9F;
+    color: #8CAA25;
+  }
+
   /** Remove default styles from input[type=number] */
   input[type=number]::-webkit-inner-spin-button,
   input[type=number]::-webkit-outer-spin-button {

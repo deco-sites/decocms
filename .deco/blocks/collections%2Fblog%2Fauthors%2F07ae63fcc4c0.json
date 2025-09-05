@@ -1,0 +1,9 @@
+{
+  "name": "collections/blog/authors/07ae63fcc4c0",
+  "__resolveType": "blog/loaders/Author.ts",
+  "author": {
+    "name": "Muriel Dias",
+    "email": "muri@deco.cx",
+    "avatar": "https://assets.decocache.com/decochatweb/f54dc0a1-e22c-43d8-959f-1ecacee3cf51/muri.png"
+  }
+}

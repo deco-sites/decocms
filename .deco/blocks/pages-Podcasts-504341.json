@@ -1,0 +1,41 @@
+{
+  "name": "Podcasts",
+  "path": "/resources/podcasts",
+  "sections": [
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "site/sections/Header.tsx"
+      }
+    },
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "site/sections/Podcasts.tsx",
+        "episodes": [
+          {
+            "episodeNumber": 1,
+            "title": "The guide to building in public and boosting your career",
+            "description": "Daniel Lima (Founder, Abacatepay)",
+            "youtubeVideoId": "MmmR1zhqdtI&t=160s",
+            "youtubeUrl": "https://www.youtube.com/watch?v=MmmR1zhqdtI&t=160s",
+            "guestName": "Daniel Lima",
+            "guestTitle": "Founder, Abacatepay",
+            "featured": true,
+            "thumbnail": "https://assets.decocache.com/decocms/fab13c16-f760-4105-b19d-140f9acd6d4f/htum.png"
+          }
+        ]
+      }
+    },
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "Footer"
+      }
+    }
+  ],
+  "seo": {
+    "__resolveType": "website/sections/Seo/SeoV2.tsx"
+  },
+  "__resolveType": "website/pages/Page.tsx"
+}

@@ -1,0 +1,38 @@
+{
+  "name": "Blog",
+  "path": "/blog",
+  "sections": [
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "site/sections/Header.tsx"
+      }
+    },
+    {
+      "__resolveType": "site/sections/BlogCategories.tsx",
+      "useCategoryPath": true,
+      "posts": {
+        "__resolveType": "blog/loaders/BlogpostList.ts",
+        "count": 50
+      }
+    },
+    {
+      "__resolveType": "site/sections/BlogPosts.tsx",
+      "posts": {
+        "__resolveType": "blog/loaders/BlogpostList.ts",
+        "postSlugs": [],
+        "sortBy": "date_desc"
+      }
+    },
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "Footer"
+      }
+    }
+  ],
+  "seo": {
+    "__resolveType": "website/sections/Seo/SeoV2.tsx"
+  },
+  "__resolveType": "website/pages/Page.tsx"
+}
