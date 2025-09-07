@@ -1,10 +1,8 @@
 import Image from "apps/website/components/Image.tsx";
-import Icon from "site/components/ui/Icon.tsx";
 import Button from "site/components/ui/Button.tsx";
-import { useId } from "../sdk/useId.ts";
-import { useEffect, useState } from "preact/hooks";
-import { BlogAuthor, BlogCategory } from "../types/blog.ts";
+import Icon from "site/components/ui/Icon.tsx";
 import BlogAuthorTag from "../components/blog/BlogAuthorTag.tsx";
+import { BlogAuthor, BlogCategory } from "../types/blog.ts";
 
 // Define the BlogPost type locally to avoid import issues
 interface BlogPost {
