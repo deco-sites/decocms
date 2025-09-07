@@ -23,7 +23,7 @@ export default function CopyCommandButton({
 
   return (
     <button type="button" onClick={handleCopy} class={`px-4 py-3 bg-dc-200 rounded-xl inline-flex items-center gap-2 ${className}`}>
-      <span class="text-dc-700 text-base font-light leading-tight font-jetbrains">{label}</span>
+      <span class="text-dc-700 text-base font-light leading-tight font-mono">{label}</span>
       {copied && <span class="ml-1 text-dc-700 text-sm">copied!</span>}
     </button>
   );

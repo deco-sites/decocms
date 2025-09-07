@@ -1,16 +1,15 @@
 import type { ImageWidget } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
-import CopyCommandButton from "../islands/CopyCommandButton.tsx";
 
 export interface Props {
   /** @title Título Principal */
   title?: string;
   /** @title Subtítulo */
   subtitle?: string;
-  /** @title Texto do Botão Principal */
-  primaryButtonText?: string;
-  /** @title Texto do Botão Secundário */
-  secondaryButtonText?: string;
+  /** @title Texto do Botão */
+  buttonText?: string;
+  /** @title URL do Botão */
+  buttonUrl?: string;
   /** @title Título do bloco de integrações */
   integrationsTitle?: string;
   /** @title Ícones do carrossel */
@@ -21,8 +20,8 @@ export interface Props {
 export default function Hero({
   title = "The open-source admin for your internal AI apps",
   subtitle = "Prototype in chat, ship in code, and run & monetize agentic apps in production.",
-  primaryButtonText = "Testar grátis",
-  secondaryButtonText = "npm create deco@latest",
+  buttonText = "Get started",
+  buttonUrl = "/",
   integrationsTitle = "Seamless Integrations",
   icons = [
     "https://placehold.co/80x80",
@@ -42,37 +41,36 @@ export default function Hero({
     <section class="w-full bg-dc-50 flex flex-col">
       <div class="bg-dc-100 px-2 pt-2 rounded-t-[24px] flex flex-col">
       {/* Main Content */}
-      <main class="flex-1 flex flex-col items-center justify-center pt-40 pb-0">
-        <div class="w-full max-w-[930px] flex flex-col items-center gap-6 px-4">
+      <main class="flex-1 flex flex-col items-center justify-center pt-20 sm:pt-32 lg:pt-40 pb-0">
+        <div class="w-full max-w-[930px] flex flex-col items-center gap-4 sm:gap-6 px-4">
           {/* Title */}
-          <h1 class="text-dc-900 text-7xl font-medium leading-[80px] tracking-[-0.02em] text-center">
+          <h1 class="text-dc-900 text-5xl lg:text-7xl font-medium leading-tight sm:leading-[60px] lg:leading-[80px] tracking-[-0.02em] text-center">
             {title}
           </h1>
 
           {/* Subtitle */}
-          <p class="w-full max-w-[619px] text-dc-900 text-xl font-light leading-7 text-center">
+          <p class="w-full max-w-[619px] text-dc-900 text-base sm:text-lg lg:text-xl font-light leading-6 sm:leading-7 text-center">
             {subtitle}
           </p>
 
-          {/* Buttons */}
+          {/* Button */}
           <div class="inline-flex items-center gap-2">
-            <button type="button" class="px-4 py-3 bg-primary-light rounded-xl inline-flex items-center gap-2">
-              <span class="text-primary-dark text-sm font-medium leading-tight">{primaryButtonText}</span>
-            </button>
-            <CopyCommandButton label={secondaryButtonText} />
+            <a href={buttonUrl} class="h-10 px-4 py-1.5 bg-[#D0EC1A] rounded-xl flex justify-center items-center gap-2">
+              <span class="text-[#07401A] text-sm font-medium leading-tight">{buttonText}</span>
+            </a>
           </div>
         </div>
       </main>
 
       {/* Footer - Integrations and icons marquee */}
-      <footer class="w-full relative mt-40">
-        <div class="w-full flex items-center gap-4">
+      <footer class="w-full relative mt-20 sm:mt-32 lg:mt-40">
+        <div class="w-full flex items-center gap-2 sm:gap-4">
           {/* Left label */}
           <div class="inline-flex flex-col items-start">
             <div class="inline-flex items-center gap-2.5">
               <div class="w-4 h-4 bg-dc-50"></div>
             </div>
-            <div class="w-72 px-8 py-12 bg-dc-50 rounded-tr-2xl inline-flex items-center gap-6">
+            <div class="w-48 sm:w-64 lg:w-72 px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-12 bg-dc-50 rounded-tr-2xl inline-flex items-center gap-3 sm:gap-4 lg:gap-6">
               {/* Use the green decorative SVG next to the label */}
               <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect x="14.8008" width="2.39469" height="2.39461" fill="#D0EC1A"/>
@@ -105,7 +103,7 @@ export default function Hero({
                 <rect width="2.39469" height="2.39461" transform="matrix(-1 0 0 1 21.9883 7.40137)" fill="#D0EC1A"/>
                 <rect x="21.9922" y="24.3799" width="2.39469" height="2.39461" transform="rotate(180 21.9922 24.3799)" fill="#D0EC1A"/>
               </svg>
-              <div class="flex-1 text-dc-800 text-2xl leading-7">{integrationsTitle}</div>
+              <div class="flex-1 text-dc-800 text-lg sm:text-xl lg:text-2xl leading-6 sm:leading-7">{integrationsTitle}</div>
             </div>
           </div>
 

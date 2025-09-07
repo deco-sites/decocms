@@ -43,13 +43,13 @@ function PostCard({ post }: { post: BlogPost }) {
         <div class="self-stretch flex flex-col justify-start items-start gap-3 md:gap-6">
           {post.title && (
             <a href={`/blog/post/${post.slug}`} class="hover:opacity-90 transition-opacity">
-              <div class="self-stretch text-dc-800 text-2xl md:text-3xl lg:text-4xl font-medium font-helvetica-neue leading-tight md:leading-10">
+              <div class="self-stretch text-dc-800 text-2xl md:text-3xl lg:text-4xl font-medium font-sans leading-tight md:leading-10">
                 {post.title}
               </div>
             </a>
           )}
           {post.excerpt && (
-            <div class="self-stretch text-dc-500 text-base md:text-lg lg:text-xl font-normal font-helvetica-neue leading-relaxed md:leading-loose">
+            <div class="self-stretch text-dc-500 text-base md:text-lg lg:text-xl font-normal font-sans leading-relaxed md:leading-loose">
               {post.excerpt}
             </div>
           )}
@@ -64,7 +64,7 @@ function PostCard({ post }: { post: BlogPost }) {
           {post.date && (
             <>
               <div class="w-1 h-1 bg-dc-500 rounded-[1px]"></div>
-              <div class="text-dc-500 text-sm font-medium font-helvetica-neue leading-tight">
+              <div class="text-dc-500 text-sm font-medium font-sans leading-tight">
                 {formatDate(post.date)}
               </div>
             </>
@@ -148,7 +148,7 @@ export default function BlogPostsCarouselIsland({
             <div class="w-full flex flex-col justify-start items-start gap-2">
               <div class="inline-flex justify-start items-end">
                 <div class="w-full max-w-[768px] inline-flex flex-col justify-start items-start gap-4">
-                  <h2 class="text-dc-800 text-4xl md:text-6xl font-medium font-helvetica-neue leading-tight md:leading-[64px]">
+                  <h2 class="text-dc-800 text-4xl md:text-6xl font-medium font-sans leading-tight md:leading-[64px]">
                     {heading}
                   </h2>
                 </div>
@@ -158,7 +158,7 @@ export default function BlogPostsCarouselIsland({
               href={ctaHref}
               class="px-6 md:px-8 lg:px-16 py-4 md:py-6 bg-lime-400 rounded-xl inline-flex justify-center items-center gap-2 hover:opacity-90 transition-opacity"
             >
-              <div class="text-primary-dark text-base md:text-xl font-medium font-helvetica-neue leading-tight">
+              <div class="text-primary-dark text-base md:text-xl font-medium font-sans leading-tight">
                 {ctaText}
               </div>
             </a>

@@ -98,7 +98,7 @@ export default function BlogPosts({
                 href={`/blog/${category.slug}`}
                 class="px-4 py-1 bg-dc-50 rounded-full outline outline-1 outline-offset-[-1px] outline-dc-200 flex justify-center items-center hover:bg-dc-100 transition-colors"
               >
-                <div class="justify-center text-dc-600 text-base font-semibold font-helvetica-neue leading-tight">
+                <div class="justify-center text-dc-600 text-base font-semibold font-sans leading-tight">
                   {category.name}
                 </div>
               </a>
@@ -168,7 +168,7 @@ export default function BlogPosts({
                     href={`/blog/post/${post.slug}`}
                     class="block w-full hover:opacity-80 transition-opacity"
                   >
-                    <h2 class="self-stretch text-dc-800 text-2xl md:text-3xl font-semibold font-helvetica-neue leading-tight md:leading-10">
+                    <h2 class="self-stretch text-dc-800 text-2xl md:text-3xl font-semibold font-sans leading-tight md:leading-10">
                       {post.title}
                     </h2>
                   </a>
@@ -184,7 +184,7 @@ export default function BlogPosts({
                     {post.date && (
                       <>
                         <div class="w-1 h-1 bg-dc-500 rounded-[1px]"></div>
-                        <div class="text-dc-500 text-sm font-medium font-helvetica-neue leading-tight">
+                        <div class="text-dc-500 text-sm font-medium font-sans leading-tight">
                           {formatDate(post.date)}
                         </div>
                       </>
@@ -199,15 +199,15 @@ export default function BlogPosts({
         {/* No results message */}
         {searchTerm && filteredPosts && filteredPosts.length === 0 && (
           <div class="w-full flex flex-col items-center justify-center py-12 text-center">
-            <h2 class="text-dc-800 text-2xl font-semibold font-helvetica-neue mb-2">
+            <h2 class="text-dc-800 text-2xl font-semibold font-sans mb-2">
               No posts found
             </h2>
-            <p class="text-dc-600 text-lg font-helvetica-neue mb-6">
+            <p class="text-dc-600 text-lg font-sans mb-6">
               We couldn't find any posts matching "{searchTerm}"
             </p>
             <a
               href="/blog"
-              class="px-4 py-2 bg-primary-light text-primary-dark rounded-xl font-semibold font-helvetica-neue hover:opacity-90 transition-opacity"
+              class="px-4 py-2 bg-primary-light text-primary-dark rounded-xl font-semibold font-sans hover:opacity-90 transition-opacity"
             >
               Back to all posts
             </a>
@@ -238,7 +238,7 @@ export default function BlogPosts({
                     href={`/blog/post/${post.slug}`}
                     class="block w-full hover:opacity-80 transition-opacity"
                   >
-                    <h3 class="self-stretch text-dc-800 text-xl md:text-2xl font-semibold font-helvetica-neue leading-tight md:leading-7">
+                    <h3 class="self-stretch text-dc-800 text-xl md:text-2xl font-semibold font-sans leading-tight md:leading-7">
                       {post.title}
                     </h3>
                   </a>
@@ -254,7 +254,7 @@ export default function BlogPosts({
                     {post.date && (
                       <>
                         <div class="w-1 h-1 bg-dc-500 rounded-[1px]"></div>
-                        <div class="text-dc-500 text-sm font-medium font-helvetica-neue leading-tight">
+                        <div class="text-dc-500 text-sm font-medium font-sans leading-tight">
                           {formatDate(post.date)}
                         </div>
                       </>
@@ -271,7 +271,7 @@ export default function BlogPosts({
           <div class="flex justify-center w-full mt-8">
             <a
               href={getNextPageUrl()}
-              class="px-4 py-2 bg-primary-light text-primary-dark rounded-xl font-semibold font-helvetica-neue"
+              class="px-4 py-2 bg-primary-light text-primary-dark rounded-xl font-semibold font-sans"
             >
               {cta.text}
             </a>

@@ -4,31 +4,35 @@
   "path": "/",
   "sections": [
     {
-      "__resolveType": "website/sections/Rendering/Lazy.tsx",
-      "section": {
-        "__resolveType": "site/sections/Header.tsx",
-        "menuItems": [
-          {
-            "label": "Pricing",
-            "href": "/pricing"
-          },
-          {
-            "label": "Docs",
-            "href": "https://docs.deco.page/"
-          },
-          {
-            "label": "Community",
-            "href": "https://decocms.com/discord/"
-          },
-          {
-            "label": "Blog",
-            "href": "/blog"
-          }
-        ]
-      }
+      "__resolveType": "site/sections/Header.tsx",
+      "menuItems": [
+        {
+          "label": "Docs",
+          "href": "/docs"
+        },
+        {
+          "label": "Pricing",
+          "href": "/pricing"
+        },
+        {
+          "label": "Community",
+          "href": "/community"
+        },
+        {
+          "label": "Blog",
+          "href": "/blog"
+        }
+      ],
+      "ctaText": "Get early access",
+      "logo": "https://assets.decocache.com/decocms/c6af6b61-bb6d-4601-8003-708d62d5fb7a/logo-tiny.svg",
+      "ctaHref": "https://luma.com/x4wmpyp8"
     },
     {
       "__resolveType": "site/sections/Hero.tsx",
+      "title": "The open-source admin for your internal AI apps",
+      "subtitle": "Prototype in chat, ship in code, and run & monetize agentic apps in production.",
+      "primaryButtonText": "Testar grátis",
+      "integrationsTitle": "Seamless Integrations",
       "icons": [
         "https://assets.decocache.com/decocms/e37e5504-fd97-4318-b554-334bef9cf0c2/whatsapp.png",
         "https://assets.decocache.com/decocms/016d6fd8-3395-4267-a4fe-bc10ba1e728e/sheets.png",
@@ -42,194 +46,356 @@
         "https://assets.decocache.com/decocms/b0efa01a-1532-446a-97e9-903be7286459/coda.png",
         "https://assets.decocache.com/decocms/c89fe4f8-df33-4cfe-ba20-696a37b3b3a4/airtable.png",
         "https://assets.decocache.com/decocms/07b013d3-947c-4eae-ba13-e1babe93ee1e/calendar.png"
-      ]
-    },
-    {
-      "__resolveType": "website/sections/Rendering/Lazy.tsx",
-      "section": {
-        "__resolveType": "site/sections/TextMedia.tsx"
-      }
-    },
-    {
-      "__resolveType": "site/sections/Features.tsx",
-      "features": [
-        {
-          "items": [
-            {
-              "0": "M",
-              "1": "C",
-              "2": "P",
-              "3": "-",
-              "4": "n",
-              "5": "a",
-              "6": "t",
-              "7": "i",
-              "8": "v",
-              "9": "e",
-              "10": " ",
-              "11": "c",
-              "12": "o",
-              "13": "n",
-              "14": "n",
-              "15": "e",
-              "16": "c",
-              "17": "t",
-              "18": "o",
-              "19": "r",
-              "20": "s",
-              "name": "MCP-native connectors",
-              "image": "https://assets.decocache.com/decocms/51bca6f7-6ebf-4ecd-911b-66d35e0e3a15/Frame-2147224099.png"
-            },
-            {
-              "0": "P",
-              "1": "o",
-              "2": "l",
-              "3": "i",
-              "4": "c",
-              "5": "y",
-              "6": " ",
-              "7": "r",
-              "8": "o",
-              "9": "u",
-              "10": "t",
-              "11": "i",
-              "12": "n",
-              "13": "g",
-              "14": " ",
-              "15": "&",
-              "16": " ",
-              "17": "R",
-              "18": "B",
-              "19": "A",
-              "20": "C",
-              "name": "Policy routing & RBAC",
-              "image": "https://assets.decocache.com/decocms/90204766-f087-42f7-869a-190decbe087e/fasdfs.png"
-            },
-            {
-              "name": "Spend caps & budgets"
-            },
-            {
-              "name": "Audit trail"
-            }
-          ],
-          "title": "Connect your context",
-          "description": "Unify data, tools and models with policy, RBAC and observability — your agents always get the right context, safely.",
-          "imagePosition": "right"
-        },
-        {
-          "items": [
-            {
-              "name": "Logs & traces"
-            },
-            {
-              "name": "Error analytics"
-            },
-            {
-              "name": "Cost per step & budgets"
-            },
-            {
-              "name": "Roles, approvals & tenancy"
-            }
-          ],
-          "imagePosition": "left",
-          "title": "Govern & observe your runs",
-          "description": "No vibe debugging: logs, traces, error analytics and cost-per-step to optimize quality and spend, with roles, approvals and tenancy."
-        },
-        {
-          "items": [
-            {
-              "name": "One-click installs"
-            },
-            {
-              "name": "Publish modules"
-            },
-            {
-              "name": "Per-run billing (wallet)"
-            },
-            {
-              "name": "Templates & packages"
-            }
-          ],
-          "imagePosition": "right",
-          "title": "Reuse & monetize with our marketplace",
-          "description": "Install ready-made modules — or publish your own. Wallet-based per-run billing turns apps into revenue."
-        }
       ],
-      "title": "One place to build, run, and monetize your agents",
-      "subtitle": "Govern access, trace every step, and turn reusable modules into paid products."
+      "buttonText": "Get early access",
+      "buttonUrl": "https://luma.com/x4wmpyp8"
     },
     {
-      "__resolveType": "site/sections/OnePlatformTwoSurfaces.tsx",
-      "title": "One platform, two surfaces",
-      "subtitle": "Prototype in natural language. Scale in code.",
-      "features": [
-        "Versioning & Git-native",
-        "Governance built-in",
-        "Fast Global Edge Deploy",
-        "Open & extensible"
-      ],
-      "card1Title": "Natural‑language builderfor business users",
-      "card2Title": "Open‑source TypeScript SDK for devs"
-    },
-    {
-      "__resolveType": "site/sections/FAQ.tsx",
-      "faqItems": [
+      "__resolveType": "website/flags/multivariate/section.ts",
+      "variants": [
         {
-          "question": "What is DecoCMS, and how is it different from other AI app builders?",
-          "answer": "DecoCMS is an open-source Context CMS — a control plane and runtime for building, running, and monetizing AI-powered agentic apps. Unlike traditional app builders, it unifies context, governance, observability, and monetization in one platform."
-        },
-        {
-          "question": "Do I need to be a developer to use DecoCMS?",
-          "answer": "Not at all. Business teams can create prompts, workflows, and agents without writing code, while developers can extend, customize, and deploy advanced capabilities using our TypeScript SDK and CLI."
-        },
-        {
-          "question": "How does DecoCMS handle governance and observability?",
-          "answer": "Every run is fully traced, auditable, and secure. DecoCMS includes role-based access control (RBAC), spend caps, error analytics, and per-step cost visibility — ensuring safe operations and compliance by default."
-        },
-        {
-          "question": "Can I self-host DecoCMS or bring my own keys (BYOK)?",
-          "answer": "Yes. DecoCMS is open-source and fully portable. You can self-host it on your infrastructure, bring your own API keys, and maintain full control over your data and costs."
-        },
-        {
-          "question": "Can I ensure my data stays private and secure when self-hosting DecoCMS?",
-          "answer": "Absolutely. When you self-host DecoCMS, your data, models, and keys stay fully under your control. DecoCMS never stores or transmits your data unless you explicitly configure it to."
-        },
-        {
-          "question": "How much does DecoCMS cost?",
-          "answer": "You start with $2 in free credits — no credit card required. After that, pricing is usage-based, so you only pay per run, with full transparency and real-time cost tracking in your dashboard."
-        },
-        {
-          "question": "How does the DecoCMS SDK work for developers?",
-          "answer": "The DecoCMS SDK lets you build, extend, and manage agents, workflows, and UIs in TypeScript. It integrates seamlessly with the CLI, enabling local development, testing, and edge deployment from a single codebase."
-        },
-        {
-          "question": "What is the Context Mesh, and why is it important?",
-          "answer": "The Context Mesh is DecoCMS’s governed layer for connecting data, tools, and models. It provides typed connectors with built-in policy routing, RBAC, observability, and spend controls — ensuring the right context is delivered safely every time."
-        },
-        {
-          "question": "Does DecoCMS support edge deployment?",
-          "answer": "Yes. DecoCMS ships agents, workflows, and UIs to the edge automatically, ensuring low latency and global performance by default. You can manage environments, preview builds, and deploy updates directly from the CLI."
-        },
-        {
-          "question": "How does DecoCMS integrate with Git?",
-          "answer": "DecoCMS uses a Git-backed workflow by default. Every change to agents, workflows, and UIs is versioned, allowing you to branch, review, and merge updates just like any modern development stack. This ensures full traceability and safe collaboration between teams."
+          "value": {
+            "__resolveType": "website/sections/Rendering/Lazy.tsx",
+            "section": {
+              "__resolveType": "site/sections/TextMedia.tsx",
+              "eyebrow": "Control pannel for your AI stack",
+              "title": "AI demos are easy. Production isn't.",
+              "description": "DecoCMS bridges the gap between prompts and production. Connect your stack, govern every step, and deploy agentic apps with built-in observability, spend controls, and a marketplace to reuse or monetize your modules.",
+              "image": "https://placehold.co/1200x900",
+              "imageAlt": "Section image"
+            }
+          },
+          "rule": {
+            "__resolveType": "website/matchers/never.ts"
+          }
         }
       ]
     },
     {
-      "__resolveType": "site/sections/FinalCTA.tsx",
-      "title": "Join our thriving community of Al builders",
-      "primaryButton": {
-        "text": "Join our Discord community",
-        "url": "https://decocms.com/discord/"
-      },
-      "secondaryButton": {
-        "text": "Get started building",
-        "url": "https://deco.new/"
-      }
+      "__resolveType": "website/flags/multivariate/section.ts",
+      "variants": [
+        {
+          "value": {
+            "__resolveType": "site/sections/Features.tsx",
+            "title": "One place to build, run, and monetize your agents",
+            "subtitle": "Govern access, trace every step, and turn reusable modules into paid products.",
+            "features": [
+              {
+                "title": "Connect your context",
+                "description": "Unify data, tools and models with policy, RBAC and observability — your agents always get the right context, safely.",
+                "items": [
+                  {
+                    "name": "MCP-native connectors",
+                    "image": "https://assets.decocache.com/decocms/51bca6f7-6ebf-4ecd-911b-66d35e0e3a15/Frame-2147224099.png"
+                  },
+                  {
+                    "name": "Policy routing & RBAC",
+                    "image": "https://assets.decocache.com/decocms/90204766-f087-42f7-869a-190decbe087e/fasdfs.png"
+                  },
+                  {
+                    "name": "Spend caps & budgets",
+                    "image": "https://placehold.co/600x400"
+                  },
+                  {
+                    "name": "Audit trail",
+                    "image": "https://placehold.co/600x400"
+                  }
+                ],
+                "imagePosition": "right"
+              },
+              {
+                "title": "Govern & observe your runs",
+                "description": "No vibe debugging: logs, traces, error analytics and cost-per-step to optimize quality and spend, with roles, approvals and tenancy.",
+                "items": [
+                  {
+                    "name": "Logs & traces",
+                    "image": "https://placehold.co/600x400"
+                  },
+                  {
+                    "name": "Error analytics",
+                    "image": "https://placehold.co/600x400"
+                  },
+                  {
+                    "name": "Cost per step & budgets",
+                    "image": "https://placehold.co/600x400"
+                  },
+                  {
+                    "name": "Roles, approvals & tenancy",
+                    "image": "https://placehold.co/600x400"
+                  }
+                ],
+                "imagePosition": "left"
+              },
+              {
+                "title": "Reuse & monetize with our marketplace",
+                "description": "Install ready-made modules — or publish your own. Wallet-based per-run billing turns apps into revenue.",
+                "items": [
+                  {
+                    "name": "One-click installs",
+                    "image": "https://placehold.co/600x400"
+                  },
+                  {
+                    "name": "Publish modules",
+                    "image": "https://placehold.co/600x400"
+                  },
+                  {
+                    "name": "Per-run billing (wallet)",
+                    "image": "https://placehold.co/600x400"
+                  },
+                  {
+                    "name": "Templates & packages",
+                    "image": "https://placehold.co/600x400"
+                  }
+                ],
+                "imagePosition": "right"
+              }
+            ]
+          },
+          "rule": {
+            "__resolveType": "website/matchers/never.ts"
+          }
+        }
+      ]
     },
     {
-      "__resolveType": "site/sections/Footer.tsx"
+      "__resolveType": "website/flags/multivariate/section.ts",
+      "variants": [
+        {
+          "value": {
+            "__resolveType": "site/sections/OnePlatformTwoSurfaces.tsx",
+            "title": "One platform, two surfaces",
+            "subtitle": "Prototype in natural language. Scale in code.",
+            "card1Title": "Natural‑language builder for business users",
+            "card2Title": "Open‑source TypeScript SDK for devs",
+            "features": [
+              "Versioning & Git-native",
+              "Governance built-in",
+              "Fast Global Edge Deploy",
+              "Open & extensible"
+            ]
+          },
+          "rule": {
+            "__resolveType": "website/matchers/never.ts"
+          }
+        }
+      ]
+    },
+    {
+      "__resolveType": "website/flags/multivariate/section.ts",
+      "variants": [
+        {
+          "value": {
+            "__resolveType": "site/sections/FAQ.tsx",
+            "faqItems": [
+              {
+                "question": "What is DecoCMS, and how is it different from other AI app builders?",
+                "answer": "DecoCMS is an open-source Context CMS — a control plane and runtime for building, running, and monetizing AI-powered agentic apps. Unlike traditional app builders, it unifies context, governance, observability, and monetization in one platform."
+              },
+              {
+                "question": "Do I need to be a developer to use DecoCMS?",
+                "answer": "Not at all. Business teams can create prompts, workflows, and agents without writing code, while developers can extend, customize, and deploy advanced capabilities using our TypeScript SDK and CLI."
+              },
+              {
+                "question": "How does DecoCMS handle governance and observability?",
+                "answer": "Every run is fully traced, auditable, and secure. DecoCMS includes role-based access control (RBAC), spend caps, error analytics, and per-step cost visibility — ensuring safe operations and compliance by default."
+              },
+              {
+                "question": "Can I self-host DecoCMS or bring my own keys (BYOK)?",
+                "answer": "Yes. DecoCMS is open-source and fully portable. You can self-host it on your infrastructure, bring your own API keys, and maintain full control over your data and costs."
+              },
+              {
+                "question": "Can I ensure my data stays private and secure when self-hosting DecoCMS?",
+                "answer": "Absolutely. When you self-host DecoCMS, your data, models, and keys stay fully under your control. DecoCMS never stores or transmits your data unless you explicitly configure it to."
+              },
+              {
+                "question": "How much does DecoCMS cost?",
+                "answer": "You start with $2 in free credits — no credit card required. After that, pricing is usage-based, so you only pay per run, with full transparency and real-time cost tracking in your dashboard."
+              },
+              {
+                "question": "How does the DecoCMS SDK work for developers?",
+                "answer": "The DecoCMS SDK lets you build, extend, and manage agents, workflows, and UIs in TypeScript. It integrates seamlessly with the CLI, enabling local development, testing, and edge deployment from a single codebase."
+              },
+              {
+                "question": "What is the Context Mesh, and why is it important?",
+                "answer": "The Context Mesh is DecoCMS’s governed layer for connecting data, tools, and models. It provides typed connectors with built-in policy routing, RBAC, observability, and spend controls — ensuring the right context is delivered safely every time."
+              },
+              {
+                "question": "Does DecoCMS support edge deployment?",
+                "answer": "Yes. DecoCMS ships agents, workflows, and UIs to the edge automatically, ensuring low latency and global performance by default. You can manage environments, preview builds, and deploy updates directly from the CLI."
+              },
+              {
+                "question": "How does DecoCMS integrate with Git?",
+                "answer": "DecoCMS uses a Git-backed workflow by default. Every change to agents, workflows, and UIs is versioned, allowing you to branch, review, and merge updates just like any modern development stack. This ensures full traceability and safe collaboration between teams."
+              }
+            ],
+            "title": "FAQs",
+            "description": "Here are some frequently asked questions, to solve all your problems."
+          },
+          "rule": {
+            "__resolveType": "website/matchers/never.ts"
+          }
+        }
+      ]
+    },
+    {
+      "__resolveType": "website/flags/multivariate/section.ts",
+      "variants": [
+        {
+          "value": {
+            "__resolveType": "site/sections/FinalCTA.tsx",
+            "title": "Join our thriving community of Al builders",
+            "primaryButton": {
+              "text": "Join our Discord community",
+              "url": "https://decocms.com/discord/"
+            },
+            "secondaryButton": {
+              "text": "Get started building",
+              "url": "https://deco.new/"
+            }
+          },
+          "rule": {
+            "__resolveType": "website/matchers/never.ts"
+          }
+        }
+      ]
+    },
+    {
+      "__resolveType": "website/flags/multivariate/section.ts",
+      "variants": [
+        {
+          "value": {
+            "__resolveType": "site/sections/Footer.tsx",
+            "columns": [
+              {
+                "title": "Solutions",
+                "links": [
+                  {
+                    "text": "AI Agents",
+                    "url": "#"
+                  },
+                  {
+                    "text": "Enterprise",
+                    "url": "#"
+                  },
+                  {
+                    "text": "Agencies",
+                    "url": "#"
+                  },
+                  {
+                    "text": "AI Chatbots",
+                    "url": "#"
+                  },
+                  {
+                    "text": "Internal Tools",
+                    "url": "#"
+                  },
+                  {
+                    "text": "Whitelabel",
+                    "url": "#",
+                    "disabled": true
+                  }
+                ]
+              },
+              {
+                "title": "Social",
+                "links": [
+                  {
+                    "text": "LinkedIn",
+                    "url": "#"
+                  },
+                  {
+                    "text": "Youtube",
+                    "url": "#"
+                  },
+                  {
+                    "text": "Coming Soon",
+                    "disabled": true
+                  }
+                ]
+              },
+              {
+                "title": "Support",
+                "links": [
+                  {
+                    "text": "Pricing",
+                    "url": "#"
+                  },
+                  {
+                    "text": "Documentation",
+                    "url": "#"
+                  },
+                  {
+                    "text": "Tutorials",
+                    "url": "#"
+                  },
+                  {
+                    "text": "Status Page",
+                    "url": "#"
+                  },
+                  {
+                    "text": "Changelog",
+                    "url": "#"
+                  }
+                ]
+              },
+              {
+                "title": "Company",
+                "links": [
+                  {
+                    "text": "Blog",
+                    "url": "#"
+                  },
+                  {
+                    "text": "Careers",
+                    "url": "#"
+                  },
+                  {
+                    "text": "Afilliate Program",
+                    "url": "#"
+                  },
+                  {
+                    "text": "Deco Camp",
+                    "url": "#"
+                  },
+                  {
+                    "text": "Security",
+                    "url": "#"
+                  }
+                ]
+              },
+              {
+                "title": "Legal",
+                "links": [
+                  {
+                    "text": "Privacy",
+                    "url": "#"
+                  },
+                  {
+                    "text": "Terms",
+                    "url": "#"
+                  },
+                  {
+                    "text": "SOC 2 Report",
+                    "url": "#"
+                  },
+                  {
+                    "text": "OpenAI DPA",
+                    "url": "#"
+                  },
+                  {
+                    "text": "Anthropic DPA",
+                    "url": "#"
+                  }
+                ]
+              }
+            ],
+            "logo": "https://placehold.co/1296x186"
+          },
+          "rule": {
+            "__resolveType": "website/matchers/never.ts"
+          }
+        }
+      ]
     }
   ]
 }

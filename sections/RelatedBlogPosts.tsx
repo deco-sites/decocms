@@ -70,7 +70,7 @@ export default function RelatedBlogPosts({
                 href={`/blog/${category.slug}`}
                 className="px-4 py-1 bg-dc-50 rounded-full outline outline-1 outline-offset-[-1px] outline-dc-200 flex justify-center items-center hover:bg-dc-100 transition-colors"
               >
-                <div className="justify-center text-dc-600 text-base font-semibold font-helvetica-neue leading-tight">
+                <div className="justify-center text-dc-600 text-base font-semibold font-sans leading-tight">
                   {category.name}
                 </div>
               </a>
@@ -84,7 +84,7 @@ export default function RelatedBlogPosts({
   return (
     <div className="w-full min-w-full bg-dc-50 flex flex-col justify-start items-center overflow-hidden px-4 md:px-8 lg:px-16 py-8 md:py-16 gap-8 md:gap-14">
       <div className="w-full flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-        <h2 className="text-dc-800 text-4xl font-semibold font-helvetica-neue leading-tight">
+        <h2 className="text-dc-800 text-4xl font-semibold font-sans leading-tight">
           {heading}
         </h2>
         <Button
@@ -122,7 +122,7 @@ export default function RelatedBlogPosts({
                   href={`/blog/post/${post.slug}`}
                   className="block w-full hover:opacity-80 transition-opacity"
                 >
-                  <h3 className="text-dc-800 text-xl md:text-2xl font-semibold font-helvetica-neue leading-tight">
+                  <h3 className="text-dc-800 text-xl md:text-2xl font-semibold font-sans leading-tight">
                     {post.title}
                   </h3>
                 </a>
@@ -138,7 +138,7 @@ export default function RelatedBlogPosts({
                   {post.date && (
                     <>
                       <div className="w-1 h-1 bg-dc-500 rounded-[1px]"></div>
-                      <div className="text-dc-500 text-sm font-medium font-helvetica-neue leading-tight">
+                      <div className="text-dc-500 text-sm font-medium font-sans leading-tight">
                         {formatDate(post.date)}
                       </div>
                     </>

@@ -5,13 +5,10 @@ export default {
   daisyui: { themes: [], logs: false },
   content: ["./**/*.tsx"],
   safelist: [
-    // Font classes
-    "font-main",
-    "font-instrument-serif",
-    "font-manrope",
-    "font-helvetica-neue",
-    "font-helvetica-neue-cond",
-    "font-jetbrains",
+    // Font classes (allowed utilities)
+    "font-sans",
+    "font-serif",
+    "font-mono",
 
     // Animation classes
     "animate-spin",
@@ -223,15 +220,21 @@ export default {
     container: { center: true },
     extend: {
       fontFamily: {
-        main: [
-          "helvetica-neue-lt-pro",
-          "Helvetica Neue",
+        sans: [
+          "ui-sans-serif",
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "Segoe UI Variable Display",
+          "Segoe UI",
           "Helvetica",
+          "Apple Color Emoji",
           "Arial",
           "sans-serif",
+          "Segoe UI Emoji",
+          "Segoe UI Symbol",
         ],
-        jetbrains: [
-          "JetBrains Mono",
+        mono: [
+          "CommitMono",
           "ui-monospace",
           "SFMono-Regular",
           "Menlo",
@@ -240,28 +243,14 @@ export default {
           "Liberation Mono",
           "monospace",
         ],
-        "helvetica-neue": [
-          "helvetica-neue-lt-pro",
-          "Helvetica Neue",
-          "Helvetica",
-          "Arial",
-          "sans-serif",
-        ],
-        "helvetica-neue-cond": [
-          "helvetica-neue-lt-pro-cond",
-          "Helvetica Neue Condensed",
-          "Helvetica Condensed",
-          "Arial Narrow",
-          "sans-serif",
-        ],
-        manrope: ["Manrope", "sans-serif"],
-        "instrument-serif": ["Instrument Serif", "serif"],
-        sans: [
-          "helvetica-neue-lt-pro",
-          "Helvetica Neue",
-          "Helvetica",
-          "Arial",
-          "sans-serif",
+        serif: [
+          "Instrument Serif",
+          "ui-serif",
+          "Georgia",
+          "Cambria",
+          "Times New Roman",
+          "Times",
+          "serif",
         ],
       },
       colors: {

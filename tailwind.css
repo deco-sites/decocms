@@ -6,7 +6,16 @@
 
   /* Allow changing font family via CMS */
   html {
-    font-family: var(--font-family);
+    font-family: var(--font-family, theme(fontFamily.sans));
+  }
+
+  /* CommitMono variable font */
+  @font-face {
+    font-family: "CommitMono";
+    src: url("/static/CommitMono VariableFont.woff2") format("woff2");
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
   }
 
   /* Global text selection colors */

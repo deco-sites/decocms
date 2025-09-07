@@ -105,7 +105,7 @@ export default function BlogAuthorTag({
 
         {/* Tooltip with author names */}
         {showTooltip && validAuthors.length > 1 && (
-          <div class="absolute top-full left-0 mt-2 bg-dc-50 shadow-md rounded-md px-3 py-2 text-sm text-dc-600 font-helvetica-neue font-medium opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 whitespace-nowrap z-50">
+          <div class="absolute top-full left-0 mt-2 bg-dc-50 shadow-md rounded-md px-3 py-2 text-sm text-dc-600 font-sans font-medium opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 whitespace-nowrap z-50">
             {validAuthors.map((author, index) => (
               <div key={index} class="py-1">
                 {author.name || "Author"}
@@ -119,7 +119,7 @@ export default function BlogAuthorTag({
         <div
           class={`${textColor} ${
             textSize ? `text-${textSize}` : ""
-          } font-medium font-helvetica-neue leading-tight`}
+          } font-medium font-sans leading-tight`}
         >
           {validAuthors[0].name}
           {validAuthors.length > 1 ? ` +${validAuthors.length - 1}` : ""}

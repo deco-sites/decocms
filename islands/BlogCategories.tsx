@@ -155,7 +155,7 @@ export default function BlogCategories({
                   isSelected ? "bg-dc-100" : ""
                 }`}
               >
-                <div class="text-dc-600 text-base font-semibold font-helvetica-neue leading-tight">
+                <div class="text-dc-600 text-base font-semibold font-sans leading-tight">
                   {category.name}
                 </div>
               </a>
@@ -186,7 +186,7 @@ export default function BlogCategories({
                 value={localSearchTerm}
                 placeholder={searchPlaceholder}
                 onInput={handleSearchInput}
-                class="flex-1 bg-transparent border-none outline-none text-dc-800 placeholder:text-dc-400 text-lg font-normal font-helvetica-neue leading-tight"
+                class="flex-1 bg-transparent border-none outline-none text-dc-800 placeholder:text-dc-400 text-lg font-normal font-sans leading-tight"
               />
               {selectedCategory && !useCategoryPath && (
                 <input type="hidden" name="category" value={selectedCategory} />

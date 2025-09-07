@@ -299,7 +299,6 @@ export function Preview(props: Props) {
             --admin-border-hover-color-light: #819292;
             --admin-border-hover-color-dark: #949e9e;
             --admin-hover-bg-color: #fafafa;
-            --admin-font-family: helvetica-neue-lt-pro, 'Helvetica Neue', Arial, sans-serif;
           }
 
           .admin-font-family {
