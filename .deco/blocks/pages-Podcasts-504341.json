@@ -5,7 +5,7 @@
     {
       "__resolveType": "website/sections/Rendering/Lazy.tsx",
       "section": {
-        "__resolveType": "site/sections/Header.tsx"
+        "__resolveType": "Header-decocms"
       }
     },
     {

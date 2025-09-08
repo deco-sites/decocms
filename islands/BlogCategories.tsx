@@ -1,7 +1,7 @@
 import Icon from "../components/ui/Icon.tsx";
 import { Category } from "apps/blog/types.ts";
 import { useId } from "../sdk/useId.ts";
-import {  useState } from "preact/hooks";
+import { useState } from "preact/hooks";
 
 export interface Props {
   /**

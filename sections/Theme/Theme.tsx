@@ -258,13 +258,11 @@ function Section({
 
   const variables = [
     ...toVariables(theme),
-    [
-      "--font-family",
-      font?.family ||
-      "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif",
-    ],
-  ]
-    .map(([name, value]) => ({ name, value }));
+    // Only set --font-family if a font is provided via CMS; otherwise fall back to Tailwind's stack
+    ...(font?.family
+      ? [["--font-family", font.family] as [string, string]]
+      : []),
+  ].map(([name, value]) => ({ name, value }));
 
   return (
     <SiteTheme

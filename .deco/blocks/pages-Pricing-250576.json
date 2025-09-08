@@ -3,15 +3,11 @@
   "path": "/pricing",
   "sections": [
     {
-      "__resolveType": "website/sections/Rendering/Lazy.tsx",
-      "section": {
-        "__resolveType": "site/sections/Header.tsx"
-      }
+      "__resolveType": "Header-decocms"
     },
     {
       "__resolveType": "site/sections/PricingPlans.tsx",
       "title": "Simple pricing",
-      "subtitle": "Test deco.chat for free. No credit card required.",
       "plans": [
         {
           "name": "Free",
@@ -19,8 +15,7 @@
           "seats": 1,
           "description": "For hobbyist projects by solo devs.",
           "image": "https://assets.decocache.com/decochatweb/09f53b34-1d83-4a02-bc65-b0d62ebd1728/Free-Plan.svg",
-          "buttonText": "Start for free",
-          "buttonUrl": "https://deco.chat/login",
+          "buttonText": "Coming soon",
           "features": [
             {
               "name": "AI Usage Rate",
@@ -45,8 +40,7 @@
           "seats": 10,
           "description": "Small product teams ready for launch",
           "image": "https://assets.decocache.com/decochatweb/ffc1cf73-7160-4e76-b4d3-7bdf5ba54316/Starter-Plan.svg",
-          "buttonText": "Choose plan",
-          "buttonUrl": "https://deco.chat/login",
+          "buttonText": "Coming soon",
           "features": [
             {
               "name": "Optimized AI Usage Rate",
@@ -75,8 +69,7 @@
           "seats": 50,
           "description": "For businesses growing AI operations",
           "image": "https://assets.decocache.com/decochatweb/4176c9dd-a2df-4b97-8c17-6438a9e9193d/Growth-Plan.svg",
-          "buttonText": "Choose plan",
-          "buttonUrl": "https://deco.chat/login",
+          "buttonText": "Coming soon",
           "features": [
             {
               "name": "Better AI Usage Rate",
@@ -109,8 +102,7 @@
           "seats": 100,
           "description": "For organizations deploying AI at scale",
           "image": "https://assets.decocache.com/decochatweb/f6a8c324-9c71-4b90-8d77-5d2b3e2b1f61/Scale-Plan.svg",
-          "buttonText": "Choose plan",
-          "buttonUrl": "https://deco.chat/login",
+          "buttonText": "Coming soon",
           "features": [
             {
               "name": "Best AI Usage Rate",

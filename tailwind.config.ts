@@ -20,7 +20,7 @@ export default {
 
     // Background colors for ALL colors
     ...[
-      "red", 
+      "red",
       "orange",
       "amber",
       "yellow",

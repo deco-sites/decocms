@@ -1,0 +1,24 @@
+{
+  "__resolveType": "site/sections/Header.tsx",
+  "menuItems": [
+    {
+      "label": "Docs",
+      "href": "docs.deco.page"
+    },
+    {
+      "label": "Pricing",
+      "href": "/pricing"
+    },
+    {
+      "label": "Community",
+      "href": "/community"
+    },
+    {
+      "label": "Blog",
+      "href": "/blog"
+    }
+  ],
+  "ctaText": "Get early access",
+  "logo": "https://assets.decocache.com/decocms/c6af6b61-bb6d-4601-8003-708d62d5fb7a/logo-tiny.svg",
+  "ctaHref": "https://luma.com/x4wmpyp8"
+}

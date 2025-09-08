@@ -3,9 +3,16 @@
 @tailwind utilities;
 
 @layer base {
-
+  :root {
+    --font-family: theme(fontFamily.sans) !important;
+  }
   /* Allow changing font family via CMS */
   html {
+    font-family: var(--font-family, theme(fontFamily.sans));
+  }
+
+  /* Ensure body uses the same font (overrides external body rules like Typekit) */
+  body {
     font-family: var(--font-family, theme(fontFamily.sans));
   }
 
@@ -20,31 +27,30 @@
 
   /* Global text selection colors */
   ::selection {
-    background-color: #F1FE9F;
-    color: #8CAA25;
+    background-color: #f1fe9f;
+    color: #8caa25;
   }
 
   /* Firefox selection */
   ::-moz-selection {
-    background-color: #F1FE9F;
-    color: #8CAA25;
+    background-color: #f1fe9f;
+    color: #8caa25;
   }
 
   /** Remove default styles from input[type=number] */
-  input[type=number]::-webkit-inner-spin-button,
-  input[type=number]::-webkit-outer-spin-button {
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
   }
 
-  input[type=number] {
+  input[type="number"] {
     -moz-appearance: textfield;
     appearance: textfield;
   }
 }
 
 @layer components {
-
   /** Prevent scroll when modal is open */
   .no-scroll {
     overflow: hidden;
@@ -53,7 +59,6 @@
 }
 
 @layer utilities {
-
   /** Remove scrollbar from overflow-auto */
   .scrollbar-none {
     scrollbar-width: none;
