@@ -30,7 +30,7 @@ export default function Header({
   ctaText = "Get started",
 }: Props) {
   return (
-    <div class="p-2 pb-0">
+    <div class="p-2 pb-0 relative">
       <header class="bg-dc-100 rounded-[24px] rounded-b-none px-4 sm:px-6 lg:px-10 py-4 flex items-center">
         {/* Left Section - Logo */}
         <div class="flex-1 flex justify-start">
@@ -116,7 +116,7 @@ export default function Header({
       {/* Mobile Menu */}
       <div
         id="mobile-menu"
-        class="lg:hidden hidden bg-[#F1F0EF] mx-4 sm:mx-6 rounded-b-2xl border-t border-[#E7E5E4]"
+        class="lg:hidden hidden absolute top-full left-2 right-2 bg-[#F1F0EF] rounded-b-2xl border-t border-[#E7E5E4] z-50"
       >
         <div class="p-4 space-y-2">
           {menuItems.map((item, index) => (

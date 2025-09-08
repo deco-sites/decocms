@@ -34,26 +34,32 @@ interface Props {
 export default function FAQ({
   eyebrow = "FAQ",
   title = "FAQs",
-  description = "Here are some frequently asked questions, to solve all your problems.",
-  answerLogo = "https://assets.decocache.com/decochatweb/cebb6b63-37c8-48a8-870e-0bad65e6e1fb/logo-agnet-deco.png",
+  description =
+    "Here are some frequently asked questions, to solve all your problems.",
+  answerLogo =
+    "https://assets.decocache.com/decochatweb/cebb6b63-37c8-48a8-870e-0bad65e6e1fb/logo-agnet-deco.png",
   faqItems = [
     {
       question: "What exactly is deco.chat?",
-      answer: "deco.chat is an open-source AI workspace that helps organizations build and manage AI agents. It's designed to make AI implementation simple, whether for internal tools or customer-facing applications."
+      answer:
+        "deco.chat is an open-source AI workspace that helps organizations build and manage AI agents. It's designed to make AI implementation simple, whether for internal tools or customer-facing applications.",
     },
     {
       question: "Is deco.chat suitable for my company size?",
-      answer: "Yes! deco.chat scales with your needs. Whether you're a startup or an enterprise, our platform adapts to your organization's size and requirements."
+      answer:
+        "Yes! deco.chat scales with your needs. Whether you're a startup or an enterprise, our platform adapts to your organization's size and requirements.",
     },
     {
       question: "Which platforms can I integrate with deco.chat?",
-      answer: "No. Our platform is designed to be user-friendly for both technical and non-technical team members. However, developers can access advanced features through our API."
+      answer:
+        "No. Our platform is designed to be user-friendly for both technical and non-technical team members. However, developers can access advanced features through our API.",
     },
     {
       question: "How long does it take to implement deco.chat?",
-      answer: "Basic setup can be completed in hours. Full enterprise implementation typically takes 1-2 weeks, depending on your requirements and integrations."
-    }
-  ]
+      answer:
+        "Basic setup can be completed in hours. Full enterprise implementation typically takes 1-2 weeks, depending on your requirements and integrations.",
+    },
+  ],
 }: Props) {
   return (
     <section class="w-full bg-[#FAF9F7] py-16 md:py-32">
@@ -68,9 +74,6 @@ export default function FAQ({
           <h2 class="text-center text-[#1C1917] text-3xl md:text-5xl lg:text-6xl font-medium leading-tight max-w-4xl">
             {title}
           </h2>
-          <p class="text-center text-[#78716C] text-base md:text-lg leading-relaxed max-w-3xl">
-            {description}
-          </p>
         </div>
 
         <div class="w-full max-w-[750px] flex flex-col justify-start items-start gap-4">

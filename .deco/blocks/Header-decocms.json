@@ -3,7 +3,7 @@
   "menuItems": [
     {
       "label": "Docs",
-      "href": "docs.deco.page"
+      "href": "https://docs.deco.page"
     },
     {
       "label": "Pricing",
@@ -11,7 +11,7 @@
     },
     {
       "label": "Community",
-      "href": "/community"
+      "href": "https://decocms.com/discord"
     },
     {
       "label": "Blog",

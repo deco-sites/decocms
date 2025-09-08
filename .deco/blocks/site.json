@@ -3,12 +3,12 @@
     "type": "website",
     "jsonLDs": [],
     "noIndexing": false,
-    "description": "Improve your page performance with deco.cx",
-    "titleTemplate": "%s | deco.cx",
+    "description": "A generative control plane for data, tools, models, permissions, and memory — so you can prototype in chat, ship in code, and run & monetize agentic apps in production.",
+    "titleTemplate": "deco | The home for all your AI apps",
     "descriptionTemplate": "%s | deco.cx",
-    "title": "Start",
-    "favicon": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/8/40cc7da0-93d3-4215-9c2a-04b2f86b0a47",
-    "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/8/22c99167-0018-484f-8b0d-4295a7d771f2"
+    "title": "deco | The home for all your AI apps",
+    "favicon": "https://assets.decocache.com/decocms/f33b10a9-b172-47c0-b393-212b21118588/favicon.png",
+    "image": "https://assets.decocache.com/decocms/f7158181-d623-43f5-8452-310bafadd759/seodeco.png"
   },
   "global": [
     {

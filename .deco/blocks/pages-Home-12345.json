@@ -34,120 +34,102 @@
     },
     {
       "__resolveType": "site/sections/TextMedia.tsx",
-      "eyebrow": "Control pannel for your AI stack",
+      "eyebrow": "Control panel for your AI stack",
       "title": "AI demos are easy. Production isn't.",
       "description": "DecoCMS bridges the gap between prompts and production. Connect your stack, govern every step, and deploy agentic apps with built-in observability, spend controls, and a marketplace to reuse or monetize your modules.",
       "image": "https://assets.decocache.com/decocms/86b36935-7da0-48e9-b011-c6b915e064cc/demoprod.png",
       "imageAlt": "Section image"
     },
     {
-      "__resolveType": "website/flags/multivariate/section.ts",
-      "variants": [
+      "__resolveType": "site/sections/Features.tsx",
+      "title": "One place to build, run, and monetize your agents",
+      "subtitle": "Govern access, trace every step, and turn reusable modules into paid products.",
+      "features": [
         {
-          "value": {
-            "__resolveType": "site/sections/Features.tsx",
-            "title": "One place to build, run, and monetize your agents",
-            "subtitle": "Govern access, trace every step, and turn reusable modules into paid products.",
-            "features": [
-              {
-                "title": "Connect your context",
-                "description": "Unify data, tools and models with policy, RBAC and observability — your agents always get the right context, safely.",
-                "items": [
-                  {
-                    "name": "MCP-native connectors",
-                    "image": "https://assets.decocache.com/decocms/51bca6f7-6ebf-4ecd-911b-66d35e0e3a15/Frame-2147224099.png"
-                  },
-                  {
-                    "name": "Policy routing & RBAC",
-                    "image": "https://assets.decocache.com/decocms/90204766-f087-42f7-869a-190decbe087e/fasdfs.png"
-                  },
-                  {
-                    "name": "Spend caps & budgets",
-                    "image": "https://placehold.co/600x400"
-                  },
-                  {
-                    "name": "Audit trail",
-                    "image": "https://placehold.co/600x400"
-                  }
-                ],
-                "imagePosition": "right"
-              },
-              {
-                "title": "Govern & observe your runs",
-                "description": "No vibe debugging: logs, traces, error analytics and cost-per-step to optimize quality and spend, with roles, approvals and tenancy.",
-                "items": [
-                  {
-                    "name": "Logs & traces",
-                    "image": "https://placehold.co/600x400"
-                  },
-                  {
-                    "name": "Error analytics",
-                    "image": "https://placehold.co/600x400"
-                  },
-                  {
-                    "name": "Cost per step & budgets",
-                    "image": "https://placehold.co/600x400"
-                  },
-                  {
-                    "name": "Roles, approvals & tenancy",
-                    "image": "https://placehold.co/600x400"
-                  }
-                ],
-                "imagePosition": "left"
-              },
-              {
-                "title": "Reuse & monetize with our marketplace",
-                "description": "Install ready-made modules — or publish your own. Wallet-based per-run billing turns apps into revenue.",
-                "items": [
-                  {
-                    "name": "One-click installs",
-                    "image": "https://placehold.co/600x400"
-                  },
-                  {
-                    "name": "Publish modules",
-                    "image": "https://placehold.co/600x400"
-                  },
-                  {
-                    "name": "Per-run billing (wallet)",
-                    "image": "https://placehold.co/600x400"
-                  },
-                  {
-                    "name": "Templates & packages",
-                    "image": "https://placehold.co/600x400"
-                  }
-                ],
-                "imagePosition": "right"
-              }
-            ]
-          },
-          "rule": {
-            "__resolveType": "website/matchers/never.ts"
-          }
+          "title": "Connect your context",
+          "description": "Unify data, tools and models with policy, RBAC and observability — your agents always get the right context, safely.",
+          "items": [
+            {
+              "name": "MCP-native connectors",
+              "image": "https://assets.decocache.com/decocms/be9855f8-fc9c-477f-90b4-3182935b0438/mcp-native-connectors.png"
+            },
+            {
+              "name": "Policy routing & RBAC",
+              "image": "https://assets.decocache.com/decocms/b93680dd-ec8d-4eda-b20a-88bd2e941c69/policy-routing--rbac.png"
+            },
+            {
+              "name": "Spend caps & budgets",
+              "image": "https://assets.decocache.com/decocms/5aac6425-c7fe-452b-a057-06e25ee75333/spend-caps--budgets.png"
+            },
+            {
+              "name": "Audit trail",
+              "image": "https://assets.decocache.com/decocms/ed4746ae-23fa-432e-b673-a32f1f52830e/audit-trail.png"
+            }
+          ],
+          "imagePosition": "right"
+        },
+        {
+          "title": "Govern & observe your runs",
+          "description": "No vibe debugging: logs, traces, error analytics and cost-per-step to optimize quality and spend, with roles, approvals and tenancy.",
+          "items": [
+            {
+              "name": "Logs & traces",
+              "image": "https://assets.decocache.com/decocms/76e5dc95-92b8-458e-8af4-39025ca981ef/Logs--traces.png"
+            },
+            {
+              "name": "Error analytics",
+              "image": "https://assets.decocache.com/decocms/55058634-3107-4cc5-b5e2-cd706e4288e0/error.png"
+            },
+            {
+              "name": "Cost per step & budgets",
+              "image": "https://assets.decocache.com/decocms/0cb76bab-1ea6-4dc3-9997-8e07c6f91b29/Cost-per-step--budgets.png"
+            },
+            {
+              "name": "Roles, approvals & tenancy",
+              "image": "https://assets.decocache.com/decocms/93957948-af6c-4c7d-b194-bd322a81707b/Roles-approvals--tenancy.png"
+            }
+          ],
+          "imagePosition": "left"
+        },
+        {
+          "title": "Reuse & monetize with our marketplace",
+          "description": "Install ready-made modules — or publish your own. Wallet-based per-run billing turns apps into revenue.",
+          "items": [
+            {
+              "name": "One-click installs",
+              "image": "https://assets.decocache.com/decocms/6c7fe354-06cf-41a1-bc75-bc83d49595bf/one-click-installs.png"
+            },
+            {
+              "name": "Publish modules",
+              "image": "https://assets.decocache.com/decocms/be163216-4af7-4a8d-96cb-6cc6b0fdcc61/publish-modules.png"
+            },
+            {
+              "name": "Per-run billing (wallet)",
+              "image": "https://assets.decocache.com/decocms/3cfb3055-140b-42f1-b1aa-cafc95933d89/wallleet.png"
+            },
+            {
+              "name": "Templates & packages",
+              "image": "https://assets.decocache.com/decocms/26025eed-515b-4b28-88a0-07c32c5e43af/template.png"
+            }
+          ],
+          "imagePosition": "right"
         }
       ]
     },
     {
-      "__resolveType": "website/flags/multivariate/section.ts",
-      "variants": [
-        {
-          "value": {
-            "__resolveType": "site/sections/OnePlatformTwoSurfaces.tsx",
-            "title": "One platform, two surfaces",
-            "subtitle": "Prototype in natural language. Scale in code.",
-            "card1Title": "Natural‑language builder for business users",
-            "card2Title": "Open‑source TypeScript SDK for devs",
-            "features": [
-              "Versioning & Git-native",
-              "Governance built-in",
-              "Fast Global Edge Deploy",
-              "Open & extensible"
-            ]
-          },
-          "rule": {
-            "__resolveType": "website/matchers/never.ts"
-          }
-        }
-      ]
+      "__resolveType": "site/sections/OnePlatformTwoSurfaces.tsx",
+      "title": "One platform, two surfaces",
+      "subtitle": "Prototype in natural language. Scale in code.",
+      "card1Title": "Natural‑language builder for business users",
+      "card2Title": "Open‑source TypeScript SDK for devs",
+      "features": [
+        "Versioning & Git-native",
+        "Governance built-in",
+        "Fast Global Edge Deploy",
+        "Open & extensible"
+      ],
+      "card1Image": "https://assets.decocache.com/decocms/6c2a207b-d06b-4631-9a77-ee87aa33a3a9/dev.png",
+      "card2Image": "https://assets.decocache.com/decocms/6d7bfec7-7965-4be4-86e9-d272d162e51d/llm.png"
     },
     {
       "__resolveType": "site/sections/FAQ.tsx",
@@ -194,7 +176,8 @@
           "answer": "DecoCMS uses a Git-backed workflow by default. Every change to agents, workflows, and UIs is versioned, allowing you to branch, review, and merge updates just like any modern development stack. This ensures full traceability and safe collaboration between teams."
         }
       ],
-      "description": "Here are some frequently asked questions, to solve all your problems."
+      "description": "Here are some frequently asked questions, to solve all your problems.",
+      "eyebrow": "Frequently Asked Questions"
     },
     {
       "__resolveType": "site/sections/FinalCTA.tsx",

@@ -95,14 +95,14 @@ export default function Features({
   ],
 }: Props) {
   return (
-    <section class="w-full px-16 py-40 bg-dc-50 flex flex-col justify-start items-center gap-14">
-      <div class="w-full max-w-8xl flex flex-col justify-start items-center gap-14">
+    <section class="w-full px-4 py-8 sm:px-8 sm:py-12 lg:px-16 lg:py-40 bg-dc-50 flex flex-col justify-start items-center gap-6 sm:gap-8 lg:gap-14">
+      <div class="w-full max-w-8xl flex flex-col justify-start items-center gap-6 sm:gap-8 lg:gap-14">
         {/* Header */}
-        <div class="self-stretch flex flex-col justify-start items-center gap-6">
-          <h2 class="w-full max-w-3xl text-center text-dc-800 text-5xl font-medium leading-tight">
+        <div class="self-stretch flex flex-col justify-start items-center gap-4 sm:gap-5 lg:gap-6">
+          <h2 class="w-full max-w-3xl text-center text-dc-800 text-2xl sm:text-3xl lg:text-5xl font-medium leading-tight">
             {title}
           </h2>
-          <p class="self-stretch text-center text-dc-500 text-lg font-normal leading-relaxed">
+          <p class="self-stretch text-center text-dc-500 text-sm sm:text-base lg:text-lg font-normal leading-relaxed px-4 sm:px-0">
             {subtitle}
           </p>
         </div>

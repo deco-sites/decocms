@@ -24,17 +24,14 @@ export interface Props {
    * @description Configuração do botão principal de demo
    */
   primaryButton: ButtonProps;
-  /**
-   * @title Botão secundário (claro)
-   * @description Configuração do botão de contato
-   */
-  secondaryButton: ButtonProps;
 }
 
 export default function FinalCTA({
   title = "Join our thriving community of AI builders",
-  primaryButton = { text: "Join our Discord community", url: "https://deco.cx/discord" },
-  secondaryButton = { text: "Get started building", url: "#get-started" },
+  primaryButton = {
+    text: "Join our Discord community",
+    url: "https://deco.cx/discord",
+  },
 }: Props) {
   const sectionId = `final-cta-${Math.random().toString(36).substr(2, 9)}`;
 
@@ -62,33 +59,20 @@ export default function FinalCTA({
                   <span class="text-[#D0EC1A] text-base md:text-lg font-medium leading-snug">
                     {primaryButton.text}
                   </span>
-                  <svg 
-                    width="24" 
-                    height="24" 
-                    viewBox="0 0 24 24" 
-                    fill="none" 
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
                     class="text-[#D0EC1A] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"
                   >
-                    <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </a>
-
-                {/* Secondary Button - Light */}
-                <a
-                  href={secondaryButton.url}
-                  class="w-full px-5 py-3 bg-[#FAF9F7] rounded-xl flex justify-between items-center group hover:bg-[#F5F4F0] transition-colors duration-300"
-                >
-                  <span class="text-[#1C1917] text-base md:text-lg font-medium leading-snug">
-                    {secondaryButton.text}
-                  </span>
-                  <svg 
-                    width="24" 
-                    height="24" 
-                    viewBox="0 0 24 24" 
-                    fill="none" 
-                    class="text-[#1C1917] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"
-                  >
-                    <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path
+                      d="M7 17L17 7M17 7H7M17 7V17"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
                   </svg>
                 </a>
               </div>
