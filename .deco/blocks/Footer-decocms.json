@@ -1,0 +1,128 @@
+{
+  "__resolveType": "site/sections/Footer.tsx",
+  "columns": [
+    {
+      "title": "Solutions",
+      "links": [
+        {
+          "text": "AI Agents",
+          "url": "#"
+        },
+        {
+          "text": "Enterprise",
+          "url": "#"
+        },
+        {
+          "text": "Agencies",
+          "url": "#"
+        },
+        {
+          "text": "AI Chatbots",
+          "url": "#"
+        },
+        {
+          "text": "Internal Tools",
+          "url": "#"
+        },
+        {
+          "text": "Whitelabel",
+          "url": "#",
+          "disabled": true
+        }
+      ]
+    },
+    {
+      "title": "Social",
+      "links": [
+        {
+          "text": "LinkedIn",
+          "url": "#"
+        },
+        {
+          "text": "Youtube",
+          "url": "#"
+        },
+        {
+          "text": "Coming Soon",
+          "disabled": true
+        }
+      ]
+    },
+    {
+      "title": "Support",
+      "links": [
+        {
+          "text": "Pricing",
+          "url": "#"
+        },
+        {
+          "text": "Documentation",
+          "url": "#"
+        },
+        {
+          "text": "Tutorials",
+          "url": "#"
+        },
+        {
+          "text": "Status Page",
+          "url": "#"
+        },
+        {
+          "text": "Changelog",
+          "url": "#"
+        }
+      ]
+    },
+    {
+      "title": "Company",
+      "links": [
+        {
+          "text": "Blog",
+          "url": "#"
+        },
+        {
+          "text": "Careers",
+          "url": "#"
+        },
+        {
+          "text": "Afilliate Program",
+          "url": "#"
+        },
+        {
+          "text": "Deco Camp",
+          "url": "#"
+        },
+        {
+          "text": "Security",
+          "url": "#"
+        }
+      ]
+    },
+    {
+      "title": "Legal",
+      "links": [
+        {
+          "text": "Privacy",
+          "url": "#"
+        },
+        {
+          "text": "Terms",
+          "url": "#"
+        },
+        {
+          "text": "SOC 2 Report",
+          "url": "#"
+        },
+        {
+          "text": "OpenAI DPA",
+          "url": "#"
+        },
+        {
+          "text": "Anthropic DPA",
+          "url": "#"
+        }
+      ]
+    }
+  ],
+  "logo": "https://assets.decocache.com/decocms/42ba3cd7-83b9-4cbf-88f2-0c0d4a361851/decologo.png"
+}

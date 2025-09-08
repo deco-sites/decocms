@@ -1,1 +1,51 @@
-{"__resolveType":"site/sections/Footer.tsx"}
+{
+  "__resolveType": "site/sections/Footer.tsx",
+  "columns": [
+    {
+      "links": [
+        {
+          "disabled": false,
+          "text": "Pricing",
+          "url": "/pricing"
+        },
+        {
+          "disabled": false,
+          "text": "Docs",
+          "url": "docs.deco.page"
+        },
+        {
+          "disabled": false,
+          "text": "Community",
+          "url": "decocms.com/discord"
+        },
+        {
+          "disabled": false,
+          "text": "Blog",
+          "url": "/blog"
+        }
+      ],
+      "title": "Company"
+    },
+    {
+      "links": [
+        {
+          "disabled": false,
+          "text": "Linkedin",
+          "url": "https://www.linkedin.com/company/getdeco/"
+        },
+        {
+          "disabled": false,
+          "text": "Instagram",
+          "url": "http://instagram.com/decocms"
+        },
+        {
+          "disabled": false,
+          "text": "Twitter",
+          "url": "https://x.com/deco_cms"
+        }
+      ],
+      "title": "Social"
+    }
+  ],
+  "logo": "https://assets.decocache.com/decocms/42ba3cd7-83b9-4cbf-88f2-0c0d4a361851/decologo.png"
+}

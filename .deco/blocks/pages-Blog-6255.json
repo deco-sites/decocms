@@ -3,10 +3,7 @@
   "path": "/blog",
   "sections": [
     {
-      "__resolveType": "website/sections/Rendering/Lazy.tsx",
-      "section": {
-        "__resolveType": "Header-decocms"
-      }
+      "__resolveType": "Header-decocms"
     },
     {
       "__resolveType": "site/sections/BlogCategories.tsx",
