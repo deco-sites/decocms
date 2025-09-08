@@ -4,10 +4,7 @@
   "path": "/",
   "sections": [
     {
-      "__resolveType": "website/sections/Rendering/Lazy.tsx",
-      "section": {
-        "__resolveType": "Header-decocms"
-      }
+      "__resolveType": "Header-decocms"
     },
     {
       "__resolveType": "site/sections/Hero.tsx",
