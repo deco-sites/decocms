@@ -47,6 +47,9 @@ export default defineApp(async (_req, ctx) => {
         `}
         </style>
 
+        {/* Favicon */}
+        <link rel="icon" type="image/png" href="https://assets.decocache.com/decocms/f33b10a9-b172-47c0-b393-212b21118588/favicon.png" />
+        
         {/* Web Manifest */}
         <link rel="manifest" href={asset("/site.webmanifest")} />
       </Head>
