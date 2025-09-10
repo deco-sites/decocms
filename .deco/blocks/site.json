@@ -27,8 +27,22 @@
     "directives": []
   },
   "__resolveType": "site/apps/site.ts",
-  "firstByteThresholdMS": true,
+  "firstByteThresholdMS": false,
   "theme": {
     "__resolveType": "Neutral"
-  }
+  },
+  "abTesting": {
+    "replaces": [],
+    "includeScriptsToHead": {
+      "includes": []
+    },
+    "includeScriptsToBody": {
+      "includes": []
+    }
+  },
+  "flavor": {
+    "framework": "fresh"
+  },
+  "whilelistURLs": [],
+  "whitelistPatterns": []
 }
