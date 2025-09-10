@@ -90,7 +90,7 @@ export default function FAQ({
                   <div class="w-0.5 h-3.5 left-[11px] top-[5px] absolute bg-[#78716C] transition-transform duration-300 faq-plus-vertical">
                   </div>
                 </div>
-                <div class="max-w-[500px] p-6 bg-[#F5F4F0] rounded-tl-2xl rounded-tr-2xl rounded-bl-2xl flex flex-col justify-center items-start">
+                <div class="w-[500px] p-6 bg-[#F5F4F0] rounded-tl-2xl rounded-tr-2xl rounded-bl-2xl flex flex-col justify-center items-start">
                   <div class="self-stretch text-[#1C1917] text-base md:text-lg lg:text-xl font-medium leading-normal">
                     {item.question}
                   </div>
@@ -110,7 +110,7 @@ export default function FAQ({
                       loading="lazy"
                     />
                   </div>
-                  <div class="max-w-[500px] p-6 bg-[#07401A] rounded-tl-2xl rounded-tr-2xl rounded-br-2xl flex flex-col justify-center items-start">
+                  <div class="w-[500px] p-6 bg-[#07401A] rounded-tl-2xl rounded-tr-2xl rounded-br-2xl flex flex-col justify-center items-start">
                     <div class="self-stretch text-[#D0EC1A] text-base md:text-lg lg:text-xl font-medium leading-normal">
                       {item.answer}
                     </div>
