@@ -1,0 +1,8 @@
+{
+  "name": "collections/blog/authors/bac583e7fae5",
+  "__resolveType": "blog/loaders/Author.ts",
+  "author": {
+    "name": "Leandro Borges",
+    "email": "leandro@decocms.com"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "name": "collections/blog/authors/b0682de5acf3",
+  "__resolveType": "blog/loaders/Author.ts",
+  "author": {
+    "name": "Rafael Crespo",
+    "email": "rafael@decocms.com",
+    "jobTitle": "Co-founder"
+  }
+}
