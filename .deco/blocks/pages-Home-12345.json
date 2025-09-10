@@ -128,8 +128,8 @@
         "Fast Global Edge Deploy",
         "Open & extensible"
       ],
-      "card1Image": "https://assets.decocache.com/decocms/6c2a207b-d06b-4631-9a77-ee87aa33a3a9/dev.png",
-      "card2Image": "https://assets.decocache.com/decocms/6d7bfec7-7965-4be4-86e9-d272d162e51d/llm.png"
+      "card1Image": "https://assets.decocache.com/decocms/6d7bfec7-7965-4be4-86e9-d272d162e51d/llm.png",
+      "card2Image": "https://assets.decocache.com/decocms/6c2a207b-d06b-4631-9a77-ee87aa33a3a9/dev.png"
     },
     {
       "__resolveType": "site/sections/FAQ.tsx",
