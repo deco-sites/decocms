@@ -166,6 +166,7 @@ export default function BlogPost({ page }: Props) {
         <div className="flex-1 max-w-full md:max-w-[700px] flex flex-col justify-start items-start">
           <div
             className={CONTENT_STYLES}
+            id="blog-post-content"
             dangerouslySetInnerHTML={{
               __html: content.replaceAll("<p>&lt;iframe", "<iframe ").replaceAll("&lt;/iframe&gt;</p>", " </iframe>").replaceAll("allowfullscreen&gt;", "allowfullscreen>") || "",
             }}

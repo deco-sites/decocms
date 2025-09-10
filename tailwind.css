@@ -69,3 +69,8 @@
     display: none;
   }
 }
+
+#blog-post-content p span {
+  color: inherit !important;
+  font-size: inherit !important;
+}
