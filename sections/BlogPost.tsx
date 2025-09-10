@@ -167,7 +167,7 @@ export default function BlogPost({ page }: Props) {
           <div
             className={CONTENT_STYLES}
             dangerouslySetInnerHTML={{
-              __html: content.replace("<p>&lt;iframe", "<iframe") || "",
+              __html: content.replaceAll("<p>&lt;iframe", "<iframe ").replaceAll("&lt;/iframe&gt;</p>", " </iframe>").replaceAll("allowfullscreen&gt;", "allowfullscreen>") || "",
             }}
           />
         </div>
