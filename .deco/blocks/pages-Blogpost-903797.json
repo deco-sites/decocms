@@ -6,22 +6,20 @@
       "__resolveType": "Header-decocms"
     },
     {
-      "__resolveType": "website/sections/Rendering/Lazy.tsx",
-      "section": {
-        "__resolveType": "site/sections/BlogPost.tsx",
-        "page": {
-          "__resolveType": "blog/loaders/BlogPostPage.ts",
-          "slug": {
-            "__resolveType": "website/functions/requestToParam.ts",
-            "param": "slug"
-          }
+      "__resolveType": "site/sections/BlogPost.tsx",
+      "page": {
+        "__resolveType": "blog/loaders/BlogPostPage.ts",
+        "slug": {
+          "__resolveType": "website/functions/requestToParam.ts",
+          "param": "slug"
         }
       }
     },
     {
       "__resolveType": "website/sections/Rendering/Lazy.tsx",
       "section": {
-        "__resolveType": "site/sections/RelatedBlogPosts.tsx"
+        "__resolveType": "site/sections/RelatedBlogPosts.tsx",
+        "posts": null
       }
     },
     {
