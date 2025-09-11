@@ -1,0 +1,398 @@
+{
+  "name": "Partners",
+  "path": "/partners",
+  "sections": [
+    {
+      "__resolveType": "site/sections/PartnersHero.tsx",
+      "title": "Become a Deco Partner",
+      "subtitle": "Co‑sell and co‑build AI‑native experiences on Deco — the open‑source runtime and Context CMS for agents, workflows, and storefronts.",
+      "primaryButtonText": "Start application",
+      "primaryButtonUrl": "/partners/apply",
+      "secondaryButtonText": "Book a 20‑min intro",
+      "secondaryButtonUrl": "/partners/intro-call",
+      "tertiaryButtonText": "Explore tiers & benefits",
+      "tertiaryButtonUrl": "/partners",
+      "partnerLogos": [],
+      "showPartnerLogos": false
+    },
+    {
+      "__resolveType": "site/sections/CustomerLogos.tsx",
+      "title": "Who's Already Building with deco CMS",
+      "subtitle": "Trusted by teams shipping AI‑native experiences. Replace placeholders with approved customer logos.",
+      "customerLogos": [
+        {
+          "logo": "https://placehold.co/120x60/E5E5E5/999999?text=Customer+1",
+          "name": "Customer 1"
+        },
+        {
+          "logo": "https://placehold.co/120x60/E5E5E5/999999?text=Customer+2",
+          "name": "Customer 2"
+        },
+        {
+          "logo": "https://placehold.co/120x60/E5E5E5/999999?text=Customer+3",
+          "name": "Customer 3"
+        },
+        {
+          "logo": "https://placehold.co/120x60/E5E5E5/999999?text=Customer+4",
+          "name": "Customer 4"
+        },
+        {
+          "logo": "https://placehold.co/120x60/E5E5E5/999999?text=Customer+5",
+          "name": "Customer 5"
+        },
+        {
+          "logo": "https://placehold.co/120x60/E5E5E5/999999?text=Customer+6",
+          "name": "Customer 6"
+        }
+      ]
+    },
+    {
+      "__resolveType": "site/sections/PartnerBenefits.tsx",
+      "title": "Why join",
+      "benefits": [
+        {
+          "title": "Win deals faster",
+          "description": "with ready‑to‑ship blueprints (agents, workflows, storefronts)."
+        },
+        {
+          "title": "Operate with confidence",
+          "description": "via observability, cost caps, RBAC, and governance."
+        },
+        {
+          "title": "Monetize your way:",
+          "description": "referral, reseller discount, services, and ISV template revenue share."
+        },
+        {
+          "title": "Grow with us:",
+          "description": "directory placement, co‑marketing/MDF, roadmap briefings, advisory council."
+        },
+        {
+          "title": "Level up your team:",
+          "description": "structured certifications + Partner Starter Kit (scripts, prompts, checklists)."
+        }
+      ]
+    },
+    {
+      "__resolveType": "site/sections/WhoShouldApply.tsx",
+      "title": "Who should apply",
+      "partnerTypes": [
+        {
+          "title": "Agentic SIs/Agencies",
+          "description": "building AI workflows, agents, or AI‑friendly storefronts."
+        },
+        {
+          "title": "ISVs/Co‑builders",
+          "description": "publishing connectors, MCPs, blueprints, or templates."
+        },
+        {
+          "title": "Technology partners",
+          "description": "(cloud, data, observability, LLMs) integrating with Deco."
+        },
+        {
+          "title": "Training partners",
+          "description": "creating courses, bootcamps, or certifications."
+        }
+      ],
+      "readinessTitle": "Minimum readiness:",
+      "requirements": [
+        {
+          "text": "1+ public or private AI build or a capable team ready to deliver with guidance."
+        },
+        {
+          "text": "Commitment to at least one reference build in the first 60 days."
+        },
+        {
+          "text": "Named partner lead for delivery and GTM."
+        }
+      ]
+    },
+    {
+      "__resolveType": "site/sections/PartnerHighlights.tsx",
+      "title": "What you get (highlights)",
+      "highlights": [
+        {
+          "title": "Sandbox credits:",
+          "description": "US$500 per practitioner, renewable with activity."
+        },
+        {
+          "title": "Leads & co‑sell:",
+          "description": "for Certified+ based on fit, capacity, and vertical expertise."
+        },
+        {
+          "title": "Directory listing:",
+          "description": "appear in Find a Partner with badges and case studies."
+        },
+        {
+          "title": "MDF:",
+          "description": "50/50 co‑marketing funds for Certified+ with shared KPIs."
+        },
+        {
+          "title": "Certifications:",
+          "description": "DAS‑I, DCS, DIA + renewal path."
+        },
+        {
+          "title": "Support SLAs:",
+          "description": "Triage <4h; P1 bridge <1h (Premier+)."
+        }
+      ],
+      "targetTimeNote": "Target time‑to‑first‑launch: < 7 days from sandbox access."
+    },
+    {
+      "__resolveType": "site/sections/ProgramSteps.tsx",
+      "title": "How the program works (3 steps)",
+      "steps": [
+        {
+          "number": "1",
+          "title": "Apply",
+          "description": "tell us your focus, stacks, and preferred monetization."
+        },
+        {
+          "number": "2",
+          "title": "Enable",
+          "description": "get sandbox credits, Starter Kit, and certification schedule."
+        },
+        {
+          "number": "3",
+          "title": "Go‑to‑market",
+          "description": "register deals, request MDF, and publish case studies."
+        }
+      ],
+      "tipText": "Not sure where to start? Join a 20‑min intro call",
+      "tipCtaText": "Book intro call",
+      "tipCtaUrl": "/partners/intro-call"
+    },
+    {
+      "__resolveType": "site/sections/PartnerTiers.tsx",
+      "title": "Tiers (snapshot)",
+      "tiers": [
+        {
+          "name": "Registered",
+          "benefits": "Deal reg, newsletter, $500 credits",
+          "requirements": "Application + 1 case plan"
+        },
+        {
+          "name": "Certified",
+          "benefits": "Directory listing, co‑marketing, lead share",
+          "requirements": "2 certified + 1 public demo"
+        },
+        {
+          "name": "Premier",
+          "benefits": "Priority leads, roadmap, MDF, early betas",
+          "requirements": "$50k+ ARR or 3 launches/qtr + 4 cert"
+        },
+        {
+          "name": "Elite",
+          "benefits": "Co‑sell squad, advisory council, preferred margin",
+          "requirements": "$200k+ ARR or 12/yr + 8 cert"
+        }
+      ],
+      "fullDetailsNote": "See full details on",
+      "fullDetailsUrl": "/partners"
+    },
+    {
+      "__resolveType": "site/sections/ApplicationForm.tsx",
+      "title": "Application (fields)",
+      "formFields": [
+        {
+          "label": "Company name",
+          "type": "text",
+          "name": "company_name",
+          "required": true,
+          "placeholder": "Your company name"
+        },
+        {
+          "label": "Company website",
+          "type": "text",
+          "name": "company_website",
+          "required": true,
+          "placeholder": "https://yourcompany.com"
+        },
+        {
+          "label": "HQ country",
+          "type": "text",
+          "name": "hq_country",
+          "required": true,
+          "placeholder": "United States"
+        },
+        {
+          "label": "Partner type",
+          "type": "select",
+          "name": "partner_type",
+          "required": true,
+          "options": [
+            "SI/Agency",
+            "ISV",
+            "Tech",
+            "Training"
+          ]
+        },
+        {
+          "label": "Headcount",
+          "type": "text",
+          "name": "headcount",
+          "required": true,
+          "placeholder": "e.g., 10-50"
+        },
+        {
+          "label": "# AI practitioners",
+          "type": "text",
+          "name": "ai_practitioners",
+          "required": true,
+          "placeholder": "e.g., 5"
+        },
+        {
+          "label": "Stacks",
+          "type": "textarea",
+          "name": "stacks",
+          "required": true,
+          "placeholder": "HubSpot, WhatsApp, AWS/Azure/GCP, Snowflake/BigQuery, etc."
+        },
+        {
+          "label": "Focus verticals & geos",
+          "type": "textarea",
+          "name": "focus_verticals",
+          "required": true,
+          "placeholder": "E-commerce, Healthcare, North America, Europe, etc."
+        },
+        {
+          "label": "References (2 links) or public work",
+          "type": "textarea",
+          "name": "references",
+          "required": true,
+          "placeholder": "Link 1: https://...\nLink 2: https://..."
+        },
+        {
+          "label": "Preferred monetization",
+          "type": "select",
+          "name": "monetization",
+          "required": true,
+          "options": [
+            "Referral",
+            "Reseller",
+            "Services",
+            "ISV"
+          ]
+        },
+        {
+          "label": "Primary contact name",
+          "type": "text",
+          "name": "contact_name",
+          "required": true,
+          "placeholder": "John Doe"
+        },
+        {
+          "label": "Primary contact email",
+          "type": "email",
+          "name": "contact_email",
+          "required": true,
+          "placeholder": "john@company.com"
+        },
+        {
+          "label": "WhatsApp number",
+          "type": "text",
+          "name": "whatsapp",
+          "placeholder": "+1234567890"
+        },
+        {
+          "label": "Why Deco?",
+          "type": "textarea",
+          "name": "why_deco",
+          "required": true,
+          "placeholder": "Tell us why you want to partner with Deco (short paragraph)"
+        },
+        {
+          "label": "I agree to the Terms & Conditions",
+          "type": "checkbox",
+          "name": "agree_terms",
+          "required": true
+        }
+      ],
+      "submitButtonText": "Start application",
+      "formActionUrl": "/partners/apply"
+    },
+    {
+      "__resolveType": "site/sections/ApplicationProcess.tsx",
+      "title": "What happens after you apply",
+      "processSteps": [
+        {
+          "description": "Auto‑acknowledgment within 1 hour."
+        },
+        {
+          "description": "Decision within 2 business days."
+        },
+        {
+          "description": "If approved: sandbox access + Starter Kit + certification invite."
+        },
+        {
+          "description": "If waitlisted: suggested steps to qualify (e.g., blueprint completion, cohort date)."
+        }
+      ]
+    },
+    {
+      "__resolveType": "site/sections/PartnersFAQ.tsx",
+      "title": "FAQs",
+      "faqItems": [
+        {
+          "question": "Do you provide customer leads?",
+          "answer": "Yes for Certified+ based on region, vertical fit, and bandwidth."
+        },
+        {
+          "question": "Can we resell Deco?",
+          "answer": "Yes; discount by tier. L1 support by partner; Deco covers L2+."
+        },
+        {
+          "question": "How do deal conflicts work?",
+          "answer": "Register deals for a 120‑day protection window (+60 with activity). Multi‑partner only with client consent or segmented scope."
+        },
+        {
+          "question": "How do certifications work?",
+          "answer": "Tracks: DAS‑I, DCS, DIA. Badges expire in 18 months; maintain via launches + CPE or re‑test."
+        },
+        {
+          "question": "Where can we see pricing?",
+          "answer": "Program benefits & tiers: /partners. Product pricing is handled per customer or via your reseller terms."
+        },
+        {
+          "question": "Data privacy & deployment?",
+          "answer": "Projects run with RBAC and cost caps. Deploy to VPC or on‑prem as needed."
+        }
+      ]
+    },
+    {
+      "__resolveType": "site/sections/LightTerms.tsx",
+      "title": "Light T&Cs (summary)",
+      "terms": [
+        {
+          "title": "Referral payouts",
+          "description": "within 30 days of Deco receiving first payment; cap at 12 months unless reseller."
+        },
+        {
+          "title": "Reseller",
+          "description": "bills end‑customer; Deco bills partner; service/support split: L1 (partner) / L2+ (Deco)."
+        },
+        {
+          "title": "IP:",
+          "description": "pre‑existing stays with owner; new code defaults Apache‑2.0 (or agreed license)."
+        },
+        {
+          "title": "Brand usage:",
+          "description": "follow Deco brand guide; badges by tier/cert."
+        }
+      ],
+      "footerNote": "Full legal available during onboarding."
+    },
+    {
+      "__resolveType": "site/sections/PartnersFinalCTA.tsx",
+      "title": "Ready to build together?",
+      "subtitle": "Start your application now or grab time for a quick intro.",
+      "primaryButton": {
+        "text": "Apply now",
+        "url": "/partners/apply"
+      },
+      "secondaryButton": {
+        "text": "Book an intro",
+        "url": "/partners/intro-call"
+      }
+    }
+  ]
+}
