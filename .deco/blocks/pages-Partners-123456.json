@@ -8,15 +8,23 @@
     {
       "__resolveType": "site/sections/PartnersHero.tsx",
       "title": "Become a deco partner",
-      "subtitle": "Build and sell Agentic Software on deco: the open‑source runtime and Context CMS for agents, workflows, and storefronts.",
       "primaryButtonText": "Start application",
       "primaryButtonUrl": "https://form.typeform.com/to/jZbe1R71",
       "secondaryButtonText": "Book a 20‑min intro",
       "secondaryButtonUrl": "https://form.typeform.com/to/LxKZbN9N",
       "tertiaryButtonText": "Explore tiers & benefits",
       "tertiaryButtonUrl": "/partners",
-      "partnerLogos": [],
-      "showPartnerLogos": false
+      "partnerLogos": [
+        "https://assets.decocache.com/decocms/452b8f22-f11e-4b6f-8934-2e58419ea705/integration-1.png",
+        "https://placehold.co/120x60/E5E5E5/999999?text=Partner+1",
+        "https://placehold.co/120x60/E5E5E5/999999?text=Partner+2",
+        "https://placehold.co/120x60/E5E5E5/999999?text=Partner+3",
+        "https://placehold.co/120x60/E5E5E5/999999?text=Partner+4",
+        "https://placehold.co/120x60/E5E5E5/999999?text=Partner+5"
+      ],
+      "showPartnerLogos": true,
+      "heroImage": "https://assets.decocache.com/decocms/2975f268-c120-4492-beb2-5a7393bcd256/lnjaine_create_something_that_relates_to_ecosystem_with_green_f8ab4c95-60a7-4d1e-87cf-3e5e55bae5f2_2.png",
+      "heroImageAlt": "Deco Partner Program - Build the Future Together"
     },
     {
       "__resolveType": "site/sections/CustomerLogos.tsx",
