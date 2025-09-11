@@ -10,8 +10,8 @@
     },
     {
       "__resolveType": "site/sections/PartnersHero.tsx",
-      "title": "Become a ceco Partner",
-      "subtitle": "Co‑sell and co‑build AI‑native experiences on Deco — the open‑source runtime and Context CMS for agents, workflows, and storefronts.",
+      "title": "Become a deco partner",
+      "subtitle": "Build and sell Agentic Software on deco: the open‑source runtime and Context CMS for agents, workflows, and storefronts.",
       "primaryButtonText": "Start application",
       "primaryButtonUrl": "/partners/apply",
       "secondaryButtonText": "Book a 20‑min intro",
