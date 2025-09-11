@@ -3685,9 +3685,6 @@ input.tab:checked + .tab-content,
 .gap-2\.5 {
   gap: 0.625rem;
 }
-.gap-20 {
-  gap: 5rem;
-}
 .gap-3 {
   gap: 0.75rem;
 }
@@ -3747,6 +3744,9 @@ input.tab:checked + .tab-content,
 .overflow-ellipsis {
   text-overflow: ellipsis;
 }
+.hyphens-auto {
+  hyphens: auto;
+}
 .whitespace-nowrap {
   white-space: nowrap;
 }
@@ -3773,9 +3773,6 @@ input.tab:checked + .tab-content,
 }
 .rounded-\[24px\] {
   border-radius: 24px;
-}
-.rounded-\[32px\] {
-  border-radius: 32px;
 }
 .rounded-\[3px\] {
   border-radius: 3px;
@@ -6724,6 +6721,9 @@ input.tab:checked + .tab-content,
 .pt-1 {
   padding-top: 0.25rem;
 }
+.pt-12 {
+  padding-top: 3rem;
+}
 .pt-16 {
   padding-top: 4rem;
 }
@@ -8132,8 +8132,49 @@ input.tab:checked + .tab-content,
   font-size: inherit !important;
 }
 
-@media (min-width: 768px) {
+/* Additional responsive styles for blog content */
+#blog-post-content {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
 
+#blog-post-content * {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+#blog-post-content pre {
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+#blog-post-content code {
+  word-break: break-all;
+}
+
+#blog-post-content table {
+  width: 100%;
+  overflow-x: auto;
+  display: block;
+  white-space: nowrap;
+}
+
+@media (min-width: 768px) {
+  #blog-post-content pre {
+    white-space: pre;
+    word-break: normal;
+  }
+  
+  #blog-post-content code {
+    word-break: normal;
+  }
+  
+  #blog-post-content table {
+    display: table;
+    white-space: normal;
+  }
+  
   .md\:btn-sm {
     height: 2rem;
     min-height: 2rem;
@@ -8141,13 +8182,13 @@ input.tab:checked + .tab-content,
     padding-right: 0.75rem;
     font-size: 0.875rem;
   }
-
+  
   .btn-square:where(.md\:btn-sm) {
     height: 2rem;
     width: 2rem;
     padding: 0px;
   }
-
+  
   .btn-circle:where(.md\:btn-sm) {
     height: 2rem;
     width: 2rem;
@@ -9946,6 +9987,10 @@ input.tab:checked + .tab-content,
     gap: 3.5rem;
   }
 
+  .md\:gap-16 {
+    gap: 4rem;
+  }
+
   .md\:gap-20 {
     gap: 5rem;
   }
@@ -9960,6 +10005,14 @@ input.tab:checked + .tab-content,
 
   .md\:gap-6 {
     gap: 1.5rem;
+  }
+
+  .md\:gap-8 {
+    gap: 2rem;
+  }
+
+  .md\:rounded-\[32px\] {
+    border-radius: 32px;
   }
 
   .md\:rounded-\[40px\] {
@@ -9977,6 +10030,11 @@ input.tab:checked + .tab-content,
   .md\:px-16 {
     padding-left: 4rem;
     padding-right: 4rem;
+  }
+
+  .md\:px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   .md\:px-6 {
@@ -10021,6 +10079,14 @@ input.tab:checked + .tab-content,
 
   .md\:pb-12 {
     padding-bottom: 3rem;
+  }
+
+  .md\:pb-6 {
+    padding-bottom: 1.5rem;
+  }
+
+  .md\:pt-16 {
+    padding-top: 4rem;
   }
 
   .md\:pt-40 {
@@ -10235,6 +10301,10 @@ input.tab:checked + .tab-content,
     gap: 4rem;
   }
 
+  .lg\:gap-20 {
+    gap: 5rem;
+  }
+
   .lg\:gap-3 {
     gap: 0.75rem;
   }
@@ -10423,9 +10493,13 @@ input.tab:checked + .tab-content,
   }
 }
 
-.\[\&\>blockquote\]\:my-6>blockquote {
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
+.\[\&\>blockquote\]\:my-4>blockquote {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.\[\&\>blockquote\]\:break-words>blockquote {
+  overflow-wrap: break-word;
 }
 
 .\[\&\>blockquote\]\:border-l-2>blockquote {
@@ -10437,13 +10511,13 @@ input.tab:checked + .tab-content,
   border-color: rgb(214 211 209 / var(--tw-border-opacity));
 }
 
-.\[\&\>blockquote\]\:pl-6>blockquote {
-  padding-left: 1.5rem;
+.\[\&\>blockquote\]\:pl-4>blockquote {
+  padding-left: 1rem;
 }
 
-.\[\&\>blockquote\]\:text-xl>blockquote {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
+.\[\&\>blockquote\]\:text-base>blockquote {
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 
 .\[\&\>blockquote\]\:italic>blockquote {
@@ -10455,6 +10529,31 @@ input.tab:checked + .tab-content,
   color: rgb(86 82 78 / var(--tw-text-opacity));
 }
 
+@media (min-width: 768px) {
+
+  .\[\&\>blockquote\]\:md\:my-6>blockquote {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .\[\&\>blockquote\]\:md\:pl-6>blockquote {
+    padding-left: 1.5rem;
+  }
+
+  .\[\&\>blockquote\]\:md\:text-lg>blockquote {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+}
+
+@media (min-width: 1024px) {
+
+  .\[\&\>blockquote\]\:lg\:text-xl>blockquote {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+}
+
 .\[\&\>code\]\:block>code {
   display: block;
 }
@@ -10463,18 +10562,34 @@ input.tab:checked + .tab-content,
   width: 100%;
 }
 
-.\[\&\>h1\]\:my-10>h1 {
-  margin-top: 2.5rem;
-  margin-bottom: 2.5rem;
+.\[\&\>code\]\:break-all>code {
+  word-break: break-all;
+}
+
+@media (min-width: 768px) {
+
+  .\[\&\>code\]\:md\:break-normal>code {
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+}
+
+.\[\&\>h1\]\:my-6>h1 {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.\[\&\>h1\]\:break-words>h1 {
+  overflow-wrap: break-word;
 }
 
 .\[\&\>h1\]\:font-sans>h1 {
   font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI Variable Display, Segoe UI, Helvetica, Apple Color Emoji, Arial, sans-serif, Segoe UI Emoji, Segoe UI Symbol;
 }
 
-.\[\&\>h1\]\:text-4xl>h1 {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
+.\[\&\>h1\]\:text-2xl>h1 {
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 
 .\[\&\>h1\]\:font-semibold>h1 {
@@ -10490,29 +10605,59 @@ input.tab:checked + .tab-content,
   color: rgb(40 37 36 / var(--tw-text-opacity));
 }
 
-.\[\&\>h2\]\:mb-6>h2 {
-  margin-bottom: 1.5rem;
+@media (min-width: 768px) {
+
+  .\[\&\>h1\]\:md\:my-8>h1 {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .\[\&\>h1\]\:md\:text-3xl>h1 {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
 }
 
-.\[\&\>h2\]\:mt-10>h2 {
-  margin-top: 2.5rem;
+@media (min-width: 1024px) {
+
+  .\[\&\>h1\]\:lg\:my-10>h1 {
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .\[\&\>h1\]\:lg\:text-4xl>h1 {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+}
+
+.\[\&\>h2\]\:mb-4>h2 {
+  margin-bottom: 1rem;
+}
+
+.\[\&\>h2\]\:mt-8>h2 {
+  margin-top: 2rem;
+}
+
+.\[\&\>h2\]\:break-words>h2 {
+  overflow-wrap: break-word;
 }
 
 .\[\&\>h2\]\:font-sans>h2 {
   font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI Variable Display, Segoe UI, Helvetica, Apple Color Emoji, Arial, sans-serif, Segoe UI Emoji, Segoe UI Symbol;
 }
 
-.\[\&\>h2\]\:text-3xl>h2 {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
+.\[\&\>h2\]\:text-xl>h2 {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
 }
 
 .\[\&\>h2\]\:font-semibold>h2 {
   font-weight: 600;
 }
 
-.\[\&\>h2\]\:leading-10>h2 {
-  line-height: 2.5rem;
+.\[\&\>h2\]\:leading-tight>h2 {
+  line-height: 1.25;
 }
 
 .\[\&\>h2\]\:text-dc-800>h2 {
@@ -10520,29 +10665,61 @@ input.tab:checked + .tab-content,
   color: rgb(40 37 36 / var(--tw-text-opacity));
 }
 
-.\[\&\>h3\]\:mb-4>h3 {
-  margin-bottom: 1rem;
+@media (min-width: 768px) {
+
+  .\[\&\>h2\]\:md\:mb-6>h2 {
+    margin-bottom: 1.5rem;
+  }
+
+  .\[\&\>h2\]\:md\:mt-10>h2 {
+    margin-top: 2.5rem;
+  }
+
+  .\[\&\>h2\]\:md\:text-2xl>h2 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .\[\&\>h2\]\:md\:leading-10>h2 {
+    line-height: 2.5rem;
+  }
 }
 
-.\[\&\>h3\]\:mt-10>h3 {
-  margin-top: 2.5rem;
+@media (min-width: 1024px) {
+
+  .\[\&\>h2\]\:lg\:text-3xl>h2 {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+}
+
+.\[\&\>h3\]\:mb-3>h3 {
+  margin-bottom: 0.75rem;
+}
+
+.\[\&\>h3\]\:mt-6>h3 {
+  margin-top: 1.5rem;
+}
+
+.\[\&\>h3\]\:break-words>h3 {
+  overflow-wrap: break-word;
 }
 
 .\[\&\>h3\]\:font-sans>h3 {
   font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI Variable Display, Segoe UI, Helvetica, Apple Color Emoji, Arial, sans-serif, Segoe UI Emoji, Segoe UI Symbol;
 }
 
-.\[\&\>h3\]\:text-2xl>h3 {
-  font-size: 1.5rem;
-  line-height: 2rem;
+.\[\&\>h3\]\:text-lg>h3 {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
 }
 
 .\[\&\>h3\]\:font-semibold>h3 {
   font-weight: 600;
 }
 
-.\[\&\>h3\]\:leading-7>h3 {
-  line-height: 1.75rem;
+.\[\&\>h3\]\:leading-tight>h3 {
+  line-height: 1.25;
 }
 
 .\[\&\>h3\]\:text-dc-800>h3 {
@@ -10550,29 +10727,65 @@ input.tab:checked + .tab-content,
   color: rgb(40 37 36 / var(--tw-text-opacity));
 }
 
-.\[\&\>h4\]\:mb-4>h4 {
-  margin-bottom: 1rem;
+@media (min-width: 768px) {
+
+  .\[\&\>h3\]\:md\:mb-4>h3 {
+    margin-bottom: 1rem;
+  }
+
+  .\[\&\>h3\]\:md\:mt-8>h3 {
+    margin-top: 2rem;
+  }
+
+  .\[\&\>h3\]\:md\:text-xl>h3 {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  .\[\&\>h3\]\:md\:leading-7>h3 {
+    line-height: 1.75rem;
+  }
 }
 
-.\[\&\>h4\]\:mt-8>h4 {
-  margin-top: 2rem;
+@media (min-width: 1024px) {
+
+  .\[\&\>h3\]\:lg\:mt-10>h3 {
+    margin-top: 2.5rem;
+  }
+
+  .\[\&\>h3\]\:lg\:text-2xl>h3 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+.\[\&\>h4\]\:mb-3>h4 {
+  margin-bottom: 0.75rem;
+}
+
+.\[\&\>h4\]\:mt-6>h4 {
+  margin-top: 1.5rem;
+}
+
+.\[\&\>h4\]\:break-words>h4 {
+  overflow-wrap: break-word;
 }
 
 .\[\&\>h4\]\:font-sans>h4 {
   font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI Variable Display, Segoe UI, Helvetica, Apple Color Emoji, Arial, sans-serif, Segoe UI Emoji, Segoe UI Symbol;
 }
 
-.\[\&\>h4\]\:text-xl>h4 {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
+.\[\&\>h4\]\:text-base>h4 {
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 
 .\[\&\>h4\]\:font-semibold>h4 {
   font-weight: 600;
 }
 
-.\[\&\>h4\]\:leading-7>h4 {
-  line-height: 1.75rem;
+.\[\&\>h4\]\:leading-tight>h4 {
+  line-height: 1.25;
 }
 
 .\[\&\>h4\]\:text-dc-800>h4 {
@@ -10580,21 +10793,53 @@ input.tab:checked + .tab-content,
   color: rgb(40 37 36 / var(--tw-text-opacity));
 }
 
-.\[\&\>h5\]\:mb-3>h5 {
-  margin-bottom: 0.75rem;
+@media (min-width: 768px) {
+
+  .\[\&\>h4\]\:md\:mb-4>h4 {
+    margin-bottom: 1rem;
+  }
+
+  .\[\&\>h4\]\:md\:mt-8>h4 {
+    margin-top: 2rem;
+  }
+
+  .\[\&\>h4\]\:md\:text-lg>h4 {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  .\[\&\>h4\]\:md\:leading-7>h4 {
+    line-height: 1.75rem;
+  }
 }
 
-.\[\&\>h5\]\:mt-6>h5 {
-  margin-top: 1.5rem;
+@media (min-width: 1024px) {
+
+  .\[\&\>h4\]\:lg\:text-xl>h4 {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+}
+
+.\[\&\>h5\]\:mb-2>h5 {
+  margin-bottom: 0.5rem;
+}
+
+.\[\&\>h5\]\:mt-4>h5 {
+  margin-top: 1rem;
+}
+
+.\[\&\>h5\]\:break-words>h5 {
+  overflow-wrap: break-word;
 }
 
 .\[\&\>h5\]\:font-sans>h5 {
   font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI Variable Display, Segoe UI, Helvetica, Apple Color Emoji, Arial, sans-serif, Segoe UI Emoji, Segoe UI Symbol;
 }
 
-.\[\&\>h5\]\:text-lg>h5 {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
+.\[\&\>h5\]\:text-sm>h5 {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 
 .\[\&\>h5\]\:font-semibold>h5 {
@@ -10610,21 +10855,49 @@ input.tab:checked + .tab-content,
   color: rgb(40 37 36 / var(--tw-text-opacity));
 }
 
-.\[\&\>h6\]\:mb-3>h6 {
-  margin-bottom: 0.75rem;
+@media (min-width: 768px) {
+
+  .\[\&\>h5\]\:md\:mb-3>h5 {
+    margin-bottom: 0.75rem;
+  }
+
+  .\[\&\>h5\]\:md\:mt-6>h5 {
+    margin-top: 1.5rem;
+  }
+
+  .\[\&\>h5\]\:md\:text-base>h5 {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
 }
 
-.\[\&\>h6\]\:mt-6>h6 {
-  margin-top: 1.5rem;
+@media (min-width: 1024px) {
+
+  .\[\&\>h5\]\:lg\:text-lg>h5 {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+}
+
+.\[\&\>h6\]\:mb-2>h6 {
+  margin-bottom: 0.5rem;
+}
+
+.\[\&\>h6\]\:mt-4>h6 {
+  margin-top: 1rem;
+}
+
+.\[\&\>h6\]\:break-words>h6 {
+  overflow-wrap: break-word;
 }
 
 .\[\&\>h6\]\:font-sans>h6 {
   font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI Variable Display, Segoe UI, Helvetica, Apple Color Emoji, Arial, sans-serif, Segoe UI Emoji, Segoe UI Symbol;
 }
 
-.\[\&\>h6\]\:text-base>h6 {
-  font-size: 1rem;
-  line-height: 1.5rem;
+.\[\&\>h6\]\:text-sm>h6 {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 
 .\[\&\>h6\]\:font-semibold>h6 {
@@ -10640,33 +10913,53 @@ input.tab:checked + .tab-content,
   color: rgb(40 37 36 / var(--tw-text-opacity));
 }
 
-.\[\&\>ol\]\:mb-6>ol {
-  margin-bottom: 1.5rem;
+@media (min-width: 768px) {
+
+  .\[\&\>h6\]\:md\:mb-3>h6 {
+    margin-bottom: 0.75rem;
+  }
+
+  .\[\&\>h6\]\:md\:mt-6>h6 {
+    margin-top: 1.5rem;
+  }
+
+  .\[\&\>h6\]\:md\:text-base>h6 {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+}
+
+.\[\&\>ol\]\:mb-4>ol {
+  margin-bottom: 1rem;
 }
 
 .\[\&\>ol\]\:list-decimal>ol {
   list-style-type: decimal;
 }
 
-.\[\&\>ol\]\:pl-6>ol {
-  padding-left: 1.5rem;
+.\[\&\>ol\]\:break-words>ol {
+  overflow-wrap: break-word;
+}
+
+.\[\&\>ol\]\:pl-4>ol {
+  padding-left: 1rem;
 }
 
 .\[\&\>ol\]\:font-sans>ol {
   font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI Variable Display, Segoe UI, Helvetica, Apple Color Emoji, Arial, sans-serif, Segoe UI Emoji, Segoe UI Symbol;
 }
 
-.\[\&\>ol\]\:text-xl>ol {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
+.\[\&\>ol\]\:text-base>ol {
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 
 .\[\&\>ol\]\:font-medium>ol {
   font-weight: 500;
 }
 
-.\[\&\>ol\]\:leading-loose>ol {
-  line-height: 2;
+.\[\&\>ol\]\:leading-relaxed>ol {
+  line-height: 1.625;
 }
 
 .\[\&\>ol\]\:text-dc-600>ol {
@@ -10674,8 +10967,44 @@ input.tab:checked + .tab-content,
   color: rgb(86 82 78 / var(--tw-text-opacity));
 }
 
+@media (min-width: 768px) {
+
+  .\[\&\>ol\]\:md\:mb-6>ol {
+    margin-bottom: 1.5rem;
+  }
+
+  .\[\&\>ol\]\:md\:pl-6>ol {
+    padding-left: 1.5rem;
+  }
+
+  .\[\&\>ol\]\:md\:text-lg>ol {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  .\[\&\>ol\]\:md\:leading-loose>ol {
+    line-height: 2;
+  }
+}
+
+@media (min-width: 1024px) {
+
+  .\[\&\>ol\]\:lg\:text-xl>ol {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+}
+
+.\[\&\>pre\]\:max-w-full>pre {
+  max-width: 100%;
+}
+
 .\[\&\>pre\]\:overflow-x-auto>pre {
   overflow-x: auto;
+}
+
+.\[\&\>pre\]\:whitespace-pre-wrap>pre {
+  white-space: pre-wrap;
 }
 
 .\[\&\>pre\]\:rounded-md>pre {
@@ -10691,17 +11020,17 @@ input.tab:checked + .tab-content,
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
 }
 
-.\[\&\>pre\]\:p-4>pre {
-  padding: 1rem;
+.\[\&\>pre\]\:p-3>pre {
+  padding: 0.75rem;
 }
 
 .\[\&\>pre\]\:font-mono>pre {
   font-family: CommitMono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, monospace;
 }
 
-.\[\&\>pre\]\:text-sm>pre {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
+.\[\&\>pre\]\:text-xs>pre {
+  font-size: 0.75rem;
+  line-height: 1rem;
 }
 
 .\[\&\>pre\]\:text-gray-800>pre {
@@ -10709,33 +11038,53 @@ input.tab:checked + .tab-content,
   color: rgb(31 41 55 / var(--tw-text-opacity));
 }
 
-.\[\&\>ul\]\:mb-6>ul {
-  margin-bottom: 1.5rem;
+@media (min-width: 768px) {
+
+  .\[\&\>pre\]\:md\:whitespace-pre>pre {
+    white-space: pre;
+  }
+
+  .\[\&\>pre\]\:md\:p-4>pre {
+    padding: 1rem;
+  }
+
+  .\[\&\>pre\]\:md\:text-sm>pre {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+}
+
+.\[\&\>ul\]\:mb-4>ul {
+  margin-bottom: 1rem;
 }
 
 .\[\&\>ul\]\:list-disc>ul {
   list-style-type: disc;
 }
 
-.\[\&\>ul\]\:pl-6>ul {
-  padding-left: 1.5rem;
+.\[\&\>ul\]\:break-words>ul {
+  overflow-wrap: break-word;
+}
+
+.\[\&\>ul\]\:pl-4>ul {
+  padding-left: 1rem;
 }
 
 .\[\&\>ul\]\:font-sans>ul {
   font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI Variable Display, Segoe UI, Helvetica, Apple Color Emoji, Arial, sans-serif, Segoe UI Emoji, Segoe UI Symbol;
 }
 
-.\[\&\>ul\]\:text-xl>ul {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
+.\[\&\>ul\]\:text-base>ul {
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 
 .\[\&\>ul\]\:font-medium>ul {
   font-weight: 500;
 }
 
-.\[\&\>ul\]\:leading-loose>ul {
-  line-height: 2;
+.\[\&\>ul\]\:leading-relaxed>ul {
+  line-height: 1.625;
 }
 
 .\[\&\>ul\]\:text-dc-600>ul {
@@ -10743,43 +11092,132 @@ input.tab:checked + .tab-content,
   color: rgb(86 82 78 / var(--tw-text-opacity));
 }
 
-.\[\&_img\]\:my-12 img {
-  margin-top: 3rem;
-  margin-bottom: 3rem;
+@media (min-width: 768px) {
+
+  .\[\&\>ul\]\:md\:mb-6>ul {
+    margin-bottom: 1.5rem;
+  }
+
+  .\[\&\>ul\]\:md\:pl-6>ul {
+    padding-left: 1.5rem;
+  }
+
+  .\[\&\>ul\]\:md\:text-lg>ul {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  .\[\&\>ul\]\:md\:leading-loose>ul {
+    line-height: 2;
+  }
+}
+
+@media (min-width: 1024px) {
+
+  .\[\&\>ul\]\:lg\:text-xl>ul {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+}
+
+.\[\&_img\]\:my-6 img {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.\[\&_img\]\:h-auto img {
+  height: auto;
 }
 
 .\[\&_img\]\:w-full img {
   width: 100%;
 }
 
-.\[\&_img\]\:rounded-2xl img {
-  border-radius: 1rem;
+.\[\&_img\]\:rounded-lg img {
+  border-radius: 0.5rem;
 }
 
-.\[\&_p\]\:mb-6 p {
-  margin-bottom: 1.5rem;
+.\[\&_img\]\:object-cover img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media (min-width: 768px) {
+
+  .\[\&_img\]\:md\:my-8 img {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .\[\&_img\]\:md\:rounded-2xl img {
+    border-radius: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+
+  .\[\&_img\]\:lg\:my-12 img {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+}
+
+.\[\&_p\]\:mb-4 p {
+  margin-bottom: 1rem;
+}
+
+.\[\&_p\]\:hyphens-auto p {
+  hyphens: auto;
+}
+
+.\[\&_p\]\:break-words p {
+  overflow-wrap: break-word;
 }
 
 .\[\&_p\]\:font-sans p {
   font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI Variable Display, Segoe UI, Helvetica, Apple Color Emoji, Arial, sans-serif, Segoe UI Emoji, Segoe UI Symbol;
 }
 
-.\[\&_p\]\:text-xl p {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
+.\[\&_p\]\:text-base p {
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 
 .\[\&_p\]\:font-medium p {
   font-weight: 500;
 }
 
-.\[\&_p\]\:leading-loose p {
-  line-height: 2;
+.\[\&_p\]\:leading-relaxed p {
+  line-height: 1.625;
 }
 
 .\[\&_p\]\:text-dc-600 p {
   --tw-text-opacity: 1;
   color: rgb(86 82 78 / var(--tw-text-opacity));
+}
+
+@media (min-width: 768px) {
+
+  .\[\&_p\]\:md\:mb-6 p {
+    margin-bottom: 1.5rem;
+  }
+
+  .\[\&_p\]\:md\:text-lg p {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  .\[\&_p\]\:md\:leading-loose p {
+    line-height: 2;
+  }
+}
+
+@media (min-width: 1024px) {
+
+  .\[\&_p\]\:lg\:text-xl p {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
 }
 
 .htmx-request .\[\.htmx-request_\&\]\:inline {

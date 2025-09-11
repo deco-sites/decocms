@@ -11,25 +11,25 @@ interface Props {
   page?: BlogPostPage | null;
 }
 
-// Content styling with updated design
+// Content styling with responsive design
 const PARAGRAPH_STYLES =
-  "[&_p]:text-dc-600 [&_p]:text-xl [&_p]:font-medium [&_p]:font-sans [&_p]:leading-loose [&_p]:mb-6";
+  "[&_p]:text-dc-600 [&_p]:text-base [&_p]:md:text-lg [&_p]:lg:text-xl [&_p]:font-medium [&_p]:font-sans [&_p]:leading-relaxed [&_p]:md:leading-loose [&_p]:mb-4 [&_p]:md:mb-6 [&_p]:break-words [&_p]:hyphens-auto";
 const HEADING_STYLES =
-  "[&>h1]:text-dc-800 [&>h1]:text-4xl [&>h1]:font-semibold [&>h1]:font-sans [&>h1]:leading-tight [&>h1]:my-10 " +
-  "[&>h2]:text-dc-800 [&>h2]:text-3xl [&>h2]:font-semibold [&>h2]:font-sans [&>h2]:leading-10 [&>h2]:mt-10 [&>h2]:mb-6 " +
-  "[&>h3]:text-dc-800 [&>h3]:text-2xl [&>h3]:font-semibold [&>h3]:font-sans [&>h3]:leading-7 [&>h3]:mt-10 [&>h3]:mb-4 " +
-  "[&>h4]:text-dc-800 [&>h4]:text-xl [&>h4]:font-semibold [&>h4]:font-sans [&>h4]:leading-7 [&>h4]:mt-8 [&>h4]:mb-4 " +
-  "[&>h5]:text-dc-800 [&>h5]:text-lg [&>h5]:font-semibold [&>h5]:font-sans [&>h5]:leading-tight [&>h5]:mt-6 [&>h5]:mb-3 " +
-  "[&>h6]:text-dc-800 [&>h6]:text-base [&>h6]:font-semibold [&>h6]:font-sans [&>h6]:leading-tight [&>h6]:mt-6 [&>h6]:mb-3";
+  "[&>h1]:text-dc-800 [&>h1]:text-2xl [&>h1]:md:text-3xl [&>h1]:lg:text-4xl [&>h1]:font-semibold [&>h1]:font-sans [&>h1]:leading-tight [&>h1]:my-6 [&>h1]:md:my-8 [&>h1]:lg:my-10 [&>h1]:break-words " +
+  "[&>h2]:text-dc-800 [&>h2]:text-xl [&>h2]:md:text-2xl [&>h2]:lg:text-3xl [&>h2]:font-semibold [&>h2]:font-sans [&>h2]:leading-tight [&>h2]:md:leading-10 [&>h2]:mt-8 [&>h2]:md:mt-10 [&>h2]:mb-4 [&>h2]:md:mb-6 [&>h2]:break-words " +
+  "[&>h3]:text-dc-800 [&>h3]:text-lg [&>h3]:md:text-xl [&>h3]:lg:text-2xl [&>h3]:font-semibold [&>h3]:font-sans [&>h3]:leading-tight [&>h3]:md:leading-7 [&>h3]:mt-6 [&>h3]:md:mt-8 [&>h3]:lg:mt-10 [&>h3]:mb-3 [&>h3]:md:mb-4 [&>h3]:break-words " +
+  "[&>h4]:text-dc-800 [&>h4]:text-base [&>h4]:md:text-lg [&>h4]:lg:text-xl [&>h4]:font-semibold [&>h4]:font-sans [&>h4]:leading-tight [&>h4]:md:leading-7 [&>h4]:mt-6 [&>h4]:md:mt-8 [&>h4]:mb-3 [&>h4]:md:mb-4 [&>h4]:break-words " +
+  "[&>h5]:text-dc-800 [&>h5]:text-sm [&>h5]:md:text-base [&>h5]:lg:text-lg [&>h5]:font-semibold [&>h5]:font-sans [&>h5]:leading-tight [&>h5]:mt-4 [&>h5]:md:mt-6 [&>h5]:mb-2 [&>h5]:md:mb-3 [&>h5]:break-words " +
+  "[&>h6]:text-dc-800 [&>h6]:text-sm [&>h6]:md:text-base [&>h6]:font-semibold [&>h6]:font-sans [&>h6]:leading-tight [&>h6]:mt-4 [&>h6]:md:mt-6 [&>h6]:mb-2 [&>h6]:md:mb-3 [&>h6]:break-words";
 
 const CODE_BLOCK_STYLES =
-  "[&>pre]:bg-gray-100 [&>pre]:text-gray-800 [&>pre]:p-4 [&>pre]:font-mono [&>pre]:text-sm [&>pre]:border [&>pre]:rounded-md [&>pre]:overflow-x-auto [&>code]:block [&>code]:w-full";
-const IMAGE_STYLES = "[&_img]:rounded-2xl [&_img]:w-full [&_img]:my-12";
+  "[&>pre]:bg-gray-100 [&>pre]:text-gray-800 [&>pre]:p-3 [&>pre]:md:p-4 [&>pre]:font-mono [&>pre]:text-xs [&>pre]:md:text-sm [&>pre]:border [&>pre]:rounded-md [&>pre]:overflow-x-auto [&>pre]:max-w-full [&>pre]:whitespace-pre-wrap [&>pre]:md:whitespace-pre [&>code]:block [&>code]:w-full [&>code]:break-all [&>code]:md:break-normal";
+const IMAGE_STYLES = "[&_img]:rounded-lg [&_img]:md:rounded-2xl [&_img]:w-full [&_img]:h-auto [&_img]:my-6 [&_img]:md:my-8 [&_img]:lg:my-12 [&_img]:object-cover";
 const BLOCKQUOTE_STYLES =
-  "[&>blockquote]:my-6 [&>blockquote]:border-l-2 [&>blockquote]:border-dc-300 [&>blockquote]:text-xl [&>blockquote]:italic [&>blockquote]:pl-6 [&>blockquote]:text-dc-600";
+  "[&>blockquote]:my-4 [&>blockquote]:md:my-6 [&>blockquote]:border-l-2 [&>blockquote]:border-dc-300 [&>blockquote]:text-base [&>blockquote]:md:text-lg [&>blockquote]:lg:text-xl [&>blockquote]:italic [&>blockquote]:pl-4 [&>blockquote]:md:pl-6 [&>blockquote]:text-dc-600 [&>blockquote]:break-words";
 const LIST_STYLES =
-  "[&>ul]:list-disc [&>ul]:pl-6 [&>ul]:mb-6 [&>ul]:text-dc-600 [&>ul]:text-xl [&>ul]:font-medium [&>ul]:font-sans [&>ul]:leading-loose " +
-  "[&>ol]:list-decimal [&>ol]:pl-6 [&>ol]:mb-6 [&>ol]:text-dc-600 [&>ol]:text-xl [&>ol]:font-medium [&>ol]:font-sans [&>ol]:leading-loose";
+  "[&>ul]:list-disc [&>ul]:pl-4 [&>ul]:md:pl-6 [&>ul]:mb-4 [&>ul]:md:mb-6 [&>ul]:text-dc-600 [&>ul]:text-base [&>ul]:md:text-lg [&>ul]:lg:text-xl [&>ul]:font-medium [&>ul]:font-sans [&>ul]:leading-relaxed [&>ul]:md:leading-loose [&>ul]:break-words " +
+  "[&>ol]:list-decimal [&>ol]:pl-4 [&>ol]:md:pl-6 [&>ol]:mb-4 [&>ol]:md:mb-6 [&>ol]:text-dc-600 [&>ol]:text-base [&>ol]:md:text-lg [&>ol]:lg:text-xl [&>ol]:font-medium [&>ol]:font-sans [&>ol]:leading-relaxed [&>ol]:md:leading-loose [&>ol]:break-words";
 
 const CONTENT_STYLES =
   `${PARAGRAPH_STYLES} ${HEADING_STYLES} ${CODE_BLOCK_STYLES} ${IMAGE_STYLES} ${BLOCKQUOTE_STYLES} ${LIST_STYLES}`;
@@ -80,8 +80,8 @@ export default function BlogPost({ page }: Props) {
   return (
     <>
       {/* Hero Section */}
-      <div className="w-full min-w-full relative bg-dc-50 flex flex-col justify-start items-center gap-20 overflow-hidden px-4 md:px-8 lg:px-16 pt-16">
-        <div className="w-full md:w-[700px] max-w-[700px] flex flex-col justify-start items-start gap-8 relative z-10">
+      <div className="w-full min-w-full relative bg-dc-50 flex flex-col justify-start items-center gap-12 md:gap-16 lg:gap-20 overflow-hidden px-4 md:px-8 lg:px-16 pt-12 md:pt-16">
+        <div className="w-full md:w-[700px] max-w-[700px] flex flex-col justify-start items-start gap-6 md:gap-8 relative z-10">
           <div className="self-stretch flex flex-col justify-start items-center gap-6">
             <div className="self-stretch flex flex-col justify-start items-center gap-4">
               <div className="w-full flex justify-center">
@@ -94,11 +94,11 @@ export default function BlogPost({ page }: Props) {
                   <span>Blog</span>
                 </Button>
               </div>
-              <h1 className="self-stretch text-center text-dc-800 text-4xl md:text-5xl lg:text-6xl font-semibold font-sans leading-tight">
+              <h1 className="self-stretch text-center text-dc-800 text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold font-sans leading-tight break-words hyphens-auto">
                 {title}
               </h1>
             </div>
-            <div className="inline-flex flex-wrap justify-center items-center gap-4">
+            <div className="inline-flex flex-wrap justify-center items-center gap-2 md:gap-4">
               {/* Authors */}
               <BlogAuthorTag
                 authors={authors}
@@ -113,7 +113,7 @@ export default function BlogPost({ page }: Props) {
               {formattedDate && (
                 <>
                   <div className="w-1 h-1 bg-dc-500 rounded-[1px]"></div>
-                  <div className="justify-start text-dc-500 text-xl font-medium font-sans">
+                  <div className="justify-start text-dc-500 text-base md:text-lg lg:text-xl font-medium font-sans">
                     {formattedDate}
                   </div>
                 </>
@@ -130,9 +130,9 @@ export default function BlogPost({ page }: Props) {
                         <a
                           href={`/blog/${category.slug}`}
                           key={index}
-                          className="px-4 py-1 bg-dc-50 rounded-full outline outline-1 outline-offset-[-1px] outline-dc-200 flex justify-center items-center gap-2 hover:bg-dc-100 transition-colors"
+                          className="px-3 md:px-4 py-1 bg-dc-50 rounded-full outline outline-1 outline-offset-[-1px] outline-dc-200 flex justify-center items-center gap-2 hover:bg-dc-100 transition-colors"
                         >
-                          <div className="justify-center text-dc-600 text-base font-semibold font-sans leading-tight">
+                          <div className="justify-center text-dc-600 text-sm md:text-base font-semibold font-sans leading-tight">
                             {category.name}
                           </div>
                         </a>
@@ -146,8 +146,8 @@ export default function BlogPost({ page }: Props) {
         </div>
 
         {/* Featured Image */}
-        <div className="self-stretch pb-6 flex flex-col justify-start items-center relative z-10">
-          <div className="w-full md:w-[934px] aspect-video bg-primary-light rounded-[32px] overflow-hidden">
+        <div className="self-stretch pb-4 md:pb-6 flex flex-col justify-start items-center relative z-10">
+          <div className="w-full md:w-[934px] aspect-video bg-primary-light rounded-2xl md:rounded-[32px] overflow-hidden">
             {image && (
               <Image
                 src={image}
@@ -162,10 +162,10 @@ export default function BlogPost({ page }: Props) {
       </div>
 
       {/* Content Section */}
-      <div className="w-full min-w-full bg-dc-50 flex justify-center items-start overflow-hidden px-4 md:px-8 lg:px-16 py-16">
-        <div className="flex-1 max-w-full md:max-w-[700px] flex flex-col justify-start items-start">
+      <div className="w-full min-w-full bg-dc-50 flex justify-center items-start overflow-hidden px-4 md:px-8 lg:px-16 py-12 md:py-16">
+        <div className="flex-1 max-w-full md:max-w-[700px] flex flex-col justify-start items-start overflow-hidden">
           <div
-            className={CONTENT_STYLES}
+            className={`${CONTENT_STYLES} w-full overflow-hidden`}
             id="blog-post-content"
             dangerouslySetInnerHTML={{
               __html: content.replaceAll("&lt;iframe", "<iframe ").replaceAll("&lt;/iframe&gt;", " </iframe>").replaceAll("allowfullscreen&gt;", "allowfullscreen>") || "",

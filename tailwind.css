@@ -74,3 +74,47 @@
   color: inherit !important;
   font-size: inherit !important;
 }
+
+/* Additional responsive styles for blog content */
+#blog-post-content {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+#blog-post-content * {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+#blog-post-content pre {
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+#blog-post-content code {
+  word-break: break-all;
+}
+
+#blog-post-content table {
+  width: 100%;
+  overflow-x: auto;
+  display: block;
+  white-space: nowrap;
+}
+
+@media (min-width: 768px) {
+  #blog-post-content pre {
+    white-space: pre;
+    word-break: normal;
+  }
+  
+  #blog-post-content code {
+    word-break: normal;
+  }
+  
+  #blog-post-content table {
+    display: table;
+    white-space: normal;
+  }
+}
