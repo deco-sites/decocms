@@ -286,5 +286,68 @@
       }
     }
   ],
-  "__resolveType": "website/pages/Page.tsx"
+  "__resolveType": "website/pages/Page.tsx",
+  "seo": {
+    "title": "Become a deco Partner | Build and Sell Agentic Software",
+    "description": "Join the deco partner program and build AI-native experiences with our open-source runtime and Context CMS. Get sandbox credits, leads, certifications, and co-marketing opportunities.",
+    "canonical": "https://deco.cx/partners",
+    "noIndexing": false,
+    "keywords": "deco partners, AI software development, agentic software, partner program, system integrators, ISV partners, technology partners, AI workflows, agent development, Context CMS",
+    "openGraph": {
+      "title": "Become a deco Partner | Build and Sell Agentic Software",
+      "description": "Join the deco partner program and build AI-native experiences with our open-source runtime and Context CMS. Get sandbox credits, leads, certifications, and co-marketing opportunities.",
+      "image": "https://deco.cx/assets/partners-og-image.jpg",
+      "url": "https://deco.cx/partners",
+      "type": "website",
+      "siteName": "deco.cx"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "Become a deco Partner | Build and Sell Agentic Software",
+      "description": "Join the deco partner program and build AI-native experiences with our open-source runtime and Context CMS. Get sandbox credits, leads, certifications, and co-marketing opportunities.",
+      "image": "https://deco.cx/assets/partners-twitter-image.jpg",
+      "site": "@deco_cx"
+    },
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Become a deco Partner",
+      "description": "Join the deco partner program and build AI-native experiences with our open-source runtime and Context CMS. Get sandbox credits, leads, certifications, and co-marketing opportunities.",
+      "url": "https://deco.cx/partners",
+      "mainEntity": {
+        "@type": "Organization",
+        "name": "deco.cx",
+        "description": "Open-source runtime and Context CMS for agents, workflows, and storefronts",
+        "url": "https://deco.cx",
+        "offers": {
+          "@type": "Offer",
+          "name": "Partner Program",
+          "description": "Comprehensive partner program with multiple tiers and benefits",
+          "category": "Technology Partnership"
+        }
+      }
+    },
+    "additionalMetaTags": [
+      {
+        "name": "robots",
+        "content": "index, follow"
+      },
+      {
+        "name": "author",
+        "content": "deco.cx"
+      },
+      {
+        "name": "viewport",
+        "content": "width=device-width, initial-scale=1"
+      },
+      {
+        "property": "article:author",
+        "content": "deco.cx"
+      },
+      {
+        "name": "theme-color",
+        "content": "#000000"
+      }
+    ]
+  }
 }
