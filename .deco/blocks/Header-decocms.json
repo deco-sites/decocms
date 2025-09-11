@@ -16,6 +16,10 @@
     {
       "label": "Blog",
       "href": "/blog"
+    },
+    {
+      "label": "Partners",
+      "href": "/partners"
     }
   ],
   "ctaText": "Get early access",

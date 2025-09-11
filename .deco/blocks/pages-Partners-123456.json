@@ -3,8 +3,14 @@
   "path": "/partners",
   "sections": [
     {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "Header-decocms"
+      }
+    },
+    {
       "__resolveType": "site/sections/PartnersHero.tsx",
-      "title": "Become a Deco Partner",
+      "title": "Become a ceco Partner",
       "subtitle": "Co‑sell and co‑build AI‑native experiences on Deco — the open‑source runtime and Context CMS for agents, workflows, and storefronts.",
       "primaryButtonText": "Start application",
       "primaryButtonUrl": "/partners/apply",
@@ -190,127 +196,6 @@
       "fullDetailsUrl": "/partners"
     },
     {
-      "__resolveType": "site/sections/ApplicationForm.tsx",
-      "title": "Application (fields)",
-      "formFields": [
-        {
-          "label": "Company name",
-          "type": "text",
-          "name": "company_name",
-          "required": true,
-          "placeholder": "Your company name"
-        },
-        {
-          "label": "Company website",
-          "type": "text",
-          "name": "company_website",
-          "required": true,
-          "placeholder": "https://yourcompany.com"
-        },
-        {
-          "label": "HQ country",
-          "type": "text",
-          "name": "hq_country",
-          "required": true,
-          "placeholder": "United States"
-        },
-        {
-          "label": "Partner type",
-          "type": "select",
-          "name": "partner_type",
-          "required": true,
-          "options": [
-            "SI/Agency",
-            "ISV",
-            "Tech",
-            "Training"
-          ]
-        },
-        {
-          "label": "Headcount",
-          "type": "text",
-          "name": "headcount",
-          "required": true,
-          "placeholder": "e.g., 10-50"
-        },
-        {
-          "label": "# AI practitioners",
-          "type": "text",
-          "name": "ai_practitioners",
-          "required": true,
-          "placeholder": "e.g., 5"
-        },
-        {
-          "label": "Stacks",
-          "type": "textarea",
-          "name": "stacks",
-          "required": true,
-          "placeholder": "HubSpot, WhatsApp, AWS/Azure/GCP, Snowflake/BigQuery, etc."
-        },
-        {
-          "label": "Focus verticals & geos",
-          "type": "textarea",
-          "name": "focus_verticals",
-          "required": true,
-          "placeholder": "E-commerce, Healthcare, North America, Europe, etc."
-        },
-        {
-          "label": "References (2 links) or public work",
-          "type": "textarea",
-          "name": "references",
-          "required": true,
-          "placeholder": "Link 1: https://...\nLink 2: https://..."
-        },
-        {
-          "label": "Preferred monetization",
-          "type": "select",
-          "name": "monetization",
-          "required": true,
-          "options": [
-            "Referral",
-            "Reseller",
-            "Services",
-            "ISV"
-          ]
-        },
-        {
-          "label": "Primary contact name",
-          "type": "text",
-          "name": "contact_name",
-          "required": true,
-          "placeholder": "John Doe"
-        },
-        {
-          "label": "Primary contact email",
-          "type": "email",
-          "name": "contact_email",
-          "required": true,
-          "placeholder": "john@company.com"
-        },
-        {
-          "label": "WhatsApp number",
-          "type": "text",
-          "name": "whatsapp",
-          "placeholder": "+1234567890"
-        },
-        {
-          "label": "Why Deco?",
-          "type": "textarea",
-          "name": "why_deco",
-          "required": true,
-          "placeholder": "Tell us why you want to partner with Deco (short paragraph)"
-        },
-        {
-          "label": "I agree to the Terms & Conditions",
-          "type": "checkbox",
-          "name": "agree_terms",
-          "required": true
-        }
-      ],
-      "submitButtonText": "Start application",
-      "formActionUrl": "/partners/apply"
-    },
-    {
       "__resolveType": "site/sections/ApplicationProcess.tsx",
       "title": "What happens after you apply",
       "processSteps": [
@@ -393,6 +278,13 @@
         "text": "Book an intro",
         "url": "/partners/intro-call"
       }
+    },
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "Footer"
+      }
     }
-  ]
+  ],
+  "__resolveType": "website/pages/Page.tsx"
 }
