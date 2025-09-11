@@ -342,6 +342,7 @@
         "name": "theme-color",
         "content": "#000000"
       }
-    ]
+    ],
+    "__resolveType": "website/sections/Seo/SeoV2.tsx"
   }
 }
