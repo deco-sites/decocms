@@ -18,7 +18,7 @@ export default function TextMedia({
   eyebrow = "Control pannel for your AI stack",
   title = "AI demos are easy. Production isn’t.",
   description =
-    "DecoCMS bridges the gap between prompts and production. Connect your stack, govern every step, and deploy agentic apps with built-in observability, spend controls, and a marketplace to reuse or monetize your modules.",
+    "deco CMS bridges the gap between prompts and production. Connect your stack, govern every step, and deploy agentic apps with built-in observability, spend controls, and a marketplace to reuse or monetize your modules.",
   image = "https://placehold.co/1200x900",
   imageAlt = "Section image",
 }: Props) {
