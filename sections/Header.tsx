@@ -34,7 +34,7 @@ export default function Header({
       <header class="bg-dc-100 rounded-[24px] rounded-b-none px-4 sm:px-6 lg:px-10 py-4 flex items-center">
         {/* Left Section - Logo */}
         <div class="flex-1 flex justify-start">
-          <div class="w-10 h-10 px-2 flex justify-center items-center gap-2.5 shrink-0">
+          <a href="/" class="w-10 h-10 px-2 flex justify-center items-center gap-2.5 shrink-0 hover:opacity-80 transition-opacity">
             {logo
               ? (
                 <Image
@@ -52,7 +52,7 @@ export default function Header({
                   </div>
                 </div>
               )}
-          </div>
+          </a>
         </div>
 
         {/* Center Section - Desktop Navigation */}
