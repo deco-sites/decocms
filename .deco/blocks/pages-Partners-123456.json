@@ -21,11 +21,11 @@
     {
       "__resolveType": "site/sections/CustomerLogos.tsx",
       "title": "Who's Already Building with deco CMS",
-      "subtitle": "Trusted by teams shipping AI‑native experiences. Replace placeholders with approved customer logos.",
+      "subtitle": "Top brand's already deploying Agentic Software",
       "customerLogos": [
         {
-          "logo": "https://placehold.co/120x60/E5E5E5/999999?text=Customer+1",
-          "name": "Customer 1"
+          "logo": "https://assets.decocache.com/decocms/452b8f22-f11e-4b6f-8934-2e58419ea705/integration-1.png",
+          "name": "Superfrete"
         },
         {
           "logo": "https://placehold.co/120x60/E5E5E5/999999?text=Customer+2",
