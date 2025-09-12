@@ -9,6 +9,7 @@ import * as $BlogPostsCarousel from "./islands/BlogPostsCarousel.tsx";
 import * as $CopyCommandButton from "./islands/CopyCommandButton.tsx";
 import * as $FeaturesInteractive from "./islands/FeaturesInteractive.tsx";
 import * as $GitHubStars from "./islands/GitHubStars.tsx";
+import * as $ProjectGrid from "./islands/ProjectGrid.tsx";
 import type { Manifest } from "$fresh/server.ts";
 
 const manifest = {
@@ -22,6 +23,7 @@ const manifest = {
     "./islands/CopyCommandButton.tsx": $CopyCommandButton,
     "./islands/FeaturesInteractive.tsx": $FeaturesInteractive,
     "./islands/GitHubStars.tsx": $GitHubStars,
+    "./islands/ProjectGrid.tsx": $ProjectGrid,
   },
   baseUrl: import.meta.url,
 } satisfies Manifest;

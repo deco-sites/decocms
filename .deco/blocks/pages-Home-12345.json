@@ -36,8 +36,8 @@
       "__resolveType": "site/sections/TextMedia.tsx",
       "eyebrow": "Control panel for your AI stack",
       "title": "AI demos are easy. Production isn't.",
-      "description": "DecoCMS bridges the gap between prompts and production. Connect your stack, govern every step, and deploy agentic apps with built-in observability, spend controls, and a marketplace to reuse or monetize your modules.",
-      "image": "https://assets.decocache.com/decocms/d2de5b5f-90b4-4af2-acef-80d07c0b2326/app.png",
+      "description": "deco Context Management System bridges the gap between prompts and production. Connect your stack, govern every step, and deploy agentic apps with built-in observability, spend controls, and a marketplace to reuse or monetize your modules.",
+      "image": "https://assets.decocache.com/decocms/e3c61cd3-40e3-4967-9197-a2e24e88f97d/cmsdadeco.png",
       "imageAlt": "Section image",
       "keywords": [
         "observability",

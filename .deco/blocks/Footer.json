@@ -5,13 +5,8 @@
       "links": [
         {
           "disabled": false,
-          "text": "Pricing",
-          "url": "/pricing"
-        },
-        {
-          "disabled": false,
           "text": "Docs",
-          "url": "https://docs.deco.page/en/introduction/"
+          "url": "https://docs.decocms.com"
         },
         {
           "disabled": false,

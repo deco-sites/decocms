@@ -13,6 +13,16 @@ export interface Props {
    */
   title?: string;
   /**
+   * @title Title Image
+   * @description Image to display on the left side of the title
+   */
+  titleImage?: ImageWidget;
+  /**
+   * @title Title Image Alt Text
+   * @description Alt text for the title image
+   */
+  titleImageAlt?: string;
+  /**
    * @title Primary Button Text
    * @description Text for the main CTA button
    */
@@ -37,6 +47,8 @@ export interface Props {
 export default function DecoSitesHero({
   eyebrow,
   title,
+  titleImage,
+  titleImageAlt,
   primaryButtonText,
   primaryButtonUrl,
   backgroundImage,
@@ -51,13 +63,25 @@ export default function DecoSitesHero({
             {/* Text Content */}
             <div class="w-full flex flex-col items-center gap-6 text-center">
               {eyebrow && (
-                <div class="text-primary-light text-xl sm:text-2xl lg:text-3xl font-medium leading-none">
-                  {eyebrow}
+                <div class="flex items-center justify-center gap-2">
+                  {titleImage && (
+                    <Image
+                      src={titleImage}
+                      alt={titleImageAlt || ""}
+                      width={32}
+                      height={32}
+                      class="size-8 sm:size-12 lg:size-16 object-contain"
+                      loading="lazy"
+                    />
+                  )}
+                  <div class="text-primary-light text-xl sm:text-2xl lg:text-3xl font-medium leading-none">
+                    {eyebrow}
+                  </div>
                 </div>
               )}
 
               {title && (
-                <h1 class="text-dc-200 text-3xl sm:text-4xl lg:text-6xl font-medium leading-tight tracking-tight max-w-4xl">
+                <h1 class="text-dc-200 text-3xl sm:text-4xl lg:text-6xl font-medium leading-tight tracking-tight max-w-4xl text-center">
                   {title}
                 </h1>
               )}

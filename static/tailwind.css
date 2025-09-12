@@ -3453,6 +3453,10 @@ input.tab:checked + .tab-content,
 .aspect-video {
   aspect-ratio: 16 / 9;
 }
+.size-8 {
+  width: 2rem;
+  height: 2rem;
+}
 .h-0 {
   height: 0px;
 }
@@ -6428,11 +6432,6 @@ input.tab:checked + .tab-content,
   --tw-gradient-to: rgb(22 78 99 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
-.from-dc-100\/0 {
-  --tw-gradient-from: rgb(241 240 238 / 0) var(--tw-gradient-from-position);
-  --tw-gradient-to: rgb(241 240 238 / 0) var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-}
 .from-dc-200\/20 {
   --tw-gradient-from: rgb(231 229 228 / 0.2) var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(231 229 228 / 0) var(--tw-gradient-to-position);
@@ -6576,6 +6575,11 @@ input.tab:checked + .tab-content,
 .from-pink-900\/50 {
   --tw-gradient-from: rgb(131 24 67 / 0.5) var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(131 24 67 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+.from-primary-light\/0 {
+  --tw-gradient-from: rgb(208 236 26 / 0) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(208 236 26 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 .from-purple-400 {
@@ -6875,9 +6879,6 @@ input.tab:checked + .tab-content,
 .to-cyan-700 {
   --tw-gradient-to: #0e7490 var(--tw-gradient-to-position);
 }
-.to-dc-100 {
-  --tw-gradient-to: #F1F0EE var(--tw-gradient-to-position);
-}
 .to-emerald-600 {
   --tw-gradient-to: #059669 var(--tw-gradient-to-position);
 }
@@ -6919,6 +6920,9 @@ input.tab:checked + .tab-content,
 }
 .to-pink-700 {
   --tw-gradient-to: #be185d var(--tw-gradient-to-position);
+}
+.to-primary-light {
+  --tw-gradient-to: #D0EC1A var(--tw-gradient-to-position);
 }
 .to-purple-600 {
   --tw-gradient-to: #9333ea var(--tw-gradient-to-position);
@@ -10182,6 +10186,11 @@ input.tab:checked + .tab-content,
     display: none;
   }
 
+  .sm\:size-12 {
+    width: 3rem;
+    height: 3rem;
+  }
+
   .sm\:h-12 {
     height: 3rem;
   }
@@ -10762,6 +10771,11 @@ input.tab:checked + .tab-content,
 
   .lg\:hidden {
     display: none;
+  }
+
+  .lg\:size-16 {
+    width: 4rem;
+    height: 4rem;
   }
 
   .lg\:h-10 {

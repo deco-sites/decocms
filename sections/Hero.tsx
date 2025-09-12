@@ -126,9 +126,9 @@ export default function Hero({
             {/* Marquee */}
             <div class="relative flex-1 overflow-hidden py-2 sm:py-4 -mr-2">
               {/* Fade masks for smoother enter/exit (show ~50% of the card) */}
-              <div class="pointer-events-none absolute left-0 top-0 h-full w-6 sm:w-10 bg-gradient-to-l from-dc-100/0 to-dc-100">
+              <div class="pointer-events-none absolute z-30 left-0 top-0 h-full w-6 sm:w-10 bg-gradient-to-l from-primary-light/0 to-primary-light">
               </div>
-              <div class="pointer-events-none absolute right-0 top-0 h-full w-6 sm:w-10 bg-gradient-to-r from-dc-100/0 to-dc-100">
+              <div class="pointer-events-none absolute z-30 right-0 top-0 h-full w-6 sm:w-10 bg-gradient-to-r from-primary-light/0 to-primary-light">
               </div>
 
               <div
