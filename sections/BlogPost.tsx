@@ -70,11 +70,24 @@ export default function BlogPost({ page }: Props) {
   const categories = post?.categories || [];
 
   const formattedDate = date
-    ? new Date(date).toLocaleDateString("en-US", {
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    })
+    ? (() => {
+        try {
+          const dateObj = new Date(date);
+          const dateStr = dateObj.toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          });
+          const timeStr = dateObj.toLocaleTimeString("en-US", {
+            hour: "numeric",
+            minute: "2-digit",
+            hour12: true,
+          });
+          return `${dateStr} at ${timeStr}`;
+        } catch (e) {
+          return date;
+        }
+      })()
     : "";
 
   return (

@@ -75,11 +75,18 @@ export default function BlogPosts({
     if (!dateString) return "";
 
     try {
-      return new Date(dateString).toLocaleDateString("en-US", {
+      const date = new Date(dateString);
+      const dateStr = date.toLocaleDateString("en-US", {
         month: "long",
         day: "numeric",
         year: "numeric",
       });
+      const timeStr = date.toLocaleTimeString("en-US", {
+        hour: "numeric",
+        minute: "2-digit",
+        hour12: true,
+      });
+      return `${dateStr} at ${timeStr}`;
     } catch (e) {
       return dateString;
     }
