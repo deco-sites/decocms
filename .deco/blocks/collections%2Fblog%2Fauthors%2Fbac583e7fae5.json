@@ -3,6 +3,7 @@
   "__resolveType": "blog/loaders/Author.ts",
   "author": {
     "name": "Leandro Borges",
-    "email": "leandro@decocms.com"
+    "email": "leandro@decocms.com",
+    "avatar": "https://assets.decocache.com/decocms/a840b1da-3c25-46cb-88a0-9c727a24644a/Screenshot-2025-08-11-at-11.00.30.png"
   }
 }
