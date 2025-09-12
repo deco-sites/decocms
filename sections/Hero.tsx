@@ -80,7 +80,7 @@ export default function Hero({
               </h1>
 
               {/* Subtitle */}
-              <p class="w-full max-w-xl text-primary-dark text-base font-normal leading-6 text-left">
+              <p class="w-full max-w-xl text-primary-dark text-lg font-normal leading-6 text-left">
                 {subtitle}
               </p>
 
