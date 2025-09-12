@@ -1,5 +1,7 @@
 import type { ImageWidget } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
+import GitHubStars from "../islands/GitHubStars.tsx";
+import Button from "../components/ui/Button.tsx";
 
 export interface MenuItem {
   label: string;
@@ -14,27 +16,43 @@ export interface Props {
   menuItems?: MenuItem[];
   ctaHref?: string;
   ctaText?: string;
+  /**
+   * @title GitHub Repository
+   * @description Repository in format "owner/repo" to fetch stars from
+   */
+  githubRepo?: string;
+  /**
+   * @title GitHub Icon
+   * @description Icon for GitHub stars display
+   */
+  githubIcon?: ImageWidget;
 }
+
+// moved to island in ../islands/GitHubStars.tsx
 
 export default function Header({
   logo,
   menuItems = [
     { label: "Apps", href: "/apps" },
-    { label: "Use Cases", href: "/use-cases" },
     { label: "Pricing", href: "/pricing" },
     { label: "Docs", href: "/docs" },
     { label: "Community", href: "/community" },
     { label: "Resources", href: "/resources" },
   ],
   ctaHref = "/",
-  ctaText = "Get started",
+  ctaText = "Get early access",
+  githubRepo = "deco-cx/chat",
+  githubIcon,
 }: Props) {
   return (
-    <div class="p-2 pb-0 relative">
-      <header class="bg-dc-100 rounded-[24px] rounded-b-none px-4 sm:px-6 lg:px-10 py-4 flex items-center">
+    <div class="absolute top-0 left-0 right-0 z-50 px-4 sm:px-6 lg:px-10 pt-8">
+      <header class="flex items-center justify-between rounded-2xl">
         {/* Left Section - Logo */}
         <div class="flex-1 flex justify-start">
-          <a href="/" class="w-10 h-10 px-2 flex justify-center items-center gap-2.5 shrink-0 hover:opacity-80 transition-opacity">
+          <a
+            href="/"
+            class="flex items-center gap-2.5 px-2 h-10 hover:opacity-80 transition-opacity"
+          >
             {logo
               ? (
                 <Image
@@ -47,8 +65,9 @@ export default function Header({
               )
               : (
                 <div class="w-7 h-7 relative">
-                  <div class="w-7 h-7 left-0 top-0 absolute bg-[#07401A]"></div>
-                  <div class="w-5 h-5 left-[3.60px] top-[3.74px] absolute bg-[#D0EC1A]">
+                  <div class="w-7 h-7 absolute bg-primary-dark rounded-sm">
+                  </div>
+                  <div class="w-5 h-5 absolute left-1 top-1 bg-primary-light rounded-sm">
                   </div>
                 </div>
               )}
@@ -56,17 +75,17 @@ export default function Header({
         </div>
 
         {/* Center Section - Desktop Navigation */}
-        <div class="hidden lg:flex lg:justify-center">
-          <div class="p-1 bg-[#E7E5E4] rounded-2xl flex justify-center items-center gap-12">
-            <div class="flex justify-center items-center gap-2">
+        <div class="hidden lg:flex">
+          <div class="backdrop-blur-sm bg-white/80 rounded-2xl p-1 flex items-center gap-12">
+            <div class="flex items-center gap-2">
               {menuItems.map((item, index) => (
                 <div
                   key={index}
-                  class="px-4 py-1.5 rounded-full flex justify-center items-center gap-2"
+                  class="px-4 py-1.5 rounded-full flex items-center gap-2"
                 >
                   <a
                     href={item.href}
-                    class="text-[#1C1917] text-sm font-normal leading-tight hover:text-[#07401A] transition-colors"
+                    class="text-dc-800 text-sm font-normal leading-tight hover:text-primary-dark transition-colors"
                   >
                     {item.label}
                   </a>
@@ -76,13 +95,22 @@ export default function Header({
           </div>
         </div>
 
-        {/* Right Section - Mobile Menu Button + CTA Button */}
-        <div class="flex-1 flex justify-end items-center gap-4">
+        {/* Right Section - GitHub Stars + Mobile Menu Button + CTA Button */}
+        <div class="flex-1 flex justify-end items-center gap-2.5">
+          {/* GitHub Stars - Hidden on mobile */}
+          <div class="hidden sm:block">
+            <GitHubStars repo={githubRepo} icon={githubIcon} />
+          </div>
+
           {/* Mobile Menu Button */}
-          <button
-            class="lg:hidden p-2 text-[#1C1917] hover:text-[#07401A] transition-colors"
-            aria-label="Toggle menu"
-            onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"
+          <Button
+            variant="ghost"
+            size="small"
+            className="lg:hidden p-2 text-dc-800 hover:text-primary-dark"
+            onClick={() => {
+              const menu = document.getElementById("mobile-menu");
+              menu?.classList.toggle("hidden");
+            }}
           >
             <svg
               width="24"
@@ -99,35 +127,39 @@ export default function Header({
                 stroke-linejoin="round"
               />
             </svg>
-          </button>
+          </Button>
 
           {/* CTA Button */}
-          <a
+          <Button
+            variant="primary"
+            size="small"
             href={ctaHref}
-            class="h-10 px-3 sm:px-4 py-1.5 bg-[#D0EC1A] rounded-xl flex justify-center items-center gap-2 shrink-0 hover:bg-[#C5E016] transition-colors"
+            className="!bg-primary-dark !text-primary-light hover:bg-primary-dark/90"
           >
-            <span class="text-[#07401A] text-xs sm:text-sm font-medium leading-tight">
-              {ctaText}
-            </span>
-          </a>
+            {ctaText}
+          </Button>
         </div>
       </header>
 
       {/* Mobile Menu */}
       <div
         id="mobile-menu"
-        class="lg:hidden hidden absolute top-full left-2 right-2 bg-[#F1F0EF] rounded-b-2xl border-t border-[#E7E5E4] z-50"
+        class="lg:hidden hidden absolute top-full left-4 right-4 bg-white/95 backdrop-blur-sm rounded-b-2xl border-t border-dc-200 z-50 mt-2"
       >
         <div class="p-4 space-y-2">
           {menuItems.map((item, index) => (
             <a
               key={index}
               href={item.href}
-              class="block px-4 py-3 text-[#1C1917] text-sm font-normal leading-tight hover:bg-[#E7E5E4] rounded-xl transition-colors"
+              class="block px-4 py-3 text-dc-800 text-sm font-normal leading-tight hover:bg-dc-100 rounded-xl transition-colors"
             >
               {item.label}
             </a>
           ))}
+          {/* GitHub Stars in mobile menu */}
+          <div class="px-4 py-3 sm:hidden">
+            <GitHubStars repo={githubRepo} icon={githubIcon} />
+          </div>
         </div>
       </div>
     </div>

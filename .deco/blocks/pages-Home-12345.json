@@ -8,7 +8,7 @@
     },
     {
       "__resolveType": "site/sections/Hero.tsx",
-      "title": "The open-source admin for your internal AI apps",
+      "title": "The open-source\nadmin for your\ninternal AI apps",
       "subtitle": "Prototype in chat, ship in code, and run & monetize agentic apps in production.",
       "primaryButtonText": "Testar grátis",
       "integrationsTitle": "Seamless Integrations",
@@ -28,17 +28,26 @@
       ],
       "buttonText": "Get early access",
       "buttonUrl": "https://luma.com/x4wmpyp8",
-      "backgroundImage": "https://assets.decocache.com/decocms/1537b4ae-4278-4bda-8105-0c0884815c78/bg-lp.png",
+      "backgroundImage": "https://assets.decocache.com/decocms/406169e4-18af-4858-a350-9aa75c0ec4de/herobanner2.svg",
       "secondaryButtonText": "Talk to sales",
-      "secondaryButtonUrl": "https://form.typeform.com/to/LxKZbN9N"
+      "secondaryButtonUrl": "https://form.typeform.com/to/LxKZbN9N?typeform-source=www.decocms.com"
     },
     {
       "__resolveType": "site/sections/TextMedia.tsx",
       "eyebrow": "Control panel for your AI stack",
       "title": "AI demos are easy. Production isn't.",
-      "description": "deco CMS bridges the gap between prompts and production. Connect your stack, govern every step, and deploy agentic apps with built-in observability, spend controls, and a marketplace to reuse or monetize your modules.",
-      "image": "https://assets.decocache.com/decocms/86b36935-7da0-48e9-b011-c6b915e064cc/demoprod.png",
-      "imageAlt": "Section image"
+      "description": "DecoCMS bridges the gap between prompts and production. Connect your stack, govern every step, and deploy agentic apps with built-in observability, spend controls, and a marketplace to reuse or monetize your modules.",
+      "image": "https://assets.decocache.com/decocms/d2de5b5f-90b4-4af2-acef-80d07c0b2326/app.png",
+      "imageAlt": "Section image",
+      "keywords": [
+        "observability",
+        "controls",
+        "marketplace",
+        "governance",
+        "context mesh",
+        "safe vibe coding",
+        "build once bill per run"
+      ]
     },
     {
       "__resolveType": "site/sections/Features.tsx",
@@ -118,18 +127,96 @@
     },
     {
       "__resolveType": "site/sections/OnePlatformTwoSurfaces.tsx",
-      "title": "One platform, two surfaces",
-      "subtitle": "Prototype in natural language. Scale in code.",
-      "card1Title": "Natural‑language builder for business users",
-      "card2Title": "Open‑source TypeScript SDK for devs",
+      "title": "Realtime\ncollaboration",
+      "subtitle": "Business users prototype in natural language. Engineers scale in code.",
       "features": [
         "Versioning & Git-native",
         "Governance built-in",
         "Fast Global Edge Deploy",
         "Open & extensible"
       ],
-      "card1Image": "https://assets.decocache.com/decocms/6d7bfec7-7965-4be4-86e9-d272d162e51d/llm.png",
-      "card2Image": "https://assets.decocache.com/decocms/6c2a207b-d06b-4631-9a77-ee87aa33a3a9/dev.png"
+      "card1Title": "Natural‑language builder\nfor business users",
+      "card2Title": "Open‑source TypeScript\nSDK for devs",
+      "card1ContentImage": "https://assets.decocache.com/decocms/fc7ca333-40a3-4bb6-bb4f-7929e7bbd910/bowner.png",
+      "card2ContentImage": "https://assets.decocache.com/decocms/27891745-4954-402c-a739-6aac02ba2383/dev.png",
+      "card1BackgroundImage": "https://assets.decocache.com/decocms/ab1d3369-1197-4d6f-9fdf-fdcc0c510303/image-998.png",
+      "card2BackgroundImage": "https://assets.decocache.com/decocms/f1bce085-4f76-4cd2-9b0b-b2c96ced957e/image-999.png"
+    },
+    {
+      "__resolveType": "website/flags/multivariate/section.ts",
+      "variants": [
+        {
+          "value": {
+            "__resolveType": "website/sections/Rendering/Lazy.tsx",
+            "section": {
+              "__resolveType": "site/sections/MainFeatures.tsx",
+              "title": "Prototype in chat.\nShip in code.",
+              "description": "A generative control plane for data, tools, models, permissions, and memory — so you can run & monetize agentic apps in production.",
+              "icon": "https://assets.decocache.com/decochatweb/315a119f-dfcc-46a1-a2a0-f9ee7ac54565/decologoblack.svg",
+              "featureCards": [
+                {
+                  "category": "OPEN-SOURCE",
+                  "title": "Own your context. Own your tools.",
+                  "description": "Zero lock-in with self-hosting, BYOK, and a forkable core — your code, your data, your keys, your control.",
+                  "showDescription": false,
+                  "image": "https://placehold.co/426x322?text=Open+Source",
+                  "size": "small",
+                  "imageAspectRatio": "426/322",
+                  "mediaType": "video",
+                  "videoUrl": "https://assets.decocache.com/decochatweb/83b5fdb7-c079-43e4-a47f-e64e4a8577cf/open-source.webm"
+                },
+                {
+                  "category": "EDGE DEPLOY",
+                  "title": "Deploy to the edge with typed RPC",
+                  "description": "Ship agents, workflows, and UIs together with global edge deployment and typed interfaces — fast, reliable, and scalable.",
+                  "showDescription": false,
+                  "image": "https://placehold.co/426x322?text=Edge+Deploy",
+                  "size": "small",
+                  "imageAspectRatio": "426/322",
+                  "mediaType": "video",
+                  "videoUrl": "https://assets.decocache.com/decochatweb/d440a1a3-8dbd-4b32-ae98-f76ffad0515f/Whitelabel.webm"
+                },
+                {
+                  "category": "TOOLS",
+                  "title": "MCP-native connectors with policy & RBAC",
+                  "description": "Unify data, tools and models with governed routing, permissions, and observability — your agents always get the right context, safely.",
+                  "showDescription": false,
+                  "image": "https://placehold.co/426x322?text=Tools",
+                  "size": "small",
+                  "imageAspectRatio": "426/322",
+                  "mediaType": "video",
+                  "videoUrl": "https://assets.decocache.com/decochatweb/95a7b198-c3f9-4546-a61f-4254a9d58897/Integracoes.webm"
+                },
+                {
+                  "category": "VIEWS & UIS",
+                  "title": "Compose agents, workflows, and UIs in one repo",
+                  "description": "Build custom interfaces and dashboards that connect directly to your agentic workflows — no vendor sprawl, just clean TypeScript.",
+                  "showDescription": false,
+                  "image": "https://placehold.co/643x531?text=Views+UIs",
+                  "size": "wide",
+                  "imageAspectRatio": "643/531",
+                  "mediaType": "video",
+                  "videoUrl": "https://assets.decocache.com/decochatweb/12514d1f-53e9-4591-8bb5-46963c0ed33a/Views.webm"
+                },
+                {
+                  "category": "WORKFLOWS",
+                  "title": "Orchestrate complex automations with guardrails",
+                  "description": "Chain multiple agents and tools in reliable flows with error handling, retry logic, and complete audit trails for production workloads.",
+                  "showDescription": false,
+                  "image": "https://placehold.co/643x595?text=Workflows",
+                  "size": "wide",
+                  "imageAspectRatio": "643/595",
+                  "mediaType": "video",
+                  "videoUrl": "https://assets.decocache.com/decochatweb/07b2b2c6-58cd-45c5-8abe-86764ac4cc77/Workflows.webm"
+                }
+              ]
+            }
+          },
+          "rule": {
+            "__resolveType": "website/matchers/never.ts"
+          }
+        }
+      ]
     },
     {
       "__resolveType": "site/sections/FAQ.tsx",

@@ -56,6 +56,127 @@
     overflow: hidden;
     height: 100vh;
   }
+
+  /** Custom h1 hero heading */
+  .hero-h1 {
+    font-family:
+      "SF Pro", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+      sans-serif;
+    font-weight: 450;
+    font-size: 4.25rem; /* 60px */
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: #07401a;
+  }
+
+  @media (max-width: 767px) {
+    .hero-h1 {
+      font-size: 2.25rem; /* 36px on mobile */
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .hero-h1 {
+      font-size: 3rem; /* 48px on tablet */
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .hero-h1 {
+      font-size: 4rem; /* 60px on desktop */
+    }
+  }
+
+  /** Custom h3 heading */
+  .hero-h3 {
+    font-family:
+      "SF Pro", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+      sans-serif;
+    font-weight: 450;
+    font-size: 2.25rem; /* 40px */
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: #282524;
+  }
+
+  @media (max-width: 767px) {
+    .hero-h3 {
+      font-size: 1.5rem; /* 24px on mobile */
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .hero-h3 {
+      font-size: 2rem; /* 32px on tablet */
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .hero-h3 {
+      font-size: 2.25rem; /* 40px on desktop */
+    }
+  }
+
+  /** Custom h4 heading */
+  .hero-h4 {
+    font-family:
+      "SF Pro", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+      sans-serif;
+    font-weight: 400;
+    font-size: 1.5rem; /* 24px */
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    color: #282524;
+  }
+
+  @media (max-width: 767px) {
+    .hero-h4 {
+      font-size: 1.125rem; /* 18px on mobile */
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .hero-h4 {
+      font-size: 1.25rem; /* 20px on tablet */
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .hero-h4 {
+      font-size: 1.5rem; /* 24px on desktop */
+    }
+  }
+
+  /** Rounded corners for integrations label */
+  @media only screen and (min-width: 640px) {
+    .integrations-label::before {
+      content: "";
+      position: absolute;
+      top: -1rem;
+      left: 0;
+      width: 1rem;
+      height: 1rem;
+      background: radial-gradient(
+        circle at 100% 0%,
+        transparent 1rem,
+        #fafaf9 0
+      );
+    }
+
+    .integrations-label::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      right: -1rem;
+      width: 1rem;
+      height: 1rem;
+      background: radial-gradient(
+        circle at 100% 0%,
+        transparent 1rem,
+        #fafaf9 0
+      );
+    }
+  }
 }
 
 @layer utilities {

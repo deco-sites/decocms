@@ -16,12 +16,18 @@ export interface Props {
   title?: string;
   subtitle?: string;
   features?: Feature[];
+  /**
+   * @title Align Images Opposite
+   * @description When enabled, images align to the opposite side (left images align right, right images align left)
+   */
+  alignImageOpposite?: boolean;
 }
 
 export default function Features({
   title = "One place to build, run, and monetize your agents",
   subtitle =
     "Govern access, trace every step, and turn reusable modules into paid products.",
+  alignImageOpposite,
   features = [
     {
       title: "Connect your context",
@@ -108,7 +114,10 @@ export default function Features({
         </div>
 
         {/* Feature Cards - Interactive */}
-        <FeaturesInteractive features={features} />
+        <FeaturesInteractive
+          features={features}
+          alignImageOpposite={alignImageOpposite}
+        />
       </div>
     </section>
   );

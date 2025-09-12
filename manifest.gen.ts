@@ -5,73 +5,61 @@
 import * as $$$$$$$$$$$0 from "./apps/deco/blog.ts";
 import * as $$$$$$$$$$$1 from "./apps/deco/htmx.ts";
 import * as $$$$$$$$$$$2 from "./apps/site.ts";
-import * as $$$$$$0 from "./sections/ApplicationForm.tsx";
-import * as $$$$$$1 from "./sections/ApplicationProcess.tsx";
-import * as $$$$$$2 from "./sections/BlogCategories.tsx";
-import * as $$$$$$3 from "./sections/BlogPost.tsx";
-import * as $$$$$$4 from "./sections/BlogPosts.tsx";
-import * as $$$$$$5 from "./sections/BlogPostsCarousel.tsx";
-import * as $$$$$$6 from "./sections/CustomerLogos.tsx";
-import * as $$$$$$7 from "./sections/FAQ.tsx";
-import * as $$$$$$8 from "./sections/Features.tsx";
-import * as $$$$$$9 from "./sections/FinalCTA.tsx";
-import * as $$$$$$10 from "./sections/Footer.tsx";
-import * as $$$$$$11 from "./sections/Header.tsx";
-import * as $$$$$$12 from "./sections/Hero.tsx";
-import * as $$$$$$13 from "./sections/HeroSection.tsx";
-import * as $$$$$$14 from "./sections/ItWorks.tsx";
-import * as $$$$$$15 from "./sections/LightTerms.tsx";
+import * as $$$$$$0 from "./sections/BlogCategories.tsx";
+import * as $$$$$$1 from "./sections/BlogPost.tsx";
+import * as $$$$$$2 from "./sections/BlogPosts.tsx";
+import * as $$$$$$3 from "./sections/BlogPostsCarousel.tsx";
+import * as $$$$$$4 from "./sections/ConnectionsGrid.tsx";
+import * as $$$$$$5 from "./sections/DecoSitesHero.tsx";
+import * as $$$$$$6 from "./sections/FAQ.tsx";
+import * as $$$$$$7 from "./sections/Features.tsx";
+import * as $$$$$$8 from "./sections/FinalCTA.tsx";
+import * as $$$$$$9 from "./sections/Footer.tsx";
+import * as $$$$$$10 from "./sections/Header.tsx";
+import * as $$$$$$11 from "./sections/Hero.tsx";
+import * as $$$$$$12 from "./sections/HeroSection.tsx";
+import * as $$$$$$13 from "./sections/ItWorks.tsx";
+import * as $$$$$$14 from "./sections/LogoCarousel.tsx";
+import * as $$$$$$15 from "./sections/MainFeatures.tsx";
 import * as $$$$$$16 from "./sections/ModelsTable.tsx";
 import * as $$$$$$17 from "./sections/OnePlatformTwoSurfaces.tsx";
-import * as $$$$$$18 from "./sections/PartnerBenefits.tsx";
-import * as $$$$$$19 from "./sections/PartnerHighlights.tsx";
-import * as $$$$$$21 from "./sections/PartnersFAQ.tsx";
-import * as $$$$$$22 from "./sections/PartnersFinalCTA.tsx";
-import * as $$$$$$23 from "./sections/PartnersHero.tsx";
-import * as $$$$$$20 from "./sections/PartnerTiers.tsx";
-import * as $$$$$$24 from "./sections/Podcasts.tsx";
-import * as $$$$$$25 from "./sections/PricingPlans.tsx";
-import * as $$$$$$26 from "./sections/ProgramSteps.tsx";
-import * as $$$$$$27 from "./sections/RelatedBlogPosts.tsx";
-import * as $$$$$$28 from "./sections/Statement.tsx";
-import * as $$$$$$29 from "./sections/TextMedia.tsx";
-import * as $$$$$$30 from "./sections/Theme/Theme.tsx";
-import * as $$$$$$31 from "./sections/WhoShouldApply.tsx";
+import * as $$$$$$18 from "./sections/Podcasts.tsx";
+import * as $$$$$$19 from "./sections/PricingPlans.tsx";
+import * as $$$$$$20 from "./sections/ProjectGrid.tsx";
+import * as $$$$$$21 from "./sections/RelatedBlogPosts.tsx";
+import * as $$$$$$22 from "./sections/Statement.tsx";
+import * as $$$$$$23 from "./sections/TextMedia.tsx";
+import * as $$$$$$24 from "./sections/Theme/Theme.tsx";
+import * as $$$$$$25 from "./sections/ThreeCards.tsx";
 
 const manifest = {
   "sections": {
-    "site/sections/ApplicationForm.tsx": $$$$$$0,
-    "site/sections/ApplicationProcess.tsx": $$$$$$1,
-    "site/sections/BlogCategories.tsx": $$$$$$2,
-    "site/sections/BlogPost.tsx": $$$$$$3,
-    "site/sections/BlogPosts.tsx": $$$$$$4,
-    "site/sections/BlogPostsCarousel.tsx": $$$$$$5,
-    "site/sections/CustomerLogos.tsx": $$$$$$6,
-    "site/sections/FAQ.tsx": $$$$$$7,
-    "site/sections/Features.tsx": $$$$$$8,
-    "site/sections/FinalCTA.tsx": $$$$$$9,
-    "site/sections/Footer.tsx": $$$$$$10,
-    "site/sections/Header.tsx": $$$$$$11,
-    "site/sections/Hero.tsx": $$$$$$12,
-    "site/sections/HeroSection.tsx": $$$$$$13,
-    "site/sections/ItWorks.tsx": $$$$$$14,
-    "site/sections/LightTerms.tsx": $$$$$$15,
+    "site/sections/BlogCategories.tsx": $$$$$$0,
+    "site/sections/BlogPost.tsx": $$$$$$1,
+    "site/sections/BlogPosts.tsx": $$$$$$2,
+    "site/sections/BlogPostsCarousel.tsx": $$$$$$3,
+    "site/sections/ConnectionsGrid.tsx": $$$$$$4,
+    "site/sections/DecoSitesHero.tsx": $$$$$$5,
+    "site/sections/FAQ.tsx": $$$$$$6,
+    "site/sections/Features.tsx": $$$$$$7,
+    "site/sections/FinalCTA.tsx": $$$$$$8,
+    "site/sections/Footer.tsx": $$$$$$9,
+    "site/sections/Header.tsx": $$$$$$10,
+    "site/sections/Hero.tsx": $$$$$$11,
+    "site/sections/HeroSection.tsx": $$$$$$12,
+    "site/sections/ItWorks.tsx": $$$$$$13,
+    "site/sections/LogoCarousel.tsx": $$$$$$14,
+    "site/sections/MainFeatures.tsx": $$$$$$15,
     "site/sections/ModelsTable.tsx": $$$$$$16,
     "site/sections/OnePlatformTwoSurfaces.tsx": $$$$$$17,
-    "site/sections/PartnerBenefits.tsx": $$$$$$18,
-    "site/sections/PartnerHighlights.tsx": $$$$$$19,
-    "site/sections/PartnersFAQ.tsx": $$$$$$21,
-    "site/sections/PartnersFinalCTA.tsx": $$$$$$22,
-    "site/sections/PartnersHero.tsx": $$$$$$23,
-    "site/sections/PartnerTiers.tsx": $$$$$$20,
-    "site/sections/Podcasts.tsx": $$$$$$24,
-    "site/sections/PricingPlans.tsx": $$$$$$25,
-    "site/sections/ProgramSteps.tsx": $$$$$$26,
-    "site/sections/RelatedBlogPosts.tsx": $$$$$$27,
-    "site/sections/Statement.tsx": $$$$$$28,
-    "site/sections/TextMedia.tsx": $$$$$$29,
-    "site/sections/Theme/Theme.tsx": $$$$$$30,
-    "site/sections/WhoShouldApply.tsx": $$$$$$31,
+    "site/sections/Podcasts.tsx": $$$$$$18,
+    "site/sections/PricingPlans.tsx": $$$$$$19,
+    "site/sections/ProjectGrid.tsx": $$$$$$20,
+    "site/sections/RelatedBlogPosts.tsx": $$$$$$21,
+    "site/sections/Statement.tsx": $$$$$$22,
+    "site/sections/TextMedia.tsx": $$$$$$23,
+    "site/sections/Theme/Theme.tsx": $$$$$$24,
+    "site/sections/ThreeCards.tsx": $$$$$$25,
   },
   "apps": {
     "site/apps/deco/blog.ts": $$$$$$$$$$$0,

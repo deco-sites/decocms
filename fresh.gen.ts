@@ -8,6 +8,7 @@ import * as $BlogCategories from "./islands/BlogCategories.tsx";
 import * as $BlogPostsCarousel from "./islands/BlogPostsCarousel.tsx";
 import * as $CopyCommandButton from "./islands/CopyCommandButton.tsx";
 import * as $FeaturesInteractive from "./islands/FeaturesInteractive.tsx";
+import * as $GitHubStars from "./islands/GitHubStars.tsx";
 import type { Manifest } from "$fresh/server.ts";
 
 const manifest = {
@@ -20,6 +21,7 @@ const manifest = {
     "./islands/BlogPostsCarousel.tsx": $BlogPostsCarousel,
     "./islands/CopyCommandButton.tsx": $CopyCommandButton,
     "./islands/FeaturesInteractive.tsx": $FeaturesInteractive,
+    "./islands/GitHubStars.tsx": $GitHubStars,
   },
   baseUrl: import.meta.url,
 } satisfies Manifest;

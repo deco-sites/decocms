@@ -49,7 +49,7 @@ export default function Button({
 }: ButtonProps) {
   // Base classes for all buttons
   const baseClasses =
-    "rounded-xl inline-flex justify-center items-center font-medium transition-colors";
+    "rounded-xl inline-flex justify-center items-center font-medium transition-colors hover:scale-95 transition-transform duration-200 ease-in-out";
 
   // Variant-specific classes
   const variantClasses = {
