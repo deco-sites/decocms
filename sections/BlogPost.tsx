@@ -24,7 +24,8 @@ const HEADING_STYLES =
 
 const CODE_BLOCK_STYLES =
   "[&>pre]:bg-gray-100 [&>pre]:text-gray-800 [&>pre]:p-3 [&>pre]:md:p-4 [&>pre]:font-mono [&>pre]:text-xs [&>pre]:md:text-sm [&>pre]:border [&>pre]:rounded-md [&>pre]:overflow-x-auto [&>pre]:max-w-full [&>pre]:whitespace-pre-wrap [&>pre]:md:whitespace-pre [&>code]:block [&>code]:w-full [&>code]:break-all [&>code]:md:break-normal";
-const IMAGE_STYLES = "[&_img]:rounded-lg [&_img]:md:rounded-2xl [&_img]:w-full [&_img]:h-auto [&_img]:my-6 [&_img]:md:my-8 [&_img]:lg:my-12 [&_img]:object-cover";
+const IMAGE_STYLES =
+  "[&_img]:rounded-lg [&_img]:md:rounded-2xl [&_img]:w-full [&_img]:h-auto [&_img]:my-6 [&_img]:md:my-8 [&_img]:lg:my-12 [&_img]:object-cover";
 const BLOCKQUOTE_STYLES =
   "[&>blockquote]:my-4 [&>blockquote]:md:my-6 [&>blockquote]:border-l-2 [&>blockquote]:border-dc-300 [&>blockquote]:text-base [&>blockquote]:md:text-lg [&>blockquote]:lg:text-xl [&>blockquote]:italic [&>blockquote]:pl-4 [&>blockquote]:md:pl-6 [&>blockquote]:text-dc-600 [&>blockquote]:break-words";
 const LIST_STYLES =
@@ -71,29 +72,29 @@ export default function BlogPost({ page }: Props) {
 
   const formattedDate = date
     ? (() => {
-        try {
-          const dateObj = new Date(date);
-          const dateStr = dateObj.toLocaleDateString("en-US", {
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-          });
-          const timeStr = dateObj.toLocaleTimeString("en-US", {
-            hour: "numeric",
-            minute: "2-digit",
-            hour12: true,
-          });
-          return `${dateStr} at ${timeStr}`;
-        } catch (e) {
-          return date;
-        }
-      })()
+      try {
+        const dateObj = new Date(date);
+        const dateStr = dateObj.toLocaleDateString("en-US", {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        });
+        const timeStr = dateObj.toLocaleTimeString("en-US", {
+          hour: "numeric",
+          minute: "2-digit",
+          hour12: true,
+        });
+        return `${dateStr} at ${timeStr}`;
+      } catch (e) {
+        return date;
+      }
+    })()
     : "";
 
   return (
     <>
       {/* Hero Section */}
-      <div className="w-full min-w-full relative bg-dc-50 flex flex-col justify-start items-center gap-12 md:gap-16 lg:gap-20 overflow-hidden px-4 md:px-8 lg:px-16 pt-12 md:pt-16">
+      <div className="w-full min-w-full relative bg-dc-50 flex flex-col justify-start items-center gap-12 md:gap-16 lg:gap-20 overflow-hidden px-4 md:px-8 lg:px-16 pt-16 md:pt-32">
         <div className="w-full md:w-[700px] max-w-[700px] flex flex-col justify-start items-start gap-6 md:gap-8 relative z-10">
           <div className="self-stretch flex flex-col justify-start items-center gap-6">
             <div className="self-stretch flex flex-col justify-start items-center gap-4">
@@ -181,7 +182,10 @@ export default function BlogPost({ page }: Props) {
             className={`${CONTENT_STYLES} w-full overflow-hidden`}
             id="blog-post-content"
             dangerouslySetInnerHTML={{
-              __html: content.replaceAll("&lt;iframe", "<iframe ").replaceAll("&lt;/iframe&gt;", " </iframe>").replaceAll("allowfullscreen&gt;", "allowfullscreen>") || "",
+              __html: content.replaceAll("&lt;iframe", "<iframe ").replaceAll(
+                "&lt;/iframe&gt;",
+                " </iframe>",
+              ).replaceAll("allowfullscreen&gt;", "allowfullscreen>") || "",
             }}
           />
         </div>

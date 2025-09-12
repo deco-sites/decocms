@@ -132,7 +132,7 @@ export default function BlogCategories({
   };
 
   return (
-    <div class="w-full bg-dc-50 px-4 md:px-8 lg:px-16 py-8">
+    <div class="w-full bg-dc-50 px-4 md:px-8 lg:px-16 py-8 pt-24">
       <div class="w-full max-w-[1440px] mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
         {/* Categories */}
         <div class="flex flex-wrap justify-start items-center gap-2">
