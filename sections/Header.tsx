@@ -6,6 +6,16 @@ import Button from "../components/ui/Button.tsx";
 export interface MenuItem {
   label: string;
   href?: string;
+  /**
+   * @title Dropdown items
+   * @description Optional list of submenu items for dropdowns
+   */
+  items?: Array<{
+    /** @title Label */
+    label: string;
+    /** @title Href */
+    href: string;
+  }>;
 }
 
 export interface Props {
@@ -79,16 +89,54 @@ export default function Header({
           <div class="backdrop-blur-sm bg-white/80 rounded-2xl p-1 flex items-center gap-12">
             <div class="flex items-center gap-2">
               {menuItems.map((item, index) => (
-                <div
-                  key={index}
-                  class="px-4 py-1.5 rounded-full flex items-center gap-2"
-                >
-                  <a
-                    href={item.href}
-                    class="text-dc-800 text-sm font-normal leading-tight hover:text-primary-dark transition-colors"
-                  >
-                    {item.label}
-                  </a>
+                <div key={index} class="relative group" tabIndex={0}>
+                  {item.items && item.items.length > 0
+                    ? (
+                      <div class="px-4 py-1.5 rounded-full flex items-center gap-1.5 cursor-pointer text-dc-800 hover:text-primary-dark transition-colors">
+                        <span class="text-sm font-normal leading-tight">
+                          {item.label}
+                        </span>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          class="text-dc-600"
+                        >
+                          <path
+                            d="M6 9l6 6 6-6"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+
+                        {/* Dropdown Panel */}
+                        <div class="hidden group-hover:block group-focus-within:block absolute left-0 top-full mt-0 inline-block w-max rounded-2xl bg-white/95 backdrop-blur-sm border border-dc-200 shadow-lg py-2 z-50">
+                          {item.items.map((sub, subIndex) => (
+                            <a
+                              key={subIndex}
+                              href={sub.href}
+                              class="block px-4 py-2 text-sm text-dc-800 hover:bg-dc-100 rounded-xl mx-2"
+                            >
+                              {sub.label}
+                            </a>
+                          ))}
+                        </div>
+                      </div>
+                    )
+                    : (
+                      <div class="px-4 py-1.5 rounded-full flex items-center gap-2">
+                        <a
+                          href={item.href}
+                          class="text-dc-800 text-sm font-normal leading-tight hover:text-primary-dark transition-colors"
+                        >
+                          {item.label}
+                        </a>
+                      </div>
+                    )}
                 </div>
               ))}
             </div>
@@ -148,13 +196,50 @@ export default function Header({
       >
         <div class="p-4 space-y-2">
           {menuItems.map((item, index) => (
-            <a
-              key={index}
-              href={item.href}
-              class="block px-4 py-3 text-dc-800 text-sm font-normal leading-tight hover:bg-dc-100 rounded-xl transition-colors"
-            >
-              {item.label}
-            </a>
+            item.items && item.items.length > 0
+              ? (
+                <details class="px-2" key={index}>
+                  <summary class="list-none flex items-center justify-between px-2 py-3 text-dc-800 text-sm font-normal leading-tight hover:bg-dc-100 rounded-xl cursor-pointer">
+                    <span>{item.label}</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      class="text-dc-600"
+                    >
+                      <path
+                        d="M6 9l6 6 6-6"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </summary>
+                  <div class="mt-1 pl-2">
+                    {item.items.map((sub, subIndex) => (
+                      <a
+                        key={subIndex}
+                        href={sub.href}
+                        class="block px-4 py-2 text-dc-800 text-sm font-normal leading-tight hover:bg-dc-100 rounded-xl transition-colors"
+                      >
+                        {sub.label}
+                      </a>
+                    ))}
+                  </div>
+                </details>
+              )
+              : (
+                <a
+                  key={index}
+                  href={item.href}
+                  class="block px-4 py-3 text-dc-800 text-sm font-normal leading-tight hover:bg-dc-100 rounded-xl transition-colors"
+                >
+                  {item.label}
+                </a>
+              )
           ))}
           {/* GitHub Stars in mobile menu */}
           <div class="px-4 py-3 sm:hidden">

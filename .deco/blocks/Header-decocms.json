@@ -12,6 +12,15 @@
     {
       "label": "Blog",
       "href": "/blog"
+    },
+    {
+      "label": "Use Cases",
+      "items": [
+        {
+          "label": "E-commerce",
+          "href": "/use-case/deco-sites"
+        }
+      ]
     }
   ],
   "ctaText": "Get early access",
