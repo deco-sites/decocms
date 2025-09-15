@@ -78,7 +78,6 @@
       ]
     }
   },
-  "nodeModulesDir": "none",
   "compilerOptions": {
     "jsx": "react-jsx",
     "jsxImportSource": "preact",
