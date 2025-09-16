@@ -22,7 +22,8 @@ export default function PartnersFAQ({
   faqItems = [
     {
       question: "Do you provide customer leads?",
-      answer: "Yes for Certified+ based on region, vertical fit, and bandwidth.",
+      answer:
+        "Yes for Certified+ based on region, vertical fit, and bandwidth.",
     },
     {
       question: "Can we resell Deco?",
@@ -30,19 +31,23 @@ export default function PartnersFAQ({
     },
     {
       question: "How do deal conflicts work?",
-      answer: "Register deals for a 120‑day protection window (+60 with activity). Multi‑partner only with client consent or segmented scope.",
+      answer:
+        "Register deals for a 120‑day protection window (+60 with activity). Multi‑partner only with client consent or segmented scope.",
     },
     {
       question: "How do certifications work?",
-      answer: "Tracks: DAS‑I, DCS, DIA. Badges expire in 18 months; maintain via launches + CPE or re‑test.",
+      answer:
+        "Tracks: DAS‑I, DCS, DIA. Badges expire in 18 months; maintain via launches + CPE or re‑test.",
     },
     {
       question: "Where can we see pricing?",
-      answer: "Program benefits & tiers: /partners. Product pricing is handled per customer or via your reseller terms.",
+      answer:
+        "Program benefits & tiers: /partners. Product pricing is handled per customer or via your reseller terms.",
     },
     {
       question: "Data privacy & deployment?",
-      answer: "Projects run with RBAC and cost caps. Deploy to VPC or on‑prem as needed.",
+      answer:
+        "Projects run with RBAC and cost caps. Deploy to VPC or on‑prem as needed.",
     },
   ],
 }: Props) {

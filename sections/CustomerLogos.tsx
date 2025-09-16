@@ -21,7 +21,8 @@ export interface Props {
 
 export default function CustomerLogos({
   title = "Who's Already Building with deco CMS",
-  subtitle = "Trusted by teams shipping AI‑native experiences. Replace placeholders with approved customer logos.",
+  subtitle =
+    "Trusted by teams shipping AI‑native experiences. Replace placeholders with approved customer logos.",
   customerLogos = [
     {
       logo: "https://placehold.co/120x60/E5E5E5/999999?text=Customer+1",
@@ -66,27 +67,29 @@ export default function CustomerLogos({
         <div class="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 md:gap-12 items-center justify-items-center">
           {customerLogos.map((customer, index) => (
             <div key={index} class="flex items-center justify-center">
-              {customer.caseStudyUrl ? (
-                <a
-                  href={customer.caseStudyUrl}
-                  class="block opacity-60 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0"
-                  title={`${customer.name} case study`}
-                >
+              {customer.caseStudyUrl
+                ? (
+                  <a
+                    href={customer.caseStudyUrl}
+                    class="block opacity-60 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0"
+                    title={`${customer.name} case study`}
+                  >
+                    <img
+                      src={customer.logo}
+                      alt={customer.name}
+                      class="h-8 md:h-10 w-auto object-contain"
+                      loading="lazy"
+                    />
+                  </a>
+                )
+                : (
                   <img
                     src={customer.logo}
                     alt={customer.name}
-                    class="h-8 md:h-10 w-auto object-contain"
+                    class="h-8 md:h-10 w-auto object-contain opacity-60 grayscale"
                     loading="lazy"
                   />
-                </a>
-              ) : (
-                <img
-                  src={customer.logo}
-                  alt={customer.name}
-                  class="h-8 md:h-10 w-auto object-contain opacity-60 grayscale"
-                  loading="lazy"
-                />
-              )}
+                )}
             </div>
           ))}
         </div>

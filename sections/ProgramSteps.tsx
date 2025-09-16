@@ -1,6 +1,7 @@
+import { Check, Lightbulb } from "lucide-preact";
+import Button from "../components/ui/Button.tsx";
+
 export interface Step {
-  /** @title Step Number */
-  number: string;
   /** @title Step Title */
   title: string;
   /** @title Step Description */
@@ -8,6 +9,8 @@ export interface Step {
 }
 
 export interface Props {
+  /** @title Section Subtitle */
+  subtitle?: string;
   /** @title Section Title */
   title?: string;
   /** @title Steps */
@@ -21,80 +24,135 @@ export interface Props {
 }
 
 export default function ProgramSteps({
-  title = "How the program works (3 steps)",
-  steps = [
-    {
-      number: "1",
-      title: "Apply",
-      description: "tell us your focus, stacks, and preferred monetization.",
-    },
-    {
-      number: "2",
-      title: "Enable",
-      description: "get sandbox credits, Starter Kit, and certification schedule.",
-    },
-    {
-      number: "3",
-      title: "Go‑to‑market",
-      description: "register deals, request MDF, and publish case studies.",
-    },
-  ],
-  tipText = "Not sure where to start? Join a 20‑min intro call",
-  tipCtaText = "Book intro call",
-  tipCtaUrl = "/partners/intro-call",
+  subtitle,
+  title,
+  steps = [],
+  tipText,
+  tipCtaText,
+  tipCtaUrl,
 }: Props) {
   return (
-    <section class="w-full bg-[#FAF9F7] py-16 md:py-24">
-      <div class="w-full max-w-[1440px] mx-auto px-4 md:px-8">
-        <div class="flex flex-col gap-8 md:gap-12">
+    <section className="w-full bg-dc-50 py-16 sm:py-20 lg:py-32">
+      <div className="w-full max-w-6xl mx-auto px-4 sm:px-8 lg:px-16">
+        <div className="flex flex-col gap-8 sm:gap-12 lg:gap-20">
           {/* Header */}
-          <h2 class="text-[#1C1917] text-2xl md:text-3xl lg:text-4xl font-medium leading-tight">
-            {title}
-          </h2>
-
-          {/* Steps */}
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
-            {steps.map((step, index) => (
-              <div key={index} class="flex flex-col gap-4">
-                <div class="flex items-center gap-4">
-                  <div class="w-10 h-10 bg-[#D0EC1A] rounded-full flex items-center justify-center">
-                    <span class="text-[#07401A] text-lg font-bold">
-                      {step.number}
-                    </span>
-                  </div>
-                  <h3 class="text-[#1C1917] text-xl md:text-2xl font-medium">
-                    {step.title}
-                  </h3>
-                </div>
-                <p class="text-[#78716C] text-base md:text-lg leading-relaxed ml-14">
-                  {step.description}
-                </p>
+          <div className="flex flex-col gap-3 items-start justify-center max-w-lg">
+            {subtitle && (
+              <div className="text-dc-500 text-sm sm:text-base font-mono leading-5 uppercase tracking-wide">
+                {subtitle}
               </div>
-            ))}
+            )}
+            {title && (
+              <h2 className="text-dc-800 text-3xl sm:text-4xl lg:text-5xl font-medium leading-tight tracking-tight">
+                {title}
+              </h2>
+            )}
           </div>
 
-          {/* Tip */}
-          <div class="bg-dc-100 rounded-xl p-6 md:p-8 border border-dc-200">
-            <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
-              <div class="flex items-center gap-2">
-                <div class="w-6 h-6 bg-[#D0EC1A] rounded-full flex items-center justify-center">
-                  <span class="text-[#07401A] text-sm font-bold">💡</span>
+          {/* Steps Flow */}
+          <div className="py-6 sm:py-8 lg:py-12">
+            {/* Mobile/Tablet: Vertical Layout */}
+            <div className="flex flex-col gap-6 sm:gap-8 lg:hidden relative">
+              {steps.map((step, index) => (
+                <div key={index} className="flex items-start gap-4 relative">
+                  {/* Check Icon */}
+                  <div className="relative flex-shrink-0">
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 bg-primary-light rounded-full flex items-center justify-center">
+                      <Check
+                        size={20}
+                        strokeWidth={2}
+                        class="text-primary-dark"
+                      />
+                    </div>
+
+                    {/* Vertical Connecting Line */}
+                    {index < steps.length - 1 && (
+                      <div className="absolute top-12 sm:top-14 left-1/2 transform -translate-x-1/2 w-0.5 h-6 sm:h-8 bg-primary-light">
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Content */}
+                  <div className="flex flex-col gap-2 pt-1">
+                    <h3 className="text-dc-800 text-lg sm:text-xl font-normal leading-tight">
+                      {step.title}
+                    </h3>
+                    <p className="text-dc-800 text-sm sm:text-base leading-relaxed">
+                      {step.description}
+                    </p>
+                  </div>
                 </div>
-                <span class="text-dc-900 text-base md:text-lg font-medium">Tip:</span>
-              </div>
-              <div class="flex-1 flex flex-col sm:flex-row items-start sm:items-center gap-4">
-                <span class="text-dc-700 text-base md:text-lg">
-                  {tipText}
-                </span>
-                <a
-                  href={tipCtaUrl}
-                  class="px-4 py-2 bg-[#D0EC1A] rounded-lg text-[#07401A] text-sm font-medium hover:bg-[#C5E015] transition-colors"
+              ))}
+            </div>
+
+            {/* Desktop: Horizontal Layout */}
+            <div className="hidden lg:grid grid-cols-3 gap-8 relative">
+              {steps.map((step, index) => (
+                <div
+                  key={index}
+                  className="flex flex-col gap-4 items-start relative"
                 >
-                  {tipCtaText} →
-                </a>
-              </div>
+                  {/* Check Icon */}
+                  <div className="relative">
+                    <div className="w-14 h-14 bg-primary-light rounded-full flex items-center justify-center">
+                      <Check
+                        size={28}
+                        strokeWidth={2}
+                        class="text-primary-dark"
+                      />
+                    </div>
+
+                    {/* Horizontal Connecting Line */}
+                    {index < steps.length - 1 && (
+                      <div
+                        className="absolute top-7 left-14 w-full h-0.5 bg-primary-light"
+                        style={{ width: "calc(100vw / 3 - 3.5rem)" }}
+                      >
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Content */}
+                  <div className="flex flex-col gap-4">
+                    <h3 className="text-dc-800 text-xl sm:text-2xl font-normal leading-tight">
+                      {step.title}
+                    </h3>
+                    <p className="text-dc-800 text-base sm:text-lg leading-relaxed">
+                      {step.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
+
+          {/* Tip Section */}
+          {tipText && tipCtaText && tipCtaUrl && (
+            <div className="bg-primary-dark rounded-xl p-6 sm:p-8 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
+              <div className="flex items-center gap-3 flex-shrink-0">
+                <Lightbulb
+                  size={28}
+                  strokeWidth={2}
+                  class="text-primary-light"
+                />
+              </div>
+
+              <div className="flex-1 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
+                <p className="text-primary-light text-lg sm:text-xl lg:text-2xl font-normal leading-tight flex-1">
+                  {tipText}
+                </p>
+
+                <Button
+                  variant="primary"
+                  size="medium"
+                  href={tipCtaUrl}
+                  className="!bg-primary-light !text-primary-dark hover:!bg-primary-light/90 flex-shrink-0"
+                >
+                  {tipCtaText}
+                </Button>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </section>

@@ -1,8 +1,13 @@
+import { CheckCircle, GraduationCap, Target, Users, Zap } from "lucide-preact";
+
 export interface PartnerType {
   /** @title Partner Type */
   title: string;
   /** @title Description */
   description: string;
+  /** @title Icon */
+  /** @description Choose from: target, users, zap, graduation-cap */
+  icon: "target" | "users" | "zap" | "graduation-cap";
 }
 
 export interface Requirement {
@@ -11,6 +16,8 @@ export interface Requirement {
 }
 
 export interface Props {
+  /** @title Section Subtitle */
+  subtitle?: string;
   /** @title Section Title */
   title?: string;
   /** @title Partner Types */
@@ -22,82 +29,105 @@ export interface Props {
 }
 
 export default function WhoShouldApply({
-  title = "Who should apply",
-  partnerTypes = [
-    {
-      title: "Agentic SIs/Agencies",
-      description: "building AI workflows, agents, or AI‑friendly storefronts.",
-    },
-    {
-      title: "ISVs/Co‑builders",
-      description: "publishing connectors, MCPs, blueprints, or templates.",
-    },
-    {
-      title: "Technology partners",
-      description: "(cloud, data, observability, LLMs) integrating with Deco.",
-    },
-    {
-      title: "Training partners",
-      description: "creating courses, bootcamps, or certifications.",
-    },
-  ],
-  readinessTitle = "Minimum readiness:",
-  requirements = [
-    {
-      text: "1+ public or private AI build or a capable team ready to deliver with guidance.",
-    },
-    {
-      text: "Commitment to at least one reference build in the first 60 days.",
-    },
-    {
-      text: "Named partner lead for delivery and GTM.",
-    },
-  ],
+  subtitle,
+  title,
+  partnerTypes = [],
+  readinessTitle,
+  requirements = [],
 }: Props) {
-  return (
-    <section class="w-full bg-[#FAF9F7] py-16 md:py-24">
-      <div class="w-full max-w-[1440px] mx-auto px-4 md:px-8">
-        <div class="flex flex-col gap-8 md:gap-12">
-          {/* Header */}
-          <h2 class="text-[#1C1917] text-2xl md:text-3xl lg:text-4xl font-medium leading-tight">
-            {title}
-          </h2>
+  const getIcon = (iconName: string) => {
+    const iconProps = {
+      size: 32,
+      strokeWidth: 2,
+      class: "text-current",
+    };
 
-          {/* Partner Types */}
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+    switch (iconName) {
+      case "target":
+        return <Target {...iconProps} />;
+      case "users":
+        return <Users {...iconProps} />;
+      case "zap":
+        return <Zap {...iconProps} />;
+      case "graduation-cap":
+        return <GraduationCap {...iconProps} />;
+      default:
+        return <Target {...iconProps} />;
+    }
+  };
+
+  return (
+    <section className="w-full bg-dc-50 py-16 sm:py-20 lg:py-32">
+      <div className="w-full max-w-6xl mx-auto px-4 sm:px-8 lg:px-16">
+        <div className="flex flex-col gap-12 sm:gap-16 lg:gap-20">
+          {/* Header */}
+          <div className="flex flex-col gap-3 items-start justify-center max-w-lg">
+            {subtitle && (
+              <div className="text-dc-500 text-sm sm:text-base font-mono leading-5 uppercase tracking-wide">
+                {subtitle}
+              </div>
+            )}
+            {title && (
+              <h2 className="text-dc-800 text-3xl sm:text-4xl lg:text-5xl font-medium leading-tight tracking-tight">
+                {title}
+              </h2>
+            )}
+          </div>
+
+          {/* Partner Types - Clean List */}
+          <div className="flex flex-col gap-8 sm:gap-10">
             {partnerTypes.map((type, index) => (
-              <div key={index} class="flex flex-col gap-2">
-                <div class="flex items-start gap-3">
-                  <div class="w-2 h-2 bg-[#D0EC1A] rounded-full mt-2 flex-shrink-0"></div>
-                  <div class="flex-1">
-                    <span class="text-[#1C1917] text-base md:text-lg font-medium">
-                      {type.title}
-                    </span>
-                    <span class="text-[#78716C] text-base md:text-lg font-normal ml-1">
-                      {type.description}
-                    </span>
+              <div key={index} className="flex items-start gap-6 sm:gap-8">
+                {/* Icon */}
+                <div className="flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 bg-primary-light rounded-full flex items-center justify-center">
+                  <div className="text-primary-dark">
+                    {getIcon(type.icon)}
                   </div>
+                </div>
+
+                {/* Content */}
+                <div className="flex-1 pt-2 sm:pt-3">
+                  <h3 className="text-dc-800 text-xl sm:text-2xl lg:text-3xl font-medium leading-tight mb-2 sm:mb-3">
+                    {type.title}
+                  </h3>
+                  <p className="text-dc-500 text-lg sm:text-xl leading-relaxed">
+                    {type.description}
+                  </p>
                 </div>
               </div>
             ))}
           </div>
 
-          {/* Minimum Readiness */}
-          <div class="flex flex-col gap-4 md:gap-6">
-            <h3 class="text-[#1C1917] text-xl md:text-2xl font-medium">
-              {readinessTitle}
-            </h3>
-            <div class="flex flex-col gap-3">
-              {requirements.map((requirement, index) => (
-                <div key={index} class="flex items-start gap-3">
-                  <div class="w-2 h-2 bg-[#78716C] rounded-full mt-2 flex-shrink-0"></div>
-                  <p class="text-[#78716C] text-base md:text-lg leading-relaxed">
-                    {requirement.text}
-                  </p>
+          {/* Minimum Readiness - Modern Card */}
+          {readinessTitle && requirements.length > 0 && (
+            <div className="bg-gradient-to-br from-dc-100 to-dc-200 rounded-2xl p-6 sm:p-8 lg:p-10">
+              <div className="flex flex-col gap-6">
+                <h3 className="text-dc-800 text-xl sm:text-2xl lg:text-3xl font-medium leading-tight">
+                  {readinessTitle}
+                </h3>
+
+                <div className="grid grid-cols-1 gap-4">
+                  {requirements.map((requirement, index) => (
+                    <div
+                      key={index}
+                      className="flex items-start gap-4 p-4 bg-white/70 rounded-xl backdrop-blur-sm"
+                    >
+                      <div className="flex-shrink-0 mt-1">
+                        <CheckCircle
+                          size={20}
+                          strokeWidth={2}
+                          className="text-primary-dark"
+                        />
+                      </div>
+                      <p className="text-dc-700 text-base sm:text-lg leading-relaxed">
+                        {requirement.text}
+                      </p>
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
     </section>

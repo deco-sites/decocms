@@ -20,10 +20,12 @@ export default function ApplicationProcess({
       description: "Decision within 2 business days.",
     },
     {
-      description: "If approved: sandbox access + Starter Kit + certification invite.",
+      description:
+        "If approved: sandbox access + Starter Kit + certification invite.",
     },
     {
-      description: "If waitlisted: suggested steps to qualify (e.g., blueprint completion, cohort date).",
+      description:
+        "If waitlisted: suggested steps to qualify (e.g., blueprint completion, cohort date).",
     },
   ],
 }: Props) {
@@ -40,7 +42,8 @@ export default function ApplicationProcess({
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             {processSteps.map((step, index) => (
               <div key={index} class="flex items-start gap-3">
-                <div class="w-2 h-2 bg-[#D0EC1A] rounded-full mt-2 flex-shrink-0"></div>
+                <div class="w-2 h-2 bg-[#D0EC1A] rounded-full mt-2 flex-shrink-0">
+                </div>
                 <p class="text-dc-700 text-base md:text-lg leading-relaxed">
                   {step.description}
                 </p>

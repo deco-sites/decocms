@@ -1,13 +1,47 @@
+import type { ImageWidget } from "apps/admin/widgets.ts";
+import Image from "apps/website/components/Image.tsx";
+import {
+  Briefcase,
+  DollarSign,
+  MapPin,
+  Newspaper,
+  Star,
+  TrendingUp,
+  Users,
+  Zap,
+} from "lucide-preact";
+
+export interface Benefit {
+  /** @title Benefit Text */
+  text: string;
+  /** @title Icon */
+  /** @description Choose from: zap, newspaper, dollar-sign, users, map-pin, briefcase, trending-up, star */
+  icon:
+    | "zap"
+    | "newspaper"
+    | "dollar-sign"
+    | "users"
+    | "map-pin"
+    | "briefcase"
+    | "trending-up"
+    | "star";
+}
+
 export interface Tier {
   /** @title Tier Name */
   name: string;
-  /** @title Benefits */
-  benefits: string;
+  /** @title Tier Image */
+  /** @description Square image (1:1 aspect ratio) for the tier */
+  image?: ImageWidget;
   /** @title Requirements */
   requirements: string;
+  /** @title Benefits */
+  benefits: Benefit[];
 }
 
 export interface Props {
+  /** @title Section Subtitle */
+  subtitle?: string;
   /** @title Section Title */
   title?: string;
   /** @title Tiers */
@@ -19,96 +53,147 @@ export interface Props {
 }
 
 export default function PartnerTiers({
-  title = "Tiers (snapshot)",
-  tiers = [
-    {
-      name: "Registered",
-      benefits: "Deal reg, newsletter, $500 credits",
-      requirements: "Application + 1 case plan",
-    },
-    {
-      name: "Certified",
-      benefits: "Directory listing, co‑marketing, lead share",
-      requirements: "2 certified + 1 public demo",
-    },
-    {
-      name: "Premier",
-      benefits: "Priority leads, roadmap, MDF, early betas",
-      requirements: "$50k+ ARR or 3 launches/qtr + 4 cert",
-    },
-    {
-      name: "Elite",
-      benefits: "Co‑sell squad, advisory council, preferred margin",
-      requirements: "$200k+ ARR or 12/yr + 8 cert",
-    },
-  ],
-  fullDetailsNote = "See full details on",
-  fullDetailsUrl = "/partners",
+  subtitle,
+  title,
+  tiers = [],
+  fullDetailsNote,
+  fullDetailsUrl,
 }: Props) {
-  return (
-    <section class="w-full bg-dc-50 py-16 md:py-24">
-      <div class="w-full max-w-[1440px] mx-auto px-4 md:px-8">
-        <div class="flex flex-col gap-8 md:gap-12">
-          {/* Header */}
-          <h2 class="text-dc-900 text-2xl md:text-3xl lg:text-4xl font-medium leading-tight">
-            {title}
-          </h2>
+  const getIcon = (iconName: string) => {
+    const iconProps = {
+      size: 16,
+      strokeWidth: 2,
+      class: "text-purple-light",
+    };
 
-          {/* Tiers Table */}
-          <div class="overflow-x-auto">
-            <table class="w-full bg-white rounded-xl shadow-sm border border-dc-200">
-              <thead>
-                <tr class="border-b border-dc-200">
-                  <th class="text-left p-4 md:p-6 text-dc-900 text-base md:text-lg font-medium">
-                    Tier
-                  </th>
-                  <th class="text-left p-4 md:p-6 text-dc-900 text-base md:text-lg font-medium">
-                    Benefits (short)
-                  </th>
-                  <th class="text-left p-4 md:p-6 text-dc-900 text-base md:text-lg font-medium">
+    switch (iconName) {
+      case "zap":
+        return <Zap {...iconProps} />;
+      case "newspaper":
+        return <Newspaper {...iconProps} />;
+      case "dollar-sign":
+        return <DollarSign {...iconProps} />;
+      case "users":
+        return <Users {...iconProps} />;
+      case "map-pin":
+        return <MapPin {...iconProps} />;
+      case "briefcase":
+        return <Briefcase {...iconProps} />;
+      case "trending-up":
+        return <TrendingUp {...iconProps} />;
+      case "star":
+        return <Star {...iconProps} />;
+      default:
+        return <Zap {...iconProps} />;
+    }
+  };
+
+  return (
+    <section className="w-full bg-dc-50 py-16 sm:py-20 lg:py-32">
+      <div className="w-full max-w-6xl mx-auto px-4 sm:px-8 lg:px-16">
+        <div className="flex flex-col gap-8 sm:gap-10 lg:gap-14">
+          {/* Header */}
+          <div className="flex flex-col gap-3 items-start justify-center max-w-lg">
+            {subtitle && (
+              <div className="text-dc-500 text-sm sm:text-base font-mono leading-5 uppercase tracking-wide">
+                {subtitle}
+              </div>
+            )}
+            {title && (
+              <h2 className="text-dc-800 text-3xl sm:text-4xl lg:text-5xl font-medium leading-tight tracking-tight">
+                {title}
+              </h2>
+            )}
+          </div>
+
+          {/* Tiers Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+            {tiers.map((tier, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-xl p-4 sm:p-6 lg:p-8 flex flex-col gap-4 sm:gap-6 lg:gap-8 items-center"
+              >
+                {/* Tier Image */}
+                <div className="w-20 h-20 sm:w-32 sm:h-32 lg:w-40 lg:h-40 flex-shrink-0">
+                  {tier.image
+                    ? (
+                      <Image
+                        src={tier.image}
+                        alt={`${tier.name} tier`}
+                        width={160}
+                        height={160}
+                        loading="lazy"
+                        className="w-full h-full object-cover"
+                      />
+                    )
+                    : (
+                      <div className="w-full h-full bg-dc-100 rounded-full flex items-center justify-center">
+                        <div className="w-16 h-16 bg-primary-light rounded-full flex items-center justify-center">
+                          <div className="w-8 h-8 bg-primary-dark rounded-full">
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                </div>
+
+                {/* Tier Name */}
+                <h3 className="text-dc-800 text-lg sm:text-2xl lg:text-3xl font-medium leading-tight text-center">
+                  {tier.name}
+                </h3>
+
+                {/* Requirements */}
+                <div className="flex flex-col gap-2 sm:gap-3 lg:gap-4 w-full">
+                  <div className="border-t border-dc-300"></div>
+                  <div className="text-dc-500 text-xs sm:text-sm font-mono leading-5 uppercase tracking-wide">
                     Requirements
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {tiers.map((tier, index) => (
-                  <tr key={index} class="border-b border-dc-100 last:border-b-0">
-                    <td class="p-4 md:p-6">
-                      <span class="text-dc-900 text-base md:text-lg font-medium">
-                        {tier.name}
-                      </span>
-                    </td>
-                    <td class="p-4 md:p-6">
-                      <span class="text-dc-700 text-sm md:text-base">
-                        {tier.benefits}
-                      </span>
-                    </td>
-                    <td class="p-4 md:p-6">
-                      <span class="text-dc-700 text-sm md:text-base">
-                        {tier.requirements}
-                      </span>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+                  </div>
+                  <div className="text-dc-800 text-sm sm:text-base lg:text-lg leading-tight">
+                    {tier.requirements}
+                  </div>
+                  <div className="border-t border-dc-300"></div>
+                </div>
+
+                {/* Benefits */}
+                <div className="flex flex-col gap-2 sm:gap-3 lg:gap-4 w-full">
+                  <div className="text-dc-500 text-xs sm:text-sm font-mono leading-5 uppercase tracking-wide">
+                    Benefits
+                  </div>
+                  <div className="flex flex-col gap-2 sm:gap-3 lg:gap-4">
+                    {tier.benefits.map((benefit, benefitIndex) => (
+                      <div
+                        key={benefitIndex}
+                        className="flex items-center gap-2"
+                      >
+                        <div className="flex-shrink-0 pt-1">
+                          {getIcon(benefit.icon)}
+                        </div>
+                        <div className="text-dc-800 text-sm sm:text-base leading-tight">
+                          {benefit.text}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
 
           {/* Full Details Note */}
-          <div class="text-center">
-            <p class="text-dc-600 text-sm md:text-base">
-              <em>
-                {fullDetailsNote}{" "}
-                <a
-                  href={fullDetailsUrl}
-                  class="text-[#D0EC1A] hover:underline font-medium"
-                >
-                  {fullDetailsUrl}
-                </a>
-                .
-              </em>
-            </p>
-          </div>
+          {fullDetailsNote && fullDetailsUrl && (
+            <div className="text-center">
+              <p className="text-dc-600 text-sm md:text-base">
+                <em>
+                  {fullDetailsNote}{" "}
+                  <a
+                    href={fullDetailsUrl}
+                    className="text-primary-light hover:underline font-medium"
+                  >
+                    {fullDetailsUrl}
+                  </a>
+                </em>
+              </p>
+            </div>
+          )}
         </div>
       </div>
     </section>

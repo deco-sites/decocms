@@ -19,15 +19,18 @@ export default function LightTerms({
   terms = [
     {
       title: "Referral payouts",
-      description: "within 30 days of Deco receiving first payment; cap at 12 months unless reseller.",
+      description:
+        "within 30 days of Deco receiving first payment; cap at 12 months unless reseller.",
     },
     {
       title: "Reseller",
-      description: "bills end‑customer; Deco bills partner; service/support split: L1 (partner) / L2+ (Deco).",
+      description:
+        "bills end‑customer; Deco bills partner; service/support split: L1 (partner) / L2+ (Deco).",
     },
     {
       title: "IP:",
-      description: "pre‑existing stays with owner; new code defaults Apache‑2.0 (or agreed license).",
+      description:
+        "pre‑existing stays with owner; new code defaults Apache‑2.0 (or agreed license).",
     },
     {
       title: "Brand usage:",
@@ -50,7 +53,8 @@ export default function LightTerms({
             {terms.map((term, index) => (
               <div key={index} class="flex flex-col gap-2">
                 <div class="flex items-start gap-3">
-                  <div class="w-2 h-2 bg-[#D0EC1A] rounded-full mt-2 flex-shrink-0"></div>
+                  <div class="w-2 h-2 bg-[#D0EC1A] rounded-full mt-2 flex-shrink-0">
+                  </div>
                   <div class="flex-1">
                     <span class="text-dc-900 text-base md:text-lg font-medium">
                       {term.title}

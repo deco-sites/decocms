@@ -39,7 +39,7 @@ export default function PartnersFinalCTA({
               <h2 class="text-[#07401A] text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-medium leading-tight">
                 {title}
               </h2>
-              
+
               {/* Subtitle */}
               <p class="text-[#07401A] text-base md:text-lg lg:text-xl leading-relaxed max-w-2xl">
                 {subtitle}
