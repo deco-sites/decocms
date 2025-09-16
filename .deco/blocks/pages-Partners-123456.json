@@ -105,7 +105,7 @@
           "featured": true
         },
         {
-          "title": "Find a partner listing",
+          "title": "partner listing",
           "description": "Get found on our find a partner page, ordered by results "
         },
         {
@@ -122,7 +122,7 @@
           "description": "Private group with deco support"
         }
       ],
-      "targetTimeNote": "Target time‑to‑first‑launch: < 7 days from sandbox access."
+      "targetTimeNote": "Launch your first AI project in 7 days"
     },
     {
       "__resolveType": "site/sections/ProgramSteps.tsx",
@@ -131,20 +131,20 @@
       "steps": [
         {
           "title": "Apply",
-          "description": "tell us your focus, stacks, and preferred monetization."
+          "description": "sign-up and let us know your previous experience and the partnership type"
         },
         {
-          "title": "Enable",
-          "description": "get sandbox credits, Starter Kit, and certification schedule."
+          "title": "Get certified",
+          "description": "certify your team on deco.camp, claim your credits and deliver your first solution"
         },
         {
-          "title": "Go‑to‑market",
-          "description": "register deals, request MDF, and publish case studies."
+          "title": "Ramp up",
+          "description": "register deals, request co-marketing, and publish case studies."
         }
       ],
-      "tipText": "Not sure where to start? Join a 20‑min intro call",
+      "tipText": "Not sure if you fit the program? Book a 20‑min intro call",
       "tipCtaText": "Book 20-min intro",
-      "tipCtaUrl": "/partners/intro-call"
+      "tipCtaUrl": "https://form.typeform.com/to/LxKZbN9N"
     },
     {
       "__resolveType": "site/sections/PartnerTiers.tsx",
@@ -154,29 +154,29 @@
         {
           "name": "Registered",
           "image": "https://assets.decocache.com/decocms/80095e99-4928-49cd-919d-cc8218d6ff5f/tier04.png",
-          "requirements": "Application + 1 case plan",
           "benefits": [
             {
               "text": "Deal reg",
               "icon": "zap"
             },
             {
-              "text": "Newsletter",
+              "text": "Team discount for deco.camp",
               "icon": "newspaper"
             },
             {
-              "text": "$500 credits",
-              "icon": "dollar-sign"
+              "icon": "dollar-sign",
+              "text": "Bounties listing"
             }
-          ]
+          ],
+          "requirements": "Application + 1 case plan"
         },
         {
           "name": "Certified",
           "image": "https://assets.decocache.com/decocms/8ce8cfd6-241d-44b9-9712-47d5e7a39d14/tier03.png",
-          "requirements": "2 certified + 1 public demo",
+          "requirements": "2 certifications + 1 public demo",
           "benefits": [
             {
-              "text": "Directory listing",
+              "text": "Find a partner listing",
               "icon": "zap"
             },
             {
@@ -190,9 +190,9 @@
           ]
         },
         {
-          "name": "Premier",
+          "name": "Delivered",
           "image": "https://assets.decocache.com/decocms/0a517380-6b9b-49d2-97c4-133803d61901/tier02.png",
-          "requirements": "$50k+ ARR or 3 launches/qtr + 4 cert",
+          "requirements": "4 certifications + 1 delivered project",
           "benefits": [
             {
               "text": "Priority leads",
@@ -203,30 +203,26 @@
               "icon": "newspaper"
             },
             {
-              "text": "MDF",
-              "icon": "dollar-sign"
-            },
-            {
               "text": "Early Betas",
               "icon": "dollar-sign"
             }
           ]
         },
         {
-          "name": "Elite",
+          "name": "Essence",
           "image": "https://assets.decocache.com/decocms/09a251a9-d774-4476-a892-18e8aa23d85e/tier01.png",
-          "requirements": "$200k+ ARR or 12/yr + 8 cert",
+          "requirements": "8 certifications + originated $200k+ ARR ",
           "benefits": [
             {
-              "text": "Co‑sell squad",
+              "text": "Enterprise deals",
               "icon": "zap"
             },
             {
-              "text": "Advisory Council",
+              "text": "Branded projects",
               "icon": "newspaper"
             },
             {
-              "text": "Preferred Margin",
+              "text": "Investor status",
               "icon": "dollar-sign"
             }
           ]
@@ -269,27 +265,23 @@
       "faqItems": [
         {
           "question": "Do you provide customer leads?",
-          "answer": "Yes for Certified+ based on region, vertical fit, and bandwidth."
+          "answer": "Yes, for certified and listed partners, based on its tier and availability"
         },
         {
-          "question": "Can we resell Deco?",
-          "answer": "Yes; discount by tier. L1 support by partner; Deco covers L2+."
+          "question": "Can we resell deco?",
+          "answer": "Yes, there are several ways to do it. From a simple affiliate partnership from building white label solutions on top of deco infrastructure."
         },
         {
           "question": "How do deal conflicts work?",
-          "answer": "Register deals for a 120‑day protection window (+60 with activity). Multi‑partner only with client consent or segmented scope."
+          "answer": "Registered deals have a 60 day protection window."
         },
         {
           "question": "How do certifications work?",
-          "answer": "Tracks: DAS‑I, DCS, DIA. Badges expire in 18 months; maintain via launches + CPE or re‑test."
+          "answer": "There are monthly opportunities to certify your team on https://deco.camp"
         },
         {
           "question": "Where can we see pricing?",
-          "answer": "Program benefits & tiers: /partners. Product pricing is handled per customer or via your reseller terms."
-        },
-        {
-          "question": "Data privacy & deployment?",
-          "answer": "Projects run with RBAC and cost caps. Deploy to VPC or on‑prem as needed."
+          "answer": "deco CMS has a usage-based pricing at https://decocms.com/pricing"
         }
       ]
     },
@@ -332,11 +324,11 @@
       "subtitle": "Start your application now or grab time for a quick intro.",
       "primaryButton": {
         "text": "Apply now",
-        "url": "/partners/apply"
+        "url": "https://form.typeform.com/to/jZbe1R71"
       },
       "secondaryButton": {
         "text": "Book an intro",
-        "url": "/partners/intro-call"
+        "url": "https://form.typeform.com/to/LxKZbN9N"
       }
     },
     {
