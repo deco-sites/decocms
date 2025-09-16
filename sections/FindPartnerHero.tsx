@@ -1,13 +1,26 @@
 import type { ImageWidget } from "apps/admin/widgets.ts";
+import Button from "../components/ui/Button.tsx";
+import Image from "apps/website/components/Image.tsx";
 
 export interface Props {
+  /** @title Main Title */
   title?: string;
+  /** @title Subtitle */
   subtitle?: string;
+  /** @title Primary CTA Text */
   primaryButtonText?: string;
+  /** @title Primary CTA URL */
   primaryButtonUrl?: string;
+  /** @title Secondary CTA Text */
   secondaryButtonText?: string;
+  /** @title Secondary CTA URL */
   secondaryButtonUrl?: string;
-  backgroundImage?: ImageWidget;
+  /** @title Desktop Background Image */
+  /** @description Background image for desktop that appears above the primary-dark background */
+  backgroundImageDesktop?: ImageWidget;
+  /** @title Mobile Background Image */
+  /** @description Background image for mobile that appears above the primary-dark background */
+  backgroundImageMobile?: ImageWidget;
 }
 
 export default function FindPartnerHero({
@@ -17,57 +30,79 @@ export default function FindPartnerHero({
   primaryButtonUrl = "/partners",
   secondaryButtonText = "Register a project",
   secondaryButtonUrl = "/partners/deal-registration",
-  backgroundImage
+  backgroundImageDesktop,
+  backgroundImageMobile,
 }: Props) {
   return (
-    <section class="relative bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 py-20 lg:py-32 overflow-hidden">
-      {/* Background Image */}
-      {backgroundImage && (
-        <div class="absolute inset-0 z-0">
-          <img
-            src={backgroundImage}
-            alt=""
-            class="w-full h-full object-cover opacity-20"
-          />
-        </div>
-      )}
-      
-      {/* Background Pattern */}
-      <div class="absolute inset-0 z-0">
-        <div class="absolute inset-0 bg-gradient-to-r from-blue-900/50 to-transparent"></div>
-        <div class="absolute top-0 left-0 w-full h-full">
-          <div class="absolute top-20 left-10 w-72 h-72 bg-blue-400/10 rounded-full blur-3xl"></div>
-          <div class="absolute bottom-20 right-10 w-96 h-96 bg-indigo-400/10 rounded-full blur-3xl"></div>
-        </div>
-      </div>
+    <section className="w-full bg-dc-50 flex flex-col p-2">
+      <div className="bg-primary-dark pt-6 rounded-3xl flex flex-col h-[calc(100vh-16px)] relative overflow-hidden">
+        {/* Background Images */}
+        {/* Desktop Background */}
+        {backgroundImageDesktop && (
+          <div className="hidden sm:block absolute inset-0 z-0">
+            <Image
+              src={backgroundImageDesktop}
+              alt="Background"
+              width={1424}
+              height={800}
+              loading="lazy"
+              className="w-full h-full object-cover opacity-20"
+            />
+          </div>
+        )}
 
-      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="max-w-4xl mx-auto text-center">
-          {/* Main Title */}
-          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-            {title}
-          </h1>
-          
-          {/* Subtitle */}
-          <p class="text-xl md:text-2xl text-blue-100 mb-10 leading-relaxed max-w-3xl mx-auto">
-            {subtitle}
-          </p>
-          
-          {/* CTA Buttons */}
-          <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <a
-              href={primaryButtonUrl}
-              class="inline-flex items-center px-8 py-4 bg-transparent border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-blue-900 transition-all duration-200 text-lg"
-            >
-              {primaryButtonText} →
-            </a>
-            
-            <a
-              href={secondaryButtonUrl}
-              class="inline-flex items-center px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-lg hover:bg-white/20 transition-all duration-200 text-lg border border-white/20"
-            >
-              {secondaryButtonText} →
-            </a>
+        {/* Mobile Background */}
+        {backgroundImageMobile && (
+          <div className="block sm:hidden absolute inset-0 z-0">
+            <Image
+              src={backgroundImageMobile}
+              alt="Background"
+              width={768}
+              height={800}
+              loading="lazy"
+              className="w-full h-full object-cover opacity-20"
+            />
+          </div>
+        )}
+
+        {/* Main Content */}
+        <div className="flex-1 flex flex-col items-center justify-center relative z-10 px-4 sm:px-8 lg:px-16">
+          <div className="flex flex-col gap-6 sm:gap-8 lg:gap-12 items-center justify-start max-w-2xl">
+            {/* Header */}
+            <div className="flex flex-col gap-6 items-center justify-start w-full">
+              <h1 className="text-primary-light text-4xl sm:text-5xl lg:text-8xl font-medium leading-tight tracking-tight text-center">
+                {title}
+              </h1>
+              {subtitle && (
+                <p className="text-dc-50 text-base sm:text-lg leading-relaxed text-center max-w-lg">
+                  {subtitle}
+                </p>
+              )}
+            </div>
+
+            {/* Buttons */}
+            <div className="flex gap-2 items-start justify-start">
+              {primaryButtonText && primaryButtonUrl && (
+                <Button
+                  variant="primary"
+                  size="medium"
+                  href={primaryButtonUrl}
+                  className="!bg-primary-light !text-primary-dark hover:!bg-primary-light/90"
+                >
+                  {primaryButtonText}
+                </Button>
+              )}
+              {secondaryButtonText && secondaryButtonUrl && (
+                <Button
+                  variant="secondary"
+                  size="medium"
+                  href={secondaryButtonUrl}
+                  className="!bg-dc-50 !text-dc-900 hover:!bg-dc-100"
+                >
+                  {secondaryButtonText}
+                </Button>
+              )}
+            </div>
           </div>
         </div>
       </div>

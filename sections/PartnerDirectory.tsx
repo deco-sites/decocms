@@ -1,4 +1,6 @@
 import type { ImageWidget } from "apps/admin/widgets.ts";
+import Image from "apps/website/components/Image.tsx";
+import Button from "../components/ui/Button.tsx";
 
 export interface Partner {
   slug: string;
@@ -17,218 +19,234 @@ export interface Partner {
 }
 
 export interface Props {
-  partners?: Partner[];
+  /** @title Section Title */
   title?: string;
+  /** @title Section Subtitle */
   subtitle?: string;
+  /** @title Partners List */
+  partners?: Partner[];
 }
 
 const TIER_COLORS = {
-  "Registered": "bg-gray-100 text-gray-800",
-  "Certified": "bg-blue-100 text-blue-800", 
-  "Premier": "bg-purple-100 text-purple-800",
-  "Elite": "bg-yellow-100 text-yellow-800"
+  "Registered": "bg-dc-100 text-dc-700",
+  "Certified": "bg-primary text-primary-light", 
+  "Premier": "bg-tertiary text-primary-light",
+  "Elite": "bg-warning text-dc-900"
 };
 
 const TYPE_COLORS = {
-  "SI/Agency": "bg-green-100 text-green-800",
-  "ISV": "bg-orange-100 text-orange-800",
-  "Technology": "bg-indigo-100 text-indigo-800",
-  "Training": "bg-pink-100 text-pink-800"
+  "SI/Agency": "bg-success/10 text-success",
+  "ISV": "bg-warning/10 text-warning",
+  "Technology": "bg-info/10 text-info",
+  "Training": "bg-error/10 text-error"
 };
 
 export default function PartnerDirectory({
-  partners = [],
   title = "Partner Directory",
-  subtitle = "Find the right partner for your project"
+  subtitle = "Find the right partner for your project",
+  partners = [],
 }: Props) {
   return (
-    <section class="py-16 bg-gray-50">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="w-full bg-dc-50 py-16 sm:py-20 lg:py-32">
+      <div className="w-full max-w-6xl mx-auto px-4 sm:px-8 lg:px-16">
         {/* Header */}
-        <div class="text-center mb-12">
-          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            {title}
-          </h2>
-          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-            {subtitle}
-          </p>
-        </div>
+        <div className="flex flex-col gap-8 sm:gap-10 lg:gap-14">
+          <div className="flex flex-col gap-3 items-start justify-center max-w-lg">
+            {title && (
+              <h2 className="text-dc-800 text-3xl sm:text-4xl lg:text-5xl font-medium leading-tight tracking-tight">
+                {title}
+              </h2>
+            )}
+            {subtitle && (
+              <p className="text-dc-500 text-base sm:text-lg leading-relaxed">
+                {subtitle}
+              </p>
+            )}
+          </div>
 
-        {/* Search and Filters */}
-        <div class="mb-12 space-y-6">
-          {/* Search Bar */}
-          <div class="flex flex-col md:flex-row gap-4 items-center">
-            <div class="w-full md:w-1/2">
-              <input
-                type="text"
-                placeholder="Search partners (name, bio, verticals, stacks…)"
-                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                data-analytics="directory_search_used"
-              />
+          {/* Search and Filters */}
+          <div className="flex flex-col gap-6">
+            {/* Search Bar */}
+            <div className="flex flex-col md:flex-row gap-4 items-center">
+              <div className="w-full md:w-1/2">
+                <input
+                  type="text"
+                  placeholder="Search partners (name, bio, verticals, stacks…)"
+                  className="w-full px-4 py-3 border border-dc-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-white text-dc-800"
+                  data-analytics="directory_search_used"
+                />
+              </div>
+              
+              <div className="flex gap-2 items-center">
+                <select className="px-4 py-3 border border-dc-200 rounded-lg focus:ring-2 focus:ring-primary bg-white text-dc-800">
+                  <option value="relevance">Relevance</option>
+                  <option value="tier">Tier (desc)</option>
+                  <option value="launches">Most launches</option>
+                  <option value="nps">Highest NPS</option>
+                </select>
+              </div>
             </div>
-            
-            <div class="flex gap-2 items-center">
-              <select class="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
-                <option value="relevance">Relevance</option>
-                <option value="tier">Tier (desc)</option>
-                <option value="launches">Most launches</option>
-                <option value="nps">Highest NPS</option>
-              </select>
+
+            {/* Filter Chips */}
+            <div className="flex flex-wrap gap-2">
+              <button className="px-3 py-1 bg-white border border-dc-200 rounded-full text-sm hover:bg-dc-50 text-dc-700">
+                Type ▼
+              </button>
+              <button className="px-3 py-1 bg-white border border-dc-200 rounded-full text-sm hover:bg-dc-50 text-dc-700">
+                Tier ▼
+              </button>
+              <button className="px-3 py-1 bg-white border border-dc-200 rounded-full text-sm hover:bg-dc-50 text-dc-700">
+                Certifications ▼
+              </button>
+              <button className="px-3 py-1 bg-white border border-dc-200 rounded-full text-sm hover:bg-dc-50 text-dc-700">
+                Verticals ▼
+              </button>
+              <button className="px-3 py-1 bg-white border border-dc-200 rounded-full text-sm hover:bg-dc-50 text-dc-700">
+                Geos ▼
+              </button>
+              <button className="px-3 py-1 bg-white border border-dc-200 rounded-full text-sm hover:bg-dc-50 text-dc-700">
+                Stacks ▼
+              </button>
+              <button className="px-3 py-1 bg-white border border-dc-200 rounded-full text-sm hover:bg-dc-50 text-dc-700">
+                Languages ▼
+              </button>
             </div>
           </div>
 
-          {/* Filter Chips */}
-          <div class="flex flex-wrap gap-2">
-            <button class="px-3 py-1 bg-white border border-gray-300 rounded-full text-sm hover:bg-gray-50">
-              Type ▼
-            </button>
-            <button class="px-3 py-1 bg-white border border-gray-300 rounded-full text-sm hover:bg-gray-50">
-              Tier ▼
-            </button>
-            <button class="px-3 py-1 bg-white border border-gray-300 rounded-full text-sm hover:bg-gray-50">
-              Certifications ▼
-            </button>
-            <button class="px-3 py-1 bg-white border border-gray-300 rounded-full text-sm hover:bg-gray-50">
-              Verticals ▼
-            </button>
-            <button class="px-3 py-1 bg-white border border-gray-300 rounded-full text-sm hover:bg-gray-50">
-              Geos ▼
-            </button>
-            <button class="px-3 py-1 bg-white border border-gray-300 rounded-full text-sm hover:bg-gray-50">
-              Stacks ▼
-            </button>
-            <button class="px-3 py-1 bg-white border border-gray-300 rounded-full text-sm hover:bg-gray-50">
-              Languages ▼
-            </button>
-          </div>
-        </div>
-
-        {/* Results Grid */}
-        {partners.length === 0 ? (
-          <div class="text-center py-16">
-            <p class="text-xl text-gray-600 mb-4">
-              No matches yet. Try removing filters or tell us what you need
-            </p>
-            <a
-              href="/partners/deal-registration"
-              class="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
-            >
-              Register a project →
-            </a>
-          </div>
-        ) : (
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {partners.map((partner) => (
-              <div
-                key={partner.slug}
-                class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow duration-200 border border-gray-200"
-                data-analytics="directory_partner_card_viewed"
-                data-partner-slug={partner.slug}
+          {/* Results Grid */}
+          {partners.length === 0 ? (
+            <div className="text-center py-16">
+              <p className="text-xl text-dc-500 mb-6">
+                No matches yet. Try removing filters or tell us what you need
+              </p>
+              <Button
+                variant="primary"
+                size="medium"
+                href="/partners/deal-registration"
+                className="!bg-primary !text-primary-light hover:!bg-primary/90"
               >
-                {/* Logo and Header */}
-                <div class="flex items-start gap-4 mb-4">
-                  <div class="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center overflow-hidden">
-                    <img
-                      src={partner.logo}
-                      alt={`${partner.name} logo`}
-                      class="w-full h-full object-contain"
-                    />
-                  </div>
-                  <div class="flex-1">
-                    <div class="flex items-center gap-2 mb-1">
-                      <h3 class="text-lg font-semibold text-gray-900">
-                        {partner.name}
-                      </h3>
-                      <span class={`px-2 py-1 rounded-full text-xs font-medium ${TIER_COLORS[partner.tier]}`}>
-                        {partner.tier}
-                      </span>
+                Register a project
+              </Button>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {partners.map((partner) => (
+                <div
+                  key={partner.slug}
+                  className="bg-white rounded-xl p-6 hover:shadow-lg transition-shadow duration-200 border border-dc-200"
+                  data-analytics="directory_partner_card_viewed"
+                  data-partner-slug={partner.slug}
+                >
+                  {/* Logo and Header */}
+                  <div className="flex items-start gap-4 mb-4">
+                    <div className="w-16 h-16 bg-dc-50 rounded-lg flex items-center justify-center overflow-hidden">
+                      <Image
+                        src={partner.logo}
+                        alt={`${partner.name} logo`}
+                        width={64}
+                        height={64}
+                        loading="lazy"
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2 mb-1">
+                        <h3 className="text-lg font-medium text-dc-800">
+                          {partner.name}
+                        </h3>
+                        <span className={`px-2 py-1 rounded-full text-xs font-medium ${TIER_COLORS[partner.tier]}`}>
+                          {partner.tier}
+                        </span>
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                {/* Bio */}
-                <p class="text-gray-600 text-sm mb-4 line-clamp-3">
-                  {partner.bio}
-                </p>
+                  {/* Bio */}
+                  <p className="text-dc-500 text-sm mb-4 line-clamp-3">
+                    {partner.bio}
+                  </p>
 
-                {/* Type and Certifications */}
-                <div class="flex flex-wrap gap-1 mb-3">
-                  {partner.type.map((type) => (
-                    <span
-                      key={type}
-                      class={`px-2 py-1 rounded-full text-xs font-medium ${TYPE_COLORS[type] || "bg-gray-100 text-gray-800"}`}
-                    >
-                      {type}
-                    </span>
-                  ))}
-                  {partner.certifications.map((cert) => (
-                    <span
-                      key={cert}
-                      class="px-2 py-1 rounded-full text-xs font-medium bg-emerald-100 text-emerald-800"
-                    >
-                      {cert}
-                    </span>
-                  ))}
-                </div>
-
-                {/* Tags */}
-                <div class="flex flex-wrap gap-1 mb-4">
-                  {[...partner.verticals, ...partner.stacks, ...partner.languages].slice(0, 6).map((tag) => (
-                    <span
-                      key={tag}
-                      class="px-2 py-1 rounded-full text-xs bg-gray-100 text-gray-700"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-
-                {/* Metrics */}
-                {(partner.launches || partner.nps) && (
-                  <div class="flex gap-4 text-sm text-gray-600 mb-4">
-                    {partner.launches && (
-                      <span>{partner.launches} launches</span>
-                    )}
-                    {partner.nps && (
-                      <span>NPS: {partner.nps}</span>
-                    )}
+                  {/* Type and Certifications */}
+                  <div className="flex flex-wrap gap-1 mb-3">
+                    {partner.type.map((type) => (
+                      <span
+                        key={type}
+                        className={`px-2 py-1 rounded-full text-xs font-medium ${TYPE_COLORS[type] || "bg-dc-100 text-dc-700"}`}
+                      >
+                        {type}
+                      </span>
+                    ))}
+                    {partner.certifications.map((cert) => (
+                      <span
+                        key={cert}
+                        className="px-2 py-1 rounded-full text-xs font-medium bg-success/10 text-success"
+                      >
+                        {cert}
+                      </span>
+                    ))}
                   </div>
-                )}
 
-                {/* CTA */}
-                <a
-                  href={`/find-a-partner/${partner.slug}`}
-                  class="block w-full text-center px-4 py-2 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors"
-                >
-                  View profile
-                </a>
-              </div>
-            ))}
-          </div>
-        )}
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-1 mb-4">
+                    {[...partner.verticals, ...partner.stacks, ...partner.languages].slice(0, 6).map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-2 py-1 rounded-full text-xs bg-dc-100 text-dc-600"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
 
-        {/* Pagination */}
-        {partners.length > 0 && (
-          <div class="flex justify-center mt-12">
-            <div class="flex gap-2">
-              <button class="px-4 py-2 border border-gray-300 rounded-lg text-gray-600 hover:bg-gray-50">
-                Previous
-              </button>
-              <button class="px-4 py-2 bg-blue-600 text-white rounded-lg">
-                1
-              </button>
-              <button class="px-4 py-2 border border-gray-300 rounded-lg text-gray-600 hover:bg-gray-50">
-                2
-              </button>
-              <button class="px-4 py-2 border border-gray-300 rounded-lg text-gray-600 hover:bg-gray-50">
-                3
-              </button>
-              <button class="px-4 py-2 border border-gray-300 rounded-lg text-gray-600 hover:bg-gray-50">
-                Next
-              </button>
+                  {/* Metrics */}
+                  {(partner.launches || partner.nps) && (
+                    <div className="flex gap-4 text-sm text-dc-500 mb-4">
+                      {partner.launches && (
+                        <span>{partner.launches} launches</span>
+                      )}
+                      {partner.nps && (
+                        <span>NPS: {partner.nps}</span>
+                      )}
+                    </div>
+                  )}
+
+                  {/* CTA */}
+                  <Button
+                    variant="primary"
+                    size="small"
+                    href={`/find-a-partner/${partner.slug}`}
+                    className="w-full !bg-primary !text-primary-light hover:!bg-primary/90"
+                  >
+                    View profile
+                  </Button>
+                </div>
+              ))}
             </div>
-          </div>
-        )}
+          )}
+
+          {/* Pagination */}
+          {partners.length > 0 && (
+            <div className="flex justify-center mt-12">
+              <div className="flex gap-2">
+                <button className="px-4 py-2 border border-dc-200 rounded-lg text-dc-600 hover:bg-dc-50">
+                  Previous
+                </button>
+                <button className="px-4 py-2 bg-primary text-primary-light rounded-lg">
+                  1
+                </button>
+                <button className="px-4 py-2 border border-dc-200 rounded-lg text-dc-600 hover:bg-dc-50">
+                  2
+                </button>
+                <button className="px-4 py-2 border border-dc-200 rounded-lg text-dc-600 hover:bg-dc-50">
+                  3
+                </button>
+                <button className="px-4 py-2 border border-dc-200 rounded-lg text-dc-600 hover:bg-dc-50">
+                  Next
+                </button>
+              </div>
+            </div>
+          )}
+        </div>
       </div>
     </section>
   );
