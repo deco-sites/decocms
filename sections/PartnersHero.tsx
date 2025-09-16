@@ -126,12 +126,12 @@ export default function PartnersHero({
             )}
             <div className="flex gap-6 sm:gap-9 items-center justify-center">
               {partnerLogos.map((logo, index) => (
-                <div key={index} className="h-4 sm:h-5 lg:h-6 flex-shrink-0">
+                <div key={index} className="h-8 sm:h-10 lg:h-12 flex-shrink-0">
                   <Image
                     src={logo}
                     alt={`Partner ${index + 1}`}
-                    width={80}
-                    height={24}
+                    width={120}
+                    height={48}
                     loading="lazy"
                     className="h-full w-auto object-contain opacity-80"
                   />

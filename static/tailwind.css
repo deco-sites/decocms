@@ -10199,6 +10199,10 @@ input.tab:checked + .tab-content,
     height: 3rem;
   }
 
+  .sm\:h-10 {
+    height: 2.5rem;
+  }
+
   .sm\:h-12 {
     height: 3rem;
   }
@@ -10217,10 +10221,6 @@ input.tab:checked + .tab-content,
 
   .sm\:h-40 {
     height: 10rem;
-  }
-
-  .sm\:h-5 {
-    height: 1.25rem;
   }
 
   .sm\:h-7 {
@@ -10847,6 +10847,10 @@ input.tab:checked + .tab-content,
     height: 2.5rem;
   }
 
+  .lg\:h-12 {
+    height: 3rem;
+  }
+
   .lg\:h-24 {
     height: 6rem;
   }
@@ -10857,10 +10861,6 @@ input.tab:checked + .tab-content,
 
   .lg\:h-48 {
     height: 12rem;
-  }
-
-  .lg\:h-6 {
-    height: 1.5rem;
   }
 
   .lg\:h-72 {
