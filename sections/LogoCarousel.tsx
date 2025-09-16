@@ -95,7 +95,13 @@ export default function LogoCarousel({ logos }: Props) {
         }
         
         .animate-scroll {
-          animation: scroll 45s linear infinite;
+          animation: scroll 20s linear infinite;
+        }
+
+        @media (max-width: 640px) {
+          .animate-scroll {
+            animation-duration: 12s;
+          }
         }
         
         .animate-scroll:hover {
