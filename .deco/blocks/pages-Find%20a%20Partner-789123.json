@@ -21,9 +21,31 @@
     },
     {
       "__resolveType": "site/sections/PartnerDirectory.tsx",
-      "title": "Partner Directory",
+      "title": "Partner Listing",
       "subtitle": "Find the right partner for your project",
-      "partners": []
+      "partners": [
+        {
+          "tier": "Registered",
+          "type": [],
+          "certifications": [
+            "2 L1 Certifications"
+          ],
+          "verticals": [
+            "E-commerce"
+          ],
+          "stacks": [],
+          "languages": [
+            "Português"
+          ],
+          "geos": [
+            "Brasil"
+          ],
+          "slug": "/n1",
+          "name": "Agência N1",
+          "bio": "A Agência N1, também conhecida como N1.ag, é uma agência digital premiada e referência em e-commerce, especializada em customer success, brand experience e jornadas de compras digitais",
+          "logo": "https://assets.decocache.com/decocms/50e5aef5-f8fd-4f51-b10b-b5cdcb130ae2/2ad88db8-bab0-4e55-8877-a5041085bf3e.png"
+        }
+      ]
     },
     {
       "__resolveType": "Footer"
