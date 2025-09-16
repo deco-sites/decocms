@@ -10,12 +10,14 @@
     },
     {
       "__resolveType": "site/sections/FindPartnerHero.tsx",
-      "title": "Find a Deco Partner",
+      "title": "Find a deco Partner",
       "subtitle": "Connect with certified partners to build your next AI-powered project",
       "primaryButtonText": "Become a partner",
-      "primaryButtonUrl": "/partners",
-      "secondaryButtonText": "Register a deal",
-      "secondaryButtonUrl": "/partners/deal-registration"
+      "primaryButtonUrl": "https://form.typeform.com/to/jZbe1R71",
+      "secondaryButtonText": "Post a bounty",
+      "secondaryButtonUrl": "https://bounties.decocms.com/",
+      "backgroundImageDesktop": "https://assets.decocache.com/decocms/f78b79e8-fdb0-4764-a6c7-4facde7733a5/desktop.png",
+      "backgroundImageMobile": "https://assets.decocache.com/decocms/2dcf6272-1063-4ab9-b274-1125c0f72801/mobile.png"
     },
     {
       "__resolveType": "site/sections/PartnerDirectory.tsx",
