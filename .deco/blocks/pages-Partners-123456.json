@@ -3,38 +3,10 @@
   "path": "/partners",
   "sections": [
     {
-      "__resolveType": "site/sections/Header.tsx",
-      "menuItems": [
-        {
-          "label": "Docs",
-          "href": "https://docs.decocms.com",
-          "items": []
-        },
-        {
-          "label": "Community",
-          "href": "https://decocms.com/discord",
-          "items": []
-        },
-        {
-          "label": "Blog",
-          "href": "/blog",
-          "items": []
-        },
-        {
-          "label": "Use Cases",
-          "items": [
-            {
-              "label": "E-commerce",
-              "href": "/use-case/deco-sites"
-            }
-          ]
-        }
-      ],
-      "ctaHref": "https://luma.com/x4wmpyp8",
-      "ctaText": "Get early access",
-      "githubRepo": "deco-cx/chat",
-      "logo": "https://assets.decocache.com/decocms/0fd80b72-99df-47ec-8d82-f07876a45507/d-logo-ouline-pos.svg",
-      "githubIcon": "https://assets.decocache.com/decocms/880e46a0-b0ff-41e2-95c6-9cdb7eba2190/gh.svg"
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "Header-decocms"
+      }
     },
     {
       "__resolveType": "site/sections/PartnersHero.tsx",
