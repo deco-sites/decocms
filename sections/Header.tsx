@@ -172,15 +172,17 @@ export default function Header({
             </svg>
           </label>
 
-          {/* CTA Button */}
-          <Button
-            variant="primary"
-            size="small"
-            href={ctaHref}
-            className="!bg-primary-dark !text-primary-light hover:bg-primary-dark/90"
-          >
-            {ctaText}
-          </Button>
+          {/* CTA Button - hidden on mobile */}
+          <div class="hidden sm:block">
+            <Button
+              variant="primary"
+              size="small"
+              href={ctaHref}
+              className="!bg-primary-dark !text-primary-light hover:bg-primary-dark/90"
+            >
+              {ctaText}
+            </Button>
+          </div>
         </div>
       </header>
 
