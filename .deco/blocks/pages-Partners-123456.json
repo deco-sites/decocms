@@ -46,12 +46,11 @@
       "secondaryButtonUrl": "https://form.typeform.com/to/LxKZbN9N",
       "trustSignalTitle": "Who's Already Building with deco CMS",
       "partnerLogos": [
-        "https://assets.decocache.com/decocms/b7577e63-c369-472e-baf6-7621fd63e80b/superfrete-1-1.webp",
-        "https://assets.decocache.com/decocms/4c4642eb-2a22-4e71-b664-ae2005677ee8/Logo-Caze-Tv-Png.png",
-        "https://placehold.co/120x60/E5E5E5/999999?text=Partner+2",
-        "https://placehold.co/120x60/E5E5E5/999999?text=Partner+3",
-        "https://placehold.co/120x60/E5E5E5/999999?text=Partner+4",
-        "https://placehold.co/120x60/E5E5E5/999999?text=Partner+5"
+        "https://assets.decocache.com/decocms/05034824-5a80-49a3-b02b-17e00b19b2b7/superfrete.svg",
+        "https://assets.decocache.com/decocms/a4b4772e-6e0f-42ee-bec9-6bf7d15c0fe9/livemode.svg",
+        "https://assets.decocache.com/decocms/6cd6e7b3-a2d0-473a-b80c-a2692a0c563e/leroy.svg",
+        "https://assets.decocache.com/decocms/0af7a91b-017d-4d12-8ed0-31f5135c535a/etc-2.svg",
+        "https://assets.decocache.com/decocms/b6a9b09d-2992-49d3-a641-5c5fa16f1d15/gupy_logo.svg"
       ],
       "showPartnerLogos": true,
       "backgroundImageDesktop": "https://assets.decocache.com/decocms/f78b79e8-fdb0-4764-a6c7-4facde7733a5/desktop.png",
