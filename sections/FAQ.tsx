@@ -40,24 +40,56 @@ export default function FAQ({
     "https://assets.decocache.com/decochatweb/cebb6b63-37c8-48a8-870e-0bad65e6e1fb/logo-agnet-deco.png",
   faqItems = [
     {
-      question: "What exactly is deco.chat?",
+      question:
+        "What is deco CMS, and how is it different from other AI app builders?",
       answer:
-        "deco.chat is an open-source AI workspace that helps organizations build and manage AI agents. It's designed to make AI implementation simple, whether for internal tools or customer-facing applications.",
+        "deco CMS is an open-source Context CMS — a control plane and runtime for building, running, and monetizing AI-powered agentic apps. Unlike traditional app builders, it unifies context, governance, observability, and monetization in one platform.",
     },
     {
-      question: "Is deco.chat suitable for my company size?",
+      question: "Do I need to be a developer to use deco CMS?",
       answer:
-        "Yes! deco.chat scales with your needs. Whether you're a startup or an enterprise, our platform adapts to your organization's size and requirements.",
+        "Not at all. Business teams can create prompts, workflows, and agents without writing code, while developers can extend, customize, and deploy advanced capabilities using our TypeScript SDK and CLI.",
     },
     {
-      question: "Which platforms can I integrate with deco.chat?",
+      question: "How does deco CMS handle governance and observability?",
       answer:
-        "No. Our platform is designed to be user-friendly for both technical and non-technical team members. However, developers can access advanced features through our API.",
+        "Every run is fully traced, auditable, and secure. DecoCMS includes role-based access control (RBAC), spend caps, error analytics, and per-step cost visibility — ensuring safe operations and compliance by default.",
     },
     {
-      question: "How long does it take to implement deco.chat?",
+      question: "Can I self-host deco CMS or bring my own keys (BYOK)?",
       answer:
-        "Basic setup can be completed in hours. Full enterprise implementation typically takes 1-2 weeks, depending on your requirements and integrations.",
+        "Yes. deco CMS is open-source and fully portable. You can self-host it on your infrastructure, bring your own API keys, and maintain full control over your data and costs.",
+    },
+    {
+      question:
+        "Can I ensure my data stays private and secure when self-hosting deco CMS?",
+      answer:
+        "Absolutely. When you self-host deco CMS, your data, models, and keys stay fully under your control. deco CMS never stores or transmits your data unless you explicitly configure it to.",
+    },
+    {
+      question: "How much does deco CMS cost?",
+      answer:
+        "You start with $2 in free credits — no credit card required. After that, pricing is usage-based, so you only pay per run, with full transparency and real-time cost tracking in your dashboard.",
+    },
+    {
+      question: "How does the deco CMS SDK work for developers?",
+      answer:
+        "The deco CMS SDK lets you build, extend, and manage agents, workflows, and UIs in TypeScript. It integrates seamlessly with the CLI, enabling local development, testing, and edge deployment from a single codebase.",
+    },
+    {
+      question: "What is the Context Mesh, and why is it important?",
+      answer:
+        "The Context Mesh is DecoCMS’s governed layer for connecting data, tools, and models. It provides typed connectors with built-in policy routing, RBAC, observability, and spend controls — ensuring the right context is delivered safely every time.",
+    },
+    {
+      question: "Does deco CMS support edge deployment?",
+      answer:
+        "Yes. deco CMS ships agents, workflows, and UIs to the edge automatically, ensuring low latency and global performance by default. You can manage environments, preview builds, and deploy updates directly from the CLI.",
+    },
+    {
+      question: "How does deco CMS integrate with Git?",
+      answer:
+        "deco CMS uses a Git-backed workflow by default. Every change to agents, workflows, and UIs is versioned, allowing you to branch, review, and merge updates just like any modern development stack. This ensures full traceability and safe collaboration between teams.",
     },
   ],
 }: Props) {

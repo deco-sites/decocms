@@ -151,14 +151,9 @@ export default function Header({
           </div>
 
           {/* Mobile Menu Button */}
-          <Button
-            variant="ghost"
-            size="small"
-            className="lg:hidden p-2 text-dc-800 hover:text-primary-dark"
-            onClick={() => {
-              const menu = document.getElementById("mobile-menu");
-              menu?.classList.toggle("hidden");
-            }}
+          <label
+            for="mobile-menu-toggle"
+            class="lg:hidden p-2 text-dc-800 hover:text-primary-dark cursor-pointer"
           >
             <svg
               width="24"
@@ -175,7 +170,7 @@ export default function Header({
                 stroke-linejoin="round"
               />
             </svg>
-          </Button>
+          </label>
 
           {/* CTA Button */}
           <Button
@@ -189,10 +184,13 @@ export default function Header({
         </div>
       </header>
 
+      {/* Mobile Menu Toggle (checkbox) */}
+      <input id="mobile-menu-toggle" type="checkbox" class="peer hidden lg:hidden" />
+
       {/* Mobile Menu */}
       <div
         id="mobile-menu"
-        class="lg:hidden hidden absolute top-full left-4 right-4 bg-white/95 backdrop-blur-sm rounded-b-2xl border-t border-dc-200 z-50 mt-2"
+        class="lg:hidden hidden peer-checked:block absolute top-full left-4 right-4 bg-white/95 backdrop-blur-sm rounded-b-2xl border-t border-dc-200 z-50 mt-2"
       >
         <div class="p-4 space-y-2">
           {menuItems.map((item, index) => (

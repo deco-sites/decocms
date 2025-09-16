@@ -98,7 +98,7 @@ export default function DecoSitesHero({
 
           {/* Background Image - Flows below text, will be cut by overflow-hidden */}
           {backgroundImage && (
-            <div class="w-full max-w-[1040px] mx-auto mt-24">
+            <div class="hidden sm:block w-full max-w-[1040px] mx-auto mt-24">
               <Image
                 src={backgroundImage}
                 alt={backgroundImageAlt || ""}
