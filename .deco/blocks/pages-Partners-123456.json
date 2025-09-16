@@ -16,7 +16,7 @@
       "trustSignalTitle": "Who's Already Building with deco CMS",
       "partnerLogos": [
         "https://assets.decocache.com/decocms/452b8f22-f11e-4b6f-8934-2e58419ea705/integration-1.png",
-        "https://placehold.co/120x60/E5E5E5/999999?text=Partner+1",
+        "https://assets.decocache.com/decocms/4c4642eb-2a22-4e71-b664-ae2005677ee8/Logo-Caze-Tv-Png.png",
         "https://placehold.co/120x60/E5E5E5/999999?text=Partner+2",
         "https://placehold.co/120x60/E5E5E5/999999?text=Partner+3",
         "https://placehold.co/120x60/E5E5E5/999999?text=Partner+4",
@@ -33,29 +33,29 @@
       "topBenefits": [
         {
           "title": "Win deals faster",
-          "description": "Ready‑to‑ship blueprints (agents, workflows, storefronts)",
+          "description": "Leverage deco to go from prompt to production seemlessly",
           "image": "https://assets.decocache.com/decocms/76f60c07-c3a2-4c71-b10b-3f6d1ab182c9/winmoney.png"
         },
         {
           "title": "Monetize your way",
-          "description": "Referral, reseller discount, services, and ISV template revenue share",
+          "description": "Commission, revenue share and marketplace in one billing system",
           "image": "https://assets.decocache.com/decocms/11e7c3db-46e1-46b0-be47-00a58c6a1c04/monetizeway.png"
         }
       ],
       "bottomBenefits": [
         {
-          "title": "Operate with confidence",
-          "description": "Observability, cost caps, RBAC, and governance.",
+          "title": "Enterprise ready",
+          "description": "Observability, FinOps, RBAC, and governance.",
           "icon": "bookmark-check"
         },
         {
           "title": "Grow with us",
-          "description": "directory placement, co‑marketing/MDF, roadmap briefings, advisory council.",
+          "description": "listed as partner, co-marketing events, backlog priority",
           "icon": "sprout"
         },
         {
-          "title": "Level up your team",
-          "description": "Structured certifications + Partner Starter Kit (scripts, prompts, checklists).",
+          "title": "Up skill your team",
+          "description": "free workshops, certifications & jobs listings",
           "icon": "users"
         }
       ]
@@ -66,36 +66,31 @@
       "title": "Who should apply",
       "partnerTypes": [
         {
-          "title": "Agentic SIs/Agencies",
-          "description": "building AI workflows, agents, or AI‑friendly storefronts.",
+          "title": "Agentic Agencies",
+          "description": "you develop and deliver agentic software (AI Agents, Workflows, Views)",
           "icon": "target"
         },
         {
-          "title": "ISVs/Co‑builders",
-          "description": "publishing connectors, MCPs, blueprints, or templates.",
+          "title": "ISVs",
+          "description": "you want to monetize useful piece of software on top of deco (MCPs, AI Apps, etc)",
           "icon": "zap"
         },
         {
-          "title": "Technology partners",
-          "description": "(cloud, data, observability, LLMs) integrating with Deco.",
+          "title": "Technology Partners",
+          "description": "you have an independent software that fits with deco (Cloud, Observability, etc)",
           "icon": "users"
-        },
-        {
-          "title": "Training partners",
-          "description": "creating courses, bootcamps, or certifications.",
-          "icon": "graduation-cap"
         }
       ],
       "readinessTitle": "Minimum readiness:",
       "requirements": [
         {
-          "text": "1+ public or private AI build or a capable team ready to deliver with guidance."
+          "text": "At least 2 developers with valid certifications on https://deco.camp"
         },
         {
-          "text": "Commitment to at least one reference build in the first 60 days."
+          "text": "1+ public or private AI published (MCP or better)"
         },
         {
-          "text": "Named partner lead for delivery and GTM."
+          "text": "Last 30 day developer activity on our main open-source repository"
         }
       ]
     },
@@ -106,28 +101,25 @@
       "highlights": [
         {
           "title": "Sandbox credits",
-          "description": "US$500",
+          "description": "US$100",
           "featured": true
         },
         {
-          "title": "Directory listing",
-          "description": "Appear in Find a Partner with badges and case studies"
+          "title": "Find a partner listing",
+          "description": "Get found on our find a partner page, ordered by results "
         },
         {
           "title": "Certifications",
-          "description": "DAS‑I, DCS, DIA + renewal path"
+          "description": "L1 Agentic Engineers & more @ deco.camp"
         },
         {
-          "title": "Leads & co‑sell",
-          "description": "for Certified+ based on fit, capacity, and vertical expertise"
-        },
-        {
-          "title": "MDF",
-          "description": "50/50 co‑marketing funds for Certified+ with shared KPIs"
+          "title": "Leads & co‑marketing",
+          "description": "Referred directly by deco team & co-marketing 50/50",
+          "featured": false
         },
         {
           "title": "Support SLAs",
-          "description": "Triage <4h; P1 bridge <1h (Premier+)"
+          "description": "Private group with deco support"
         }
       ],
       "targetTimeNote": "Target time‑to‑first‑launch: < 7 days from sandbox access."
@@ -353,7 +345,7 @@
   ],
   "__resolveType": "website/pages/Page.tsx",
   "seo": {
-    "title": "Become a deco Partner | Build and Sell Agentic Software",
+    "title": "Become a deco partner | Build and Sell Agentic Software",
     "description": "Join the deco partner program and build AI-native experiences with our open-source runtime and Context CMS. Get sandbox credits, leads, certifications, and co-marketing opportunities.",
     "canonical": "https://deco.cx/partners",
     "noIndexing": false,
