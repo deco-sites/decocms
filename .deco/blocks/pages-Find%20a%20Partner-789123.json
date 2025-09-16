@@ -1,1 +1,54 @@
-{}
+{
+  "name": "Find a Partner",
+  "path": "/find-a-partner",
+  "sections": [
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "Header-decocms"
+      }
+    },
+    {
+      "__resolveType": "site/sections/FindPartnerHero.tsx",
+      "title": "Find a Deco Partner",
+      "subtitle": "Connect with certified partners to build your next AI-powered project",
+      "primaryButtonText": "Become a partner",
+      "primaryButtonUrl": "/partners",
+      "secondaryButtonText": "Register a deal",
+      "secondaryButtonUrl": "/partners/deal-registration"
+    },
+    {
+      "__resolveType": "site/sections/PartnerDirectory.tsx",
+      "title": "Partner Directory",
+      "subtitle": "Find the right partner for your project",
+      "partners": []
+    },
+    {
+      "__resolveType": "Footer"
+    }
+  ],
+  "__resolveType": "website/pages/Page.tsx",
+  "seo": {
+    "title": "Find a Deco Partner | Certified AI Development Partners",
+    "description": "Browse our directory of certified deco partners. Find experienced developers and agencies to help build your AI-powered applications and workflows.",
+    "canonical": "https://deco.cx/find-a-partner",
+    "noIndexing": false,
+    "keywords": "deco partners, AI developers, certified partners, partner directory, AI development services, agentic software development",
+    "openGraph": {
+      "title": "Find a Deco Partner | Certified AI Development Partners",
+      "description": "Browse our directory of certified deco partners. Find experienced developers and agencies to help build your AI-powered applications and workflows.",
+      "image": "https://deco.cx/assets/find-partner-og-image.jpg",
+      "url": "https://deco.cx/find-a-partner",
+      "type": "website",
+      "siteName": "deco.cx"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "Find a Deco Partner | Certified AI Development Partners",
+      "description": "Browse our directory of certified deco partners. Find experienced developers and agencies to help build your AI-powered applications and workflows.",
+      "image": "https://deco.cx/assets/find-partner-twitter-image.jpg",
+      "site": "@deco_cx"
+    },
+    "__resolveType": "website/sections/Seo/SeoV2.tsx"
+  }
+}
