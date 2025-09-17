@@ -17,6 +17,7 @@ export interface Project {
   link?: string;
   icon?: string;
   image?: Screenshot[];
+  category?: string;
 }
 
 interface Category {
@@ -30,6 +31,7 @@ interface Props {
   itensPerPage?: number;
   defaultCategory?: string;
   categories?: Category[];
+  projects?: Project[];
   layoutCategoryCard?: {
     textPosition?: "top" | "bottom";
     textAlignment?: "center" | "left";

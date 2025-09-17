@@ -19,6 +19,7 @@ export interface Project {
   link?: string;
   icon?: ImageWidget;
   image?: Screenshot[];
+  category?: string;
 }
 
 export interface TemplateInfo {
@@ -46,8 +47,8 @@ interface Category {
 interface Props {
   projectsTitle?: string;
   itensPerPage?: number;
-  defaultCategory?: string;
   categories?: Category[];
+  projects?: Project[];
   layoutCategoryCard?: {
     textPosition?: "top" | "bottom";
     textAlignment?: "center" | "left";
@@ -105,84 +106,31 @@ function ProjectCard({ link, label, category, image, icon }: TemplateInfo) {
   );
 }
 
-function CategoryIndex({
-  active,
-  label,
-  onClick,
-}: {
-  active: boolean;
-  label: string;
-  onClick: (label: string) => void;
-}) {
-  return (
-    <button
-      type="button"
-      class={`transition-all duration-300 whitespace-nowrap pb-2 border-b-2 font-medium ${
-        active
-          ? "text-primary-light border-primary-light"
-          : "text-dc-400 border-transparent hover:text-dc-200 hover:border-dc-600"
-      }`}
-      onClick={() => onClick(label)}
-    >
-      {label}
-    </button>
-  );
-}
-
 export default function ProjectGrid(props: Props) {
   const {
     projectsTitle = "Explore deco's Live Projects",
     itensPerPage = 6,
     categories = [],
+    projects: projectsProp,
     layoutCategoryCard = {
       textPosition: "top",
       textAlignment: "center",
     },
-    defaultCategory = "All",
   } = props;
 
   const currentPage = useSignal(0);
-  const currentCategory = useSignal(defaultCategory);
-  const projects = useSignal(
-    categories
-      .map((category) =>
-        category.cards.map((project) => ({
-          ...project,
-          category: category.label,
-        }))
-      )
-      .flat(),
+  const projects = useSignal<Project[]>(
+    projectsProp && projectsProp.length > 0
+      ? projectsProp
+      : categories
+          .map((category) =>
+            category.cards.map((project) => ({
+              ...project,
+              category: category.label,
+            }))
+          )
+          .flat(),
   );
-
-  const handleChangeCategoria = (newCategory: string) => {
-    currentPage.value = 0;
-    currentCategory.value = newCategory;
-
-    if (newCategory === defaultCategory) {
-      // Show all projects when default category is selected
-      const allProjects = categories
-        .map((category) =>
-          category.cards.map((project) => ({
-            ...project,
-            category: category.label,
-          }))
-        )
-        .flat();
-      projects.value = allProjects;
-    } else {
-      // Show only projects from selected category
-      const newProjects = categories
-        .filter((category) => category.label === newCategory)
-        .map((category) =>
-          category.cards.map((project) => ({
-            ...project,
-            category: category.label,
-          }))
-        )
-        .flat();
-      projects.value = newProjects;
-    }
-  };
 
   return (
     <section class="w-full bg-dc-50 p-2">
@@ -191,17 +139,6 @@ export default function ProjectGrid(props: Props) {
           <h2 class="text-dc-200 text-2xl sm:text-3xl lg:text-5xl font-medium leading-tight">
             {projectsTitle}
           </h2>
-
-          <div class="flex gap-8 overflow-x-auto pb-2">
-            {[{ label: defaultCategory }, ...categories].map(({ label }) => (
-              <CategoryIndex
-                key={label}
-                label={label}
-                active={label === currentCategory.value}
-                onClick={() => handleChangeCategoria(label)}
-              />
-            ))}
-          </div>
 
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {projects.value

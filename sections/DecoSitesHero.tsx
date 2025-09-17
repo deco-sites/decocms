@@ -1,115 +1,145 @@
 import type { ImageWidget } from "apps/admin/widgets.ts";
+import Button from "../components/ui/Button.tsx";
 import Image from "apps/website/components/Image.tsx";
 
 export interface Props {
-  /**
-   * @title Eyebrow Text
-   * @description Small text above the main title
-   */
-  eyebrow?: string;
-  /**
-   * @title Main Title
-   * @description Main heading text
-   */
+  /** @title Main Title */
   title?: string;
-  /**
-   * @title Title Image
-   * @description Image to display on the left side of the title
-   */
-  titleImage?: ImageWidget;
-  /**
-   * @title Title Image Alt Text
-   * @description Alt text for the title image
-   */
-  titleImageAlt?: string;
-  /**
-   * @title Primary Button Text
-   * @description Text for the main CTA button
-   */
+  /** @title Subtitle */
+  subtitle?: string;
+  /** @title Primary CTA Text */
   primaryButtonText?: string;
-  /**
-   * @title Primary Button URL
-   * @description URL for the main CTA button
-   */
+  /** @title Primary CTA URL */
   primaryButtonUrl?: string;
-  /**
-   * @title Background Image
-   * @description Hero background image shown at the bottom
-   */
-  backgroundImage?: ImageWidget;
-  /**
-   * @title Background Image Alt Text
-   * @description Alt text for the background image
-   */
-  backgroundImageAlt?: string;
+  /** @title Secondary CTA Text */
+  secondaryButtonText?: string;
+  /** @title Secondary CTA URL */
+  secondaryButtonUrl?: string;
+  /** @title Trust Signal Title */
+  trustSignalTitle?: string;
+  /** @title Partner Logos */
+  /** @description Partner logos for the trust signal */
+  partnerLogos?: ImageWidget[];
+  /** @title Show Partner Logos */
+  showPartnerLogos?: boolean;
+  /** @title Desktop Background Image */
+  /** @description Background image for desktop that appears above the primary-dark background */
+  backgroundImageDesktop?: ImageWidget;
+  /** @title Mobile Background Image */
+  /** @description Background image for mobile that appears above the primary-dark background */
+  backgroundImageMobile?: ImageWidget;
 }
 
-export default function DecoSitesHero({
-  eyebrow,
+export default function PartnersHero({
   title,
-  titleImage,
-  titleImageAlt,
+  subtitle,
   primaryButtonText,
   primaryButtonUrl,
-  backgroundImage,
-  backgroundImageAlt,
+  secondaryButtonText,
+  secondaryButtonUrl,
+  trustSignalTitle,
+  partnerLogos = [],
+  showPartnerLogos = true,
+  backgroundImageDesktop,
+  backgroundImageMobile,
 }: Props) {
   return (
-    <section class="w-full bg-dc-50 p-2 h-screen overflow-hidden">
-      <div class="w-full bg-dc-900 rounded-3xl h-[calc(100vh-16px)] relative overflow-hidden">
-        <div class="w-full max-w-[1440px] mx-auto px-4 md:px-8 lg:px-16 pt-24 md:pt-56 h-full flex flex-col">
-          {/* Content Container */}
-          <div class="w-full flex flex-col items-center gap-12 lg:gap-14 flex-1 justify-center">
-            {/* Text Content */}
-            <div class="w-full flex flex-col items-center gap-6 text-center">
-              {eyebrow && (
-                <div class="flex items-center justify-center gap-2">
-                  {titleImage && (
-                    <Image
-                      src={titleImage}
-                      alt={titleImageAlt || ""}
-                      width={32}
-                      height={32}
-                      class="size-8 sm:size-12 lg:size-16 object-contain"
-                      loading="lazy"
-                    />
-                  )}
-                  <div class="text-primary-light text-xl sm:text-2xl lg:text-3xl font-medium leading-none">
-                    {eyebrow}
-                  </div>
-                </div>
-              )}
+    <section className="w-full bg-dc-50 flex flex-col p-2">
+      <div className="bg-primary-dark pt-6 rounded-3xl flex flex-col h-[calc(100vh-16px)] relative overflow-hidden">
+        {/* Background Images */}
+        {/* Desktop Background */}
+        {backgroundImageDesktop && (
+          <div className="hidden sm:block absolute inset-0 z-0">
+            <Image
+              src={backgroundImageDesktop}
+              alt="Background"
+              width={1424}
+              height={800}
+              loading="lazy"
+              className="w-full h-full object-cover opacity-20"
+            />
+          </div>
+        )}
 
-              {title && (
-                <h1 class="text-dc-200 text-3xl sm:text-4xl lg:text-6xl font-medium leading-tight tracking-tight max-w-4xl text-center">
-                  {title}
-                </h1>
-              )}
+        {/* Mobile Background */}
+        {backgroundImageMobile && (
+          <div className="block sm:hidden absolute inset-0 z-0">
+            <Image
+              src={backgroundImageMobile}
+              alt="Background"
+              width={768}
+              height={800}
+              loading="lazy"
+              className="w-full h-full object-cover opacity-20"
+            />
+          </div>
+        )}
 
+        {/* Main Content */}
+        <div className="flex-1 flex flex-col items-center justify-center relative z-10 px-4 sm:px-8 lg:px-16">
+          <div className="flex flex-col gap-6 sm:gap-8 lg:gap-12 items-center justify-start max-w-4xl">
+            {/* Header */}
+            <div className="flex flex-col gap-6 items-center justify-start w-full">
+              <h1 className="text-primary-light text-4xl sm:text-5xl lg:text-8xl font-medium leading-tight tracking-tight text-center">
+                {title}
+              </h1>
+              {subtitle && (
+                <p className="text-dc-50 text-base sm:text-lg leading-relaxed text-center max-w-lg">
+                  {subtitle}
+                </p>
+              )}
+            </div>
+
+            {/* Buttons */}
+            <div className="flex gap-2 items-start justify-start">
               {primaryButtonText && primaryButtonUrl && (
-                <div class="bg-primary-light text-primary-dark px-4 py-2.5 rounded-xl font-medium inline-block">
-                  <a href={primaryButtonUrl} class="text-inherit no-underline">
-                    {primaryButtonText}
-                  </a>
-                </div>
+                <Button
+                  variant="primary"
+                  size="medium"
+                  href={primaryButtonUrl}
+                  className="!bg-primary-light !text-primary-dark hover:!bg-primary-light/90"
+                >
+                  {primaryButtonText}
+                </Button>
+              )}
+              {secondaryButtonText && secondaryButtonUrl && (
+                <Button
+                  variant="secondary"
+                  size="medium"
+                  href={secondaryButtonUrl}
+                  className="!bg-dc-50 !text-dc-900 hover:!bg-dc-100"
+                >
+                  {secondaryButtonText}
+                </Button>
               )}
             </div>
           </div>
-
-          {/* Background Image - Flows below text, will be cut by overflow-hidden */}
-          {backgroundImage && (
-            <div class="hidden sm:block w-full max-w-[1040px] mx-auto mt-24">
-              <Image
-                src={backgroundImage}
-                alt={backgroundImageAlt || ""}
-                width={1040}
-                height={683}
-                class="w-full h-auto object-contain"
-                loading="lazy"
-              />
-            </div>
-          )}
         </div>
+
+        {/* Trust Signal Section */}
+        {showPartnerLogos && partnerLogos.length > 0 && (
+          <div className="absolute bottom-0 left-0 w-full overflow-hidden pb-10 pt-5 px-0">
+            {trustSignalTitle && (
+              <div className="text-primary-light text-sm sm:text-base font-mono leading-5 text-center uppercase mb-6 tracking-wide">
+                {trustSignalTitle}
+              </div>
+            )}
+            <div className="flex gap-6 sm:gap-9 items-center justify-center">
+              {partnerLogos.map((logo, index) => (
+                <div key={index} className="h-8 sm:h-10 lg:h-12 flex-shrink-0">
+                  <Image
+                    src={logo}
+                    alt={`Partner ${index + 1}`}
+                    width={120}
+                    height={48}
+                    loading="lazy"
+                    className="h-full w-auto object-contain opacity-80"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
