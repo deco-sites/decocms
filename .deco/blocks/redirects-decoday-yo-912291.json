@@ -1,0 +1,8 @@
+{
+  "redirect": {
+    "from": "/decoday-youtube",
+    "to": "https://www.youtube.com/watch?v=rim4BUd57A4&t=15s",
+    "type": "permanent"
+  },
+  "__resolveType": "website/loaders/redirect.ts"
+}
