@@ -1,6 +1,7 @@
 import type { ImageWidget } from "apps/admin/widgets.ts";
 import Button from "../components/ui/Button.tsx";
 import Image from "apps/website/components/Image.tsx";
+import UnicornStudioBackground from "../islands/UnicornStudioBackground.tsx";
 
 export interface Props {
   /** @title Main Title */
@@ -22,6 +23,12 @@ export interface Props {
   partnerLogos?: ImageWidget[];
   /** @title Show Partner Logos */
   showPartnerLogos?: boolean;
+  /** @title Enable Unicorn Studio Background */
+  /** @description Enable animated background using Unicorn Studio */
+  enableUnicornBackground?: boolean;
+  /** @title Unicorn Studio Project ID */
+  /** @description Project ID for Unicorn Studio animation (default: NHShCtm10Ryd0k5eAqgY) */
+  unicornProjectId?: string;
   /** @title Desktop Background Image */
   /** @description Background image for desktop that appears above the primary-dark background */
   backgroundImageDesktop?: ImageWidget;
@@ -40,15 +47,25 @@ export default function PartnersHero({
   trustSignalTitle,
   partnerLogos = [],
   showPartnerLogos = true,
+  enableUnicornBackground = true,
+  unicornProjectId = "NHShCtm10Ryd0k5eAqgY",
   backgroundImageDesktop,
   backgroundImageMobile,
 }: Props) {
   return (
     <section className="w-full bg-dc-50 flex flex-col p-2">
       <div className="bg-primary-dark pt-6 rounded-3xl flex flex-col h-[calc(100vh-16px)] relative overflow-hidden">
+        {/* Unicorn Studio Background */}
+        {enableUnicornBackground && (
+          <UnicornStudioBackground 
+            projectId={unicornProjectId}
+            className="z-0 opacity-100"
+          />
+        )}
+        
         {/* Background Images */}
         {/* Desktop Background */}
-        {backgroundImageDesktop && (
+        {!enableUnicornBackground && backgroundImageDesktop && (
           <div className="hidden sm:block absolute inset-0 z-0">
             <Image
               src={backgroundImageDesktop}
@@ -62,7 +79,7 @@ export default function PartnersHero({
         )}
 
         {/* Mobile Background */}
-        {backgroundImageMobile && (
+        {!enableUnicornBackground && backgroundImageMobile && (
           <div className="block sm:hidden absolute inset-0 z-0">
             <Image
               src={backgroundImageMobile}

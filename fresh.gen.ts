@@ -10,6 +10,7 @@ import * as $CopyCommandButton from "./islands/CopyCommandButton.tsx";
 import * as $FeaturesInteractive from "./islands/FeaturesInteractive.tsx";
 import * as $GitHubStars from "./islands/GitHubStars.tsx";
 import * as $ProjectGrid from "./islands/ProjectGrid.tsx";
+import * as $UnicornStudioBackground from "./islands/UnicornStudioBackground.tsx";
 import type { Manifest } from "$fresh/server.ts";
 
 const manifest = {
@@ -24,6 +25,7 @@ const manifest = {
     "./islands/FeaturesInteractive.tsx": $FeaturesInteractive,
     "./islands/GitHubStars.tsx": $GitHubStars,
     "./islands/ProjectGrid.tsx": $ProjectGrid,
+    "./islands/UnicornStudioBackground.tsx": $UnicornStudioBackground,
   },
   baseUrl: import.meta.url,
 } satisfies Manifest;
