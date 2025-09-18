@@ -1,7 +1,10 @@
 import type { ImageWidget } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
 
-export interface ConnectionItem {
+/**
+ * @titleBy name
+ */
+export interface Connection {
   /**
    * @title Connection Icon
    * @description Icon for the connection/integration
@@ -29,7 +32,7 @@ export interface Props {
    * @title Connections
    * @description Array of connection icons to display
    */
-  connections?: ConnectionItem[];
+  connections?: Connection[];
 }
 
 export default function ConnectionsGrid({
