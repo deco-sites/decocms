@@ -1,0 +1,8 @@
+{
+  "redirect": {
+    "from": "/linkedin",
+    "to": "https://www.linkedin.com/company/getdeco",
+    "type": "permanent"
+  },
+  "__resolveType": "website/loaders/redirect.ts"
+}

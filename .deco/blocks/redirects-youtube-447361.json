@@ -1,0 +1,8 @@
+{
+  "redirect": {
+    "from": "/youtube",
+    "to": "https://www.youtube.com/@decocms",
+    "type": "permanent"
+  },
+  "__resolveType": "website/loaders/redirect.ts"
+}

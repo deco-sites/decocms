@@ -66,7 +66,7 @@ function FeatureCard(
           {feature.description}
         </p>
       </div>
-      <div class="self-stretch flex flex-col justify-start items-start gap-2">
+      <div class="self-stretch flex flex-col justify-start items-start gap-2 mt-8 sm:mt-4 lg:mt-0">
         {feature.items.map((item, itemIndex) => {
           const isActive = activeItemIndex === itemIndex;
           const buttonClasses =

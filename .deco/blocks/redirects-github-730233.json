@@ -1,0 +1,8 @@
+{
+  "redirect": {
+    "from": "/github",
+    "to": "https://github.com/deco-cx/chat",
+    "type": "permanent"
+  },
+  "__resolveType": "website/loaders/redirect.ts"
+}
