@@ -58,73 +58,67 @@
     },
     {
       "__resolveType": "site/sections/ConnectionsGrid.tsx",
-      "title": "Connect to any platform with one click",
+      "title": "Connect to any\nplatform with one click",
       "subtitle": "No code. No friction.",
-      "topRowConnections": [
+      "connections": [
         {
-          "icon": "https://assets.decocache.com/decocms/e37e5504-fd97-4318-b554-334bef9cf0c2/whatsapp.png",
-          "name": "WhatsApp"
-        },
-        {
-          "icon": "https://assets.decocache.com/decocms/016d6fd8-3395-4267-a4fe-bc10ba1e728e/sheets.png",
-          "name": "Google Sheets"
-        },
-        {
-          "icon": "https://assets.decocache.com/decocms/1152c0ec-fc39-4a31-bd54-9229fa40836a/notion.png",
+          "icon": "http://localhost:3845/assets/3ea82d9f0a86ff7202e36bcb6e91224243b7f43d.svg",
           "name": "Notion"
         },
         {
-          "icon": "https://assets.decocache.com/decocms/ddcd9385-de10-4cd0-93df-cdbcc7a83021/github.png",
+          "icon": "http://localhost:3845/assets/07b5d20316e153d1e9ecc6759a5c340ca8890f49.svg",
           "name": "GitHub"
         },
         {
-          "icon": "https://assets.decocache.com/decocms/5213e98e-7409-403f-8644-a47c0874b7f5/drive.png",
+          "icon": "http://localhost:3845/assets/6f5e1873fbebb0785e938cc240ab52af0ce9c49a.svg",
           "name": "Google Drive"
         },
         {
-          "icon": "https://assets.decocache.com/decocms/07b013d3-947c-4eae-ba13-e1babe93ee1e/calendar.png",
-          "name": "Google Calendar"
-        },
-        {
-          "icon": "https://assets.decocache.com/decocms/1d97a513-09e5-402a-9bec-2ef2d99db9ed/discord.png",
-          "name": "Discord"
-        },
-        {
-          "icon": "https://assets.decocache.com/decocms/b0efa01a-1532-446a-97e9-903be7286459/coda.png",
-          "name": "Coda"
-        }
-      ],
-      "bottomRowConnections": [
-        {
-          "icon": "https://assets.decocache.com/decocms/c89fe4f8-df33-4cfe-ba20-696a37b3b3a4/airtable.png",
-          "name": "Airtable"
-        },
-        {
-          "icon": "https://assets.decocache.com/decocms/5b3bfcaa-8e5b-4dc0-bcd3-df601a2d4684/integration.png",
-          "name": "Integration 1"
-        },
-        {
-          "icon": "https://assets.decocache.com/decocms/452b8f22-f11e-4b6f-8934-2e58419ea705/integration-1.png",
-          "name": "Integration 2"
-        },
-        {
-          "icon": "https://assets.decocache.com/decocms/bd9c7ae5-28fb-421d-add0-02fdc93431a1/jira.png",
-          "name": "Jira"
-        },
-        {
-          "icon": "https://assets.decocache.com/decocms/e37e5504-fd97-4318-b554-334bef9cf0c2/whatsapp.png",
-          "name": "WhatsApp"
-        },
-        {
-          "icon": "https://assets.decocache.com/decocms/016d6fd8-3395-4267-a4fe-bc10ba1e728e/sheets.png",
+          "icon": "http://localhost:3845/assets/0b49ea08e83e45c82eacd649f10880428afced53.svg",
           "name": "Google Sheets"
         },
         {
-          "icon": "https://assets.decocache.com/decocms/5b3bfcaa-8e5b-4dc0-bcd3-df601a2d4684/integration.png",
-          "name": "Integration 3"
+          "icon": "http://localhost:3845/assets/46d2b49a4963cd3eaf83ed316a1d872152e05f85.svg",
+          "name": "Google Calendar"
         },
         {
-          "icon": "https://assets.decocache.com/decocms/e37e5504-fd97-4318-b554-334bef9cf0c2/whatsapp.png",
+          "icon": "http://localhost:3845/assets/808e8a081e1603f8a65460c297dce0c8f9edbf1e.svg",
+          "name": "WhatsApp"
+        },
+        {
+          "icon": "http://localhost:3845/assets/72cef99fa785df158db6c7eef60df6dc57a8962a.svg",
+          "name": "VTEX"
+        },
+        {
+          "icon": "http://localhost:3845/assets/1f2d015408c1b87218fa5d201f609ea21b96bea2.svg",
+          "name": "Discord"
+        },
+        {
+          "icon": "http://localhost:3845/assets/33cceafd280d1a5337b0484129abc4b6d2c461ee.svg",
+          "name": "Coda"
+        },
+        {
+          "icon": "http://localhost:3845/assets/ccdfc4ecac4acc0fe57227af1308e85be888f9c6.svg",
+          "name": "Airtable"
+        },
+        {
+          "icon": "http://localhost:3845/assets/3e675d8242466708282936202212f16f42dae5ca.svg",
+          "name": "Google Drive"
+        },
+        {
+          "icon": "http://localhost:3845/assets/7f59cc79d0d6a67d0c3d29fc6d50eb33af9b8e88.svg",
+          "name": "HubSpot"
+        },
+        {
+          "icon": "http://localhost:3845/assets/0b49ea08e83e45c82eacd649f10880428afced53.svg",
+          "name": "Google Sheets"
+        },
+        {
+          "icon": "http://localhost:3845/assets/7f0d7a0c9e06782404805136bad1676edb512de1.svg",
+          "name": "Monday.com"
+        },
+        {
+          "icon": "http://localhost:3845/assets/808e8a081e1603f8a65460c297dce0c8f9edbf1e.svg",
           "name": "WhatsApp"
         }
       ]

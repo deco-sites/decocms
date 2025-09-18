@@ -6913,6 +6913,9 @@ input.tab:checked + .tab-content,
 .to-cyan-700 {
   --tw-gradient-to: #0e7490 var(--tw-gradient-to-position);
 }
+.to-dc-100\/0 {
+  --tw-gradient-to: rgb(241 240 238 / 0) var(--tw-gradient-to-position);
+}
 .to-dc-200 {
   --tw-gradient-to: #E7E5E4 var(--tw-gradient-to-position);
 }
