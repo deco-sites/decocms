@@ -2,6 +2,11 @@
   "__resolveType": "site/sections/Header.tsx",
   "menuItems": [
     {
+      "label": "Home",
+      "href": "/",
+      "items": []
+    },
+    {
       "label": "Docs",
       "href": "https://docs.decocms.com",
       "items": []
@@ -13,12 +18,12 @@
     },
     {
       "label": "Partners",
-      "href": "/partners",
-      "items": []
+      "items": [],
+      "href": "/partners"
     },
     {
-      "label": "Blog",
       "items": [],
+      "label": "Blog",
       "href": "/blog"
     },
     {
@@ -26,6 +31,10 @@
         {
           "label": "Digital Experience",
           "href": "/use-case/deco-sites"
+        },
+        {
+          "label": "Internal AI Apps",
+          "href": "/"
         }
       ],
       "label": "Use Cases"
