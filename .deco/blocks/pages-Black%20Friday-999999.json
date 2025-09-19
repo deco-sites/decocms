@@ -1,0 +1,67 @@
+{
+  "name": "Black Friday",
+  "path": "/black-friday",
+  "sections": [
+    {
+      "__resolveType": "site/sections/BlackFridayHero.tsx",
+      "title": "🔥 BLACK FRIDAY NA DECO",
+      "subtitle": "O melhor lugar para criar seu e-commerce",
+      "description": "Aproveite descontos incríveis e crie sua loja online com a plataforma mais moderna do mercado. Performance, conversão e resultados garantidos!",
+      "ctaText": "COMEÇAR AGORA COM DESCONTO",
+      "ctaLink": "/",
+      "discount": "ATÉ 50% OFF",
+      "backgroundImage": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/1818/ff6bb37e-0eab-40e1-a454-86856efc278e"
+    },
+    {
+      "__resolveType": "site/sections/BlackFridayFeatures.tsx",
+      "title": "Por que a deco é o melhor lugar para sua Black Friday?",
+      "subtitle": "Tudo que você precisa para vender mais nesta Black Friday",
+      "features": [
+        {
+          "icon": "🚀",
+          "title": "Deploy em segundos",
+          "description": "Sua loja no ar em minutos, não em semanas",
+          "highlight": "10x mais rápido"
+        },
+        {
+          "icon": "⚡",
+          "title": "Performance extrema",
+          "description": "Sites que carregam em menos de 1 segundo",
+          "highlight": "Core Web Vitals 100"
+        },
+        {
+          "icon": "🤖",
+          "title": "IA integrada",
+          "description": "Otimização automática para aumentar conversões",
+          "highlight": "+30% vendas"
+        },
+        {
+          "icon": "📱",
+          "title": "Mobile-first",
+          "description": "Experiência perfeita em todos os dispositivos",
+          "highlight": "100% responsivo"
+        },
+        {
+          "icon": "🔧",
+          "title": "Visual Editor",
+          "description": "Edite sua loja sem código, em tempo real",
+          "highlight": "Sem programação"
+        },
+        {
+          "icon": "📊",
+          "title": "Analytics avançado",
+          "description": "Dados em tempo real para otimizar suas vendas",
+          "highlight": "Insights poderosos"
+        }
+      ]
+    }
+  ],
+  "__resolveType": "website/pages/Page.tsx",
+  "seo": {
+    "__resolveType": "website/sections/Seo/SeoV2.tsx",
+    "title": "Black Friday deco.cx - O melhor lugar para criar seu e-commerce",
+    "description": "Aproveite a Black Friday da deco.cx! Descontos incríveis para criar sua loja online com a plataforma mais moderna do mercado. Performance e conversão garantidas!",
+    "canonical": "https://deco.cx/black-friday",
+    "noIndexing": false
+  }
+}
