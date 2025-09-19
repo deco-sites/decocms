@@ -147,23 +147,23 @@
           "items": [
             {
               "name": "CMS with Visual Editor",
-              "image": "https://assets.decocache.com/decocms/97f4388f-9151-421a-bee1-50de90c9f52e/cms.png"
+              "image": "https://assets.decocache.com/decocms/9430082d-7446-41d0-8324-402ba3bb5de6/CMS.png"
             },
             {
               "name": "TS Props Auto-Create Content Schemas",
-              "image": "https://assets.decocache.com/decocms/97f4388f-9151-421a-bee1-50de90c9f52e/cms.png"
+              "image": "https://assets.decocache.com/decocms/f002d41f-d6fa-47ba-98da-2f85b603703d/TS-Props.png"
             },
             {
               "name": "In-browser Web IDE",
-              "image": "https://assets.decocache.com/decocms/f793e16a-d8ef-423c-a463-cb2ed26b345b/webide.png"
+              "image": "https://assets.decocache.com/decocms/11b6499c-2863-4e77-9120-6c1d1fa08e93/In-browser-Web-IDE.png"
             },
             {
               "name": "One-Click Install Apps & Integrations",
-              "image": "https://assets.decocache.com/decocms/88cacb97-5ad3-401b-ba92-702668202486/oneclick.png"
+              "image": "https://assets.decocache.com/decocms/db5bb3c2-e1c3-4f78-8460-9aa2197d0aa1/one-click-installs.png"
             },
             {
               "name": "Modern Stack",
-              "image": "https://placehold.co/600x400?text=Modern+Stack"
+              "image": "https://assets.decocache.com/decocms/b59d30b3-924e-4960-8db8-896783e35bc1/modern-stack.png"
             }
           ],
           "imagePosition": "right"
@@ -174,23 +174,23 @@
           "items": [
             {
               "name": "Advanced SEO Settings",
-              "image": "https://assets.decocache.com/decocms/5f19b0c8-f0d1-440e-ac17-430be444f7ef/seosettings.png"
+              "image": "https://assets.decocache.com/decocms/cd755b5c-ded1-442f-9a1e-c8b19874320e/Instant-Rollback.png"
             },
             {
               "name": "A/B Test & Segmentation",
-              "image": "https://assets.decocache.com/decocms/48c3f220-a370-41b1-bc02-ba9ddea3f0b4/abtest.png"
+              "image": "https://assets.decocache.com/decocms/8248b58f-24e9-42f0-8e11-dde32e908257/B-Testing.png"
             },
             {
               "name": "Realtime Analytics",
-              "image": "https://assets.decocache.com/decocms/ab47b86b-cb5a-4ab0-91ab-ad23a551f903/realtimeanalytics.png"
+              "image": "https://assets.decocache.com/decocms/1aa4c473-93b8-47af-b0b7-a0c8d65ea3c1/Realtime-Analytics.png"
             },
             {
               "name": "Design System Builder",
-              "image": "https://assets.decocache.com/decocms/0f8d080f-fd49-4a50-818b-01678c570578/dsbuilder.png"
+              "image": "https://assets.decocache.com/decocms/3e66ac85-bfa9-437b-9820-bf3ff8f644e9/Design.png"
             },
             {
               "name": "Real-time Collaboration & Revisions",
-              "image": "https://assets.decocache.com/decocms/fcdba875-df30-4e77-9257-ca0127b89a7b/realtimecollab.png"
+              "image": "https://assets.decocache.com/decocms/db4a57d4-1410-4343-a557-61c6d5d1a1df/Rollback.png"
             }
           ],
           "imagePosition": "left"
@@ -201,23 +201,23 @@
           "items": [
             {
               "name": "Roles & Permissions",
-              "image": "https://assets.decocache.com/decocms/2792c013-d032-47f6-8ae5-36a47fddd119/roleperm.png"
+              "image": "https://assets.decocache.com/decocms/966d6820-18b8-4e70-ba2e-7bcbe9aaa345/Roles-approvals--tenancy.png"
             },
             {
               "name": "Realtime Error Logging & Tracing",
-              "image": "https://assets.decocache.com/decocms/3850d93e-5231-49ef-93ce-d5f21284c3e1/realtimeerror.png"
+              "image": "https://assets.decocache.com/decocms/f309ef05-43cd-40f4-b649-40128a83b151/error.png"
             },
             {
               "name": "Release Cycle Control & Instant Rollback",
-              "image": "https://assets.decocache.com/decocms/76329888-4456-40a6-aa1e-d0439f6bc9e5/releasecycle.png"
+              "image": "https://assets.decocache.com/decocms/beb85dc5-0006-4eeb-bc95-5da3f63d36a2/contorl.png"
             },
             {
               "name": "Managed Infra or Self-Hosted",
-              "image": "https://assets.decocache.com/decocms/786c7783-93bb-41e0-a857-dbd84cd65f18/managedinfra.png"
+              "image": "https://assets.decocache.com/decocms/43eb026f-1d0d-49a9-94c4-2a89dd2464ee/Managed-Infra.png"
             },
             {
               "name": "deco.records",
-              "image": "https://assets.decocache.com/decocms/f85ca697-f733-4a97-b75e-d78c5940b2f8/decorecords.png"
+              "image": "https://assets.decocache.com/decocms/793e127c-aae5-4fd6-aab9-740d5cddd705/recors.png"
             }
           ],
           "imagePosition": "right"
