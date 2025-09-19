@@ -97,6 +97,10 @@ export default function PartnersHero({
           <div className="flex flex-col gap-6 sm:gap-8 lg:gap-12 items-center justify-start max-w-4xl">
             {/* Header */}
             <div className="flex flex-col gap-6 items-center justify-start w-full">
+              {/* Eyebrow */}
+              <div className="text-white text-xs sm:text-sm font-mono uppercase tracking-widest text-center">
+                deco sites
+              </div>
               <h1 className="text-primary-light text-4xl sm:text-5xl lg:text-8xl font-medium leading-tight tracking-tight text-center">
                 {title}
               </h1>
