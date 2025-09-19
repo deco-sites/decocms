@@ -228,7 +228,7 @@
         },
         {
           "question": "What is deco CMS, and how is it different from other AI app builders?",
-          "answer": "deco CMS is an open-source Context CMS — a control plane and runtime for building, running, and monetizing AI-powered agentic apps. Unlike traditional app builders, it unifies context, governance, observability, and monetization in one platform."
+          "answer": "deco CMS is an open-source Context CMS — a control plane and runtime for building, running, and monetizing AI apps. Unlike traditional app builders, it unifies context, governance, observability, and monetization in one platform."
         },
         {
           "question": "How does deco CMS handle governance and observability?",
