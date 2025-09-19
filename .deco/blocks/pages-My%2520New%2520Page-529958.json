@@ -18,7 +18,7 @@
       "secondaryButtonUrl": "https://luma.com/x4wmpyp8",
       "trustSignalTitle": "Leading brand already use deco Sites",
       "showPartnerLogos": true,
-      "subtitle": "Build, ship, and evolve your websites with AI: visual editing, agentic workflows, and full code control.",
+      "subtitle": "Build, ship and evolve sites & storefronts on an AI-ready platform with visual editing, agent workflows, and full code control.",
       "partnerLogos": [
         "https://assets.decocache.com/decocms/5380a2a3-9c0a-4918-93b5-fca0a9fd0855/zeedog.png",
         "https://assets.decocache.com/decocms/49dd7bf5-e313-43da-ac3a-6a131824826c/osklen.png",
@@ -31,7 +31,7 @@
     },
     {
       "__resolveType": "site/sections/ThreeCards.tsx",
-      "title": "AI Builder optimized for e-commerce",
+      "title": "The all-in-one digital experience manager",
       "cards": [
         {
           "category": "DESIGN",
@@ -70,24 +70,12 @@
           "name": "Airtable"
         },
         {
-          "icon": "https://assets.decocache.com/decocms/756d3df7-7f74-454e-ba5f-b6419a9e3578/calendar.png",
-          "name": "Google Calendar"
-        },
-        {
-          "icon": "https://assets.decocache.com/decocms/533fc0f4-9997-4a55-bcfa-7cea37e2d35e/drive.png",
-          "name": "Google Drive"
-        },
-        {
           "icon": "https://assets.decocache.com/decocms/9eca1635-36ce-4171-a7b2-5058ef4c4c31/github.png",
           "name": "GitHub"
         },
         {
           "icon": "https://assets.decocache.com/decocms/bf953e34-3fe3-45d4-ab88-72c032503e0a/integration.png",
           "name": "Hubspot"
-        },
-        {
-          "icon": "https://assets.decocache.com/decocms/3aec88f1-9daa-47b2-9058-dd3bb8311e34/microsoft-teams.png",
-          "name": "Microsoft Teams"
         },
         {
           "icon": "https://assets.decocache.com/decocms/bba21f23-94ca-4fb2-b548-71068a878dba/nuvemshop.png",
@@ -114,10 +102,6 @@
           "name": "Supabase"
         },
         {
-          "icon": "https://assets.decocache.com/decocms/cab88b14-c4ec-48a8-9236-1ae33eefccaf/trello.png",
-          "name": "Trello"
-        },
-        {
           "icon": "https://assets.decocache.com/decocms/e185bcd8-4d51-432a-b9ca-63228ce8cd35/vtex.png",
           "name": "VTEX"
         },
@@ -132,6 +116,10 @@
         {
           "icon": "https://assets.decocache.com/decocms/390f225c-4ff0-4274-ae4a-002b2e9d0007/zendesk.png",
           "name": "Zendesk"
+        },
+        {
+          "icon": "https://assets.decocache.com/decocms/fd8d290a-d54f-4470-9c09-59dcf143bd9a/vnda.png",
+          "name": "VNDA"
         }
       ]
     },
