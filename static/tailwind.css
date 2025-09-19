@@ -3793,6 +3793,9 @@ input.tab:checked + .tab-content,
 .min-w-\[4px\] {
   min-width: 4px;
 }
+.min-w-\[80px\] {
+  min-width: 80px;
+}
 .min-w-full {
   min-width: 100%;
 }
@@ -6454,6 +6457,9 @@ input.tab:checked + .tab-content,
 .bg-opacity-20 {
   --tw-bg-opacity: 0.2;
 }
+.bg-opacity-30 {
+  --tw-bg-opacity: 0.3;
+}
 .bg-gradient-to-b {
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
 }
@@ -8695,8 +8701,14 @@ input.tab:checked + .tab-content,
 .opacity-70 {
   opacity: 0.7;
 }
+.opacity-75 {
+  opacity: 0.75;
+}
 .opacity-80 {
   opacity: 0.8;
+}
+.opacity-90 {
+  opacity: 0.9;
 }
 .shadow-2xl {
   --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);

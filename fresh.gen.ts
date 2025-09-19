@@ -8,6 +8,7 @@ import * as $home from "./routes/home.tsx";
 import * as $BlogCategories from "./islands/BlogCategories.tsx";
 import * as $BlogPostsCarousel from "./islands/BlogPostsCarousel.tsx";
 import * as $CopyCommandButton from "./islands/CopyCommandButton.tsx";
+import * as $CountdownIsland from "./islands/CountdownIsland.tsx";
 import * as $FeaturesInteractive from "./islands/FeaturesInteractive.tsx";
 import * as $GitHubStars from "./islands/GitHubStars.tsx";
 import * as $ProjectGrid from "./islands/ProjectGrid.tsx";
@@ -24,6 +25,7 @@ const manifest = {
     "./islands/BlogCategories.tsx": $BlogCategories,
     "./islands/BlogPostsCarousel.tsx": $BlogPostsCarousel,
     "./islands/CopyCommandButton.tsx": $CopyCommandButton,
+    "./islands/CountdownIsland.tsx": $CountdownIsland,
     "./islands/FeaturesInteractive.tsx": $FeaturesInteractive,
     "./islands/GitHubStars.tsx": $GitHubStars,
     "./islands/ProjectGrid.tsx": $ProjectGrid,
