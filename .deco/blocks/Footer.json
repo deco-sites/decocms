@@ -17,6 +17,11 @@
           "disabled": false,
           "text": "Blog",
           "url": "/blog"
+        },
+        {
+          "disabled": false,
+          "text": "LLM.txt",
+          "url": "https://decocms.com/llm.txt "
         }
       ],
       "title": "Company"
