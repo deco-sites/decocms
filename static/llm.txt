@@ -1,0 +1,222 @@
+# LLM.txt
+
+# https://decocms.com llms-full.txt
+
+## Deco CMS Overview
+
+Home Docs Community Partners Blog Use Cases
+
+Digital Experience Internal AI Apps
+
+167
+
+# The open-source admin for your internal AI apps
+
+Prototype in chat, ship in code, and run & monetize agentic apps in production.
+
+Get early access Talk to sales
+
+Control panel for your AI stack
+
+# AI demos are easy. Production isn't.
+
+deco Context Management System bridges the gap between prompts and production. Connect your stack, govern every step, and deploy agentic apps with built-in observability, spend controls, and a marketplace to reuse or monetize your modules.
+
+observability
+
+controls
+
+marketplace
+
+governance
+
+context mesh
+
+safe vibe coding
+
+build once bill per run
+
+## One place to build, run, and monetize your agents
+
+Govern access, trace every step, and turn reusable modules into paid products.
+
+### Connect your context
+
+Unify data, tools and models with policy, RBAC and observability — your agents always get the right context, safely.
+
+MCP-native connectors
+
+Policy routing & RBAC
+
+Spend caps & budgets
+
+Audit trail
+
+### Connect your context
+
+Unify data, tools and models with policy, RBAC and observability — your agents always get the right context, safely.
+
+MCP-native connectors
+
+Policy routing & RBAC
+
+Spend caps & budgets
+
+Audit trail
+
+### Govern & observe your runs
+
+No vibe debugging: logs, traces, error analytics and cost-per-step to optimize quality and spend, with roles, approvals and tenancy.
+
+Logs & traces
+
+Error analytics
+
+Cost per step & budgets
+
+Roles, approvals & tenancy
+
+### Govern & observe your runs
+
+No vibe debugging: logs, traces, error analytics and cost-per-step to optimize quality and spend, with roles, approvals and tenancy.
+
+Logs & traces
+
+Error analytics
+
+Cost per step & budgets
+
+Roles, approvals & tenancy
+
+### Reuse & monetize with our marketplace
+
+Install ready-made modules — or publish your own. Wallet-based per-run billing turns apps into revenue.
+
+One-click installs
+
+Publish modules
+
+Per-run billing (wallet)
+
+Templates & packages
+
+### Reuse & monetize with our marketplace
+
+Install ready-made modules — or publish your own. Wallet-based per-run billing turns apps into revenue.
+
+One-click installs
+
+Publish modules
+
+Per-run billing (wallet)
+
+Templates & packages
+
+## Realtime collaboration
+
+Business users prototype in natural language. Engineers scale in code.
+
+### Natural‑language builder for business users
+
+### Open‑source TypeScript SDK for devs
+
+Versioning & Git-native
+
+Governance built-in
+
+Fast Global Edge Deploy
+
+Open & extensible
+
+Frequently Asked Questions
+
+## FAQs
+
+Is deco CMS in closed beta? How can I get early access?
+
+Yes—deco CMS is currently in closed beta. You can get early access by joining our webinars, where we share invites during each session. Follow our social channels to catch the next dates.
+
+What is deco CMS, and how is it different from other AI app builders?
+
+deco CMS is an open-source Context CMS — a control plane and runtime for building, running, and monetizing AI apps. Unlike traditional app builders, it unifies context, governance, observability, and monetization in one platform.
+
+How does deco CMS handle governance and observability?
+
+Every run is fully traced, auditable, and secure. DecoCMS includes role-based access control (RBAC), spend caps, error analytics, and per-step cost visibility — ensuring safe operations and compliance by default.
+
+How does the deco CMS SDK work for developers?
+
+The deco CMS SDK lets you build, extend, and manage agents, workflows, and UIs in TypeScript. It integrates seamlessly with the CLI, enabling local development, testing, and edge deployment from a single codebase.
+
+What is the Context Mesh, and why is it important?
+
+The Context Mesh is DecoCMS's governed layer for connecting data, tools, and models. It provides typed connectors with built-in policy routing, RBAC, observability, and spend controls — ensuring the right context is delivered safely every time.
+
+Does deco CMS support edge deployment?
+
+Yes. deco CMS ships agents, workflows, and UIs to the edge automatically, ensuring low latency and global performance by default. You can manage environments, preview builds, and deploy updates directly from the CLI.
+
+How does deco CMS integrate with Git?
+
+deco CMS uses a Git-backed workflow by default. Every change to agents, workflows, and UIs is versioned, allowing you to branch, review, and merge updates just like any modern development stack. This ensures full traceability and safe collaboration between teams.
+
+## Join our thriving community of Al builders
+
+Join our Discord community
+
+### Company
+
+Docs
+
+Community
+
+Blog
+
+### Social
+
+Linkedin
+
+Instagram
+
+Twitter
+
+## Robots.txt Access Rules
+
+# NOTICE: The collection of content and other data on this
+# site through automated means, including any device, tool,
+# or process designed to data mine or scrape content, is
+# prohibited except (1) for the purpose of search engine indexing or
+# artificial intelligence retrieval augmented generation or (2) with express
+# written permission from this site's operator.
+
+# To request permission to license our intellectual
+# property and/or other materials, please contact this
+# site's operator directly.
+
+# BEGIN Cloudflare Managed content
+
+User-agent: Amazonbot
+Disallow: /
+
+User-agent: Applebot-Extended
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: meta-externalagent
+Disallow: /
+
+# END Cloudflare Managed Content
