@@ -79,3 +79,4 @@ _docker_deps.ts
 .metadata/changeset.json
 
 static/tailwind.css
+.deco/metadata/*
