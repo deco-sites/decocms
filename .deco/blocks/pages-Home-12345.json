@@ -256,7 +256,7 @@
     },
     {
       "__resolveType": "site/sections/FinalCTA.tsx",
-      "title": "Join our thriving community of Al builders",
+      "title": "Join our thriving community of Al builders ",
       "primaryButton": {
         "text": "Join our Discord community",
         "url": "https://discord.gg/qFbRUMV9"
