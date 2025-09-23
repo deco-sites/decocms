@@ -44,6 +44,19 @@
           "name": "Agência N1",
           "bio": "A Agência N1, também conhecida como N1.ag, é uma agência digital premiada e referência em e-commerce, especializada em customer success, brand experience e jornadas de compras digitais",
           "logo": "https://assets.decocache.com/decocms/50e5aef5-f8fd-4f51-b10b-b5cdcb130ae2/2ad88db8-bab0-4e55-8877-a5041085bf3e.png"
+        },
+        {
+          "tier": "Registered",
+          "type": [],
+          "certifications": [],
+          "verticals": [],
+          "stacks": [],
+          "languages": [],
+          "geos": [],
+          "slug": "tec4u",
+          "name": "tec4u",
+          "logo": "https://assets.decocache.com/decocms/fd8d290a-d54f-4470-9c09-59dcf143bd9a/vnda.png",
+          "bio": "good partner"
         }
       ]
     },
