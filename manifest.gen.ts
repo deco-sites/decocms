@@ -6,99 +6,107 @@ import * as $$$$$$$$$0 from "./actions/resend/createContact.ts";
 import * as $$$$$$$$$$$0 from "./apps/deco/blog.ts";
 import * as $$$$$$$$$$$1 from "./apps/deco/htmx.ts";
 import * as $$$$$$$$$$$2 from "./apps/site.ts";
-import * as $$$$$$0 from "./sections/AgentTavano/Features.tsx";
-import * as $$$$$$1 from "./sections/AgentTavano/Hero.tsx";
-import * as $$$$$$2 from "./sections/ApplicationForm.tsx";
-import * as $$$$$$3 from "./sections/ApplicationProcess.tsx";
-import * as $$$$$$4 from "./sections/BlackFridayCountdown.tsx";
-import * as $$$$$$5 from "./sections/BlackFridayFeatures.tsx";
-import * as $$$$$$6 from "./sections/BlackFridayHero.tsx";
-import * as $$$$$$7 from "./sections/BlogCategories.tsx";
-import * as $$$$$$8 from "./sections/BlogPost.tsx";
-import * as $$$$$$9 from "./sections/BlogPosts.tsx";
-import * as $$$$$$10 from "./sections/BlogPostsCarousel.tsx";
-import * as $$$$$$11 from "./sections/ConnectionsGrid.tsx";
-import * as $$$$$$12 from "./sections/CustomerLogos.tsx";
-import * as $$$$$$13 from "./sections/DecoSitesHero.tsx";
-import * as $$$$$$14 from "./sections/FAQ.tsx";
-import * as $$$$$$15 from "./sections/Features.tsx";
-import * as $$$$$$16 from "./sections/FinalCTA.tsx";
-import * as $$$$$$17 from "./sections/FindPartnerHero.tsx";
-import * as $$$$$$18 from "./sections/Footer.tsx";
-import * as $$$$$$19 from "./sections/Header.tsx";
-import * as $$$$$$20 from "./sections/Hero.tsx";
-import * as $$$$$$21 from "./sections/HeroSection.tsx";
-import * as $$$$$$22 from "./sections/ItWorks.tsx";
-import * as $$$$$$23 from "./sections/LightTerms.tsx";
-import * as $$$$$$24 from "./sections/LogoCarousel.tsx";
-import * as $$$$$$25 from "./sections/MainFeatures.tsx";
-import * as $$$$$$26 from "./sections/ModelsTable.tsx";
-import * as $$$$$$27 from "./sections/OnePlatformTwoSurfaces.tsx";
-import * as $$$$$$28 from "./sections/PartnerBenefits.tsx";
-import * as $$$$$$29 from "./sections/PartnerDirectory.tsx";
-import * as $$$$$$30 from "./sections/PartnerHighlights.tsx";
-import * as $$$$$$32 from "./sections/PartnersFAQ.tsx";
-import * as $$$$$$33 from "./sections/PartnersFinalCTA.tsx";
-import * as $$$$$$34 from "./sections/PartnersHero.tsx";
-import * as $$$$$$31 from "./sections/PartnerTiers.tsx";
-import * as $$$$$$35 from "./sections/Podcasts.tsx";
-import * as $$$$$$36 from "./sections/PricingPlans.tsx";
-import * as $$$$$$37 from "./sections/ProgramSteps.tsx";
-import * as $$$$$$38 from "./sections/ProjectGrid.tsx";
-import * as $$$$$$39 from "./sections/RelatedBlogPosts.tsx";
-import * as $$$$$$40 from "./sections/Statement.tsx";
-import * as $$$$$$41 from "./sections/TextMedia.tsx";
-import * as $$$$$$42 from "./sections/Theme/Theme.tsx";
-import * as $$$$$$43 from "./sections/ThreeCards.tsx";
-import * as $$$$$$44 from "./sections/WhoShouldApply.tsx";
+import * as $$$$$$0 from "./sections/AgentTavano/Benefits.tsx";
+import * as $$$$$$2 from "./sections/AgentTavano/Context.tsx";
+import * as $$$$$$1 from "./sections/AgentTavano/CTA.tsx";
+import * as $$$$$$3 from "./sections/AgentTavano/Features.tsx";
+import * as $$$$$$4 from "./sections/AgentTavano/Hero.tsx";
+import * as $$$$$$5 from "./sections/AgentTavano/Showcase.tsx";
+import * as $$$$$$6 from "./sections/ApplicationForm.tsx";
+import * as $$$$$$7 from "./sections/ApplicationProcess.tsx";
+import * as $$$$$$8 from "./sections/BlackFridayCountdown.tsx";
+import * as $$$$$$9 from "./sections/BlackFridayFeatures.tsx";
+import * as $$$$$$10 from "./sections/BlackFridayHero.tsx";
+import * as $$$$$$11 from "./sections/BlogCategories.tsx";
+import * as $$$$$$12 from "./sections/BlogPost.tsx";
+import * as $$$$$$13 from "./sections/BlogPosts.tsx";
+import * as $$$$$$14 from "./sections/BlogPostsCarousel.tsx";
+import * as $$$$$$15 from "./sections/ConnectionsGrid.tsx";
+import * as $$$$$$16 from "./sections/CustomerLogos.tsx";
+import * as $$$$$$17 from "./sections/DecoSitesHero.tsx";
+import * as $$$$$$18 from "./sections/FAQ.tsx";
+import * as $$$$$$19 from "./sections/Features.tsx";
+import * as $$$$$$20 from "./sections/FinalCTA.tsx";
+import * as $$$$$$21 from "./sections/FindPartnerHero.tsx";
+import * as $$$$$$22 from "./sections/Footer.tsx";
+import * as $$$$$$23 from "./sections/Header.tsx";
+import * as $$$$$$24 from "./sections/Hero.tsx";
+import * as $$$$$$25 from "./sections/HeroSection.tsx";
+import * as $$$$$$26 from "./sections/ItWorks.tsx";
+import * as $$$$$$27 from "./sections/LightTerms.tsx";
+import * as $$$$$$28 from "./sections/LogoCarousel.tsx";
+import * as $$$$$$29 from "./sections/MainFeatures.tsx";
+import * as $$$$$$30 from "./sections/ModelsTable.tsx";
+import * as $$$$$$31 from "./sections/OnePlatformTwoSurfaces.tsx";
+import * as $$$$$$32 from "./sections/PartnerBenefits.tsx";
+import * as $$$$$$33 from "./sections/PartnerDirectory.tsx";
+import * as $$$$$$34 from "./sections/PartnerHighlights.tsx";
+import * as $$$$$$36 from "./sections/PartnersFAQ.tsx";
+import * as $$$$$$37 from "./sections/PartnersFinalCTA.tsx";
+import * as $$$$$$38 from "./sections/PartnersHero.tsx";
+import * as $$$$$$35 from "./sections/PartnerTiers.tsx";
+import * as $$$$$$39 from "./sections/Podcasts.tsx";
+import * as $$$$$$40 from "./sections/PricingPlans.tsx";
+import * as $$$$$$41 from "./sections/ProgramSteps.tsx";
+import * as $$$$$$42 from "./sections/ProjectGrid.tsx";
+import * as $$$$$$43 from "./sections/RelatedBlogPosts.tsx";
+import * as $$$$$$44 from "./sections/Statement.tsx";
+import * as $$$$$$45 from "./sections/TextMedia.tsx";
+import * as $$$$$$46 from "./sections/Theme/Theme.tsx";
+import * as $$$$$$47 from "./sections/ThreeCards.tsx";
+import * as $$$$$$48 from "./sections/WhoShouldApply.tsx";
 
 const manifest = {
   "sections": {
-    "site/sections/AgentTavano/Features.tsx": $$$$$$0,
-    "site/sections/AgentTavano/Hero.tsx": $$$$$$1,
-    "site/sections/ApplicationForm.tsx": $$$$$$2,
-    "site/sections/ApplicationProcess.tsx": $$$$$$3,
-    "site/sections/BlackFridayCountdown.tsx": $$$$$$4,
-    "site/sections/BlackFridayFeatures.tsx": $$$$$$5,
-    "site/sections/BlackFridayHero.tsx": $$$$$$6,
-    "site/sections/BlogCategories.tsx": $$$$$$7,
-    "site/sections/BlogPost.tsx": $$$$$$8,
-    "site/sections/BlogPosts.tsx": $$$$$$9,
-    "site/sections/BlogPostsCarousel.tsx": $$$$$$10,
-    "site/sections/ConnectionsGrid.tsx": $$$$$$11,
-    "site/sections/CustomerLogos.tsx": $$$$$$12,
-    "site/sections/DecoSitesHero.tsx": $$$$$$13,
-    "site/sections/FAQ.tsx": $$$$$$14,
-    "site/sections/Features.tsx": $$$$$$15,
-    "site/sections/FinalCTA.tsx": $$$$$$16,
-    "site/sections/FindPartnerHero.tsx": $$$$$$17,
-    "site/sections/Footer.tsx": $$$$$$18,
-    "site/sections/Header.tsx": $$$$$$19,
-    "site/sections/Hero.tsx": $$$$$$20,
-    "site/sections/HeroSection.tsx": $$$$$$21,
-    "site/sections/ItWorks.tsx": $$$$$$22,
-    "site/sections/LightTerms.tsx": $$$$$$23,
-    "site/sections/LogoCarousel.tsx": $$$$$$24,
-    "site/sections/MainFeatures.tsx": $$$$$$25,
-    "site/sections/ModelsTable.tsx": $$$$$$26,
-    "site/sections/OnePlatformTwoSurfaces.tsx": $$$$$$27,
-    "site/sections/PartnerBenefits.tsx": $$$$$$28,
-    "site/sections/PartnerDirectory.tsx": $$$$$$29,
-    "site/sections/PartnerHighlights.tsx": $$$$$$30,
-    "site/sections/PartnersFAQ.tsx": $$$$$$32,
-    "site/sections/PartnersFinalCTA.tsx": $$$$$$33,
-    "site/sections/PartnersHero.tsx": $$$$$$34,
-    "site/sections/PartnerTiers.tsx": $$$$$$31,
-    "site/sections/Podcasts.tsx": $$$$$$35,
-    "site/sections/PricingPlans.tsx": $$$$$$36,
-    "site/sections/ProgramSteps.tsx": $$$$$$37,
-    "site/sections/ProjectGrid.tsx": $$$$$$38,
-    "site/sections/RelatedBlogPosts.tsx": $$$$$$39,
-    "site/sections/Statement.tsx": $$$$$$40,
-    "site/sections/TextMedia.tsx": $$$$$$41,
-    "site/sections/Theme/Theme.tsx": $$$$$$42,
-    "site/sections/ThreeCards.tsx": $$$$$$43,
-    "site/sections/WhoShouldApply.tsx": $$$$$$44,
+    "site/sections/AgentTavano/Benefits.tsx": $$$$$$0,
+    "site/sections/AgentTavano/Context.tsx": $$$$$$2,
+    "site/sections/AgentTavano/CTA.tsx": $$$$$$1,
+    "site/sections/AgentTavano/Features.tsx": $$$$$$3,
+    "site/sections/AgentTavano/Hero.tsx": $$$$$$4,
+    "site/sections/AgentTavano/Showcase.tsx": $$$$$$5,
+    "site/sections/ApplicationForm.tsx": $$$$$$6,
+    "site/sections/ApplicationProcess.tsx": $$$$$$7,
+    "site/sections/BlackFridayCountdown.tsx": $$$$$$8,
+    "site/sections/BlackFridayFeatures.tsx": $$$$$$9,
+    "site/sections/BlackFridayHero.tsx": $$$$$$10,
+    "site/sections/BlogCategories.tsx": $$$$$$11,
+    "site/sections/BlogPost.tsx": $$$$$$12,
+    "site/sections/BlogPosts.tsx": $$$$$$13,
+    "site/sections/BlogPostsCarousel.tsx": $$$$$$14,
+    "site/sections/ConnectionsGrid.tsx": $$$$$$15,
+    "site/sections/CustomerLogos.tsx": $$$$$$16,
+    "site/sections/DecoSitesHero.tsx": $$$$$$17,
+    "site/sections/FAQ.tsx": $$$$$$18,
+    "site/sections/Features.tsx": $$$$$$19,
+    "site/sections/FinalCTA.tsx": $$$$$$20,
+    "site/sections/FindPartnerHero.tsx": $$$$$$21,
+    "site/sections/Footer.tsx": $$$$$$22,
+    "site/sections/Header.tsx": $$$$$$23,
+    "site/sections/Hero.tsx": $$$$$$24,
+    "site/sections/HeroSection.tsx": $$$$$$25,
+    "site/sections/ItWorks.tsx": $$$$$$26,
+    "site/sections/LightTerms.tsx": $$$$$$27,
+    "site/sections/LogoCarousel.tsx": $$$$$$28,
+    "site/sections/MainFeatures.tsx": $$$$$$29,
+    "site/sections/ModelsTable.tsx": $$$$$$30,
+    "site/sections/OnePlatformTwoSurfaces.tsx": $$$$$$31,
+    "site/sections/PartnerBenefits.tsx": $$$$$$32,
+    "site/sections/PartnerDirectory.tsx": $$$$$$33,
+    "site/sections/PartnerHighlights.tsx": $$$$$$34,
+    "site/sections/PartnersFAQ.tsx": $$$$$$36,
+    "site/sections/PartnersFinalCTA.tsx": $$$$$$37,
+    "site/sections/PartnersHero.tsx": $$$$$$38,
+    "site/sections/PartnerTiers.tsx": $$$$$$35,
+    "site/sections/Podcasts.tsx": $$$$$$39,
+    "site/sections/PricingPlans.tsx": $$$$$$40,
+    "site/sections/ProgramSteps.tsx": $$$$$$41,
+    "site/sections/ProjectGrid.tsx": $$$$$$42,
+    "site/sections/RelatedBlogPosts.tsx": $$$$$$43,
+    "site/sections/Statement.tsx": $$$$$$44,
+    "site/sections/TextMedia.tsx": $$$$$$45,
+    "site/sections/Theme/Theme.tsx": $$$$$$46,
+    "site/sections/ThreeCards.tsx": $$$$$$47,
+    "site/sections/WhoShouldApply.tsx": $$$$$$48,
   },
   "actions": {
     "site/actions/resend/createContact.ts": $$$$$$$$$0,
