@@ -1,24 +1,43 @@
 {
-  "sections": {
-    "__resolveType": "site/sections/AgentTavano/Showcase.tsx",
-    "title": "Veja o Agent Tavano em ação",
-    "subtitle": "Exemplos reais de transformação digital com IA",
-    "items": [
-      {
-        "title": "De Figma para Código em Minutos",
-        "description": "Envie seu design do Figma e veja o Agent Tavano transformar em componentes funcionais, responsivos e otimizados para performance.",
-        "code": "// Agent Tavano analisa o design e gera:\nexport default function ProductCard({ product }) {\n  return (\n    <div className=\"group hover:scale-105 transition-transform\">\n      <img src={product.image} alt={product.name} />\n      <h3 className=\"font-bold\">{product.name}</h3>\n      <p className=\"text-primary\">{product.price}</p>\n    </div>\n  );\n}"
-      },
-      {
-        "title": "Análise Inteligente de Performance",
-        "description": "O Agent Tavano monitora métricas em tempo real, identifica gargalos e sugere otimizações específicas para melhorar a experiência do usuário.",
-        "code": "// Relatório automático gerado:\n{\n  \"coreWebVitals\": {\n    \"LCP\": \"1.2s\", // ✅ Excelente\n    \"FID\": \"45ms\", // ✅ Bom\n    \"CLS\": \"0.08\" // ⚠️ Precisa melhorar\n  },\n  \"suggestions\": [\n    \"Otimizar carregamento de imagens\",\n    \"Implementar lazy loading\"\n  ]\n}"
-      },
-      {
-        "title": "Correção Automática de Bugs",
-        "description": "Identifica problemas no código, analisa logs de erro e implementa correções seguindo as melhores práticas de desenvolvimento.",
-        "code": "// Antes: Bug identificado\nconst [products, setProducts] = useState();\n\n// Depois: Correção aplicada\nconst [products, setProducts] = useState([]);\nconst [loading, setLoading] = useState(true);\nconst [error, setError] = useState(null);"
-      }
-    ]
-  }
+  "sections": [
+    {
+      "__resolveType": "site/sections/AgentTavano/Hero.tsx"
+    },
+    {
+      "__resolveType": "site/sections/AgentTavano/Features.tsx"
+    },
+    {
+      "__resolveType": "site/sections/AgentTavano/Benefits.tsx"
+    },
+    {
+      "__resolveType": "site/sections/AgentTavano/Context.tsx"
+    },
+    {
+      "__resolveType": "site/sections/AgentTavano/Showcase.tsx",
+      "title": "Veja o Agent Tavano em ação",
+      "subtitle": "Exemplos reais de transformação digital com IA",
+      "items": [
+        {
+          "title": "De Figma para Código em Minutos",
+          "description": "Envie seu design do Figma e veja o Agent Tavano transformar em componentes funcionais, responsivos e otimizados para performance.",
+          "code": "// Agent Tavano analisa o design e gera:\nexport default function ProductCard({ product }) {\n  return (\n    <div className=\"group hover:scale-105 transition-transform\">\n      <img src={product.image} alt={product.name} />\n      <h3 className=\"font-bold\">{product.name}</h3>\n      <p className=\"text-primary\">{product.price}</p>\n    </div>\n  );\n}"
+        },
+        {
+          "title": "Análise Inteligente de Performance",
+          "description": "O Agent Tavano monitora métricas em tempo real, identifica gargalos e sugere otimizações específicas para melhorar a experiência do usuário.",
+          "code": "// Relatório automático gerado:\n{\n  \"coreWebVitals\": {\n    \"LCP\": \"1.2s\", // ✅ Excelente\n    \"FID\": \"45ms\", // ✅ Bom\n    \"CLS\": \"0.08\" // ⚠️ Precisa melhorar\n  },\n  \"suggestions\": [\n    \"Otimizar carregamento de imagens\",\n    \"Implementar lazy loading\"\n  ]\n}"
+        },
+        {
+          "title": "Correção Automática de Bugs",
+          "description": "Identifica problemas no código, analisa logs de erro e implementa correções seguindo as melhores práticas de desenvolvimento.",
+          "code": "// Antes: Bug identificado\nconst [products, setProducts] = useState();\n\n// Depois: Correção aplicada\nconst [products, setProducts] = useState([]);\nconst [loading, setLoading] = useState(true);\nconst [error, setError] = useState(null);"
+        }
+      ]
+    },
+    {
+      "__resolveType": "site/sections/AgentTavano/CTA.tsx"
+    }
+  ],
+  "name": "Agent Tavano",
+  "path": "/tavano"
 }
