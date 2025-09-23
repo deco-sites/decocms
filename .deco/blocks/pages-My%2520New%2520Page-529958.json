@@ -34,25 +34,25 @@
       "title": "The all-in-one digital experience manager",
       "cards": [
         {
-          "category": "DESIGN",
-          "title": "Brand consistency",
-          "description": "Unified design system that maintains its visual identity across all pages.",
-          "image": "https://assets.decocache.com/decocms/04a09d0d-ad5f-4fb2-9b75-4a3572eb1a9d/design.png",
-          "imageAlt": "Design interface showing brand consistency tools"
-        },
-        {
-          "category": "BLOCKS",
-          "title": "Storefront components",
-          "description": "Pre-designed blocks optimized for conversion and boosting the shopping experience.",
-          "image": "https://assets.decocache.com/decocms/41cbc9f3-dc2d-4f52-8010-b9ae07ff4888/blocks.png",
-          "imageAlt": "Blocks interface showing storefront components"
-        },
-        {
           "category": "PERFORMANCE",
           "title": "Fast loading & performance",
           "description": "Improved performance for an improved user experience and better SEO",
           "image": "https://assets.decocache.com/decocms/1bdd6dd2-d614-47f7-9ecb-20a74ba01c79/performance.png",
           "imageAlt": "Performance dashboard showing speed metrics"
+        },
+        {
+          "category": "BLOCKS",
+          "title": "Pre-built & custom components",
+          "description": "Blocks optimized for conversion and boosting the user experience.",
+          "image": "https://assets.decocache.com/decocms/41cbc9f3-dc2d-4f52-8010-b9ae07ff4888/blocks.png",
+          "imageAlt": "Blocks interface showing storefront components"
+        },
+        {
+          "category": "EVOLUTION",
+          "title": "AI Agents for continuous evolution",
+          "description": "Plug AI Agents to build, test, and improve your site. Every day, faster.",
+          "image": "https://assets.decocache.com/decocms/04a09d0d-ad5f-4fb2-9b75-4a3572eb1a9d/design.png",
+          "imageAlt": "Design interface showing brand consistency tools"
         }
       ]
     },
