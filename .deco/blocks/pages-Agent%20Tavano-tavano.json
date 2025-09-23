@@ -1,0 +1,128 @@
+{
+  "__resolveType": "website/pages/Page.tsx",
+  "path": "/tavano",
+  "name": "Agent Tavano",
+  "sections": [
+    {
+      "__resolveType": "site/sections/AgentTavano/Hero.tsx",
+      "title": "Conheça o Agent Tavano",
+      "subtitle": "Seu assistente inteligente para criação e evolução de e-commerce",
+      "description": "O Agent Tavano é um assistente de IA especializado que revoluciona a forma como você cria e gerencia sua loja online. Com conhecimento profundo do seu negócio, ele transforma ideias em realidade digital.",
+      "ctaText": "Experimente Agora",
+      "ctaLink": "#features",
+      "backgroundImage": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/4763/682eb374-def2-4e85-a45d-b3a7ff8a31a9"
+    },
+    {
+      "__resolveType": "site/sections/AgentTavano/Features.tsx",
+      "title": "O que o Agent Tavano pode fazer por você",
+      "features": [
+        {
+          "icon": "🎨",
+          "title": "Criação de Landing Pages",
+          "description": "Transforme seus designs do Figma em páginas funcionais e otimizadas automaticamente"
+        },
+        {
+          "icon": "🧩",
+          "title": "Desenvolvimento de Sections",
+          "description": "Crie componentes personalizados a partir de mockups e especificações visuais"
+        },
+        {
+          "icon": "🐛",
+          "title": "Resolução de Bugs",
+          "description": "Identifique e corrija problemas no código com análise inteligente e soluções precisas"
+        },
+        {
+          "icon": "⚡",
+          "title": "Evolução do CMS",
+          "description": "Melhore continuamente a interface e experiência do seu sistema de gerenciamento"
+        },
+        {
+          "icon": "📊",
+          "title": "Interpretação de Dados",
+          "description": "Analise métricas, performance e comportamento dos usuários com insights acionáveis"
+        },
+        {
+          "icon": "🎯",
+          "title": "Otimização SEO",
+          "description": "Implemente as melhores práticas de SEO baseadas no contexto da sua loja"
+        }
+      ]
+    },
+    {
+      "__resolveType": "site/sections/AgentTavano/Context.tsx",
+      "title": "Contexto Completo do Seu Negócio",
+      "subtitle": "O Agent Tavano conhece profundamente todos os aspectos da sua operação",
+      "contextItems": [
+        {
+          "icon": "🔍",
+          "title": "SEO Strategy",
+          "description": "Conhece suas palavras-chave, meta tags e estratégia de conteúdo"
+        },
+        {
+          "icon": "🎨",
+          "title": "Design System",
+          "description": "Entende sua identidade visual, cores, tipografia e componentes"
+        },
+        {
+          "icon": "💻",
+          "title": "Repositório GitHub",
+          "description": "Acessa todo o histórico de código e arquitetura do projeto"
+        },
+        {
+          "icon": "🛒",
+          "title": "Plataforma E-commerce",
+          "description": "Integrado com sua plataforma de vendas e dados de produtos"
+        },
+        {
+          "icon": "📈",
+          "title": "Analytics & Métricas",
+          "description": "Monitora performance, conversões e comportamento dos usuários"
+        },
+        {
+          "icon": "⚙️",
+          "title": "Configurações Técnicas",
+          "description": "Conhece toda a infraestrutura e configurações do ambiente"
+        }
+      ]
+    },
+    {
+      "__resolveType": "site/sections/AgentTavano/Benefits.tsx",
+      "title": "Por que escolher o Agent Tavano?",
+      "benefits": [
+        {
+          "title": "Velocidade Incomparável",
+          "description": "Reduza o tempo de desenvolvimento de semanas para horas",
+          "metric": "10x mais rápido"
+        },
+        {
+          "title": "Precisão Técnica",
+          "description": "Código limpo, otimizado e seguindo as melhores práticas",
+          "metric": "99% de precisão"
+        },
+        {
+          "title": "Conhecimento Contextual",
+          "description": "Entende seu negócio e toma decisões inteligentes",
+          "metric": "100% personalizado"
+        },
+        {
+          "title": "Evolução Contínua",
+          "description": "Aprende com cada interação e melhora constantemente",
+          "metric": "24/7 disponível"
+        }
+      ]
+    },
+    {
+      "__resolveType": "site/sections/AgentTavano/CTA.tsx",
+      "title": "Pronto para revolucionar seu e-commerce?",
+      "description": "Experimente o Agent Tavano e descubra como a inteligência artificial pode transformar seu negócio digital.",
+      "primaryCTA": {
+        "text": "Começar Agora",
+        "link": "/contact"
+      },
+      "secondaryCTA": {
+        "text": "Ver Demonstração",
+        "link": "#demo"
+      }
+    }
+  ]
+}
