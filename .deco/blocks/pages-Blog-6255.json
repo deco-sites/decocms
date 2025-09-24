@@ -11,9 +11,9 @@
       "posts": {
         "__resolveType": "blog/loaders/BlogpostList.ts",
         "count": 50,
-        "slug": {
+        "category": {
           "__resolveType": "website/functions/requestToParam.ts",
-          "param": "slug"
+          "param": "category"
         }
       }
     },
@@ -22,7 +22,11 @@
       "posts": {
         "__resolveType": "blog/loaders/BlogpostList.ts",
         "postSlugs": [],
-        "sortBy": "date_desc"
+        "sortBy": "date_desc",
+        "category": {
+          "__resolveType": "website/functions/requestToParam.ts",
+          "param": "category"
+        }
       }
     },
     {

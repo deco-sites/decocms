@@ -869,6 +869,12 @@
             "link": "https://www.petfarma.com/",
             "icon": "https://assets.decocache.com/starting/a68e76bc-21a0-493d-8edc-e62143217ac4/1742491540353-236814e9-e8a2-4345-bf9c-feb051c1e95f",
             "category": "PET"
+          },
+          {
+            "image": [],
+            "label": "Hering",
+            "category": "Fashion",
+            "icon": "https://assets.decocache.com/decocms/6ac6ebfb-f0d3-4d19-a1c1-cf6efa69d9b3/hering-logo-0-2048x2048_1705341848.png"
           }
         ]
       }

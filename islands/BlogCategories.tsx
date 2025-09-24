@@ -66,7 +66,7 @@ export default function BlogCategories({
     if (useCategoryPath) {
       return categorySlug ? `${blogUrl}/${categorySlug}` : blogUrl;
     }
-    return `${blogUrl}${categorySlug ? `/blog/${categorySlug}` : ""}`;
+    return `${blogUrl}${categorySlug ? `?category=${categorySlug}` : ""}`;
   };
 
   // If no categories were provided but we have posts, extract from posts
