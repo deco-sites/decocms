@@ -247,35 +247,47 @@
             "image": [
               {
                 "color": "#FFFFFF",
-                "img": "https://assets.decocache.com/starting/47ae27a4-ca52-4af5-a429-88351cfbb747/1742491296137-ff7ce533-bbbd-4921-ade1-8f88cb267e2d"
+                "img": "https://assets.decocache.com/starting/af90e4bc-2643-4aab-9b28-c3acf79129fc/1742491365896-539348b2-dadf-4b89-9dc2-8014b27d2d5b"
               }
             ],
-            "link": "https://www.bawclothing.com.br",
-            "label": "Baw Clothing",
-            "icon": "https://assets.decocache.com/starting/194fe489-d06a-4c10-b51c-038205810ebc/1742491293985-339c1f17-53b6-45a8-a4a5-0bd1beb8ce1c",
+            "link": "https://www.osklen.com.br",
+            "label": "Osklen",
+            "icon": "https://assets.decocache.com/starting/b82a7809-fdbb-4913-805e-d4a931a1329e/1742491369990-40c431a9-ca47-451d-86bd-2c63639773d5",
             "category": "Fashion"
           },
           {
-            "link": "https://www.bolovo.com.br/",
+            "link": "https://www.bawclothing.com.br",
             "image": [
               {
-                "img": "https://assets.decocache.com/starting/cbabccd4-b160-4e7f-98fe-145963ca0dfe/1742491300837-7df006a9-8abc-4856-9d7d-6d98fe3d0db3",
+                "img": "https://assets.decocache.com/starting/47ae27a4-ca52-4af5-a429-88351cfbb747/1742491296137-ff7ce533-bbbd-4921-ade1-8f88cb267e2d",
                 "color": "#FFFFFF"
               }
             ],
-            "label": "Bolovo",
-            "icon": "https://assets.decocache.com/starting/8d32f33b-f55a-4c8e-b972-097cd69b2368/1742491299045-c3363f36-91e8-4c19-8206-b549dfad0c51",
+            "label": "Baw Clothing",
+            "icon": "https://assets.decocache.com/starting/194fe489-d06a-4c10-b51c-038205810ebc/1742491293985-339c1f17-53b6-45a8-a4a5-0bd1beb8ce1c",
             "category": "Fashion"
           },
           {
             "image": [
               {
                 "color": "#FFFFFF",
-                "img": "https://assets.decocache.com/starting/83d24bed-eef3-4feb-9275-da04c5d67b56/1742491500915-e08a837c-d64e-432b-a52d-ef38df7477ff"
+                "img": "https://assets.decocache.com/starting/cbabccd4-b160-4e7f-98fe-145963ca0dfe/1742491300837-7df006a9-8abc-4856-9d7d-6d98fe3d0db3"
+              }
+            ],
+            "label": "Bolovo",
+            "link": "https://www.bolovo.com.br/",
+            "icon": "https://assets.decocache.com/starting/8d32f33b-f55a-4c8e-b972-097cd69b2368/1742491299045-c3363f36-91e8-4c19-8206-b549dfad0c51",
+            "category": "Fashion"
+          },
+          {
+            "link": "https://www.casaevideo.com.br/",
+            "image": [
+              {
+                "img": "https://assets.decocache.com/starting/83d24bed-eef3-4feb-9275-da04c5d67b56/1742491500915-e08a837c-d64e-432b-a52d-ef38df7477ff",
+                "color": "#FFFFFF"
               }
             ],
             "label": "Casa & Video",
-            "link": "https://www.casaevideo.com.br/",
             "icon": "https://assets.decocache.com/starting/985e29a5-0924-4916-a8f0-fd6ac22b1933/1742491502650-19646bd5-d505-4a0b-89ba-af2427e956fa",
             "category": "Home & Decor"
           },
@@ -292,26 +304,26 @@
             "category": "PET"
           },
           {
-            "link": "https://www.lojastorra.com.br/",
             "image": [
               {
-                "img": "https://assets.decocache.com/starting/3cdbac89-896d-4592-b17a-671645d77c4f/1742491351202-30be1ab7-69cb-45bc-9c50-943731b008e0",
-                "color": "#FFFFFF"
+                "color": "#FFFFFF",
+                "img": "https://assets.decocache.com/starting/3cdbac89-896d-4592-b17a-671645d77c4f/1742491351202-30be1ab7-69cb-45bc-9c50-943731b008e0"
               }
             ],
             "label": "Lojas Torra",
+            "link": "https://www.lojastorra.com.br/",
             "icon": "https://assets.decocache.com/starting/e5772a28-6181-4c29-aecb-eb0bd02525aa/1742491353130-eb8df74a-0b88-4463-9691-d204473989de",
             "category": "Fashion"
           },
           {
+            "link": "https://www.abracadabra.com.br/",
             "image": [
               {
-                "color": "#FFFFFF",
-                "img": "https://assets.decocache.com/starting/87fb91e9-effe-4078-98f0-269f47f2f4e8/1742491484207-442fa1ee-a39f-4037-a1b1-ee6f0e9d1d70"
+                "img": "https://assets.decocache.com/starting/87fb91e9-effe-4078-98f0-269f47f2f4e8/1742491484207-442fa1ee-a39f-4037-a1b1-ee6f0e9d1d70",
+                "color": "#FFFFFF"
               }
             ],
             "label": "Abracadabra",
-            "link": "https://www.abracadabra.com.br/",
             "icon": "https://assets.decocache.com/starting/7b3a3371-95ea-4f1f-9f57-17edada610de/1742491487738-755c9dec-3801-4f0c-80f9-29fe9e8ce1bd",
             "category": "Home & Decor"
           },
@@ -328,13 +340,13 @@
             "category": "Home & Decor"
           },
           {
-            "link": "https://www.dellaaviamentos.com.br/",
             "image": [
               {
-                "img": "https://assets.decocache.com/starting/f8d97f36-db7c-4266-a0ce-79e43614438d/1742491321861-f6f28f23-3f40-409d-9142-f052d54ea08f",
-                "color": "#FFFFFF"
+                "color": "#FFFFFF",
+                "img": "https://assets.decocache.com/starting/f8d97f36-db7c-4266-a0ce-79e43614438d/1742491321861-f6f28f23-3f40-409d-9142-f052d54ea08f"
               }
             ],
+            "link": "https://www.dellaaviamentos.com.br/",
             "label": "Della Aviamentos",
             "icon": "https://assets.decocache.com/starting/c7c11211-c2fe-4361-afa5-ee6e8af57a5d/1742491323752-a735af4a-92bd-4c4e-b1d0-a0288de49ec4",
             "category": "Art, Crafts & Fabrics"
@@ -346,20 +358,20 @@
                 "img": "https://assets.decocache.com/starting/20552266-ed49-4220-9200-452864d7fe62/1742491325654-c958d2b6-3b59-41e5-834e-c821b911fa42"
               }
             ],
-            "link": "https://www.maximustecidos.com.br/",
             "label": "Maximus Tecidos",
+            "link": "https://www.maximustecidos.com.br/",
             "icon": "https://assets.decocache.com/starting/ee017b68-03f7-440d-bdae-faaf7258de6f/1742491327720-9db7fe6c-9300-47d2-8c4c-5cf0dffda694",
             "category": "Art, Crafts & Fabrics"
           },
           {
+            "link": "https://www.pgadesivos.com.br/",
             "image": [
               {
-                "color": "#FFFFFF",
-                "img": "https://assets.decocache.com/starting/3a40c91e-b639-4357-99c0-3fd68b86ddf4/1742491329557-6ce3a5e1-473e-4923-9ce0-fb7028173deb"
+                "img": "https://assets.decocache.com/starting/3a40c91e-b639-4357-99c0-3fd68b86ddf4/1742491329557-6ce3a5e1-473e-4923-9ce0-fb7028173deb",
+                "color": "#FFFFFF"
               }
             ],
             "label": "PG Adesivos",
-            "link": "https://www.pgadesivos.com.br/",
             "icon": "https://assets.decocache.com/starting/6d3c1382-2668-4b9b-bb33-817dd793985d/1742491331286-438cfb6b-fa2f-4b72-804d-86ed97d79273",
             "category": "Art, Crafts & Fabrics"
           },
@@ -436,14 +448,14 @@
             "category": "Fashion"
           },
           {
-            "link": "https://brandili.deco.site/",
             "image": [
               {
-                "img": "https://assets.decocache.com/starting/4a600e75-5da5-4ed7-a9dd-4c347f11ea1f/1742491304563-5c29bd4f-871d-48fa-a233-0b6524f1c325",
-                "color": "#FFFFFF"
+                "color": "#FFFFFF",
+                "img": "https://assets.decocache.com/starting/4a600e75-5da5-4ed7-a9dd-4c347f11ea1f/1742491304563-5c29bd4f-871d-48fa-a233-0b6524f1c325"
               }
             ],
             "label": "Brandili",
+            "link": "https://brandili.deco.site/",
             "icon": "https://assets.decocache.com/starting/a900697f-f164-4fde-b484-94ef6fb87281/1742491302977-eb0ffe08-807a-4a0e-9f6a-2b5481405c4e",
             "category": "Fashion"
           },
@@ -466,8 +478,8 @@
                 "img": "https://assets.decocache.com/starting/2024b1cb-4815-4afb-848e-9a343b6862f8/1742491312229-bd78b55d-168f-4c9b-8803-a873397741c0"
               }
             ],
-            "label": "Comfortflex",
             "link": "https://www.comfortflex.com.br/",
+            "label": "Comfortflex",
             "icon": "https://assets.decocache.com/starting/5a65a1c5-8f7f-492f-be54-b7395ab49b1b/1742491310558-78d79b75-9300-49f8-b551-d1d62e0692cd",
             "category": "Fashion"
           },
@@ -478,8 +490,8 @@
                 "img": "https://assets.decocache.com/starting/ab2df124-3fa7-4237-97ca-b34f49744882/1742491316331-d615de9e-5ad7-4d31-b613-bdb2d48bdd48"
               }
             ],
-            "link": "https://www.danielatombini.com.br/",
             "label": "Daniela Tombini",
+            "link": "https://www.danielatombini.com.br/",
             "icon": "https://assets.decocache.com/starting/093f6fae-27ce-4a5c-83d8-9e33bb74ffd5/1742491314285-1d1bca53-89b1-4141-a14d-c05ccb84fdd1",
             "category": "Fashion"
           },
@@ -490,8 +502,8 @@
                 "img": "https://assets.decocache.com/starting/01bb408d-2d27-494f-a80c-60b733bea4d1/1742491319671-ed937d13-a3c0-4d9b-83a7-ce056284c88f"
               }
             ],
-            "label": "Doux",
             "link": "https://www.douxstore.com/",
+            "label": "Doux",
             "icon": "https://assets.decocache.com/starting/0140d665-97a1-46cf-9518-95254aa4a079/1742491318111-3e5c014d-6f7a-4225-a5b2-9b0bf5bc2adc",
             "category": "Fashion"
           },
@@ -526,8 +538,8 @@
                 "img": "https://assets.decocache.com/starting/8f3f71d9-f4cc-4167-9f70-599238c03266/1742491343657-9aa7bf0d-edcb-4937-afa6-7c276cfa4d92"
               }
             ],
-            "link": "https://www.hectoralbertazzi.com.br/",
             "label": "Hector Albertazzi",
+            "link": "https://www.hectoralbertazzi.com.br/",
             "icon": "https://assets.decocache.com/starting/6e358ace-f228-47d4-a993-848861f3269c/1742491345540-c1aa2ec7-7a5c-41b7-839d-66f3c2f1b89e",
             "category": "Fashion"
           },
@@ -556,27 +568,15 @@
             "category": "Fashion"
           },
           {
-            "image": [
-              {
-                "color": "#FFFFFF",
-                "img": "https://assets.decocache.com/starting/57932e5e-b55a-4564-a534-3b8d593eab53/1742491360112-1e8df378-9f13-4c8b-bc4a-9df94f0ccdfa"
-              }
-            ],
-            "label": "Notta",
             "link": "https://www.notta.com.br/",
-            "icon": "https://assets.decocache.com/starting/7a521cf1-e8c3-43b5-b3f2-ace970961ee9/1742491364146-4a486fa6-00f5-482a-8b89-a165f26350fe",
-            "category": "Fashion"
-          },
-          {
-            "link": "https://www.osklen.com.br",
             "image": [
               {
-                "img": "https://assets.decocache.com/starting/af90e4bc-2643-4aab-9b28-c3acf79129fc/1742491365896-539348b2-dadf-4b89-9dc2-8014b27d2d5b",
+                "img": "https://assets.decocache.com/starting/57932e5e-b55a-4564-a534-3b8d593eab53/1742491360112-1e8df378-9f13-4c8b-bc4a-9df94f0ccdfa",
                 "color": "#FFFFFF"
               }
             ],
-            "label": "Osklen",
-            "icon": "https://assets.decocache.com/starting/b82a7809-fdbb-4913-805e-d4a931a1329e/1742491369990-40c431a9-ca47-451d-86bd-2c63639773d5",
+            "label": "Notta",
+            "icon": "https://assets.decocache.com/starting/7a521cf1-e8c3-43b5-b3f2-ace970961ee9/1742491364146-4a486fa6-00f5-482a-8b89-a165f26350fe",
             "category": "Fashion"
           },
           {
@@ -844,30 +844,6 @@
             "category": "Home & Decor"
           },
           {
-            "link": "https://www.copelcolchoes.com.br/",
-            "image": [
-              {
-                "img": "https://assets.decocache.com/starting/e777d001-6d60-4a49-828b-083a0cfbae45/1742491507760-46d87414-ec40-4e41-8386-ab55a0ff86cd",
-                "color": "#FFFFFF"
-              }
-            ],
-            "label": "Copel Colchões",
-            "icon": "https://assets.decocache.com/starting/2477506a-c6be-4c37-800a-f639dad8eea6/1742491509240-cf4eecdd-e3b7-457b-ba0b-e786402b7e7c",
-            "category": "Home & Decor"
-          },
-          {
-            "link": "https://www.costaatacado.com.br/",
-            "image": [
-              {
-                "img": "https://assets.decocache.com/starting/be1b8630-7963-4b57-acf8-237f03343fc2/1742491510907-6c83a94e-3e7f-434f-b284-cd7e75d8a923",
-                "color": "#FFFFFF"
-              }
-            ],
-            "label": "Costa Atacado",
-            "icon": "https://assets.decocache.com/starting/26b3dcb4-5b95-4534-b1cd-b06050d5c16d/1742491512480-d990a5df-232e-4c0b-b185-6a64ff5280dd",
-            "category": "Home & Decor"
-          },
-          {
             "link": "https://www.cristaistavares.com.br/",
             "image": [
               {
@@ -892,28 +868,28 @@
             "category": "Home & Decor"
           },
           {
+            "link": "https://www.lojastopmoveis.com.br/",
             "image": [
               {
-                "color": "#FFFFFF",
-                "img": "https://assets.decocache.com/starting/128581e4-df39-42b5-9c26-990736062232/1742491521218-9f55ed96-1986-469f-a272-94235fb4aed3"
+                "img": "https://assets.decocache.com/starting/128581e4-df39-42b5-9c26-990736062232/1742491521218-9f55ed96-1986-469f-a272-94235fb4aed3",
+                "color": "#FFFFFF"
               }
             ],
-            "link": "https://www.lojastopmoveis.com.br/",
             "label": "Lojas Top Móveis",
             "icon": "https://assets.decocache.com/starting/2fcba661-c65d-4d35-8651-484e9c166dc0/1742491522977-a3ea423f-22d8-4ac0-87dc-1c5692922027",
             "category": "Home & Decor"
           },
           {
+            "link": "https://lojavirtual.lumini.com.br/",
             "image": [
               {
-                "color": "#FFFFFF",
-                "img": "https://assets.decocache.com/starting/e1c10aed-a032-404c-8f48-7572c4768377/1742491524464-6618e37e-7564-4ea0-9ee3-f3e80d1f432a"
+                "img": "https://assets.decocache.com/starting/e1c10aed-a032-404c-8f48-7572c4768377/1742491524464-6618e37e-7564-4ea0-9ee3-f3e80d1f432a",
+                "color": "#FFFFFF"
               }
             ],
             "label": "Lumini",
-            "link": "https://lojavirtual.lumini.com.br/",
-            "category": "Home & Decor",
-            "icon": "https://assets.decocache.com/starting/b9b059a8-5220-4d3e-bcde-32cbce968f44/1742491526545-a0b659f4-7b4c-4e0d-83c9-5c8cd53e632c"
+            "icon": "https://assets.decocache.com/starting/b9b059a8-5220-4d3e-bcde-32cbce968f44/1742491526545-a0b659f4-7b4c-4e0d-83c9-5c8cd53e632c",
+            "category": "Home & Decor"
           },
           {
             "image": [
@@ -924,18 +900,7 @@
             ],
             "link": "https://www.openbox2.com.br/",
             "label": "OpenBox2",
-            "category": "Home & Decor",
-            "icon": "https://assets.decocache.com/starting/e7f91037-15d3-4bd5-bbfc-c3a8884b352e/1742491530203-af488451-8f0b-4cdd-a69e-12b7a442ec81"
-          },
-          {
-            "image": [
-              {
-                "color": "#FFFFFF",
-                "img": "https://assets.decocache.com/starting/979e680c-17f6-4443-8eef-4500e4599e45/1742491531464-c3393e0c-15e2-4dc1-acaf-9f2ffa8f3244"
-              }
-            ],
-            "label": "Star Company",
-            "link": "https://star-company.deco.site/",
+            "icon": "https://assets.decocache.com/starting/e7f91037-15d3-4bd5-bbfc-c3a8884b352e/1742491530203-af488451-8f0b-4cdd-a69e-12b7a442ec81",
             "category": "Home & Decor"
           },
           {
@@ -947,8 +912,8 @@
             ],
             "label": "Teciplast",
             "link": "https://loja.teciplast.com.br/",
-            "icon": "https://assets.decocache.com/starting/d40bc077-2d31-43bf-804f-a9377405c018/1742491537008-5cb564a7-240f-45e1-91a8-e3ee96d2937c",
-            "category": "Home & Decor"
+            "category": "Home & Decor",
+            "icon": "https://assets.decocache.com/starting/d40bc077-2d31-43bf-804f-a9377405c018/1742491537008-5cb564a7-240f-45e1-91a8-e3ee96d2937c"
           },
           {
             "image": [
@@ -959,8 +924,8 @@
             ],
             "link": "https://www.petfarma.com/",
             "label": "Petfarma",
-            "icon": "https://assets.decocache.com/starting/a68e76bc-21a0-493d-8edc-e62143217ac4/1742491540353-236814e9-e8a2-4345-bf9c-feb051c1e95f",
-            "category": "PET"
+            "category": "PET",
+            "icon": "https://assets.decocache.com/starting/a68e76bc-21a0-493d-8edc-e62143217ac4/1742491540353-236814e9-e8a2-4345-bf9c-feb051c1e95f"
           },
           {
             "image": [
@@ -971,20 +936,8 @@
             ],
             "label": "Zeenow",
             "link": "https://www.zeenow.com.br/",
-            "icon": "https://assets.decocache.com/starting/a915c2b7-9531-45a0-8264-85b576b8424d/1742491547610-c7e754f6-a1d4-4639-97d4-6f17441615a9",
-            "category": "PET"
-          },
-          {
-            "image": [
-              {
-                "color": "#FFFFFF",
-                "img": "https://assets.decocache.com/starting/72fc2269-ed4f-4a0d-a941-5a7e0bdc6f78/1742491549274-ec5c258c-cce0-4b67-b390-2209ea651407"
-              }
-            ],
-            "link": "https://www.hotrio.com.br",
-            "label": "Hot Rio",
-            "icon": "https://assets.decocache.com/starting/5e6e02a7-a6db-423b-adcd-4397f259063c/1742491551135-44dfec78-c14e-4d93-ba57-2433335792bb",
-            "category": "Sex Shops"
+            "category": "PET",
+            "icon": "https://assets.decocache.com/starting/a915c2b7-9531-45a0-8264-85b576b8424d/1742491547610-c7e754f6-a1d4-4639-97d4-6f17441615a9"
           },
           {
             "image": [
@@ -993,8 +946,8 @@
                 "img": "https://assets.decocache.com/starting/e3d72c71-3b37-4c4e-b784-73c5378b8b4e/1742491552742-08d1ec80-2cce-4289-bd25-bdc59c2369b7"
               }
             ],
-            "link": "https://www.miess.com.br/",
             "label": "Miess",
+            "link": "https://www.miess.com.br/",
             "icon": "https://assets.decocache.com/starting/09c6878e-0fbd-4eba-af22-1618e19b4e1a/1742491554562-243db511-e351-4e06-8e6b-dc1becb78410",
             "category": "Sex Shops"
           },
@@ -1009,42 +962,6 @@
             "label": "Sex Shop Atacado",
             "icon": "https://assets.decocache.com/starting/743ed409-5a70-4e61-99d7-1aa2c13a1c8a/1742491558180-09cb4c0a-b1b0-4fd2-b6d1-f9da803071b7",
             "category": "Sex Shops"
-          },
-          {
-            "image": [
-              {
-                "color": "#FFFFFF",
-                "img": "https://assets.decocache.com/starting/1abf3ff0-543e-4098-88a2-07067e6f60dc/1742491560197-0aab2340-3f8d-4183-b931-320f9e52d443"
-              }
-            ],
-            "label": "Adaptio",
-            "link": "https://www.adaptio.com.br/",
-            "icon": "https://assets.decocache.com/starting/804c1ec7-4051-405f-80d4-c4211591d8ee/1742491565391-40afe08f-a237-4885-b919-796e627ff2a9",
-            "category": "Tech"
-          },
-          {
-            "image": [
-              {
-                "color": "#FFFFFF",
-                "img": "https://assets.decocache.com/starting/7ccbed19-8afb-4fc0-a032-724dcffb8d8b/1742491631542-94759971-26fb-46ac-ba41-817179bb7665"
-              }
-            ],
-            "link": "https://www.madeinbrazil.tech/",
-            "label": "MadeinBrazil",
-            "icon": "https://assets.decocache.com/starting/1e0fd493-f3f1-4e43-b4cc-fe5fc962b29a/1742491633891-6a7ddb5f-fc2b-40fc-a375-10c02387164d",
-            "category": "Tech"
-          },
-          {
-            "image": [
-              {
-                "color": "#FFFFFF",
-                "img": "https://assets.decocache.com/starting/50ecdfc2-0065-4663-81f1-d4b9cd32dbc9/1742491640384-6fce070e-6c1f-4c10-ac8b-68956e0dc279"
-              }
-            ],
-            "label": "CooperCompany",
-            "link": "https://www.coopercompany.com.br/",
-            "icon": "https://assets.decocache.com/starting/e157815a-cda3-43be-9df2-abc25fa7c9f4/1742491646161-951da4e7-e666-47c7-ba4a-1381b0282eaa",
-            "category": "Tech"
           }
         ]
       }
