@@ -1,8 +1,9 @@
 import ProjectGridIsland from "../islands/ProjectGrid.tsx";
+import type { ImageWidget } from "apps/admin/widgets.ts";
 
 export interface Screenshot {
   label?: string;
-  img: string;
+  img: ImageWidget;
   /**
    * @format color
    * @title Base
@@ -15,7 +16,7 @@ export interface Project {
   label: string;
   description?: string;
   link?: string;
-  icon?: string;
+  icon?: ImageWidget;
   image?: Screenshot[];
   category?: string;
 }
