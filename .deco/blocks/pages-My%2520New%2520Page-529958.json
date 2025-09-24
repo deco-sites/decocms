@@ -256,28 +256,29 @@
             "category": "Fashion"
           },
           {
-            "link": "https://www.bawclothing.com.br",
+            "link": "https://www.bolovo.com.br/",
             "image": [
               {
-                "img": "https://assets.decocache.com/starting/47ae27a4-ca52-4af5-a429-88351cfbb747/1742491296137-ff7ce533-bbbd-4921-ade1-8f88cb267e2d",
+                "img": "https://assets.decocache.com/starting/cbabccd4-b160-4e7f-98fe-145963ca0dfe/1742491300837-7df006a9-8abc-4856-9d7d-6d98fe3d0db3",
                 "color": "#FFFFFF"
               }
             ],
-            "label": "Baw Clothing",
-            "icon": "https://assets.decocache.com/starting/194fe489-d06a-4c10-b51c-038205810ebc/1742491293985-339c1f17-53b6-45a8-a4a5-0bd1beb8ce1c",
+            "label": "Bolovo",
+            "icon": "https://assets.decocache.com/starting/8d32f33b-f55a-4c8e-b972-097cd69b2368/1742491299045-c3363f36-91e8-4c19-8206-b549dfad0c51",
             "category": "Fashion"
           },
           {
             "image": [
               {
                 "color": "#FFFFFF",
-                "img": "https://assets.decocache.com/starting/cbabccd4-b160-4e7f-98fe-145963ca0dfe/1742491300837-7df006a9-8abc-4856-9d7d-6d98fe3d0db3"
+                "img": "https://assets.decocache.com/decocms/90980e9f-7c8d-427c-95f9-f635d7e22d21/Screenshot-2025-09-24-at-08.08.00.png",
+                "label": "fila"
               }
             ],
-            "label": "Bolovo",
-            "link": "https://www.bolovo.com.br/",
-            "icon": "https://assets.decocache.com/starting/8d32f33b-f55a-4c8e-b972-097cd69b2368/1742491299045-c3363f36-91e8-4c19-8206-b549dfad0c51",
-            "category": "Fashion"
+            "label": "Fila",
+            "link": "https://fila.com.br",
+            "icon": "https://assets.decocache.com/decocms/7f9b6b95-d280-4662-bdbf-3b535a944d35/Fila_Holdings_Corp._logo.svg",
+            "category": "Sports"
           },
           {
             "link": "https://www.casaevideo.com.br/",
@@ -288,8 +289,8 @@
               }
             ],
             "label": "Casa & Video",
-            "icon": "https://assets.decocache.com/starting/985e29a5-0924-4916-a8f0-fd6ac22b1933/1742491502650-19646bd5-d505-4a0b-89ba-af2427e956fa",
-            "category": "Home & Decor"
+            "category": "Home & Decor",
+            "icon": "https://assets.decocache.com/starting/985e29a5-0924-4916-a8f0-fd6ac22b1933/1742491502650-19646bd5-d505-4a0b-89ba-af2427e956fa"
           },
           {
             "link": "https://www.zeedog.com.br/",
@@ -316,6 +317,18 @@
             "category": "Fashion"
           },
           {
+            "link": "https://www.bawclothing.com.br",
+            "image": [
+              {
+                "img": "https://assets.decocache.com/starting/47ae27a4-ca52-4af5-a429-88351cfbb747/1742491296137-ff7ce533-bbbd-4921-ade1-8f88cb267e2d",
+                "color": "#FFFFFF"
+              }
+            ],
+            "label": "Baw Clothing",
+            "icon": "https://assets.decocache.com/starting/194fe489-d06a-4c10-b51c-038205810ebc/1742491293985-339c1f17-53b6-45a8-a4a5-0bd1beb8ce1c",
+            "category": "Fashion"
+          },
+          {
             "link": "https://www.abracadabra.com.br/",
             "image": [
               {
@@ -328,13 +341,13 @@
             "category": "Home & Decor"
           },
           {
-            "link": "https://www.abracasa.com.br/",
             "image": [
               {
-                "img": "https://assets.decocache.com/starting/335504e7-2e3c-49a7-912a-8e8415e79c35/1742491489309-5df34060-b407-40dd-a33f-d103c38958a0",
-                "color": "#FFFFFF"
+                "color": "#FFFFFF",
+                "img": "https://assets.decocache.com/starting/335504e7-2e3c-49a7-912a-8e8415e79c35/1742491489309-5df34060-b407-40dd-a33f-d103c38958a0"
               }
             ],
+            "link": "https://www.abracasa.com.br/",
             "label": "Abracasa",
             "icon": "https://assets.decocache.com/starting/72d4ff03-6f8a-4e01-a638-7b0240d7adff/1742491491179-7a6773bf-774f-4c06-80b7-eb9f55e5f385",
             "category": "Home & Decor"
@@ -343,23 +356,35 @@
             "image": [
               {
                 "color": "#FFFFFF",
-                "img": "https://assets.decocache.com/starting/f8d97f36-db7c-4266-a0ce-79e43614438d/1742491321861-f6f28f23-3f40-409d-9142-f052d54ea08f"
+                "img": "https://assets.decocache.com/starting/e3d72c71-3b37-4c4e-b784-73c5378b8b4e/1742491552742-08d1ec80-2cce-4289-bd25-bdc59c2369b7"
               }
             ],
+            "label": "Miess",
+            "link": "https://www.miess.com.br/",
+            "icon": "https://assets.decocache.com/starting/09c6878e-0fbd-4eba-af22-1618e19b4e1a/1742491554562-243db511-e351-4e06-8e6b-dc1becb78410",
+            "category": "Sex Shops"
+          },
+          {
             "link": "https://www.dellaaviamentos.com.br/",
+            "image": [
+              {
+                "img": "https://assets.decocache.com/starting/f8d97f36-db7c-4266-a0ce-79e43614438d/1742491321861-f6f28f23-3f40-409d-9142-f052d54ea08f",
+                "color": "#FFFFFF"
+              }
+            ],
             "label": "Della Aviamentos",
             "icon": "https://assets.decocache.com/starting/c7c11211-c2fe-4361-afa5-ee6e8af57a5d/1742491323752-a735af4a-92bd-4c4e-b1d0-a0288de49ec4",
             "category": "Art, Crafts & Fabrics"
           },
           {
+            "link": "https://www.maximustecidos.com.br/",
             "image": [
               {
-                "color": "#FFFFFF",
-                "img": "https://assets.decocache.com/starting/20552266-ed49-4220-9200-452864d7fe62/1742491325654-c958d2b6-3b59-41e5-834e-c821b911fa42"
+                "img": "https://assets.decocache.com/starting/20552266-ed49-4220-9200-452864d7fe62/1742491325654-c958d2b6-3b59-41e5-834e-c821b911fa42",
+                "color": "#FFFFFF"
               }
             ],
             "label": "Maximus Tecidos",
-            "link": "https://www.maximustecidos.com.br/",
             "icon": "https://assets.decocache.com/starting/ee017b68-03f7-440d-bdae-faaf7258de6f/1742491327720-9db7fe6c-9300-47d2-8c4c-5cf0dffda694",
             "category": "Art, Crafts & Fabrics"
           },
@@ -424,26 +449,26 @@
             "category": "Fashion"
           },
           {
-            "link": "https://www.austral.com.br/",
             "image": [
               {
-                "img": "https://assets.decocache.com/starting/1e72fe7c-d0cb-41a1-bee9-c35a1b605d23/1742491288018-2d524710-9c18-4f20-9933-3a51b82f8117",
-                "color": "#FFFFFF"
+                "color": "#FFFFFF",
+                "img": "https://assets.decocache.com/starting/1e72fe7c-d0cb-41a1-bee9-c35a1b605d23/1742491288018-2d524710-9c18-4f20-9933-3a51b82f8117"
               }
             ],
             "label": "Austral",
+            "link": "https://www.austral.com.br/",
             "icon": "https://assets.decocache.com/starting/f1b4bf97-df9b-489a-826c-4a90d2827037/1742491285768-1ff640ed-0af5-40c9-a7be-ff233d885532",
             "category": "Fashion"
           },
           {
-            "link": "https://www.aviator.com.br/",
             "image": [
               {
-                "img": "https://assets.decocache.com/starting/61f4c9d9-e086-4fda-9c06-2b701abdbcad/1742491291925-ccc2e661-45c0-4c19-95b6-95c28020f01a",
-                "color": "#FFFFFF"
+                "color": "#FFFFFF",
+                "img": "https://assets.decocache.com/starting/61f4c9d9-e086-4fda-9c06-2b701abdbcad/1742491291925-ccc2e661-45c0-4c19-95b6-95c28020f01a"
               }
             ],
             "label": "Aviator",
+            "link": "https://www.aviator.com.br/",
             "icon": "https://assets.decocache.com/starting/d25f757e-73c5-4a38-90fb-e03d30fafc8b/1742491290141-7fc3c619-6d54-4f4c-8551-1651ead84a34",
             "category": "Fashion"
           },
@@ -454,8 +479,8 @@
                 "img": "https://assets.decocache.com/starting/4a600e75-5da5-4ed7-a9dd-4c347f11ea1f/1742491304563-5c29bd4f-871d-48fa-a233-0b6524f1c325"
               }
             ],
-            "label": "Brandili",
             "link": "https://brandili.deco.site/",
+            "label": "Brandili",
             "icon": "https://assets.decocache.com/starting/a900697f-f164-4fde-b484-94ef6fb87281/1742491302977-eb0ffe08-807a-4a0e-9f6a-2b5481405c4e",
             "category": "Fashion"
           },
@@ -490,8 +515,8 @@
                 "img": "https://assets.decocache.com/starting/ab2df124-3fa7-4237-97ca-b34f49744882/1742491316331-d615de9e-5ad7-4d31-b613-bdb2d48bdd48"
               }
             ],
-            "label": "Daniela Tombini",
             "link": "https://www.danielatombini.com.br/",
+            "label": "Daniela Tombini",
             "icon": "https://assets.decocache.com/starting/093f6fae-27ce-4a5c-83d8-9e33bb74ffd5/1742491314285-1d1bca53-89b1-4141-a14d-c05ccb84fdd1",
             "category": "Fashion"
           },
@@ -514,8 +539,8 @@
                 "img": "https://assets.decocache.com/starting/9c537033-9d61-41e4-bd83-b1239cf5dcdb/1742491336714-46a61863-3aa9-48a2-b409-8dfbf856b331"
               }
             ],
-            "link": "https://www.eurorelogios.com.br/",
             "label": "Euro Relógios",
+            "link": "https://www.eurorelogios.com.br/",
             "icon": "https://assets.decocache.com/starting/ee19b4ab-c939-470a-85ab-7bf06ca59787/1742491338456-772f1899-6b13-4688-b881-c70c4afa73f3",
             "category": "Fashion"
           },
@@ -526,8 +551,8 @@
                 "img": "https://assets.decocache.com/starting/8f3f71d9-f4cc-4167-9f70-599238c03266/1742491343657-9aa7bf0d-edcb-4937-afa6-7c276cfa4d92"
               }
             ],
-            "link": "https://www.hectoralbertazzi.com.br/",
             "label": "Hector Albertazzi",
+            "link": "https://www.hectoralbertazzi.com.br/",
             "icon": "https://assets.decocache.com/starting/6e358ace-f228-47d4-a993-848861f3269c/1742491345540-c1aa2ec7-7a5c-41b7-839d-66f3c2f1b89e",
             "category": "Fashion"
           },
@@ -544,26 +569,26 @@
             "category": "Fashion"
           },
           {
+            "link": "https://www.meiasola.com.br/",
             "image": [
               {
-                "color": "#FFFFFF",
-                "img": "https://assets.decocache.com/starting/31d7488f-ac98-425c-aadf-f3dc62a7faa8/1742491354941-689b5672-67e2-4d87-ba51-52842c3fcf6b"
+                "img": "https://assets.decocache.com/starting/31d7488f-ac98-425c-aadf-f3dc62a7faa8/1742491354941-689b5672-67e2-4d87-ba51-52842c3fcf6b",
+                "color": "#FFFFFF"
               }
             ],
             "label": "Meia Sola",
-            "link": "https://www.meiasola.com.br/",
             "icon": "https://assets.decocache.com/starting/987025d1-c92d-4dda-9747-2cad745ccfb9/1742491358359-c4015b4a-7aa6-4862-a243-c189bbed57fb",
             "category": "Fashion"
           },
           {
+            "link": "https://www.notta.com.br/",
             "image": [
               {
-                "color": "#FFFFFF",
-                "img": "https://assets.decocache.com/starting/57932e5e-b55a-4564-a534-3b8d593eab53/1742491360112-1e8df378-9f13-4c8b-bc4a-9df94f0ccdfa"
+                "img": "https://assets.decocache.com/starting/57932e5e-b55a-4564-a534-3b8d593eab53/1742491360112-1e8df378-9f13-4c8b-bc4a-9df94f0ccdfa",
+                "color": "#FFFFFF"
               }
             ],
             "label": "Notta",
-            "link": "https://www.notta.com.br/",
             "icon": "https://assets.decocache.com/starting/7a521cf1-e8c3-43b5-b3f2-ace970961ee9/1742491364146-4a486fa6-00f5-482a-8b89-a165f26350fe",
             "category": "Fashion"
           },
@@ -592,50 +617,50 @@
             "category": "Fashion"
           },
           {
-            "link": "https://www.unclek.com.br/",
             "image": [
               {
-                "img": "https://assets.decocache.com/starting/ed959276-ffd6-4bf0-a804-551124ff28cf/1742491382559-991c00c8-d1d5-4599-8e3b-83196106e385",
-                "color": "#FFFFFF"
+                "color": "#FFFFFF",
+                "img": "https://assets.decocache.com/starting/ed959276-ffd6-4bf0-a804-551124ff28cf/1742491382559-991c00c8-d1d5-4599-8e3b-83196106e385"
               }
             ],
+            "link": "https://www.unclek.com.br/",
             "label": "Uncle K",
             "icon": "https://assets.decocache.com/starting/9b31cc71-6b0f-47f3-a31e-9ad51149566f/1742491384176-a72665e9-386c-4b36-b30d-5aba80e9cd06",
             "category": "Fashion"
           },
           {
-            "link": "https://www.velocita.com.br/",
             "image": [
               {
-                "img": "https://assets.decocache.com/starting/06ba3690-8abd-4fc0-8ab6-804a9d2f951b/1742491385818-8fd4a259-7e36-4d68-a01a-2d79d2883cbe",
-                "color": "#FFFFFF"
+                "color": "#FFFFFF",
+                "img": "https://assets.decocache.com/starting/06ba3690-8abd-4fc0-8ab6-804a9d2f951b/1742491385818-8fd4a259-7e36-4d68-a01a-2d79d2883cbe"
               }
             ],
             "label": "Velocitá",
+            "link": "https://www.velocita.com.br/",
             "icon": "https://assets.decocache.com/starting/26f5a75a-0050-4672-928b-901566f19c87/1742491387641-783f1684-778d-47f9-b169-0e162c28a5d7",
             "category": "Fashion"
           },
           {
+            "link": "https://www.zorba.com.br/",
             "image": [
               {
-                "color": "#FFFFFF",
-                "img": "https://assets.decocache.com/starting/35cccf33-d320-48e2-814e-658486973e02/1742491389331-dd5ff6ef-69ec-4380-8905-d5212d0c5dd9"
+                "img": "https://assets.decocache.com/starting/35cccf33-d320-48e2-814e-658486973e02/1742491389331-dd5ff6ef-69ec-4380-8905-d5212d0c5dd9",
+                "color": "#FFFFFF"
               }
             ],
-            "link": "https://www.zorba.com.br/",
             "label": "Zorba",
             "icon": "https://assets.decocache.com/starting/2a8feb33-c073-4071-9ca8-494291938ad6/1742491391381-1f83cf6e-2fdf-470b-bc47-f93534bb4f62",
             "category": "Fashion"
           },
           {
+            "link": "https://www.emporioquatroestrelas.com.br/",
             "image": [
               {
-                "color": "#FFFFFF",
-                "img": "https://assets.decocache.com/starting/29d688dc-ccc4-4e20-9a06-9fb3a2198890/1742491396414-733bd01a-5b38-496d-8116-ecedefb732d0"
+                "img": "https://assets.decocache.com/starting/29d688dc-ccc4-4e20-9a06-9fb3a2198890/1742491396414-733bd01a-5b38-496d-8116-ecedefb732d0",
+                "color": "#FFFFFF"
               }
             ],
             "label": "Empório Quatro Estrelas",
-            "link": "https://www.emporioquatroestrelas.com.br/",
             "icon": "https://assets.decocache.com/starting/1b531de9-0137-440e-8e38-f28f9bcaec27/1742491409688-60ad5edd-02d7-4ce2-8fb6-f74e42457c0b",
             "category": "Grocery"
           },
@@ -688,14 +713,14 @@
             "category": "Health & Beauty"
           },
           {
-            "link": "https://www.lojainterdental.com.br/",
             "image": [
               {
-                "img": "https://assets.decocache.com/starting/016d4b07-8ac4-45aa-b3c7-d22bb688670e/1742491454366-06c1dfc4-62a6-4b7d-b449-54366314d984",
-                "color": "#FFFFFF"
+                "color": "#FFFFFF",
+                "img": "https://assets.decocache.com/starting/016d4b07-8ac4-45aa-b3c7-d22bb688670e/1742491454366-06c1dfc4-62a6-4b7d-b449-54366314d984"
               }
             ],
             "label": "Loja Interdental",
+            "link": "https://www.lojainterdental.com.br/",
             "icon": "https://assets.decocache.com/starting/1761181d-4afa-448f-9256-6ffb7eee15bd/1742491457278-8e5ebc6c-b2fc-46ef-9958-f49d0e329587",
             "category": "Health & Beauty"
           },
@@ -712,26 +737,26 @@
             "category": "Health & Beauty"
           },
           {
+            "link": "https://www.oticaisabeladias.com.br/",
             "image": [
               {
-                "color": "#FFFFFF",
-                "img": "https://assets.decocache.com/starting/76f6322e-fbe7-4f59-94ba-c7eafbfc6be5/1742491467939-5131a78c-03a5-442e-93ab-490f738d7d99"
+                "img": "https://assets.decocache.com/starting/76f6322e-fbe7-4f59-94ba-c7eafbfc6be5/1742491467939-5131a78c-03a5-442e-93ab-490f738d7d99",
+                "color": "#FFFFFF"
               }
             ],
             "label": "Óticas Isabela Dias",
-            "link": "https://www.oticaisabeladias.com.br/",
             "icon": "https://assets.decocache.com/starting/a08716a4-bae9-4748-a04c-9cb201ef211f/1742491471519-7e88ce3d-b2dc-4b72-be76-1aa99fba8969",
             "category": "Health & Beauty"
           },
           {
-            "link": "https://www.oticasprevent.com.br/",
             "image": [
               {
-                "img": "https://assets.decocache.com/starting/9c579226-7e71-4d8f-ba70-bf9381a9dc70/1742491473249-9916ed3a-a3cd-4a2b-9bc3-82bde226b80b",
-                "color": "#FFFFFF"
+                "color": "#FFFFFF",
+                "img": "https://assets.decocache.com/starting/9c579226-7e71-4d8f-ba70-bf9381a9dc70/1742491473249-9916ed3a-a3cd-4a2b-9bc3-82bde226b80b"
               }
             ],
             "label": "Óticas Prevent",
+            "link": "https://www.oticasprevent.com.br/",
             "icon": "https://assets.decocache.com/starting/75f3fab3-b6a5-4b9a-8d70-d53b182a4e6a/1742491476789-56094eb0-bd86-4083-84f4-b90ca40d95a8",
             "category": "Health & Beauty"
           },
@@ -748,26 +773,26 @@
             "category": "Health & Beauty"
           },
           {
+            "link": "https://www.atau.com.br/",
             "image": [
               {
-                "color": "#FFFFFF",
-                "img": "https://assets.decocache.com/starting/a5d7c9b7-ea9c-4b55-91c4-f9b8afaba73f/1742491492966-4b8c330e-b926-4480-a8ea-7ce6283dab69"
+                "img": "https://assets.decocache.com/starting/a5d7c9b7-ea9c-4b55-91c4-f9b8afaba73f/1742491492966-4b8c330e-b926-4480-a8ea-7ce6283dab69",
+                "color": "#FFFFFF"
               }
             ],
             "label": "Atau",
-            "link": "https://www.atau.com.br/",
             "icon": "https://assets.decocache.com/starting/a079cd4e-1127-4a4d-b809-d4651485dc17/1742491495183-5cba3b32-7e3f-44a5-8b45-0bdfba0a3287",
             "category": "Home & Decor"
           },
           {
-            "link": "https://www.belairmoveis.com.br/",
             "image": [
               {
-                "img": "https://assets.decocache.com/starting/0739148c-62ee-47cb-bec7-d9f4ba8dcf04/1742491497196-690c4356-df8b-402a-b2ea-486f38ff6b5e",
-                "color": "#FFFFFF"
+                "color": "#FFFFFF",
+                "img": "https://assets.decocache.com/starting/0739148c-62ee-47cb-bec7-d9f4ba8dcf04/1742491497196-690c4356-df8b-402a-b2ea-486f38ff6b5e"
               }
             ],
             "label": "Bel Air Móveis",
+            "link": "https://www.belairmoveis.com.br/",
             "icon": "https://assets.decocache.com/starting/8298937e-9cf1-49de-8763-5ede25c236cf/1742491499013-3d12d307-152b-40c3-aa0f-4dfa83d93721",
             "category": "Home & Decor"
           },
@@ -784,14 +809,14 @@
             "category": "Home & Decor"
           },
           {
+            "link": "https://www.lojastopmoveis.com.br/",
             "image": [
               {
-                "color": "#FFFFFF",
-                "img": "https://assets.decocache.com/starting/128581e4-df39-42b5-9c26-990736062232/1742491521218-9f55ed96-1986-469f-a272-94235fb4aed3"
+                "img": "https://assets.decocache.com/starting/128581e4-df39-42b5-9c26-990736062232/1742491521218-9f55ed96-1986-469f-a272-94235fb4aed3",
+                "color": "#FFFFFF"
               }
             ],
             "label": "Lojas Top Móveis",
-            "link": "https://www.lojastopmoveis.com.br/",
             "icon": "https://assets.decocache.com/starting/2fcba661-c65d-4d35-8651-484e9c166dc0/1742491522977-a3ea423f-22d8-4ac0-87dc-1c5692922027",
             "category": "Home & Decor"
           },
@@ -808,38 +833,26 @@
             "category": "Home & Decor"
           },
           {
-            "link": "https://www.openbox2.com.br/",
             "image": [
               {
-                "img": "https://assets.decocache.com/starting/dbb44568-1ab3-4826-9450-b9fe5e832b94/1742491528209-7ef2f3ab-3738-4e37-9322-92fc73aea85a",
-                "color": "#FFFFFF"
+                "color": "#FFFFFF",
+                "img": "https://assets.decocache.com/starting/dbb44568-1ab3-4826-9450-b9fe5e832b94/1742491528209-7ef2f3ab-3738-4e37-9322-92fc73aea85a"
               }
             ],
             "label": "OpenBox2",
+            "link": "https://www.openbox2.com.br/",
             "icon": "https://assets.decocache.com/starting/e7f91037-15d3-4bd5-bbfc-c3a8884b352e/1742491530203-af488451-8f0b-4cdd-a69e-12b7a442ec81",
             "category": "Home & Decor"
           },
           {
-            "link": "https://loja.teciplast.com.br/",
+            "link": "https://www.petfarma.com/",
             "image": [
               {
-                "img": "https://assets.decocache.com/starting/be15d28f-7459-45ae-98ea-442fb9ca63b3/1742491533302-6e8900f2-9bca-4786-8078-018391510295",
+                "img": "https://assets.decocache.com/starting/1f8d554b-762a-43d1-af70-6052095680d3/1742491538741-c256bedf-4895-433c-bda3-2608663c1cfa",
                 "color": "#FFFFFF"
               }
             ],
-            "label": "Teciplast",
-            "icon": "https://assets.decocache.com/starting/d40bc077-2d31-43bf-804f-a9377405c018/1742491537008-5cb564a7-240f-45e1-91a8-e3ee96d2937c",
-            "category": "Home & Decor"
-          },
-          {
-            "image": [
-              {
-                "color": "#FFFFFF",
-                "img": "https://assets.decocache.com/starting/1f8d554b-762a-43d1-af70-6052095680d3/1742491538741-c256bedf-4895-433c-bda3-2608663c1cfa"
-              }
-            ],
             "label": "Petfarma",
-            "link": "https://www.petfarma.com/",
             "icon": "https://assets.decocache.com/starting/a68e76bc-21a0-493d-8edc-e62143217ac4/1742491540353-236814e9-e8a2-4345-bf9c-feb051c1e95f",
             "category": "PET"
           },
@@ -856,18 +869,6 @@
             "category": "PET"
           },
           {
-            "link": "https://www.miess.com.br/",
-            "image": [
-              {
-                "img": "https://assets.decocache.com/starting/e3d72c71-3b37-4c4e-b784-73c5378b8b4e/1742491552742-08d1ec80-2cce-4289-bd25-bdc59c2369b7",
-                "color": "#FFFFFF"
-              }
-            ],
-            "label": "Miess",
-            "icon": "https://assets.decocache.com/starting/09c6878e-0fbd-4eba-af22-1618e19b4e1a/1742491554562-243db511-e351-4e06-8e6b-dc1becb78410",
-            "category": "Sex Shops"
-          },
-          {
             "link": "https://www.sexshopatacadao.com.br/",
             "image": [
               {
@@ -878,12 +879,6 @@
             "label": "Sex Shop Atacado",
             "icon": "https://assets.decocache.com/starting/743ed409-5a70-4e61-99d7-1aa2c13a1c8a/1742491558180-09cb4c0a-b1b0-4fd2-b6d1-f9da803071b7",
             "category": "Sex Shops"
-          },
-          {
-            "image": [],
-            "label": "Fila",
-            "link": "https://fila.com.br",
-            "category": "Sports"
           }
         ]
       }
