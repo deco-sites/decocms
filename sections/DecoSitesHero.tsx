@@ -93,7 +93,7 @@ export default function PartnersHero({
         )}
 
         {/* Main Content */}
-        <div className="flex-1 flex flex-col items-center justify-center relative z-10 px-4 sm:px-8 lg:px-16">
+        <div className="flex-1 flex flex-col items-center justify-center relative z-20 px-4 sm:px-8 lg:px-16 pb-32">
           <div className="flex flex-col gap-6 sm:gap-8 lg:gap-12 items-center justify-start max-w-4xl">
             {/* Header */}
             <div className="flex flex-col gap-6 items-center justify-start w-full">
@@ -139,7 +139,7 @@ export default function PartnersHero({
 
         {/* Trust Signal Section */}
         {showPartnerLogos && partnerLogos.length > 0 && (
-          <div className="absolute bottom-0 left-0 w-full overflow-hidden pb-10 pt-5 px-0">
+          <div className="absolute bottom-0 left-0 w-full overflow-hidden pb-10 pt-5 px-0 z-30">
             {trustSignalTitle && (
               <div className="text-primary-light text-sm sm:text-base font-mono leading-5 text-center uppercase mb-6 tracking-wide">
                 {trustSignalTitle}
