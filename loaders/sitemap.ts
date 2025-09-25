@@ -12,10 +12,7 @@ export interface Props {
 }
 
 const loader = async (props: Props, req: Request, ctx: AppContext): Promise<SitemapEntry[]> => {
-  const { baseUrl = "https://deco.cx" } = props;
-  
-  // Get all pages from the site
-  const pages = await ctx.invoke("deco-sites/std/loaders/pages.ts");
+  const { baseUrl = "https://www.decocms.com" } = props;
   
   const sitemapEntries: SitemapEntry[] = [];
   
