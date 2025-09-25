@@ -6,6 +6,7 @@ import * as $$$$$$$$$0 from "./actions/resend/createContact.ts";
 import * as $$$$$$$$$$$0 from "./apps/deco/blog.ts";
 import * as $$$$$$$$$$$1 from "./apps/deco/htmx.ts";
 import * as $$$$$$$$$$$2 from "./apps/site.ts";
+import * as $$$0 from "./loaders/sitemap.ts";
 import * as $$$$$$0 from "./sections/AgentTavano/Benefits.tsx";
 import * as $$$$$$2 from "./sections/AgentTavano/Context.tsx";
 import * as $$$$$$1 from "./sections/AgentTavano/CTA.tsx";
@@ -51,13 +52,17 @@ import * as $$$$$$41 from "./sections/PricingPlans.tsx";
 import * as $$$$$$42 from "./sections/ProgramSteps.tsx";
 import * as $$$$$$43 from "./sections/ProjectGrid.tsx";
 import * as $$$$$$44 from "./sections/RelatedBlogPosts.tsx";
-import * as $$$$$$45 from "./sections/Statement.tsx";
-import * as $$$$$$46 from "./sections/TextMedia.tsx";
-import * as $$$$$$47 from "./sections/Theme/Theme.tsx";
-import * as $$$$$$48 from "./sections/ThreeCards.tsx";
-import * as $$$$$$49 from "./sections/WhoShouldApply.tsx";
+import * as $$$$$$45 from "./sections/Sitemap.tsx";
+import * as $$$$$$46 from "./sections/Statement.tsx";
+import * as $$$$$$47 from "./sections/TextMedia.tsx";
+import * as $$$$$$48 from "./sections/Theme/Theme.tsx";
+import * as $$$$$$49 from "./sections/ThreeCards.tsx";
+import * as $$$$$$50 from "./sections/WhoShouldApply.tsx";
 
 const manifest = {
+  "loaders": {
+    "site/loaders/sitemap.ts": $$$0,
+  },
   "sections": {
     "site/sections/AgentTavano/Benefits.tsx": $$$$$$0,
     "site/sections/AgentTavano/Context.tsx": $$$$$$2,
@@ -104,11 +109,12 @@ const manifest = {
     "site/sections/ProgramSteps.tsx": $$$$$$42,
     "site/sections/ProjectGrid.tsx": $$$$$$43,
     "site/sections/RelatedBlogPosts.tsx": $$$$$$44,
-    "site/sections/Statement.tsx": $$$$$$45,
-    "site/sections/TextMedia.tsx": $$$$$$46,
-    "site/sections/Theme/Theme.tsx": $$$$$$47,
-    "site/sections/ThreeCards.tsx": $$$$$$48,
-    "site/sections/WhoShouldApply.tsx": $$$$$$49,
+    "site/sections/Sitemap.tsx": $$$$$$45,
+    "site/sections/Statement.tsx": $$$$$$46,
+    "site/sections/TextMedia.tsx": $$$$$$47,
+    "site/sections/Theme/Theme.tsx": $$$$$$48,
+    "site/sections/ThreeCards.tsx": $$$$$$49,
+    "site/sections/WhoShouldApply.tsx": $$$$$$50,
   },
   "actions": {
     "site/actions/resend/createContact.ts": $$$$$$$$$0,

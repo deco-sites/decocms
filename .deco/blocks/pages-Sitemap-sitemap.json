@@ -1,0 +1,13 @@
+{
+  "name": "Sitemap",
+  "path": "/sitemap.xml",
+  "sections": [
+    {
+      "__resolveType": "site/sections/Sitemap.tsx",
+      "entries": {
+        "__resolveType": "site/loaders/sitemap.ts",
+        "baseUrl": "https://deco.cx"
+      }
+    }
+  ]
+}
