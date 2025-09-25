@@ -55,5 +55,3 @@ export default async function createResendContact(
 
   return await response.json();
 }
-
-

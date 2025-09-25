@@ -49,7 +49,10 @@ function PostCard({ post }: { post: BlogPost }) {
       <div class="self-stretch p-6 md:p-8 flex flex-col justify-start items-start gap-4 md:gap-6">
         <div class="self-stretch flex flex-col justify-start items-start gap-3 md:gap-6">
           {post.title && (
-            <a href={`/blog/post/${post.slug}`} class="hover:opacity-90 transition-opacity">
+            <a
+              href={`/blog/post/${post.slug}`}
+              class="hover:opacity-90 transition-opacity"
+            >
               <div class="self-stretch text-dc-800 text-2xl md:text-3xl lg:text-4xl font-medium font-sans leading-tight md:leading-10">
                 {post.title}
               </div>
@@ -110,7 +113,9 @@ export default function BlogPostsCarouselIsland({
   };
 
   const visible = 3;
-  const _visibleItems = useMemo(() => items.slice(0, Math.max(visible, 1)), [items]);
+  const _visibleItems = useMemo(() => items.slice(0, Math.max(visible, 1)), [
+    items,
+  ]);
 
   const shiftLeft = () => {
     if (animating || items.length === 0) return;
@@ -122,7 +127,9 @@ export default function BlogPostsCarouselIsland({
     // After transition, rotate array
     setTimeout(() => {
       setOffset(0);
-      setItems((prev) => (prev.length > 0 ? [...prev.slice(1), prev[0]] : prev));
+      setItems((
+        prev,
+      ) => (prev.length > 0 ? [...prev.slice(1), prev[0]] : prev));
       setFadeFirst(false);
       setAnimating(false);
     }, 350);
@@ -133,7 +140,12 @@ export default function BlogPostsCarouselIsland({
     setAnimating(true);
     // Prepend last item and start with negative offset, then animate back
     const step = measureStep();
-    setItems((prev) => (prev.length > 0 ? [prev[prev.length - 1], ...prev.slice(0, prev.length - 1)] : prev));
+    setItems((
+      prev,
+    ) => (prev.length > 0
+      ? [prev[prev.length - 1], ...prev.slice(0, prev.length - 1)]
+      : prev)
+    );
     // Immediately set offset to -step and then to 0 on next frame
     requestAnimationFrame(() => {
       setOffset(-step);
@@ -178,7 +190,9 @@ export default function BlogPostsCarouselIsland({
               type="button"
               class="w-14 h-14 md:w-20 md:h-20 px-6 md:px-8 py-3 origin-top-left -rotate-90 bg-dc-200 rounded-3xl flex justify-center items-center disabled:opacity-60"
             >
-              <span class="material-symbols-rounded text-2xl">chevron_left</span>
+              <span class="material-symbols-rounded text-2xl">
+                chevron_left
+              </span>
             </button>
             <button
               aria-label="Next posts"
@@ -187,7 +201,9 @@ export default function BlogPostsCarouselIsland({
               type="button"
               class="w-14 h-14 md:w-20 md:h-20 px-6 md:px-8 py-3 origin-top-left rotate-90 bg-dc-200 rounded-3xl flex justify-center items-center disabled:opacity-60"
             >
-              <span class="material-symbols-rounded text-2xl">chevron_right</span>
+              <span class="material-symbols-rounded text-2xl">
+                chevron_right
+              </span>
             </button>
           </div>
         </div>
@@ -206,10 +222,10 @@ export default function BlogPostsCarouselIsland({
               <div
                 key={`${post.slug || post.title || "post"}-${index}`}
                 ref={index === 0 ? firstCardRef : undefined}
-                class={
-                  "transition-all duration-300 " +
-                  (index === 0 && fadeFirst ? "opacity-0 -translate-x-10" : "opacity-100 translate-x-0")
-                }
+                class={"transition-all duration-300 " +
+                  (index === 0 && fadeFirst
+                    ? "opacity-0 -translate-x-10"
+                    : "opacity-100 translate-x-0")}
               >
                 <PostCard post={post} />
               </div>
@@ -220,5 +236,3 @@ export default function BlogPostsCarouselIsland({
     </div>
   );
 }
-
-

@@ -4,7 +4,8 @@ export interface Props {
 }
 
 export default function Statement({
-  title = "The control plane that turns AI prototypes into production—governed, observable, and cost-clear."
+  title =
+    "The control plane that turns AI prototypes into production—governed, observable, and cost-clear.",
 }: Props) {
   return (
     <section class="w-full px-16 py-28 flex flex-col justify-center items-center bg-[#FAFAF9]">

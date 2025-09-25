@@ -19,39 +19,39 @@ export default function BlackFridayFeatures({
       icon: "🚀",
       title: "Deploy em segundos",
       description: "Sua loja no ar em minutos, não em semanas",
-      highlight: "10x mais rápido"
+      highlight: "10x mais rápido",
     },
     {
       icon: "⚡",
       title: "Performance extrema",
       description: "Sites que carregam em menos de 1 segundo",
-      highlight: "Core Web Vitals 100"
+      highlight: "Core Web Vitals 100",
     },
     {
       icon: "🤖",
       title: "IA integrada",
       description: "Otimização automática para aumentar conversões",
-      highlight: "+30% vendas"
+      highlight: "+30% vendas",
     },
     {
       icon: "📱",
       title: "Mobile-first",
       description: "Experiência perfeita em todos os dispositivos",
-      highlight: "100% responsivo"
+      highlight: "100% responsivo",
     },
     {
       icon: "🔧",
       title: "Visual Editor",
       description: "Edite sua loja sem código, em tempo real",
-      highlight: "Sem programação"
+      highlight: "Sem programação",
     },
     {
       icon: "📊",
       title: "Analytics avançado",
       description: "Dados em tempo real para otimizar suas vendas",
-      highlight: "Insights poderosos"
-    }
-  ]
+      highlight: "Insights poderosos",
+    },
+  ],
 }: Props) {
   return (
     <section class="py-20 bg-gradient-to-b from-gray-900 to-black">
@@ -69,7 +69,7 @@ export default function BlackFridayFeatures({
         {/* Features Grid */}
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {features.map((feature, index) => (
-            <div 
+            <div
               key={index}
               class="group bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 border border-gray-700 hover:border-red-500 transition-all duration-300 hover:transform hover:scale-105"
             >
@@ -105,7 +105,8 @@ export default function BlackFridayFeatures({
               🎯 Pronto para dominar a Black Friday?
             </h3>
             <p class="text-gray-300 mb-6">
-              Junte-se a centenas de lojistas que já escolheram a deco para suas vendas online
+              Junte-se a centenas de lojistas que já escolheram a deco para suas
+              vendas online
             </p>
             <a
               href="/"

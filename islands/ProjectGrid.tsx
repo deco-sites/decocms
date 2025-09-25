@@ -120,16 +120,14 @@ export default function ProjectGrid(props: Props) {
 
   const currentPage = useSignal(0);
   const projects = useSignal<Project[]>(
-    projectsProp && projectsProp.length > 0
-      ? projectsProp
-      : categories
-          .map((category) =>
-            category.cards.map((project) => ({
-              ...project,
-              category: category.label,
-            }))
-          )
-          .flat(),
+    projectsProp && projectsProp.length > 0 ? projectsProp : categories
+      .map((category) =>
+        category.cards.map((project) => ({
+          ...project,
+          category: category.label,
+        }))
+      )
+      .flat(),
   );
 
   return (

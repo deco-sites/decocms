@@ -187,7 +187,11 @@ export default function Header({
       </header>
 
       {/* Mobile Menu Toggle (checkbox) */}
-      <input id="mobile-menu-toggle" type="checkbox" class="peer hidden lg:hidden" />
+      <input
+        id="mobile-menu-toggle"
+        type="checkbox"
+        class="peer hidden lg:hidden"
+      />
 
       {/* Mobile Menu */}
       <div

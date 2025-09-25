@@ -43,8 +43,12 @@ export default function ConnectionsGrid({
   // Create duplicated arrays for seamless looping
   const allConnections = connections || [];
   // Duplicate the array multiple times to ensure enough items for continuous scrolling
-  const duplicatedConnections = [...allConnections, ...allConnections, ...allConnections];
-  
+  const duplicatedConnections = [
+    ...allConnections,
+    ...allConnections,
+    ...allConnections,
+  ];
+
   // Split into two rows
   const midPoint = Math.ceil(duplicatedConnections.length / 2);
   const topRowConnections = duplicatedConnections.slice(0, midPoint);
@@ -59,9 +63,11 @@ export default function ConnectionsGrid({
           {topRowConnections.length > 0 && (
             <div class="relative overflow-hidden">
               {/* Gradient masks for smooth edges */}
-              <div class="pointer-events-none absolute z-30 left-0 top-0 h-full w-6 sm:w-10 bg-gradient-to-r from-dc-100 to-dc-100/0"></div>
-              <div class="pointer-events-none absolute z-30 right-0 top-0 h-full w-6 sm:w-10 bg-gradient-to-l from-dc-100 to-dc-100/0"></div>
-              
+              <div class="pointer-events-none absolute z-30 left-0 top-0 h-full w-6 sm:w-10 bg-gradient-to-r from-dc-100 to-dc-100/0">
+              </div>
+              <div class="pointer-events-none absolute z-30 right-0 top-0 h-full w-6 sm:w-10 bg-gradient-to-l from-dc-100 to-dc-100/0">
+              </div>
+
               <div class="flex items-center gap-3 sm:gap-4 lg:gap-6 animate-scroll-left">
                 {topRowConnections.map((connection, index) => (
                   <div
@@ -101,9 +107,11 @@ export default function ConnectionsGrid({
           {bottomRowConnections.length > 0 && (
             <div class="relative overflow-hidden">
               {/* Gradient masks for smooth edges */}
-              <div class="pointer-events-none absolute z-30 left-0 top-0 h-full w-6 sm:w-10 bg-gradient-to-r from-dc-100 to-dc-100/0"></div>
-              <div class="pointer-events-none absolute z-30 right-0 top-0 h-full w-6 sm:w-10 bg-gradient-to-l from-dc-100 to-dc-100/0"></div>
-              
+              <div class="pointer-events-none absolute z-30 left-0 top-0 h-full w-6 sm:w-10 bg-gradient-to-r from-dc-100 to-dc-100/0">
+              </div>
+              <div class="pointer-events-none absolute z-30 right-0 top-0 h-full w-6 sm:w-10 bg-gradient-to-l from-dc-100 to-dc-100/0">
+              </div>
+
               <div class="flex items-center gap-3 sm:gap-4 lg:gap-6 animate-scroll-right">
                 {bottomRowConnections.map((connection, index) => (
                   <div
@@ -128,7 +136,8 @@ export default function ConnectionsGrid({
       </div>
 
       {/* CSS Animations */}
-      <style jsx>{`
+      <style jsx>
+        {`
         @keyframes scroll-left {
           0% {
             transform: translateX(-50%);
@@ -160,7 +169,8 @@ export default function ConnectionsGrid({
         .animate-scroll-right:hover {
           animation-play-state: paused;
         }
-      `}</style>
+      `}
+      </style>
     </section>
   );
 }

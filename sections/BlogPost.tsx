@@ -32,7 +32,7 @@ const LIST_STYLES =
   "[&>ul]:list-disc [&>ul]:pl-4 [&>ul]:md:pl-6 [&>ul]:mb-4 [&>ul]:md:mb-6 [&>ul]:text-dc-600 [&>ul]:text-base [&>ul]:md:text-lg [&>ul]:lg:text-xl [&>ul]:font-medium [&>ul]:font-sans [&>ul]:leading-relaxed [&>ul]:md:leading-loose [&>ul]:break-words " +
   "[&>ol]:list-decimal [&>ol]:pl-4 [&>ol]:md:pl-6 [&>ol]:mb-4 [&>ol]:md:mb-6 [&>ol]:text-dc-600 [&>ol]:text-base [&>ol]:md:text-lg [&>ol]:lg:text-xl [&>ol]:font-medium [&>ol]:font-sans [&>ol]:leading-relaxed [&>ol]:md:leading-loose [&>ol]:break-words";
 
-const CONTENT_STYLES =
+export const CONTENT_STYLES =
   `${PARAGRAPH_STYLES} ${HEADING_STYLES} ${CODE_BLOCK_STYLES} ${IMAGE_STYLES} ${BLOCKQUOTE_STYLES} ${LIST_STYLES}`;
 
 const DEFAULT_AVATAR =

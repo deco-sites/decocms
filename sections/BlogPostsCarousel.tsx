@@ -41,12 +41,23 @@ export async function loader(
 ): Promise<Props & { posts: BlogPost[] }> {
   try {
     // Read blog post blocks from .deco/blocks/collections/blog/posts/*.json
-    const blocksDir = join(Deno.cwd(), ".deco", "blocks", "collections%2Fblog%2Fposts%2F");
+    const blocksDir = join(
+      Deno.cwd(),
+      ".deco",
+      "blocks",
+      "collections%2Fblog%2Fposts%2F",
+    );
 
     const posts: BlogPost[] = [];
 
     try {
-      for await (const entry of walk(blocksDir, { includeDirs: false, exts: [".json"], maxDepth: 1 })) {
+      for await (
+        const entry of walk(blocksDir, {
+          includeDirs: false,
+          exts: [".json"],
+          maxDepth: 1,
+        })
+      ) {
         const text = await Deno.readTextFile(entry.path);
         const data = JSON.parse(text);
         if (data && data.post) {
@@ -56,8 +67,21 @@ export async function loader(
       }
     } catch (_e) {
       // If path with encoded slashes is not present (varies by env), fallback to nested directories
-      const altDir = join(Deno.cwd(), ".deco", "blocks", "collections", "blog", "posts");
-      for await (const entry of walk(altDir, { includeDirs: false, exts: [".json"], maxDepth: 1 })) {
+      const altDir = join(
+        Deno.cwd(),
+        ".deco",
+        "blocks",
+        "collections",
+        "blog",
+        "posts",
+      );
+      for await (
+        const entry of walk(altDir, {
+          includeDirs: false,
+          exts: [".json"],
+          maxDepth: 1,
+        })
+      ) {
         const text = await Deno.readTextFile(entry.path);
         const data = JSON.parse(text);
         if (data && data.post) {
@@ -80,9 +104,5 @@ export async function loader(
 }
 
 export function Preview() {
-  return (
-    <BlogPostsCarousel />
-  );
+  return <BlogPostsCarousel />;
 }
-
-

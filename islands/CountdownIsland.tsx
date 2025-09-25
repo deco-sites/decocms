@@ -12,22 +12,29 @@ interface TimeLeft {
   seconds: number;
 }
 
-export default function CountdownIsland({ endDate, textColor = "text-white" }: Props) {
-  const [timeLeft, setTimeLeft] = useState<TimeLeft>({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+export default function CountdownIsland(
+  { endDate, textColor = "text-white" }: Props,
+) {
+  const [timeLeft, setTimeLeft] = useState<TimeLeft>({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  });
   const [isExpired, setIsExpired] = useState(false);
 
   const calculateTimeLeft = (): TimeLeft => {
     const difference = +new Date(endDate) - +new Date();
-    
+
     if (difference > 0) {
       return {
         days: Math.floor(difference / (1000 * 60 * 60 * 24)),
         hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
         minutes: Math.floor((difference / 1000 / 60) % 60),
-        seconds: Math.floor((difference / 1000) % 60)
+        seconds: Math.floor((difference / 1000) % 60),
       };
     }
-    
+
     return { days: 0, hours: 0, minutes: 0, seconds: 0 };
   };
 
@@ -35,9 +42,11 @@ export default function CountdownIsland({ endDate, textColor = "text-white" }: P
     const timer = setInterval(() => {
       const newTimeLeft = calculateTimeLeft();
       setTimeLeft(newTimeLeft);
-      
-      if (newTimeLeft.days === 0 && newTimeLeft.hours === 0 && 
-          newTimeLeft.minutes === 0 && newTimeLeft.seconds === 0) {
+
+      if (
+        newTimeLeft.days === 0 && newTimeLeft.hours === 0 &&
+        newTimeLeft.minutes === 0 && newTimeLeft.seconds === 0
+      ) {
         setIsExpired(true);
         clearInterval(timer);
       }
@@ -50,7 +59,9 @@ export default function CountdownIsland({ endDate, textColor = "text-white" }: P
     return (
       <div class="text-center">
         <h3 class="text-3xl font-bold mb-2">🔥 OFERTA ENCERRADA!</h3>
-        <p class="text-lg">Mas ainda temos outras ofertas incríveis para você!</p>
+        <p class="text-lg">
+          Mas ainda temos outras ofertas incríveis para você!
+        </p>
       </div>
     );
   }
@@ -58,7 +69,7 @@ export default function CountdownIsland({ endDate, textColor = "text-white" }: P
   const TimeUnit = ({ value, label }: { value: number; label: string }) => (
     <div class="bg-black bg-opacity-30 rounded-lg p-4 min-w-[80px]">
       <div class="text-3xl md:text-4xl font-bold font-mono">
-        {value.toString().padStart(2, '0')}
+        {value.toString().padStart(2, "0")}
       </div>
       <div class="text-sm uppercase tracking-wide opacity-75">
         {label}

@@ -9,5 +9,5 @@ export default function BlackFridayPage(props: PageProps) {
 }
 
 export const config = {
-  routeOverride: "/black-friday"
+  routeOverride: "/black-friday",
 };

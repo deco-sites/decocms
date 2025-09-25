@@ -122,7 +122,8 @@ export default function ApplicationForm({
       type: "textarea",
       name: "why_deco",
       required: true,
-      placeholder: "Tell us why you want to partner with Deco (short paragraph)",
+      placeholder:
+        "Tell us why you want to partner with Deco (short paragraph)",
     },
     {
       label: "I agree to the Terms & Conditions",
@@ -153,55 +154,68 @@ export default function ApplicationForm({
               {formFields.map((field, index) => (
                 <div
                   key={index}
-                  class={field.type === "textarea" || field.name === "why_deco" || field.name === "references" || field.name === "stacks" || field.name === "focus_verticals" ? "md:col-span-2" : ""}
+                  class={field.type === "textarea" ||
+                      field.name === "why_deco" ||
+                      field.name === "references" || field.name === "stacks" ||
+                      field.name === "focus_verticals"
+                    ? "md:col-span-2"
+                    : ""}
                 >
                   <label class="block text-[#1C1917] text-sm font-medium mb-2">
                     {field.label}
                     {field.required && <span class="text-red-500 ml-1">*</span>}
                   </label>
-                  
-                  {field.type === "text" || field.type === "email" ? (
-                    <input
-                      type={field.type}
-                      name={field.name}
-                      required={field.required}
-                      placeholder={field.placeholder}
-                      class="w-full px-3 py-2 border border-dc-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D0EC1A] focus:border-transparent"
-                    />
-                  ) : field.type === "textarea" ? (
-                    <textarea
-                      name={field.name}
-                      required={field.required}
-                      placeholder={field.placeholder}
-                      rows={4}
-                      class="w-full px-3 py-2 border border-dc-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D0EC1A] focus:border-transparent resize-vertical"
-                    />
-                  ) : field.type === "select" ? (
-                    <select
-                      name={field.name}
-                      required={field.required}
-                      class="w-full px-3 py-2 border border-dc-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D0EC1A] focus:border-transparent"
-                    >
-                      <option value="">Select an option</option>
-                      {field.options?.map((option, optionIndex) => (
-                        <option key={optionIndex} value={option}>
-                          {option}
-                        </option>
-                      ))}
-                    </select>
-                  ) : field.type === "checkbox" ? (
-                    <div class="flex items-center gap-2">
+
+                  {field.type === "text" || field.type === "email"
+                    ? (
                       <input
-                        type="checkbox"
+                        type={field.type}
                         name={field.name}
                         required={field.required}
-                        class="w-4 h-4 text-[#D0EC1A] border-dc-300 rounded focus:ring-[#D0EC1A]"
+                        placeholder={field.placeholder}
+                        class="w-full px-3 py-2 border border-dc-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D0EC1A] focus:border-transparent"
                       />
-                      <span class="text-[#78716C] text-sm">
-                        I agree to the Terms & Conditions
-                      </span>
-                    </div>
-                  ) : null}
+                    )
+                    : field.type === "textarea"
+                    ? (
+                      <textarea
+                        name={field.name}
+                        required={field.required}
+                        placeholder={field.placeholder}
+                        rows={4}
+                        class="w-full px-3 py-2 border border-dc-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D0EC1A] focus:border-transparent resize-vertical"
+                      />
+                    )
+                    : field.type === "select"
+                    ? (
+                      <select
+                        name={field.name}
+                        required={field.required}
+                        class="w-full px-3 py-2 border border-dc-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D0EC1A] focus:border-transparent"
+                      >
+                        <option value="">Select an option</option>
+                        {field.options?.map((option, optionIndex) => (
+                          <option key={optionIndex} value={option}>
+                            {option}
+                          </option>
+                        ))}
+                      </select>
+                    )
+                    : field.type === "checkbox"
+                    ? (
+                      <div class="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          name={field.name}
+                          required={field.required}
+                          class="w-4 h-4 text-[#D0EC1A] border-dc-300 rounded focus:ring-[#D0EC1A]"
+                        />
+                        <span class="text-[#78716C] text-sm">
+                          I agree to the Terms & Conditions
+                        </span>
+                      </div>
+                    )
+                    : null}
                 </div>
               ))}
             </div>

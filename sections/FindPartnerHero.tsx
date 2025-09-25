@@ -25,7 +25,8 @@ export interface Props {
 
 export default function FindPartnerHero({
   title = "Find a Deco Partner",
-  subtitle = "Certified agencies, SIs, and co‑builders ready to launch AI‑native experiences on Deco.",
+  subtitle =
+    "Certified agencies, SIs, and co‑builders ready to launch AI‑native experiences on Deco.",
   primaryButtonText = "Become a partner",
   primaryButtonUrl = "/partners",
   secondaryButtonText = "Register a project",

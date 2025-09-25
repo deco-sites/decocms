@@ -229,11 +229,11 @@
     white-space: pre;
     word-break: normal;
   }
-  
+
   #blog-post-content code {
     word-break: normal;
   }
-  
+
   #blog-post-content table {
     display: table;
     white-space: normal;

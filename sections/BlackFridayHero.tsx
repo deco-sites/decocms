@@ -13,11 +13,13 @@ export interface Props {
 export default function BlackFridayHero({
   title = "🔥 BLACK FRIDAY NA DECO",
   subtitle = "O melhor lugar para criar seu e-commerce",
-  description = "Aproveite descontos incríveis e crie sua loja online com a plataforma mais moderna do mercado. Performance, conversão e resultados garantidos!",
+  description =
+    "Aproveite descontos incríveis e crie sua loja online com a plataforma mais moderna do mercado. Performance, conversão e resultados garantidos!",
   ctaText = "COMEÇAR AGORA",
   ctaLink = "/",
-  backgroundImage = "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/1818/ff6bb37e-0eab-40e1-a454-86856efc278e",
-  discount = "ATÉ 50% OFF"
+  backgroundImage =
+    "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/1818/ff6bb37e-0eab-40e1-a454-86856efc278e",
+  discount = "ATÉ 50% OFF",
 }: Props) {
   return (
     <div class="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -31,13 +33,17 @@ export default function BlackFridayHero({
           />
         )}
       </div>
-      
+
       {/* Animated particles */}
       <div class="absolute inset-0">
-        <div class="absolute top-1/4 left-1/4 w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></div>
-        <div class="absolute top-1/3 right-1/3 w-1 h-1 bg-red-500 rounded-full animate-bounce"></div>
-        <div class="absolute bottom-1/4 left-1/3 w-3 h-3 bg-orange-400 rounded-full animate-ping"></div>
-        <div class="absolute top-1/2 right-1/4 w-2 h-2 bg-yellow-300 rounded-full animate-pulse"></div>
+        <div class="absolute top-1/4 left-1/4 w-2 h-2 bg-yellow-400 rounded-full animate-pulse">
+        </div>
+        <div class="absolute top-1/3 right-1/3 w-1 h-1 bg-red-500 rounded-full animate-bounce">
+        </div>
+        <div class="absolute bottom-1/4 left-1/3 w-3 h-3 bg-orange-400 rounded-full animate-ping">
+        </div>
+        <div class="absolute top-1/2 right-1/4 w-2 h-2 bg-yellow-300 rounded-full animate-pulse">
+        </div>
       </div>
 
       {/* Content */}
@@ -71,17 +77,23 @@ export default function BlackFridayHero({
           <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
             <div class="text-3xl mb-2">⚡</div>
             <h3 class="text-white font-semibold mb-1">Performance</h3>
-            <p class="text-gray-300 text-sm">Sites ultra-rápidos com Edge Computing</p>
+            <p class="text-gray-300 text-sm">
+              Sites ultra-rápidos com Edge Computing
+            </p>
           </div>
           <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
             <div class="text-3xl mb-2">💰</div>
             <h3 class="text-white font-semibold mb-1">Conversão</h3>
-            <p class="text-gray-300 text-sm">Aumente suas vendas com IA e otimização</p>
+            <p class="text-gray-300 text-sm">
+              Aumente suas vendas com IA e otimização
+            </p>
           </div>
           <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
             <div class="text-3xl mb-2">🚀</div>
             <h3 class="text-white font-semibold mb-1">Facilidade</h3>
-            <p class="text-gray-300 text-sm">Visual editor e deploy automático</p>
+            <p class="text-gray-300 text-sm">
+              Visual editor e deploy automático
+            </p>
           </div>
         </div>
 
@@ -113,7 +125,8 @@ export default function BlackFridayHero({
       </div>
 
       {/* Bottom gradient */}
-      <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/50 to-transparent"></div>
+      <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/50 to-transparent">
+      </div>
     </div>
   );
 }

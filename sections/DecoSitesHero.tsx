@@ -57,12 +57,12 @@ export default function PartnersHero({
       <div className="bg-primary-dark pt-6 rounded-3xl flex flex-col h-[calc(100vh-16px)] relative overflow-hidden">
         {/* Unicorn Studio Background */}
         {enableUnicornBackground && (
-          <UnicornStudioBackground 
+          <UnicornStudioBackground
             projectId={unicornProjectId}
             className="z-0 opacity-100"
           />
         )}
-        
+
         {/* Background Images */}
         {/* Desktop Background */}
         {!enableUnicornBackground && backgroundImageDesktop && (
