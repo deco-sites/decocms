@@ -13,6 +13,15 @@
   "global": [
     {
       "__resolveType": "htmx/sections/htmx.tsx"
+    },
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "website/sections/Analytics/Analytics.tsx",
+        "trackingIds": [
+          "G-5ZPY02RBTY"
+        ]
+      }
     }
   ],
   "routes": [
