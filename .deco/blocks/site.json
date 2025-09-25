@@ -16,7 +16,8 @@
     },
     {
       "__resolveType": "website/sections/Analytics/Analytics.tsx",
-      "trackingIds": [
+      "trackingIds": [],
+      "googleAnalyticsIds": [
         "G-5ZPY02RBTY"
       ]
     }
