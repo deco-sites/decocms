@@ -45,6 +45,21 @@
         }
       ],
       "title": "Social"
+    },
+    {
+      "links": [
+        {
+          "disabled": false,
+          "text": "Privacy Policy",
+          "url": "https://decocms.com/privacy-policy"
+        },
+        {
+          "disabled": false,
+          "text": "Terms of Use",
+          "url": "https://decocms.com/terms-of-use"
+        }
+      ],
+      "title": "Legal"
     }
   ],
   "logo": "https://assets.decocache.com/decocms/42ba3cd7-83b9-4cbf-88f2-0c0d4a361851/decologo.png"
