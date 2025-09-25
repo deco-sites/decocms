@@ -5,6 +5,7 @@
 import * as $_app from "./routes/_app.tsx";
 import * as $black_friday from "./routes/black-friday.tsx";
 import * as $home from "./routes/home.tsx";
+import * as $sitemap_xml from "./routes/sitemap.xml.ts";
 import * as $BlogCategories from "./islands/BlogCategories.tsx";
 import * as $BlogPostsCarousel from "./islands/BlogPostsCarousel.tsx";
 import * as $CopyCommandButton from "./islands/CopyCommandButton.tsx";
@@ -20,6 +21,7 @@ const manifest = {
     "./routes/_app.tsx": $_app,
     "./routes/black-friday.tsx": $black_friday,
     "./routes/home.tsx": $home,
+    "./routes/sitemap.xml.ts": $sitemap_xml,
   },
   islands: {
     "./islands/BlogCategories.tsx": $BlogCategories,
