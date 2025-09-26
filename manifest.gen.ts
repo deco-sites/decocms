@@ -5,7 +5,8 @@
 import * as $$$$$$$$$0 from "./actions/resend/createContact.ts";
 import * as $$$$$$$$$$$0 from "./apps/deco/blog.ts";
 import * as $$$$$$$$$$$1 from "./apps/deco/htmx.ts";
-import * as $$$$$$$$$$$2 from "./apps/site.ts";
+import * as $$$$$$$$$$$2 from "./apps/deco/nuvemshop.ts";
+import * as $$$$$$$$$$$3 from "./apps/site.ts";
 import * as $$$0 from "./loaders/sitemap.ts";
 import * as $$$$$$0 from "./sections/AgentTavano/Benefits.tsx";
 import * as $$$$$$2 from "./sections/AgentTavano/Context.tsx";
@@ -122,7 +123,8 @@ const manifest = {
   "apps": {
     "site/apps/deco/blog.ts": $$$$$$$$$$$0,
     "site/apps/deco/htmx.ts": $$$$$$$$$$$1,
-    "site/apps/site.ts": $$$$$$$$$$$2,
+    "site/apps/deco/nuvemshop.ts": $$$$$$$$$$$2,
+    "site/apps/site.ts": $$$$$$$$$$$3,
   },
   "name": "site",
   "baseUrl": import.meta.url,
