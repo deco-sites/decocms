@@ -26,7 +26,8 @@
         "category": {
           "__resolveType": "website/functions/requestToParam.ts",
           "param": "category"
-        }
+        },
+        "count": 50
       }
     },
     {
