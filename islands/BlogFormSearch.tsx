@@ -76,14 +76,6 @@ export default function BlogFormSearch({ formId, searchPlaceholder }: Props) {
                     )}
                 </div>
             </form>
-
-            <button
-                type="submit"
-                form={formId}
-                class="w-11 px-4 py-2.5 bg-dc-50 rounded-xl outline outline-1 outline-offset-[-1px] outline-dc-200 flex justify-center items-center gap-1 overflow-hidden hover:bg-dc-100 transition-colors"
-            >
-                <Icon name="filter_list" class="text-dc-400" />
-            </button>
         </div>
     );
 }

@@ -322,15 +322,6 @@ export function loader(
         : props.pagination?.perPage || 6,
     };
 
-    // Debug info for troubleshooting
-    console.log("BlogPosts loader:", {
-      searchTerm,
-      category,
-      pagination,
-      id,
-      url: req.url,
-    });
-
     return {
       ...props,
       searchTerm,
