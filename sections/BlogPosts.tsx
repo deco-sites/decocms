@@ -329,7 +329,6 @@ export function loader(
       pagination,
       id,
       url: req.url,
-      props: JSON.stringify(props),
     });
 
     return {

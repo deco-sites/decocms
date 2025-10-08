@@ -7,6 +7,7 @@ import * as $black_friday from "./routes/black-friday.tsx";
 import * as $home from "./routes/home.tsx";
 import * as $sitemap_xml from "./routes/sitemap.xml.ts";
 import * as $BlogCategories from "./islands/BlogCategories.tsx";
+import * as $BlogFormSearch from "./islands/BlogFormSearch.tsx";
 import * as $BlogPostsCarousel from "./islands/BlogPostsCarousel.tsx";
 import * as $CopyCommandButton from "./islands/CopyCommandButton.tsx";
 import * as $CountdownIsland from "./islands/CountdownIsland.tsx";
@@ -25,6 +26,7 @@ const manifest = {
   },
   islands: {
     "./islands/BlogCategories.tsx": $BlogCategories,
+    "./islands/BlogFormSearch.tsx": $BlogFormSearch,
     "./islands/BlogPostsCarousel.tsx": $BlogPostsCarousel,
     "./islands/CopyCommandButton.tsx": $CopyCommandButton,
     "./islands/CountdownIsland.tsx": $CountdownIsland,
