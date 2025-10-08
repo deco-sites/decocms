@@ -18,6 +18,12 @@
     {
       "__resolveType": "website/sections/Rendering/Lazy.tsx",
       "section": {
+        "__resolveType": "site/sections/FormNewsletter.tsx"
+      }
+    },
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
         "__resolveType": "site/sections/RelatedBlogPosts.tsx",
         "posts": {
           "__resolveType": "blog/loaders/BlogpostList.ts",

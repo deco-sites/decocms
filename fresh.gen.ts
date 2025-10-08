@@ -14,6 +14,7 @@ import * as $CountdownIsland from "./islands/CountdownIsland.tsx";
 import * as $FeaturesInteractive from "./islands/FeaturesInteractive.tsx";
 import * as $GitHubStars from "./islands/GitHubStars.tsx";
 import * as $ProjectGrid from "./islands/ProjectGrid.tsx";
+import * as $SendFormNewsletter from "./islands/SendFormNewsletter.tsx";
 import * as $UnicornStudioBackground from "./islands/UnicornStudioBackground.tsx";
 import type { Manifest } from "$fresh/server.ts";
 
@@ -33,6 +34,7 @@ const manifest = {
     "./islands/FeaturesInteractive.tsx": $FeaturesInteractive,
     "./islands/GitHubStars.tsx": $GitHubStars,
     "./islands/ProjectGrid.tsx": $ProjectGrid,
+    "./islands/SendFormNewsletter.tsx": $SendFormNewsletter,
     "./islands/UnicornStudioBackground.tsx": $UnicornStudioBackground,
   },
   baseUrl: import.meta.url,

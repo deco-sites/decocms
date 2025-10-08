@@ -51,5 +51,11 @@
     "framework": "fresh"
   },
   "whilelistURLs": [],
-  "whitelistPatterns": []
+  "whitelistPatterns": [],
+  "keyResend": {
+    "__resolveType": "website/loaders/secret.ts",
+    "encrypted": "a5f19db51ae0d135f7fbcead70248a6f4e09866c8f545bf1db19cc3a13f61974757302c31f555c9e5bdd1a1dc04f3a9c",
+    "name": "RESEND_API_KEY"
+  },
+  "idResend": "b7da3e45-55c3-44f9-885d-570b46b97c7d"
 }
