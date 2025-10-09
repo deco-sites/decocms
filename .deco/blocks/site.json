@@ -54,7 +54,7 @@
   "whitelistPatterns": [],
   "keyResend": {
     "__resolveType": "website/loaders/secret.ts",
-    "encrypted": "e191a03ff1bd6f56ea506815b01174a2a616f5f297e2dfe3aa39e7d78c217aa68004dffc9b4c707b12ada6a8888acccf",
+    "encrypted": "0c46590a16628af138b6139f6b72dd4940db0d3d747ec35eaee63bbc62d0d49efbd3b0f12ce8f8674471fd0fd52d7956",
     "name": "RESEND_API_KEY"
   },
   "idResend": "b7da3e45-55c3-44f9-885d-570b46b97c7d"
