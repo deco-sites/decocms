@@ -7,12 +7,14 @@ import * as $black_friday from "./routes/black-friday.tsx";
 import * as $home from "./routes/home.tsx";
 import * as $sitemap_xml from "./routes/sitemap.xml.ts";
 import * as $BlogCategories from "./islands/BlogCategories.tsx";
+import * as $BlogFormSearch from "./islands/BlogFormSearch.tsx";
 import * as $BlogPostsCarousel from "./islands/BlogPostsCarousel.tsx";
 import * as $CopyCommandButton from "./islands/CopyCommandButton.tsx";
 import * as $CountdownIsland from "./islands/CountdownIsland.tsx";
 import * as $FeaturesInteractive from "./islands/FeaturesInteractive.tsx";
 import * as $GitHubStars from "./islands/GitHubStars.tsx";
 import * as $ProjectGrid from "./islands/ProjectGrid.tsx";
+import * as $SendFormNewsletter from "./islands/SendFormNewsletter.tsx";
 import * as $UnicornStudioBackground from "./islands/UnicornStudioBackground.tsx";
 import type { Manifest } from "$fresh/server.ts";
 
@@ -25,12 +27,14 @@ const manifest = {
   },
   islands: {
     "./islands/BlogCategories.tsx": $BlogCategories,
+    "./islands/BlogFormSearch.tsx": $BlogFormSearch,
     "./islands/BlogPostsCarousel.tsx": $BlogPostsCarousel,
     "./islands/CopyCommandButton.tsx": $CopyCommandButton,
     "./islands/CountdownIsland.tsx": $CountdownIsland,
     "./islands/FeaturesInteractive.tsx": $FeaturesInteractive,
     "./islands/GitHubStars.tsx": $GitHubStars,
     "./islands/ProjectGrid.tsx": $ProjectGrid,
+    "./islands/SendFormNewsletter.tsx": $SendFormNewsletter,
     "./islands/UnicornStudioBackground.tsx": $UnicornStudioBackground,
   },
   baseUrl: import.meta.url,

@@ -240,14 +240,6 @@ export function loader(
     // Get search term from URL
     const searchTerm = url.searchParams.get("search") || "";
 
-    // Log for debugging
-    console.log("BlogCategories loader:", {
-      selectedCategory,
-      searchTerm,
-      url: req.url,
-      pathParts,
-    });
-
     return {
       ...props,
       selectedCategory,

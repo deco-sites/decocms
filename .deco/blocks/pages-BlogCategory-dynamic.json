@@ -26,6 +26,10 @@
         "category": {
           "__resolveType": "website/functions/requestToParam.ts",
           "param": "category"
+        },
+        "slug": {
+          "__resolveType": "website/functions/requestToParam.ts",
+          "param": "category"
         }
       }
     },

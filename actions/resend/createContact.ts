@@ -17,12 +17,12 @@ export default async function createResendContact(
     throw new Error("email is required");
   }
 
-  const apiKey = ctx.env?.RESEND_API_KEY;
+  const apiKey = ctx.keyResend.get?.();
   if (!apiKey) {
     throw new Error("Missing RESEND_API_KEY env var");
   }
 
-  const audienceId = props.audienceId ?? ctx.env?.RESEND_DEFAULT_AUDIENCE_ID;
+  const audienceId = props.audienceId ?? ctx.idResend;
   if (!audienceId) {
     throw new Error(
       "audienceId is required (prop or RESEND_DEFAULT_AUDIENCE_ID env)",
@@ -45,7 +45,6 @@ export default async function createResendContact(
       }),
     },
   );
-
   if (!response.ok) {
     const errorText = await response.text().catch(() => "");
     throw new Error(
@@ -53,5 +52,5 @@ export default async function createResendContact(
     );
   }
 
-  return await response.json();
+  return await {response: await response.json(), status: await response.status};
 }

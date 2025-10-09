@@ -2,5 +2,6 @@
   "__resolveType": "site/actions/resend/createContact.ts",
   "email": "dex@deco.cx",
   "firstName": "Dex",
-  "lastName": "Deco"
+  "lastName": "Deco",
+  "audienceId": "b7da3e45-55c3-44f9-885d-570b46b97c7d"
 }

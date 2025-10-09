@@ -6163,6 +6163,9 @@ input.tab:checked + .tab-content,
   --tw-bg-opacity: 1;
   background-color: rgb(7 64 26 / var(--tw-bg-opacity));
 }
+.bg-primary-dark\/5 {
+  background-color: rgb(7 64 26 / 0.05);
+}
 .bg-primary-dark\/80 {
   background-color: rgb(7 64 26 / 0.8);
 }
@@ -6936,6 +6939,11 @@ input.tab:checked + .tab-content,
   --tw-gradient-to: var(--fallback-p,oklch(var(--p)/0)) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
+.from-primary-light {
+  --tw-gradient-from: #D0EC1A var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(208 236 26 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
 .from-primary-light\/0 {
   --tw-gradient-from: rgb(208 236 26 / 0) var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(208 236 26 / 0) var(--tw-gradient-to-position);
@@ -7195,6 +7203,10 @@ input.tab:checked + .tab-content,
   --tw-gradient-to: rgb(219 39 119 / 0)  var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), #db2777 var(--tw-gradient-via-position), var(--tw-gradient-to);
 }
+.via-primary-light {
+  --tw-gradient-to: rgb(208 236 26 / 0)  var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), #D0EC1A var(--tw-gradient-via-position), var(--tw-gradient-to);
+}
 .via-primary\/95 {
   --tw-gradient-to: rgb(255 255 255 / 0)  var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--fallback-p,oklch(var(--p)/0.95)) var(--tw-gradient-via-position), var(--tw-gradient-to);
@@ -7349,6 +7361,9 @@ input.tab:checked + .tab-content,
 }
 .to-primary-light {
   --tw-gradient-to: #D0EC1A var(--tw-gradient-to-position);
+}
+.to-primary-light\/80 {
+  --tw-gradient-to: rgb(208 236 26 / 0.8) var(--tw-gradient-to-position);
 }
 .to-primary\/10 {
   --tw-gradient-to: var(--fallback-p,oklch(var(--p)/0.1)) var(--tw-gradient-to-position);
@@ -7607,6 +7622,9 @@ input.tab:checked + .tab-content,
 }
 .pl-3 {
   padding-left: 0.75rem;
+}
+.pl-8 {
+  padding-left: 2rem;
 }
 .pr-2 {
   padding-right: 0.5rem;
@@ -8497,6 +8515,12 @@ input.tab:checked + .tab-content,
   --tw-text-opacity: 1;
   color: rgb(7 64 26 / var(--tw-text-opacity));
 }
+.text-primary-dark\/60 {
+  color: rgb(7 64 26 / 0.6);
+}
+.text-primary-dark\/80 {
+  color: rgb(7 64 26 / 0.8);
+}
 .text-primary-light {
   --tw-text-opacity: 1;
   color: rgb(208 236 26 / var(--tw-text-opacity));
@@ -9081,6 +9105,9 @@ input.tab:checked + .tab-content,
 .outline-dc-50 {
   outline-color: #FAFAF9;
 }
+.outline-primary-dark\/20 {
+  outline-color: rgb(7 64 26 / 0.2);
+}
 .outline-stone-500\/10 {
   outline-color: rgb(120 113 108 / 0.1);
 }
@@ -9266,6 +9293,14 @@ input.tab:checked + .tab-content,
 .placeholder\:text-dc-400::placeholder {
   --tw-text-opacity: 1;
   color: rgb(166 160 157 / var(--tw-text-opacity));
+}
+
+.placeholder\:text-primary-dark\/40::-moz-placeholder {
+  color: rgb(7 64 26 / 0.4);
+}
+
+.placeholder\:text-primary-dark\/40::placeholder {
+  color: rgb(7 64 26 / 0.4);
 }
 
 .last\:border-b-0:last-child {
@@ -10686,6 +10721,14 @@ input.tab:checked + .tab-content,
   outline-offset: 2px;
 }
 
+.focus\:outline-2:focus {
+  outline-width: 2px;
+}
+
+.focus\:outline-primary-dark:focus {
+  outline-color: #07401A;
+}
+
 .focus\:ring-2:focus {
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
   --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
@@ -10700,6 +10743,12 @@ input.tab:checked + .tab-content,
 .focus\:ring-primary:focus {
   --tw-ring-opacity: 1;
   --tw-ring-color: var(--fallback-p,oklch(var(--p)/var(--tw-ring-opacity)));
+}
+
+.active\:scale-95:active {
+  --tw-scale-x: .95;
+  --tw-scale-y: .95;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .active\:bg-dc-200:active {
@@ -11312,6 +11361,11 @@ input.tab:checked + .tab-content,
 
   .md\:p-8 {
     padding: 2rem;
+  }
+
+  .md\:px-12 {
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
 
   .md\:px-16 {
