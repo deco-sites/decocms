@@ -1,0 +1,8 @@
+{
+  "redirect": {
+    "from": "/InformationSecurityPolicy",
+    "to": "https://assets.decocache.com/decocms/803a3c79-8cf7-4a53-9006-f1b515c02204/information-security-policy-bsi.pdf",
+    "type": "temporary"
+  },
+  "__resolveType": "website/loaders/redirect.ts"
+}
