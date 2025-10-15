@@ -1327,6 +1327,42 @@ html {
 :where(.menu li) .badge {
   justify-self: end;
 }
+.modal {
+  pointer-events: none;
+  position: fixed;
+  inset: 0px;
+  margin: 0px;
+  display: grid;
+  height: 100%;
+  max-height: none;
+  width: 100%;
+  max-width: none;
+  justify-items: center;
+  padding: 0px;
+  opacity: 0;
+  overscroll-behavior: contain;
+  z-index: 999;
+  background-color: transparent;
+  color: inherit;
+  transition-duration: 200ms;
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  transition-property: transform, opacity, visibility;
+  overflow-y: hidden;
+}
+:where(.modal) {
+  align-items: center;
+}
+.modal-open,
+.modal:target,
+.modal-toggle:checked + .modal,
+.modal[open] {
+  pointer-events: auto;
+  visibility: visible;
+  opacity: 1;
+}
+:root:has(:is(.modal-open, .modal:target, .modal-toggle:checked + .modal, .modal[open])) {
+  overflow: hidden;
+}
 .progress {
   position: relative;
   width: 100%;
@@ -2220,6 +2256,20 @@ input.tab:checked + .tab-content,
   border-color: currentColor;
   opacity: 0.6;
 }
+.modal:not(dialog:not(.modal-open)),
+  .modal::backdrop {
+  background-color: #0006;
+  animation: modal-pop 0.2s ease-out;
+}
+.modal-open .modal-box,
+.modal-toggle:checked + .modal .modal-box,
+.modal:target .modal-box,
+.modal[open] .modal-box {
+  --tw-translate-y: 0px;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
 @keyframes modal-pop {
 
   0% {
@@ -2791,6 +2841,9 @@ input.tab:checked + .tab-content,
 }
 .tab-border {
   --tab-border: 1px;
+}
+.artboard.phone {
+  width: 320px;
 }
 .btm-nav-xs > *:where(.\!active) {
   border-top-width: 1px !important;
@@ -4181,6 +4234,9 @@ input.tab:checked + .tab-content,
 .cursor-pointer {
   cursor: pointer;
 }
+.resize-none {
+  resize: none;
+}
 .resize {
   resize: both;
 }
@@ -4336,6 +4392,11 @@ input.tab:checked + .tab-content,
   margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(1rem * var(--tw-space-y-reverse));
 }
+.space-y-5 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1.25rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1.25rem * var(--tw-space-y-reverse));
+}
 .space-y-6 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
@@ -4349,6 +4410,9 @@ input.tab:checked + .tab-content,
 }
 .overflow-x-auto {
   overflow-x: auto;
+}
+.overflow-y-auto {
+  overflow-y: auto;
 }
 .truncate {
   overflow: hidden;
@@ -5538,6 +5602,14 @@ input.tab:checked + .tab-content,
   --tw-bg-opacity: 1;
   background-color: rgb(13 23 23 / var(--tw-bg-opacity));
 }
+.bg-\[\#1C1917\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(28 25 23 / var(--tw-bg-opacity));
+}
+.bg-\[\#282524\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(40 37 36 / var(--tw-bg-opacity));
+}
 .bg-\[\#78716C\] {
   --tw-bg-opacity: 1;
   background-color: rgb(120 113 108 / var(--tw-bg-opacity));
@@ -5632,6 +5704,9 @@ input.tab:checked + .tab-content,
 .bg-black {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+}
+.bg-black\/50 {
+  background-color: rgb(0 0 0 / 0.5);
 }
 .bg-blue-100 {
   --tw-bg-opacity: 1;
@@ -7578,6 +7653,10 @@ input.tab:checked + .tab-content,
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+.py-5 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
 }
 .py-6 {
   padding-top: 1.5rem;
@@ -10663,6 +10742,11 @@ input.tab:checked + .tab-content,
   color: rgb(86 82 78 / var(--tw-text-opacity));
 }
 
+.hover\:text-gray-600:hover {
+  --tw-text-opacity: 1;
+  color: rgb(75 85 99 / var(--tw-text-opacity));
+}
+
 .hover\:text-primary-dark:hover {
   --tw-text-opacity: 1;
   color: rgb(7 64 26 / var(--tw-text-opacity));
@@ -10745,6 +10829,11 @@ input.tab:checked + .tab-content,
   --tw-ring-color: var(--fallback-p,oklch(var(--p)/var(--tw-ring-opacity)));
 }
 
+.focus\:ring-primary-dark:focus {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(7 64 26 / var(--tw-ring-opacity));
+}
+
 .active\:scale-95:active {
   --tw-scale-x: .95;
   --tw-scale-y: .95;
@@ -10762,6 +10851,14 @@ input.tab:checked + .tab-content,
 
 .disabled\:hidden:disabled {
   display: none;
+}
+
+.disabled\:cursor-not-allowed:disabled {
+  cursor: not-allowed;
+}
+
+.disabled\:opacity-50:disabled {
+  opacity: 0.5;
 }
 
 .disabled\:opacity-60:disabled {

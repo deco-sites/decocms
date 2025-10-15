@@ -1,6 +1,6 @@
 import type { ImageWidget } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
-import { BookmarkCheck, Sprout, Users } from "lucide-preact";
+import { BookmarkCheck, Sprout, Users, Trophy, Briefcase, Building2, DollarSign, Gem } from "lucide-preact";
 
 export interface TopBenefit {
   /** @title Benefit Title */
@@ -17,8 +17,8 @@ export interface BottomBenefit {
   /** @title Benefit Description */
   description: string;
   /** @title Icon Name */
-  /** @description Choose from: bookmark-check, sprout, users */
-  icon: "bookmark-check" | "sprout" | "users";
+  /** @description Choose from: bookmark-check, sprout, users, trophy, dollar-sign, gem, briefcase, building */
+  icon: "bookmark-check" | "sprout" | "users" | "trophy" | "dollar-sign" | "gem" | "briefcase" | "building";
 }
 
 export interface Props {
@@ -52,6 +52,16 @@ export default function PartnerBenefits({
         return <Sprout {...iconProps} />;
       case "users":
         return <Users {...iconProps} />;
+      case "trophy":
+        return <Trophy {...iconProps} />;
+      case "dollar-sign":
+        return <DollarSign {...iconProps} />;
+      case "gem":
+        return <Gem {...iconProps} />;
+      case "briefcase":
+        return <Briefcase {...iconProps} />;
+      case "building":
+        return <Building2 {...iconProps} />;
       default:
         return <BookmarkCheck {...iconProps} />;
     }

@@ -12,6 +12,7 @@ import * as $BlogPostsCarousel from "./islands/BlogPostsCarousel.tsx";
 import * as $CopyCommandButton from "./islands/CopyCommandButton.tsx";
 import * as $CountdownIsland from "./islands/CountdownIsland.tsx";
 import * as $FeaturesInteractive from "./islands/FeaturesInteractive.tsx";
+import * as $FormModal from "./islands/FormModal.tsx";
 import * as $GitHubStars from "./islands/GitHubStars.tsx";
 import * as $ProjectGrid from "./islands/ProjectGrid.tsx";
 import * as $SendFormNewsletter from "./islands/SendFormNewsletter.tsx";
@@ -32,6 +33,7 @@ const manifest = {
     "./islands/CopyCommandButton.tsx": $CopyCommandButton,
     "./islands/CountdownIsland.tsx": $CountdownIsland,
     "./islands/FeaturesInteractive.tsx": $FeaturesInteractive,
+    "./islands/FormModal.tsx": $FormModal,
     "./islands/GitHubStars.tsx": $GitHubStars,
     "./islands/ProjectGrid.tsx": $ProjectGrid,
     "./islands/SendFormNewsletter.tsx": $SendFormNewsletter,

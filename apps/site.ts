@@ -11,8 +11,16 @@ type WebsiteApp = ReturnType<typeof website>;
  */
   
 export interface SiteProps extends Props {
+  /** @title Resend API Key */
   keyResend: Secret;
+  /** @title Resend Audience ID */
   idResend?: string;
+  /** @title Airtable API Key */
+  airtableApiKey?: Secret;
+  /** @title Airtable Base ID */
+  airtableBaseId?: string;
+  /** @title Airtable Table ID */
+  airtableTableId?: string;
 }
 
 export default function Site(state: SiteProps): App<Manifest, SiteProps, [

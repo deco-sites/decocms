@@ -71,6 +71,7 @@ deno.lock
 
 # Environment variables
 .env
+
 # db files
 .config.json
 # Fresh build directory
