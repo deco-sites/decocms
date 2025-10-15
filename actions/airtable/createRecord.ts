@@ -15,13 +15,8 @@ export default async function createAirtableRecord(
   // 1. Tentar do contexto (Secret ou string)
   if (typeof ctx.airtableApiKey === 'string') {
     apiKey = ctx.airtableApiKey;
-  } else if (ctx.airtableApiKey && typeof ctx.airtableApiKey === 'object' && 'get' in ctx.airtableApiKey) {
-    apiKey = ctx.airtableApiKey.get?.();
-  }
-  
-  // 2. Fallback para variável de ambiente
-  if (!apiKey) {
-    apiKey = Deno.env.get("AIRTABLE_API_KEY");
+  } else {
+    apiKey = await ctx.airtableApiKey.get?.();
   }
 
   if (!apiKey) {

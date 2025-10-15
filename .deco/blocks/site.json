@@ -59,5 +59,10 @@
   },
   "idResend": "b7da3e45-55c3-44f9-885d-570b46b97c7d",
   "airtableBaseId": "appYsxzINrsOQUe7b",
-  "airtableTableId": "tblOgIy282a8IeDsj"
+  "airtableTableId": "tblOgIy282a8IeDsj",
+  "airtableApiKey": {
+    "__resolveType": "website/loaders/secret.ts",
+    "encrypted": "c45f7e5d1c615ffdff8e6a66c08eaf5dcb73b4c0fd777e8779c0a71d96cc3942deb03631a386afb880a47d322315ba3a66f010d0dfcf059807e450b524a6b039e9838034300b8235ebcf2141af212f027aa5d531b66bdf821e6b4a13af526a74",
+    "name": "AIRTABLE_API_KEY"
+  }
 }
