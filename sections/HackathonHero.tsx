@@ -13,6 +13,9 @@ export interface Props {
   subtitle?: string;
   /** @title Primary CTA Text */
   primaryButtonText?: string;
+  /** @title Primary CTA URL */
+  /** @description If provided, the button will be a link instead of opening the form modal */
+  primaryButtonUrl?: string;
   /** @title Secondary CTA Text */
   secondaryButtonText?: string;
   /** @title Secondary CTA URL */
@@ -37,6 +40,7 @@ export default function HackathonHero({
   title = "Hackathon deco  AI Apps edition",
   subtitle = "Participe e resolva um desafio real de um cliente nosso em 48h",
   primaryButtonText = "Participar",
+  primaryButtonUrl,
   secondaryButtonText = "Saber mais",
   secondaryButtonUrl = "#next-section",
   trustSignalTitle = "Ecossistema Deco",
@@ -105,43 +109,58 @@ export default function HackathonHero({
             {/* Buttons */}
             <div class="flex gap-2 items-start justify-start">
               {primaryButtonText && (
-                <FormModal
-                  buttonText={primaryButtonText}
-                  buttonClassName="px-6 py-3 bg-primary-light text-primary-dark rounded-lg font-semibold hover:bg-primary-light/90 transition-colors"
-                  modalTitle="Inscrição"
-                  formFields={[
-                    { label: "Nome", name: "Nome", type: "text", required: true, placeholder: "Seu nome completo" },
-                    { label: "Email", name: "Email", type: "email", required: true, placeholder: "seu@email.com" },
-                    { label: "Número", name: "Número", type: "tel", required: true, placeholder: "+55 (11) 99999-9999" },
-                    { label: "Empresa", name: "Empresa", type: "text", required: true, placeholder: "Nome da empresa" },
-                    { label: "Cargo", name: "Cargo", type: "text", required: true, placeholder: "Seu cargo" },
-                    { 
-                      label: "Pretende participar em qual dia?", 
-                      name: "Dia de participação", 
-                      type: "multiselect", 
-                      required: true,
-                      options: ["31/10", "01/11"]
-                    },
-                    { label: "Possui time?", name: "Possui time", type: "checkbox" },
-                    { 
-                      label: "Tamanho do time",
-                      name: "Tamanho do time",
-                      type: "number",
-                      placeholder: "Ex: 4",
-                      showIfChecked: "Possui time"
-                    },
-                    { 
-                      label: "Nome e e-mail dos membros", 
-                      name: "Nome e e-mail dos membros", 
-                      type: "textarea", 
-                      placeholder: "Nome 1: email1@example.com\nNome 2: email2@example.com",
-                      showIfChecked: "Possui time"
-                    },
-                    { label: "Observação", name: "Observações", type: "textarea", placeholder: "Alguma observação adicional..." },
-                  ]}
-                  submitButtonText="Enviar Inscrição"
-                  successMessage="Inscrição enviada com sucesso! Entraremos em contato em breve."
-                />
+                <>
+                  {primaryButtonUrl ? (
+                    // If URL is provided, render a simple button link
+                    <Button
+                      variant="primary"
+                      size="medium"
+                      href={primaryButtonUrl}
+                      class="!bg-primary-light !text-primary-dark hover:!bg-primary-light/90"
+                    >
+                      {primaryButtonText}
+                    </Button>
+                  ) : (
+                    // If no URL, render the form modal
+                    <FormModal
+                      buttonText={primaryButtonText}
+                      buttonClassName="px-6 py-3 bg-primary-light text-primary-dark rounded-lg font-semibold hover:bg-primary-light/90 transition-colors"
+                      modalTitle="Inscrição"
+                      formFields={[
+                        { label: "Nome", name: "Nome", type: "text", required: true, placeholder: "Seu nome completo" },
+                        { label: "Email", name: "Email", type: "email", required: true, placeholder: "seu@email.com" },
+                        { label: "Número", name: "Número", type: "tel", required: true, placeholder: "+55 (11) 99999-9999" },
+                        { label: "Empresa", name: "Empresa", type: "text", required: true, placeholder: "Nome da empresa" },
+                        { label: "Cargo", name: "Cargo", type: "text", required: true, placeholder: "Seu cargo" },
+                        { 
+                          label: "Pretende participar em qual dia?", 
+                          name: "Dia de participação", 
+                          type: "multiselect", 
+                          required: true,
+                          options: ["31/10", "01/11"]
+                        },
+                        { label: "Possui time?", name: "Possui time", type: "checkbox" },
+                        { 
+                          label: "Tamanho do time",
+                          name: "Tamanho do time",
+                          type: "number",
+                          placeholder: "Ex: 4",
+                          showIfChecked: "Possui time"
+                        },
+                        { 
+                          label: "Nome e e-mail dos membros", 
+                          name: "Nome e e-mail dos membros", 
+                          type: "textarea", 
+                          placeholder: "Nome 1: email1@example.com\nNome 2: email2@example.com",
+                          showIfChecked: "Possui time"
+                        },
+                        { label: "Observação", name: "Observações", type: "textarea", placeholder: "Alguma observação adicional..." },
+                      ]}
+                      submitButtonText="Enviar Inscrição"
+                      successMessage="Inscrição enviada com sucesso! Entraremos em contato em breve."
+                    />
+                  )}
+                </>
               )}
               {secondaryButtonText && secondaryButtonUrl && (
                 <Button

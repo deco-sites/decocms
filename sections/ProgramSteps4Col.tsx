@@ -1,5 +1,6 @@
 import { Check, Lightbulb } from "lucide-preact";
 import FormModal from "../islands/FormModal.tsx";
+import Button from "../components/ui/Button.tsx";
 
 export interface Step {
   /** @title Step Title */
@@ -38,6 +39,9 @@ export interface Props {
   tipText?: string;
   /** @title Tip CTA Text */
   tipCtaText?: string;
+  /** @title Tip CTA URL */
+  /** @description If provided, the button will be a link instead of opening the form modal */
+  tipCtaUrl?: string;
   /** @title Enable Form Modal */
   enableFormModal?: boolean;
   /** @title Modal Title */
@@ -73,6 +77,7 @@ export default function ProgramSteps4Col({
   ],
   tipText = "As vagas são limitadas, se inscreva e confirmaremos sua participação até dia 23/10",
   tipCtaText = "Participar",
+  tipCtaUrl,
   enableFormModal = true,
   modalTitle = "Inscrição",
   formFields = [
@@ -258,7 +263,16 @@ export default function ProgramSteps4Col({
                   {tipText}
                 </p>
 
-                {enableFormModal ? (
+                {tipCtaUrl ? (
+                  // If URL is provided, render a simple button link
+                  <a
+                    href={tipCtaUrl}
+                    class="bg-primary-light text-primary-dark hover:bg-primary-light/90 px-6 py-3 rounded-xl font-medium text-base transition-colors flex-shrink-0 inline-flex items-center justify-center"
+                  >
+                    {tipCtaText}
+                  </a>
+                ) : enableFormModal ? (
+                  // If no URL and form is enabled, render the form modal
                   <FormModal
                     buttonText={tipCtaText}
                     buttonClassName="!bg-primary-light !text-primary-dark hover:!bg-primary-light/90 px-6 py-3 rounded-xl font-medium text-base transition-colors flex-shrink-0"
