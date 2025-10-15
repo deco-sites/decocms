@@ -1,195 +1,202 @@
 {
-    "path": "/hackathon",
-    "sections": [
-      {
-        "__resolveType": "website/sections/Rendering/Lazy.tsx",
-        "section": {
-          "__resolveType": "site/sections/Header.tsx",
-          "menuItems": [
-            {
-              "label": "Home",
-              "href": "/",
-              "items": []
-            },
-            {
-              "label": "Docs",
-              "href": "https://docs.decocms.com",
-              "items": []
-            },
-            {
-              "label": "Community",
-              "href": "https://decocms.com/discord",
-              "items": []
-            },
-            {
-              "label": "Partners",
-              "items": [],
-              "href": "/partners"
-            },
-            {
-              "items": [],
-              "label": "Blog",
-              "href": "/blog"
-            },
-            {
-              "items": [
-                {
-                  "label": "Digital Experience",
-                  "href": "/use-case/deco-sites"
-                },
-                {
-                  "label": "Internal AI Apps",
-                  "href": "/"
-                }
-              ],
-              "label": "Use Cases"
-            }
-          ],
-          "ctaText": "Get early access",
-          "logo": "https://assets.decocache.com/decocms/c6af6b61-bb6d-4601-8003-708d62d5fb7a/logo-tiny.svg",
-          "ctaHref": "https://luma.com/ko4zncke",
-          "githubIcon": "https://assets.decocache.com/decocms/880e46a0-b0ff-41e2-95c6-9cdb7eba2190/gh.svg",
-          "githubRepo": "deco-cx/chat"
-        }
-      },
-      {
-        "__resolveType": "website/sections/Rendering/Lazy.tsx",
-        "section": {
-          "__resolveType": "site/sections/HackathonHero.tsx",
-          "showPartnerLogos": true,
-          "partnerLogos": [
-            "https://assets.decocache.com/decocms/a4b4772e-6e0f-42ee-bec9-6bf7d15c0fe9/livemode.svg",
-            "https://assets.decocache.com/decocms/05034824-5a80-49a3-b02b-17e00b19b2b7/superfrete.svg",
-            "https://assets.decocache.com/decocms/a544d8ec-ceef-4f0f-b364-1928918c48eb/farm-etc.svg",
-            "https://assets.decocache.com/decocms/14935bca-b847-4ca9-b7b1-39059b0095e0/gupy_logo.svg",
-            "https://assets.decocache.com/decocms/6cd6e7b3-a2d0-473a-b80c-a2692a0c563e/leroy.svg"
-          ],
-          "backgroundImageDesktop": "https://assets.decocache.com/decocms/b58cb865-8ec8-433e-9de7-4f1ad0657c17/bg-hackathon-desk.png",
-          "backgroundImageMobile": "https://assets.decocache.com/decocms/a1d234e1-e659-4ce0-8d33-f3297dea4bbc/bg-hackaton-mobile.png"
-        }
-      },
-      {
-        "__resolveType": "site/sections/PartnerBenefits.tsx",
-        "title": "Por que participar",
-        "subtitle": "BENEFÍCIOS",
-        "topBenefits": [],
-        "bottomBenefits": [
+  "path": "/hackathon",
+  "sections": [
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "site/sections/Header.tsx",
+        "menuItems": [
           {
-            "title": "Prêmio em dinheiro",
-            "description": "R$5.000 para a melhor solução.",
-            "icon": "dollar-sign"
+            "label": "Home",
+            "href": "/",
+            "items": []
           },
           {
-            "title": "Acesso direto a C-levels e diretores",
-            "description": "Seu projeto pode abrir portas.",
-            "icon": "building"
+            "label": "Docs",
+            "href": "https://docs.decocms.com",
+            "items": []
           },
           {
-            "title": "Continuidade de projeto",
-            "description": "As melhores ideias podem se transformar em parcerias com clientes deco.",
-            "icon": "users"
-          }
-        ]
-      },
-      {
-        "__resolveType": "site/sections/WhoShouldApply.tsx",
-        "subtitle": "PÚBLICO",
-        "title": "Para quem",
-        "partnerTypes": [
-          {
-            "title": "Agentic Engineers",
-            "description": "você quer criar soluções reais explorando automação, AI e workflows na prática",
-            "icon": "target"
+            "label": "Community",
+            "href": "https://decocms.com/discord",
+            "items": []
           },
           {
-            "title": "Agências",
-            "description": "você quer testar o potencial da deco para entregar experiências web mais rápidas, escaláveis e inteligentes para seus clientes.",
-            "icon": "zap"
+            "label": "Partners",
+            "items": [],
+            "href": "/partners"
+          },
+          {
+            "items": [],
+            "label": "Blog",
+            "href": "/blog"
+          },
+          {
+            "items": [
+              {
+                "label": "Digital Experience",
+                "href": "/use-case/deco-sites"
+              },
+              {
+                "label": "Internal AI Apps",
+                "href": "/"
+              }
+            ],
+            "label": "Use Cases"
           }
         ],
-        "readinessTitle": "deco.camp",
-        "requirements": [
-          {
-            "text": "Participantes do deco.camp têm vaga garantida"
-          }
-        ]
-      },
-      {
-        "__resolveType": "site/sections/PartnerHighlights.tsx",
-        "title": "Regras gerais",
-        "subtitle": "DESTAQUES",
-        "highlights": [
-          {
-            "title": "Times",
-            "description": "Sem restrições de número de participantes. É necessário pelo menos um(a) dev por time. Outras áreas são bem-vindas (design, PM, marketing etc).",
-            "featured": false
-          },
-          {
-            "title": "Dedicação",
-            "description": "Você escolhe o quanto se envolve. As lives são gravadas e disponibilizadas. O importante é enviar a solução dentro do prazo estipulado para cada dia."
-          },
-          {
-            "title": "Setup",
-            "description": "As instruções serão enviadas até 25 de Outubro. Enquanto isso, explore nossa documentação e comunidade no Discord.",
-            "featured": false
-          }
-        ]
-      },
-      {
-        "__resolveType": "website/sections/Rendering/Lazy.tsx",
-        "section": {
-          "__resolveType": "site/sections/ProgramSteps4Col.tsx"
-        }
-      },
-      {
-        "__resolveType": "site/sections/PartnersFAQ.tsx",
-        "title": "Perguntas frequentes",
-        "faqItems": [
-          {
-            "question": "Preciso ser desenvolvedor para participar?",
-            "answer": "Não necessariamente. Mas o time precisa ter ao menos um dev para implementar a solução."
-          },
-          {
-            "question": "Preciso pagar para participar?",
-            "answer": "Não, o hackathon é gratuito."
-          },
-          {
-            "question": "O evento é presencial?",
-            "answer": "100% online, com lives e materiais gravados. Porém, teremos um espaço presencial disponível no Rio de Janeiro para quem quiser imergir."
-          },
-          {
-            "question": "O que eu preciso preparar antes?",
-            "answer": "Ter familiaridade com Git e vontade de aprender a stack deco já é um ótimo começo."
-          }
-        ]
-      },
-      {
-        "__resolveType": "website/flags/multivariate/section.ts",
-        "variants": [
-          {
-            "value": {
-              "__resolveType": "site/sections/PartnersFinalCTA.tsx",
-              "title": "Ready to build together?",
-              "subtitle": "Start your application now or grab time for a quick intro.",
-              "primaryButton": {
-                "text": "Apply now",
-                "url": "https://form.typeform.com/to/jZbe1R71"
-              },
-              "secondaryButton": {
-                "text": "Book an intro",
-                "url": "https://form.typeform.com/to/LxKZbN9N"
-              }
-            },
-            "rule": {
-              "__resolveType": "website/matchers/never.ts"
-            }
-          }
-        ]
-      },
-      {
-        "__resolveType": "Footer"
+        "ctaText": "Get early access",
+        "logo": "https://assets.decocache.com/decocms/0fd80b72-99df-47ec-8d82-f07876a45507/d-logo-ouline-pos.svg",
+        "ctaHref": "https://luma.com/ko4zncke",
+        "githubIcon": "https://assets.decocache.com/decocms/880e46a0-b0ff-41e2-95c6-9cdb7eba2190/gh.svg",
+        "githubRepo": "deco-cx/chat"
       }
-    ],
-    "__resolveType": "website/pages/Page.tsx",
-    "name": "Hackathon"
+    },
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "site/sections/HackathonHero.tsx",
+        "showPartnerLogos": true,
+        "partnerLogos": [
+          "https://assets.decocache.com/decocms/0f8f9470-7bb4-4bc3-bbcb-b6a5280829bf/livemode-1.svg",
+          "https://assets.decocache.com/decocms/896571a1-76df-493c-9f01-bedd37d9b835/superfrete-1.svg",
+          "https://assets.decocache.com/decocms/a544d8ec-ceef-4f0f-b364-1928918c48eb/farm-etc.svg",
+          "https://assets.decocache.com/decocms/14935bca-b847-4ca9-b7b1-39059b0095e0/gupy_logo.svg",
+          "https://assets.decocache.com/decocms/6cd6e7b3-a2d0-473a-b80c-a2692a0c563e/leroy.svg",
+          "https://assets.decocache.com/decocms/5fcc3b4f-f95d-488c-9342-9be8f13d6606/cogna.svg"
+        ],
+        "backgroundImageDesktop": "https://assets.decocache.com/decocms/b58cb865-8ec8-433e-9de7-4f1ad0657c17/bg-hackathon-desk.png",
+        "backgroundImageMobile": "https://assets.decocache.com/decocms/a1d234e1-e659-4ce0-8d33-f3297dea4bbc/bg-hackaton-mobile.png"
+      }
+    },
+    {
+      "__resolveType": "site/sections/PartnerBenefits.tsx",
+      "title": "Por que participar",
+      "subtitle": "BENEFÍCIOS",
+      "topBenefits": [],
+      "bottomBenefits": [
+        {
+          "title": "Prêmio em dinheiro",
+          "description": "R$5.000 para a melhor solução.",
+          "icon": "dollar-sign"
+        },
+        {
+          "title": "Acesso direto a C-levels e diretores",
+          "description": "Seu projeto pode abrir portas.",
+          "icon": "building"
+        },
+        {
+          "title": "Continuidade de projeto",
+          "description": "As melhores ideias podem se transformar em parcerias com clientes deco.",
+          "icon": "users"
+        }
+      ]
+    },
+    {
+      "__resolveType": "site/sections/WhoShouldApply.tsx",
+      "subtitle": "PÚBLICO",
+      "title": "Para quem",
+      "partnerTypes": [
+        {
+          "title": "Agentic Engineers",
+          "description": "você quer criar soluções reais explorando automação, AI e workflows na prática",
+          "icon": "target"
+        },
+        {
+          "title": "Agências",
+          "description": "você quer testar o potencial da deco para entregar experiências web mais rápidas, escaláveis e inteligentes para seus clientes.",
+          "icon": "zap"
+        }
+      ],
+      "readinessTitle": "deco.camp",
+      "requirements": [
+        {
+          "text": "Participantes do deco.camp têm vaga garantida"
+        }
+      ]
+    },
+    {
+      "__resolveType": "site/sections/PartnerHighlights.tsx",
+      "title": "Regras gerais",
+      "subtitle": "DESTAQUES",
+      "highlights": [
+        {
+          "title": "Times",
+          "description": "Sem restrições de número de participantes. É necessário pelo menos um(a) dev por time. Outras áreas são bem-vindas (design, PM, marketing etc).",
+          "featured": false
+        },
+        {
+          "title": "Dedicação",
+          "description": "Você escolhe o quanto se envolve. As lives são gravadas e disponibilizadas. O importante é enviar a solução dentro do prazo estipulado para cada dia."
+        },
+        {
+          "title": "Setup",
+          "description": "As instruções serão enviadas até 25 de Outubro. Enquanto isso, explore nossa documentação e comunidade no Discord.",
+          "featured": false
+        }
+      ]
+    },
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "site/sections/ProgramSteps4Col.tsx"
+      }
+    },
+    {
+      "__resolveType": "site/sections/PartnersFAQ.tsx",
+      "title": "Perguntas frequentes",
+      "faqItems": [
+        {
+          "question": "Preciso ser desenvolvedor para participar?",
+          "answer": "Não necessariamente. Mas o time precisa ter ao menos um dev para implementar a solução."
+        },
+        {
+          "question": "Preciso pagar para participar?",
+          "answer": "Não, o hackathon é gratuito."
+        },
+        {
+          "question": "O evento é presencial?",
+          "answer": "100% online, com lives e materiais gravados. Porém, teremos um espaço presencial disponível no Rio de Janeiro para quem quiser imergir."
+        },
+        {
+          "question": "O que eu preciso preparar antes?",
+          "answer": "Ter familiaridade com Git e vontade de aprender a stack deco já é um ótimo começo."
+        }
+      ]
+    },
+    {
+      "__resolveType": "website/flags/multivariate/section.ts",
+      "variants": [
+        {
+          "value": {
+            "__resolveType": "site/sections/PartnersFinalCTA.tsx",
+            "title": "Ready to build together?",
+            "subtitle": "Start your application now or grab time for a quick intro.",
+            "primaryButton": {
+              "text": "Apply now",
+              "url": "https://form.typeform.com/to/jZbe1R71"
+            },
+            "secondaryButton": {
+              "text": "Book an intro",
+              "url": "https://form.typeform.com/to/LxKZbN9N"
+            }
+          },
+          "rule": {
+            "__resolveType": "website/matchers/never.ts"
+          }
+        }
+      ]
+    },
+    {
+      "__resolveType": "Footer"
+    }
+  ],
+  "__resolveType": "website/pages/Page.tsx",
+  "name": "Hackathon",
+  "seo": {
+    "__resolveType": "website/sections/Seo/SeoV2.tsx",
+    "image": "https://assets.decocache.com/decocms/1c8d91f7-a1fa-4de4-b692-9eff48a41d1f/hackathon-seo.png",
+    "title": "deco | Hackathon AI Challenges",
+    "description": "Participe do hackathon de IA da Deco! Enfrente desafios reais de clientes, concorra a prêmios em dinheiro, tenha acesso direto a executivos e transforme sua solução em parceria. Aberto para engenheiros, agências e participantes do deco.camp. Inscreva-se e destaque-se no ecossistema Deco!"
   }
+}
