@@ -15,6 +15,7 @@ import * as $FeaturesInteractive from "./islands/FeaturesInteractive.tsx";
 import * as $FormModal from "./islands/FormModal.tsx";
 import * as $GitHubStars from "./islands/GitHubStars.tsx";
 import * as $ProjectGrid from "./islands/ProjectGrid.tsx";
+import * as $ScrollToButton from "./islands/ScrollToButton.tsx";
 import * as $SendFormNewsletter from "./islands/SendFormNewsletter.tsx";
 import * as $UnicornStudioBackground from "./islands/UnicornStudioBackground.tsx";
 import type { Manifest } from "$fresh/server.ts";
@@ -36,6 +37,7 @@ const manifest = {
     "./islands/FormModal.tsx": $FormModal,
     "./islands/GitHubStars.tsx": $GitHubStars,
     "./islands/ProjectGrid.tsx": $ProjectGrid,
+    "./islands/ScrollToButton.tsx": $ScrollToButton,
     "./islands/SendFormNewsletter.tsx": $SendFormNewsletter,
     "./islands/UnicornStudioBackground.tsx": $UnicornStudioBackground,
   },

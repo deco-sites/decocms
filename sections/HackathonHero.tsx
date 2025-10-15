@@ -3,6 +3,7 @@ import Button from "../components/ui/Button.tsx";
 import Image from "apps/website/components/Image.tsx";
 import Icon from "../components/ui/Icon.tsx";
 import FormModal from "../islands/FormModal.tsx";
+import ScrollToButton from "../islands/ScrollToButton.tsx";
 
 export interface Props {
   /** @title Eyebrow Text */
@@ -18,7 +19,11 @@ export interface Props {
   primaryButtonUrl?: string;
   /** @title Secondary CTA Text */
   secondaryButtonText?: string;
+  /** @title Secondary CTA Target Section ID */
+  /** @description ID of the section to scroll to (e.g., "partner-benefits"). Leave empty for external URL. */
+  secondaryButtonTargetId?: string;
   /** @title Secondary CTA URL */
+  /** @description External URL (only used if Target Section ID is empty) */
   secondaryButtonUrl?: string;
   /** @title Trust Signal Title */
   trustSignalTitle?: string;
@@ -42,7 +47,8 @@ export default function HackathonHero({
   primaryButtonText = "Participar",
   primaryButtonUrl,
   secondaryButtonText = "Saber mais",
-  secondaryButtonUrl = "#next-section",
+  secondaryButtonTargetId = "partner-benefits",
+  secondaryButtonUrl,
   trustSignalTitle = "Ecossistema Deco",
   partnerLogos = [],
   showPartnerLogos = true,
@@ -162,15 +168,28 @@ export default function HackathonHero({
                   )}
                 </>
               )}
-              {secondaryButtonText && secondaryButtonUrl && (
-                <Button
-                  variant="secondary"
-                  size="medium"
-                  href={secondaryButtonUrl}
-                  class="!bg-dc-50 !text-dc-900 hover:!bg-dc-100"
-                >
-                  {secondaryButtonText}
-                </Button>
+              {secondaryButtonText && (
+                <>
+                  {secondaryButtonTargetId ? (
+                    // If target ID is provided, use scroll button
+                    <ScrollToButton
+                      targetId={secondaryButtonTargetId}
+                      class="px-6 py-3 bg-dc-50 text-dc-900 hover:bg-dc-100 rounded-lg font-semibold transition-colors"
+                    >
+                      <span>{secondaryButtonText}</span>
+                    </ScrollToButton>
+                  ) : secondaryButtonUrl ? (
+                    // Otherwise use regular link button
+                    <Button
+                      variant="secondary"
+                      size="medium"
+                      href={secondaryButtonUrl}
+                      class="!bg-dc-50 !text-dc-900 hover:!bg-dc-100"
+                    >
+                      {secondaryButtonText}
+                    </Button>
+                  ) : null}
+                </>
               )}
             </div>
           </div>
