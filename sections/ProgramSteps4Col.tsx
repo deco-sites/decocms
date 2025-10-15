@@ -56,19 +56,19 @@ export default function ProgramSteps4Col({
   steps = [
     {
       title: "Kick-off | 31/10 & 01/11",
-      description: "Cada dia terá um desafio diferente. Escolha um e entregue em até 48h após o kick-off"
+      description: "Cada dia terá um desafio diferente a ser divulgado no kick-off. Escolha o dia mais conveniente."
     },
     {
       title: "Check-points",
-      description: "Encontros rápidos ao final de cada dia para alinhamento e suporte"
+      description: "Encontros ao longo de cada dia, para alinhamento, dúvidas e suporte técnico."
     },
     {
       title: "Entrega final",
-      description: "Até 48h pós o kick-off"
+      description: "A entrega será realizada de forma assíncrona, através do upload da sua solução até 48h após o kick-off."
     },
     {
       title: "Resultados",
-      description: "Anúncio dos vencedores em live aberta"
+      description: "Anúncio dos vencedores em live aberta durante a semana seguinte"
     }
   ],
   tipText = "Nosso time estará disponível para eventuais dúvidas ao longo do Hackathon",

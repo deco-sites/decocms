@@ -71,23 +71,23 @@
     },
     {
       "__resolveType": "site/sections/PartnerBenefits.tsx",
-      "title": "Por que participar",
+      "title": "O que você ganhará",
       "subtitle": "BENEFÍCIOS",
       "topBenefits": [],
       "bottomBenefits": [
         {
           "title": "Prêmio em dinheiro",
-          "description": "R$5.000 para a melhor solução.",
+          "description": "Soluções selecionadas ganharão até R$ 5.000 ",
           "icon": "dollar-sign"
         },
         {
-          "title": "Acesso direto a C-levels e diretores",
-          "description": "Seu projeto pode abrir portas.",
+          "title": "Apresentação para executivos de mercado",
+          "description": "Seu projeto pode abrir portas em empresas que querem contratar",
           "icon": "building"
         },
         {
           "title": "Continuidade de projeto",
-          "description": "As melhores ideias podem se transformar em parcerias com clientes deco.",
+          "description": "As melhores soluções podem se transformar em parcerias com clientes deco",
           "icon": "users"
         }
       ]
@@ -99,19 +99,19 @@
       "partnerTypes": [
         {
           "title": "Agentic Engineers",
-          "description": "você quer criar soluções reais explorando automação, AI e workflows na prática",
+          "description": "builders solo que querem criar soluções reais explorando automação, AI e workflows na prática",
           "icon": "target"
         },
         {
-          "title": "Agências",
-          "description": "você quer testar o potencial da deco para entregar experiências web mais rápidas, escaláveis e inteligentes para seus clientes.",
+          "title": "Empresas implementadoras",
+          "description": "seu time quer se alavancar do potencial da deco para entregar experiências escaláveis e inteligentes para clientes",
           "icon": "zap"
         }
       ],
-      "readinessTitle": "deco.camp",
+      "readinessTitle": "Alunos deco.camp têm preferência",
       "requirements": [
         {
-          "text": "Participantes do deco.camp têm vaga garantida"
+          "text": "Participantes do deco.camp que querem além de ganhar sua certificação, concorrer a prêmios"
         }
       ]
     },
@@ -122,12 +122,12 @@
       "highlights": [
         {
           "title": "Times",
-          "description": "Sem restrições de número de participantes. É necessário pelo menos um(a) dev por time. Outras áreas são bem-vindas (design, PM, marketing etc).",
+          "description": "Máximo de 10 participantes por time. É necessário pelo menos um(a) dev por time. Outras áreas são bem-vindas (design, PM, marketing etc).",
           "featured": false
         },
         {
           "title": "Dedicação",
-          "description": "Você escolhe o quanto se envolve. As lives são gravadas e disponibilizadas. O importante é enviar a solução dentro do prazo estipulado para cada dia."
+          "description": "Você escolhe o quanto se envolve. As lives são gravadas e os desafios disponibilizados de forma assíncrona. O importante é enviar a solução dentro do prazo estipulado para cada dia."
         },
         {
           "title": "Setup",
@@ -156,11 +156,11 @@
         },
         {
           "question": "O evento é presencial?",
-          "answer": "100% online, com lives e materiais gravados. Porém, teremos um espaço presencial disponível no Rio de Janeiro para quem quiser imergir."
+          "answer": "100% online, com lives e materiais gravados. Porém, estamos avaliando ter um espaço presencial disponível em São Paulo para quem quiser imergir. Mais informações serão divulgadas em breve."
         },
         {
           "question": "O que eu preciso preparar antes?",
-          "answer": "Ter familiaridade com Git e vontade de aprender a stack deco já é um ótimo começo."
+          "answer": "Ter familiaridade com Git e vontade de aprender a stack deco já é um ótimo começo. Os alunos deco.camp já estarão all set com materiais disponíveis no curso."
         }
       ]
     },

@@ -33,9 +33,9 @@ export interface Props {
 }
 
 export default function HackathonHero({
-  eyebrowText = "31/10 & 01/10",
-  title = "Hackathon AI Challenges",
-  subtitle = "Participe do hackathon da Deco e resolva um desafio real de um cliente em apenas 48h.",
+  eyebrowText = "31/10 & 01/11",
+  title = "Hackathon deco  AI Apps edition",
+  subtitle = "Participe e resolva um desafio real de um cliente nosso em 48h",
   primaryButtonText = "Participar",
   secondaryButtonText = "Saber mais",
   secondaryButtonUrl = "#next-section",
