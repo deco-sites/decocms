@@ -71,7 +71,7 @@ export default function ProgramSteps4Col({
       description: "Anúncio dos vencedores em live aberta durante a semana seguinte"
     }
   ],
-  tipText = "Nosso time estará disponível para eventuais dúvidas ao longo do Hackathon",
+  tipText = "As vagas são limitadas, se inscreva e confirmaremos sua participação até dia 23/10",
   tipCtaText = "Participar",
   enableFormModal = true,
   modalTitle = "Inscrição",
