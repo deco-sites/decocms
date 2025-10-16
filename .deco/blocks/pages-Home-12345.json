@@ -8,8 +8,8 @@
     },
     {
       "__resolveType": "site/sections/Hero.tsx",
-      "title": "The open-source admin for your internal AI apps",
-      "subtitle": "Prototype in chat, ship in code, and run & monetize agentic apps in production.",
+      "title": "Open-source admin for scalable AI apps",
+      "subtitle": "Generate full-stack TypeScript AI apps, from database to agentic workflows, connected to your MCPs. Deploy anywhere.",
       "primaryButtonText": "Testar grátis",
       "integrationsTitle": "Seamless Integrations",
       "icons": [
@@ -29,7 +29,8 @@
       "buttonText": "Start now (beta)",
       "buttonUrl": "https://admin.decocms.com",
       "backgroundImage": "https://assets.decocache.com/decocms/406169e4-18af-4858-a350-9aa75c0ec4de/herobanner2.svg",
-      "secondaryButtonUrl": "https://form.typeform.com/to/LxKZbN9N?typeform-source=www.decocms.com"
+      "secondaryButtonUrl": "https://github.com/deco-cx/chat",
+      "secondaryButtonText": "Self-host (soon)"
     },
     {
       "__resolveType": "site/sections/TextMedia.tsx",

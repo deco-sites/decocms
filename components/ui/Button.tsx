@@ -16,6 +16,7 @@ export interface ButtonProps {
    * @description Link para onde o botão direciona (opcional)
    */
   href?: string;
+  target?: string;
   /**
    * @title Ação de clique
    * @description Função executada ao clicar no botão (para botões que não são links)
@@ -41,6 +42,7 @@ export interface ButtonProps {
 export default function Button({
   variant = "primary",
   size = "medium",
+  target = "_blank",
   href,
   onClick,
   className = "",
@@ -75,7 +77,7 @@ export default function Button({
   // Render as link if href is provided
   if (href) {
     return (
-      <a href={href} className={buttonClasses}>
+      <a href={href} target={target} className={buttonClasses}>
         {children}
       </a>
     );

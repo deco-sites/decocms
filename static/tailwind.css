@@ -3253,7 +3253,7 @@ input.tab:checked + .tab-content,
       "SF Pro", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
       sans-serif;
     font-weight: 450;
-    font-size: 4.25rem; /* 60px */
+    font-size: 4rem; 
     line-height: 1;
     letter-spacing: -0.02em;
     color: #07401a;
@@ -3453,6 +3453,9 @@ input.tab:checked + .tab-content,
 .left-\[11px\] {
   left: 11px;
 }
+.left-\[2px\] {
+  left: 2px;
+}
 .left-\[5px\] {
   left: 5px;
 }
@@ -3506,6 +3509,9 @@ input.tab:checked + .tab-content,
 }
 .top-\[11px\] {
   top: 11px;
+}
+.top-\[2px\] {
+  top: 2px;
 }
 .top-\[41px\] {
   top: 41px;
@@ -3768,8 +3774,14 @@ input.tab:checked + .tab-content,
 .h-\[10px\] {
   height: 10px;
 }
+.h-\[14px\] {
+  height: 14px;
+}
 .h-\[174px\] {
   height: 174px;
+}
+.h-\[18px\] {
+  height: 18px;
 }
 .h-\[210px\] {
   height: 210px;
@@ -3926,6 +3938,12 @@ input.tab:checked + .tab-content,
 }
 .w-\[120px\] {
   width: 120px;
+}
+.w-\[14px\] {
+  width: 14px;
+}
+.w-\[18px\] {
+  width: 18px;
 }
 .w-\[300px\] {
   width: 300px;
@@ -4532,6 +4550,9 @@ input.tab:checked + .tab-content,
 .rounded-tr-2xl {
   border-top-right-radius: 1rem;
 }
+.\!border {
+  border-width: 1px !important;
+}
 .border {
   border-width: 1px;
 }
@@ -4552,6 +4573,10 @@ input.tab:checked + .tab-content,
 }
 .border-none {
   border-style: none;
+}
+.\!border-gray-200 {
+  --tw-border-opacity: 1 !important;
+  border-color: rgb(229 231 235 / var(--tw-border-opacity)) !important;
 }
 .border-\[\#07401A\] {
   --tw-border-opacity: 1;
@@ -5594,6 +5619,10 @@ input.tab:checked + .tab-content,
   --tw-bg-opacity: 1 !important;
   background-color: rgb(208 236 26 / var(--tw-bg-opacity)) !important;
 }
+.\!bg-white {
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity)) !important;
+}
 .bg-\[\#07401A\] {
   --tw-bg-opacity: 1;
   background-color: rgb(7 64 26 / var(--tw-bg-opacity));
@@ -5751,6 +5780,9 @@ input.tab:checked + .tab-content,
 .bg-blue-950 {
   --tw-bg-opacity: 1;
   background-color: rgb(23 37 84 / var(--tw-bg-opacity));
+}
+.bg-current {
+  background-color: currentColor;
 }
 .bg-cyan-100 {
   --tw-bg-opacity: 1;
