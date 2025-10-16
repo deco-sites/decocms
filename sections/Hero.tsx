@@ -12,10 +12,6 @@ export interface Props {
   buttonText?: string;
   /** @title URL do Botão */
   buttonUrl?: string;
-  /** @title Texto do Botão Secundário */
-  secondaryButtonText?: string;
-  /** @title URL do Botão Secundário */
-  secondaryButtonUrl?: string;
   /** @title Título do bloco de integrações */
   integrationsTitle?: string;
   /** @title Ícones do carrossel */
@@ -32,8 +28,6 @@ export default function Hero({
     "Prototype in chat, ship in code, and run & monetize agentic apps in production.",
   buttonText = "Get started",
   buttonUrl = "/",
-  secondaryButtonText = "Learn more",
-  secondaryButtonUrl = "/docs",
   integrationsTitle = "Seamless Integrations",
   icons = [
     "https://placehold.co/80x80",
@@ -94,16 +88,6 @@ export default function Hero({
                 >
                   {buttonText}
                 </Button>
-                {secondaryButtonText && secondaryButtonUrl && (
-                  <Button
-                    variant="secondary"
-                    size="medium"
-                    href={secondaryButtonUrl}
-                    className="bg-dc-50 text-dc-900 hover:bg-dc-100"
-                  >
-                    {secondaryButtonText}
-                  </Button>
-                )}
               </div>
             </div>
           </main>

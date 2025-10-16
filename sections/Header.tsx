@@ -50,7 +50,7 @@ export default function Header({
     { label: "Resources", href: "/resources" },
   ],
   ctaHref = "/",
-  ctaText = "Get early access",
+  ctaText = "Start now (beta)",
   githubRepo = "deco-cx/chat",
   githubIcon,
 }: Props) {
