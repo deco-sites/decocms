@@ -59,15 +59,13 @@
         "showPartnerLogos": true,
         "partnerLogos": [
           "https://assets.decocache.com/decocms/0f8f9470-7bb4-4bc3-bbcb-b6a5280829bf/livemode-1.svg",
-          "https://assets.decocache.com/decocms/896571a1-76df-493c-9f01-bedd37d9b835/superfrete-1.svg",
           "https://assets.decocache.com/decocms/26fc68a1-c897-4d39-8c48-2a1611a6ee40/farm-rio.svg",
-          "https://assets.decocache.com/decocms/14935bca-b847-4ca9-b7b1-39059b0095e0/gupy_logo.svg",
-          "https://assets.decocache.com/decocms/6cd6e7b3-a2d0-473a-b80c-a2692a0c563e/leroy.svg",
           "https://assets.decocache.com/decocms/5fcc3b4f-f95d-488c-9342-9be8f13d6606/cogna.svg"
         ],
         "backgroundImageDesktop": "https://assets.decocache.com/decocms/b58cb865-8ec8-433e-9de7-4f1ad0657c17/bg-hackathon-desk.png",
         "backgroundImageMobile": "https://assets.decocache.com/decocms/a1d234e1-e659-4ce0-8d33-f3297dea4bbc/bg-hackaton-mobile.png",
-        "primaryButtonUrl": " https://luma.com/v2urftya"
+        "primaryButtonUrl": " https://luma.com/v2urftya",
+        "trustSignalTitle": "QUEM PROPÕE OS DESAFIOS"
       }
     },
     {
