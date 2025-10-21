@@ -1,0 +1,15 @@
+{
+  "__resolveType": "website/pages/Page.tsx",
+  "name": "Hackathon OS - Notificações",
+  "path": "/hackathon-os/notificacoes",
+  "sections": [
+    {
+      "__resolveType": "site/hackathon-os/notificacoes/sections/NotificationsListComplete.tsx"
+    }
+  ],
+  "seo": {
+    "__resolveType": "website/sections/Seo/SeoV2.tsx",
+    "title": "Notificações - Hackathon OS",
+    "description": "Central de notificações"
+  }
+}

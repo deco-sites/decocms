@@ -1,0 +1,15 @@
+{
+  "__resolveType": "website/pages/Page.tsx",
+  "name": "Hackathon OS - Eventos",
+  "path": "/hackathon-os/eventos",
+  "sections": [
+    {
+      "__resolveType": "site/hackathon-os/eventos/sections/EventsListComplete.tsx"
+    }
+  ],
+  "seo": {
+    "__resolveType": "website/sections/Seo/SeoV2.tsx",
+    "title": "Eventos - Hackathon OS",
+    "description": "Explore e participe de hackathons incríveis"
+  }
+}

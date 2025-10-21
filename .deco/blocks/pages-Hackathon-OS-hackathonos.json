@@ -1,0 +1,15 @@
+{
+  "__resolveType": "website/pages/Page.tsx",
+  "name": "Hackathon OS",
+  "path": "/hackathon-os",
+  "sections": [
+    {
+      "__resolveType": "site/hackathon-os/sections/LandingPageComplete.tsx"
+    }
+  ],
+  "seo": {
+    "__resolveType": "website/sections/Seo/SeoV2.tsx",
+    "title": "Hackathon OS - Organize Hackathons de Forma Simples",
+    "description": "Plataforma completa para gerenciar eventos, times, desafios, submissões e avaliações. Tudo em um só lugar."
+  }
+}

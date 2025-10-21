@@ -1,0 +1,16 @@
+{
+  "__resolveType": "website/pages/Page.tsx",
+  "name": "FinTech Innovation",
+  "path": "/hackathon-os/evento/evt3",
+  "sections": [
+    {
+      "__resolveType": "site/hackathon-os/evento/sections/EventPageIntro.tsx",
+      "eventId": "evt3"
+    }
+  ],
+  "seo": {
+    "__resolveType": "website/sections/Seo/SeoV2.tsx",
+    "title": "FinTech Innovation - Hackathon OS",
+    "description": "Revolucione o mercado financeiro com soluções tecnológicas"
+  }
+}

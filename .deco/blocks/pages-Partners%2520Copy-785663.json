@@ -123,7 +123,7 @@
       "highlights": [
         {
           "title": "Times",
-          "description": "Máximo de 10 participantes por time. É necessário pelo menos um(a) dev por time. Outras áreas são bem-vindas (design, PM, marketing etc).",
+          "description": "Máximo de 2 participantes por time. É necessário pelo menos um(a) dev por time. Outras áreas são bem-vindas (design, PM, marketing etc).",
           "featured": false
         },
         {
@@ -132,7 +132,7 @@
         },
         {
           "title": "Setup",
-          "description": "As instruções serão enviadas até 29 de Outubro. Enquanto isso, explore nossa documentação e workshops disponíveis em nosso canal.",
+          "description": "As instruções serão enviadas até 30 de Outubro. Enquanto isso, explore nossa documentação e workshops disponíveis em nosso canal.",
           "featured": false
         }
       ]
@@ -158,7 +158,7 @@
         },
         {
           "question": "O evento é presencial?",
-          "answer": "100% online, com lives e materiais gravados. Porém, estamos avaliando ter um espaço presencial disponível em São Paulo para quem quiser imergir. Mais informações serão divulgadas em breve."
+          "answer": "100% online, com lives e materiais gravados. Teremos checkpoints síncronos a serem divulgados no dia anterior"
         },
         {
           "question": "O que eu preciso preparar antes?",

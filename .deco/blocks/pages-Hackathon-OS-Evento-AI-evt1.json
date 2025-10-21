@@ -1,0 +1,16 @@
+{
+  "__resolveType": "website/pages/Page.tsx",
+  "name": "Hackathon AI 2024",
+  "path": "/hackathon-os/evento/evt1",
+  "sections": [
+    {
+      "__resolveType": "site/hackathon-os/evento/sections/EventPageIntro.tsx",
+      "eventId": "evt1"
+    }
+  ],
+  "seo": {
+    "__resolveType": "website/sections/Seo/SeoV2.tsx",
+    "title": "Hackathon AI 2024 - Hackathon OS",
+    "description": "Desenvolva soluções inovadoras usando Inteligência Artificial"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "__resolveType": "website/pages/Page.tsx",
+  "name": "Hackathon OS - Perfil",
+  "path": "/hackathon-os/perfil",
+  "sections": [
+    {
+      "__resolveType": "site/hackathon-os/perfil/sections/ProfilePageComplete.tsx"
+    }
+  ],
+  "seo": {
+    "__resolveType": "website/sections/Seo/SeoV2.tsx",
+    "title": "Meu Perfil - Hackathon OS",
+    "description": "Gerencie suas informações pessoais"
+  }
+}

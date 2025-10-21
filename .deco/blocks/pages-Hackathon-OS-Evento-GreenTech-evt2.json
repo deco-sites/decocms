@@ -1,0 +1,16 @@
+{
+  "__resolveType": "website/pages/Page.tsx",
+  "name": "GreenTech Challenge",
+  "path": "/hackathon-os/evento/evt2",
+  "sections": [
+    {
+      "__resolveType": "site/hackathon-os/evento/sections/EventPageIntro.tsx",
+      "eventId": "evt2"
+    }
+  ],
+  "seo": {
+    "__resolveType": "website/sections/Seo/SeoV2.tsx",
+    "title": "GreenTech Challenge - Hackathon OS",
+    "description": "Crie tecnologias sustentáveis para um futuro mais verde"
+  }
+}

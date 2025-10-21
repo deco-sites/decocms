@@ -1,0 +1,15 @@
+{
+  "__resolveType": "website/pages/Page.tsx",
+  "name": "Hackathon OS - Criar Evento",
+  "path": "/hackathon-os/admin/evento/novo",
+  "sections": [
+    {
+      "__resolveType": "site/hackathon-os/admin/sections/AdminEventCreate.tsx"
+    }
+  ],
+  "seo": {
+    "__resolveType": "website/sections/Seo/SeoV2.tsx",
+    "title": "Criar Novo Evento - Hackathon OS",
+    "description": "Painel administrativo para criar novos hackathons"
+  }
+}
