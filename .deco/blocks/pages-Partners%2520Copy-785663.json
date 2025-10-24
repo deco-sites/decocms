@@ -65,7 +65,9 @@
         "backgroundImageDesktop": "https://assets.decocache.com/decocms/b58cb865-8ec8-433e-9de7-4f1ad0657c17/bg-hackathon-desk.png",
         "backgroundImageMobile": "https://assets.decocache.com/decocms/a1d234e1-e659-4ce0-8d33-f3297dea4bbc/bg-hackaton-mobile.png",
         "primaryButtonUrl": " https://luma.com/v2urftya",
-        "trustSignalTitle": "QUEM PROPÕE OS DESAFIOS"
+        "trustSignalTitle": "Resolva desafios reais de empresas, ou crie o seu",
+        "title": "Hackathon deco AI Apps edition",
+        "subtitle": "Um hackathon para quem quer sair do prompt e resolver um problema real. US$50 de créditos para todos participantes."
       }
     },
     {
@@ -76,18 +78,18 @@
       "bottomBenefits": [
         {
           "title": "Prêmio em dinheiro",
-          "description": "Soluções selecionadas ganharão até R$ 5.000 ",
+          "description": "Projetos selecionados podem ganhar até R$ 5.000.",
           "icon": "dollar-sign"
+        },
+        {
+          "title": "US$ 50 de créditos na plataforma",
+          "description": "Créditos na wallet para TODOS os participantes durante o Hackathon.",
+          "icon": "sprout"
         },
         {
           "title": "Apresentação para executivos de mercado",
           "description": "Seu projeto pode abrir portas em empresas que querem contratar",
           "icon": "building"
-        },
-        {
-          "title": "Continuidade de projeto",
-          "description": "As melhores soluções podem se transformar em parcerias com clientes deco",
-          "icon": "users"
         }
       ]
     },
@@ -98,12 +100,12 @@
       "partnerTypes": [
         {
           "title": "Agentic Engineers",
-          "description": "builders solo que querem criar soluções reais explorando automação, AI e workflows na prática",
+          "description": "Builders que já testaram AI e querem levar para produção com workflows, DB e Auth.",
           "icon": "target"
         },
         {
           "title": "Empresas implementadoras",
-          "description": "seu time quer se alavancar do potencial da deco para entregar experiências escaláveis e inteligentes para clientes",
+          "description": "Seu time quer se alavancar do potencial da deco para entregar experiências escaláveis e inteligentes para clientes",
           "icon": "zap"
         }
       ],

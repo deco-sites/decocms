@@ -8,8 +8,8 @@
     },
     {
       "__resolveType": "site/sections/Hero.tsx",
-      "title": "Open-source admin for scalable AI apps",
-      "subtitle": "Generate full-stack TypeScript AI apps, from database to agentic workflows, connected to your MCPs. Deploy anywhere.",
+      "title": "Construa seu Full-Stack AI App em 48h",
+      "subtitle": "TypeScript/React/Next.js + Agents + Workflows + DB + Auth. US$50 de créditos para todos.",
       "primaryButtonText": "Testar grátis",
       "integrationsTitle": "Seamless Integrations",
       "icons": [

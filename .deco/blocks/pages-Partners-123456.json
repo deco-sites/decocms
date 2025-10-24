@@ -10,13 +10,13 @@
     },
     {
       "__resolveType": "site/sections/PartnersHero.tsx",
-      "title": "Become a deco partner",
-      "subtitle": "Build and monetize AI agents and workflows – join deco's partner program and launch fast.",
-      "primaryButtonText": "Apply today",
+      "title": "Torne-se um parceiro deco",
+      "subtitle": "Crie e monetize agentes de IA e workflows – junte-se ao programa de parceiros da deco e lance rapidamente.",
+      "primaryButtonText": "Candidate-se hoje",
       "primaryButtonUrl": "https://form.typeform.com/to/jZbe1R71",
-      "secondaryButtonText": "Book 20-min intro",
+      "secondaryButtonText": "Agendar intro de 20 min",
       "secondaryButtonUrl": "https://form.typeform.com/to/LxKZbN9N",
-      "trustSignalTitle": "Who's Already Building with deco CMS",
+      "trustSignalTitle": "Quem já está construindo com deco CMS",
       "partnerLogos": [
         "https://assets.decocache.com/decocms/05034824-5a80-49a3-b02b-17e00b19b2b7/superfrete.svg",
         "https://assets.decocache.com/decocms/a4b4772e-6e0f-42ee-bec9-6bf7d15c0fe9/livemode.svg",
@@ -30,174 +30,174 @@
     },
     {
       "__resolveType": "site/sections/PartnerBenefits.tsx",
-      "title": "Why join now",
-      "subtitle": "What makes joining worth it",
+      "title": "Por que participar agora",
+      "subtitle": "O que torna a parceria valiosa",
       "topBenefits": [
         {
-          "title": "Win deals faster",
-          "description": "Leverage deco to go from prompt to production seemlessly",
+          "title": "Feche negócios mais rápido",
+          "description": "Aproveite a deco para ir do prompt à produção sem dificuldades",
           "image": "https://assets.decocache.com/decocms/76f60c07-c3a2-4c71-b10b-3f6d1ab182c9/winmoney.png"
         },
         {
-          "title": "Monetize your way",
-          "description": "Commission, revenue share and marketplace in one billing system",
+          "title": "Monetize do seu jeito",
+          "description": "Comissão, compartilhamento de receita e marketplace em um sistema de faturamento",
           "image": "https://assets.decocache.com/decocms/11e7c3db-46e1-46b0-be47-00a58c6a1c04/monetizeway.png"
         }
       ],
       "bottomBenefits": [
         {
-          "title": "Enterprise ready",
-          "description": "Observability, FinOps, RBAC, and governance.",
+          "title": "Pronto para empresas",
+          "description": "Observabilidade, FinOps, RBAC e governança.",
           "icon": "bookmark-check"
         },
         {
-          "title": "Grow with us",
-          "description": "listed as partner, co-marketing events, backlog priority",
+          "title": "Cresça conosco",
+          "description": "listado como parceiro, eventos de co-marketing, prioridade no backlog",
           "icon": "sprout"
         },
         {
-          "title": "Up skill your team",
-          "description": "free workshops, certifications & jobs listings",
+          "title": "Capacite seu time",
+          "description": "workshops gratuitos, certificações e listagem de vagas",
           "icon": "users"
         }
       ]
     },
     {
       "__resolveType": "site/sections/WhoShouldApply.tsx",
-      "subtitle": "Perfect fit partners",
-      "title": "Who should apply",
+      "subtitle": "Parceiros ideais",
+      "title": "Quem deve se candidatar",
       "partnerTypes": [
         {
-          "title": "Agentic Agencies",
-          "description": "you develop and deliver agentic software (AI Agents, Workflows, Views)",
+          "title": "Agências Agênticas",
+          "description": "você desenvolve e entrega software agêntico (Agentes de IA, Workflows, Views)",
           "icon": "target"
         },
         {
           "title": "ISVs",
-          "description": "you want to monetize useful piece of software on top of deco (MCPs, AI Apps, etc)",
+          "description": "você quer monetizar software útil em cima da deco (MCPs, AI Apps, etc)",
           "icon": "zap"
         },
         {
-          "title": "Technology Partners",
-          "description": "you have an independent software that fits with deco (Cloud, Observability, etc)",
+          "title": "Parceiros de Tecnologia",
+          "description": "você tem um software independente que se integra com a deco (Cloud, Observabilidade, etc)",
           "icon": "users"
         }
       ],
-      "readinessTitle": "Minimum readiness:",
+      "readinessTitle": "Prontidão mínima:",
       "requirements": [
         {
-          "text": "At least 2 developers with valid certifications on https://deco.camp"
+          "text": "Pelo menos 2 desenvolvedores com certificações válidas em https://deco.camp"
         },
         {
-          "text": "Publish 1 AI App or Custom MCP Server"
+          "text": "Publicar 1 AI App ou Custom MCP Server"
         },
         {
-          "text": "Last 30 day developer activity on our main open-source repository"
+          "text": "Atividade de desenvolvedor nos últimos 30 dias em nosso repositório principal open-source"
         }
       ]
     },
     {
       "__resolveType": "site/sections/PartnerHighlights.tsx",
-      "subtitle": "highlights",
-      "title": "What you get",
+      "subtitle": "destaques",
+      "title": "O que você ganha",
       "highlights": [
         {
-          "title": "Sandbox credits",
+          "title": "Créditos sandbox",
           "description": "US$100",
           "featured": true
         },
         {
-          "title": "partner listing",
-          "description": "Get found on our find a partner page, ordered by results "
+          "title": "Listagem de parceiro",
+          "description": "Seja encontrado em nossa página de busca de parceiros, ordenado por resultados"
         },
         {
-          "title": "Certifications",
-          "description": "L1 Agentic Engineers & more @ deco.camp"
+          "title": "Certificações",
+          "description": "Engenheiros Agênticos L1 e mais @ deco.camp"
         },
         {
-          "title": "Leads & co‑marketing",
-          "description": "Referred directly by deco team & co-marketing 50/50",
+          "title": "Leads e co-marketing",
+          "description": "Indicado diretamente pela equipe deco & co-marketing 50/50",
           "featured": false
         },
         {
-          "title": "Support SLAs",
-          "description": "Private group with deco support"
+          "title": "SLAs de suporte",
+          "description": "Grupo privado com suporte deco"
         }
       ],
-      "targetTimeNote": "Launch your first AI project in 7 days"
+      "targetTimeNote": "Lance seu primeiro projeto de IA em 7 dias"
     },
     {
       "__resolveType": "site/sections/ProgramSteps.tsx",
-      "subtitle": "How to get started",
-      "title": "How the program works",
+      "subtitle": "Como começar",
+      "title": "Como o programa funciona",
       "steps": [
         {
-          "title": "Apply",
-          "description": "sign-up and let us know your previous experience and the partnership type"
+          "title": "Candidate-se",
+          "description": "inscreva-se e conte-nos sobre sua experiência anterior e o tipo de parceria"
         },
         {
-          "title": "Get certified",
-          "description": "certify your team on deco.camp, claim your credits and deliver your first solution"
+          "title": "Obtenha certificação",
+          "description": "certifique seu time em deco.camp, reivindique seus créditos e entregue sua primeira solução"
         },
         {
-          "title": "Ramp up",
-          "description": "register deals, request co-marketing, and publish case studies."
+          "title": "Acelere",
+          "description": "registre negócios, solicite co-marketing e publique casos de estudo."
         }
       ],
-      "tipText": "Not sure if you fit the program? Book a 20‑min intro call",
-      "tipCtaText": "Book 20-min intro",
+      "tipText": "Não tem certeza se você se encaixa no programa? Agende uma chamada de 20 min",
+      "tipCtaText": "Agendar intro de 20 min",
       "tipCtaUrl": "https://form.typeform.com/to/LxKZbN9N"
     },
     {
       "__resolveType": "site/sections/PartnerTiers.tsx",
-      "subtitle": "Partner tiers at a glance",
-      "title": "All tiers",
+      "subtitle": "Níveis de parceiros resumidos",
+      "title": "Todos os níveis",
       "tiers": [
         {
-          "name": "Registered",
+          "name": "Registrado",
           "image": "https://assets.decocache.com/decocms/80095e99-4928-49cd-919d-cc8218d6ff5f/tier04.png",
           "benefits": [
             {
-              "text": "Deal reg",
+              "text": "Registro de negócio",
               "icon": "zap"
             },
             {
-              "text": "Team discount for deco.camp",
+              "text": "Desconto em equipe para deco.camp",
               "icon": "newspaper"
             },
             {
               "icon": "dollar-sign",
-              "text": "Bounties listing"
+              "text": "Listagem de recompensas"
             }
           ],
-          "requirements": "Application + 1 case plan"
+          "requirements": "Candidatura + 1 plano de caso"
         },
         {
-          "name": "Certified",
+          "name": "Certificado",
           "image": "https://assets.decocache.com/decocms/8ce8cfd6-241d-44b9-9712-47d5e7a39d14/tier03.png",
-          "requirements": "2 certifications + 1 public demo",
+          "requirements": "2 certificações + 1 demo pública",
           "benefits": [
             {
-              "text": "Find a partner listing",
+              "text": "Listagem de busca de parceiro",
               "icon": "zap"
             },
             {
-              "text": "Co‑marketing",
+              "text": "Co-marketing",
               "icon": "newspaper"
             },
             {
-              "text": "Lead Share",
+              "text": "Compartilhamento de Leads",
               "icon": "dollar-sign"
             }
           ]
         },
         {
-          "name": "Delivered",
+          "name": "Entregue",
           "image": "https://assets.decocache.com/decocms/0a517380-6b9b-49d2-97c4-133803d61901/tier02.png",
-          "requirements": "4 certifications + 1 delivered project",
+          "requirements": "4 certificações + 1 projeto entregue",
           "benefits": [
             {
-              "text": "Priority leads",
+              "text": "Leads prioritários",
               "icon": "zap"
             },
             {
@@ -205,7 +205,7 @@
               "icon": "newspaper"
             },
             {
-              "text": "Early Betas",
+              "text": "Betas antecipados",
               "icon": "dollar-sign"
             }
           ]
@@ -213,24 +213,24 @@
         {
           "name": "Essence",
           "image": "https://assets.decocache.com/decocms/09a251a9-d774-4476-a892-18e8aa23d85e/tier01.png",
-          "requirements": "8 certifications + $200k ARR ",
+          "requirements": "8 certificações + $200k ARR",
           "benefits": [
             {
-              "text": "Enterprise deals",
+              "text": "Negócios corporativos",
               "icon": "zap"
             },
             {
-              "text": "Branded projects",
+              "text": "Projetos com marca",
               "icon": "newspaper"
             },
             {
-              "text": "Investor status",
+              "text": "Status de investidor",
               "icon": "dollar-sign"
             }
           ]
         }
       ],
-      "fullDetailsNote": "Decision within 2 business days",
+      "fullDetailsNote": "Decisão em até 2 dias úteis",
       "fullDetailsUrl": " "
     },
     {
@@ -239,19 +239,19 @@
         {
           "value": {
             "__resolveType": "site/sections/ApplicationProcess.tsx",
-            "title": "What happens after you apply",
+            "title": "O que acontece após você se candidatar",
             "processSteps": [
               {
-                "description": "Auto‑acknowledgment within 1 hour."
+                "description": "Confirmação automática em até 1 hora."
               },
               {
-                "description": "Decision within 2 business days."
+                "description": "Decisão em até 2 dias úteis."
               },
               {
-                "description": "If approved: sandbox access + Starter Kit + certification invite."
+                "description": "Se aprovado: acesso ao sandbox + Kit Inicial + convite para certificação."
               },
               {
-                "description": "If waitlisted: suggested steps to qualify (e.g., blueprint completion, cohort date)."
+                "description": "Se em lista de espera: etapas sugeridas para qualificação (ex.: conclusão de blueprint, data da turma)."
               }
             ]
           },
@@ -263,27 +263,27 @@
     },
     {
       "__resolveType": "site/sections/PartnersFAQ.tsx",
-      "title": "FAQs",
+      "title": "Perguntas Frequentes",
       "faqItems": [
         {
-          "question": "Do you provide customer leads?",
-          "answer": "Yes, for certified and listed partners, based on its tier and availability"
+          "question": "Vocês fornecem leads de clientes?",
+          "answer": "Sim, para parceiros certificados e listados, com base em seu nível e disponibilidade"
         },
         {
-          "question": "Can we resell deco?",
-          "answer": "Yes, there are several ways to do it. From a simple affiliate partnership from building white label solutions on top of deco infrastructure."
+          "question": "Podemos revender a deco?",
+          "answer": "Sim, existem várias maneiras de fazer isso. Desde uma simples parceria de afiliados até construir soluções white label em cima da infraestrutura deco."
         },
         {
-          "question": "How do deal conflicts work?",
-          "answer": "Registered deals have a 60 day protection window."
+          "question": "Como funcionam os conflitos de negócio?",
+          "answer": "Negócios registrados têm uma janela de proteção de 60 dias."
         },
         {
-          "question": "How do certifications work?",
-          "answer": "There are monthly opportunities to certify your team on https://deco.camp"
+          "question": "Como funcionam as certificações?",
+          "answer": "Há oportunidades mensais para certificar seu time em https://deco.camp"
         },
         {
-          "question": "Where can we see pricing?",
-          "answer": "deco CMS has a usage-based pricing at https://decocms.com/pricing"
+          "question": "Onde podemos ver os preços?",
+          "answer": "O deco CMS tem preços baseados em uso em https://decocms.com/pricing"
         }
       ]
     },
@@ -293,26 +293,26 @@
         {
           "value": {
             "__resolveType": "site/sections/LightTerms.tsx",
-            "title": "Light T&Cs (summary)",
+            "title": "Termos Resumidos (sumário)",
             "terms": [
               {
-                "title": "Referral payouts",
-                "description": "within 30 days of Deco receiving first payment; cap at 12 months unless reseller."
+                "title": "Pagamentos de indicação",
+                "description": "dentro de 30 dias após a Deco receber o primeiro pagamento; limite de 12 meses, a menos que seja revendedor."
               },
               {
-                "title": "Reseller",
-                "description": "bills end‑customer; Deco bills partner; service/support split: L1 (partner) / L2+ (Deco)."
+                "title": "Revendedor",
+                "description": "cobra o cliente final; Deco cobra o parceiro; divisão de serviço/suporte: L1 (parceiro) / L2+ (Deco)."
               },
               {
-                "title": "IP:",
-                "description": "pre‑existing stays with owner; new code defaults Apache‑2.0 (or agreed license)."
+                "title": "PI:",
+                "description": "pré-existente permanece com o proprietário; novo código padrão Apache-2.0 (ou licença acordada)."
               },
               {
-                "title": "Brand usage:",
-                "description": "follow Deco brand guide; badges by tier/cert."
+                "title": "Uso de marca:",
+                "description": "siga o guia de marca Deco; emblemas por nível/certificação."
               }
             ],
-            "footerNote": "Full legal available during onboarding."
+            "footerNote": "Documentação legal completa disponível durante o onboarding."
           },
           "rule": {
             "__resolveType": "website/matchers/never.ts"
@@ -322,14 +322,14 @@
     },
     {
       "__resolveType": "site/sections/PartnersFinalCTA.tsx",
-      "title": "Ready to build together?",
-      "subtitle": "Start your application now or grab time for a quick intro.",
+      "title": "Pronto para construir juntos?",
+      "subtitle": "Inicie sua candidatura agora ou agende um tempo para uma intro rápida.",
       "primaryButton": {
-        "text": "Apply now",
+        "text": "Candidate-se agora",
         "url": "https://form.typeform.com/to/jZbe1R71"
       },
       "secondaryButton": {
-        "text": "Book an intro",
+        "text": "Agendar uma intro",
         "url": "https://form.typeform.com/to/LxKZbN9N"
       }
     },
@@ -339,14 +339,14 @@
   ],
   "__resolveType": "website/pages/Page.tsx",
   "seo": {
-    "title": "Become a deco partner | Build and Sell Agentic Software",
-    "description": "Join the deco partner program and build AI-native experiences with our open-source runtime and Context CMS. Get sandbox credits, leads, certifications, and co-marketing opportunities.",
+    "title": "Torne-se um parceiro deco | Construa e Venda Software Agêntico",
+    "description": "Participe do programa de parceiros deco e construa experiências nativas de IA com nosso runtime open-source e Context CMS. Obtenha créditos sandbox, leads, certificações e oportunidades de co-marketing.",
     "canonical": "https://deco.cx/partners",
     "noIndexing": false,
-    "keywords": "deco partners, AI software development, agentic software, partner program, system integrators, ISV partners, technology partners, AI workflows, agent development, Context CMS",
+    "keywords": "parceiros deco, desenvolvimento de software IA, software agêntico, programa de parceiros, integradores de sistemas, parceiros ISV, parceiros de tecnologia, workflows IA, desenvolvimento de agentes, Context CMS",
     "openGraph": {
-      "title": "Become a deco Partner | Build and Sell Agentic Software",
-      "description": "Join the deco partner program and build AI-native experiences with our open-source runtime and Context CMS. Get sandbox credits, leads, certifications, and co-marketing opportunities.",
+      "title": "Torne-se um Parceiro deco | Construa e Venda Software Agêntico",
+      "description": "Participe do programa de parceiros deco e construa experiências nativas de IA com nosso runtime open-source e Context CMS. Obtenha créditos sandbox, leads, certificações e oportunidades de co-marketing.",
       "image": "https://deco.cx/assets/partners-og-image.jpg",
       "url": "https://deco.cx/partners",
       "type": "website",
@@ -354,27 +354,27 @@
     },
     "twitter": {
       "card": "summary_large_image",
-      "title": "Become a deco Partner | Build and Sell Agentic Software",
-      "description": "Join the deco partner program and build AI-native experiences with our open-source runtime and Context CMS. Get sandbox credits, leads, certifications, and co-marketing opportunities.",
+      "title": "Torne-se um Parceiro deco | Construa e Venda Software Agêntico",
+      "description": "Participe do programa de parceiros deco e construa experiências nativas de IA com nosso runtime open-source e Context CMS. Obtenha créditos sandbox, leads, certificações e oportunidades de co-marketing.",
       "image": "https://deco.cx/assets/partners-twitter-image.jpg",
       "site": "@deco_cx"
     },
     "structuredData": {
       "@context": "https://schema.org",
       "@type": "WebPage",
-      "name": "Become a deco Partner",
-      "description": "Join the deco partner program and build AI-native experiences with our open-source runtime and Context CMS. Get sandbox credits, leads, certifications, and co-marketing opportunities.",
+      "name": "Torne-se um Parceiro deco",
+      "description": "Participe do programa de parceiros deco e construa experiências nativas de IA com nosso runtime open-source e Context CMS. Obtenha créditos sandbox, leads, certificações e oportunidades de co-marketing.",
       "url": "https://deco.cx/partners",
       "mainEntity": {
         "@type": "Organization",
         "name": "deco.cx",
-        "description": "Open-source runtime and Context CMS for agents, workflows, and storefronts",
+        "description": "Runtime open-source e Context CMS para agentes, workflows e storefronts",
         "url": "https://deco.cx",
         "offers": {
           "@type": "Offer",
-          "name": "Partner Program",
-          "description": "Comprehensive partner program with multiple tiers and benefits",
-          "category": "Technology Partnership"
+          "name": "Programa de Parceiros",
+          "description": "Programa de parceiros abrangente com múltiplos níveis e benefícios",
+          "category": "Parceria Tecnológica"
         }
       }
     },

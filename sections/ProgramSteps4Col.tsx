@@ -59,12 +59,12 @@ export default function ProgramSteps4Col({
   title = "Como funciona",
   steps = [
     {
-      title: "Kick-off | 31/10 & 01/11",
-      description: "Cada dia terá um desafio diferente a ser divulgado no kick-off. Escolha o dia mais conveniente."
+      title: "Kick-off | 31/10",
+      description: "Vamos liberar os desafios no dia 31/10 e vocês poderão escolher qual seguir. E também como vão se dedicar para resolver."
     },
     {
       title: "Check-points",
-      description: "Encontros ao longo de cada dia, para alinhamento, dúvidas e suporte técnico."
+      description: "Encontros ao longo de cada dia com as empresas e deco: alinhamento, dúvidas e suporte técnico."
     },
     {
       title: "Entrega final",

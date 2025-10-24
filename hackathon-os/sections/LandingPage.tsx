@@ -29,15 +29,14 @@ export default function LandingPage() {
       {/* Hero Section */}
       <section class="container mx-auto px-4 py-20 text-center">
         <h1 class="text-6xl font-bold text-white mb-6">
-          Organize Hackathons
+          Construa seu Full-Stack AI App
           <br />
           <span class="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-            de Forma Simples
+            em 48h
           </span>
         </h1>
         <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
-          Plataforma completa para gerenciar eventos, times, desafios, submissões e avaliações.
-          Tudo em um só lugar.
+          TypeScript/React/Next.js + Agents + Workflows + DB + Auth. US$50 de créditos para todos.
         </p>
         <div class="flex gap-4 justify-center">
           <a 
