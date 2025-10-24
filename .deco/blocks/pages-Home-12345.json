@@ -29,7 +29,7 @@
       "buttonText": "Start now (beta)",
       "buttonUrl": "https://admin.decocms.com",
       "backgroundImage": "https://assets.decocache.com/decocms/406169e4-18af-4858-a350-9aa75c0ec4de/herobanner2.svg",
-      "secondaryButtonUrl": "https://github.com/deco-cx/chat",
+      "secondaryButtonUrl": "https://github.com/decocms/admin",
       "secondaryButtonText": "Self-host (soon)"
     },
     {
