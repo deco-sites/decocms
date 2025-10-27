@@ -1,0 +1,8 @@
+{
+  "redirect": {
+    "from": "/cadastrobuilder",
+    "to": "https://airtable.com/appBanRKbYqfcTiSI/shru8zJWEtaqkKNsg",
+    "type": "temporary"
+  },
+  "__resolveType": "website/loaders/redirect.ts"
+}

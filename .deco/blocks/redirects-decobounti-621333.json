@@ -1,0 +1,8 @@
+{
+  "redirect": {
+    "from": "/decobounties",
+    "to": "https://airtable.com/appBanRKbYqfcTiSI/shrCtc7rqHPy69Ikk",
+    "type": "temporary"
+  },
+  "__resolveType": "website/loaders/redirect.ts"
+}
