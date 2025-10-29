@@ -1,0 +1,298 @@
+{
+  "name": "Partenaires",
+  "path": "/partenaires",
+  "sections": [
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "Header-decocms"
+      }
+    },
+    {
+      "__resolveType": "site/sections/PartnersHero.tsx",
+      "title": "Devenez partenaire deco",
+      "subtitle": "Créez et monétisez des agents IA et des workflows – rejoignez le programme partenaire deco et livrez rapidement.",
+      "primaryButtonText": "Postuler aujourd'hui",
+      "primaryButtonUrl": "https://form.typeform.com/to/jZbe1R71",
+      "secondaryButtonText": "Planifier une intro de 20 min",
+      "secondaryButtonUrl": "https://form.typeform.com/to/LxKZbN9N",
+      "trustSignalTitle": "Qui construit déjà avec deco CMS",
+      "partnerLogos": [
+        "https://assets.decocache.com/decocms/05034824-5a80-49a3-b02b-17e00b19b2b7/superfrete.svg",
+        "https://assets.decocache.com/decocms/a4b4772e-6e0f-42ee-bec9-6bf7d15c0fe9/livemode.svg",
+        "https://assets.decocache.com/decocms/6cd6e7b3-a2d0-473a-b80c-a2692a0c563e/leroy.svg",
+        "https://assets.decocache.com/decocms/0af7a91b-017d-4d12-8ed0-31f5135c535a/etc-2.svg",
+        "https://assets.decocache.com/decocms/b6a9b09d-2992-49d3-a641-5c5fa16f1d15/gupy_logo.svg"
+      ],
+      "showPartnerLogos": true,
+      "backgroundImageDesktop": "https://assets.decocache.com/decocms/f78b79e8-fdb0-4764-a6c7-4facde7733a5/desktop.png",
+      "backgroundImageMobile": "https://assets.decocache.com/decocms/2dcf6272-1063-4ab9-b274-1125c0f72801/mobile.png"
+    },
+    {
+      "__resolveType": "site/sections/ImageShowcase.tsx",
+      "title": "Innovation à la française",
+      "subtitle": "Comme la Tour Eiffel, construisez des solutions qui défient les limites",
+      "description": "Avec deco, créez des expériences IA aussi emblématiques que les monuments parisiens. Notre plateforme vous donne les outils pour transformer vos idées en réalité.",
+      "image": "https://assets.decocache.com/decocms/88b664e9-cffe-4471-a88e-64f538f1536b/eiffel-tower.jpg",
+      "imagePosition": "right",
+      "ctaText": "Découvrir la plateforme",
+      "ctaUrl": "https://form.typeform.com/to/LxKZbN9N"
+    },
+    {
+      "__resolveType": "site/sections/PartnerBenefits.tsx",
+      "title": "Pourquoi rejoindre maintenant",
+      "subtitle": "Ce qui rend le partenariat précieux",
+      "topBenefits": [
+        {
+          "title": "Conclure des affaires plus rapidement",
+          "description": "Utilisez deco pour passer du prompt à la production de manière transparente",
+          "image": "https://assets.decocache.com/decocms/76f60c07-c3a2-4c71-b10b-3f6d1ab182c9/winmoney.png"
+        },
+        {
+          "title": "Monétisez à votre façon",
+          "description": "Commission, partage des revenus et marketplace dans un seul système de facturation",
+          "image": "https://assets.decocache.com/decocms/11e7c3db-46e1-46b0-be47-00a58c6a1c04/monetizeway.png"
+        }
+      ],
+      "bottomBenefits": [
+        {
+          "title": "Prêt pour l'entreprise",
+          "description": "Observabilité, FinOps, RBAC et gouvernance.",
+          "icon": "bookmark-check"
+        },
+        {
+          "title": "Grandissez avec nous",
+          "description": "Répertorié comme partenaire, événements de co-marketing, priorité du backlog",
+          "icon": "sprout"
+        },
+        {
+          "title": "Responsabilisez votre équipe",
+          "description": "Ateliers gratuits, certifications et offres d'emploi",
+          "icon": "users"
+        }
+      ]
+    },
+    {
+      "__resolveType": "site/sections/WhoShouldApply.tsx",
+      "subtitle": "Partenaires idéaux",
+      "title": "Qui devrait postuler",
+      "partnerTypes": [
+        {
+          "title": "Agences Agentiques",
+          "description": "Vous créez et livrez des logiciels agentiques (Agents IA, Workflows, Vues)",
+          "icon": "target"
+        },
+        {
+          "title": "Éditeurs de logiciels",
+          "description": "Vous souhaitez monétiser des logiciels utiles sur deco (MCPs, Apps IA, etc)",
+          "icon": "zap"
+        },
+        {
+          "title": "Partenaires technologiques",
+          "description": "Vous avez un logiciel indépendant qui s'intègre avec deco (Cloud, Observabilité, etc)",
+          "icon": "users"
+        }
+      ],
+      "readinessTitle": "Préparation minimale :",
+      "requirements": [
+        {
+          "text": "Au moins 2 développeurs avec des certifications valides sur https://deco.camp"
+        },
+        {
+          "text": "Publier 1 App IA ou serveur MCP personnalisé"
+        },
+        {
+          "text": "Activité des développeurs au cours des 30 derniers jours sur notre dépôt open-source principal"
+        }
+      ]
+    },
+    {
+      "__resolveType": "site/sections/PartnerHighlights.tsx",
+      "subtitle": "Points forts",
+      "title": "Ce que vous obtenez",
+      "highlights": [
+        {
+          "title": "Crédits sandbox",
+          "description": "$100",
+          "featured": true
+        },
+        {
+          "title": "Référencement partenaire",
+          "description": "Soyez trouvé sur notre page de recherche de partenaires, classé par résultats"
+        },
+        {
+          "title": "Certifications",
+          "description": "Ingénieurs Agentiques L1 et plus @ deco.camp"
+        },
+        {
+          "title": "Prospects et co-marketing",
+          "description": "Référé directement par l'équipe deco et co-marketing 50/50",
+          "featured": false
+        },
+        {
+          "title": "SLA de support",
+          "description": "Groupe privé avec support deco"
+        }
+      ],
+      "targetTimeNote": "Livrez votre premier projet IA en 7 jours"
+    },
+    {
+      "__resolveType": "site/sections/ProgramSteps.tsx",
+      "subtitle": "Comment commencer",
+      "title": "Comment fonctionne le programme",
+      "steps": [
+        {
+          "title": "Postuler",
+          "description": "Inscrivez-vous et parlez-nous de votre expérience précédente et du type de partenariat"
+        },
+        {
+          "title": "Obtenez la certification",
+          "description": "Certifiez votre équipe sur deco.camp, réclamez vos crédits et livrez votre première solution"
+        },
+        {
+          "title": "Évoluez",
+          "description": "Enregistrez des transactions, demandez du co-marketing et publiez des études de cas."
+        }
+      ],
+      "tipText": "Vous ne savez pas si vous correspondez au programme ? Planifiez un appel de 20 min",
+      "tipCtaText": "Planifier une intro de 20 min",
+      "tipCtaUrl": "https://form.typeform.com/to/LxKZbN9N"
+    },
+    {
+      "__resolveType": "site/sections/PartnerTiers.tsx",
+      "subtitle": "Niveaux de partenariat résumés",
+      "title": "Tous les niveaux",
+      "tiers": [
+        {
+          "name": "Enregistré",
+          "image": "https://assets.decocache.com/decocms/80095e99-4928-49cd-919d-cc8218d6ff5f/tier04.png",
+          "benefits": [
+            {
+              "text": "Enregistrement des transactions",
+              "icon": "zap"
+            },
+            {
+              "text": "Réduction d'équipe pour deco.camp",
+              "icon": "newspaper"
+            },
+            {
+              "icon": "dollar-sign",
+              "text": "Liste de primes"
+            }
+          ],
+          "requirements": "Candidature + 1 plan de cas"
+        },
+        {
+          "name": "Certifié",
+          "image": "https://assets.decocache.com/decocms/8ce8cfd6-241d-44b9-9712-47d5e7a39d14/tier03.png",
+          "requirements": "2 certifications + 1 démo publique",
+          "benefits": [
+            {
+              "text": "Référencement recherche de partenaires",
+              "icon": "zap"
+            },
+            {
+              "text": "Co-marketing",
+              "icon": "newspaper"
+            },
+            {
+              "text": "Partage de prospects",
+              "icon": "dollar-sign"
+            }
+          ]
+        },
+        {
+          "name": "Livré",
+          "image": "https://assets.decocache.com/decocms/0a517380-6b9b-49d2-97c4-133803d61901/tier02.png",
+          "requirements": "4 certifications + 1 projet livré",
+          "benefits": [
+            {
+              "text": "Prospects prioritaires",
+              "icon": "zap"
+            },
+            {
+              "text": "Feuille de route",
+              "icon": "newspaper"
+            },
+            {
+              "text": "Accès anticipé aux bêtas",
+              "icon": "dollar-sign"
+            }
+          ]
+        },
+        {
+          "name": "Essence",
+          "image": "https://assets.decocache.com/decocms/09a251a9-d774-4476-a892-18e8aa23d85e/tier01.png",
+          "requirements": "8 certifications + 200k$ ARR",
+          "benefits": [
+            {
+              "text": "Affaires d'entreprise",
+              "icon": "zap"
+            },
+            {
+              "text": "Projets de marque",
+              "icon": "newspaper"
+            },
+            {
+              "text": "Statut d'investisseur",
+              "icon": "dollar-sign"
+            }
+          ]
+        }
+      ],
+      "fullDetailsNote": "Décision dans les 2 jours ouvrables",
+      "fullDetailsUrl": " "
+    },
+    {
+      "__resolveType": "site/sections/PartnersFAQ.tsx",
+      "title": "Questions fréquemment posées",
+      "faqItems": [
+        {
+          "question": "Fournissez-vous des prospects clients ?",
+          "answer": "Oui, pour les partenaires certifiés et répertoriés, en fonction de votre niveau et de votre disponibilité"
+        },
+        {
+          "question": "Pouvons-nous revendre deco ?",
+          "answer": "Oui, il existe plusieurs façons de le faire. D'un simple partenariat d'affiliation à la création de solutions en marque blanche sur l'infrastructure deco."
+        },
+        {
+          "question": "Comment fonctionnent les conflits de transactions ?",
+          "answer": "Les transactions enregistrées ont une fenêtre de protection de 60 jours."
+        },
+        {
+          "question": "Comment fonctionnent les certifications ?",
+          "answer": "Il existe des opportunités mensuelles de certifier votre équipe sur https://deco.camp"
+        },
+        {
+          "question": "Où pouvons-nous voir les tarifs ?",
+          "answer": "deco CMS a une tarification basée sur l'utilisation sur https://decocms.com/pricing"
+        }
+      ]
+    },
+    {
+      "__resolveType": "site/sections/PartnersFinalCTA.tsx",
+      "title": "Prêt à construire ensemble ?",
+      "subtitle": "Commencez votre candidature maintenant ou planifiez une introduction rapide.",
+      "primaryButton": {
+        "text": "Postuler maintenant",
+        "url": "https://form.typeform.com/to/jZbe1R71"
+      },
+      "secondaryButton": {
+        "text": "Planifier une introduction",
+        "url": "https://form.typeform.com/to/LxKZbN9N"
+      }
+    },
+    {
+      "__resolveType": "Footer"
+    }
+  ],
+  "__resolveType": "website/pages/Page.tsx",
+  "seo": {
+    "title": "Devenez partenaire deco | Créez et vendez des logiciels agentiques",
+    "description": "Rejoignez le programme partenaire deco et créez des expériences natives IA avec notre runtime open-source et Context CMS. Obtenez des crédits sandbox, des prospects, des certifications et des opportunités de co-marketing.",
+    "canonical": "https://deco.cx/partenaires",
+    "noIndexing": false,
+    "keywords": "partenaires deco, développement logiciel IA, logiciel agentique, programme partenaire, intégrateurs système, partenaires ISV, partenaires technologiques, workflows IA, développement agent, Context CMS",
+    "__resolveType": "website/sections/Seo/SeoV2.tsx"
+  }
+}

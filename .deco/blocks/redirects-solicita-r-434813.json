@@ -1,0 +1,8 @@
+{
+  "redirect": {
+    "from": "/solicita-rpa",
+    "to": "https://airtable.com/appBanRKbYqfcTiSI/shrjLoachGXmTcv5o",
+    "type": "temporary"
+  },
+  "__resolveType": "website/loaders/redirect.ts"
+}
