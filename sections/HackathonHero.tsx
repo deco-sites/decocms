@@ -56,8 +56,8 @@ export default function HackathonHero({
   backgroundImageMobile,
 }: Props) {
   return (
-    <section class="w-full bg-dc-50 flex flex-col p-2">
-      <div class="bg-[#1C1917] pt-6 rounded-3xl flex flex-col h-[calc(100vh-16px)] relative overflow-hidden">
+    <section class="w-full bg-dc-50 flex flex-col p-2 relative z-10">
+      <div class="bg-[#1C1917] pt-20 sm:pt-24 rounded-3xl flex flex-col min-h-[90vh] relative">
         {/* Background Images */}
         {/* Desktop Background */}
         {backgroundImageDesktop && (
@@ -88,7 +88,7 @@ export default function HackathonHero({
         )}
 
         {/* Main Content */}
-        <div class="flex-1 flex flex-col items-center justify-center relative z-10 px-4 sm:px-8 lg:px-16">
+        <div class="flex-1 flex flex-col items-center justify-center relative z-20 px-4 sm:px-8 lg:px-16 py-12 sm:py-16">
           <div class="flex flex-col gap-6 sm:gap-8 lg:gap-12 items-center justify-start max-w-2xl">
             {/* Header */}
             <div class="flex flex-col gap-6 items-center justify-start w-full">
@@ -113,7 +113,7 @@ export default function HackathonHero({
             </div>
 
             {/* Buttons */}
-            <div class="flex gap-2 items-start justify-start">
+            <div class="flex gap-2 items-start justify-start relative z-30">
               {primaryButtonText && (
                 <>
                   {primaryButtonUrl ? (
@@ -122,7 +122,7 @@ export default function HackathonHero({
                       variant="primary"
                       size="medium"
                       href={primaryButtonUrl}
-                      class="!bg-primary-light !text-primary-dark hover:!bg-primary-light/90"
+                      class="!bg-primary-light !text-primary-dark hover:!bg-primary-light/90 relative z-30"
                     >
                       {primaryButtonText}
                     </Button>
@@ -130,7 +130,7 @@ export default function HackathonHero({
                     // If no URL, render the form modal
                     <FormModal
                       buttonText={primaryButtonText}
-                      buttonClassName="px-6 py-3 bg-primary-light text-primary-dark rounded-lg font-semibold hover:bg-primary-light/90 transition-colors"
+                      buttonClassName="px-6 py-3 bg-primary-light text-primary-dark rounded-lg font-semibold hover:bg-primary-light/90 transition-colors relative z-30"
                       modalTitle="Inscrição"
                       formFields={[
                         { label: "Nome", name: "Nome", type: "text", required: true, placeholder: "Seu nome completo" },
@@ -174,7 +174,7 @@ export default function HackathonHero({
                     // If target ID is provided, use scroll button
                     <ScrollToButton
                       targetId={secondaryButtonTargetId}
-                      class="px-6 py-3 bg-dc-50 text-dc-900 hover:bg-dc-100 rounded-lg font-semibold transition-colors"
+                      class="px-6 py-3 bg-dc-50 text-dc-900 hover:bg-dc-100 rounded-lg font-semibold transition-colors relative z-30"
                     >
                       <span>{secondaryButtonText}</span>
                     </ScrollToButton>
@@ -184,7 +184,7 @@ export default function HackathonHero({
                       variant="secondary"
                       size="medium"
                       href={secondaryButtonUrl}
-                      class="!bg-dc-50 !text-dc-900 hover:!bg-dc-100"
+                      class="!bg-dc-50 !text-dc-900 hover:!bg-dc-100 relative z-30"
                     >
                       {secondaryButtonText}
                     </Button>
@@ -197,7 +197,7 @@ export default function HackathonHero({
 
         {/* Trust Signal Section */}
         {showPartnerLogos && partnerLogos.length > 0 && (
-          <div class="absolute bottom-0 left-0 w-full overflow-hidden pb-10 pt-5 px-0">
+          <div class="w-full pb-8 sm:pb-10 pt-4 sm:pt-5 px-0 relative z-30">
             {trustSignalTitle && (
               <div class="text-primary-light text-sm sm:text-base font-mono leading-5 text-center uppercase mb-6 tracking-wide">
                 {trustSignalTitle}
