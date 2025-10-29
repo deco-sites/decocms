@@ -55,7 +55,7 @@ export default function Header({
   githubIcon,
 }: Props) {
   return (
-    <div class="absolute top-0 left-0 right-0 z-50 px-4 sm:px-6 lg:px-10 pt-8">
+    <div class="fixed top-0 left-0 right-0 z-[100] px-4 sm:px-6 lg:px-10 pt-8">
       <header class="flex items-center justify-between rounded-2xl">
         {/* Left Section - Logo */}
         <div class="flex-1 flex justify-start">
@@ -114,7 +114,7 @@ export default function Header({
                         </svg>
 
                         {/* Dropdown Panel */}
-                        <div class="hidden group-hover:block group-focus-within:block absolute left-0 top-full mt-0 inline-block w-max rounded-2xl bg-white/95 backdrop-blur-sm border border-dc-200 shadow-lg py-2 z-50">
+                        <div class="hidden group-hover:block group-focus-within:block absolute left-0 top-full mt-0 inline-block w-max rounded-2xl bg-white/95 backdrop-blur-sm border border-dc-200 shadow-lg py-2 z-[110]">
                           {item.items.map((sub, subIndex) => (
                             <a
                               key={subIndex}
@@ -196,7 +196,7 @@ export default function Header({
       {/* Mobile Menu */}
       <div
         id="mobile-menu"
-        class="lg:hidden hidden peer-checked:block absolute top-full left-4 right-4 bg-white/95 backdrop-blur-sm rounded-b-2xl border-t border-dc-200 z-50 mt-2"
+        class="lg:hidden hidden peer-checked:block absolute top-full left-4 right-4 bg-white/95 backdrop-blur-sm rounded-b-2xl border-t border-dc-200 z-[110] mt-2"
       >
         <div class="p-4 space-y-2">
           {menuItems.map((item, index) => (

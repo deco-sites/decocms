@@ -53,13 +53,13 @@ export default function PartnersHero({
   backgroundImageMobile,
 }: Props) {
   return (
-    <section className="w-full bg-dc-50 flex flex-col p-2">
-      <div className="bg-primary-dark pt-6 rounded-3xl flex flex-col h-[calc(100vh-16px)] relative overflow-hidden">
+    <section className="w-full bg-dc-50 flex flex-col p-2 relative z-10">
+      <div className="bg-primary-dark pt-20 sm:pt-24 rounded-3xl flex flex-col min-h-[90vh] relative">
         {/* Unicorn Studio Background */}
         {enableUnicornBackground && (
           <UnicornStudioBackground
             projectId={unicornProjectId}
-            className="z-0 opacity-100"
+            className="absolute inset-0 z-0 opacity-100"
           />
         )}
 
@@ -93,7 +93,7 @@ export default function PartnersHero({
         )}
 
         {/* Main Content */}
-        <div className="flex-1 flex flex-col items-center justify-center relative z-20 px-4 sm:px-8 lg:px-16 pb-32">
+        <div className="flex-1 flex flex-col items-center justify-center relative z-20 px-4 sm:px-8 lg:px-16 py-12 sm:py-16">
           <div className="flex flex-col gap-6 sm:gap-8 lg:gap-12 items-center justify-start max-w-4xl">
             {/* Header */}
             <div className="flex flex-col gap-6 items-center justify-start w-full">
@@ -112,13 +112,13 @@ export default function PartnersHero({
             </div>
 
             {/* Buttons */}
-            <div className="flex gap-2 items-start justify-start">
+            <div className="flex gap-2 items-start justify-start relative z-30">
               {primaryButtonText && primaryButtonUrl && (
                 <Button
                   variant="primary"
                   size="medium"
                   href={primaryButtonUrl}
-                  className="!bg-primary-light !text-primary-dark hover:!bg-primary-light/90"
+                  className="!bg-primary-light !text-primary-dark hover:!bg-primary-light/90 relative z-30"
                 >
                   {primaryButtonText}
                 </Button>
@@ -128,7 +128,7 @@ export default function PartnersHero({
                   variant="secondary"
                   size="medium"
                   href={secondaryButtonUrl}
-                  className="!bg-dc-50 !text-dc-900 hover:!bg-dc-100"
+                  className="!bg-dc-50 !text-dc-900 hover:!bg-dc-100 relative z-30"
                 >
                   {secondaryButtonText}
                 </Button>
@@ -139,7 +139,7 @@ export default function PartnersHero({
 
         {/* Trust Signal Section */}
         {showPartnerLogos && partnerLogos.length > 0 && (
-          <div className="absolute bottom-0 left-0 w-full overflow-hidden pb-10 pt-5 px-0 z-30">
+          <div className="w-full pb-8 sm:pb-10 pt-4 sm:pt-5 px-0 relative z-30">
             {trustSignalTitle && (
               <div className="text-primary-light text-sm sm:text-base font-mono leading-5 text-center uppercase mb-6 tracking-wide">
                 {trustSignalTitle}

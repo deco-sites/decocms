@@ -3622,6 +3622,12 @@ input.tab:checked + .tab-content,
 .z-\[-2\] {
   z-index: -2;
 }
+.z-\[100\] {
+  z-index: 100;
+}
+.z-\[110\] {
+  z-index: 110;
+}
 .col-span-full {
   grid-column: 1 / -1;
 }
@@ -3945,6 +3951,9 @@ input.tab:checked + .tab-content,
 }
 .min-h-\[42px\] {
   min-height: 42px;
+}
+.min-h-\[90vh\] {
+  min-height: 90vh;
 }
 .min-h-screen {
   min-height: 100vh;
@@ -7876,9 +7885,6 @@ input.tab:checked + .tab-content,
 .pb-24 {
   padding-bottom: 6rem;
 }
-.pb-32 {
-  padding-bottom: 8rem;
-}
 .pb-4 {
   padding-bottom: 1rem;
 }
@@ -11468,6 +11474,11 @@ input.tab:checked + .tab-content,
     padding-bottom: 3rem;
   }
 
+  .sm\:py-16 {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
   .sm\:py-20 {
     padding-top: 5rem;
     padding-bottom: 5rem;
@@ -11488,12 +11499,24 @@ input.tab:checked + .tab-content,
     padding-bottom: 2rem;
   }
 
+  .sm\:pb-10 {
+    padding-bottom: 2.5rem;
+  }
+
+  .sm\:pt-24 {
+    padding-top: 6rem;
+  }
+
   .sm\:pt-3 {
     padding-top: 0.75rem;
   }
 
   .sm\:pt-32 {
     padding-top: 8rem;
+  }
+
+  .sm\:pt-5 {
+    padding-top: 1.25rem;
   }
 
   .sm\:text-2xl {
