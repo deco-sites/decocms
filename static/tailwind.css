@@ -3457,8 +3457,14 @@ input.tab:checked + .tab-content,
 .-bottom-40 {
   bottom: -10rem;
 }
+.-bottom-6 {
+  bottom: -1.5rem;
+}
 .-left-40 {
   left: -10rem;
+}
+.-left-6 {
+  left: -1.5rem;
 }
 .-right-2 {
   right: -0.5rem;
@@ -3466,11 +3472,17 @@ input.tab:checked + .tab-content,
 .-right-40 {
   right: -10rem;
 }
+.-right-6 {
+  right: -1.5rem;
+}
 .-top-2 {
   top: -0.5rem;
 }
 .-top-40 {
   top: -10rem;
+}
+.-top-6 {
+  top: -1.5rem;
 }
 .bottom-0 {
   bottom: 0px;
@@ -3600,6 +3612,9 @@ input.tab:checked + .tab-content,
 }
 .top-full {
   top: 100%;
+}
+.-z-10 {
+  z-index: -10;
 }
 .z-0 {
   z-index: 0;
@@ -3786,6 +3801,9 @@ input.tab:checked + .tab-content,
 }
 .aspect-\[3\/2\] {
   aspect-ratio: 3/2;
+}
+.aspect-\[4\/3\] {
+  aspect-ratio: 4/3;
 }
 .aspect-\[4\/5\] {
   aspect-ratio: 4/5;
@@ -7187,6 +7205,11 @@ input.tab:checked + .tab-content,
   --tw-gradient-to: var(--fallback-p,oklch(var(--p)/0)) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
+.from-primary-dark\/10 {
+  --tw-gradient-from: rgb(7 64 26 / 0.1) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(7 64 26 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
 .from-primary-light {
   --tw-gradient-from: #D0EC1A var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(208 236 26 / 0) var(--tw-gradient-to-position);
@@ -9668,6 +9691,10 @@ input.tab:checked + .tab-content,
   background-color: rgb(241 240 238 / var(--tw-bg-opacity)) !important;
 }
 
+.hover\:\!bg-primary-dark\/90:hover {
+  background-color: rgb(7 64 26 / 0.9) !important;
+}
+
 .hover\:\!bg-primary-light\/90:hover {
   background-color: rgb(208 236 26 / 0.9) !important;
 }
@@ -11484,6 +11511,11 @@ input.tab:checked + .tab-content,
     padding-bottom: 5rem;
   }
 
+  .sm\:py-24 {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+
   .sm\:py-4 {
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -11919,6 +11951,14 @@ input.tab:checked + .tab-content,
 }
 
 @media (min-width: 1024px) {
+
+  .lg\:order-1 {
+    order: 1;
+  }
+
+  .lg\:order-2 {
+    order: 2;
+  }
 
   .lg\:-mt-12 {
     margin-top: -3rem;

@@ -75,7 +75,7 @@ export default function ProgramSteps4Col({
       description: "Anúncio dos vencedores em live aberta durante a semana seguinte"
     }
   ],
-  tipText = "As vagas são limitadas, se inscreva e confirmaremos sua participação até dia 29/10",
+  tipText = "As vagas são limitadas, se inscreva e confirmaremos sua participação",
   tipCtaText = "Participar",
   tipCtaUrl,
   enableFormModal = true,
