@@ -144,11 +144,11 @@ const defaultProps: Props = {
   ],
   themes: [
     { 
-      name: "Light", 
+      name: "Deco", 
       colors: ["#d0ec1a", "#ffffff", "#e5e5e5", "#262626"]
     },
     { 
-      name: "Dark", 
+      name: "Elegant Luxury", 
       colors: ["#d0ec1a", "#171717", "#404040", "#fafafa"]
     },
     { 
