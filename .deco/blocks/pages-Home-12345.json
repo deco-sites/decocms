@@ -7,30 +7,126 @@
       "__resolveType": "Header-decocms"
     },
     {
-      "__resolveType": "site/sections/Hero.tsx",
-      "title": "Open-source admin for scalable AI apps",
-      "subtitle": "Generate full-stack TypeScript AI apps, from database to agentic workflows, connected to your MCPs. Deploy anywhere.",
-      "primaryButtonText": "Testar grátis",
-      "integrationsTitle": "Seamless Integrations",
-      "icons": [
-        "https://assets.decocache.com/decocms/e37e5504-fd97-4318-b554-334bef9cf0c2/whatsapp.png",
-        "https://assets.decocache.com/decocms/016d6fd8-3395-4267-a4fe-bc10ba1e728e/sheets.png",
-        "https://assets.decocache.com/decocms/1152c0ec-fc39-4a31-bd54-9229fa40836a/notion.png",
-        "https://assets.decocache.com/decocms/bd9c7ae5-28fb-421d-add0-02fdc93431a1/jira.png",
-        "https://assets.decocache.com/decocms/5b3bfcaa-8e5b-4dc0-bcd3-df601a2d4684/integration.png",
-        "https://assets.decocache.com/decocms/452b8f22-f11e-4b6f-8934-2e58419ea705/integration-1.png",
-        "https://assets.decocache.com/decocms/ddcd9385-de10-4cd0-93df-cdbcc7a83021/github.png",
-        "https://assets.decocache.com/decocms/5213e98e-7409-403f-8644-a47c0874b7f5/drive.png",
-        "https://assets.decocache.com/decocms/1d97a513-09e5-402a-9bec-2ef2d99db9ed/discord.png",
-        "https://assets.decocache.com/decocms/b0efa01a-1532-446a-97e9-903be7286459/coda.png",
-        "https://assets.decocache.com/decocms/c89fe4f8-df33-4cfe-ba20-696a37b3b3a4/airtable.png",
-        "https://assets.decocache.com/decocms/07b013d3-947c-4eae-ba13-e1babe93ee1e/calendar.png"
-      ],
-      "buttonText": "Start now (beta)",
-      "buttonUrl": "https://admin.decocms.com",
-      "backgroundImage": "https://assets.decocache.com/decocms/406169e4-18af-4858-a350-9aa75c0ec4de/herobanner2.svg",
-      "secondaryButtonUrl": "https://github.com/decocms/admin",
-      "secondaryButtonText": "Self-host (soon)"
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "site/sections/HeroInteractive.tsx",
+        "typingPhrases": [
+          {
+            "text": "Build an app that watches my “Leads” label in @Gmail, enriches companies with @Apify, and pings our sales channel on @Slack with a reply draft"
+          },
+          {
+            "text": "Build an app that watches my “Leads” label in @Gmail, enriches companies with @Apify, and pings our sales channel on @Slack with a reply draft"
+          },
+          {
+            "text": "Build an app that watches my “Leads” label in @Gmail, enriches companies with @Apify, and pings our sales channel on @Slack with a reply draft"
+          }
+        ],
+        "title": "Describe your AI app. We'll build it.",
+        "subtitle": "From idea to production in one prompt. Full-stack AI apps with custom interfaces, workflows, and your company's data—no code required.",
+        "apps": [
+          {
+            "name": "Sheets",
+            "mention": "sheets",
+            "icon": "https://assets.decocache.com/decocms/016d6fd8-3395-4267-a4fe-bc10ba1e728e/sheets.png"
+          },
+          {
+            "name": "Discord",
+            "mention": "discord",
+            "icon": "https://assets.decocache.com/decocms/1d97a513-09e5-402a-9bec-2ef2d99db9ed/discord.png"
+          },
+          {
+            "name": "Integration",
+            "mention": "integration",
+            "icon": "https://assets.decocache.com/decocms/5b3bfcaa-8e5b-4dc0-bcd3-df601a2d4684/integration.png"
+          },
+          {
+            "name": "Jira",
+            "mention": "jira",
+            "icon": "https://assets.decocache.com/decocms/bd9c7ae5-28fb-421d-add0-02fdc93431a1/jira.png"
+          },
+          {
+            "name": "GitHub",
+            "mention": "github",
+            "icon": "https://assets.decocache.com/decocms/ddcd9385-de10-4cd0-93df-cdbcc7a83021/github.png"
+          },
+          {
+            "name": "Coda",
+            "mention": "coda",
+            "icon": "https://assets.decocache.com/decocms/b0efa01a-1532-446a-97e9-903be7286459/coda.png"
+          },
+          {
+            "name": "Airtable",
+            "mention": "airtable",
+            "icon": "https://assets.decocache.com/decocms/c89fe4f8-df33-4cfe-ba20-696a37b3b3a4/airtable.png"
+          },
+          {
+            "name": "Drive",
+            "mention": "drive",
+            "icon": "https://assets.decocache.com/decocms/5213e98e-7409-403f-8644-a47c0874b7f5/drive.png"
+          },
+          {
+            "name": "Gmail",
+            "mention": "gmail",
+            "icon": "https://assets.decocache.com/decocms/452b8f22-f11e-4b6f-8934-2e58419ea705/integration-1.png"
+          },
+          {
+            "name": "Slack",
+            "mention": "slack",
+            "icon": "https://assets.decocache.com/decocms/452b8f22-f11e-4b6f-8934-2e58419ea705/integration-1.png"
+          },
+          {
+            "name": "Calendar",
+            "mention": "calendar",
+            "icon": "https://assets.decocache.com/decocms/07b013d3-947c-4eae-ba13-e1babe93ee1e/calendar.png"
+          },
+          {
+            "name": "WhatsApp",
+            "mention": "whatsapp",
+            "icon": "https://assets.decocache.com/decocms/e37e5504-fd97-4318-b554-334bef9cf0c2/whatsapp.png"
+          },
+          {
+            "name": "Notion",
+            "mention": "notion",
+            "icon": "https://assets.decocache.com/decocms/1152c0ec-fc39-4a31-bd54-9229fa40836a/notion.png"
+          }
+        ]
+      }
+    },
+    {
+      "__resolveType": "website/flags/multivariate/section.ts",
+      "variants": [
+        {
+          "value": {
+            "__resolveType": "site/sections/Hero.tsx",
+            "title": "Open-source admin for scalable AI apps",
+            "subtitle": "Generate full-stack TypeScript AI apps, from database to agentic workflows, connected to your MCPs. Deploy anywhere.",
+            "primaryButtonText": "Testar grátis",
+            "integrationsTitle": "Seamless Integrations",
+            "icons": [
+              "https://assets.decocache.com/decocms/e37e5504-fd97-4318-b554-334bef9cf0c2/whatsapp.png",
+              "https://assets.decocache.com/decocms/016d6fd8-3395-4267-a4fe-bc10ba1e728e/sheets.png",
+              "https://assets.decocache.com/decocms/1152c0ec-fc39-4a31-bd54-9229fa40836a/notion.png",
+              "https://assets.decocache.com/decocms/bd9c7ae5-28fb-421d-add0-02fdc93431a1/jira.png",
+              "https://assets.decocache.com/decocms/5b3bfcaa-8e5b-4dc0-bcd3-df601a2d4684/integration.png",
+              "https://assets.decocache.com/decocms/452b8f22-f11e-4b6f-8934-2e58419ea705/integration-1.png",
+              "https://assets.decocache.com/decocms/ddcd9385-de10-4cd0-93df-cdbcc7a83021/github.png",
+              "https://assets.decocache.com/decocms/5213e98e-7409-403f-8644-a47c0874b7f5/drive.png",
+              "https://assets.decocache.com/decocms/1d97a513-09e5-402a-9bec-2ef2d99db9ed/discord.png",
+              "https://assets.decocache.com/decocms/b0efa01a-1532-446a-97e9-903be7286459/coda.png",
+              "https://assets.decocache.com/decocms/c89fe4f8-df33-4cfe-ba20-696a37b3b3a4/airtable.png",
+              "https://assets.decocache.com/decocms/07b013d3-947c-4eae-ba13-e1babe93ee1e/calendar.png"
+            ],
+            "buttonText": "Start now (beta)",
+            "buttonUrl": "https://admin.decocms.com",
+            "backgroundImage": "https://assets.decocache.com/decocms/406169e4-18af-4858-a350-9aa75c0ec4de/herobanner2.svg",
+            "secondaryButtonUrl": "https://github.com/decocms/admin",
+            "secondaryButtonText": "Self-host (soon)"
+          },
+          "rule": {
+            "__resolveType": "website/matchers/never.ts"
+          }
+        }
+      ]
     },
     {
       "__resolveType": "site/sections/TextMedia.tsx",

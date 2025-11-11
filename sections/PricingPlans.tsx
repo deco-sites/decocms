@@ -50,8 +50,8 @@ export interface PricingPlan {
    */
   priceText?: string;
   /**
-   * @title Número de assentos
-   * @description Quantidade de assentos incluídos no plano
+   * @title Workflow Runs
+   * @description Quantidade de workflow runs incluídos no plano
    */
   seats: number;
   /**
@@ -143,9 +143,9 @@ export interface Props {
   plans: PricingPlan[];
   /**
    * @title Plano customizado
-   * @description Configuração do plano customizado
+   * @description Configuração do plano customizado (opcional)
    */
-  customPlan: CustomPlan;
+  customPlan?: CustomPlan;
 }
 
 const defaultProps: Props = {
@@ -155,8 +155,8 @@ const defaultProps: Props = {
   plans: [
     {
       name: "Free",
-      price: 500,
-      priceText: "converted into AI credits",
+      price: 0,
+      priceText: "Forever free",
       seats: 1,
       description: "For hobbyist projects by solo devs.",
       image:
@@ -171,52 +171,25 @@ const defaultProps: Props = {
           highlightText: "20% markup",
         },
         {
-          name: "Tap-up credits",
+          name: "Top-up credits",
           icon: "add_chart",
         },
         {
           name: "$2 AI credits",
           icon: "attach_money",
         },
-      ],
-    },
-    {
-      name: "Starter",
-      price: 500,
-      priceText: "converted into AI credits",
-      seats: 50,
-      description: "For businesses growing AI operations",
-      image:
-        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/1818/ff01967e-4617-4163-971f-165832658f77",
-      buttonText: "Get Started",
-      buttonUrl: "/signup",
-      features: [
         {
-          name: "Optimized AI Usage Rate",
-          icon: "bolt",
-          highlight: true,
-          highlightText: "15% markup",
-        },
-        {
-          name: "Support via ticket — no SLA",
-          icon: "support_agent",
-        },
-        {
-          name: "Weekly Office Hours",
-          icon: "groups",
-        },
-        {
-          name: "Premium support for $1k",
-          icon: "diamond",
+          name: "Community support",
+          icon: "forum",
         },
       ],
     },
     {
-      name: "Growth",
+      name: "Pro",
       price: 2500,
       priceText: "converted into AI credits",
       seats: 50,
-      description: "For organizations deploying AI at scale",
+      description: "For businesses growing AI operations.",
       image:
         "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/1818/ff01967e-4617-4163-971f-165832658f77",
       buttonText: "Get Started",
@@ -241,17 +214,17 @@ const defaultProps: Props = {
           icon: "military_tech",
         },
         {
-          name: "1h/ week of dedicated technical support",
+          name: "1h/week of dedicated technical support",
           icon: "build",
         },
       ],
     },
     {
-      name: "Scale",
+      name: "Enterprise",
       price: 7500,
       priceText: "converted into AI credits",
       seats: 100,
-      description: "For organizations deploying AI at scale",
+      description: "For organizations deploying AI at scale.",
       image:
         "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/1818/ff01967e-4617-4163-971f-165832658f77",
       buttonText: "Get Started",
@@ -276,44 +249,19 @@ const defaultProps: Props = {
           icon: "supervisor_account",
         },
         {
-          name: "3h/ week of dedicated technical support",
+          name: "3h/week of dedicated technical support",
           icon: "build",
         },
       ],
     },
   ],
-  customPlan: {
-    title: "Need more scale?",
-    backgroundImage:
-      "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/1818/ff01967e-4617-4163-971f-165832658f77",
-    features: [
-      {
-        name: "500+ Builder Seats",
-        icon: "person",
-      },
-      {
-        name: "Custom integrations",
-        icon: "extension",
-      },
-      {
-        name: "Self-hosting options",
-        icon: "dns",
-      },
-      {
-        name: "BYOK (Bring Your Own Keys)",
-        icon: "key",
-      },
-    ],
-    buttonText: "Let's talk!",
-    buttonUrl: "/contact",
-  },
 };
 
 export default function PricingPlans({
   title = defaultProps.title,
   subtitle = defaultProps.subtitle,
   plans = defaultProps.plans,
-  customPlan = defaultProps.customPlan,
+  customPlan,
 }: Props) {
   return (
     <div className="w-full bg-dc-50 p-4">
@@ -330,7 +278,7 @@ export default function PricingPlans({
 
         {/* Pricing Plans Grid */}
         <div className="w-full flex flex-col gap-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {plans.map((plan, index) => (
               <div
                 key={index}
@@ -372,12 +320,12 @@ export default function PricingPlans({
                         </p>
                       </div>
 
-                      {/* Seats */}
+                      {/* Workflow runs */}
                       <div className="w-full flex flex-col gap-4">
                         <div className="w-full h-px bg-dc-300"></div>
                         <div className="w-full flex justify-between items-start">
                           <span className="text-dc-500 text-lg font-normal leading-none">
-                            Seats
+                            Workflow runs
                           </span>
                           <span className="text-dc-500 text-lg font-normal leading-none">
                             {plan.seats}
@@ -439,65 +387,67 @@ export default function PricingPlans({
           </div>
 
           {/* Custom Plan */}
-          <div className="w-full bg-primary-dark rounded-xl p-6 md:p-12 pb-64 md:pb-12 flex items-center gap-6 overflow-hidden relative">
-            <div className="flex-1 flex flex-col justify-center items-start gap-6 relative z-10">
-              <h3 className="text-dc-100 text-2xl md:text-3xl font-medium leading-10">
-                {customPlan.title}
-              </h3>
-              <div className="flex flex-col md:flex-row gap-4">
-                <div className="flex flex-col gap-4">
-                  {customPlan.features.slice(0, 2).map((feature, index) => (
-                    <div key={index} className="flex items-center gap-2">
-                      <Icon
-                        name={feature.icon}
-                        size="small"
-                        class="text-primary-light"
-                      />
-                      <span className="text-dc-200 text-base font-normal leading-tight">
-                        {feature.name}
-                      </span>
-                    </div>
-                  ))}
+          {customPlan && (
+            <div className="w-full bg-primary-dark rounded-xl p-6 md:p-12 pb-64 md:pb-12 flex items-center gap-6 overflow-hidden relative">
+              <div className="flex-1 flex flex-col justify-center items-start gap-6 relative z-10">
+                <h3 className="text-dc-100 text-2xl md:text-3xl font-medium leading-10">
+                  {customPlan.title}
+                </h3>
+                <div className="flex flex-col md:flex-row gap-4">
+                  <div className="flex flex-col gap-4">
+                    {customPlan.features.slice(0, 2).map((feature, index) => (
+                      <div key={index} className="flex items-center gap-2">
+                        <Icon
+                          name={feature.icon}
+                          size="small"
+                          class="text-primary-light"
+                        />
+                        <span className="text-dc-200 text-base font-normal leading-tight">
+                          {feature.name}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="flex flex-col gap-4">
+                    {customPlan.features.slice(2).map((feature, index) => (
+                      <div key={index} className="flex items-center gap-2">
+                        <Icon
+                          name={feature.icon}
+                          size="small"
+                          class="text-primary-light"
+                        />
+                        <span className="text-dc-200 text-base font-normal leading-tight">
+                          {feature.name}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-                <div className="flex flex-col gap-4">
-                  {customPlan.features.slice(2).map((feature, index) => (
-                    <div key={index} className="flex items-center gap-2">
-                      <Icon
-                        name={feature.icon}
-                        size="small"
-                        class="text-primary-light"
-                      />
-                      <span className="text-dc-200 text-base font-normal leading-tight">
-                        {feature.name}
-                      </span>
-                    </div>
-                  ))}
-                </div>
+                <Button
+                  variant="primary"
+                  size="medium"
+                  href={customPlan.buttonUrl}
+                  className="px-8 md:px-16"
+                >
+                  {customPlan.buttonText}
+                </Button>
               </div>
-              <Button
-                variant="primary"
-                size="medium"
-                href={customPlan.buttonUrl}
-                className="px-8 md:px-16"
-              >
-                {customPlan.buttonText}
-              </Button>
-            </div>
 
-            {/* Background Image */}
-            {customPlan.backgroundImage && (
-              <div className="absolute -bottom-20 left-1/2 transform -translate-x-1/2 md:-right-20 md:top-1/2 md:-translate-y-1/2 md:translate-x-0 w-[400px] h-[300px] md:w-[533px] md:h-[462px]">
-                <Image
-                  src={customPlan.backgroundImage}
-                  alt="Background decoration"
-                  width={533}
-                  height={462}
-                  className="w-full h-full object-contain"
-                  loading="lazy"
-                />
-              </div>
-            )}
-          </div>
+              {/* Background Image */}
+              {customPlan.backgroundImage && (
+                <div className="absolute -bottom-20 left-1/2 transform -translate-x-1/2 md:-right-20 md:top-1/2 md:-translate-y-1/2 md:translate-x-0 w-[400px] h-[300px] md:w-[533px] md:h-[462px]">
+                  <Image
+                    src={customPlan.backgroundImage}
+                    alt="Background decoration"
+                    width={533}
+                    height={462}
+                    className="w-full h-full object-contain"
+                    loading="lazy"
+                  />
+                </div>
+              )}
+            </div>
+          )}
         </div>
       </div>
     </div>
