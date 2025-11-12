@@ -18,37 +18,48 @@ export default function HeroInteractiveClient() {
         return;
       }
 
+      // Function to handle form submission
+      const handleSubmit = () => {
+        if (!typingInput) return;
+        
+        const prompt = typingInput.value.trim();
+        if (!prompt) {
+          alert("Please describe your app first!");
+          return;
+        }
+
+        // Build URL with parameters
+        const baseUrl = "https://admin.decocms.com";
+        const params = new URLSearchParams({
+          initialInput: prompt,
+          autoSend: "true"
+        });
+
+        // Add theme parameter if a theme was selected
+        if (selectedTheme) {
+          params.append("theme", selectedTheme);
+        }
+
+        const finalUrl = `${baseUrl}/?${params.toString()}`;
+        console.log("Redirecting to:", finalUrl);
+        
+        // Redirect to the URL
+        window.location.href = finalUrl;
+      };
+
       // Generate button click handler
       const generateButton = document.getElementById("generate-button");
       if (generateButton) {
-        generateButton.addEventListener("click", () => {
-          if (!typingInput) return;
-          
-          const prompt = typingInput.value.trim();
-          if (!prompt) {
-            alert("Please describe your app first!");
-            return;
-          }
-
-          // Build URL with parameters
-          const baseUrl = "https://admin.decocms.com";
-          const params = new URLSearchParams({
-            initialInput: prompt,
-            autoSend: "true"
-          });
-
-          // Add theme parameter if a theme was selected
-          if (selectedTheme) {
-            params.append("theme", selectedTheme);
-          }
-
-          const finalUrl = `${baseUrl}/?${params.toString()}`;
-          console.log("Redirecting to:", finalUrl);
-          
-          // Redirect to the URL
-          window.location.href = finalUrl;
-        });
+        generateButton.addEventListener("click", handleSubmit);
       }
+
+      // Enter key handler on textarea
+      typingInput.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" && !event.shiftKey) {
+          event.preventDefault();
+          handleSubmit();
+        }
+      });
 
       // Template click handler
       document.querySelectorAll(".prompt-template").forEach((template) => {
