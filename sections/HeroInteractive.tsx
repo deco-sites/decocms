@@ -82,8 +82,8 @@ export interface Props {
 }
 
 const defaultProps: Props = {
-  title: "Describe your AI app. We'll build it.",
-  subtitle: "From idea to production in one prompt. Full-stack AI apps with custom interfaces, workflows, and your company's data—no code required.",
+  title: "Generate internal AI apps that actually ship.",
+  subtitle: "Connect your tools via MCP, deploy anywhere. Full-stack AI applications with custom UI, workflows and built-in governance.",
   apps: [
     { name: "Sheets", icon: "https://placehold.co/48x48", mention: "sheets" },
     { name: "Discord", icon: "https://placehold.co/48x48", mention: "discord" },

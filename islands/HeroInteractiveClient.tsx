@@ -6,6 +6,7 @@ export default function HeroInteractiveClient() {
     
     let typingInput: HTMLTextAreaElement | null = null;
     let selectedTheme: string | null = null;
+    let animationsPlayed = false;
 
     // Initialize function
     function init() {
@@ -137,9 +138,16 @@ export default function HeroInteractiveClient() {
 
       // GSAP animations - wait for GSAP to load
       function applyGSAPAnimations() {
+        if (animationsPlayed) {
+          console.log("Animations already played, skipping...");
+          return;
+        }
+
         const gsap = (globalThis as any).gsap;
         if (gsap) {
           console.log("Applying GSAP animations");
+          animationsPlayed = true;
+          
           gsap.fromTo("h1", 
             { y: 30, opacity: 0 },
             { y: 0, opacity: 1, duration: 1, ease: "power3.out" }
