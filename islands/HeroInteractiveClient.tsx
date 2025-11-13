@@ -46,9 +46,13 @@ function triggerAnimations(gsap: any) {
     { y: 30, opacity: 0 },
     { y: 0, opacity: 1, duration: 1.2, delay: 0.2, ease: "power3.out" }
   );
-  gsap.fromTo(".bg-white.border.border-\\[\\#e5e5e5\\]", 
+  gsap.fromTo("#main-input-box", 
     { y: 40, opacity: 0 },
     { y: 0, opacity: 1, duration: 1, delay: 0.4, ease: "power3.out" }
+  );
+  gsap.fromTo("#prompt-templates button", 
+    { y: 20, opacity: 0 },
+    { y: 0, opacity: 1, duration: 0.8, delay: 0.6, stagger: 0.1, ease: "power3.out" }
   );
 }
 
@@ -216,7 +220,7 @@ export default function HeroInteractiveClient({
               </div>
 
               {/* Main Input Box */}
-              <div class="bg-white border border-[#e5e5e5] rounded-xl p-2.5 w-full shadow-[0px_0px_0px_1px_rgba(0,0,0,0.08),0px_1px_1px_0px_rgba(0,0,0,0.04),0px_6px_24px_0px_rgba(0,0,0,0.01),0px_9px_48px_0px_rgba(0,0,0,0.09)]">
+              <div id="main-input-box" class="bg-white border border-[#e5e5e5] rounded-xl p-2.5 w-full shadow-[0px_0px_0px_1px_rgba(0,0,0,0.08),0px_1px_1px_0px_rgba(0,0,0,0.04),0px_6px_24px_0px_rgba(0,0,0,0.01),0px_9px_48px_0px_rgba(0,0,0,0.09)]">
                 <div class="flex flex-col gap-4">
                   {/* Text Area */}
                   <div class="h-[120px] px-2.5 py-2 relative">
@@ -338,46 +342,18 @@ export default function HeroInteractiveClient({
               </div>
 
               {/* Prompt Templates */}
-              <div class="flex flex-col gap-2 items-center justify-center w-full">
-                <div class="flex flex-wrap gap-2 items-center justify-center">
-                  {promptTemplates?.slice(0, 3).map((template, idx) => (
-                    <button
-                      key={idx}
-                      type="button"
-                      onClick={() => handleTemplateClick(template.fullText)}
-                      class="prompt-template bg-white border border-[#e5e5e5] rounded-xl px-3 py-2 flex items-center gap-3 hover:bg-gray-50 transition-colors cursor-pointer"
-                    >
-                      <Icon name={template.icon} size="small" class="text-[#a595ff] flex-shrink-0 w-5 h-5 overflow-hidden" />
-                      <span class="text-sm text-[#262626] whitespace-nowrap">{template.label}</span>
-                    </button>
-                  ))}
-                </div>
-                <div class="flex flex-wrap gap-2 items-center justify-center">
-                  {promptTemplates?.slice(3, 7).map((template, idx) => (
-                    <button
-                      key={idx}
-                      type="button"
-                      onClick={() => handleTemplateClick(template.fullText)}
-                      class="prompt-template bg-white border border-[#e5e5e5] rounded-xl px-3 py-2 flex items-center gap-3 hover:bg-gray-50 transition-colors cursor-pointer"
-                    >
-                      <Icon name={template.icon} size="small" class="text-[#a595ff] flex-shrink-0 w-5 h-5 overflow-hidden" />
-                      <span class="text-sm text-[#262626] whitespace-nowrap">{template.label}</span>
-                    </button>
-                  ))}
-                </div>
-                <div class="flex flex-wrap gap-2 items-center justify-center">
-                  {promptTemplates?.slice(7).map((template, idx) => (
-                    <button
-                      key={idx}
-                      type="button"
-                      onClick={() => handleTemplateClick(template.fullText)}
-                      class="prompt-template bg-white border border-[#e5e5e5] rounded-xl px-3 py-2 flex items-center gap-3 hover:bg-gray-50 transition-colors cursor-pointer"
-                    >
-                      <Icon name={template.icon} size="small" class="text-[#a595ff] flex-shrink-0 w-5 h-5 overflow-hidden" />
-                      <span class="text-sm text-[#262626] whitespace-nowrap">{template.label}</span>
-                    </button>
-                  ))}
-                </div>
+              <div id="prompt-templates" class="flex flex-wrap gap-2 items-center justify-center w-full">
+                {promptTemplates?.map((template, idx) => (
+                  <button
+                    key={idx}
+                    type="button"
+                    onClick={() => handleTemplateClick(template.fullText)}
+                    class="prompt-template bg-white border border-[#e5e5e5] rounded-xl px-3 py-2 flex items-center gap-3 hover:bg-gray-50 transition-colors cursor-pointer"
+                  >
+                    <Icon name={template.icon} size="small" class="text-[#a595ff] flex-shrink-0 w-5 h-5 overflow-hidden" />
+                    <span class="text-sm text-[#262626] whitespace-nowrap">{template.label}</span>
+                  </button>
+                ))}
               </div>
             </div>
           </div>
