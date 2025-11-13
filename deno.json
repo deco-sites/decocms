@@ -35,7 +35,7 @@
     "std/": "https://deno.land/std@0.190.0/",
     "site/": "./",
     "deco/": "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.120.12/",
-    "apps/": "/Users/lucasribeiro/repos/apps/",
+    "apps/": "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.121.4/",
     "@preact/signals": "https://esm.sh/*@preact/signals@1.2.2",
     "@preact/signals-core": "https://esm.sh/*@preact/signals-core@1.5.1",
     "daisyui": "npm:daisyui@4.4.19",

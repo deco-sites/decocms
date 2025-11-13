@@ -397,7 +397,7 @@ export default function HeroInteractiveClient({
                       class="prompt-template bg-white border border-[#e5e5e5] rounded-xl px-3 py-2 flex items-center gap-3 hover:bg-gray-50 transition-colors cursor-pointer"
                       data-text={template.fullText}
                     >
-                      <Icon name={template.icon} size="small" class="text-[#a595ff] flex-shrink-0" />
+                      <Icon name={template.icon} size="small" class="text-[#a595ff] flex-shrink-0 w-5 h-5 overflow-hidden" />
                       <span class="text-sm text-[#262626] whitespace-nowrap">{template.label}</span>
                     </button>
                   ))}
@@ -410,7 +410,7 @@ export default function HeroInteractiveClient({
                       class="prompt-template bg-white border border-[#e5e5e5] rounded-xl px-3 py-2 flex items-center gap-3 hover:bg-gray-50 transition-colors cursor-pointer"
                       data-text={template.fullText}
                     >
-                      <Icon name={template.icon} size="small" class="text-[#a595ff] flex-shrink-0" />
+                      <Icon name={template.icon} size="small" class="text-[#a595ff] flex-shrink-0 w-5 h-5 overflow-hidden" />
                       <span class="text-sm text-[#262626] whitespace-nowrap">{template.label}</span>
                     </button>
                   ))}
@@ -423,7 +423,7 @@ export default function HeroInteractiveClient({
                       class="prompt-template bg-white border border-[#e5e5e5] rounded-xl px-3 py-2 flex items-center gap-3 hover:bg-gray-50 transition-colors cursor-pointer"
                       data-text={template.fullText}
                     >
-                      <Icon name={template.icon} size="small" class="text-[#a595ff] flex-shrink-0" />
+                      <Icon name={template.icon} size="small" class="text-[#a595ff] flex-shrink-0 w-5 h-5 overflow-hidden" />
                       <span class="text-sm text-[#262626] whitespace-nowrap">{template.label}</span>
                     </button>
                   ))}
