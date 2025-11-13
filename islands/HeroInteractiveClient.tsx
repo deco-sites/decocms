@@ -1,4 +1,4 @@
-import { useEffect } from "preact/hooks";
+import { useEffect, useState, useRef } from "preact/hooks";
 import type { ImageWidget } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
 import Icon from "../components/ui/Icon.tsx";
@@ -28,38 +28,27 @@ export interface Props {
   themes?: Theme[];
 }
 
-// Global singleton flag to ensure animations run only once
-let animationsPlayed = false;
-
-// Global function to trigger GSAP animations
-function triggerAnimations() {
-  if (animationsPlayed) {
-    console.log("Animations already played, skipping...");
-    return;
-  }
-
-  // deno-lint-ignore no-explicit-any
-  const gsap = (globalThis as any).gsap;
+// Function to trigger GSAP animations
+function triggerAnimations(gsap: any) {
+  // If GSAP is not loaded, set the chat input container to visible without animations
   if (!gsap) {
-    console.log("GSAP not loaded yet, retrying...");
-    setTimeout(triggerAnimations, 100);
+    const element = document.getElementById("chat-input-container");
+    if (element) {
+      element.style.opacity = "1";
+    }
     return;
   }
 
-  console.log("Applying GSAP animations");
-  animationsPlayed = true;
+  // Set the chat input container to visible
+  gsap.set("#chat-input-container", { opacity: 1 });
   
   gsap.fromTo("#apps-carousel", 
     { y: 30, opacity: 0 },
-    { y: 0, opacity: 1, duration: 1.2, delay: 0, ease: "power3.out" }
+    { y: 0, opacity: 1, duration: 1.2, delay: 0.2, ease: "power3.out" }
   );
   gsap.fromTo(".bg-white.border.border-\\[\\#e5e5e5\\]", 
     { y: 40, opacity: 0 },
-    { y: 0, opacity: 1, duration: 1, delay: 0.2, ease: "power3.out" }
-  );
-  gsap.fromTo(".prompt-template", 
-    { y: 20, opacity: 0 },
-    { y: 0, opacity: 1, duration: 0.8, delay: 0.4, stagger: 0.1, ease: "power3.out" }
+    { y: 0, opacity: 1, duration: 1, delay: 0.4, ease: "power3.out" }
   );
 }
 
@@ -73,147 +62,88 @@ export default function HeroInteractiveClient({
   const repetitions = 8;
   const trackApps = Array.from({ length: repetitions }, () => apps).flat();
 
+  // React state management
+  const [promptText, setPromptText] = useState("");
+  const [selectedTheme, setSelectedTheme] = useState<string | null>(null);
+  const [stylesActive, setStylesActive] = useState(false);
+  const [carouselPaused, setCarouselPaused] = useState(false);
+
+  // Refs
+  const typingInputRef = useRef<HTMLTextAreaElement>(null);
+  const animationsPlayedRef = useRef(false);
+
+  // Trigger animations on mount
   useEffect(() => {
-    console.log("🚀 Island mounted!");
+    const gsap = globalThis.window.gsap;
     
-    let typingInput: HTMLTextAreaElement | null = null;
-    let selectedTheme: string | null = null;
+    if (animationsPlayedRef.current){
+      return;
+    }
+    animationsPlayedRef.current = true;
 
-    // Initialize function
-    function init() {
-      console.log("Initializing island...");
-      
-      typingInput = document.getElementById("typing-input") as HTMLTextAreaElement;
+    triggerAnimations(gsap);
+  }, []);
 
-      if (!typingInput) {
-        console.error("Typing input not found!");
-        return;
-      }
-
-      // Function to handle form submission
-      const handleSubmit = () => {
-        if (!typingInput) return;
-        
-        const prompt = typingInput.value.trim();
-        if (!prompt) {
-          alert("Please describe your app first!");
-          return;
-        }
-
-        // Build URL with parameters
-        const baseUrl = "https://admin.decocms.com";
-        const params = new URLSearchParams({
-          initialInput: prompt,
-          autoSend: "true"
-        });
-
-        // Add theme parameter if a theme was selected
-        if (selectedTheme) {
-          params.append("theme", selectedTheme);
-        }
-
-        const finalUrl = `${baseUrl}/?${params.toString()}`;
-        console.log("Redirecting to:", finalUrl);
-        
-        // Redirect to the URL
-        globalThis.location.href = finalUrl;
-      };
-
-      // Generate button click handler
-      const generateButton = document.getElementById("generate-button");
-      if (generateButton) {
-        generateButton.addEventListener("click", handleSubmit);
-      }
-
-      // Enter key handler on textarea
-      typingInput.addEventListener("keydown", (event) => {
-        if (event.key === "Enter" && !event.shiftKey) {
-          event.preventDefault();
-          handleSubmit();
-        }
-      });
-
-      // Template click handler
-      document.querySelectorAll(".prompt-template").forEach((template) => {
-        template.addEventListener("click", (event) => {
-          const button = (event.target as HTMLElement).closest(".prompt-template") as HTMLButtonElement;
-          if (!button || !typingInput) return;
-
-          const text = button.dataset.text || "";
-          typingInput.value = text;
-          typingInput.focus();
-        });
-      });
-
-      // Styles button toggle handler
-      const stylesButton = document.getElementById("styles-button");
-      const themeSelector = document.getElementById("theme-selector");
-      let stylesActive = false;
-
-      if (stylesButton && themeSelector) {
-        stylesButton.addEventListener("click", () => {
-          stylesActive = !stylesActive;
-          
-          if (stylesActive) {
-            // Activate styles (same as toggle active state)
-            stylesButton.classList.remove("bg-white", "hover:bg-gray-50");
-            stylesButton.classList.add("bg-[#f1fe9f]");
-            
-            // Show theme selector
-            themeSelector.classList.remove("hidden");
-            themeSelector.classList.add("flex", "flex-col");
-          } else {
-            // Deactivate styles
-            stylesButton.classList.remove("bg-[#f1fe9f]");
-            stylesButton.classList.add("bg-white", "hover:bg-gray-50");
-            
-            // Hide theme selector
-            themeSelector.classList.add("hidden");
-            themeSelector.classList.remove("flex", "flex-col");
-          }
-        });
-      }
-
-      // Theme card click handler
-      document.querySelectorAll(".theme-card").forEach((card) => {
-        card.addEventListener("click", (event) => {
-          const button = (event.target as HTMLElement).closest(".theme-card") as HTMLButtonElement;
-          if (!button || !typingInput) return;
-
-          const themeName = button.dataset.themeName || "";
-
-          // Remove selection from all cards
-          document.querySelectorAll(".theme-card").forEach((c) => {
-            c.classList.remove("ring-2", "ring-primary-light", "border-primary-light", "bg-[rgba(208,236,26,0.25)]");
-          });
-
-          // Add selection to clicked card
-          button.classList.add("ring-2", "ring-primary-light", "border-primary-light", "bg-[rgba(208,236,26,0.25)]");
-
-          // Save the selected theme
-          selectedTheme = themeName;
-          console.log("Selected theme:", themeName);
-        });
-      });
-
-      // Carousel hover pause
-      const carousel = document.getElementById("apps-carousel");
-      if (carousel) {
-        carousel.addEventListener("mouseenter", () => {
-          carousel.style.animationPlayState = "paused";
-        });
-        carousel.addEventListener("mouseleave", () => {
-          carousel.style.animationPlayState = "running";
-        });
-      }
-
-      // Trigger animations
-      triggerAnimations();
+  // Handle form submission
+  const handleSubmit = () => {
+    const prompt = promptText.trim();
+    if (!prompt) {
+      alert("Please describe your app first!");
+      return;
     }
 
-    // Wait for DOM and execute
-    setTimeout(init, 100);
-  }, []);
+    // Build URL with parameters
+    const baseUrl = "https://admin.decocms.com";
+    const params = new URLSearchParams({
+      initialInput: prompt,
+      autoSend: "true"
+    });
+
+    // Add theme parameter if a theme was selected
+    if (selectedTheme) {
+      params.append("theme", selectedTheme);
+    }
+
+    const finalUrl = `${baseUrl}/?${params.toString()}`;
+    console.log("Redirecting to:", finalUrl);
+    
+    // Redirect to the URL
+    globalThis.location.href = finalUrl;
+  };
+
+  // Handle Enter key on textarea
+  const handleTextareaKeyDown = (event: any) => {
+    if (event.key === "Enter" && !event.shiftKey) {
+      event.preventDefault();
+      handleSubmit();
+    }
+  };
+
+  // Handle template click
+  const handleTemplateClick = (templateText: string) => {
+    setPromptText(templateText);
+    typingInputRef.current?.focus();
+  };
+
+  // Handle styles button toggle
+  const handleStylesButtonClick = () => {
+    setStylesActive(!stylesActive);
+  };
+
+  // Handle theme card click
+  const handleThemeCardClick = (themeName: string) => {
+    setSelectedTheme(themeName);
+    console.log("Selected theme:", themeName);
+  };
+
+  // Handle carousel hover
+  const handleCarouselMouseEnter = () => {
+    setCarouselPaused(true);
+  };
+
+  const handleCarouselMouseLeave = () => {
+    setCarouselPaused(false);
+  };
 
   return (
     <section class="w-full bg-dc-50 flex flex-col p-2">
@@ -233,7 +163,7 @@ export default function HeroInteractiveClient({
             </div>
 
             {/* Chat Input Container */}
-            <div class="flex flex-col gap-8 items-center w-full max-w-[896px] relative z-20">
+            <div id="chat-input-container" class="opacity-0 flex flex-col gap-8 items-center w-full max-w-[896px] relative z-20">
               {/* Apps Carousel - Behind the input */}
               <div class="absolute top-[85px] left-1/2 -translate-x-1/2 w-[1428px] overflow-hidden h-[79px] flex items-center justify-center -z-10 pointer-events-none">
                 {/* Fade gradients */}
@@ -243,7 +173,12 @@ export default function HeroInteractiveClient({
                 <div
                   id="apps-carousel"
                   class="w-max flex gap-2 sm:gap-4 animate-sliding"
-                  style={{ animationDuration: "90s" }}
+                  style={{ 
+                    animationDuration: "90s",
+                    animationPlayState: carouselPaused ? "paused" : "running"
+                  }}
+                  onMouseEnter={handleCarouselMouseEnter}
+                  onMouseLeave={handleCarouselMouseLeave}
                 >
                   {/* First half of the loop */}
                   {trackApps.map((app, idx) => (
@@ -286,10 +221,13 @@ export default function HeroInteractiveClient({
                   {/* Text Area */}
                   <div class="h-[120px] px-2.5 py-2 relative">
                     <textarea
-                      id="typing-input"
+                      ref={typingInputRef}
+                      value={promptText}
+                      onInput={(e) => setPromptText((e.target as HTMLTextAreaElement).value)}
+                      onKeyDown={handleTextareaKeyDown}
                       class="w-full h-full text-base text-dc-900 leading-6 resize-none border-none outline-none bg-transparent overflow-auto opacity-70"
                       placeholder="Describe your app here..."
-                    ></textarea>
+                    />
                   </div>
 
                   {/* Bottom Controls */}
@@ -298,8 +236,10 @@ export default function HeroInteractiveClient({
                       {/* Styles Button */}
                       <button
                         type="button"
-                        id="styles-button"
-                        class="styles-button bg-white border border-[#e5e5e5] px-4 py-2 rounded-lg h-8 flex items-center gap-2 hover:bg-gray-50 transition-colors"
+                        onClick={handleStylesButtonClick}
+                        class={`styles-button border border-[#e5e5e5] px-4 py-2 rounded-lg h-8 flex items-center gap-2 transition-colors ${
+                          stylesActive ? "bg-[#f1fe9f]" : "bg-white hover:bg-gray-50"
+                        }`}
                       >
                         <svg class="w-[10.667px] h-[10.667px] text-[#262626]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path>
@@ -309,7 +249,11 @@ export default function HeroInteractiveClient({
                     </div>
 
                     {/* Generate Button */}
-                    <button type="button" id="generate-button" class="bg-primary-light px-4 py-2 rounded-lg h-8 flex items-center gap-2 hover:bg-[#c5e016] transition-colors">
+                    <button 
+                      type="button" 
+                      onClick={handleSubmit}
+                      class="bg-primary-light px-4 py-2 rounded-lg h-8 flex items-center gap-2 hover:bg-[#c5e016] transition-colors"
+                    >
                       <span class="text-sm font-medium text-primary-dark">Generate</span>
                       <svg class="w-[10.667px] h-[10.667px] text-primary-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
@@ -317,8 +261,9 @@ export default function HeroInteractiveClient({
                     </button>
                   </div>
 
-                  {/* Theme Selector - Hidden by default */}
-                  <div id="theme-selector" class="hidden flex-col gap-2.5">
+                  {/* Theme Selector - Conditionally rendered */}
+                  {stylesActive && (
+                  <div class="flex flex-col gap-2.5">
                     {/* Separator */}
                     <div class="w-full h-px bg-[#e5e5e5]"></div>
                     
@@ -334,8 +279,12 @@ export default function HeroInteractiveClient({
                           <button
                             key={idx}
                             type="button"
-                            data-theme-name={theme.name}
-                            class="theme-card flex-1 border border-neutral-200 rounded-[3px] overflow-hidden transition-all hover:border-primary-light hover:bg-[rgba(208,236,26,0.25)] cursor-pointer"
+                            onClick={() => handleThemeCardClick(theme.name)}
+                            class={`theme-card flex-1 border rounded-[3px] overflow-hidden transition-all hover:border-primary-light hover:bg-[rgba(208,236,26,0.25)] cursor-pointer ${
+                              selectedTheme === theme.name 
+                                ? "ring-2 ring-primary-light border-primary-light bg-[rgba(208,236,26,0.25)]" 
+                                : "border-neutral-200"
+                            }`}
                           >
                             {/* Preview Area */}
                             <div class="h-[70px] pl-2.5 pr-0 pt-2.5 pb-0 flex items-end" style={{ backgroundColor: primaryColor }}>
@@ -384,6 +333,7 @@ export default function HeroInteractiveClient({
                       })}
                     </div>
                   </div>
+                  )}
                 </div>
               </div>
 
@@ -394,8 +344,8 @@ export default function HeroInteractiveClient({
                     <button
                       key={idx}
                       type="button"
+                      onClick={() => handleTemplateClick(template.fullText)}
                       class="prompt-template bg-white border border-[#e5e5e5] rounded-xl px-3 py-2 flex items-center gap-3 hover:bg-gray-50 transition-colors cursor-pointer"
-                      data-text={template.fullText}
                     >
                       <Icon name={template.icon} size="small" class="text-[#a595ff] flex-shrink-0 w-5 h-5 overflow-hidden" />
                       <span class="text-sm text-[#262626] whitespace-nowrap">{template.label}</span>
@@ -407,8 +357,8 @@ export default function HeroInteractiveClient({
                     <button
                       key={idx}
                       type="button"
+                      onClick={() => handleTemplateClick(template.fullText)}
                       class="prompt-template bg-white border border-[#e5e5e5] rounded-xl px-3 py-2 flex items-center gap-3 hover:bg-gray-50 transition-colors cursor-pointer"
-                      data-text={template.fullText}
                     >
                       <Icon name={template.icon} size="small" class="text-[#a595ff] flex-shrink-0 w-5 h-5 overflow-hidden" />
                       <span class="text-sm text-[#262626] whitespace-nowrap">{template.label}</span>
@@ -420,8 +370,8 @@ export default function HeroInteractiveClient({
                     <button
                       key={idx}
                       type="button"
+                      onClick={() => handleTemplateClick(template.fullText)}
                       class="prompt-template bg-white border border-[#e5e5e5] rounded-xl px-3 py-2 flex items-center gap-3 hover:bg-gray-50 transition-colors cursor-pointer"
-                      data-text={template.fullText}
                     >
                       <Icon name={template.icon} size="small" class="text-[#a595ff] flex-shrink-0 w-5 h-5 overflow-hidden" />
                       <span class="text-sm text-[#262626] whitespace-nowrap">{template.label}</span>
