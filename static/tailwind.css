@@ -13301,9 +13301,9 @@ input.tab:checked + .tab-content,
   overflow-wrap: break-word;
 }
 
-.\[\&_a\]\:text-primary-dark a {
-  --tw-text-opacity: 1;
-  color: rgb(7 64 26 / var(--tw-text-opacity));
+.\[\&_a\]\:\!text-\[\#8CAA25\] a {
+  --tw-text-opacity: 1 !important;
+  color: rgb(140 170 37 / var(--tw-text-opacity)) !important;
 }
 
 .\[\&_a\]\:underline a {

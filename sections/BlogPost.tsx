@@ -41,7 +41,8 @@ const LIST_STYLES =
   "[&>ol]:list-decimal [&>ol]:pl-4 [&>ol]:md:pl-6 [&>ol]:mb-4 [&>ol]:md:mb-6 [&>ol]:text-dc-600 [&>ol]:text-base [&>ol]:md:text-lg [&>ol]:lg:text-xl [&>ol]:font-medium [&>ol]:font-sans [&>ol]:leading-relaxed [&>ol]:md:leading-loose [&>ol]:break-words";
 
 const LINK_STYLES =
-  "[&_a]:text-primary-dark [&_a]:underline [&_a]:decoration-dc-300 [&_a]:underline-offset-2 [&_a:hover]:opacity-80 [&_a]:transition-opacity [&_a]:break-words";
+  "[&_a]:underline [&_a]:decoration-dc-300 [&_a]:underline-offset-2 [&_a:hover]:opacity-80 [&_a]:transition-opacity [&_a]:break-words" +
+  " [&_a]:!text-[#8CAA25]";
 
 const HR_STYLES =
   "[&>hr]:my-8 md:[&>hr]:my-12 [&>hr]:border-0 [&>hr]:border-t [&>hr]:border-dc-200";
