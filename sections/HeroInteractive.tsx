@@ -71,7 +71,53 @@ export default function HeroInteractive({
   title,
   subtitle,
   apps,
-  promptTemplates,
+  promptTemplates = [
+    {
+      label: "Task Manager",
+      icon: "task_alt",
+      fullText: "Create a task manager that saves tasks to a database with title, priority, due date, and status. Let me add, edit, complete, and delete tasks with everything persisted."
+    },
+    {
+      label: "Expense Tracker",
+      icon: "payments",
+      fullText: "Build an expense tracker that stores all transactions in a database with amount, category, date, and description. Show monthly totals and spending charts from the saved data."
+    },
+    {
+      label: "Customer Database",
+      icon: "badge",
+      fullText: "Create a CRM that stores customer records in a database with name, email, phone, notes, and last contact date. Include search and the ability to update contact information."
+    },
+    {
+      label: "Inventory Manager",
+      icon: "inventory",
+      fullText: "Build an inventory system with a database to track products, quantities, SKUs, and reorder points. Let me update stock levels and get alerts when items need restocking."
+    },
+    {
+      label: "Reading List",
+      icon: "menu_book",
+      fullText: "Create a book tracker with a database storing title, author, genre, status (to-read/reading/read), and my personal rating. Let me search and filter my saved books."
+    },
+    {
+      label: "Habit Tracker",
+      icon: "trending_up",
+      fullText: "Build a habit tracker that saves daily check-ins to a database with habit name, completion status, and timestamp. Show my streak history and consistency patterns from stored data."
+    },
+    {
+      label: "Project Planner",
+      icon: "folder_special",
+      fullText: "Create a project manager that stores projects, tasks, and assignments in a database with due dates and status. Show progress calculations based on completed vs total tasks."
+    },
+    {
+      label: "Recipe Collection",
+      icon: "restaurant",
+      fullText: "Build a recipe organizer with a database storing recipe name, ingredients, instructions, prep time, and tags. Let me save new recipes and search through my collection."
+    },
+    {
+      label: "Event Calendar",
+      icon: "event",
+      fullText: "Create an event scheduler that saves appointments to a database with title, date, time, location, and attendees. Let me view, edit, and delete events with all changes persisted."
+    }
+  ],
   themes,
 }: Props) {
   return (
