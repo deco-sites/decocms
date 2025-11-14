@@ -153,23 +153,23 @@ export default function HeroInteractiveClient({
     <section class="w-full bg-dc-50 flex flex-col p-2">
       <div class="bg-primary-light py-2 rounded-[24px] flex flex-col h-[calc(100vh-16px)] relative overflow-hidden">
         {/* Main Content */}
-        <div class="flex-1 flex flex-col items-center justify-center px-4 sm:px-8 lg:px-16 pt-20 pb-2">
-          <div class="w-full max-w-[1140px] flex flex-col gap-16 items-center">
+        <div class="flex-1 flex flex-col items-center justify-start sm:justify-center px-4 sm:px-8 lg:px-16 pt-8 sm:pt-20 pb-8 sm:pb-2 overflow-y-auto">
+          <div class="w-full max-w-[1140px] flex flex-col gap-6 sm:gap-12 lg:gap-16 items-center">
             {/* Title and Subtitle - Server-side rendered */}
-            <div class="flex flex-col gap-5 items-center text-center w-full">
-              <h1 class="text-[64px] font-[590] text-primary-dark leading-[0.9] tracking-[-1.28px] max-w-[936px]">
+            <div class="flex flex-col gap-3 sm:gap-5 items-center text-center w-full">
+              <h1 class="text-[32px] sm:text-[48px] lg:text-[64px] font-[590] text-primary-dark leading-[0.95] sm:leading-[0.9] tracking-[-0.64px] sm:tracking-[-1.28px] max-w-[936px] px-2">
                 {title}
               </h1>
               
-              <p class="text-[18px] font-normal text-primary-dark opacity-80 leading-[1.5] max-w-[594px]">
+              <p class="text-[14px] sm:text-[16px] lg:text-[18px] font-normal text-primary-dark opacity-80 leading-[1.4] sm:leading-[1.5] max-w-[594px] px-4">
                 {subtitle}
               </p>
             </div>
 
             {/* Chat Input Container */}
-            <div id="chat-input-container" class="opacity-0 flex flex-col gap-8 items-center w-full max-w-[896px] relative z-20">
-              {/* Apps Carousel - Behind the input */}
-              <div class="absolute top-[85px] left-1/2 -translate-x-1/2 w-[1428px] overflow-hidden h-[79px] flex items-center justify-center -z-10 pointer-events-none">
+            <div id="chat-input-container" class="opacity-0 flex flex-col gap-4 sm:gap-6 lg:gap-8 items-center w-full max-w-[896px] relative z-20">
+              {/* Apps Carousel - Behind the input - Hidden on mobile */}
+              <div class="hidden sm:flex absolute top-[85px] left-1/2 -translate-x-1/2 w-[1428px] overflow-hidden h-[79px] items-center justify-center -z-10 pointer-events-none">
                 {/* Fade gradients */}
                 <div class="pointer-events-none absolute z-10 left-0 top-0 h-full w-32 bg-gradient-to-l from-transparent to-primary-light"></div>
                 <div class="pointer-events-none absolute z-10 right-0 top-0 h-full w-32 bg-gradient-to-r from-transparent to-primary-light"></div>
@@ -220,35 +220,35 @@ export default function HeroInteractiveClient({
               </div>
 
               {/* Main Input Box */}
-              <div id="main-input-box" class="bg-white border border-[#e5e5e5] rounded-xl p-2.5 w-full shadow-[0px_0px_0px_1px_rgba(0,0,0,0.08),0px_1px_1px_0px_rgba(0,0,0,0.04),0px_6px_24px_0px_rgba(0,0,0,0.01),0px_9px_48px_0px_rgba(0,0,0,0.09)]">
-                <div class="flex flex-col gap-4">
+              <div id="main-input-box" class="bg-white border border-[#e5e5e5] rounded-xl p-2 sm:p-2.5 w-full shadow-[0px_0px_0px_1px_rgba(0,0,0,0.08),0px_1px_1px_0px_rgba(0,0,0,0.04),0px_6px_24px_0px_rgba(0,0,0,0.01),0px_9px_48px_0px_rgba(0,0,0,0.09)]">
+                <div class="flex flex-col gap-3 sm:gap-4">
                   {/* Text Area */}
-                  <div class="h-[120px] px-2.5 py-2 relative">
+                  <div class="h-[80px] sm:h-[120px] px-2 sm:px-2.5 py-2 relative">
                     <textarea
                       ref={typingInputRef}
                       value={promptText}
                       onInput={(e) => setPromptText((e.target as HTMLTextAreaElement).value)}
                       onKeyDown={handleTextareaKeyDown}
-                      class="w-full h-full text-base text-dc-900 leading-6 resize-none border-none outline-none bg-transparent overflow-auto opacity-70"
+                      class="w-full h-full text-sm sm:text-base text-dc-900 leading-5 sm:leading-6 resize-none border-none outline-none bg-transparent overflow-auto opacity-70"
                       placeholder="Describe your app here..."
                     />
                   </div>
 
                   {/* Bottom Controls */}
-                  <div class="flex items-center justify-between">
+                  <div class="flex items-center justify-between gap-2">
                     <div class="flex items-center gap-2">
                       {/* Styles Button */}
                       <button
                         type="button"
                         onClick={handleStylesButtonClick}
-                        class={`styles-button border border-[#e5e5e5] px-4 py-2 rounded-lg h-8 flex items-center gap-2 transition-colors ${
+                        class={`styles-button border border-[#e5e5e5] px-2 sm:px-4 py-1.5 sm:py-2 rounded-lg h-7 sm:h-8 flex items-center gap-1 sm:gap-2 transition-colors ${
                           stylesActive ? "bg-[#f1fe9f]" : "bg-white hover:bg-gray-50"
                         }`}
                       >
                         <svg class="w-[10.667px] h-[10.667px] text-[#262626]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path>
                         </svg>
-                        <span class="text-sm font-medium text-[#737373]">Styles</span>
+                        <span class="text-xs sm:text-sm font-medium text-[#737373]">Styles</span>
                       </button>
                     </div>
 
@@ -256,9 +256,9 @@ export default function HeroInteractiveClient({
                     <button 
                       type="button" 
                       onClick={handleSubmit}
-                      class="bg-primary-light px-4 py-2 rounded-lg h-8 flex items-center gap-2 hover:bg-[#c5e016] transition-colors"
+                      class="bg-primary-light px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg h-7 sm:h-8 flex items-center gap-1 sm:gap-2 hover:bg-[#c5e016] transition-colors flex-shrink-0"
                     >
-                      <span class="text-sm font-medium text-primary-dark">Generate</span>
+                      <span class="text-xs sm:text-sm font-medium text-primary-dark">Generate</span>
                       <svg class="w-[10.667px] h-[10.667px] text-primary-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
                       </svg>
@@ -342,16 +342,16 @@ export default function HeroInteractiveClient({
               </div>
 
               {/* Prompt Templates */}
-              <div id="prompt-templates" class="flex flex-wrap gap-2 items-center justify-center w-full">
+              <div id="prompt-templates" class="flex flex-wrap gap-1.5 sm:gap-2 items-center justify-center w-full max-h-[120px] sm:max-h-none overflow-y-auto sm:overflow-y-visible">
                 {promptTemplates?.map((template, idx) => (
                   <button
                     key={idx}
                     type="button"
                     onClick={() => handleTemplateClick(template.fullText)}
-                    class="prompt-template bg-white border border-[#e5e5e5] rounded-xl px-3 py-2 flex items-center gap-3 hover:bg-gray-50 transition-colors cursor-pointer"
+                    class="prompt-template bg-white border border-[#e5e5e5] rounded-lg sm:rounded-xl px-2 sm:px-3 py-1.5 sm:py-2 flex items-center gap-1.5 sm:gap-3 hover:bg-gray-50 transition-colors cursor-pointer flex-shrink-0"
                   >
-                    <Icon name={template.icon} size="small" class="text-[#a595ff] flex-shrink-0 w-5 h-5 overflow-hidden" />
-                    <span class="text-sm text-[#262626] whitespace-nowrap">{template.label}</span>
+                    <Icon name={template.icon} size="small" class="text-[#a595ff] flex-shrink-0 w-4 h-4 sm:w-5 sm:h-5 overflow-hidden" />
+                    <span class="text-xs sm:text-sm text-[#262626] whitespace-nowrap">{template.label}</span>
                   </button>
                 ))}
               </div>
