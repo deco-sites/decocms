@@ -143,7 +143,10 @@ export default function BlogPosts({
 
   // Generate a standard URL for the next page
   const getNextPageUrl = () => {
-    const url = new URL(window.location.href);
+    if(!globalThis.location.href){
+      return "";
+    }
+    const url = new URL(globalThis.location.href);
     url.searchParams.set("page", (page + 1).toString());
     return url.toString();
   };
