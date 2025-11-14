@@ -1448,6 +1448,19 @@ html {
 .range:focus {
   outline: none;
 }
+.rating {
+  position: relative;
+  display: inline-flex;
+}
+.rating :where(input) {
+  cursor: pointer;
+  border-radius: 0px;
+  animation: rating-pop var(--animation-input, 0.25s) ease-out;
+  height: 1.5rem;
+  width: 1.5rem;
+  background-color: var(--fallback-bc,oklch(var(--bc)/var(--tw-bg-opacity)));
+  --tw-bg-opacity: 1;
+}
 .select {
   display: inline-flex;
   cursor: pointer;
@@ -2461,6 +2474,33 @@ input.tab:checked + .tab-content,
   box-shadow: 0 0 0 3px var(--range-shdw) inset,
       var(--focus-shadow, 0 0),
       calc(var(--filler-size) * -1 - var(--filler-offset)) 0 0 var(--filler-size);
+}
+.rating input {
+  -moz-appearance: none;
+       appearance: none;
+  -webkit-appearance: none;
+}
+.rating .rating-hidden {
+  width: 0.5rem;
+  background-color: transparent;
+}
+.rating input[type="radio"]:checked {
+  background-image: none;
+}
+.rating input:checked ~ input,
+  .rating input[aria-checked="true"] ~ input {
+  --tw-bg-opacity: 0.2;
+}
+.rating input:focus-visible {
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  transition-duration: 300ms;
+  transform: translateY(-0.125em);
+}
+.rating input:active:focus {
+  animation: none;
+  transform: translateY(-0.125em);
 }
 @keyframes rating-pop {
 
@@ -3922,14 +3962,8 @@ input.tab:checked + .tab-content,
 .h-96 {
   height: 24rem;
 }
-.h-\[10\.667px\] {
-  height: 10.667px;
-}
 .h-\[10px\] {
   height: 10px;
-}
-.h-\[120px\] {
-  height: 120px;
 }
 .h-\[14px\] {
   height: 14px;
@@ -3966,6 +4000,15 @@ input.tab:checked + .tab-content,
 }
 .h-\[calc\(100vh-16px\)\] {
   height: calc(100vh - 16px);
+}
+.h-\[clamp\(14px\2c 1\.8vh\2c 20px\)\] {
+  height: clamp(14px,1.8vh,20px);
+}
+.h-\[clamp\(26px\2c 3\.5vh\2c 32px\)\] {
+  height: clamp(26px,3.5vh,32px);
+}
+.h-\[clamp\(80px\2c 11vh\2c 140px\)\] {
+  height: clamp(80px,11vh,140px);
 }
 .h-auto {
   height: auto;
@@ -4020,6 +4063,9 @@ input.tab:checked + .tab-content,
 }
 .min-h-\[90vh\] {
   min-height: 90vh;
+}
+.min-h-\[calc\(100vh-16px\)\] {
+  min-height: calc(100vh - 16px);
 }
 .min-h-screen {
   min-height: 100vh;
@@ -4102,9 +4148,6 @@ input.tab:checked + .tab-content,
 .w-96 {
   width: 24rem;
 }
-.w-\[10\.667px\] {
-  width: 10.667px;
-}
 .w-\[10px\] {
   width: 10px;
 }
@@ -4149,6 +4192,9 @@ input.tab:checked + .tab-content,
 }
 .w-\[522px\] {
   width: 522px;
+}
+.w-\[clamp\(14px\2c 1\.8vh\2c 20px\)\] {
+  width: clamp(14px,1.8vh,20px);
 }
 .w-auto {
   width: auto;
@@ -4550,14 +4596,14 @@ input.tab:checked + .tab-content,
 .gap-4 {
   gap: 1rem;
 }
-.gap-5 {
-  gap: 1.25rem;
-}
 .gap-6 {
   gap: 1.5rem;
 }
 .gap-8 {
   gap: 2rem;
+}
+.gap-\[1\.5vh\] {
+  gap: 1.5vh;
 }
 .gap-\[16px\] {
   gap: 16px;
@@ -4565,14 +4611,23 @@ input.tab:checked + .tab-content,
 .gap-\[2px\] {
   gap: 2px;
 }
+.gap-\[2vh\] {
+  gap: 2vh;
+}
 .gap-\[3px\] {
   gap: 3px;
+}
+.gap-\[3vh\] {
+  gap: 3vh;
 }
 .gap-\[4px\] {
   gap: 4px;
 }
 .gap-\[6px\] {
   gap: 6px;
+}
+.gap-\[clamp\(4px\2c 0\.6vh\2c 8px\)\] {
+  gap: clamp(4px,0.6vh,8px);
 }
 .-space-x-1 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
@@ -7910,9 +7965,6 @@ input.tab:checked + .tab-content,
 .p-2 {
   padding: 0.5rem;
 }
-.p-2\.5 {
-  padding: 0.625rem;
-}
 .p-3 {
   padding: 0.75rem;
 }
@@ -7948,10 +8000,6 @@ input.tab:checked + .tab-content,
   padding-left: 0.5rem;
   padding-right: 0.5rem;
 }
-.px-2\.5 {
-  padding-left: 0.625rem;
-  padding-right: 0.625rem;
-}
 .px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
@@ -7979,6 +8027,10 @@ input.tab:checked + .tab-content,
 .px-\[12px\] {
   padding-left: 12px;
   padding-right: 12px;
+}
+.px-\[clamp\(8px\2c 1vh\2c 12px\)\] {
+  padding-left: clamp(8px,1vh,12px);
+  padding-right: clamp(8px,1vh,12px);
 }
 .py-1 {
   padding-top: 0.25rem;
@@ -8036,14 +8088,19 @@ input.tab:checked + .tab-content,
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
+.py-\[clamp\(4px\2c 0\.6vh\2c 8px\)\] {
+  padding-top: clamp(4px,0.6vh,8px);
+  padding-bottom: clamp(4px,0.6vh,8px);
+}
+.py-\[clamp\(4px\2c 0\.7vh\2c 8px\)\] {
+  padding-top: clamp(4px,0.7vh,8px);
+  padding-bottom: clamp(4px,0.7vh,8px);
+}
 .pb-0 {
   padding-bottom: 0px;
 }
 .pb-10 {
   padding-bottom: 2.5rem;
-}
-.pb-2 {
-  padding-bottom: 0.5rem;
 }
 .pb-20 {
   padding-bottom: 5rem;
@@ -8065,6 +8122,9 @@ input.tab:checked + .tab-content,
 }
 .pb-\[15px\] {
   padding-bottom: 15px;
+}
+.pb-\[2vh\] {
+  padding-bottom: 2vh;
 }
 .pl-1 {
   padding-left: 0.25rem;
@@ -8186,9 +8246,6 @@ input.tab:checked + .tab-content,
 .text-\[15px\] {
   font-size: 15px;
 }
-.text-\[18px\] {
-  font-size: 18px;
-}
 .text-\[24px\] {
   font-size: 24px;
 }
@@ -8197,6 +8254,18 @@ input.tab:checked + .tab-content,
 }
 .text-\[64px\] {
   font-size: 64px;
+}
+.text-\[clamp\(11px\2c 1\.5vh\2c 14px\)\] {
+  font-size: clamp(11px,1.5vh,14px);
+}
+.text-\[clamp\(13px\2c 1\.7vh\2c 16px\)\] {
+  font-size: clamp(13px,1.7vh,16px);
+}
+.text-\[clamp\(13px\2c 1\.8vh\2c 18px\)\] {
+  font-size: clamp(13px,1.8vh,18px);
+}
+.text-\[clamp\(28px\2c 4\.5vh\2c 64px\)\] {
+  font-size: clamp(28px,4.5vh,64px);
 }
 .text-base {
   font-size: 1rem;
@@ -8269,14 +8338,14 @@ input.tab:checked + .tab-content,
 .leading-8 {
   line-height: 2rem;
 }
-.leading-\[0\.9\] {
-  line-height: 0.9;
+.leading-\[0\.95\] {
+  line-height: 0.95;
 }
 .leading-\[1\.125rem\] {
   line-height: 1.125rem;
 }
-.leading-\[1\.5\] {
-  line-height: 1.5;
+.leading-\[1\.4\] {
+  line-height: 1.4;
 }
 .leading-\[10px\] {
   line-height: 10px;
@@ -8320,11 +8389,11 @@ input.tab:checked + .tab-content,
 .tracking-\[-0\.02em\] {
   letter-spacing: -0.02em;
 }
+.tracking-\[-0\.64px\] {
+  letter-spacing: -0.64px;
+}
 .tracking-\[-0\.96px\] {
   letter-spacing: -0.96px;
-}
-.tracking-\[-1\.28px\] {
-  letter-spacing: -1.28px;
 }
 .tracking-tight {
   letter-spacing: -0.025em;
@@ -11509,6 +11578,10 @@ input.tab:checked + .tab-content,
     display: block;
   }
 
+  .sm\:flex {
+    display: flex;
+  }
+
   .sm\:hidden {
     display: none;
   }
@@ -11537,12 +11610,24 @@ input.tab:checked + .tab-content,
     height: 10rem;
   }
 
+  .sm\:h-5 {
+    height: 1.25rem;
+  }
+
   .sm\:h-7 {
     height: 1.75rem;
   }
 
   .sm\:h-8 {
     height: 2rem;
+  }
+
+  .sm\:h-\[10\.667px\] {
+    height: 10.667px;
+  }
+
+  .sm\:h-\[120px\] {
+    height: 120px;
   }
 
   .sm\:h-\[273px\] {
@@ -11585,8 +11670,16 @@ input.tab:checked + .tab-content,
     width: 12rem;
   }
 
+  .sm\:w-5 {
+    width: 1.25rem;
+  }
+
   .sm\:w-7 {
     width: 1.75rem;
+  }
+
+  .sm\:w-\[10\.667px\] {
+    width: 10.667px;
   }
 
   .sm\:w-\[522px\] {
@@ -11677,6 +11770,18 @@ input.tab:checked + .tab-content,
     border-radius: 1rem;
   }
 
+  .sm\:rounded-xl {
+    border-radius: 0.75rem;
+  }
+
+  .sm\:p-2 {
+    padding: 0.5rem;
+  }
+
+  .sm\:p-2\.5 {
+    padding: 0.625rem;
+  }
+
   .sm\:p-4 {
     padding: 1rem;
   }
@@ -11692,6 +11797,26 @@ input.tab:checked + .tab-content,
   .sm\:px-0 {
     padding-left: 0px;
     padding-right: 0px;
+  }
+
+  .sm\:px-2 {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .sm\:px-2\.5 {
+    padding-left: 0.625rem;
+    padding-right: 0.625rem;
+  }
+
+  .sm\:px-3 {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .sm\:px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   .sm\:px-6 {
@@ -11712,6 +11837,11 @@ input.tab:checked + .tab-content,
   .sm\:py-16 {
     padding-top: 4rem;
     padding-bottom: 4rem;
+  }
+
+  .sm\:py-2 {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
   }
 
   .sm\:py-20 {
@@ -11741,6 +11871,14 @@ input.tab:checked + .tab-content,
 
   .sm\:pb-10 {
     padding-bottom: 2.5rem;
+  }
+
+  .sm\:pb-2 {
+    padding-bottom: 0.5rem;
+  }
+
+  .sm\:pt-20 {
+    padding-top: 5rem;
   }
 
   .sm\:pt-24 {
@@ -11779,8 +11917,16 @@ input.tab:checked + .tab-content,
     line-height: 1;
   }
 
+  .sm\:text-\[16px\] {
+    font-size: 16px;
+  }
+
   .sm\:text-\[20px\] {
     font-size: 20px;
+  }
+
+  .sm\:text-\[48px\] {
+    font-size: 48px;
   }
 
   .sm\:text-base {
@@ -11803,8 +11949,24 @@ input.tab:checked + .tab-content,
     line-height: 1.75rem;
   }
 
+  .sm\:leading-6 {
+    line-height: 1.5rem;
+  }
+
+  .sm\:leading-\[0\.9\] {
+    line-height: 0.9;
+  }
+
+  .sm\:leading-\[1\.5\] {
+    line-height: 1.5;
+  }
+
   .sm\:leading-\[28px\] {
     line-height: 28px;
+  }
+
+  .sm\:tracking-\[-1\.28px\] {
+    letter-spacing: -1.28px;
   }
 }
 
@@ -12493,6 +12655,14 @@ input.tab:checked + .tab-content,
   .lg\:text-8xl {
     font-size: 6rem;
     line-height: 1;
+  }
+
+  .lg\:text-\[18px\] {
+    font-size: 18px;
+  }
+
+  .lg\:text-\[64px\] {
+    font-size: 64px;
   }
 
   .lg\:text-lg {
