@@ -1,0 +1,8 @@
+{
+  "redirect": {
+    "from": "/senac",
+    "to": "https://chat.whatsapp.com/GJmx301pLOQ2lvz9hySZ5f?mode=hqrt3",
+    "type": "temporary"
+  },
+  "__resolveType": "website/loaders/redirect.ts"
+}
