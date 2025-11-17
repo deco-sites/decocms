@@ -1,0 +1,11 @@
+{
+  "name": "collections/blog/authors/740609cbf460",
+  "__resolveType": "blog/loaders/Author.ts",
+  "author": {
+    "name": "Guilherme Rodrigues",
+    "email": "gui@decocms.com",
+    "avatar": "https://assets.decocache.com/decocms/c9ed0c46-c497-44ea-b0f8-2d1a5c02912d/vnzs5Y4T_400x400.jpg",
+    "jobTitle": "Co-founder",
+    "company": "decocms.com"
+  }
+}
