@@ -13,7 +13,7 @@ interface Props {
 
 // Figma-accurate markdown typography styles
 const PARAGRAPH_STYLES =
-  "[&_p]:text-dc-500 [&_p]:text-[16px] [&_p]:font-normal [&_p]:font-sans [&_p]:leading-[1.5] [&_p]:mb-6 [&_p]:break-words";
+  "[&_p]:text-dc-600 [&_p]:text-[16px] [&_p]:font-normal [&_p]:font-sans [&_p]:leading-[1.5] [&_p]:mb-6 [&_p]:break-words";
 
 const HEADING_STYLES =
   "[&>h1]:text-[#292524] [&>h1]:text-[30px] [&>h1]:font-bold [&>h1]:font-sans [&>h1]:leading-[1.25] [&>h1]:mt-2 [&>h1]:mb-4 [&>h1]:break-words " +
@@ -24,7 +24,7 @@ const HEADING_STYLES =
   "[&>h6]:text-[#292524] [&>h6]:text-sm [&>h6]:font-medium [&>h6]:font-sans [&>h6]:leading-[1.5] [&>h6]:mt-4 [&>h6]:mb-4 [&>h6]:break-words";
 
 const CODE_BLOCK_STYLES =
-  "[&>pre]:bg-[#f5f5f4] [&>pre]:text-dc-500 [&>pre]:p-4 [&>pre]:font-mono [&>pre]:text-[16px] [&>pre]:rounded-[2px] [&>pre]:overflow-x-auto [&>pre]:max-w-full [&>pre]:my-4 [&>pre]:leading-[1.5] " +
+  "[&>pre]:bg-[#f5f5f4] [&>pre]:text-dc-600 [&>pre]:p-4 [&>pre]:font-mono [&>pre]:text-[16px] [&>pre]:rounded-[2px] [&>pre]:overflow-x-auto [&>pre]:max-w-full [&>pre]:my-4 [&>pre]:leading-[1.5] " +
   "[&_pre_code]:block [&_pre_code]:w-full [&_pre_code]:whitespace-pre " +
   "[&_code]:bg-[#f5f5f4] [&_code]:text-[#292524] [&_code]:px-2 [&_code]:py-px [&_code]:rounded-md [&_code]:font-mono [&_code]:text-[16px] [&_code]:leading-[1.5]";
 
@@ -34,11 +34,11 @@ const IMAGE_STYLES =
 const BLOCKQUOTE_STYLES =
   "[&>blockquote]:my-8 [&>blockquote]:border-l-4 [&>blockquote]:border-dc-200 [&>blockquote]:text-[16px] [&>blockquote]:pl-6 [&>blockquote]:text-[#292524] [&>blockquote]:leading-[1.5] [&>blockquote]:break-words " +
   "[&_blockquote[data-quote]]:border-l-4 [&_blockquote[data-quote]]:border-l-primary-dark [&_blockquote[data-quote]]:bg-dc-50 [&_blockquote[data-quote]]:border [&_blockquote[data-quote]]:border-dc-200 [&_blockquote[data-quote]]:p-6 [&_blockquote[data-quote]]:rounded-lg [&_blockquote[data-quote]]:my-8 " +
-  "[&_blockquote[data-quote]_cite]:block [&_blockquote[data-quote]_cite]:mt-3 [&_blockquote[data-quote]_cite]:text-sm [&_blockquote[data-quote]_cite]:not-italic [&_blockquote[data-quote]_cite]:text-dc-500 [&_blockquote[data-quote]_cite]:font-semibold";
+  "[&_blockquote[data-quote]_cite]:block [&_blockquote[data-quote]_cite]:mt-3 [&_blockquote[data-quote]_cite]:text-sm [&_blockquote[data-quote]_cite]:not-italic [&_blockquote[data-quote]_cite]:text-dc-600 [&_blockquote[data-quote]_cite]:font-semibold";
 
 const LIST_STYLES =
-  "[&>ul]:list-disc [&>ul]:pl-6 [&>ul]:mb-6 [&>ul]:text-dc-500 [&>ul]:text-[16px] [&>ul]:font-normal [&>ul]:font-sans [&>ul]:leading-[1.5] [&>ul]:break-words " +
-  "[&>ol]:list-decimal [&>ol]:pl-6 [&>ol]:mb-6 [&>ol]:text-dc-500 [&>ol]:text-[16px] [&>ol]:font-normal [&>ol]:font-sans [&>ol]:leading-[1.5] [&>ol]:break-words";
+  "[&>ul]:list-disc [&>ul]:pl-6 [&>ul]:mb-6 [&>ul]:text-dc-600 [&>ul]:text-[16px] [&>ul]:font-normal [&>ul]:font-sans [&>ul]:leading-[1.5] [&>ul]:break-words " +
+  "[&>ol]:list-decimal [&>ol]:pl-6 [&>ol]:mb-6 [&>ol]:text-dc-600 [&>ol]:text-[16px] [&>ol]:font-normal [&>ol]:font-sans [&>ol]:leading-[1.5] [&>ol]:break-words";
 
 const LINK_STYLES =
   "[&_a:not([data-btn])]:text-[16px] [&_a:not([data-btn])]:leading-[1.5] [&_a:not([data-btn])]:break-words [&_a:not([data-btn])]:transition-opacity [&_a:not([data-btn]):hover]:opacity-80" +
@@ -52,13 +52,13 @@ const TABLE_STYLES =
   "[&_thead]:bg-dc-100 " +
   "[&_thead_th]:text-dc-800 [&_thead_th]:font-semibold [&_thead_th]:text-sm " +
   "[&_th]:px-4 [&_th]:py-3 [&_th]:border-b [&_th]:border-dc-200 [&_th]:text-left [&_th]:whitespace-nowrap " +
-  "[&_td]:px-4 [&_td]:py-3 [&_td]:border-b [&_td]:border-dc-100 [&_td]:text-dc-500 [&_td]:text-[16px] [&_td]:align-middle [&_td]:leading-[1.5] " +
+  "[&_td]:px-4 [&_td]:py-3 [&_td]:border-b [&_td]:border-dc-100 [&_td]:text-dc-600 [&_td]:text-[16px] [&_td]:align-middle [&_td]:leading-[1.5] " +
   "[&_tbody_tr:last-child_td]:border-b-0 " +
   "[&_tbody_tr:hover]:bg-dc-50 [&_tbody_tr]:transition-colors";
 
 const FIGURE_STYLES = "[&_figure]:my-6 " +
   "[&_figure_img]:rounded-lg [&_figure_img]:w-full [&_figure_img]:h-auto " +
-  "[&_figcaption]:mt-3 [&_figcaption]:text-sm [&_figcaption]:text-dc-500 [&_figcaption]:text-center [&_figcaption]:italic [&_figcaption]:leading-[1.5]";
+  "[&_figcaption]:mt-3 [&_figcaption]:text-sm [&_figcaption]:text-dc-600 [&_figcaption]:text-center [&_figcaption]:italic [&_figcaption]:leading-[1.5]";
 
 const DETAILS_STYLES =
   "[&_details]:my-6 [&_details]:border [&_details]:border-dc-200 [&_details]:rounded-xl [&_details]:p-4 [&_details]:bg-white " +
@@ -70,7 +70,7 @@ const DETAILS_STYLES =
 const CALLOUT_STYLES =
   "[&_div[data-callout]]:bg-white [&_div[data-callout]]:border [&_div[data-callout]]:border-dc-200 [&_div[data-callout]]:rounded-xl [&_div[data-callout]]:p-6 [&_div[data-callout]]:my-6 [&_div[data-callout]]:flex [&_div[data-callout]]:flex-col [&_div[data-callout]]:gap-2 " +
   "[&_div[data-callout]_strong]:text-[16px] [&_div[data-callout]_strong]:font-medium [&_div[data-callout]_strong]:text-[#292524] [&_div[data-callout]_strong]:block [&_div[data-callout]_strong]:leading-[1.5] " +
-  "[&_div[data-callout]_p]:text-[16px] [&_div[data-callout]_p]:text-dc-500 [&_div[data-callout]_p]:mb-0 [&_div[data-callout]_p]:leading-[1.5] " +
+  "[&_div[data-callout]_p]:text-[16px] [&_div[data-callout]_p]:text-dc-600 [&_div[data-callout]_p]:mb-0 [&_div[data-callout]_p]:leading-[1.5] " +
   "[&_div[data-callout]_ul]:text-[16px] [&_div[data-callout]_ul]:leading-[1.5] " +
   "[&_div[data-callout]_ol]:text-[16px] [&_div[data-callout]_ol]:leading-[1.5] " +
   "[&_div[data-callout]_li]:text-[16px] [&_div[data-callout]_li]:leading-[1.5] " +
@@ -83,13 +83,13 @@ const CALLOUT_STYLES =
 // Figma card styles - vertical/column layout
 const CARD_STYLES =
   "[&_div[data-card]]:bg-white [&_div[data-card]]:border [&_div[data-card]]:border-dc-200 [&_div[data-card]]:rounded-xl [&_div[data-card]]:p-6 [&_div[data-card]]:my-6 [&_div[data-card]]:flex [&_div[data-card]]:flex-col [&_div[data-card]]:items-start [&_div[data-card]]:gap-4 " +
-  "[&_div[data-card-icon]]:size-6 [&_div[data-card-icon]]:text-dc-500 [&_div[data-card-icon]]:shrink-0 " +
+  "[&_div[data-card-icon]]:size-6 [&_div[data-card-icon]]:text-dc-600 [&_div[data-card-icon]]:shrink-0 " +
   "[&_div[data-card-content]]:flex [&_div[data-card-content]]:flex-col [&_div[data-card-content]]:gap-0.5 [&_div[data-card-content]]:w-full " +
   "[&_div[data-card]_h3]:text-[16px] [&_div[data-card]_h3]:font-medium [&_div[data-card]_h3]:text-[#292524] [&_div[data-card]_h3]:mb-0 [&_div[data-card]_h3]:mt-0 [&_div[data-card]_h3]:leading-[1.5] " +
   "[&_div[data-card]_h4]:text-[16px] [&_div[data-card]_h4]:font-medium [&_div[data-card]_h4]:text-[#292524] [&_div[data-card]_h4]:mb-0 [&_div[data-card]_h4]:mt-0 [&_div[data-card]_h4]:leading-[1.5] " +
-  "[&_div[data-card]_p]:text-[16px] [&_div[data-card]_p]:text-dc-500 [&_div[data-card]_p]:mb-0 [&_div[data-card]_p]:leading-[1.5] " +
-  "[&_div[data-card]_ul]:text-[16px] [&_div[data-card]_ul]:text-dc-500 [&_div[data-card]_ul]:leading-[1.5] " +
-  "[&_div[data-card]_ol]:text-[16px] [&_div[data-card]_ol]:text-dc-500 [&_div[data-card]_ol]:leading-[1.5] " +
+  "[&_div[data-card]_p]:text-[16px] [&_div[data-card]_p]:text-dc-600 [&_div[data-card]_p]:mb-0 [&_div[data-card]_p]:leading-[1.5] " +
+  "[&_div[data-card]_ul]:text-[16px] [&_div[data-card]_ul]:text-dc-600 [&_div[data-card]_ul]:leading-[1.5] " +
+  "[&_div[data-card]_ol]:text-[16px] [&_div[data-card]_ol]:text-dc-600 [&_div[data-card]_ol]:leading-[1.5] " +
   "[&_div[data-card]_li]:text-[16px] [&_div[data-card]_li]:leading-[1.5] " +
   "[&_div[data-card]_strong]:text-[16px]";
 
@@ -107,7 +107,7 @@ const STEPS_STYLES = "[&_div[data-steps]]:my-8 " +
   "[&_div[data-step-number]]:flex-shrink-0 [&_div[data-step-number]]:w-6 [&_div[data-step-number]]:h-6 [&_div[data-step-number]]:rounded-full [&_div[data-step-number]]:bg-primary-light [&_div[data-step-number]]:text-[#292524] [&_div[data-step-number]]:flex [&_div[data-step-number]]:items-center [&_div[data-step-number]]:justify-center [&_div[data-step-number]]:font-normal [&_div[data-step-number]]:text-[16px] [&_div[data-step-number]]:relative [&_div[data-step-number]]:z-10 [&_div[data-step-number]]:leading-none " +
   "[&_div[data-step-content]]:flex-1 [&_div[data-step-content]]:flex [&_div[data-step-content]]:flex-col [&_div[data-step-content]]:gap-2.5 [&_div[data-step-content]]:pt-0.5 " +
   "[&_div[data-step-content]_h3]:text-xl [&_div[data-step-content]_h3]:font-medium [&_div[data-step-content]_h3]:text-[#292524] [&_div[data-step-content]_h3]:mb-0 [&_div[data-step-content]_h3]:mt-0 [&_div[data-step-content]_h3]:leading-[1.5] " +
-  "[&_div[data-step-content]_p]:text-[16px] [&_div[data-step-content]_p]:text-dc-500 [&_div[data-step-content]_p]:mb-0 [&_div[data-step-content]_p]:leading-[1.5] " +
+  "[&_div[data-step-content]_p]:text-[16px] [&_div[data-step-content]_p]:text-dc-600 [&_div[data-step-content]_p]:mb-0 [&_div[data-step-content]_p]:leading-[1.5] " +
   "[&_div[data-step-content]_ol]:text-[16px] [&_div[data-step-content]_ol]:leading-[1.5] " +
   "[&_div[data-step-content]_ul]:text-[16px] [&_div[data-step-content]_ul]:leading-[1.5] " +
   "[&_div[data-step-content]_li]:text-[16px] [&_div[data-step-content]_li]:leading-[1.5]";
@@ -169,11 +169,11 @@ const TIMELINE_STYLES = "[&_div[data-timeline]]:my-8 " +
   "[&_div[data-timeline-date]]:flex-shrink-0 [&_div[data-timeline-date]]:w-3 [&_div[data-timeline-date]]:h-3 [&_div[data-timeline-date]]:rounded-full [&_div[data-timeline-date]]:bg-primary-light [&_div[data-timeline-date]]:border-2 [&_div[data-timeline-date]]:border-primary-dark [&_div[data-timeline-date]]:relative [&_div[data-timeline-date]]:z-10 [&_div[data-timeline-date]]:mt-1 " +
   "[&_div[data-timeline-content]]:flex-1 " +
   "[&_div[data-timeline-content]_h4]:text-lg [&_div[data-timeline-content]_h4]:font-bold [&_div[data-timeline-content]_h4]:text-primary-dark [&_div[data-timeline-content]_h4]:mb-2 [&_div[data-timeline-content]_h4]:mt-0 [&_div[data-timeline-content]_h4]:leading-[1.5] " +
-  "[&_div[data-timeline-content]_p]:text-[16px] [&_div[data-timeline-content]_p]:text-dc-500 [&_div[data-timeline-content]_p]:mb-0 [&_div[data-timeline-content]_p]:leading-[1.5]";
+  "[&_div[data-timeline-content]_p]:text-[16px] [&_div[data-timeline-content]_p]:text-dc-600 [&_div[data-timeline-content]_p]:mb-0 [&_div[data-timeline-content]_p]:leading-[1.5]";
 
 const CHECKLIST_STYLES =
   "[&_div[data-checklist]]:flex [&_div[data-checklist]]:flex-col [&_div[data-checklist]]:my-6 " +
-  "[&_div[data-check]]:flex [&_div[data-check]]:items-center [&_div[data-check]]:gap-2.5 [&_div[data-check]]:py-2 [&_div[data-check]]:text-[16px] [&_div[data-check]]:text-[#292524] [&_div[data-check]]:leading-[1.5] [&_div[data-check]]:relative [&_div[data-check]]:pl-7 " +
+  "[&_div[data-check]]:flex [&_div[data-check]]:items-center [&_div[data-check]]:gap-2.5 [&_div[data-check]]:py-2 [&_div[data-check]]:text-[16px] [&_div[data-check]]:text-dc-600 [&_div[data-check]]:leading-[1.5] [&_div[data-check]]:relative [&_div[data-check]]:pl-7 " +
   "[&_div[data-check]]:before:content-['✓'] [&_div[data-check]]:before:absolute [&_div[data-check]]:before:left-0 [&_div[data-check]]:before:flex [&_div[data-check]]:before:items-center [&_div[data-check]]:before:justify-center [&_div[data-check]]:before:w-4 [&_div[data-check]]:before:h-4 [&_div[data-check]]:before:rounded-full [&_div[data-check]]:before:bg-green-600 [&_div[data-check]]:before:text-white [&_div[data-check]]:before:text-xs [&_div[data-check]]:before:font-bold [&_div[data-check]]:before:shrink-0";
 
 const VIDEO_STYLES =
@@ -252,7 +252,7 @@ export default function BlogPost({ page }: Props) {
                   variant="ghost"
                   size="small"
                 >
-                  <Icon name="arrow_back" class="text-dc-500" />
+                  <Icon name="arrow_back" class="text-dc-600" />
                   <span>Blog</span>
                 </Button>
               </div>
@@ -275,7 +275,7 @@ export default function BlogPost({ page }: Props) {
               {formattedDate && (
                 <>
                   <div className="w-1 h-1 bg-dc-500 rounded-[1px]"></div>
-                  <div className="justify-start text-dc-500 text-base md:text-lg lg:text-xl font-medium font-sans">
+                  <div className="justify-start text-dc-600 text-base md:text-lg lg:text-xl font-medium font-sans">
                     {formattedDate}
                   </div>
                 </>
