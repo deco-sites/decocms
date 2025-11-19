@@ -1,0 +1,8 @@
+{
+  "redirect": {
+    "from": "/build-in-public-afya",
+    "to": "https://luma.com/0af6ciye",
+    "type": "temporary"
+  },
+  "__resolveType": "website/loaders/redirect.ts"
+}
