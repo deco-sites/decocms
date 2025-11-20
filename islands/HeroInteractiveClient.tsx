@@ -100,7 +100,8 @@ export default function HeroInteractiveClient({
     const baseUrl = "https://admin.decocms.com";
     const params = new URLSearchParams({
       initialInput: prompt,
-      autoSend: "true"
+      autoSend: "true",
+      agentId: "design"
     });
 
     // Add theme parameter if a theme was selected
