@@ -2,11 +2,21 @@ import { asset, Head } from "$fresh/runtime.ts";
 import { defineApp } from "$fresh/server.ts";
 import Theme from "../sections/Theme/Theme.tsx";
 import { Context } from "@deco/deco";
+import PostHogProvider from "../islands/PostHogProvider.tsx";
+
+const POSTHOG_KEY = Deno.env.get("POSTHOG_API_KEY") ?? "";
+const POSTHOG_HOST = Deno.env.get("POSTHOG_API_HOST") ??
+  "https://us.i.posthog.com";
 
 export default defineApp(async (_req, ctx) => {
   const revision = await Context.active().release?.revision();
   return (
     <>
+      {/* PostHog Analytics */}
+      {POSTHOG_KEY && (
+        <PostHogProvider apiKey={POSTHOG_KEY} apiHost={POSTHOG_HOST} />
+      )}
+
       {/* Include default fonts and css vars */}
       <Theme colorScheme="any" />
 

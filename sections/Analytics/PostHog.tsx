@@ -17,11 +17,17 @@ export default function PostHogAnalytics({ posthogKey, posthogHost }: Props) {
   const host = posthogHost ?? "https://us.i.posthog.com";
 
   useEffect(() => {
-    if (!key) return;
+    console.log("[PostHog] Component mounted, key exists:", !!key);
+
+    if (!key) {
+      console.warn("[PostHog] No API key configured");
+      return;
+    }
 
     const win = globalThis as typeof globalThis & { posthog?: PostHog };
 
     if (!win.posthog) {
+      console.log("[PostHog] Initializing with host:", host);
       const posthog = new PostHog();
       posthog.init(key, {
         api_host: host,
@@ -30,6 +36,9 @@ export default function PostHogAnalytics({ posthogKey, posthogHost }: Props) {
 
       // Expose to window for island access
       win.posthog = posthog;
+      console.log("[PostHog] Initialized successfully");
+    } else {
+      console.log("[PostHog] Already initialized");
     }
   }, [key, host]);
 
