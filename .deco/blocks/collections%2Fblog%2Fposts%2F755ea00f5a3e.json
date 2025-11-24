@@ -1,0 +1,45 @@
+{
+  "name": "collections/blog/posts/755ea00f5a3e",
+  "__resolveType": "blog/loaders/Blogpost.ts",
+  "post": {
+    "authors": [
+      {
+        "name": "Rafael Crespo",
+        "email": "rafael@decocms.com",
+        "jobTitle": "Co-founder",
+        "avatar": "https://assets.decocache.com/decocms/d377d0fc-343d-4f45-84aa-c7e1da1beaf0/Luciano-Junior-1.png"
+      }
+    ],
+    "categories": [
+      {
+        "name": "Culture",
+        "slug": "culture"
+      }
+    ],
+    "imageCarousel": {
+      "banners": []
+    },
+    "extraProps": [],
+    "aggregateRating": {
+      "@type": "AggregateRating"
+    },
+    "review": [],
+    "contentRating": [],
+    "interactionStatistic": {
+      "@type": "InteractionCounter",
+      "image": null,
+      "video": null
+    },
+    "title": "How to Reinvent a Software Company in the AI Era | Lucas Bacic (CEO, Loja Integrada)",
+    "content": "<blockquote><p><strong><span style=\"font-size: 10pt\">Disclaimer:</span></strong><span style=\"font-size: 10pt\"> The conversation—and the full transcript—are in Portuguese</span></p></blockquote><p></p><p>What happens when you decide to reinvent a platform with over 500,000 merchants using Artificial Intelligence? In this episode, we speak with <strong>Lucas Bacic, CEO of Loja Integrada</strong>, about the <strong>transition from reactive to proactive software.</strong></p><p></p><p>We discuss the concept of \"Software Gardening\" (building around corners, rather than bridges) and debate why AI agents should serve as interfaces that gradually reveal complexity. We also cover the new \"Guided E-commerce\" category—which aims to end entrepreneurial loneliness by establishing AI as an operating partner—and <strong>how Loja Integrada cut down on rituals to regain startup speed.</strong><br><br>&lt;iframe width=\"100%\" height=\"auto\" style=\"aspect-ratio: 16/9\" src=\"https://www.youtube.com/embed/cPJtRnEMz18\" title=\"deco Context\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen&gt;&lt;/iframe&gt;</p><p></p><h3>We discuss:</h3><p></p><p>01:56 — Lucas Bacic's journey: From Front-end to CEO<br>05:07 — The CEO Workflow with AI: Managing context via Notion and Slack<br>09:40 — The future of work &amp; abstracting complexity (B2B SaaS)<br>15:35 — AI Agents as Interface and software navigation<br>19:05 — The fundamental distinction: From Prompt to Loop (Game Engines)<br>23:13 — Management in the AI era: Smaller squads and risk reduction<br>27:45 — Launch discipline (Launch Windows)<br>33:45 — Category Design: Guided E-commerce &amp; the end of the \"lonely entrepreneur\"<br>37:45 — Daily tools: ChatGPT, Rewind, and tl;dv</p><p></p><p>Ouça também no <a target=\"_blank\" rel=\"noopener noreferrer nofollow\" href=\"https://open.spotify.com/episode/3FCw4LAtr2FU0LwuI4D9o1\"><span style=\"color: rgb(140, 170, 37)\">Spotify</span></a> e na <a target=\"_blank\" rel=\"noopener noreferrer nofollow\" href=\"https://podcasts.apple.com/br/podcast/deco-cast/id1834153293?l=en-GB&amp;i=1000738150078\"><span style=\"color: rgb(140, 170, 37)\">Apple</span></a> 🎧</p><p></p><hr><p></p><h3>Where to find Lucas:</h3><p></p><p>LinkedIn: <a target=\"_blank\" rel=\"noopener noreferrer nofollow\" href=\"https://www.linkedin.com/in/baciclucas\"><span style=\"color: rgb(140, 170, 37)\">https://www.linkedin.com/in/baciclucas</span></a><a target=\"_blank\" rel=\"noopener noreferrer nofollow\" href=\"https://www.linkedin.com/in/bernardo-marotta-84172925/\"><span style=\"color: rgb(140, 170, 37)\">/</span></a><br>Substack: <a target=\"_blank\" rel=\"noopener noreferrer nofollow\" href=\"https://substack.com/@baciclucas\"><span style=\"color: rgb(140, 170, 37)\">https://substack.com/@baciclucas/</span></a></p><p>X: <a target=\"_blank\" rel=\"noopener noreferrer nofollow\" href=\"https://x.com/\"><span style=\"color: rgb(140, 170, 37)\">https://x.com/</span></a><a target=\"_blank\" rel=\"noopener noreferrer nofollow\" href=\"https://substack.com/@baciclucas\"><span style=\"color: rgb(140, 170, 37)\">baciclucas/</span></a></p>",
+    "date": "2025-11-24",
+    "slug": "ai-transformation-loja-integrada-lucas-bacic",
+    "excerpt": "Lucas Bacic (CEO, Loja Integrada) discusses the reinvention of B2B SaaS in the AI era: from the concept of \"Software Gardening\" to the pivotal shift from \"Prompts\" to \"Loops,\" transforming technology into an active operating partner for over 500,000 merchants.",
+    "seo": {
+      "description": "How do you pivot a platform with 525k merchants to AI? Lucas Bacic (CEO) shares the playbook: Software Gardening, the \"Prompts to Loops\" shift, and Guided E-commerce.",
+      "title": "How to Reinvent a Software Company in the AI Era | Lucas Bacic (CEO, Loja Integrada) | deco.cast #3",
+      "image": "https://assets.decocache.com/decocms/ed4350ef-3b7b-41e6-8191-6a78544ff5b8/seoseo.png"
+    },
+    "image": "https://assets.decocache.com/decocms/633b1a13-1f84-4f5e-b650-bac58fcd6e82/blog.png"
+  }
+}
