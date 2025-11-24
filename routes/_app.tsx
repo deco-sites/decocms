@@ -3,10 +3,6 @@ import { defineApp } from "$fresh/server.ts";
 import Theme from "../sections/Theme/Theme.tsx";
 import { Context } from "@deco/deco";
 
-const POSTHOG_KEY = Deno.env.get("POSTHOG_API_KEY");
-const POSTHOG_HOST = Deno.env.get("POSTHOG_API_HOST") ??
-  "https://app.posthog.com";
-
 export default defineApp(async (_req, ctx) => {
   const revision = await Context.active().release?.revision();
   return (
@@ -61,29 +57,6 @@ export default defineApp(async (_req, ctx) => {
 
         {/* Web Manifest */}
         <link rel="manifest" href={asset("/site.webmanifest")} />
-
-        {/* PostHog Analytics */}
-        {POSTHOG_KEY && (
-          <>
-            <script src="https://cdn.posthog.com/posthog.js" />
-            <script
-              dangerouslySetInnerHTML={{
-                __html: `
-                  (function() {
-                    if (!window.posthog || !window.posthog.init) return;
-                    try {
-                      window.posthog.init('${POSTHOG_KEY}', {
-                        api_host: '${POSTHOG_HOST}',
-                      });
-                    } catch (err) {
-                      console.warn('PostHog init failed', err);
-                    }
-                  })();
-                `,
-              }}
-            />
-          </>
-        )}
       </Head>
 
       {/* Rest of Preact tree */}
