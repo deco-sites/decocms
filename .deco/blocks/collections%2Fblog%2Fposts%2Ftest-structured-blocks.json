@@ -1,0 +1,46 @@
+{
+  "name": "collections/blog/posts/test-structured-blocks",
+  "__resolveType": "blog/loaders/Blogpost.ts",
+  "post": {
+    "authors": [
+      {
+        "name": "DecoCMS Team",
+        "email": "team@decocms.com",
+        "jobTitle": "Product",
+        "avatar": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/1527/7286de42-e9c5-4fcb-ae8b-b992eea4b78e"
+      }
+    ],
+    "categories": [
+      {
+        "name": "Platform",
+        "slug": "platform"
+      }
+    ],
+    "title": "Testing Structured Content Blocks",
+    "date": "2025-11-25",
+    "slug": "test-structured-blocks",
+    "content": "[{\"type\":\"paragraph\",\"text\":\"This is a <strong>test blog post</strong> using the new structured content system. Let's see how all the blocks render!\"},{\"type\":\"heading\",\"level\":2,\"text\":\"Main Features\"},{\"type\":\"cardGrid\",\"columns\":3,\"cards\":[{\"icon\":\"🚀\",\"title\":\"Lightning Fast\",\"content\":\"Server-side rendering for instant page loads.\"},{\"icon\":\"🎨\",\"title\":\"Beautiful Design\",\"content\":\"Clean components that match your brand.\"},{\"icon\":\"🔒\",\"title\":\"Enterprise Ready\",\"content\":\"Built-in security and governance.\"}]},{\"type\":\"heading\",\"level\":2,\"text\":\"How It Works\"},{\"type\":\"steps\",\"steps\":[{\"number\":1,\"title\":\"Create Content\",\"content\":\"Write your blog post using structured JSON blocks.\"},{\"number\":2,\"title\":\"Preview\",\"content\":\"See exactly how it will look when published.\"},{\"number\":3,\"title\":\"Publish\",\"content\":\"Deploy instantly with one click.\"}]},{\"type\":\"comparison\",\"before\":{\"title\":\"Old Approach\",\"items\":[\"Writing HTML manually\",\"Complex data attributes\",\"No preview parity\"]},\"after\":{\"title\":\"New Approach\",\"items\":[\"Clean JSON structure\",\"Type-safe components\",\"Perfect preview\"]}},{\"type\":\"stats\",\"stats\":[{\"number\":\"10x\",\"label\":\"Faster to create\"},{\"number\":\"100%\",\"label\":\"Preview accuracy\"},{\"number\":\"0\",\"label\":\"Migration required\"}]},{\"type\":\"callout\",\"title\":\"Pro Tip\",\"content\":\"You can edit text inline by clicking on it when using the blog generator!\",\"variant\":\"tip\"},{\"type\":\"heroBox\",\"title\":\"Ready to Try It?\",\"content\":\"The structured content system makes blog creation faster and more maintainable.\",\"buttons\":[{\"text\":\"⭐ Star on GitHub\",\"href\":\"https://github.com/decocms/admin\",\"variant\":\"primary\"},{\"text\":\"📚 Read Docs\",\"href\":\"https://docs.decocms.com\",\"variant\":\"secondary\"}]}]",
+    "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/4763/682eb374-def2-4e85-a45d-b3a7ff8a31a9",
+    "alt": "Testing structured content blocks in DecoCMS",
+    "seo": {
+      "title": "Testing Structured Content Blocks - DecoCMS",
+      "description": "A test blog post showcasing the new structured content block system."
+    },
+    "readTime": 3,
+    "excerpt": "Testing the new structured content block system with cards, steps, comparisons, stats, and more.",
+    "imageCarousel": {
+      "banners": []
+    },
+    "extraProps": [],
+    "aggregateRating": {
+      "@type": "AggregateRating"
+    },
+    "review": [],
+    "contentRating": [],
+    "interactionStatistic": {
+      "@type": "InteractionCounter",
+      "video": null,
+      "image": null
+    }
+  }
+}

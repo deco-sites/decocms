@@ -3,6 +3,7 @@ import Button from "site/components/ui/Button.tsx";
 import Icon from "site/components/ui/Icon.tsx";
 import BlogAuthorTag from "../components/blog/BlogAuthorTag.tsx";
 import { BlogPostPage } from "apps/blog/types.ts";
+import { BlockRenderer } from "../components/blog/BlockRenderer.tsx";
 
 interface Props {
   /**
@@ -326,16 +327,37 @@ export default function BlogPost({ page }: Props) {
       {/* Content Section */}
       <div className="w-full min-w-full bg-dc-50 flex justify-center items-start px-4 md:px-8 lg:px-16 py-12 md:py-16">
         <div className="flex-1 max-w-full md:max-w-[700px] flex flex-col justify-start items-start">
-          <div
-            className={`${CONTENT_STYLES} w-full`}
-            id="blog-post-content"
-            dangerouslySetInnerHTML={{
-              __html: content.replaceAll("&lt;iframe", "<iframe ").replaceAll(
-                "&lt;/iframe&gt;",
-                " </iframe>",
-              ).replaceAll("allowfullscreen&gt;", "allowfullscreen>") || "",
-            }}
-          />
+          {(() => {
+            // Try to detect if content is structured blocks (JSON array)
+            if (content && typeof content === "string" && content.trim().startsWith("[")) {
+              try {
+                const parsed = JSON.parse(content);
+                if (Array.isArray(parsed)) {
+                  return (
+                    <div className="w-full" id="blog-post-content">
+                      <BlockRenderer blocks={parsed} />
+                    </div>
+                  );
+                }
+              } catch (e) {
+                // Not valid JSON, fall through to HTML rendering
+              }
+            }
+            
+            // Fallback to legacy HTML string rendering
+            return (
+              <div
+                className={`${CONTENT_STYLES} w-full`}
+                id="blog-post-content"
+                dangerouslySetInnerHTML={{
+                  __html: content.replaceAll("&lt;iframe", "<iframe ").replaceAll(
+                    "&lt;/iframe&gt;",
+                    " </iframe>",
+                  ).replaceAll("allowfullscreen&gt;", "allowfullscreen>") || "",
+                }}
+              />
+            );
+          })()}
         </div>
       </div>
     </>
