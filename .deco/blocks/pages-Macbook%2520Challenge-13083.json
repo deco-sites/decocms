@@ -62,24 +62,21 @@
       "posthogHost": "https://us.i.posthog.com"
     },
     {
-      "__resolveType": "website/sections/Rendering/Lazy.tsx",
-      "section": {
-        "__resolveType": "website/sections/Seo/SeoV2.tsx",
+      "__resolveType": "website/sections/Seo/SeoV2.tsx",
+      "title": "Construa um app de IA e ganhe um Macbook",
+      "description": "Use este mês de Dezembro para criar uma solução real, resolver um problema de verdade e concorrer a 2 MacBooks Air M3 (um para cada vencedor).",
+      "type": "website",
+      "image": "https://assets.decocache.com/decocms/40804478-ce0c-46e7-85ae-5ae452b77754/seoseosseo.png",
+      "themeColor": "#D0EC1A",
+      "openGraphConfig": {
         "title": "Construa um app de IA e ganhe um Macbook",
         "description": "Use este mês de Dezembro para criar uma solução real, resolver um problema de verdade e concorrer a 2 MacBooks Air M3 (um para cada vencedor).",
-        "type": "website",
-        "image": "https://assets.decocache.com/decocms/40804478-ce0c-46e7-85ae-5ae452b77754/seoseosseo.png",
-        "themeColor": "#D0EC1A",
-        "openGraphConfig": {
-          "title": "Construa um app de IA e ganhe um Macbook",
-          "description": "Use este mês de Dezembro para criar uma solução real, resolver um problema de verdade e concorrer a 2 MacBooks Air M3 (um para cada vencedor).",
-          "image": "https://assets.decocache.com/decocms/40804478-ce0c-46e7-85ae-5ae452b77754/seoseosseo.png"
-        },
-        "twitterConfig": {
-          "title": "Construa um app de IA e ganhe um Macbook",
-          "description": "Use este mês de Dezembro para criar uma solução real, resolver um problema de verdade e concorrer a 2 MacBooks Air M3 (um para cada vencedor).",
-          "image": "https://assets.decocache.com/decocms/40804478-ce0c-46e7-85ae-5ae452b77754/seoseosseo.png"
-        }
+        "image": "https://assets.decocache.com/decocms/40804478-ce0c-46e7-85ae-5ae452b77754/seoseosseo.png"
+      },
+      "twitterConfig": {
+        "title": "Construa um app de IA e ganhe um Macbook",
+        "description": "Use este mês de Dezembro para criar uma solução real, resolver um problema de verdade e concorrer a 2 MacBooks Air M3 (um para cada vencedor).",
+        "image": "https://assets.decocache.com/decocms/40804478-ce0c-46e7-85ae-5ae452b77754/seoseosseo.png"
       }
     }
   ],
