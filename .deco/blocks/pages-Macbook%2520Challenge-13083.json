@@ -1,0 +1,22 @@
+{
+  "name": "Macbook Challenge",
+  "path": "/desafio-macbook",
+  "sections": [
+    {
+      "__resolveType": "site/sections/ChallengeHero.tsx"
+    },
+    {
+      "__resolveType": "site/sections/Analytics/PostHog.tsx",
+      "posthogKey": {
+        "__resolveType": "website/loaders/secret.ts",
+        "encrypted": "10c0c71c378925ba65f7d80cba6a2c7f0d925bcad133bee66ef262e72f2f8b04c79a60b8502d2331dd104b88b0b8c107",
+        "name": "POSTHOG_API_KEY"
+      },
+      "posthogHost": "https://us.i.posthog.com"
+    }
+  ],
+  "seo": {
+    "__resolveType": "website/sections/Seo/SeoV2.tsx"
+  },
+  "__resolveType": "website/pages/Page.tsx"
+}
