@@ -1,6 +1,6 @@
 import type { ImageWidget } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
-import { ComponentChildren, Fragment } from "preact";
+import { ComponentChildren } from "preact";
 import { BlogPost } from "apps/blog/types.ts";
 import { useId } from "../sdk/useId.ts";
 import BlogAuthorTag from "../components/blog/BlogAuthorTag.tsx";
@@ -43,6 +43,12 @@ export interface Props {
    * @description ID for the component to be targeted by HTMX
    */
   id?: string;
+  /**
+   * @title Base URL
+   * @description Base URL for pagination links (set by loader)
+   * @hide
+   */
+  baseUrl?: string;
 }
 
 function Container({ children }: {
@@ -63,12 +69,13 @@ export default function BlogPosts({
   pagination: { page = 0, perPage = 6 } = {},
   searchTerm = "",
   id = "blog-posts",
+  baseUrl = "",
 }: Props) {
-  const from = perPage * page;
+  // Show all posts from the beginning up to current page (accumulative pagination)
   const to = perPage * (page + 1);
 
   // It's boring to generate ids. Let's autogen them
-  const postList = useId();
+  const _postList = useId();
 
   // Helper function to format date
   const formatDate = (dateString?: string) => {
@@ -87,7 +94,7 @@ export default function BlogPosts({
         hour12: true,
       });
       return `${dateStr} at ${timeStr}`;
-    } catch (e) {
+    } catch (_e) {
       return dateString;
     }
   };
@@ -116,7 +123,8 @@ export default function BlogPosts({
     );
   };
 
-  const ContainerComponent = page === 0 ? Container : Fragment;
+  // Always use Container since we're doing accumulative pagination
+  const ContainerComponent = Container;
 
   // Filter posts by search term if provided
   const filteredPosts = searchTerm && posts
@@ -134,19 +142,16 @@ export default function BlogPosts({
     : posts;
 
   // Split posts into featured (first 2) and regular
-  const featuredPosts = filteredPosts && page === 0
-    ? filteredPosts.slice(0, 2)
-    : [];
-  const regularPosts = filteredPosts
-    ? (page === 0 ? filteredPosts.slice(2, to) : filteredPosts.slice(from, to))
-    : [];
+  // Always show featured posts and accumulate regular posts up to current page
+  const featuredPosts = filteredPosts ? filteredPosts.slice(0, 2) : [];
+  const regularPosts = filteredPosts ? filteredPosts.slice(2, to) : [];
 
   // Generate a standard URL for the next page
   const getNextPageUrl = () => {
-    if(!globalThis.location.href){
+    if (!baseUrl) {
       return "";
     }
-    const url = new URL(globalThis.location.href);
+    const url = new URL(baseUrl);
     url.searchParams.set("page", (page + 1).toString());
     return url.toString();
   };
@@ -155,7 +160,7 @@ export default function BlogPosts({
     <ContainerComponent>
       <section id={id} data-page={page}>
         {/* Featured Posts (first 2 posts, 2-column layout) */}
-        {page === 0 && featuredPosts.length > 0 && (
+        {featuredPosts.length > 0 && (
           <div class="self-stretch grid grid-cols-1 md:grid-cols-2 gap-8">
             {featuredPosts.map((post) => (
               <div class="flex flex-col justify-start items-start">
@@ -295,7 +300,7 @@ export default function BlogPosts({
 export function loader(
   props: Props,
   req: Request,
-  ctx: any,
+  _ctx: unknown,
 ) {
   try {
     // Extract search term from URL if present
@@ -325,12 +330,16 @@ export function loader(
         : props.pagination?.perPage || 6,
     };
 
+    // Pass the base URL for pagination links
+    const baseUrl = req.url;
+
     return {
       ...props,
       searchTerm,
       category,
       id,
       pagination,
+      baseUrl,
     };
   } catch (error) {
     console.error("Error in BlogPosts loader:", error);
@@ -341,6 +350,7 @@ export function loader(
       searchTerm: "",
       category: undefined,
       pagination: { page: 0, perPage: 6 },
+      baseUrl: "",
     };
   }
 }
