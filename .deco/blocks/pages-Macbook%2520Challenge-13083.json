@@ -1,0 +1,90 @@
+{
+  "name": "Macbook Challenge",
+  "path": "/desafio-macbook",
+  "sections": [
+    {
+      "__resolveType": "site/sections/ChallengeHero.tsx",
+      "logo": "/deco-logo-challenge.svg",
+      "title": "Construa um app de IA e ganhe um Macbook",
+      "subtitle": "Use este mês para criar uma solução real, resolver um problema de verdade e concorrer a <strong class=\"text-white font-bold\">2 MacBooks Air M3</strong> (um para cada vencedor).<br/><span class=\"block mt-4 text-white/70\">O relógio já está correndo. Comece agora.</span>",
+      "ctas": [
+        {
+          "text": "Entregue seu projeto (em breve)",
+          "variant": "primary"
+        },
+        {
+          "text": "Ler as regras",
+          "variant": "secondary",
+          "opensRulesModal": true
+        }
+      ],
+      "eventDate": "2026-01-03T23:59:59",
+      "rulesModal": {
+        "title": "Regras do Jogo",
+        "closeButtonText": "Entendi, bora pro desafio! 🚀",
+        "sections": [
+          {
+            "icon": "redeem",
+            "title": "O Grande Prêmio",
+            "content": "<p><strong>2x MacBook Air M3 💻</strong></p><p class='text-dc-500 text-sm mt-1'>1 Mac para cada projeto vencedor (2 vencedores).</p>",
+            "highlight": true
+          },
+          {
+            "icon": "group",
+            "title": "QUEM PODE PARTICIPAR?",
+            "content": "<ul><li><strong>Qualquer pessoa neste grupo.</strong> Se você está lendo isso, você está dentro.</li><li><strong>Zero experiência necessária.</strong> Não precisa saber programar ou ter faculdade. Usaremos IA para criar.</li></ul>"
+          },
+          {
+            "icon": "map",
+            "title": "SUA MISSÃO (O QUE FAZER)",
+            "content": "<ol><li><strong>Descubra um problema</strong> - Converse com 1 pessoa que tenha um problema repetitivo no dia a dia.</li><li><strong>Crie a solução na Deco</strong> - Use nossa plataforma para criar um App de IA que resolva isso.</li><li><strong>Teste de Verdade</strong> - Valide o app com a pessoa do passo 1 (ou alguém similar).</li><li><strong>Grave um Vídeo</strong> - Registre o processo e o resultado.</li></ol>"
+          },
+          {
+            "icon": "inventory_2",
+            "title": "O QUE ENTREGAR",
+            "content": "<p>No formulário final, envie:</p><ul><li><strong>Link do seu App</strong> criado na Deco.</li><li><strong>Vídeo de Pitch (2 a 3 min):</strong> Mostre o problema, o app funcionando na prática e conte brevemente como foi seu processo de teste e ajustes.</li></ul>"
+          },
+          {
+            "icon": "alarm",
+            "title": "PRAZO FINAL",
+            "content": "<p class='text-red-600 font-bold'>30 dias a partir de hoje.</p>"
+          }
+        ]
+      }
+    },
+    {
+      "__resolveType": "site/sections/Analytics/PostHog.tsx",
+      "posthogKey": {
+        "__resolveType": "website/loaders/secret.ts",
+        "encrypted": "10c0c71c378925ba65f7d80cba6a2c7f0d925bcad133bee66ef262e72f2f8b04c79a60b8502d2331dd104b88b0b8c107",
+        "name": "POSTHOG_API_KEY"
+      },
+      "posthogHost": "https://us.i.posthog.com"
+    },
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "website/sections/Seo/SeoV2.tsx",
+        "title": "Construa um app de IA e ganhe um Macbook",
+        "description": "Use este mês de Dezembro para criar uma solução real, resolver um problema de verdade e concorrer a 2 MacBooks Air M3 (um para cada vencedor).",
+        "type": "website",
+        "image": "https://assets.decocache.com/decocms/40804478-ce0c-46e7-85ae-5ae452b77754/seoseosseo.png",
+        "themeColor": "#D0EC1A",
+        "openGraphConfig": {
+          "title": "Construa um app de IA e ganhe um Macbook",
+          "description": "Use este mês de Dezembro para criar uma solução real, resolver um problema de verdade e concorrer a 2 MacBooks Air M3 (um para cada vencedor).",
+          "image": "https://assets.decocache.com/decocms/40804478-ce0c-46e7-85ae-5ae452b77754/seoseosseo.png"
+        },
+        "twitterConfig": {
+          "title": "Construa um app de IA e ganhe um Macbook",
+          "description": "Use este mês de Dezembro para criar uma solução real, resolver um problema de verdade e concorrer a 2 MacBooks Air M3 (um para cada vencedor).",
+          "image": "https://assets.decocache.com/decocms/40804478-ce0c-46e7-85ae-5ae452b77754/seoseosseo.png"
+        }
+      }
+    }
+  ],
+  "seo": {
+    "__resolveType": "website/sections/Seo/SeoV2.tsx"
+  },
+  "__resolveType": "website/pages/Page.tsx"
+}
