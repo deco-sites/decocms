@@ -1,0 +1,93 @@
+{
+  "name": "MCP Mesh",
+  "path": "/mesh",
+  "sections": [
+    {
+      "__resolveType": "Header-decocms"
+    },
+    {
+      "__resolveType": "site/sections/HeroMCPMesh.tsx"
+    },
+    {
+      "__resolveType": "site/sections/ExplainerSection.tsx"
+    },
+    {
+      "__resolveType": "site/sections/BentoFeatures.tsx"
+    },
+    {
+      "__resolveType": "site/sections/FAQ.tsx",
+      "title": "FAQs",
+      "faqItems": [
+        {
+          "question": "Is MCP Mesh just a glorified reverse proxy?",
+          "answer": "No, MCP Mesh functions as a centralized Control Plane for your AI infrastructure rather than a simple reverse proxy. It decouples the consumer, such as an Agent or UI, from the provider or MCP Service to ensure credential isolation and protocol translation. The Mesh intercepts requests to enforce policies like RBAC and rate limits before they reach downstream services, while simultaneously injecting OpenTelemetry traces into every tool call for unified observability."
+        },
+        {
+          "question": "How does authentication handle the \"principal problem\" across different services?",
+          "answer": "We solve the principal identification challenge by implementing a dual-layer approach using Better Auth that supports OAuth 2.1, SAML, and API Keys. Instead of granting blanket access, the system utilizes resource-based permissions that map specific tools within a connection to allowable actions, such as enabling SEND_MESSAGE on a specific connection UUID. This granular control allows you to issue an API Key that permits reading from a production database while restricting write capabilities to staging environments strictly at the infrastructure layer."
+        },
+        {
+          "question": "Can I integrate this with my existing Identity Provider (Okta/Auth0)?",
+          "answer": "You can integrate your existing Identity Provider because the architecture relies on the Better Auth Organization plugin to support comprehensive OAuth and SAML configurations. This setup enables you to map existing IdP groups directly to Mesh Roles, such as Admin or User, to automate access control across your MCP resources without reinventing identity management."
+        },
+        {
+          "question": "How do you handle secrets for downstream MCPs that require OAuth (e.g., Google/Slack)?",
+          "answer": "The Mesh acts as an OAuth Client to downstream services by handling the entire authorization flow, including Dynamic Client Registration and PKCE. It securely stores refresh tokens in its encrypted vault so that when your Agent calls the Mesh, the system automatically injects the active downstream token into the proxy request without the Agent needing to manage the authentication complexity."
+        },
+        {
+          "question": "Does adding the Mesh introduce significant latency?",
+          "answer": "Latency overhead is minimized because the runtime is built on Bun and Hono, designed specifically for high-performance edge compatibility. The architecture employs a lean Ports & Adapters pattern to avoid middleware bloat, and authorization checks are designed to be non-blocking where possible to ensure total round-trip times remain optimized for production workloads."
+        },
+        {
+          "question": "What is the \"Database Agnostic\" claim based on?",
+          "answer": "The system achieves true database agnosticism by using Kysely with a strict type-only schema definition that avoids dialect-specific builders. This architecture allows the exact same codebase to run on SQLite for zero-config local development or switch seamlessly to PostgreSQL or MySQL for high-concurrency production environments, with the dialect being auto-detected from the connection string at runtime."
+        },
+        {
+          "question": "Can I self-host this in an air-gapped environment?",
+          "answer": "You can deploy the Mesh in air-gapped environments as a standalone binary or Docker container because it requires no external dependencies other than the database, which defaults to an embedded SQLite file. All authentication configuration is handled via a local JSON file, making the system ideal for secure enclaves or Kubernetes setups where external connectivity is restricted."
+        },
+        {
+          "question": "How do I debug a failed tool call across multiple services?",
+          "answer": "Debugging across multiple services is managed through a native OpenTelemetry implementation that exports traces and metrics for every request. The system generates a unified trace ID that tracks the request from the incoming API call through the policy engine to the downstream MCP and back, allowing you to export data to any OTLP-compatible collector like Datadog or Jaeger."
+        },
+        {
+          "question": "Is this strictly for TypeScript/Node agents?",
+          "answer": "While the Mesh is built in TypeScript, it exposes a standard MCP Server interface via HTTP or SSE that is language-agnostic. Any MCP-compliant client, including Python based LangGraph agents, Rust services, or the Claude Desktop App, can connect to the Mesh and utilize its tools just as if it were a local connection."
+        }
+      ],
+      "description": "Here are some frequently asked questions, to solve all your problems.",
+      "eyebrow": "Frequently Asked Questions"
+    },
+    {
+      "__resolveType": "site/sections/FinalCTA.tsx",
+      "title": "Join our thriving community of Al builders ",
+      "primaryButton": {
+        "text": "Join our Discord community",
+        "url": "https://decocms.com/discord"
+      },
+      "secondaryButton": {
+        "text": "Get started building",
+        "url": "https://deco.new/"
+      }
+    },
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "Footer"
+      }
+    },
+    {
+      "__resolveType": "site/sections/Analytics/PostHog.tsx",
+      "posthogKey": {
+        "__resolveType": "website/loaders/secret.ts",
+        "encrypted": "10c0c71c378925ba65f7d80cba6a2c7f0d925bcad133bee66ef262e72f2f8b04c79a60b8502d2331dd104b88b0b8c107",
+        "name": "POSTHOG_API_KEY"
+      },
+      "posthogHost": "https://us.i.posthog.com"
+    }
+  ],
+  "seo": {
+    "__resolveType": "website/sections/Seo/SeoV2.tsx"
+  },
+  "__resolveType": "website/pages/Page.tsx"
+}

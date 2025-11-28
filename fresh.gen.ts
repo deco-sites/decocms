@@ -10,6 +10,7 @@ import * as $BlogCategories from "./islands/BlogCategories.tsx";
 import * as $BlogFormSearch from "./islands/BlogFormSearch.tsx";
 import * as $BlogPostsCarousel from "./islands/BlogPostsCarousel.tsx";
 import * as $CopyCommandButton from "./islands/CopyCommandButton.tsx";
+import * as $CopyMCPCommand from "./islands/CopyMCPCommand.tsx";
 import * as $CountdownIsland from "./islands/CountdownIsland.tsx";
 import * as $FeaturesInteractive from "./islands/FeaturesInteractive.tsx";
 import * as $FormModal from "./islands/FormModal.tsx";
@@ -34,6 +35,7 @@ const manifest = {
     "./islands/BlogFormSearch.tsx": $BlogFormSearch,
     "./islands/BlogPostsCarousel.tsx": $BlogPostsCarousel,
     "./islands/CopyCommandButton.tsx": $CopyCommandButton,
+    "./islands/CopyMCPCommand.tsx": $CopyMCPCommand,
     "./islands/CountdownIsland.tsx": $CountdownIsland,
     "./islands/FeaturesInteractive.tsx": $FeaturesInteractive,
     "./islands/FormModal.tsx": $FormModal,
