@@ -24,6 +24,7 @@ import * as $$$$$$10 from "./sections/BlackFridayCountdown.tsx";
 import * as $$$$$$11 from "./sections/BlackFridayFeatures.tsx";
 import * as $$$$$$12 from "./sections/BlackFridayHero.tsx";
 import * as $$$$$$13 from "./sections/BlogCategories.tsx";
+import * as $$$$$$61 from "./sections/ChallengeHero.tsx";
 import * as $$$$$$14 from "./sections/BlogPost.tsx";
 import * as $$$$$$15 from "./sections/BlogPosts.tsx";
 import * as $$$$$$16 from "./sections/BlogPostsCarousel.tsx";
@@ -92,6 +93,7 @@ const manifest = {
     "site/sections/BlackFridayFeatures.tsx": $$$$$$11,
     "site/sections/BlackFridayHero.tsx": $$$$$$12,
     "site/sections/BlogCategories.tsx": $$$$$$13,
+    "site/sections/ChallengeHero.tsx": $$$$$$61,
     "site/sections/BlogPost.tsx": $$$$$$14,
     "site/sections/BlogPosts.tsx": $$$$$$15,
     "site/sections/BlogPostsCarousel.tsx": $$$$$$16,
