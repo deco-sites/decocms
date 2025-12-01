@@ -11,7 +11,7 @@
       "section": {
         "__resolveType": "site/sections/GoogleAbout.tsx",
         "title": "Google Integration with OAuth",
-        "mainDescription": "Deco uses Google's OAuth to ensure secure user authentication and the selected use of Google services, such as Gmail, Sheets, Docs, Calendar, YouTube, Drive, Veo, Google Sites, and Slides.",
+        "mainDescription": "Decocms uses Google's OAuth to ensure secure user authentication and the selected use of Google services, such as Gmail, Sheets, Docs, Calendar, YouTube, Drive, Veo, Google Sites, and Slides.",
         "servicesTitle": "Integrated Google Services",
         "services": [
           {
@@ -85,4 +85,3 @@
     "image": "https://www.deco.cx/decocx-meta-en.png"
   }
 }
-

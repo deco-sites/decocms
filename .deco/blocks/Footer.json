@@ -60,6 +60,16 @@
         }
       ],
       "title": "Legal"
+    },
+    {
+      "links": [
+        {
+          "disabled": false,
+          "text": "Google Oauth",
+          "url": "https://www.decocms.com/google-about"
+        }
+      ],
+      "title": "Integrations"
     }
   ],
   "logo": "https://assets.decocache.com/decocms/42ba3cd7-83b9-4cbf-88f2-0c0d4a361851/decologo.png"
