@@ -1,0 +1,88 @@
+{
+  "__resolveType": "website/pages/Page.tsx",
+  "name": "Google About",
+  "path": "/google-about",
+  "sections": [
+    {
+      "__resolveType": "Header-decocms"
+    },
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "site/sections/GoogleAbout.tsx",
+        "title": "Google Integration with OAuth",
+        "mainDescription": "Deco uses Google's OAuth to ensure secure user authentication and the selected use of Google services, such as Gmail, Sheets, Docs, Calendar, YouTube, Drive, Veo, Google Sites, and Slides.",
+        "servicesTitle": "Integrated Google Services",
+        "services": [
+          {
+            "name": "Gmail",
+            "description": "Email management and automation"
+          },
+          {
+            "name": "Sheets",
+            "description": "Spreadsheet creation and data processing"
+          },
+          {
+            "name": "Docs",
+            "description": "Document creation and editing"
+          },
+          {
+            "name": "Calendar",
+            "description": "Event scheduling and management"
+          },
+          {
+            "name": "YouTube",
+            "description": "Video publishing and management"
+          },
+          {
+            "name": "Drive",
+            "description": "File storage and organization"
+          },
+          {
+            "name": "Veo",
+            "description": "Video creation and editing"
+          },
+          {
+            "name": "Google Sites",
+            "description": "Website building and publishing"
+          },
+          {
+            "name": "Slides",
+            "description": "Presentation creation and sharing"
+          }
+        ],
+        "mcpTitle": "AI-Powered Automation with MCPs",
+        "mcpDescription": "Our MCPs (Model Context Protocols) allow AI agents to intelligently interact with these services, automating workflows, creating and organizing files, managing appointments, publishing content, and exchanging information between Google platforms — all in an integrated and secure way.",
+        "securityTitle": "Security & Privacy",
+        "securityDescription": "By using Google's OAuth, we ensure that all permissions are granted transparently, adhering to the security and privacy standards defined by Google itself.",
+        "enableUnicornBackground": true,
+        "unicornProjectId": "NHShCtm10Ryd0k5eAqgY"
+      }
+    },
+    {
+      "__resolveType": "site/sections/FinalCTA.tsx",
+      "title": "Ready to integrate Google services with AI?",
+      "primaryButton": {
+        "text": "Get started with deco",
+        "url": "https://admin.decocms.com"
+      },
+      "secondaryButton": {
+        "text": "Learn more about MCPs",
+        "url": "/"
+      }
+    },
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "Footer"
+      }
+    }
+  ],
+  "seo": {
+    "__resolveType": "website/sections/Seo/SeoV2.tsx",
+    "title": "Google OAuth Integration | deco CMS",
+    "description": "Learn how deco uses Google's OAuth to securely integrate with Gmail, Sheets, Docs, Calendar, YouTube, Drive, and more through AI-powered MCPs.",
+    "image": "https://www.deco.cx/decocx-meta-en.png"
+  }
+}
+

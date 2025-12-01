@@ -12369,6 +12369,10 @@ input.tab:checked + .tab-content,
     border-radius: 0.75rem;
   }
 
+  .sm\:p-12 {
+    padding: 3rem;
+  }
+
   .sm\:p-2 {
     padding: 0.5rem;
   }
@@ -13172,6 +13176,10 @@ input.tab:checked + .tab-content,
 
   .lg\:p-12 {
     padding: 3rem;
+  }
+
+  .lg\:p-16 {
+    padding: 4rem;
   }
 
   .lg\:p-20 {
