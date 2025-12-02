@@ -29,15 +29,19 @@
     {
       "items": [
         {
-          "label": "Digital Experience",
+          "label": "Deco Sites",
           "href": "/use-case/deco-sites"
         },
         {
-          "label": "Internal AI Apps",
+          "label": "MCP Mesh",
+          "href": "/mesh"
+        },
+        {
+          "label": "AI App Builder",
           "href": "/"
         }
       ],
-      "label": "Use Cases"
+      "label": "Products"
     }
   ],
   "ctaText": "Start now (beta)",
