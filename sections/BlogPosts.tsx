@@ -4,6 +4,7 @@ import { ComponentChildren } from "preact";
 import { BlogPost } from "apps/blog/types.ts";
 import { useId } from "../sdk/useId.ts";
 import BlogAuthorTag from "../components/blog/BlogAuthorTag.tsx";
+import TrackedLink from "../islands/TrackedLink.tsx";
 
 export interface CTA {
   text?: string;
@@ -164,7 +165,17 @@ export default function BlogPosts({
           <div class="self-stretch grid grid-cols-1 md:grid-cols-2 gap-8">
             {featuredPosts.map((post) => (
               <div class="flex flex-col justify-start items-start">
-                <a href={`/blog/post/${post.slug}`} class="block w-full">
+                <TrackedLink
+                  href={`/blog/post/${post.slug}`}
+                  event="blog_post_click"
+                  properties={{
+                    post_slug: post.slug,
+                    post_title: post.title,
+                    post_type: "featured",
+                    click_element: "image",
+                  }}
+                  class="block w-full"
+                >
                   <div class="relative aspect-[3/2] w-full overflow-hidden rounded-2xl">
                     <Image
                       src={post.image || "https://placehold.co/640x427"}
@@ -175,18 +186,25 @@ export default function BlogPosts({
                       loading="lazy"
                     />
                   </div>
-                </a>
+                </TrackedLink>
                 <div class="self-stretch py-6 flex flex-col justify-start items-start gap-4">
                   {renderCategories(post)}
 
-                  <a
+                  <TrackedLink
                     href={`/blog/post/${post.slug}`}
+                    event="blog_post_click"
+                    properties={{
+                      post_slug: post.slug,
+                      post_title: post.title,
+                      post_type: "featured",
+                      click_element: "title",
+                    }}
                     class="block w-full hover:opacity-80 transition-opacity"
                   >
                     <h2 class="self-stretch text-dc-800 text-2xl md:text-3xl font-semibold font-sans leading-tight md:leading-10">
                       {post.title}
                     </h2>
-                  </a>
+                  </TrackedLink>
 
                   <div class="inline-flex justify-start items-center gap-3">
                     <BlogAuthorTag
@@ -234,7 +252,17 @@ export default function BlogPosts({
           <div class="self-stretch grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {regularPosts.map((post) => (
               <div class="flex flex-col justify-start items-start">
-                <a href={`/blog/post/${post.slug}`} class="block w-full">
+                <TrackedLink
+                  href={`/blog/post/${post.slug}`}
+                  event="blog_post_click"
+                  properties={{
+                    post_slug: post.slug,
+                    post_title: post.title,
+                    post_type: "regular",
+                    click_element: "image",
+                  }}
+                  class="block w-full"
+                >
                   <div class="relative aspect-[3/2] w-full overflow-hidden rounded-2xl">
                     <Image
                       src={post.image || "https://placehold.co/416x277"}
@@ -245,18 +273,25 @@ export default function BlogPosts({
                       loading="lazy"
                     />
                   </div>
-                </a>
+                </TrackedLink>
                 <div class="self-stretch py-6 flex flex-col justify-start items-start gap-4">
                   {renderCategories(post)}
 
-                  <a
+                  <TrackedLink
                     href={`/blog/post/${post.slug}`}
+                    event="blog_post_click"
+                    properties={{
+                      post_slug: post.slug,
+                      post_title: post.title,
+                      post_type: "regular",
+                      click_element: "title",
+                    }}
                     class="block w-full hover:opacity-80 transition-opacity"
                   >
                     <h3 class="self-stretch text-dc-800 text-xl md:text-2xl font-semibold font-sans leading-tight md:leading-7">
                       {post.title}
                     </h3>
-                  </a>
+                  </TrackedLink>
 
                   <div class="inline-flex justify-start items-center gap-3">
                     <BlogAuthorTag
