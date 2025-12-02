@@ -12,9 +12,7 @@
       "subtitle": "The unified infrastructure layer for the autonomous software era. Centralize MCP connections, control access, and govern AI usage across your organization.",
       "copyCommand": "npx create-deco-mesh@latest",
       "docsButtonText": "Read Documentation",
-      "docsButtonUrl": "/docs/mesh",
-      "codeWindowTitle": "Compatible with",
-      "codeText": "// Connect to MCP Mesh from any client\n\n// Cursor IDE\ncursor://connect?mcp=your-mesh.deco.site\n\n// Claude Desktop\nclaude://mcp/your-mesh.deco.site\n\n// Any MCP-compatible client\nconst mesh = new MCPClient('your-mesh.deco.site');"
+      "docsButtonUrl": "/docs/mesh"
     },
     {
       "__resolveType": "site/sections/MCPMeshProblemStatement.tsx",

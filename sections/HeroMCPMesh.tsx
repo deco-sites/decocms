@@ -124,7 +124,7 @@ export default function HeroMCPMesh({
     <section class="w-full bg-dc-50 flex flex-col p-2">
       <div class="bg-dc-100 pt-6 rounded-[24px] flex flex-col h-[calc(100vh-16px)] relative overflow-hidden">
         {/* Hero Content Area */}
-        <div class="flex flex-col items-center pt-24 md:pt-32 lg:pt-40 px-4 sm:px-6 lg:px-10">
+        <div class="flex flex-col items-center pt-24 md:pt-32 lg:pt-40 px-4 sm:px-6 lg:px-10 relative z-20">
           {/* Main Content - Centered */}
           <div class="w-full max-w-[930px] flex flex-col items-center gap-6">
             {/* Title */}
@@ -155,7 +155,7 @@ export default function HeroMCPMesh({
         </div>
 
         {/* ASCII Dithering Animation - Behind code window */}
-        <div class="absolute bottom-0 left-0 right-0 h-[45%] overflow-hidden pointer-events-none">
+        <div class="absolute bottom-0 left-0 right-0 h-[45%] overflow-hidden pointer-events-none z-0">
           <canvas
             id={`dither-canvas-${sectionId}`}
             class="absolute inset-0 w-full h-full"
@@ -163,8 +163,11 @@ export default function HeroMCPMesh({
           />
         </div>
 
-        {/* Code Window - Positioned at bottom, extending beyond viewport (clipped) */}
-        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[calc(100%-32px)] max-w-[800px] translate-y-[35%] md:translate-y-[40%] z-10">
+        {/* Code Window - Positioned at bottom, responsive visibility */}
+        <div
+          id={`code-window-${sectionId}`}
+          class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[calc(100%-32px)] max-w-[800px] translate-y-[35%] md:translate-y-[40%] z-10 transition-all duration-300"
+        >
           <div class="bg-neutral-100 border border-gray-200 rounded-[10px] overflow-hidden shadow-xl">
             {/* Window Header */}
             <div class="flex items-center justify-between px-4 py-3 border-b border-gray-200/50 bg-neutral-100">
@@ -201,6 +204,53 @@ export default function HeroMCPMesh({
           </div>
         </div>
       </div>
+
+      {/* Responsive Code Window Script */}
+      <script
+        type="module"
+        dangerouslySetInnerHTML={{
+          __html: useScript((sectionId: string) => {
+            const codeWindow = document.getElementById(`code-window-${sectionId}`);
+            if (!codeWindow) return;
+
+            const updateCodeWindowVisibility = () => {
+              const viewportHeight = window.innerHeight;
+              
+              if (viewportHeight < 500) {
+                // Very small viewport - hide completely
+                codeWindow.style.opacity = "0";
+                codeWindow.style.pointerEvents = "none";
+                codeWindow.style.transform = "translateX(-50%) translateY(100%)";
+              } else if (viewportHeight < 650) {
+                // Small viewport - show less
+                codeWindow.style.opacity = "1";
+                codeWindow.style.pointerEvents = "auto";
+                codeWindow.style.transform = "translateX(-50%) translateY(70%)";
+              } else if (viewportHeight < 800) {
+                // Medium viewport - show more
+                codeWindow.style.opacity = "1";
+                codeWindow.style.pointerEvents = "auto";
+                codeWindow.style.transform = "translateX(-50%) translateY(50%)";
+              } else {
+                // Large viewport - show default
+                codeWindow.style.opacity = "1";
+                codeWindow.style.pointerEvents = "auto";
+                codeWindow.style.transform = "translateX(-50%) translateY(40%)";
+              }
+            };
+
+            // Initial check
+            updateCodeWindowVisibility();
+
+            // Update on resize (includes zoom)
+            window.addEventListener("resize", updateCodeWindowVisibility);
+
+            return () => {
+              window.removeEventListener("resize", updateCodeWindowVisibility);
+            };
+          }, sectionId),
+        }}
+      />
 
       {/* ASCII Dithering Animation Script */}
       <script
