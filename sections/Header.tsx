@@ -1,7 +1,8 @@
 import type { ImageWidget } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
 import GitHubStars from "../islands/GitHubStars.tsx";
-import Button from "../components/ui/Button.tsx";
+import Button from "../islands/Button.tsx";
+import TrackedLink from "../islands/TrackedLink.tsx";
 
 export interface MenuItem {
   label: string;
@@ -59,8 +60,9 @@ export default function Header({
       <header class="flex items-center justify-between rounded-2xl">
         {/* Left Section - Logo */}
         <div class="flex-1 flex justify-start">
-          <a
+          <TrackedLink
             href="/"
+            event="lp_header_logo_click"
             class="flex items-center gap-2.5 px-2 h-10 hover:opacity-80 transition-opacity"
           >
             {logo
@@ -81,7 +83,7 @@ export default function Header({
                   </div>
                 </div>
               )}
-          </a>
+          </TrackedLink>
         </div>
 
         {/* Center Section - Desktop Navigation */}
@@ -116,25 +118,33 @@ export default function Header({
                         {/* Dropdown Panel */}
                         <div class="hidden group-hover:block group-focus-within:block absolute left-0 top-full mt-0 inline-block w-max rounded-2xl bg-white/95 backdrop-blur-sm border border-dc-200 shadow-lg py-2 z-[110]">
                           {item.items.map((sub, subIndex) => (
-                            <a
+                            <TrackedLink
                               key={subIndex}
                               href={sub.href}
+                              event="lp_header_nav_click"
+                              properties={{
+                                label: sub.label,
+                                parent: item.label,
+                                is_dropdown: true,
+                              }}
                               class="block px-4 py-2 text-sm text-dc-800 hover:bg-dc-100 rounded-xl mx-2"
                             >
                               {sub.label}
-                            </a>
+                            </TrackedLink>
                           ))}
                         </div>
                       </div>
                     )
                     : (
                       <div class="px-4 py-1.5 rounded-full flex items-center gap-2">
-                        <a
-                          href={item.href}
+                        <TrackedLink
+                          href={item.href || "#"}
+                          event="lp_header_nav_click"
+                          properties={{ label: item.label }}
                           class="text-dc-800 text-sm font-normal leading-tight hover:text-primary-dark transition-colors"
                         >
                           {item.label}
-                        </a>
+                        </TrackedLink>
                       </div>
                     )}
                 </div>
@@ -147,7 +157,11 @@ export default function Header({
         <div class="flex-1 flex justify-end items-center gap-2.5">
           {/* GitHub Stars - Hidden on mobile */}
           <div class="hidden sm:block">
-            <GitHubStars repo={githubRepo} icon={githubIcon} />
+            <GitHubStars
+              repo={githubRepo}
+              icon={githubIcon}
+              trackEventName="lp_header_github_click"
+            />
           </div>
 
           {/* Mobile Menu Button */}
@@ -179,6 +193,8 @@ export default function Header({
               size="small"
               href={ctaHref}
               className="!bg-primary-dark !text-primary-light hover:bg-primary-dark/90"
+              trackEventName="lp_header_cta_click"
+              trackProperties={{ text: ctaText }}
             >
               {ctaText}
             </Button>
@@ -224,30 +240,39 @@ export default function Header({
                   </summary>
                   <div class="mt-1 pl-2">
                     {item.items.map((sub, subIndex) => (
-                      <a
+                      <TrackedLink
                         key={subIndex}
                         href={sub.href}
+                        event="lp_header_nav_click"
+                        properties={{ label: sub.label, parent: item.label, is_mobile: true, is_dropdown: true }}
                         class="block px-4 py-2 text-dc-800 text-sm font-normal leading-tight hover:bg-dc-100 rounded-xl transition-colors"
                       >
                         {sub.label}
-                      </a>
+                      </TrackedLink>
                     ))}
                   </div>
                 </details>
               )
               : (
-                <a
+                <TrackedLink
                   key={index}
-                  href={item.href}
+                  href={item.href || "#"}
+                  event="lp_header_nav_click"
+                  properties={{ label: item.label, is_mobile: true }}
                   class="block px-4 py-3 text-dc-800 text-sm font-normal leading-tight hover:bg-dc-100 rounded-xl transition-colors"
                 >
                   {item.label}
-                </a>
+                </TrackedLink>
               )
           ))}
           {/* GitHub Stars in mobile menu */}
           <div class="px-4 py-3 sm:hidden">
-            <GitHubStars repo={githubRepo} icon={githubIcon} />
+            <GitHubStars
+              repo={githubRepo}
+              icon={githubIcon}
+              trackEventName="lp_header_github_click"
+              trackProperties={{ is_mobile: true }}
+            />
           </div>
         </div>
       </div>
