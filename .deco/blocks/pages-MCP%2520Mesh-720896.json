@@ -6,25 +6,144 @@
       "__resolveType": "Header-decocms"
     },
     {
-      "__resolveType": "site/sections/HeroMCPMesh.tsx"
+      "__resolveType": "site/sections/HeroMCPMesh.tsx",
+      "titleLine1": "Your Context.",
+      "titleLine2": "Every AI.",
+      "subtitle": "The unified infrastructure layer for the autonomous software era. Centralize MCP connections, control access, and govern AI usage across your organization.",
+      "copyCommand": "npx create-deco-mesh@latest",
+      "docsButtonText": "Read Documentation",
+      "docsButtonUrl": "/docs/mesh",
+      "codeWindowTitle": "Compatible with",
+      "codeText": "// Connect to MCP Mesh from any client\n\n// Cursor IDE\ncursor://connect?mcp=your-mesh.deco.site\n\n// Claude Desktop\nclaude://mcp/your-mesh.deco.site\n\n// Any MCP-compatible client\nconst mesh = new MCPClient('your-mesh.deco.site');"
     },
     {
-      "__resolveType": "site/sections/ExplainerSection.tsx"
+      "__resolveType": "site/sections/MCPMeshProblemStatement.tsx",
+      "title": "The Chaos of \"Shadow AI\"",
+      "subtitle": "Your teams are integrating AI in isolation. Personal credentials scattered, invisible costs, and zero governance.",
+      "highlightWord": "AI Sprawl",
+      "problems": [
+        {
+          "icon": "network",
+          "title": "Fragmented Integrations",
+          "description": "\"How do I integrate AI into my data sources?\" Today, every dev does it their own way, creating integration silos that are impossible to maintain."
+        },
+        {
+          "icon": "search_dollar",
+          "title": "Cost Black Box",
+          "description": "Without centralized visibility, you don't know who is using which model or how much it costs. FinOps for AI is non-existent."
+        },
+        {
+          "icon": "lock",
+          "title": "Security Risks",
+          "description": "Developers pasting personal API keys into local .env files. Sharing credentials via Slack. Zero access control."
+        }
+      ]
     },
     {
-      "__resolveType": "site/sections/BentoFeatures.tsx"
+      "__resolveType": "site/sections/MCPMeshFeatures.tsx",
+      "title": "MCP-Native Architecture",
+      "subtitle": "A unified platform to centralize connections, manage authentication, and orchestrate tools.",
+      "features": [
+        {
+          "icon": "hub",
+          "title": "Unified Connection Hub",
+          "description": "Connect Slack, GitHub, Postgres, and more in one place.",
+          "badge": "Centralized",
+          "badgeColor": "green",
+          "size": "wide",
+          "codeSnippet": "POST /mcp/conn_slack_123\nAuthorization: Bearer mesh_token\n# Mesh proxy injects real credentials securely"
+        },
+        {
+          "icon": "chart_line",
+          "title": "Full Observability",
+          "description": "Real-time audit logs. Know exactly which tool was called, by whom, and when.",
+          "size": "normal"
+        },
+        {
+          "icon": "shield",
+          "title": "Granular Control",
+          "description": "Share access to tools (e.g., \"Send Email\") without sharing the actual Gmail password.",
+          "size": "normal"
+        },
+        {
+          "icon": "bolt",
+          "title": "Zero Config & Local First",
+          "description": "Runs locally with built-in SQLite. No complex database setup. Scale to Postgres when needed.",
+          "size": "wide",
+          "tags": ["SQLite", "Better Auth", "OpenTelemetry"]
+        }
+      ]
+    },
+    {
+      "__resolveType": "site/sections/MCPMeshBenefits.tsx",
+      "title": "From Chaos to Control",
+      "subtitle": "What your organization gains by adopting MCP Mesh.",
+      "benefits": [
+        {
+          "title": "Predictability & FinOps",
+          "description": "Turn the \"black box\" of AI costs into a clear dashboard. Allocate budgets per team and avoid bill shocks from OpenAI/Anthropic."
+        },
+        {
+          "title": "Accelerated Procurement",
+          "description": "Once the Mesh is homologated, any tool inside is pre-approved. Developers gain speed without asking for permission for every new API."
+        },
+        {
+          "title": "Output Quality",
+          "description": "Managing context with precision increases generation quality. Deliver the right data, with the right limits, to the right agents."
+        },
+        {
+          "title": "Visibility & Alignment",
+          "description": "Centralize all AI contracts. Get macro visibility into how your organization is using autonomous agents."
+        }
+      ]
+    },
+    {
+      "__resolveType": "site/sections/MCPMeshWhyUs.tsx",
+      "title": "Why Deco MCP Mesh?",
+      "subtitle": "The open alternative for AI governance.",
+      "differentiators": [
+        {
+          "title": "Open Source",
+          "description": "Full transparency. No proprietary code hidden in your security layer."
+        },
+        {
+          "title": "Self-Host",
+          "description": "Keep your data and credentials on your infrastructure. Run on your Kubernetes or locally."
+        },
+        {
+          "title": "No Vendor Lock-in",
+          "description": "Switch LLM providers or MCP tools without rewriting your applications."
+        },
+        {
+          "title": "Unified Solution",
+          "description": "Don't pay separately for Gateway, Auth, and Observability. Everything in one package."
+        }
+      ]
     },
     {
       "__resolveType": "site/sections/FAQ.tsx",
-      "title": "FAQs",
+      "title": "Frequently Asked Questions",
+      "eyebrow": "FAQ",
       "faqItems": [
+        {
+          "question": "What exactly is an MCP \"Mesh\"?",
+          "answer": "It's an infrastructure layer that acts as a central hub for all your MCP (Model Context Protocol) connections. Instead of connecting every agent directly to every tool (Slack, Github, Database), everyone connects to the Mesh, which manages authentication, permissions, and routing."
+        },
+        {
+          "question": "Does this replace Cursor or Claude Desktop?",
+          "answer": "No! It empowers them. You connect Deco MCP Mesh to Cursor or Claude Desktop as if it were a single MCP server. This gives these clients instant and secure access to all tools configured in your organization."
+        },
+        {
+          "question": "Can I run it locally?",
+          "answer": "Yes. Deco MCP Mesh was designed to be \"Local First\". With a single command, you spin up a full instance on your machine using SQLite, with no complex cloud configuration required."
+        },
         {
           "question": "Is MCP Mesh just a glorified reverse proxy?",
           "answer": "No, MCP Mesh functions as a centralized Control Plane for your AI infrastructure rather than a simple reverse proxy. It decouples the consumer, such as an Agent or UI, from the provider or MCP Service to ensure credential isolation and protocol translation. The Mesh intercepts requests to enforce policies like RBAC and rate limits before they reach downstream services, while simultaneously injecting OpenTelemetry traces into every tool call for unified observability."
         },
         {
           "question": "How does authentication handle the \"principal problem\" across different services?",
-          "answer": "We solve the principal identification challenge by implementing a dual-layer approach using Better Auth that supports OAuth 2.1, SAML, and API Keys. Instead of granting blanket access, the system utilizes resource-based permissions that map specific tools within a connection to allowable actions, such as enabling SEND_MESSAGE on a specific connection UUID. This granular control allows you to issue an API Key that permits reading from a production database while restricting write capabilities to staging environments strictly at the infrastructure layer."
+          "answer": "We solve the principal identification challenge by implementing a dual-layer approach using Better Auth that supports OAuth 2.1, SAML, and API Keys. Instead of granting blanket access, the system utilizes resource-based permissions that map specific tools within a connection to allowable actions, such as enabling SEND_MESSAGE on a specific connection UUID."
         },
         {
           "question": "Can I integrate this with my existing Identity Provider (Okta/Auth0)?",
@@ -35,39 +154,17 @@
           "answer": "The Mesh acts as an OAuth Client to downstream services by handling the entire authorization flow, including Dynamic Client Registration and PKCE. It securely stores refresh tokens in its encrypted vault so that when your Agent calls the Mesh, the system automatically injects the active downstream token into the proxy request without the Agent needing to manage the authentication complexity."
         },
         {
-          "question": "Does adding the Mesh introduce significant latency?",
-          "answer": "Latency overhead is minimized because the runtime is built on Bun and Hono, designed specifically for high-performance edge compatibility. The architecture employs a lean Ports & Adapters pattern to avoid middleware bloat, and authorization checks are designed to be non-blocking where possible to ensure total round-trip times remain optimized for production workloads."
-        },
-        {
-          "question": "What is the \"Database Agnostic\" claim based on?",
-          "answer": "The system achieves true database agnosticism by using Kysely with a strict type-only schema definition that avoids dialect-specific builders. This architecture allows the exact same codebase to run on SQLite for zero-config local development or switch seamlessly to PostgreSQL or MySQL for high-concurrency production environments, with the dialect being auto-detected from the connection string at runtime."
-        },
-        {
           "question": "Can I self-host this in an air-gapped environment?",
           "answer": "You can deploy the Mesh in air-gapped environments as a standalone binary or Docker container because it requires no external dependencies other than the database, which defaults to an embedded SQLite file. All authentication configuration is handled via a local JSON file, making the system ideal for secure enclaves or Kubernetes setups where external connectivity is restricted."
-        },
-        {
-          "question": "How do I debug a failed tool call across multiple services?",
-          "answer": "Debugging across multiple services is managed through a native OpenTelemetry implementation that exports traces and metrics for every request. The system generates a unified trace ID that tracks the request from the incoming API call through the policy engine to the downstream MCP and back, allowing you to export data to any OTLP-compatible collector like Datadog or Jaeger."
-        },
-        {
-          "question": "Is this strictly for TypeScript/Node agents?",
-          "answer": "While the Mesh is built in TypeScript, it exposes a standard MCP Server interface via HTTP or SSE that is language-agnostic. Any MCP-compliant client, including Python based LangGraph agents, Rust services, or the Claude Desktop App, can connect to the Mesh and utilize its tools just as if it were a local connection."
         }
-      ],
-      "description": "Here are some frequently asked questions, to solve all your problems.",
-      "eyebrow": "Frequently Asked Questions"
+      ]
     },
     {
       "__resolveType": "site/sections/FinalCTA.tsx",
-      "title": "Join our thriving community of Al builders ",
+      "title": "Join our thriving community of AI builders",
       "primaryButton": {
         "text": "Join our Discord community",
         "url": "https://decocms.com/discord"
-      },
-      "secondaryButton": {
-        "text": "Get started building",
-        "url": "https://deco.new/"
       }
     },
     {
@@ -75,15 +172,6 @@
       "section": {
         "__resolveType": "Footer"
       }
-    },
-    {
-      "__resolveType": "site/sections/Analytics/PostHog.tsx",
-      "posthogKey": {
-        "__resolveType": "website/loaders/secret.ts",
-        "encrypted": "10c0c71c378925ba65f7d80cba6a2c7f0d925bcad133bee66ef262e72f2f8b04c79a60b8502d2331dd104b88b0b8c107",
-        "name": "POSTHOG_API_KEY"
-      },
-      "posthogHost": "https://us.i.posthog.com"
     }
   ],
   "seo": {

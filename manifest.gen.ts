@@ -56,28 +56,32 @@ import * as $$$$$$42 from "./sections/ImageShowcase.tsx";
 import * as $$$$$$43 from "./sections/ItWorks.tsx";
 import * as $$$$$$44 from "./sections/LightTerms.tsx";
 import * as $$$$$$45 from "./sections/LogoCarousel.tsx";
-import * as $$$$$$46 from "./sections/MainFeatures.tsx";
-import * as $$$$$$47 from "./sections/ModelsTable.tsx";
-import * as $$$$$$48 from "./sections/OnePlatformTwoSurfaces.tsx";
-import * as $$$$$$49 from "./sections/PartnerBenefits.tsx";
-import * as $$$$$$50 from "./sections/PartnerDirectory.tsx";
-import * as $$$$$$51 from "./sections/PartnerHighlights.tsx";
-import * as $$$$$$53 from "./sections/PartnersFAQ.tsx";
-import * as $$$$$$54 from "./sections/PartnersFinalCTA.tsx";
-import * as $$$$$$55 from "./sections/PartnersHero.tsx";
-import * as $$$$$$52 from "./sections/PartnerTiers.tsx";
-import * as $$$$$$56 from "./sections/Podcasts.tsx";
-import * as $$$$$$57 from "./sections/PricingPlans.tsx";
-import * as $$$$$$58 from "./sections/ProgramSteps.tsx";
-import * as $$$$$$59 from "./sections/ProgramSteps4Col.tsx";
-import * as $$$$$$60 from "./sections/ProjectGrid.tsx";
-import * as $$$$$$61 from "./sections/RelatedBlogPosts.tsx";
-import * as $$$$$$62 from "./sections/Sitemap.tsx";
-import * as $$$$$$63 from "./sections/Statement.tsx";
-import * as $$$$$$64 from "./sections/TextMedia.tsx";
-import * as $$$$$$65 from "./sections/Theme/Theme.tsx";
-import * as $$$$$$66 from "./sections/ThreeCards.tsx";
-import * as $$$$$$67 from "./sections/WhoShouldApply.tsx";
+import * as $$$$$$50 from "./sections/MainFeatures.tsx";
+import * as $$$$$$46 from "./sections/MCPMeshBenefits.tsx";
+import * as $$$$$$47 from "./sections/MCPMeshFeatures.tsx";
+import * as $$$$$$48 from "./sections/MCPMeshProblemStatement.tsx";
+import * as $$$$$$49 from "./sections/MCPMeshWhyUs.tsx";
+import * as $$$$$$51 from "./sections/ModelsTable.tsx";
+import * as $$$$$$52 from "./sections/OnePlatformTwoSurfaces.tsx";
+import * as $$$$$$53 from "./sections/PartnerBenefits.tsx";
+import * as $$$$$$54 from "./sections/PartnerDirectory.tsx";
+import * as $$$$$$55 from "./sections/PartnerHighlights.tsx";
+import * as $$$$$$57 from "./sections/PartnersFAQ.tsx";
+import * as $$$$$$58 from "./sections/PartnersFinalCTA.tsx";
+import * as $$$$$$59 from "./sections/PartnersHero.tsx";
+import * as $$$$$$56 from "./sections/PartnerTiers.tsx";
+import * as $$$$$$60 from "./sections/Podcasts.tsx";
+import * as $$$$$$61 from "./sections/PricingPlans.tsx";
+import * as $$$$$$62 from "./sections/ProgramSteps.tsx";
+import * as $$$$$$63 from "./sections/ProgramSteps4Col.tsx";
+import * as $$$$$$64 from "./sections/ProjectGrid.tsx";
+import * as $$$$$$65 from "./sections/RelatedBlogPosts.tsx";
+import * as $$$$$$66 from "./sections/Sitemap.tsx";
+import * as $$$$$$67 from "./sections/Statement.tsx";
+import * as $$$$$$68 from "./sections/TextMedia.tsx";
+import * as $$$$$$69 from "./sections/Theme/Theme.tsx";
+import * as $$$$$$70 from "./sections/ThreeCards.tsx";
+import * as $$$$$$71 from "./sections/WhoShouldApply.tsx";
 
 const manifest = {
   "loaders": {
@@ -131,28 +135,32 @@ const manifest = {
     "site/sections/ItWorks.tsx": $$$$$$43,
     "site/sections/LightTerms.tsx": $$$$$$44,
     "site/sections/LogoCarousel.tsx": $$$$$$45,
-    "site/sections/MainFeatures.tsx": $$$$$$46,
-    "site/sections/ModelsTable.tsx": $$$$$$47,
-    "site/sections/OnePlatformTwoSurfaces.tsx": $$$$$$48,
-    "site/sections/PartnerBenefits.tsx": $$$$$$49,
-    "site/sections/PartnerDirectory.tsx": $$$$$$50,
-    "site/sections/PartnerHighlights.tsx": $$$$$$51,
-    "site/sections/PartnersFAQ.tsx": $$$$$$53,
-    "site/sections/PartnersFinalCTA.tsx": $$$$$$54,
-    "site/sections/PartnersHero.tsx": $$$$$$55,
-    "site/sections/PartnerTiers.tsx": $$$$$$52,
-    "site/sections/Podcasts.tsx": $$$$$$56,
-    "site/sections/PricingPlans.tsx": $$$$$$57,
-    "site/sections/ProgramSteps.tsx": $$$$$$58,
-    "site/sections/ProgramSteps4Col.tsx": $$$$$$59,
-    "site/sections/ProjectGrid.tsx": $$$$$$60,
-    "site/sections/RelatedBlogPosts.tsx": $$$$$$61,
-    "site/sections/Sitemap.tsx": $$$$$$62,
-    "site/sections/Statement.tsx": $$$$$$63,
-    "site/sections/TextMedia.tsx": $$$$$$64,
-    "site/sections/Theme/Theme.tsx": $$$$$$65,
-    "site/sections/ThreeCards.tsx": $$$$$$66,
-    "site/sections/WhoShouldApply.tsx": $$$$$$67,
+    "site/sections/MainFeatures.tsx": $$$$$$50,
+    "site/sections/MCPMeshBenefits.tsx": $$$$$$46,
+    "site/sections/MCPMeshFeatures.tsx": $$$$$$47,
+    "site/sections/MCPMeshProblemStatement.tsx": $$$$$$48,
+    "site/sections/MCPMeshWhyUs.tsx": $$$$$$49,
+    "site/sections/ModelsTable.tsx": $$$$$$51,
+    "site/sections/OnePlatformTwoSurfaces.tsx": $$$$$$52,
+    "site/sections/PartnerBenefits.tsx": $$$$$$53,
+    "site/sections/PartnerDirectory.tsx": $$$$$$54,
+    "site/sections/PartnerHighlights.tsx": $$$$$$55,
+    "site/sections/PartnersFAQ.tsx": $$$$$$57,
+    "site/sections/PartnersFinalCTA.tsx": $$$$$$58,
+    "site/sections/PartnersHero.tsx": $$$$$$59,
+    "site/sections/PartnerTiers.tsx": $$$$$$56,
+    "site/sections/Podcasts.tsx": $$$$$$60,
+    "site/sections/PricingPlans.tsx": $$$$$$61,
+    "site/sections/ProgramSteps.tsx": $$$$$$62,
+    "site/sections/ProgramSteps4Col.tsx": $$$$$$63,
+    "site/sections/ProjectGrid.tsx": $$$$$$64,
+    "site/sections/RelatedBlogPosts.tsx": $$$$$$65,
+    "site/sections/Sitemap.tsx": $$$$$$66,
+    "site/sections/Statement.tsx": $$$$$$67,
+    "site/sections/TextMedia.tsx": $$$$$$68,
+    "site/sections/Theme/Theme.tsx": $$$$$$69,
+    "site/sections/ThreeCards.tsx": $$$$$$70,
+    "site/sections/WhoShouldApply.tsx": $$$$$$71,
   },
   "actions": {
     "site/actions/airtable/createRecord.ts": $$$$$$$$$0,
