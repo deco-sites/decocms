@@ -3168,6 +3168,36 @@ input.tab:checked + .tab-content,
 .artboard.phone {
   width: 320px;
 }
+.artboard.phone-1.horizontal,
+      .artboard.phone-1.artboard-horizontal {
+  width: 568px;
+  height: 320px;
+}
+.artboard.phone-2.horizontal,
+      .artboard.phone-2.artboard-horizontal {
+  width: 667px;
+  height: 375px;
+}
+.artboard.phone-3.horizontal,
+      .artboard.phone-3.artboard-horizontal {
+  width: 736px;
+  height: 414px;
+}
+.artboard.phone-4.horizontal,
+      .artboard.phone-4.artboard-horizontal {
+  width: 812px;
+  height: 375px;
+}
+.artboard.phone-5.horizontal,
+      .artboard.phone-5.artboard-horizontal {
+  width: 896px;
+  height: 414px;
+}
+.artboard.phone-6.horizontal,
+      .artboard.phone-6.artboard-horizontal {
+  width: 1024px;
+  height: 320px;
+}
 .btm-nav-xs > *:where(.\!active) {
   border-top-width: 1px !important;
 }
@@ -3794,6 +3824,9 @@ input.tab:checked + .tab-content,
 .left-4 {
   left: 1rem;
 }
+.left-6 {
+  left: 1.5rem;
+}
 .left-8 {
   left: 2rem;
 }
@@ -3916,6 +3949,9 @@ input.tab:checked + .tab-content,
 }
 .z-\[110\] {
   z-index: 110;
+}
+.z-\[1\] {
+  z-index: 1;
 }
 .col-span-full {
   grid-column: 1 / -1;
@@ -4590,6 +4626,9 @@ input.tab:checked + .tab-content,
 .max-w-\[594px\] {
   max-width: 594px;
 }
+.max-w-\[600px\] {
+  max-width: 600px;
+}
 .max-w-\[700px\] {
   max-width: 700px;
 }
@@ -4882,6 +4921,9 @@ input.tab:checked + .tab-content,
 }
 .justify-between {
   justify-content: space-between;
+}
+.justify-around {
+  justify-content: space-around;
 }
 .justify-items-center {
   justify-items: center;
@@ -5207,6 +5249,9 @@ input.tab:checked + .tab-content,
 }
 .border-2 {
   border-width: 2px;
+}
+.border-4 {
+  border-width: 4px;
 }
 .border-b {
   border-bottom-width: 1px;
@@ -6530,6 +6575,9 @@ input.tab:checked + .tab-content,
   --tw-bg-opacity: 1;
   background-color: rgb(231 229 228 / var(--tw-bg-opacity));
 }
+.bg-dc-200\/50 {
+  background-color: rgb(231 229 228 / 0.5);
+}
 .bg-dc-300 {
   --tw-bg-opacity: 1;
   background-color: rgb(214 211 209 / var(--tw-bg-opacity));
@@ -7510,6 +7558,9 @@ input.tab:checked + .tab-content,
 .bg-gradient-to-b {
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
 }
+.bg-gradient-to-bl {
+  background-image: linear-gradient(to bottom left, var(--tw-gradient-stops));
+}
 .bg-gradient-to-br {
   background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
 }
@@ -7774,6 +7825,11 @@ input.tab:checked + .tab-content,
 }
 .from-primary-light\/0 {
   --tw-gradient-from: rgb(208 236 26 / 0) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(208 236 26 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+.from-primary-light\/10 {
+  --tw-gradient-from: rgb(208 236 26 / 0.1) var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(208 236 26 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
@@ -8529,6 +8585,9 @@ input.tab:checked + .tab-content,
 }
 .pl-3 {
   padding-left: 0.75rem;
+}
+.pl-4 {
+  padding-left: 1rem;
 }
 .pl-5 {
   padding-left: 1.25rem;
@@ -10784,6 +10843,11 @@ input.tab:checked + .tab-content,
   background-color: rgb(86 82 78 / var(--tw-bg-opacity));
 }
 
+.hover\:bg-dc-800:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(40 37 36 / var(--tw-bg-opacity));
+}
+
 .hover\:bg-emerald-100:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(209 250 229 / var(--tw-bg-opacity));
@@ -12575,12 +12639,20 @@ input.tab:checked + .tab-content,
     right: -5rem;
   }
 
+  .md\:left-12 {
+    left: 3rem;
+  }
+
   .md\:top-1\/2 {
     top: 50%;
   }
 
   .md\:col-span-2 {
     grid-column: span 2 / span 2;
+  }
+
+  .md\:mb-16 {
+    margin-bottom: 4rem;
   }
 
   .md\:block {
@@ -12597,6 +12669,10 @@ input.tab:checked + .tab-content,
 
   .md\:h-10 {
     height: 2.5rem;
+  }
+
+  .md\:h-16 {
+    height: 4rem;
   }
 
   .md\:h-20 {
@@ -12633,6 +12709,10 @@ input.tab:checked + .tab-content,
 
   .md\:w-1\/2 {
     width: 50%;
+  }
+
+  .md\:w-16 {
+    width: 4rem;
   }
 
   .md\:w-20 {
@@ -12748,6 +12828,10 @@ input.tab:checked + .tab-content,
 
   .md\:gap-4 {
     gap: 1rem;
+  }
+
+  .md\:gap-5 {
+    gap: 1.25rem;
   }
 
   .md\:gap-6 {

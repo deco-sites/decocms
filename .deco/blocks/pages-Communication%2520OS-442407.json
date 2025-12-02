@@ -6,10 +6,173 @@
       "__resolveType": "Header-decocms"
     },
     {
-      "__resolveType": "website/sections/Rendering/Lazy.tsx",
-      "section": {
-        "__resolveType": "Footer"
-      }
+      "__resolveType": "site/sections/CommunicationOSHero.tsx",
+      "badge": "The Future of Enterprise Context",
+      "titleLine1": "Your Digital \"Chief of Staff\".",
+      "titleLine2": "Now Automated.",
+      "titleHighlight": "DecoCMS",
+      "description": "is the Communication OS that transforms fragmented conversations into strategic alignment. Stop waiting for static reports and get answers in real-time.",
+      "primaryButtonText": "Analyze Company Context",
+      "primaryButtonLink": "#",
+      "secondaryButtonText": "See How It Works",
+      "secondaryButtonLink": "#how-it-works",
+      "contextSteps": [
+        {
+          "name": "Public Context",
+          "description": "Website, News, LinkedIn",
+          "icon": "database",
+          "highlighted": false
+        },
+        {
+          "name": "Private Context",
+          "description": "Slack, Drive, Notion",
+          "icon": "fingerprint",
+          "highlighted": false
+        },
+        {
+          "name": "Chief of Staff Agent",
+          "description": "Answers & Actions",
+          "icon": "smart_toy",
+          "highlighted": true
+        }
+      ]
+    },
+    {
+      "__resolveType": "site/sections/CommunicationOSProblem.tsx",
+      "title": "Communication Overload is killing your strategy",
+      "description": "The biggest bottleneck for scale-ups isn't a lack of ideas—it's disconnection. Executives become \"human bottlenecks\" because they have to constantly organize context so the team can execute.",
+      "statCards": [
+        {
+          "title": "The Middleman",
+          "description": "You waste hours relaying information between teams that don't talk to each other."
+        },
+        {
+          "title": "Broken Telephone",
+          "description": "The strategy defined on Monday has already changed (and been misunderstood) by Friday."
+        },
+        {
+          "title": "Slow Decisions",
+          "description": "Waiting days for a static report while the market shifts in real-time."
+        }
+      ]
+    },
+    {
+      "__resolveType": "site/sections/CommunicationOSSolution.tsx",
+      "badge": "Communication OS",
+      "title": "Become a \"Doer\" Executive",
+      "description": "DecoCMS eliminates the middleman. We centralize external conversations (market, clients) and internal conversations (teams, projects) into a single intelligence interface.",
+      "benefits": [
+        {
+          "text": "Total observability without micromanagement."
+        },
+        {
+          "text": "Real-time inconsistency detection."
+        },
+        {
+          "text": "Direct data access (no need to ask for queries)."
+        }
+      ],
+      "quoteText": "A Chief of Staff's role is to organize context so the CEO can decide.",
+      "quoteHighlight": "We automate this function."
+    },
+    {
+      "__resolveType": "site/sections/CommunicationOSFeatures.tsx",
+      "title": "Opinionated Apps for Real Problems",
+      "description": "We don't sell \"infrastructure\" on Day 1. We sell immediate communication intelligence.",
+      "featureCards": [
+        {
+          "icon": "edit_note",
+          "title": "Blog Post Generator",
+          "description": "Creates strategic content using your actual brand voice and citing your products correctly."
+        },
+        {
+          "icon": "forum",
+          "title": "Review Responder",
+          "description": "Monitors and responds to reviews on G2, Glassdoor, and Google with corporate alignment."
+        },
+        {
+          "icon": "military_tech",
+          "title": "Sales Battlecards",
+          "description": "Generates updated sales materials based on the latest competitive intelligence."
+        },
+        {
+          "icon": "notifications_active",
+          "title": "Proactive Alerts",
+          "description": "\"Your competitor launched feature X. Here is the suggested strategic response.\""
+        },
+        {
+          "icon": "visibility",
+          "title": "Brand Consistency",
+          "description": "Ensures Marketing, Sales, and Support are speaking the same language."
+        },
+        {
+          "icon": "psychology",
+          "title": "Context Memory",
+          "description": "The system learns from every interaction, becoming smarter every day."
+        }
+      ]
+    },
+    {
+      "__resolveType": "site/sections/CommunicationOSJourney.tsx",
+      "title": "The Context Engine Journey",
+      "description": "From the first click to deep infrastructure.",
+      "steps": [
+        {
+          "stepIndicator": "01",
+          "isIcon": false,
+          "title": "Public Context (Instant)",
+          "description": "You enter your domain and email. We crawl your website, LinkedIn, news, and competitors.",
+          "resultIcon": "bolt",
+          "resultText": "Result: A \"Context Map\" of your company in 3 minutes.",
+          "isHighlighted": false
+        },
+        {
+          "stepIndicator": "02",
+          "isIcon": false,
+          "title": "Private Context (Apps)",
+          "description": "Connect your internal tools to give the agent depth.",
+          "additionalNote": "Modern Stack Supported: Google Workspace, Slack, Notion.",
+          "resultIcon": "lock",
+          "resultText": "Result: The agent now knows your internal strategy documents.",
+          "isHighlighted": false
+        },
+        {
+          "stepIndicator": "lan",
+          "isIcon": true,
+          "title": "The Bridge to MCP Mesh",
+          "description": "The moment the vertical product becomes a horizontal platform.",
+          "additionalNote": "Need a specific analysis? Your engineering team builds a Custom MCP on our open-source infrastructure.",
+          "badge": "Platform Expansion",
+          "quote": "\"The Executive defines WHAT. Engineering builds HOW (the MCP). The Agent executes.\"",
+          "isHighlighted": true
+        }
+      ]
+    },
+    {
+      "__resolveType": "site/sections/FAQ.tsx",
+      "eyebrow": "FAQ",
+      "title": "Frequently Asked Questions",
+      "faqItems": [
+        {
+          "question": "Is my private data used to train public models?",
+          "answer": "Absolutely not. Your context is isolated in your private tenant (Private Context). We use LLMs only for inference, never for shared training."
+        },
+        {
+          "question": "What is the MCP Mesh?",
+          "answer": "It is our infrastructure layer (Model Context Protocol). It is the open standard we use to connect unstructured data to AI agents."
+        },
+        {
+          "question": "Do I need an engineering team to start?",
+          "answer": "No. The \"Communication OS\" Apps work out-of-the-box on Day 0. Engineering is only needed if you want to expand with custom MCPs in the future."
+        },
+        {
+          "question": "What is the Ideal Customer Profile (ICP)?",
+          "answer": "We focus on C-Levels of Scale-ups and Startups who already use modern stacks (Slack, Notion, Google) and suffer from information fragmentation."
+        }
+      ]
+    },
+    {
+      "__resolveType": "Footer"
     }
   ],
   "seo": {
