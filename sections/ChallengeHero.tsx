@@ -744,7 +744,7 @@ export default function ChallengeHero({
               {/* Deadline */}
               <div class="flex items-center gap-3 text-red-600 bg-red-50 p-4 rounded-lg">
                 <Icon name="alarm" size="small" />
-                <p class="text-sm font-bold">PRAZO FINAL: 30 dias a partir de hoje.</p>
+                <p class="text-sm font-bold">PRAZO FINAL: você tem até o dia 03/01/2026 para entregar seu projeto</p>
               </div>
             </div>
 
