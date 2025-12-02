@@ -9,6 +9,7 @@ import * as $sitemap_xml from "./routes/sitemap.xml.ts";
 import * as $BlogCategories from "./islands/BlogCategories.tsx";
 import * as $BlogFormSearch from "./islands/BlogFormSearch.tsx";
 import * as $BlogPostsCarousel from "./islands/BlogPostsCarousel.tsx";
+import * as $Button from "./islands/Button.tsx";
 import * as $CopyCommandButton from "./islands/CopyCommandButton.tsx";
 import * as $CopyMCPCommand from "./islands/CopyMCPCommand.tsx";
 import * as $CountdownIsland from "./islands/CountdownIsland.tsx";
@@ -20,6 +21,7 @@ import * as $PostHogProvider from "./islands/PostHogProvider.tsx";
 import * as $ProjectGrid from "./islands/ProjectGrid.tsx";
 import * as $ScrollToButton from "./islands/ScrollToButton.tsx";
 import * as $SendFormNewsletter from "./islands/SendFormNewsletter.tsx";
+import * as $TrackedLink from "./islands/TrackedLink.tsx";
 import * as $UnicornStudioBackground from "./islands/UnicornStudioBackground.tsx";
 import type { Manifest } from "$fresh/server.ts";
 
@@ -34,6 +36,7 @@ const manifest = {
     "./islands/BlogCategories.tsx": $BlogCategories,
     "./islands/BlogFormSearch.tsx": $BlogFormSearch,
     "./islands/BlogPostsCarousel.tsx": $BlogPostsCarousel,
+    "./islands/Button.tsx": $Button,
     "./islands/CopyCommandButton.tsx": $CopyCommandButton,
     "./islands/CopyMCPCommand.tsx": $CopyMCPCommand,
     "./islands/CountdownIsland.tsx": $CountdownIsland,
@@ -45,6 +48,7 @@ const manifest = {
     "./islands/ProjectGrid.tsx": $ProjectGrid,
     "./islands/ScrollToButton.tsx": $ScrollToButton,
     "./islands/SendFormNewsletter.tsx": $SendFormNewsletter,
+    "./islands/TrackedLink.tsx": $TrackedLink,
     "./islands/UnicornStudioBackground.tsx": $UnicornStudioBackground,
   },
   baseUrl: import.meta.url,
