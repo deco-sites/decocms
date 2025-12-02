@@ -4712,9 +4712,6 @@ input.tab:checked + .tab-content,
 .origin-top-left {
   transform-origin: top left;
 }
-.origin-top-right {
-  transform-origin: top right;
-}
 .-translate-x-1\/2 {
   --tw-translate-x: -50%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -4777,10 +4774,6 @@ input.tab:checked + .tab-content,
 }
 .rotate-90 {
   --tw-rotate: 90deg;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-.skew-x-12 {
-  --tw-skew-x: 12deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 .scale-100 {
@@ -10122,9 +10115,6 @@ input.tab:checked + .tab-content,
 }
 .opacity-30 {
   opacity: 0.3;
-}
-.opacity-5 {
-  opacity: 0.05;
 }
 .opacity-50 {
   opacity: 0.5;

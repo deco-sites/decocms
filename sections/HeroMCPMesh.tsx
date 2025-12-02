@@ -124,18 +124,18 @@ export default function HeroMCPMesh({
     <section class="w-full bg-dc-50 flex flex-col p-2">
       <div class="bg-dc-100 pt-6 rounded-[24px] flex flex-col h-[calc(100vh-16px)] relative overflow-hidden">
         {/* Hero Content Area */}
-        <div class="flex flex-col items-center pt-24 md:pt-32 lg:pt-40 px-4 sm:px-6 lg:px-10 relative z-20">
+        <div class="flex flex-col items-center pt-16 sm:pt-20 md:pt-32 lg:pt-40 px-4 sm:px-6 lg:px-10 relative z-20">
           {/* Main Content - Centered */}
-          <div class="w-full max-w-[930px] flex flex-col items-center gap-6">
+          <div class="w-full max-w-[930px] flex flex-col items-center gap-4 md:gap-6">
             {/* Title */}
-            <h1 class="text-center text-dc-900 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[80px] font-medium leading-none tracking-tight">
+            <h1 class="text-center text-dc-900 text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-[80px] font-medium leading-none tracking-tight">
               {titleLine1}
               <br />
               <span class="text-[#8caa25]">{titleLine2}</span>
             </h1>
 
             {/* Subtitle */}
-            <p class="w-full max-w-[542px] text-dc-500 text-lg md:text-xl font-normal leading-relaxed text-center">
+            <p class="w-full max-w-[542px] text-dc-500 text-base md:text-lg lg:text-xl font-normal leading-relaxed text-center">
               {subtitle}
             </p>
 
@@ -215,27 +215,50 @@ export default function HeroMCPMesh({
 
             const updateCodeWindowVisibility = () => {
               const viewportHeight = window.innerHeight;
+              const viewportWidth = window.innerWidth;
+              const isMobile = viewportWidth < 768;
               
-              if (viewportHeight < 500) {
-                // Very small viewport - hide completely
-                codeWindow.style.opacity = "0";
-                codeWindow.style.pointerEvents = "none";
-                codeWindow.style.transform = "translateX(-50%) translateY(100%)";
-              } else if (viewportHeight < 650) {
-                // Small viewport - show less
-                codeWindow.style.opacity = "1";
-                codeWindow.style.pointerEvents = "auto";
-                codeWindow.style.transform = "translateX(-50%) translateY(70%)";
-              } else if (viewportHeight < 800) {
-                // Medium viewport - show more
-                codeWindow.style.opacity = "1";
-                codeWindow.style.pointerEvents = "auto";
-                codeWindow.style.transform = "translateX(-50%) translateY(50%)";
+              if (isMobile) {
+                // Mobile: position code window lower to avoid overlapping buttons
+                if (viewportHeight < 600) {
+                  // Very small mobile - hide completely
+                  codeWindow.style.opacity = "0";
+                  codeWindow.style.pointerEvents = "none";
+                  codeWindow.style.transform = "translateX(-50%) translateY(100%)";
+                } else if (viewportHeight < 750) {
+                  // Small mobile - show just header
+                  codeWindow.style.opacity = "1";
+                  codeWindow.style.pointerEvents = "auto";
+                  codeWindow.style.transform = "translateX(-50%) translateY(85%)";
+                } else {
+                  // Normal mobile - show more code
+                  codeWindow.style.opacity = "1";
+                  codeWindow.style.pointerEvents = "auto";
+                  codeWindow.style.transform = "translateX(-50%) translateY(65%)";
+                }
               } else {
-                // Large viewport - show default
-                codeWindow.style.opacity = "1";
-                codeWindow.style.pointerEvents = "auto";
-                codeWindow.style.transform = "translateX(-50%) translateY(40%)";
+                // Desktop behavior
+                if (viewportHeight < 500) {
+                  // Very small viewport - hide completely
+                  codeWindow.style.opacity = "0";
+                  codeWindow.style.pointerEvents = "none";
+                  codeWindow.style.transform = "translateX(-50%) translateY(100%)";
+                } else if (viewportHeight < 650) {
+                  // Small viewport - show less
+                  codeWindow.style.opacity = "1";
+                  codeWindow.style.pointerEvents = "auto";
+                  codeWindow.style.transform = "translateX(-50%) translateY(70%)";
+                } else if (viewportHeight < 800) {
+                  // Medium viewport - show more
+                  codeWindow.style.opacity = "1";
+                  codeWindow.style.pointerEvents = "auto";
+                  codeWindow.style.transform = "translateX(-50%) translateY(50%)";
+                } else {
+                  // Large viewport - show default
+                  codeWindow.style.opacity = "1";
+                  codeWindow.style.pointerEvents = "auto";
+                  codeWindow.style.transform = "translateX(-50%) translateY(40%)";
+                }
               }
             };
 
