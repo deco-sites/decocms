@@ -20,3 +20,6 @@ jobs:
 
       - name: Deco Deploy
         uses: deco-cx/deploy@v0
+        env:
+          POSTHOG_API_KEY: ${{ secrets.POSTHOG_API_KEY }}
+          POSTHOG_API_HOST: ${{ secrets.POSTHOG_API_HOST }}
