@@ -1,7 +1,8 @@
 import type { BlogPost } from "apps/blog/types.ts";
 import Image from "apps/website/components/Image.tsx";
-import Button from "../components/ui/Button.tsx";
+import Button from "../islands/Button.tsx";
 import BlogAuthorTag from "../components/blog/BlogAuthorTag.tsx";
+import TrackedLink from "../islands/TrackedLink.tsx";
 
 export interface Props {
   /**
@@ -110,7 +111,17 @@ export default function RelatedBlogPosts({
               key={index}
               className="flex flex-col justify-start items-start gap-6"
             >
-              <a href={`/blog/post/${post.slug}`} className="block w-full">
+              <TrackedLink
+                href={`/blog/post/${post.slug}`}
+                event="blog_post_click"
+                properties={{
+                  post_slug: post.slug,
+                  post_title: post.title,
+                  post_type: "related",
+                  click_element: "image",
+                }}
+                class="block w-full"
+              >
                 <div className="aspect-3/2 w-full bg-primary-light rounded-2xl overflow-hidden">
                   <Image
                     src={post.image || "https://placehold.co/416x256"}
@@ -121,18 +132,25 @@ export default function RelatedBlogPosts({
                     loading="lazy"
                   />
                 </div>
-              </a>
+              </TrackedLink>
               <div className="w-full flex flex-col justify-start items-start gap-4">
                 {renderCategories(post)}
 
-                <a
+                <TrackedLink
                   href={`/blog/post/${post.slug}`}
-                  className="block w-full hover:opacity-80 transition-opacity"
+                  event="blog_post_click"
+                  properties={{
+                    post_slug: post.slug,
+                    post_title: post.title,
+                    post_type: "related",
+                    click_element: "title",
+                  }}
+                  class="block w-full hover:opacity-80 transition-opacity"
                 >
                   <h3 className="text-dc-800 text-xl md:text-2xl font-semibold font-sans leading-tight">
                     {post.title}
                   </h3>
-                </a>
+                </TrackedLink>
 
                 <div className="inline-flex justify-start items-center gap-3">
                   <BlogAuthorTag

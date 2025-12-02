@@ -1,6 +1,6 @@
 import type { ImageWidget } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
-import Button from "../components/ui/Button.tsx";
+import Button from "../islands/Button.tsx";
 import Decoration from "../components/ui/decoration.tsx";
 
 const DecoIcon = () => (

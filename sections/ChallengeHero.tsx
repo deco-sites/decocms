@@ -1,5 +1,5 @@
 import type { ImageWidget, RichText } from "apps/admin/widgets.ts";
-import Button from "../components/ui/Button.tsx";
+import Button from "../islands/Button.tsx";
 import Icon from "../components/ui/Icon.tsx";
 import { useScript } from "@deco/deco/hooks";
 
