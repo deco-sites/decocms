@@ -128,7 +128,7 @@ export default function HeroMCPMesh({
           {/* Main Content - Centered */}
           <div class="w-full max-w-[930px] flex flex-col items-center gap-4 md:gap-6">
             {/* Title */}
-            <h1 class="text-center text-dc-900 text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-[80px] font-medium leading-none tracking-tight">
+            <h1 class="text-center text-dc-900 text-5xl sm:text-6xl md:text-6xl lg:text-7xl xl:text-[80px] font-medium leading-none tracking-tight">
               {titleLine1}
               <br />
               <span class="text-[#8caa25]">{titleLine2}</span>
@@ -141,7 +141,7 @@ export default function HeroMCPMesh({
 
             {/* Buttons */}
             <div class="flex flex-wrap items-center justify-center gap-2">
-              <CopyMCPCommand command={copyCommand} />
+              <CopyMCPCommand command={copyCommand} disabled={true} />
               <a
                 href={docsButtonUrl}
                 class="px-4 py-3 bg-primary-light rounded-xl inline-flex items-center justify-center hover:bg-primary-light/90 transition-colors"
@@ -233,9 +233,12 @@ export default function HeroMCPMesh({
               // Calculate available space below content
               const availableSpace = sectionBottom - heroContentBottom;
               
+              // Detect mobile
+              const isMobile = window.innerWidth < 768;
+              
               // How much of the code window should be visible
-              // We want at least 60px gap between content and code window
-              const minGap = 60;
+              // We want more gap on mobile to account for larger content
+              const minGap = isMobile ? 80 : 60;
               const visibleCodeWindowHeight = availableSpace - minGap;
               
               // Calculate translateY percentage based on how much should be hidden
@@ -252,7 +255,9 @@ export default function HeroMCPMesh({
                 const translateYPercent = (hiddenPortion / codeWindowHeight) * 100;
                 
                 // Clamp between 30% (show a lot) and 90% (show very little)
-                const clampedTranslateY = Math.min(90, Math.max(30, translateYPercent));
+                // On mobile, use higher minimum to show less code window
+                const minTranslate = isMobile ? 50 : 30;
+                const clampedTranslateY = Math.min(90, Math.max(minTranslate, translateYPercent));
                 
                 codeWindow.style.opacity = "1";
                 codeWindow.style.pointerEvents = "auto";
