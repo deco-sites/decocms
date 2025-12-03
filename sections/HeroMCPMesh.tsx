@@ -213,63 +213,65 @@ export default function HeroMCPMesh({
             const codeWindow = document.getElementById(`code-window-${sectionId}`);
             if (!codeWindow) return;
 
-            const updateCodeWindowVisibility = () => {
-              const viewportHeight = window.innerHeight;
-              const viewportWidth = window.innerWidth;
-              const isMobile = viewportWidth < 768;
+            const updateCodeWindowPosition = () => {
+              // Find the hero content area (buttons container)
+              const heroContent = codeWindow.closest("section")?.querySelector(".flex.flex-col.items-center.pt-16");
+              if (!heroContent) return;
+
+              const heroContentRect = heroContent.getBoundingClientRect();
+              const heroContentBottom = heroContentRect.bottom;
               
-              if (isMobile) {
-                // Mobile: position code window lower to avoid overlapping buttons
-                if (viewportHeight < 600) {
-                  // Very small mobile - hide completely
-                  codeWindow.style.opacity = "0";
-                  codeWindow.style.pointerEvents = "none";
-                  codeWindow.style.transform = "translateX(-50%) translateY(100%)";
-                } else if (viewportHeight < 750) {
-                  // Small mobile - show just header
-                  codeWindow.style.opacity = "1";
-                  codeWindow.style.pointerEvents = "auto";
-                  codeWindow.style.transform = "translateX(-50%) translateY(85%)";
-                } else {
-                  // Normal mobile - show more code
-                  codeWindow.style.opacity = "1";
-                  codeWindow.style.pointerEvents = "auto";
-                  codeWindow.style.transform = "translateX(-50%) translateY(65%)";
-                }
+              const codeWindowRect = codeWindow.getBoundingClientRect();
+              const codeWindowHeight = codeWindowRect.height;
+              
+              const sectionElement = codeWindow.closest(".bg-dc-100");
+              if (!sectionElement) return;
+              
+              const sectionRect = sectionElement.getBoundingClientRect();
+              const sectionBottom = sectionRect.bottom;
+              
+              // Calculate available space below content
+              const availableSpace = sectionBottom - heroContentBottom;
+              
+              // How much of the code window should be visible
+              // We want at least 60px gap between content and code window
+              const minGap = 60;
+              const visibleCodeWindowHeight = availableSpace - minGap;
+              
+              // Calculate translateY percentage based on how much should be hidden
+              // If visibleCodeWindowHeight <= 0, hide completely
+              // If visibleCodeWindowHeight >= codeWindowHeight, show ~40% (default)
+              
+              if (visibleCodeWindowHeight <= 50) {
+                // Not enough space - hide completely
+                codeWindow.style.opacity = "0";
+                codeWindow.style.pointerEvents = "none";
+                codeWindow.style.transform = "translateX(-50%) translateY(100%)";
               } else {
-                // Desktop behavior
-                if (viewportHeight < 500) {
-                  // Very small viewport - hide completely
-                  codeWindow.style.opacity = "0";
-                  codeWindow.style.pointerEvents = "none";
-                  codeWindow.style.transform = "translateX(-50%) translateY(100%)";
-                } else if (viewportHeight < 650) {
-                  // Small viewport - show less
-                  codeWindow.style.opacity = "1";
-                  codeWindow.style.pointerEvents = "auto";
-                  codeWindow.style.transform = "translateX(-50%) translateY(70%)";
-                } else if (viewportHeight < 800) {
-                  // Medium viewport - show more
-                  codeWindow.style.opacity = "1";
-                  codeWindow.style.pointerEvents = "auto";
-                  codeWindow.style.transform = "translateX(-50%) translateY(50%)";
-                } else {
-                  // Large viewport - show default
-                  codeWindow.style.opacity = "1";
-                  codeWindow.style.pointerEvents = "auto";
-                  codeWindow.style.transform = "translateX(-50%) translateY(40%)";
-                }
+                const hiddenPortion = Math.max(0, codeWindowHeight - visibleCodeWindowHeight);
+                const translateYPercent = (hiddenPortion / codeWindowHeight) * 100;
+                
+                // Clamp between 30% (show a lot) and 90% (show very little)
+                const clampedTranslateY = Math.min(90, Math.max(30, translateYPercent));
+                
+                codeWindow.style.opacity = "1";
+                codeWindow.style.pointerEvents = "auto";
+                codeWindow.style.transform = `translateX(-50%) translateY(${clampedTranslateY}%)`;
               }
             };
 
-            // Initial check
-            updateCodeWindowVisibility();
+            // Initial positioning with slight delay to ensure layout is complete
+            setTimeout(updateCodeWindowPosition, 100);
 
-            // Update on resize (includes zoom)
-            window.addEventListener("resize", updateCodeWindowVisibility);
+            // Update on resize
+            window.addEventListener("resize", updateCodeWindowPosition);
+            
+            // Also update on scroll in case of any layout shifts
+            window.addEventListener("scroll", updateCodeWindowPosition, { passive: true });
 
             return () => {
-              window.removeEventListener("resize", updateCodeWindowVisibility);
+              window.removeEventListener("resize", updateCodeWindowPosition);
+              window.removeEventListener("scroll", updateCodeWindowPosition);
             };
           }, sectionId),
         }}

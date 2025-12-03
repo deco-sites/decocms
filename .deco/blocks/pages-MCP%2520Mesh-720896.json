@@ -12,7 +12,7 @@
       "subtitle": "The unified infrastructure layer for the autonomous software era. Centralize MCP connections, control access, and govern AI usage across your organization.",
       "copyCommand": "npx create-deco-mesh@latest",
       "docsButtonText": "Read Documentation",
-      "docsButtonUrl": "/docs/mesh"
+      "docsButtonUrl": "https://docs.decocms.com/en/introduction/"
     },
     {
       "__resolveType": "site/sections/MCPMeshProblemStatement.tsx",
