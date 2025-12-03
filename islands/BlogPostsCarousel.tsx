@@ -3,6 +3,7 @@ import type { JSX } from "preact";
 import Image from "apps/website/components/Image.tsx";
 import BlogAuthorTag from "../components/blog/BlogAuthorTag.tsx";
 import type { BlogPost } from "apps/blog/types.ts";
+import { trackEvent } from "../sdk/tracking.ts";
 
 interface CarouselProps {
   heading?: string;
@@ -32,9 +33,23 @@ function formatDate(dateString?: string) {
 }
 
 function PostCard({ post }: { post: BlogPost }) {
+  const handlePostClick = (clickElement: string) => {
+    trackEvent("blog_post_click", {
+      post_slug: post.slug,
+      post_title: post.title,
+      post_type: "carousel",
+      click_element: clickElement,
+      href: `/blog/post/${post.slug}`,
+    });
+  };
+
   return (
     <div class="p-2 bg-dc-100 rounded-xl inline-flex flex-col justify-center items-start gap-6 overflow-hidden w-[320px] md:w-[420px] lg:w-[530px] shrink-0">
-      <a href={`/blog/post/${post.slug}`} class="block w-full">
+      <a
+        href={`/blog/post/${post.slug}`}
+        class="block w-full"
+        onClick={() => handlePostClick("image")}
+      >
         <div class="w-full h-64 md:h-80 lg:h-96 rounded-xl overflow-hidden">
           <Image
             src={post.image || "https://placehold.co/530x353"}
@@ -52,6 +67,7 @@ function PostCard({ post }: { post: BlogPost }) {
             <a
               href={`/blog/post/${post.slug}`}
               class="hover:opacity-90 transition-opacity"
+              onClick={() => handlePostClick("title")}
             >
               <div class="self-stretch text-dc-800 text-2xl md:text-3xl lg:text-4xl font-medium font-sans leading-tight md:leading-10">
                 {post.title}

@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "preact/hooks";
 import type { ImageWidget } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
 import Icon from "../components/ui/Icon.tsx";
+import { trackEvent } from "../sdk/tracking.ts";
 
 interface AppIcon {
   name: string;
@@ -18,20 +19,6 @@ interface PromptTemplate {
 interface Theme {
   name: string;
   colors?: string[];
-}
-
-// PostHog event tracking helper (safe if PostHog not loaded)
-function trackHeroPromptEvent(
-  event: string,
-  properties?: Record<string, unknown>,
-) {
-  try {
-    const ph = (globalThis as any).posthog;
-    if (!ph || typeof ph.capture !== "function") return;
-    ph.capture(event, properties);
-  } catch {
-    // swallow tracking errors – never break UX
-  }
 }
 
 export interface Props {
@@ -121,7 +108,7 @@ export default function HeroInteractiveClient({
     }
 
     // Track prompt submission
-    trackHeroPromptEvent("lp_hero_prompt_submit", {
+    trackEvent("lp_hero_prompt_submit", {
       source: "landing_hero",
       prompt: prompt,
       has_theme: Boolean(selectedTheme),
@@ -162,7 +149,7 @@ export default function HeroInteractiveClient({
     typingInputRef.current?.focus();
 
     // Track template click
-    trackHeroPromptEvent("lp_hero_prompt_template_click", {
+    trackEvent("lp_hero_prompt_template_click", {
       source: "landing_hero",
       label: template.label,
       icon: template.icon,

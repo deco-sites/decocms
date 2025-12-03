@@ -1,5 +1,5 @@
 import type { ImageWidget } from "apps/admin/widgets.ts";
-import Button from "../components/ui/Button.tsx";
+import Button from "../islands/Button.tsx";
 import Image from "apps/website/components/Image.tsx";
 
 export interface Props {
@@ -98,6 +98,8 @@ export default function PartnersHero({
                   size="medium"
                   href={primaryButtonUrl}
                   className="!bg-primary-light !text-primary-dark hover:!bg-primary-light/90"
+                  trackEventName="partners_apply_click"
+                  trackProperties={{ text: primaryButtonText, source: "hero" }}
                 >
                   {primaryButtonText}
                 </Button>
@@ -108,6 +110,8 @@ export default function PartnersHero({
                   size="medium"
                   href={secondaryButtonUrl}
                   className="!bg-dc-50 !text-dc-900 hover:!bg-dc-100"
+                  trackEventName="partners_schedule_click"
+                  trackProperties={{ text: secondaryButtonText, source: "hero" }}
                 >
                   {secondaryButtonText}
                 </Button>

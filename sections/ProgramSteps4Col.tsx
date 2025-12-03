@@ -1,6 +1,6 @@
 import { Check, Lightbulb } from "lucide-preact";
 import FormModal from "../islands/FormModal.tsx";
-import Button from "../components/ui/Button.tsx";
+import Button from "../islands/Button.tsx";
 
 export interface Step {
   /** @title Step Title */

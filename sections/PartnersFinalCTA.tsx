@@ -1,3 +1,5 @@
+import TrackedLink from "../islands/TrackedLink.tsx";
+
 export interface ButtonProps {
   /** @title Button Text */
   text: string;
@@ -47,18 +49,22 @@ export default function PartnersFinalCTA({
 
               {/* Buttons */}
               <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <a
+                <TrackedLink
                   href={primaryButton.url}
+                  event="partners_apply_click"
+                  properties={{ text: primaryButton.text, source: "final_cta" }}
                   class="px-8 py-4 bg-[#07401A] rounded-xl text-[#D0EC1A] text-base md:text-lg font-medium hover:bg-[#07401A]/90 transition-colors"
                 >
                   {primaryButton.text}
-                </a>
-                <a
+                </TrackedLink>
+                <TrackedLink
                   href={secondaryButton.url}
+                  event="partners_schedule_click"
+                  properties={{ text: secondaryButton.text, source: "final_cta" }}
                   class="px-8 py-4 bg-transparent border-2 border-[#07401A] rounded-xl text-[#07401A] text-base md:text-lg font-medium hover:bg-[#07401A] hover:text-[#D0EC1A] transition-colors"
                 >
                   {secondaryButton.text}
-                </a>
+                </TrackedLink>
               </div>
             </div>
           </div>

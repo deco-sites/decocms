@@ -1,5 +1,5 @@
 import { Check, Lightbulb } from "lucide-preact";
-import Button from "../components/ui/Button.tsx";
+import Button from "../islands/Button.tsx";
 
 export interface Step {
   /** @title Step Title */

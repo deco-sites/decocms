@@ -1,4 +1,5 @@
 import { ComponentChildren } from "preact";
+import { trackEvent } from "../sdk/tracking.ts";
 
 export interface ButtonProps {
   /**
@@ -37,6 +38,21 @@ export interface ButtonProps {
    * @description Define o tipo do botão (para formulários)
    */
   type?: "button" | "submit" | "reset";
+  /**
+   * @title Tracking event name
+   * @description Nome do evento para PostHog (opcional)
+   */
+  trackEventName?: string;
+  /**
+   * @title Tracking element identifier
+   * @description Identificador do elemento para tracking (opcional)
+   */
+  trackElement?: string;
+  /**
+   * @title Additional tracking properties
+   * @description Propriedades adicionais para o evento (opcional)
+   */
+  trackProperties?: Record<string, unknown>;
 }
 
 export default function Button({
@@ -48,6 +64,9 @@ export default function Button({
   className = "",
   children,
   type = "button",
+  trackEventName,
+  trackElement,
+  trackProperties,
 }: ButtonProps) {
   // Base classes for all buttons
   const baseClasses =
@@ -74,10 +93,26 @@ export default function Button({
     sizeClasses[size]
   } ${className}`;
 
+  const handleClick = () => {
+    if (trackEventName) {
+      trackEvent(trackEventName, {
+        element: trackElement,
+        href,
+        ...trackProperties,
+      });
+    }
+    onClick?.();
+  };
+
   // Render as link if href is provided
   if (href) {
     return (
-      <a href={href} target={target} className={buttonClasses}>
+      <a
+        href={href}
+        target={target}
+        className={buttonClasses}
+        onClick={handleClick}
+      >
         {children}
       </a>
     );
@@ -87,7 +122,7 @@ export default function Button({
   return (
     <button
       type={type}
-      onClick={onClick}
+      onClick={handleClick}
       className={buttonClasses}
     >
       {children}

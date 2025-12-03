@@ -1,5 +1,5 @@
 import Image from "apps/website/components/Image.tsx";
-import Button from "site/components/ui/Button.tsx";
+import Button from "site/islands/Button.tsx";
 import Icon from "site/components/ui/Icon.tsx";
 import BlogAuthorTag from "../components/blog/BlogAuthorTag.tsx";
 import { BlogPostPage } from "apps/blog/types.ts";

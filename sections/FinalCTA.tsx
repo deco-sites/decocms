@@ -1,4 +1,5 @@
 import { useScript } from "@deco/deco/hooks";
+import TrackedLink from "../islands/TrackedLink.tsx";
 
 export interface ButtonProps {
   /**
@@ -52,8 +53,10 @@ export default function FinalCTA({
               {/* Right Content - Buttons */}
               <div class="flex-1 flex flex-col justify-start items-start gap-2 w-full">
                 {/* Primary Button - Dark */}
-                <a
+                <TrackedLink
                   href={primaryButton.url}
+                  event="lp_finalcta_community_click"
+                  properties={{ text: primaryButton.text }}
                   class="w-full px-5 py-6 bg-[#07401A] rounded-xl flex justify-between items-center group hover:bg-[#07401A]/90 transition-colors duration-300"
                 >
                   <span class="text-[#D0EC1A] text-base md:text-lg font-medium leading-snug">
@@ -74,7 +77,7 @@ export default function FinalCTA({
                       stroke-linejoin="round"
                     />
                   </svg>
-                </a>
+                </TrackedLink>
               </div>
             </div>
 

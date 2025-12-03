@@ -1,5 +1,5 @@
 import type { ImageWidget } from "apps/admin/widgets.ts";
-import Button from "../components/ui/Button.tsx";
+import Button from "../islands/Button.tsx";
 import Image from "apps/website/components/Image.tsx";
 
 export interface Props {

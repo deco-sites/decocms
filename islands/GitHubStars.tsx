@@ -1,13 +1,20 @@
 import { useEffect, useState } from "preact/hooks";
 import type { ImageWidget } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
+import { trackEvent } from "../sdk/tracking.ts";
 
 export interface GitHubStarsProps {
   repo: string;
   icon?: ImageWidget;
+  /** @title Tracking event name */
+  trackEventName?: string;
+  /** @title Additional tracking properties */
+  trackProperties?: Record<string, unknown>;
 }
 
-export default function GitHubStars({ repo, icon }: GitHubStarsProps) {
+export default function GitHubStars(
+  { repo, icon, trackEventName, trackProperties }: GitHubStarsProps,
+) {
   const [stars, setStars] = useState<number | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -42,12 +49,23 @@ export default function GitHubStars({ repo, icon }: GitHubStarsProps) {
     return count.toString();
   };
 
+  const handleClick = () => {
+    if (trackEventName) {
+      trackEvent(trackEventName, {
+        href: `https://github.com/${repo}`,
+        stars,
+        ...trackProperties,
+      });
+    }
+  };
+
   return (
     <a
       href={`https://github.com/${repo}`}
       target="_blank"
       rel="noopener noreferrer"
       class="backdrop-blur-sm bg-white/80 rounded-full py-2 pl-2 pr-3 flex items-center gap-1.5 hover:bg-white/90 transition-colors"
+      onClick={handleClick}
     >
       {icon
         ? (
