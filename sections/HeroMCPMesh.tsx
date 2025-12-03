@@ -163,10 +163,11 @@ export default function HeroMCPMesh({
           />
         </div>
 
-        {/* Code Window - Positioned at bottom, responsive visibility */}
+        {/* Code Window - Positioned at bottom, starts hidden until JS positions it */}
         <div
           id={`code-window-${sectionId}`}
-          class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[calc(100%-32px)] max-w-[800px] translate-y-[35%] md:translate-y-[40%] z-10 transition-all duration-300"
+          class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[calc(100%-32px)] max-w-[800px] z-10 transition-all duration-300"
+          style={{ transform: "translateX(-50%) translateY(80%)", opacity: "0" }}
         >
           <div class="bg-neutral-100 border border-gray-200 rounded-[10px] overflow-hidden shadow-xl">
             {/* Window Header */}
@@ -265,8 +266,16 @@ export default function HeroMCPMesh({
               }
             };
 
-            // Initial positioning with slight delay to ensure layout is complete
-            setTimeout(updateCodeWindowPosition, 100);
+            // Run positioning immediately
+            updateCodeWindowPosition();
+            
+            // Also run after a short delay to catch any late layout shifts
+            requestAnimationFrame(updateCodeWindowPosition);
+            setTimeout(updateCodeWindowPosition, 50);
+            setTimeout(updateCodeWindowPosition, 150);
+            
+            // Run on load event in case fonts/images affect layout
+            window.addEventListener("load", updateCodeWindowPosition);
 
             // Update on resize
             window.addEventListener("resize", updateCodeWindowPosition);
@@ -275,6 +284,7 @@ export default function HeroMCPMesh({
             window.addEventListener("scroll", updateCodeWindowPosition, { passive: true });
 
             return () => {
+              window.removeEventListener("load", updateCodeWindowPosition);
               window.removeEventListener("resize", updateCodeWindowPosition);
               window.removeEventListener("scroll", updateCodeWindowPosition);
             };
