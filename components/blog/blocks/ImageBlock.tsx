@@ -31,4 +31,3 @@ export function ImageBlock({ src, alt, caption }: ImageBlockType) {
     />
   );
 }
-

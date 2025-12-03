@@ -15,4 +15,3 @@ export function CodeBlock({ code, language, inline }: CodeBlockType) {
     </pre>
   );
 }
-

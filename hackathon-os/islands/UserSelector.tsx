@@ -7,11 +7,11 @@ export default function UserSelector() {
   const handleChange = (e: Event) => {
     const target = e.target as HTMLSelectElement;
     const userId = target.value;
-    
+
     if (userId === "none") {
       setCurrentUser(null);
     } else {
-      const user = mockUsers.find(u => u.id === userId);
+      const user = mockUsers.find((u) => u.id === userId);
       if (user) {
         setCurrentUser(user);
       }

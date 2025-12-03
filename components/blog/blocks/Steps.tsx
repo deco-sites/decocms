@@ -33,4 +33,3 @@ export function Steps({ steps }: StepsBlock) {
     </div>
   );
 }
-

@@ -19,4 +19,3 @@ export function Stats({ stats }: StatsBlock) {
     </div>
   );
 }
-

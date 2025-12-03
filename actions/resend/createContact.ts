@@ -52,5 +52,8 @@ export default async function createResendContact(
     );
   }
 
-  return await {response: await response.json(), status: await response.status};
+  return await {
+    response: await response.json(),
+    status: await response.status,
+  };
 }

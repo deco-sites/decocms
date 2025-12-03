@@ -1,4 +1,4 @@
-import { useState, useEffect } from "preact/hooks";
+import { useEffect, useState } from "preact/hooks";
 
 interface Props {
   /** @title Command Text */
@@ -23,18 +23,18 @@ export default function CopyMCPCommand({
   useEffect(() => {
     // Detect mobile/touch device
     const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768 || 'ontouchstart' in window);
+      setIsMobile(window.innerWidth < 768 || "ontouchstart" in window);
     };
-    
+
     checkMobile();
     window.addEventListener("resize", checkMobile);
-    
+
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
   const handleCopy = async () => {
     if (disabled) return;
-    
+
     try {
       await navigator.clipboard.writeText(command);
       setCopied(true);
@@ -97,4 +97,3 @@ export default function CopyMCPCommand({
     </button>
   );
 }
-

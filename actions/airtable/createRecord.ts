@@ -11,9 +11,9 @@ export default async function createAirtableRecord(
 ) {
   // Tentar múltiplas fontes para a API key
   let apiKey: string | undefined;
-  
+
   // 1. Tentar do contexto (Secret ou string)
-  if (typeof ctx.airtableApiKey === 'string') {
+  if (typeof ctx.airtableApiKey === "string") {
     apiKey = ctx.airtableApiKey;
   } else {
     apiKey = await ctx.airtableApiKey.get?.();
@@ -22,7 +22,8 @@ export default async function createAirtableRecord(
   if (!apiKey) {
     return {
       status: 400,
-      error: "Missing AIRTABLE_API_KEY env var. Por favor, configure as credenciais do Airtable no Admin."
+      error:
+        "Missing AIRTABLE_API_KEY env var. Por favor, configure as credenciais do Airtable no Admin.",
     };
   }
 
@@ -30,7 +31,8 @@ export default async function createAirtableRecord(
   if (!baseId) {
     return {
       status: 400,
-      error: "Missing AIRTABLE_BASE_ID env var. Por favor, configure as credenciais do Airtable no Admin."
+      error:
+        "Missing AIRTABLE_BASE_ID env var. Por favor, configure as credenciais do Airtable no Admin.",
     };
   }
 
@@ -38,7 +40,8 @@ export default async function createAirtableRecord(
   if (!tableId) {
     return {
       status: 400,
-      error: "Missing AIRTABLE_TABLE_ID env var. Por favor, configure as credenciais do Airtable no Admin."
+      error:
+        "Missing AIRTABLE_TABLE_ID env var. Por favor, configure as credenciais do Airtable no Admin.",
     };
   }
 
@@ -47,21 +50,21 @@ export default async function createAirtableRecord(
 
   Object.keys(props).forEach((key) => {
     const value = props[key];
-    
+
     if (value !== undefined && value !== null && value !== "") {
       // Convert "true"/"false" strings to boolean for checkbox fields
       if (value === "true") {
         fields[key] = true;
       } else if (value === "false") {
         fields[key] = false;
-      } else if (key === 'Tamanho do time' && !isNaN(Number(value))) {
+      } else if (key === "Tamanho do time" && !isNaN(Number(value))) {
         // Convert to number for numeric fields
         fields[key] = Number(value);
-      } else if (key === 'Dia de participação' && typeof value === 'string') {
+      } else if (key === "Dia de participação" && typeof value === "string") {
         // Convert string to array for Multiple Select field
         // Se tem vírgula, split. Se não, cria array com único valor
-        if (value.includes(',')) {
-          fields[key] = value.split(',').map(v => v.trim());
+        if (value.includes(",")) {
+          fields[key] = value.split(",").map((v) => v.trim());
         } else {
           fields[key] = [value.trim()];
         }
@@ -72,7 +75,12 @@ export default async function createAirtableRecord(
     }
   });
 
-  console.log("Sending to Airtable:", { baseId, tableId, fields, hasApiKey: !!apiKey });
+  console.log("Sending to Airtable:", {
+    baseId,
+    tableId,
+    fields,
+    hasApiKey: !!apiKey,
+  });
 
   try {
     const response = await fetch(
@@ -92,28 +100,30 @@ export default async function createAirtableRecord(
     if (!response.ok) {
       let errorMessage = "";
       const contentType = response.headers.get("content-type");
-      
+
       try {
         if (contentType?.includes("application/json")) {
           const errorJson = await response.json();
-          errorMessage = errorJson.error?.message || errorJson.error?.type || JSON.stringify(errorJson);
+          errorMessage = errorJson.error?.message || errorJson.error?.type ||
+            JSON.stringify(errorJson);
         } else {
           errorMessage = await response.text();
         }
       } catch {
         errorMessage = response.statusText;
       }
-      
+
       console.error("Airtable error:", {
         status: response.status,
         message: errorMessage,
         contentType,
-        sentFields: fields
+        sentFields: fields,
       });
-      
+
       return {
         status: response.status,
-        error: `Erro ao enviar para Airtable (${response.status}): ${errorMessage}`
+        error:
+          `Erro ao enviar para Airtable (${response.status}): ${errorMessage}`,
       };
     }
 
@@ -125,7 +135,9 @@ export default async function createAirtableRecord(
     console.error("Error sending to Airtable:", error);
     return {
       status: 500,
-      error: error instanceof Error ? error.message : "Erro desconhecido ao enviar dados"
+      error: error instanceof Error
+        ? error.message
+        : "Erro desconhecido ao enviar dados",
     };
   }
 }

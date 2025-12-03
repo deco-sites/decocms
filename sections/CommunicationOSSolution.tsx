@@ -47,16 +47,20 @@ interface Props {
 export default function CommunicationOSSolution({
   badge = "Communication OS",
   title = 'Become a "Doer" Executive',
-  description = "DecoCMS eliminates the middleman. We centralize external conversations (market, clients) and internal conversations (teams, projects) into a single intelligence interface.",
+  description =
+    "DecoCMS eliminates the middleman. We centralize external conversations (market, clients) and internal conversations (teams, projects) into a single intelligence interface.",
   benefits = [
     { text: "Total observability without micromanagement." },
     { text: "Real-time inconsistency detection." },
     { text: "Direct data access (no need to ask for queries)." },
   ],
-  quoteText = "A Chief of Staff's role is to organize context so the CEO can decide.",
+  quoteText =
+    "A Chief of Staff's role is to organize context so the CEO can decide.",
   quoteHighlight = "We automate this function.",
 }: Props) {
-  const sectionId = `comm-os-solution-${Math.random().toString(36).substr(2, 9)}`;
+  const sectionId = `comm-os-solution-${
+    Math.random().toString(36).substr(2, 9)
+  }`;
 
   return (
     <section class="w-full bg-dc-900 relative overflow-hidden py-16 md:py-24 lg:py-32">
@@ -137,7 +141,10 @@ export default function CommunicationOSSolution({
       />
 
       {/* GSAP Animation Script */}
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer />
+      <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+        defer
+      />
 
       <script
         dangerouslySetInnerHTML={{
@@ -164,7 +171,7 @@ export default function CommunicationOSSolution({
                           x: 0,
                           duration: 0.8,
                           ease: "power2.out",
-                        }
+                        },
                       );
                       (gsap as { fromTo: Function }).fromTo(
                         quote,
@@ -175,13 +182,13 @@ export default function CommunicationOSSolution({
                           duration: 0.8,
                           delay: 0.2,
                           ease: "power2.out",
-                        }
+                        },
                       );
                       observer.unobserve(entry.target);
                     }
                   });
                 },
-                { threshold: 0.2 }
+                { threshold: 0.2 },
               );
 
               observer.observe(section);
@@ -202,4 +209,3 @@ export default function CommunicationOSSolution({
 export function Preview() {
   return <CommunicationOSSolution />;
 }
-

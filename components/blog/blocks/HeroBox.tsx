@@ -1,6 +1,8 @@
 import type { HeroBoxBlock } from "../../../types/blogContent.ts";
 
-export function HeroBox({ title, content, variant = "default", buttons }: HeroBoxBlock) {
+export function HeroBox(
+  { title, content, variant = "default", buttons }: HeroBoxBlock,
+) {
   const bgClass = variant === "accent" ? "bg-purple-dark" : "bg-primary-dark";
   const titleClass = variant === "accent"
     ? "text-purple-light"
@@ -45,4 +47,3 @@ export function HeroBox({ title, content, variant = "default", buttons }: HeroBo
     </div>
   );
 }
-

@@ -24,21 +24,27 @@ export default function AdminEventCreate() {
       { name: "Inovação", weight: 30 },
       { name: "Execução Técnica", weight: 30 },
       { name: "Impacto", weight: 25 },
-      { name: "Apresentação", weight: 15 }
+      { name: "Apresentação", weight: 15 },
     ],
     intro: "",
-    awards: ""
+    awards: "",
   });
 
   const [reqInput, setReqInput] = useState("");
 
-  if (!currentUser || (currentUser.role !== "admin" && currentUser.role !== "organizador")) {
+  if (
+    !currentUser ||
+    (currentUser.role !== "admin" && currentUser.role !== "organizador")
+  ) {
     return (
       <AppWrapper>
         <div class="min-h-screen bg-gray-50 py-8">
           <div class="container mx-auto px-4">
             <div class="text-center py-16">
-              <p class="text-gray-500 text-lg">Acesso negado. Apenas administradores e organizadores podem acessar esta página.</p>
+              <p class="text-gray-500 text-lg">
+                Acesso negado. Apenas administradores e organizadores podem
+                acessar esta página.
+              </p>
             </div>
           </div>
         </div>
@@ -56,7 +62,10 @@ export default function AdminEventCreate() {
     if (reqInput.trim()) {
       setFormData({
         ...formData,
-        submissionRequirements: [...formData.submissionRequirements, reqInput.trim()]
+        submissionRequirements: [
+          ...formData.submissionRequirements,
+          reqInput.trim(),
+        ],
       });
       setReqInput("");
     }
@@ -65,11 +74,17 @@ export default function AdminEventCreate() {
   const removeRequirement = (index: number) => {
     setFormData({
       ...formData,
-      submissionRequirements: formData.submissionRequirements.filter((_, i) => i !== index)
+      submissionRequirements: formData.submissionRequirements.filter((_, i) =>
+        i !== index
+      ),
     });
   };
 
-  const updateCriteria = (index: number, field: "name" | "weight", value: string | number) => {
+  const updateCriteria = (
+    index: number,
+    field: "name" | "weight",
+    value: string | number,
+  ) => {
     const newCriteria = [...formData.evaluationCriteria];
     newCriteria[index] = { ...newCriteria[index], [field]: value };
     setFormData({ ...formData, evaluationCriteria: newCriteria });
@@ -80,37 +95,58 @@ export default function AdminEventCreate() {
       <div class="min-h-screen bg-gray-50 py-8">
         <div class="container mx-auto px-4 max-w-4xl">
           <div class="mb-8">
-            <a href="/hackathon-os/eventos" class="text-purple-600 hover:text-purple-700 mb-4 inline-block">
+            <a
+              href="/hackathon-os/eventos"
+              class="text-purple-600 hover:text-purple-700 mb-4 inline-block"
+            >
               ← Voltar para eventos
             </a>
-            <h1 class="text-4xl font-bold text-gray-900 mb-2">Criar Novo Evento</h1>
-            <p class="text-gray-600">Configure todos os detalhes do seu hackathon</p>
+            <h1 class="text-4xl font-bold text-gray-900 mb-2">
+              Criar Novo Evento
+            </h1>
+            <p class="text-gray-600">
+              Configure todos os detalhes do seu hackathon
+            </p>
           </div>
 
           <form onSubmit={handleSubmit} class="space-y-8">
             {/* Informações Básicas */}
             <div class="bg-white rounded-lg shadow-md p-6">
-              <h2 class="text-xl font-bold text-gray-900 mb-4">Informações Básicas</h2>
-              
+              <h2 class="text-xl font-bold text-gray-900 mb-4">
+                Informações Básicas
+              </h2>
+
               <div class="space-y-4">
                 <div>
-                  <label class="block text-sm font-medium text-gray-700 mb-2">Nome do Evento *</label>
+                  <label class="block text-sm font-medium text-gray-700 mb-2">
+                    Nome do Evento *
+                  </label>
                   <input
                     type="text"
                     required
                     value={formData.name}
-                    onChange={(e) => setFormData({...formData, name: (e.target as HTMLInputElement).value})}
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        name: (e.target as HTMLInputElement).value,
+                      })}
                     class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500"
                     placeholder="Ex: Hackathon AI 2024"
                   />
                 </div>
 
                 <div>
-                  <label class="block text-sm font-medium text-gray-700 mb-2">Descrição *</label>
+                  <label class="block text-sm font-medium text-gray-700 mb-2">
+                    Descrição *
+                  </label>
                   <textarea
                     required
                     value={formData.description}
-                    onChange={(e) => setFormData({...formData, description: (e.target as HTMLTextAreaElement).value})}
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        description: (e.target as HTMLTextAreaElement).value,
+                      })}
                     rows={3}
                     class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500"
                     placeholder="Descreva o evento..."
@@ -118,32 +154,50 @@ export default function AdminEventCreate() {
                 </div>
 
                 <div>
-                  <label class="block text-sm font-medium text-gray-700 mb-2">URL do Banner</label>
+                  <label class="block text-sm font-medium text-gray-700 mb-2">
+                    URL do Banner
+                  </label>
                   <input
                     type="url"
                     value={formData.banner}
-                    onChange={(e) => setFormData({...formData, banner: (e.target as HTMLInputElement).value})}
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        banner: (e.target as HTMLInputElement).value,
+                      })}
                     class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500"
                     placeholder="https://..."
                   />
                 </div>
 
                 <div>
-                  <label class="block text-sm font-medium text-gray-700 mb-2">Site do Evento</label>
+                  <label class="block text-sm font-medium text-gray-700 mb-2">
+                    Site do Evento
+                  </label>
                   <input
                     type="url"
                     value={formData.url}
-                    onChange={(e) => setFormData({...formData, url: (e.target as HTMLInputElement).value})}
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        url: (e.target as HTMLInputElement).value,
+                      })}
                     class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500"
                     placeholder="https://..."
                   />
                 </div>
 
                 <div>
-                  <label class="block text-sm font-medium text-gray-700 mb-2">Status</label>
+                  <label class="block text-sm font-medium text-gray-700 mb-2">
+                    Status
+                  </label>
                   <select
                     value={formData.status}
-                    onChange={(e) => setFormData({...formData, status: (e.target as HTMLSelectElement).value})}
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        status: (e.target as HTMLSelectElement).value,
+                      })}
                     class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500"
                   >
                     <option value="aberto">Aberto</option>
@@ -155,18 +209,28 @@ export default function AdminEventCreate() {
 
             {/* Configurações de Inscrição */}
             <div class="bg-white rounded-lg shadow-md p-6">
-              <h2 class="text-xl font-bold text-gray-900 mb-4">Configurações de Inscrição</h2>
-              
+              <h2 class="text-xl font-bold text-gray-900 mb-4">
+                Configurações de Inscrição
+              </h2>
+
               <div class="space-y-4">
                 <div class="flex items-center gap-3">
                   <input
                     type="checkbox"
                     id="extraFields"
                     checked={formData.requiresExtraFields}
-                    onChange={(e) => setFormData({...formData, requiresExtraFields: (e.target as HTMLInputElement).checked})}
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        requiresExtraFields:
+                          (e.target as HTMLInputElement).checked,
+                      })}
                     class="w-5 h-5 text-purple-600 rounded focus:ring-purple-500"
                   />
-                  <label for="extraFields" class="text-sm font-medium text-gray-700">
+                  <label
+                    for="extraFields"
+                    class="text-sm font-medium text-gray-700"
+                  >
                     Exigir campos adicionais na inscrição (máximo 3)
                   </label>
                 </div>
@@ -181,7 +245,7 @@ export default function AdminEventCreate() {
                         onChange={(e) => {
                           const newFields = [...formData.extraFields];
                           newFields[i] = (e.target as HTMLInputElement).value;
-                          setFormData({...formData, extraFields: newFields});
+                          setFormData({ ...formData, extraFields: newFields });
                         }}
                         class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500"
                         placeholder={`Pergunta ${i + 1}`}
@@ -194,16 +258,26 @@ export default function AdminEventCreate() {
 
             {/* Configurações de Times */}
             <div class="bg-white rounded-lg shadow-md p-6">
-              <h2 class="text-xl font-bold text-gray-900 mb-4">Configurações de Times</h2>
-              
+              <h2 class="text-xl font-bold text-gray-900 mb-4">
+                Configurações de Times
+              </h2>
+
               <div>
-                <label class="block text-sm font-medium text-gray-700 mb-2">Tamanho Máximo do Time</label>
+                <label class="block text-sm font-medium text-gray-700 mb-2">
+                  Tamanho Máximo do Time
+                </label>
                 <input
                   type="number"
                   min="1"
                   max="10"
                   value={formData.maxTeamSize}
-                  onChange={(e) => setFormData({...formData, maxTeamSize: parseInt((e.target as HTMLInputElement).value)})}
+                  onChange={(e) =>
+                    setFormData({
+                      ...formData,
+                      maxTeamSize: parseInt(
+                        (e.target as HTMLInputElement).value,
+                      ),
+                    })}
                   class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500"
                 />
               </div>
@@ -212,35 +286,56 @@ export default function AdminEventCreate() {
             {/* Prazos */}
             <div class="bg-white rounded-lg shadow-md p-6">
               <h2 class="text-xl font-bold text-gray-900 mb-4">Prazos</h2>
-              
+
               <div class="grid md:grid-cols-3 gap-4">
                 <div>
-                  <label class="block text-sm font-medium text-gray-700 mb-2">Inscrição *</label>
+                  <label class="block text-sm font-medium text-gray-700 mb-2">
+                    Inscrição *
+                  </label>
                   <input
                     type="date"
                     required
                     value={formData.registrationDeadline}
-                    onChange={(e) => setFormData({...formData, registrationDeadline: (e.target as HTMLInputElement).value})}
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        registrationDeadline:
+                          (e.target as HTMLInputElement).value,
+                      })}
                     class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500"
                   />
                 </div>
                 <div>
-                  <label class="block text-sm font-medium text-gray-700 mb-2">Submissão *</label>
+                  <label class="block text-sm font-medium text-gray-700 mb-2">
+                    Submissão *
+                  </label>
                   <input
                     type="date"
                     required
                     value={formData.submissionDeadline}
-                    onChange={(e) => setFormData({...formData, submissionDeadline: (e.target as HTMLInputElement).value})}
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        submissionDeadline:
+                          (e.target as HTMLInputElement).value,
+                      })}
                     class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500"
                   />
                 </div>
                 <div>
-                  <label class="block text-sm font-medium text-gray-700 mb-2">Avaliação *</label>
+                  <label class="block text-sm font-medium text-gray-700 mb-2">
+                    Avaliação *
+                  </label>
                   <input
                     type="date"
                     required
                     value={formData.evaluationDeadline}
-                    onChange={(e) => setFormData({...formData, evaluationDeadline: (e.target as HTMLInputElement).value})}
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        evaluationDeadline:
+                          (e.target as HTMLInputElement).value,
+                      })}
                     class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500"
                   />
                 </div>
@@ -249,15 +344,19 @@ export default function AdminEventCreate() {
 
             {/* Requisitos de Submissão */}
             <div class="bg-white rounded-lg shadow-md p-6">
-              <h2 class="text-xl font-bold text-gray-900 mb-4">Requisitos de Submissão</h2>
-              
+              <h2 class="text-xl font-bold text-gray-900 mb-4">
+                Requisitos de Submissão
+              </h2>
+
               <div class="space-y-3">
                 <div class="flex gap-2">
                   <input
                     type="text"
                     value={reqInput}
-                    onChange={(e) => setReqInput((e.target as HTMLInputElement).value)}
-                    onKeyPress={(e) => e.key === 'Enter' && (e.preventDefault(), addRequirement())}
+                    onChange={(e) =>
+                      setReqInput((e.target as HTMLInputElement).value)}
+                    onKeyPress={(e) => e.key === "Enter" &&
+                      (e.preventDefault(), addRequirement())}
                     class="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500"
                     placeholder="Ex: Video do YouTube"
                   />
@@ -273,7 +372,10 @@ export default function AdminEventCreate() {
                 {formData.submissionRequirements.length > 0 && (
                   <div class="space-y-2">
                     {formData.submissionRequirements.map((req, i) => (
-                      <div key={i} class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                      <div
+                        key={i}
+                        class="flex items-center justify-between p-3 bg-gray-50 rounded-lg"
+                      >
                         <span class="text-gray-700">{req}</span>
                         <button
                           type="button"
@@ -291,15 +393,22 @@ export default function AdminEventCreate() {
 
             {/* Critérios de Avaliação */}
             <div class="bg-white rounded-lg shadow-md p-6">
-              <h2 class="text-xl font-bold text-gray-900 mb-4">Critérios de Avaliação</h2>
-              
+              <h2 class="text-xl font-bold text-gray-900 mb-4">
+                Critérios de Avaliação
+              </h2>
+
               <div class="space-y-3">
                 {formData.evaluationCriteria.map((criteria, i) => (
                   <div key={i} class="flex gap-3">
                     <input
                       type="text"
                       value={criteria.name}
-                      onChange={(e) => updateCriteria(i, "name", (e.target as HTMLInputElement).value)}
+                      onChange={(e) =>
+                        updateCriteria(
+                          i,
+                          "name",
+                          (e.target as HTMLInputElement).value,
+                        )}
                       class="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500"
                       placeholder="Nome do critério"
                     />
@@ -308,7 +417,12 @@ export default function AdminEventCreate() {
                       min="0"
                       max="100"
                       value={criteria.weight}
-                      onChange={(e) => updateCriteria(i, "weight", parseInt((e.target as HTMLInputElement).value))}
+                      onChange={(e) =>
+                        updateCriteria(
+                          i,
+                          "weight",
+                          parseInt((e.target as HTMLInputElement).value),
+                        )}
                       class="w-24 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500"
                       placeholder="%"
                     />
@@ -316,24 +430,37 @@ export default function AdminEventCreate() {
                 ))}
               </div>
               <p class="text-sm text-gray-500 mt-2">
-                Total: {formData.evaluationCriteria.reduce((sum, c) => sum + c.weight, 0)}%
+                Total: {formData.evaluationCriteria.reduce(
+                  (sum, c) => sum + c.weight,
+                  0,
+                )}%
               </p>
             </div>
 
             {/* Desafios */}
             <div class="bg-white rounded-lg shadow-md p-6">
-              <h2 class="text-xl font-bold text-gray-900 mb-4">Configurações de Desafios</h2>
-              
+              <h2 class="text-xl font-bold text-gray-900 mb-4">
+                Configurações de Desafios
+              </h2>
+
               <div class="space-y-3">
                 <div class="flex items-center gap-3">
                   <input
                     type="checkbox"
                     id="allowUserChallenges"
                     checked={formData.allowUserChallenges}
-                    onChange={(e) => setFormData({...formData, allowUserChallenges: (e.target as HTMLInputElement).checked})}
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        allowUserChallenges:
+                          (e.target as HTMLInputElement).checked,
+                      })}
                     class="w-5 h-5 text-purple-600 rounded focus:ring-purple-500"
                   />
-                  <label for="allowUserChallenges" class="text-sm font-medium text-gray-700">
+                  <label
+                    for="allowUserChallenges"
+                    class="text-sm font-medium text-gray-700"
+                  >
                     Permitir que participantes proponham desafios
                   </label>
                 </div>
@@ -343,10 +470,18 @@ export default function AdminEventCreate() {
                     type="checkbox"
                     id="challengesVotingPublic"
                     checked={formData.challengesVotingPublic}
-                    onChange={(e) => setFormData({...formData, challengesVotingPublic: (e.target as HTMLInputElement).checked})}
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        challengesVotingPublic:
+                          (e.target as HTMLInputElement).checked,
+                      })}
                     class="w-5 h-5 text-purple-600 rounded focus:ring-purple-500"
                   />
-                  <label for="challengesVotingPublic" class="text-sm font-medium text-gray-700">
+                  <label
+                    for="challengesVotingPublic"
+                    class="text-sm font-medium text-gray-700"
+                  >
                     Votação pública nos desafios propostos
                   </label>
                 </div>
@@ -355,17 +490,27 @@ export default function AdminEventCreate() {
 
             {/* Outras Configs */}
             <div class="bg-white rounded-lg shadow-md p-6">
-              <h2 class="text-xl font-bold text-gray-900 mb-4">Outras Configurações</h2>
-              
+              <h2 class="text-xl font-bold text-gray-900 mb-4">
+                Outras Configurações
+              </h2>
+
               <div class="flex items-center gap-3">
                 <input
                   type="checkbox"
                   id="participantsPublic"
                   checked={formData.participantsListPublic}
-                  onChange={(e) => setFormData({...formData, participantsListPublic: (e.target as HTMLInputElement).checked})}
+                  onChange={(e) =>
+                    setFormData({
+                      ...formData,
+                      participantsListPublic:
+                        (e.target as HTMLInputElement).checked,
+                    })}
                   class="w-5 h-5 text-purple-600 rounded focus:ring-purple-500"
                 />
-                <label for="participantsPublic" class="text-sm font-medium text-gray-700">
+                <label
+                  for="participantsPublic"
+                  class="text-sm font-medium text-gray-700"
+                >
                   Lista de participantes pública
                 </label>
               </div>
@@ -374,13 +519,19 @@ export default function AdminEventCreate() {
             {/* Conteúdo */}
             <div class="bg-white rounded-lg shadow-md p-6">
               <h2 class="text-xl font-bold text-gray-900 mb-4">Conteúdo</h2>
-              
+
               <div class="space-y-4">
                 <div>
-                  <label class="block text-sm font-medium text-gray-700 mb-2">Introdução e Regras</label>
+                  <label class="block text-sm font-medium text-gray-700 mb-2">
+                    Introdução e Regras
+                  </label>
                   <textarea
                     value={formData.intro}
-                    onChange={(e) => setFormData({...formData, intro: (e.target as HTMLTextAreaElement).value})}
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        intro: (e.target as HTMLTextAreaElement).value,
+                      })}
                     rows={4}
                     class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500"
                     placeholder="Bem-vindo ao evento..."
@@ -388,10 +539,16 @@ export default function AdminEventCreate() {
                 </div>
 
                 <div>
-                  <label class="block text-sm font-medium text-gray-700 mb-2">Premiação</label>
+                  <label class="block text-sm font-medium text-gray-700 mb-2">
+                    Premiação
+                  </label>
                   <textarea
                     value={formData.awards}
-                    onChange={(e) => setFormData({...formData, awards: (e.target as HTMLTextAreaElement).value})}
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        awards: (e.target as HTMLTextAreaElement).value,
+                      })}
                     rows={3}
                     class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500"
                     placeholder="1º Lugar: R$ 10.000 | 2º Lugar: R$ 5.000..."

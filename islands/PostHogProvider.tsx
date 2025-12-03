@@ -25,4 +25,3 @@ export default function PostHogProvider({ apiKey, apiHost }: Props) {
 
   return null;
 }
-

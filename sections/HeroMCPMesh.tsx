@@ -83,7 +83,8 @@ export const CONNECTION_CREATE = defineTool({
 export default function HeroMCPMesh({
   titleLine1 = "The Control Layer for",
   titleLine2 = "Governed Context",
-  subtitle = "Stop duct-taping integrations. Build a distributed MCP Mesh with TypeScript. Centralize auth, enforce RBAC, and observe every agent interaction.",
+  subtitle =
+    "Stop duct-taping integrations. Build a distributed MCP Mesh with TypeScript. Centralize auth, enforce RBAC, and observe every agent interaction.",
   copyCommand = "npx deco-mesh start",
   docsButtonText = "View docs",
   docsButtonUrl = "/docs",
@@ -101,17 +102,17 @@ export default function HeroMCPMesh({
         // Keywords (green)
         .replace(
           /\b(import|export|const|from|async|await|return)\b/g,
-          '<span class="text-green-600">$1</span>'
+          '<span class="text-green-600">$1</span>',
         )
         // Strings (fuchsia)
         .replace(
           /'([^']+)'/g,
-          '\'<span class="text-fuchsia-500">$1</span>\''
+          "'<span class=\"text-fuchsia-500\">$1</span>'",
         )
         // Comments (gray)
         .replace(
           /(\/\/.+)/g,
-          '<span class="text-gray-400">$1</span>'
+          '<span class="text-gray-400">$1</span>',
         );
 
       return { lineNum: idx + 1, content: highlighted };
@@ -167,7 +168,10 @@ export default function HeroMCPMesh({
         <div
           id={`code-window-${sectionId}`}
           class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[calc(100%-32px)] max-w-[800px] z-10 transition-all duration-300"
-          style={{ transform: "translateX(-50%) translateY(80%)", opacity: "0" }}
+          style={{
+            transform: "translateX(-50%) translateY(80%)",
+            opacity: "0",
+          }}
         >
           <div class="bg-neutral-100 border border-gray-200 rounded-[10px] overflow-hidden shadow-xl">
             {/* Window Header */}
@@ -211,77 +215,92 @@ export default function HeroMCPMesh({
         type="module"
         dangerouslySetInnerHTML={{
           __html: useScript((sectionId: string) => {
-            const codeWindow = document.getElementById(`code-window-${sectionId}`);
+            const codeWindow = document.getElementById(
+              `code-window-${sectionId}`,
+            );
             if (!codeWindow) return;
 
             const updateCodeWindowPosition = () => {
               // Find the hero content area (buttons container)
-              const heroContent = codeWindow.closest("section")?.querySelector(".flex.flex-col.items-center.pt-16");
+              const heroContent = codeWindow.closest("section")?.querySelector(
+                ".flex.flex-col.items-center.pt-16",
+              );
               if (!heroContent) return;
 
               const heroContentRect = heroContent.getBoundingClientRect();
               const heroContentBottom = heroContentRect.bottom;
-              
+
               const codeWindowRect = codeWindow.getBoundingClientRect();
               const codeWindowHeight = codeWindowRect.height;
-              
+
               const sectionElement = codeWindow.closest(".bg-dc-100");
               if (!sectionElement) return;
-              
+
               const sectionRect = sectionElement.getBoundingClientRect();
               const sectionBottom = sectionRect.bottom;
-              
+
               // Calculate available space below content
               const availableSpace = sectionBottom - heroContentBottom;
-              
+
               // Detect mobile
               const isMobile = window.innerWidth < 768;
-              
+
               // How much of the code window should be visible
               // We want more gap on mobile to account for larger content
               const minGap = isMobile ? 80 : 60;
               const visibleCodeWindowHeight = availableSpace - minGap;
-              
+
               // Calculate translateY percentage based on how much should be hidden
               // If visibleCodeWindowHeight <= 0, hide completely
               // If visibleCodeWindowHeight >= codeWindowHeight, show ~40% (default)
-              
+
               if (visibleCodeWindowHeight <= 50) {
                 // Not enough space - hide completely
                 codeWindow.style.opacity = "0";
                 codeWindow.style.pointerEvents = "none";
-                codeWindow.style.transform = "translateX(-50%) translateY(100%)";
+                codeWindow.style.transform =
+                  "translateX(-50%) translateY(100%)";
               } else {
-                const hiddenPortion = Math.max(0, codeWindowHeight - visibleCodeWindowHeight);
-                const translateYPercent = (hiddenPortion / codeWindowHeight) * 100;
-                
+                const hiddenPortion = Math.max(
+                  0,
+                  codeWindowHeight - visibleCodeWindowHeight,
+                );
+                const translateYPercent = (hiddenPortion / codeWindowHeight) *
+                  100;
+
                 // Clamp between 30% (show a lot) and 90% (show very little)
                 // On mobile, use higher minimum to show less code window
                 const minTranslate = isMobile ? 50 : 30;
-                const clampedTranslateY = Math.min(90, Math.max(minTranslate, translateYPercent));
-                
+                const clampedTranslateY = Math.min(
+                  90,
+                  Math.max(minTranslate, translateYPercent),
+                );
+
                 codeWindow.style.opacity = "1";
                 codeWindow.style.pointerEvents = "auto";
-                codeWindow.style.transform = `translateX(-50%) translateY(${clampedTranslateY}%)`;
+                codeWindow.style.transform =
+                  `translateX(-50%) translateY(${clampedTranslateY}%)`;
               }
             };
 
             // Run positioning immediately
             updateCodeWindowPosition();
-            
+
             // Also run after a short delay to catch any late layout shifts
             requestAnimationFrame(updateCodeWindowPosition);
             setTimeout(updateCodeWindowPosition, 50);
             setTimeout(updateCodeWindowPosition, 150);
-            
+
             // Run on load event in case fonts/images affect layout
             window.addEventListener("load", updateCodeWindowPosition);
 
             // Update on resize
             window.addEventListener("resize", updateCodeWindowPosition);
-            
+
             // Also update on scroll in case of any layout shifts
-            window.addEventListener("scroll", updateCodeWindowPosition, { passive: true });
+            window.addEventListener("scroll", updateCodeWindowPosition, {
+              passive: true,
+            });
 
             return () => {
               window.removeEventListener("load", updateCodeWindowPosition);
@@ -298,7 +317,7 @@ export default function HeroMCPMesh({
         dangerouslySetInnerHTML={{
           __html: useScript((sectionId: string) => {
             const canvas = document.getElementById(
-              `dither-canvas-${sectionId}`
+              `dither-canvas-${sectionId}`,
             ) as HTMLCanvasElement;
 
             if (!canvas) return;
@@ -337,7 +356,10 @@ export default function HeroMCPMesh({
 
               ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-              const imageData = ctx.createImageData(canvas.width, canvas.height);
+              const imageData = ctx.createImageData(
+                canvas.width,
+                canvas.height,
+              );
               const data = imageData.data;
 
               for (let y = 0; y < canvas.height; y += cellSize) {
@@ -348,12 +370,14 @@ export default function HeroMCPMesh({
                   // Wave patterns
                   const waveBase = Math.sin(nx * 4 + time * 0.0004) * 0.15;
                   const waveSecond = Math.cos(nx * 7 + time * 0.0003) * 0.1;
-                  const waveThird = Math.sin((nx + ny) * 3 + time * 0.0002) * 0.08;
+                  const waveThird = Math.sin((nx + ny) * 3 + time * 0.0002) *
+                    0.08;
 
                   // Gradient from top (transparent/light) to bottom (more green)
                   const verticalGradient = Math.pow(ny, 0.8);
 
-                  let intensity = 0.95 - (verticalGradient * 0.5) + waveBase + waveSecond + waveThird;
+                  let intensity = 0.95 - (verticalGradient * 0.5) + waveBase +
+                    waveSecond + waveThird;
 
                   const noise = (Math.random() - 0.5) * 0.03 * verticalGradient;
                   intensity += noise;
@@ -370,9 +394,18 @@ export default function HeroMCPMesh({
                   const g = ditherResult ? 0xf0 : 0xe5;
                   const b = ditherResult ? 0xee : 0xe4;
 
-                  for (let dy = 0; dy < cellSize && y + dy < canvas.height; dy++) {
-                    for (let dx = 0; dx < cellSize && x + dx < canvas.width; dx++) {
-                      const pixelIndex = ((y + dy) * canvas.width + (x + dx)) * 4;
+                  for (
+                    let dy = 0;
+                    dy < cellSize && y + dy < canvas.height;
+                    dy++
+                  ) {
+                    for (
+                      let dx = 0;
+                      dx < cellSize && x + dx < canvas.width;
+                      dx++
+                    ) {
+                      const pixelIndex = ((y + dy) * canvas.width + (x + dx)) *
+                        4;
                       data[pixelIndex] = r;
                       data[pixelIndex + 1] = g;
                       data[pixelIndex + 2] = b;

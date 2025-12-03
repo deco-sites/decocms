@@ -11,18 +11,21 @@ export function Callout({ title, content, variant = "default" }: CalloutBlock) {
   };
 
   return (
-    <div className={`${variantStyles[variant]} border rounded-xl p-6 my-6 flex flex-col gap-2`}>
+    <div
+      className={`${
+        variantStyles[variant]
+      } border rounded-xl p-6 my-6 flex flex-col gap-2`}
+    >
       {title && (
-        <strong 
+        <strong
           className="text-[16px] font-medium text-dc-800 block leading-[1.5]"
           dangerouslySetInnerHTML={{ __html: title }}
         />
       )}
-      <p 
+      <p
         className="text-[16px] mb-0 leading-[1.5] [&_strong]:font-semibold [&_strong]:text-dc-800 [&_em]:italic [&_code]:bg-dc-100 [&_code]:text-dc-800 [&_code]:px-2 [&_code]:py-px [&_code]:rounded-md [&_code]:font-mono [&_a]:text-primary-dark [&_a]:underline hover:[&_a]:opacity-80"
         dangerouslySetInnerHTML={{ __html: content }}
       />
     </div>
   );
 }
-

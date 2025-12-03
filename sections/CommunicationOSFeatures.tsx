@@ -42,7 +42,8 @@ interface Props {
 
 export default function CommunicationOSFeatures({
   title = "Opinionated Apps for Real Problems",
-  description = "We don't sell \"infrastructure\" on Day 1. We sell immediate communication intelligence.",
+  description =
+    'We don\'t sell "infrastructure" on Day 1. We sell immediate communication intelligence.',
   featureCards = [
     {
       icon: "edit_note",
@@ -82,7 +83,9 @@ export default function CommunicationOSFeatures({
     },
   ],
 }: Props) {
-  const sectionId = `comm-os-features-${Math.random().toString(36).substr(2, 9)}`;
+  const sectionId = `comm-os-features-${
+    Math.random().toString(36).substr(2, 9)
+  }`;
 
   return (
     <section id="features" class="w-full bg-dc-50 py-16 md:py-24 lg:py-32">
@@ -138,7 +141,10 @@ export default function CommunicationOSFeatures({
       />
 
       {/* GSAP Animation Script */}
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer />
+      <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+        defer
+      />
 
       <script
         dangerouslySetInnerHTML={{
@@ -165,13 +171,13 @@ export default function CommunicationOSFeatures({
                           duration: 0.6,
                           stagger: 0.1,
                           ease: "power2.out",
-                        }
+                        },
                       );
                       observer.unobserve(entry.target);
                     }
                   });
                 },
-                { threshold: 0.15 }
+                { threshold: 0.15 },
               );
 
               observer.observe(section);
@@ -192,4 +198,3 @@ export default function CommunicationOSFeatures({
 export function Preview() {
   return <CommunicationOSFeatures />;
 }
-

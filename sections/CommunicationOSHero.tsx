@@ -84,7 +84,8 @@ export default function CommunicationOSHero({
   titleLine1 = 'Your Digital "Chief of Staff".',
   titleLine2 = "Now Automated.",
   titleHighlight = "DecoCMS",
-  description = "is the Communication OS that transforms fragmented conversations into strategic alignment. Stop waiting for static reports and get answers in real-time.",
+  description =
+    "is the Communication OS that transforms fragmented conversations into strategic alignment. Stop waiting for static reports and get answers in real-time.",
   primaryButtonText = "Analyze Company Context",
   primaryButtonLink = "#",
   secondaryButtonText = "See How It Works",
@@ -135,7 +136,8 @@ export default function CommunicationOSHero({
 
             {/* Description */}
             <p class="w-full max-w-[600px] text-dc-500 text-lg md:text-xl font-normal leading-relaxed text-center">
-              <span class="text-dc-900 font-semibold">{titleHighlight}</span>{" "}
+              <span class="text-dc-900 font-semibold">{titleHighlight}</span>
+              {" "}
               {description}
             </p>
 
@@ -249,7 +251,10 @@ export default function CommunicationOSHero({
       />
 
       {/* GSAP Animation Script */}
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer />
+      <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+        defer
+      />
 
       {/* ASCII Dithering Animation Script */}
       <script
@@ -257,7 +262,7 @@ export default function CommunicationOSHero({
         dangerouslySetInnerHTML={{
           __html: useScript((sectionId: string) => {
             const canvas = document.getElementById(
-              `dither-canvas-${sectionId}`
+              `dither-canvas-${sectionId}`,
             ) as HTMLCanvasElement;
 
             if (!canvas) return;
@@ -296,7 +301,10 @@ export default function CommunicationOSHero({
 
               ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-              const imageData = ctx.createImageData(canvas.width, canvas.height);
+              const imageData = ctx.createImageData(
+                canvas.width,
+                canvas.height,
+              );
               const data = imageData.data;
 
               for (let y = 0; y < canvas.height; y += cellSize) {
@@ -307,12 +315,14 @@ export default function CommunicationOSHero({
                   // Wave patterns
                   const waveBase = Math.sin(nx * 4 + time * 0.0004) * 0.15;
                   const waveSecond = Math.cos(nx * 7 + time * 0.0003) * 0.1;
-                  const waveThird = Math.sin((nx + ny) * 3 + time * 0.0002) * 0.08;
+                  const waveThird = Math.sin((nx + ny) * 3 + time * 0.0002) *
+                    0.08;
 
                   // Gradient from top (transparent/light) to bottom (more visible)
                   const verticalGradient = Math.pow(ny, 0.8);
 
-                  let intensity = 0.95 - (verticalGradient * 0.5) + waveBase + waveSecond + waveThird;
+                  let intensity = 0.95 - (verticalGradient * 0.5) + waveBase +
+                    waveSecond + waveThird;
 
                   const noise = (Math.random() - 0.5) * 0.03 * verticalGradient;
                   intensity += noise;
@@ -329,9 +339,18 @@ export default function CommunicationOSHero({
                   const g = ditherResult ? 0xf0 : 0xe5;
                   const b = ditherResult ? 0xee : 0xe4;
 
-                  for (let dy = 0; dy < cellSize && y + dy < canvas.height; dy++) {
-                    for (let dx = 0; dx < cellSize && x + dx < canvas.width; dx++) {
-                      const pixelIndex = ((y + dy) * canvas.width + (x + dx)) * 4;
+                  for (
+                    let dy = 0;
+                    dy < cellSize && y + dy < canvas.height;
+                    dy++
+                  ) {
+                    for (
+                      let dx = 0;
+                      dx < cellSize && x + dx < canvas.width;
+                      dx++
+                    ) {
+                      const pixelIndex = ((y + dy) * canvas.width + (x + dx)) *
+                        4;
                       data[pixelIndex] = r;
                       data[pixelIndex + 1] = g;
                       data[pixelIndex + 2] = b;
@@ -386,7 +405,7 @@ export default function CommunicationOSHero({
                   duration: 0.6,
                   stagger: 0.2,
                   ease: "power2.out",
-                }
+                },
               );
             }
 

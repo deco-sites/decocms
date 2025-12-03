@@ -15,7 +15,15 @@ export interface FormField {
   /** @title Field Name */
   name: string;
   /** @title Field Type */
-  type: "text" | "email" | "tel" | "number" | "textarea" | "checkbox" | "select" | "multiselect";
+  type:
+    | "text"
+    | "email"
+    | "tel"
+    | "number"
+    | "textarea"
+    | "checkbox"
+    | "select"
+    | "multiselect";
   /** @title Required */
   required?: boolean;
   /** @title Placeholder */
@@ -60,93 +68,98 @@ export default function ProgramSteps4Col({
   steps = [
     {
       title: "Kick-off | 31/10",
-      description: "Vamos liberar os desafios no dia 31/10 e vocês poderão escolher qual seguir. E também como vão se dedicar para resolver."
+      description:
+        "Vamos liberar os desafios no dia 31/10 e vocês poderão escolher qual seguir. E também como vão se dedicar para resolver.",
     },
     {
       title: "Check-points",
-      description: "Encontros ao longo de cada dia com as empresas e deco: alinhamento, dúvidas e suporte técnico."
+      description:
+        "Encontros ao longo de cada dia com as empresas e deco: alinhamento, dúvidas e suporte técnico.",
     },
     {
       title: "Entrega final",
-      description: "A entrega será realizada de forma assíncrona, através do upload da sua solução até 48h após o kick-off."
+      description:
+        "A entrega será realizada de forma assíncrona, através do upload da sua solução até 48h após o kick-off.",
     },
     {
       title: "Resultados",
-      description: "Anúncio dos vencedores em live aberta durante a semana seguinte"
-    }
+      description:
+        "Anúncio dos vencedores em live aberta durante a semana seguinte",
+    },
   ],
-  tipText = "As vagas são limitadas, se inscreva e confirmaremos sua participação",
+  tipText =
+    "As vagas são limitadas, se inscreva e confirmaremos sua participação",
   tipCtaText = "Participar",
   tipCtaUrl,
   enableFormModal = true,
   modalTitle = "Inscrição",
   formFields = [
-    { 
-      label: "Nome", 
-      name: "Nome", 
-      type: "text", 
-      required: true, 
-      placeholder: "Seu nome completo" 
-    },
-    { 
-      label: "Email", 
-      name: "Email", 
-      type: "email", 
-      required: true, 
-      placeholder: "seu@email.com" 
-    },
-    { 
-      label: "Número", 
-      name: "Número", 
-      type: "tel", 
-      required: true, 
-      placeholder: "+55 (11) 99999-9999" 
-    },
-    { 
-      label: "Empresa", 
-      name: "Empresa", 
-      type: "text", 
-      required: true, 
-      placeholder: "Nome da empresa" 
-    },
-    { 
-      label: "Cargo", 
-      name: "Cargo", 
-      type: "text", 
-      required: true, 
-      placeholder: "Seu cargo" 
-    },
-    { 
-      label: "Pretende participar em qual dia?*", 
-      name: "Dia de participação", 
-      type: "multiselect", 
+    {
+      label: "Nome",
+      name: "Nome",
+      type: "text",
       required: true,
-      options: ["31/10", "01/11"]
+      placeholder: "Seu nome completo",
     },
-    { 
-      label: "Possui time?", 
-      name: "Possui time", 
-      type: "checkbox" 
+    {
+      label: "Email",
+      name: "Email",
+      type: "email",
+      required: true,
+      placeholder: "seu@email.com",
     },
-    { 
+    {
+      label: "Número",
+      name: "Número",
+      type: "tel",
+      required: true,
+      placeholder: "+55 (11) 99999-9999",
+    },
+    {
+      label: "Empresa",
+      name: "Empresa",
+      type: "text",
+      required: true,
+      placeholder: "Nome da empresa",
+    },
+    {
+      label: "Cargo",
+      name: "Cargo",
+      type: "text",
+      required: true,
+      placeholder: "Seu cargo",
+    },
+    {
+      label: "Pretende participar em qual dia?*",
+      name: "Dia de participação",
+      type: "multiselect",
+      required: true,
+      options: ["31/10", "01/11"],
+    },
+    {
+      label: "Possui time?",
+      name: "Possui time",
+      type: "checkbox",
+    },
+    {
       label: "Tamanho do time",
       name: "Tamanho do time",
       type: "number",
       placeholder: "Ex: 4",
-      showIfChecked: "Possui time"
+      showIfChecked: "Possui time",
     },
-    { 
-      label: "Nome e e-mail dos membros", 
-      name: "Nome e e-mail dos membros", 
-      type: "textarea", 
+    {
+      label: "Nome e e-mail dos membros",
+      name: "Nome e e-mail dos membros",
+      type: "textarea",
       placeholder: "Nome 1: email1@example.com\nNome 2: email2@example.com",
-      showIfChecked: "Possui time"
+      showIfChecked: "Possui time",
     },
-    { 
-      label: "Observação", 
-      name: "Observações", 
-      type: "textarea", 
-      placeholder: "Alguma observação adicional..." 
+    {
+      label: "Observação",
+      name: "Observações",
+      type: "textarea",
+      placeholder: "Alguma observação adicional...",
     },
   ],
   submitButtonText = "Enviar Inscrição",
@@ -263,25 +276,29 @@ export default function ProgramSteps4Col({
                   {tipText}
                 </p>
 
-                {tipCtaUrl ? (
-                  // If URL is provided, render a simple button link
-                  <a
-                    href={tipCtaUrl}
-                    class="bg-primary-light text-primary-dark hover:bg-primary-light/90 px-6 py-3 rounded-xl font-medium text-base transition-colors flex-shrink-0 inline-flex items-center justify-center"
-                  >
-                    {tipCtaText}
-                  </a>
-                ) : enableFormModal ? (
-                  // If no URL and form is enabled, render the form modal
-                  <FormModal
-                    buttonText={tipCtaText}
-                    buttonClassName="!bg-primary-light !text-primary-dark hover:!bg-primary-light/90 px-6 py-3 rounded-xl font-medium text-base transition-colors flex-shrink-0"
-                    modalTitle={modalTitle}
-                    formFields={formFields}
-                    submitButtonText={submitButtonText}
-                    successMessage={successMessage}
-                  />
-                ) : null}
+                {tipCtaUrl
+                  ? (
+                    // If URL is provided, render a simple button link
+                    <a
+                      href={tipCtaUrl}
+                      class="bg-primary-light text-primary-dark hover:bg-primary-light/90 px-6 py-3 rounded-xl font-medium text-base transition-colors flex-shrink-0 inline-flex items-center justify-center"
+                    >
+                      {tipCtaText}
+                    </a>
+                  )
+                  : enableFormModal
+                  ? (
+                    // If no URL and form is enabled, render the form modal
+                    <FormModal
+                      buttonText={tipCtaText}
+                      buttonClassName="!bg-primary-light !text-primary-dark hover:!bg-primary-light/90 px-6 py-3 rounded-xl font-medium text-base transition-colors flex-shrink-0"
+                      modalTitle={modalTitle}
+                      formFields={formFields}
+                      submitButtonText={submitButtonText}
+                      successMessage={successMessage}
+                    />
+                  )
+                  : null}
               </div>
             </div>
           )}

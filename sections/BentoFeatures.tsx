@@ -131,7 +131,8 @@ const defaultProps: Props = {
     { lineNum: 6, content: "  ]," },
     {
       lineNum: 7,
-      content: '  policy: <span class="text-green-400">\'require-audit\'</span>',
+      content:
+        "  policy: <span class=\"text-green-400\">'require-audit'</span>",
     },
     { lineNum: 8, content: "});" },
   ],
@@ -409,7 +410,7 @@ export default function BentoFeatures({
         dangerouslySetInnerHTML={{
           __html: useScript((sectionId: string) => {
             const canvas = document.getElementById(
-              `dither-canvas-${sectionId}`
+              `dither-canvas-${sectionId}`,
             ) as HTMLCanvasElement;
 
             if (!canvas) return;
@@ -453,7 +454,10 @@ export default function BentoFeatures({
 
               ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-              const imageData = ctx.createImageData(canvas.width, canvas.height);
+              const imageData = ctx.createImageData(
+                canvas.width,
+                canvas.height,
+              );
               const data = imageData.data;
 
               for (let y = 0; y < canvas.height; y += cellSize) {
@@ -462,15 +466,18 @@ export default function BentoFeatures({
                   const ny = y / canvas.height;
 
                   // Wave patterns - flowing from top-left to bottom-right
-                  const waveBase = Math.sin(nx * 5 + ny * 2 + time * 0.0003) * 0.2;
-                  const waveSecond = Math.cos(nx * 3 - ny * 4 + time * 0.0004) * 0.15;
-                  const waveThird = Math.sin((nx + ny) * 4 + time * 0.0002) * 0.1;
+                  const waveBase = Math.sin(nx * 5 + ny * 2 + time * 0.0003) *
+                    0.2;
+                  const waveSecond = Math.cos(nx * 3 - ny * 4 + time * 0.0004) *
+                    0.15;
+                  const waveThird = Math.sin((nx + ny) * 4 + time * 0.0002) *
+                    0.1;
 
                   // Diagonal gradient from top-left (light) to bottom-right (dark)
                   const diagonalGradient = (nx + ny) / 2;
 
-                  let intensity =
-                    1 - diagonalGradient * 0.6 + waveBase + waveSecond + waveThird;
+                  let intensity = 1 - diagonalGradient * 0.6 + waveBase +
+                    waveSecond + waveThird;
 
                   const noise = (Math.random() - 0.5) * 0.04;
                   intensity += noise;
@@ -494,8 +501,8 @@ export default function BentoFeatures({
                       dx < cellSize && x + dx < canvas.width;
                       dx++
                     ) {
-                      const pixelIndex =
-                        ((y + dy) * canvas.width + (x + dx)) * 4;
+                      const pixelIndex = ((y + dy) * canvas.width + (x + dx)) *
+                        4;
                       data[pixelIndex] = color.r;
                       data[pixelIndex + 1] = color.g;
                       data[pixelIndex + 2] = color.b;
@@ -533,8 +540,13 @@ export default function BentoFeatures({
         dangerouslySetInnerHTML={{
           __html: useScript((sectionId: string) => {
             const initGSAP = () => {
-              const gsap = (globalThis as unknown as { gsap?: typeof import("gsap").gsap }).gsap;
-              const ScrollTrigger = (globalThis as unknown as { ScrollTrigger?: typeof import("gsap/ScrollTrigger").ScrollTrigger }).ScrollTrigger;
+              const gsap =
+                (globalThis as unknown as { gsap?: typeof import("gsap").gsap })
+                  .gsap;
+              const ScrollTrigger = (globalThis as unknown as {
+                ScrollTrigger?:
+                  typeof import("gsap/ScrollTrigger").ScrollTrigger;
+              }).ScrollTrigger;
 
               if (!gsap || !ScrollTrigger) {
                 setTimeout(initGSAP, 100);
@@ -543,7 +555,9 @@ export default function BentoFeatures({
 
               gsap.registerPlugin(ScrollTrigger);
 
-              const section = document.querySelector(`[data-section-id="${sectionId}"]`) || document.currentScript?.closest("section");
+              const section =
+                document.querySelector(`[data-section-id="${sectionId}"]`) ||
+                document.currentScript?.closest("section");
               if (!section) return;
 
               // Animate header
@@ -564,7 +578,7 @@ export default function BentoFeatures({
                       start: "top 85%",
                       toggleActions: "play none none none",
                     },
-                  }
+                  },
                 );
               }
 
@@ -583,7 +597,7 @@ export default function BentoFeatures({
                       start: "top 85%",
                       toggleActions: "play none none none",
                     },
-                  }
+                  },
                 );
               }
 
@@ -605,7 +619,7 @@ export default function BentoFeatures({
                       start: "top 90%",
                       toggleActions: "play none none none",
                     },
-                  }
+                  },
                 );
               });
             };
@@ -625,4 +639,3 @@ export default function BentoFeatures({
 export function Preview() {
   return <BentoFeatures {...defaultProps} />;
 }
-

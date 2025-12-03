@@ -14,4 +14,3 @@ export function Checklist({ items }: ChecklistBlock) {
     </div>
   );
 }
-

@@ -20,7 +20,8 @@ export interface Props {
 
 export default function FormNewsletter({
   title = "Stay up to date",
-  description = "Subscribe to our newsletter and get the latest updates, tips, and exclusive content delivered straight to your inbox.",
+  description =
+    "Subscribe to our newsletter and get the latest updates, tips, and exclusive content delivered straight to your inbox.",
   inputPlaceholder = "Enter your email",
   buttonText = "Subscribe",
   actionUrl = "/api/newsletter",
@@ -37,7 +38,6 @@ export default function FormNewsletter({
 
           {/* Content */}
           <div class="relative z-10 flex flex-col items-center text-center max-w-3xl mx-auto">
-
             {/* Title */}
             <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-dark mb-4">
               {title}
@@ -54,7 +54,8 @@ export default function FormNewsletter({
               inputPlaceholder={inputPlaceholder}
               buttonText={buttonText}
               term={term}
-              successMessage={successMessage} />
+              successMessage={successMessage}
+            />
           </div>
         </div>
       </div>

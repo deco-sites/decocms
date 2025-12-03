@@ -32,4 +32,3 @@ export function CardGrid({ columns, cards }: CardGridBlock) {
     </div>
   );
 }
-

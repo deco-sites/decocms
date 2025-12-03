@@ -6,7 +6,8 @@ import Decoration from "../components/ui/decoration.tsx";
 const DecoIcon = () => (
   <div class="w-[18px] h-[18px] relative mr-2 flex-shrink-0">
     <div class="w-[18px] h-[18px] absolute bg-current rounded-sm"></div>
-    <div class="w-[14px] h-[14px] absolute left-[2px] top-[2px] bg-primary-light rounded-sm"></div>
+    <div class="w-[14px] h-[14px] absolute left-[2px] top-[2px] bg-primary-light rounded-sm">
+    </div>
   </div>
 );
 

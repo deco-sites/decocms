@@ -92,9 +92,9 @@ export default function CommunicationOSJourney({
       stepIndicator: "02",
       isIcon: false,
       title: "Day 1: Private Context (Apps)",
-      description:
-        "Connect your internal tools to give the agent depth.",
-      additionalNote: "Modern Stack Supported: Google Workspace, Slack, Notion.",
+      description: "Connect your internal tools to give the agent depth.",
+      additionalNote:
+        "Modern Stack Supported: Google Workspace, Slack, Notion.",
       resultIcon: "lock",
       resultText:
         "Result: The agent now knows your internal strategy documents.",
@@ -115,7 +115,9 @@ export default function CommunicationOSJourney({
     },
   ],
 }: Props) {
-  const sectionId = `comm-os-journey-${Math.random().toString(36).substr(2, 9)}`;
+  const sectionId = `comm-os-journey-${
+    Math.random().toString(36).substr(2, 9)
+  }`;
 
   return (
     <section
@@ -150,18 +152,20 @@ export default function CommunicationOSJourney({
                       : "bg-primary-light text-primary-dark"
                   }`}
                 >
-                  {step.isIcon ? (
-                    <span
-                      class="material-symbols-outlined"
-                      style={{ fontSize: "24px" }}
-                    >
-                      {step.stepIndicator}
-                    </span>
-                  ) : (
-                    <span class="font-bold text-sm md:text-base">
-                      {step.stepIndicator}
-                    </span>
-                  )}
+                  {step.isIcon
+                    ? (
+                      <span
+                        class="material-symbols-outlined"
+                        style={{ fontSize: "24px" }}
+                      >
+                        {step.stepIndicator}
+                      </span>
+                    )
+                    : (
+                      <span class="font-bold text-sm md:text-base">
+                        {step.stepIndicator}
+                      </span>
+                    )}
                 </div>
 
                 {/* Step Content */}
@@ -238,7 +242,10 @@ export default function CommunicationOSJourney({
       />
 
       {/* GSAP Animation Script */}
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer />
+      <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+        defer
+      />
 
       <script
         dangerouslySetInnerHTML={{
@@ -265,13 +272,13 @@ export default function CommunicationOSJourney({
                           duration: 0.7,
                           stagger: 0.2,
                           ease: "power2.out",
-                        }
+                        },
                       );
                       observer.unobserve(entry.target);
                     }
                   });
                 },
-                { threshold: 0.15 }
+                { threshold: 0.15 },
               );
 
               observer.observe(section);
@@ -292,4 +299,3 @@ export default function CommunicationOSJourney({
 export function Preview() {
   return <CommunicationOSJourney />;
 }
-

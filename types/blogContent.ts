@@ -176,4 +176,3 @@ export interface VideoBlock {
   type: "video";
   embedUrl: string;
 }
-

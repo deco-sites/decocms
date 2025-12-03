@@ -138,8 +138,17 @@ export default function ChallengeHero({
             {/* Logo at top */}
             {logo && (
               <nav class="absolute top-0 w-full flex justify-center pt-8 z-40">
-                <a href="https://www.decocms.com/" target="_blank" rel="noopener noreferrer" class="cursor-pointer">
-                  <img src={logo} alt="Logo" class="w-20 lg:w-40 h-auto object-contain" />
+                <a
+                  href="https://www.decocms.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="cursor-pointer"
+                >
+                  <img
+                    src={logo}
+                    alt="Logo"
+                    class="w-20 lg:w-40 h-auto object-contain"
+                  />
                 </a>
               </nav>
             )}
@@ -164,14 +173,23 @@ export default function ChallengeHero({
                   class="flex flex-col justify-center items-center gap-6 max-w-4xl opacity-0 translate-y-8"
                 >
                   <h1 class="text-center text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold uppercase leading-tight tracking-tight">
-                    {title.toLowerCase().includes("macbook") ? (
-                      <>
-                        <span class="text-white">{title.substring(0, title.toLowerCase().lastIndexOf("macbook"))}</span>
-                        <span class="text-primary-light">{title.substring(title.toLowerCase().lastIndexOf("macbook"))}</span>
-                      </>
-                    ) : (
-                      <span class="text-white">{title}</span>
-                    )}
+                    {title.toLowerCase().includes("macbook")
+                      ? (
+                        <>
+                          <span class="text-white">
+                            {title.substring(
+                              0,
+                              title.toLowerCase().lastIndexOf("macbook"),
+                            )}
+                          </span>
+                          <span class="text-primary-light">
+                            {title.substring(
+                              title.toLowerCase().lastIndexOf("macbook"),
+                            )}
+                          </span>
+                        </>
+                      )
+                      : <span class="text-white">{title}</span>}
                   </h1>
                   <p
                     class="text-center text-dc-300 text-lg md:text-xl max-w-3xl leading-relaxed font-light"
@@ -185,32 +203,36 @@ export default function ChallengeHero({
                   class="flex flex-col sm:flex-row gap-4 justify-center items-center w-full sm:w-auto opacity-0 translate-y-8"
                 >
                   {ctas?.map((cta) =>
-                    cta.opensRulesModal ? (
-                      <button
-                        type="button"
-                        data-modal-toggle={modalId}
-                        class="rounded-xl inline-flex justify-center items-center font-medium transition-colors hover:scale-95 transition-transform duration-200 ease-in-out bg-dc-50 text-dc-800 outline outline-1 outline-offset-[-0.5px] outline-dc-300 hover:bg-dc-100 active:bg-dc-200 px-5 py-3 text-lg gap-2.5 w-full sm:w-auto min-w-48"
-                      >
-                        {cta.text}
-                      </button>
-                    ) : cta.href ? (
-                      <Button
-                        href={cta.href}
-                        variant={cta.variant}
-                        size="large"
-                        className="w-full sm:w-auto min-w-48 hover:scale-105 transition-transform duration-200 ease-out"
-                      >
-                        {cta.text}
-                      </Button>
-                    ) : (
-                      <button
-                        type="button"
-                        disabled
-                        class="rounded-xl inline-flex justify-center items-center font-medium px-5 py-3 text-lg gap-2.5 w-full sm:w-auto min-w-48 bg-primary-light/70 text-primary-dark cursor-not-allowed opacity-80"
-                      >
-                        {cta.text}
-                      </button>
-                    )
+                    cta.opensRulesModal
+                      ? (
+                        <button
+                          type="button"
+                          data-modal-toggle={modalId}
+                          class="rounded-xl inline-flex justify-center items-center font-medium transition-colors hover:scale-95 transition-transform duration-200 ease-in-out bg-dc-50 text-dc-800 outline outline-1 outline-offset-[-0.5px] outline-dc-300 hover:bg-dc-100 active:bg-dc-200 px-5 py-3 text-lg gap-2.5 w-full sm:w-auto min-w-48"
+                        >
+                          {cta.text}
+                        </button>
+                      )
+                      : cta.href
+                      ? (
+                        <Button
+                          href={cta.href}
+                          variant={cta.variant}
+                          size="large"
+                          className="w-full sm:w-auto min-w-48 hover:scale-105 transition-transform duration-200 ease-out"
+                        >
+                          {cta.text}
+                        </Button>
+                      )
+                      : (
+                        <button
+                          type="button"
+                          disabled
+                          class="rounded-xl inline-flex justify-center items-center font-medium px-5 py-3 text-lg gap-2.5 w-full sm:w-auto min-w-48 bg-primary-light/70 text-primary-dark cursor-not-allowed opacity-80"
+                        >
+                          {cta.text}
+                        </button>
+                      )
                   )}
                 </div>
               </div>
@@ -281,11 +303,11 @@ export default function ChallengeHero({
 
                     const badge = document.getElementById(`badge-${sectionId}`);
                     const content = document.getElementById(
-                      `content-${sectionId}`
+                      `content-${sectionId}`,
                     );
                     const ctas = document.getElementById(`ctas-${sectionId}`);
                     const countdown = document.getElementById(
-                      `countdown-${sectionId}`
+                      `countdown-${sectionId}`,
                     );
 
                     if (badge) {
@@ -332,7 +354,7 @@ export default function ChallengeHero({
                   if (document.readyState === "loading") {
                     document.addEventListener(
                       "DOMContentLoaded",
-                      initGsapAnimations
+                      initGsapAnimations,
                     );
                   } else {
                     initGsapAnimations();
@@ -361,7 +383,7 @@ export default function ChallengeHero({
 
                   function initAsciiAnimation() {
                     const container = document.getElementById(
-                      `ascii-canvas-${sectionId}`
+                      `ascii-canvas-${sectionId}`,
                     );
                     if (!container) return;
 
@@ -433,8 +455,8 @@ export default function ChallengeHero({
                         const normalizedY = (y - centerY) / radiusY;
                         return (
                           normalizedX * normalizedX +
-                            normalizedY * normalizedY <=
-                          1
+                              normalizedY * normalizedY <=
+                            1
                         );
                       }
 
@@ -449,12 +471,11 @@ export default function ChallengeHero({
                             const dy = y - wave.y;
                             const dist = Math.sqrt(dx * dx + dy * dy);
                             const falloff = 1 / (1 + dist * 0.1);
-                            const value =
-                              Math.sin(
-                                dist * wave.frequency -
-                                  time * wave.speed +
-                                  wave.phase
-                              ) *
+                            const value = Math.sin(
+                              dist * wave.frequency -
+                                time * wave.speed +
+                                wave.phase,
+                            ) *
                               wave.amplitude *
                               falloff;
                             totalWave += value;
@@ -466,12 +487,12 @@ export default function ChallengeHero({
                               CHARS.length - 1,
                               Math.max(
                                 0,
-                                Math.floor(normalizedWave * (CHARS.length - 1))
-                              )
+                                Math.floor(normalizedWave * (CHARS.length - 1)),
+                              ),
                             );
                             const opacity = Math.min(
                               0.9,
-                              Math.max(0.3, 0.3 + normalizedWave * 0.6)
+                              Math.max(0.3, 0.3 + normalizedWave * 0.6),
                             );
                             newGrid[y][x] = {
                               char: CHARS[charIndex] || CHARS[0],
@@ -499,7 +520,7 @@ export default function ChallengeHero({
                             ctx.fillText(
                               cell.char,
                               x * cellWidth + cellWidth / 2,
-                              y * cellHeight + cellHeight / 2
+                              y * cellHeight + cellHeight / 2,
                             );
                           }
                         }
@@ -525,7 +546,7 @@ export default function ChallengeHero({
                     function animate(currentTime: number) {
                       const delta = Math.min(
                         (currentTime - lastTime) / 1000,
-                        0.1
+                        0.1,
                       );
                       lastTime = currentTime;
                       update(delta);
@@ -560,16 +581,16 @@ export default function ChallengeHero({
                       const distance = eventTime - now;
 
                       const daysEl = document.getElementById(
-                        `days-${sectionId}`
+                        `days-${sectionId}`,
                       );
                       const hoursEl = document.getElementById(
-                        `hours-${sectionId}`
+                        `hours-${sectionId}`,
                       );
                       const minutesEl = document.getElementById(
-                        `minutes-${sectionId}`
+                        `minutes-${sectionId}`,
                       );
                       const secondsEl = document.getElementById(
-                        `seconds-${sectionId}`
+                        `seconds-${sectionId}`,
                       );
 
                       if (!daysEl || !hoursEl || !minutesEl || !secondsEl) {
@@ -586,13 +607,13 @@ export default function ChallengeHero({
 
                       const days = Math.floor(distance / (1000 * 60 * 60 * 24));
                       const hours = Math.floor(
-                        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+                        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
                       );
                       const minutes = Math.floor(
-                        (distance % (1000 * 60 * 60)) / (1000 * 60)
+                        (distance % (1000 * 60 * 60)) / (1000 * 60),
                       );
                       const seconds = Math.floor(
-                        (distance % (1000 * 60)) / 1000
+                        (distance % (1000 * 60)) / 1000,
                       );
 
                       daysEl.textContent = days.toString().padStart(2, "0");
@@ -619,7 +640,7 @@ export default function ChallengeHero({
                     }
                   },
                   eventDate,
-                  sectionId
+                  sectionId,
                 ),
               }}
             />
@@ -647,12 +668,18 @@ export default function ChallengeHero({
             {/* Header */}
             <div class="text-center mb-8">
               <div class="inline-block p-3 rounded-full bg-primary-light/20 mb-4">
-                <Icon name="description" size="large" class="text-primary-dark" />
+                <Icon
+                  name="description"
+                  size="large"
+                  class="text-primary-dark"
+                />
               </div>
               <h2 class="text-3xl font-extrabold uppercase tracking-tight leading-none">
                 REGRAS DO DESAFIO
               </h2>
-              <p class="text-dc-500 mt-2">Leia para garantir sua participação</p>
+              <p class="text-dc-500 mt-2">
+                Leia para garantir sua participação
+              </p>
             </div>
 
             <div class="space-y-8 text-sm md:text-base leading-relaxed">
@@ -680,13 +707,21 @@ export default function ChallengeHero({
                     <div class="bg-green-100 p-1 rounded text-green-700 mt-0.5">
                       <Icon name="check" size="small" />
                     </div>
-                    <span><strong class="text-dc-800">Qualquer pessoa.</strong> Se você está lendo isso, você pode participar.</span>
+                    <span>
+                      <strong class="text-dc-800">Qualquer pessoa.</strong>{" "}
+                      Se você está lendo isso, você pode participar.
+                    </span>
                   </li>
                   <li class="flex items-start gap-3 bg-dc-50 p-3 rounded-lg">
                     <div class="bg-green-100 p-1 rounded text-green-700 mt-0.5">
                       <Icon name="check" size="small" />
                     </div>
-                    <span><strong class="text-dc-800">Zero experiência necessária.</strong> Não precisa saber programar ou ter faculdade.</span>
+                    <span>
+                      <strong class="text-dc-800">
+                        Zero experiência necessária.
+                      </strong>{" "}
+                      Não precisa saber programar ou ter faculdade.
+                    </span>
                   </li>
                 </ul>
               </div>
@@ -699,31 +734,58 @@ export default function ChallengeHero({
                 <div class="space-y-0 relative">
                   <div class="absolute left-4 top-4 bottom-4 w-0.5 bg-dc-200" />
                   <div class="relative flex gap-4 mb-6">
-                    <div class="w-8 h-8 rounded-full bg-primary-dark text-white flex items-center justify-center font-bold text-sm shrink-0 z-10">1</div>
+                    <div class="w-8 h-8 rounded-full bg-primary-dark text-white flex items-center justify-center font-bold text-sm shrink-0 z-10">
+                      1
+                    </div>
                     <div>
-                      <h4 class="font-bold text-primary-dark">Descubra um problema</h4>
-                      <p class="text-dc-500 text-sm">Converse com 1 pessoa que tenha um problema repetitivo no dia a dia.</p>
+                      <h4 class="font-bold text-primary-dark">
+                        Descubra um problema
+                      </h4>
+                      <p class="text-dc-500 text-sm">
+                        Converse com 1 pessoa que tenha um problema repetitivo
+                        no dia a dia.
+                      </p>
                     </div>
                   </div>
                   <div class="relative flex gap-4 mb-6">
-                    <div class="w-8 h-8 rounded-full bg-primary-dark text-white flex items-center justify-center font-bold text-sm shrink-0 z-10">2</div>
+                    <div class="w-8 h-8 rounded-full bg-primary-dark text-white flex items-center justify-center font-bold text-sm shrink-0 z-10">
+                      2
+                    </div>
                     <div>
-                      <h4 class="font-bold text-primary-dark">Crie a solução na deco</h4>
-                      <p class="text-dc-500 text-sm">Use nossa plataforma para criar um App de IA que resolva isso.</p>
+                      <h4 class="font-bold text-primary-dark">
+                        Crie a solução na deco
+                      </h4>
+                      <p class="text-dc-500 text-sm">
+                        Use nossa plataforma para criar um App de IA que resolva
+                        isso.
+                      </p>
                     </div>
                   </div>
                   <div class="relative flex gap-4 mb-6">
-                    <div class="w-8 h-8 rounded-full bg-primary-dark text-white flex items-center justify-center font-bold text-sm shrink-0 z-10">3</div>
+                    <div class="w-8 h-8 rounded-full bg-primary-dark text-white flex items-center justify-center font-bold text-sm shrink-0 z-10">
+                      3
+                    </div>
                     <div>
-                      <h4 class="font-bold text-primary-dark">Teste de Verdade</h4>
-                      <p class="text-dc-500 text-sm">Valide o app com a pessoa do passo 1 (ou alguém similar).</p>
+                      <h4 class="font-bold text-primary-dark">
+                        Teste de Verdade
+                      </h4>
+                      <p class="text-dc-500 text-sm">
+                        Valide o app com a pessoa do passo 1 (ou alguém
+                        similar).
+                      </p>
                     </div>
                   </div>
                   <div class="relative flex gap-4 mb-2">
-                    <div class="w-8 h-8 rounded-full bg-primary-dark text-white flex items-center justify-center font-bold text-sm shrink-0 z-10">4</div>
+                    <div class="w-8 h-8 rounded-full bg-primary-dark text-white flex items-center justify-center font-bold text-sm shrink-0 z-10">
+                      4
+                    </div>
                     <div>
-                      <h4 class="font-bold text-primary-dark">Grave um Vídeo</h4>
-                      <p class="text-dc-500 text-sm">Registre o processo e o resultado.</p>
+                      <h4 class="font-bold text-primary-dark">
+                        Grave um Vídeo
+                      </h4>
+                      <p class="text-dc-500 text-sm">
+                        Registre o processo e o resultado.
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -734,17 +796,32 @@ export default function ChallengeHero({
                 <h3 class="font-bold flex items-center gap-2 mb-3 text-lg text-primary-dark">
                   <Icon name="inventory_2" size="small" /> O QUE ENTREGAR
                 </h3>
-                <p class="mb-3 text-dc-600">No formulário final (que disponibilizaremos em breve), você vai enviar:</p>
+                <p class="mb-3 text-dc-600">
+                  No formulário final (que disponibilizaremos em breve), você
+                  vai enviar:
+                </p>
                 <ul class="list-disc pl-5 space-y-2 text-dc-600 bg-dc-50 p-4 rounded-lg">
-                  <li><strong class="text-dc-800">Link do seu App</strong> criado na deco.</li>
-                  <li><strong class="text-dc-800">Vídeo de Pitch (2 a 3 min):</strong> Mostre o problema, o app funcionando na prática e conte brevemente como foi seu processo de teste e ajustes.</li>
+                  <li>
+                    <strong class="text-dc-800">Link do seu App</strong>{" "}
+                    criado na deco.
+                  </li>
+                  <li>
+                    <strong class="text-dc-800">
+                      Vídeo de Pitch (2 a 3 min):
+                    </strong>{" "}
+                    Mostre o problema, o app funcionando na prática e conte
+                    brevemente como foi seu processo de teste e ajustes.
+                  </li>
                 </ul>
               </div>
 
               {/* Deadline */}
               <div class="flex items-center gap-3 text-red-600 bg-red-50 p-4 rounded-lg">
                 <Icon name="alarm" size="small" />
-                <p class="text-sm font-bold">PRAZO FINAL: você tem até o dia 03/01/2026 para entregar seu projeto</p>
+                <p class="text-sm font-bold">
+                  PRAZO FINAL: você tem até o dia 03/01/2026 para entregar seu
+                  projeto
+                </p>
               </div>
             </div>
 
@@ -771,10 +848,10 @@ export default function ChallengeHero({
               if (!modal) return;
 
               const toggleButtons = document.querySelectorAll(
-                `[data-modal-toggle="${modalId}"]`
+                `[data-modal-toggle="${modalId}"]`,
               );
               const closeButtons = document.querySelectorAll(
-                `[data-modal-close="${modalId}"]`
+                `[data-modal-close="${modalId}"]`,
               );
 
               function openModal() {

@@ -1,11 +1,15 @@
 # HeroInteractive Section
 
 ## Overview
-A highly interactive hero section designed for AI/SaaS applications featuring a scrolling carousel of app integrations, typing animation in an input field, and clickable prompt templates.
+
+A highly interactive hero section designed for AI/SaaS applications featuring a
+scrolling carousel of app integrations, typing animation in an input field, and
+clickable prompt templates.
 
 ## Features
 
 ### 1. **Horizontal Icon Carousel**
+
 - Seamless infinite scroll animation (90s duration)
 - Horizontally centered on the page
 - Pause on hover for better UX
@@ -13,6 +17,7 @@ A highly interactive hero section designed for AI/SaaS applications featuring a 
 - Clickable icons that can be selected/deselected
 
 ### 2. **App Selection System**
+
 - Click any app icon in the carousel to select it
 - Selected state:
   - Background changes to `primary-light` (#D0EC1A)
@@ -22,9 +27,11 @@ A highly interactive hero section designed for AI/SaaS applications featuring a 
 - Click again to deselect (reverts all styling)
 - Multiple apps can be selected simultaneously
 - Badges are displayed as pills positioned absolutely over the input field
-- Uses inline styles for dynamic color changes (more reliable than dynamic classes)
+- Uses inline styles for dynamic color changes (more reliable than dynamic
+  classes)
 
 ### 3. **Typing Animation in Editable Field**
+
 - **Editable textarea** - User can type freely in the field
 - Cycles through predefined phrases with typewriter effect when field is idle
 - Typing speed: 50ms per character
@@ -36,6 +43,7 @@ A highly interactive hero section designed for AI/SaaS applications featuring a 
 - Fully customizable phrases via props
 
 ### 4. **Prompt Templates**
+
 - Pre-configured example prompts below the input field
 - Each template has:
   - A Material Design icon
@@ -47,6 +55,7 @@ A highly interactive hero section designed for AI/SaaS applications featuring a 
 - Hover effect with background color change
 
 ### 5. **GSAP Animations**
+
 - Smooth entrance animations on page load:
   - Title fades in from bottom (30px offset)
   - Subtitle follows with a slight delay
@@ -61,9 +70,9 @@ A highly interactive hero section designed for AI/SaaS applications featuring a 
 
 ```typescript
 interface Props {
-  title?: string;              // Main heading
-  subtitle?: string;           // Subheading text
-  apps?: AppIcon[];           // List of app integrations
+  title?: string; // Main heading
+  subtitle?: string; // Subheading text
+  apps?: AppIcon[]; // List of app integrations
   typingPhrases?: TypingPhrase[]; // Phrases for typing animation
   promptTemplates?: PromptTemplate[]; // Quick prompt buttons
 }
@@ -73,9 +82,9 @@ interface Props {
 
 ```typescript
 interface AppIcon {
-  name: string;        // Internal name (e.g., "Gmail")
-  icon: ImageWidget;   // Icon image URL
-  mention: string;     // Text shown when selected (e.g., "@gmail")
+  name: string; // Internal name (e.g., "Gmail")
+  icon: ImageWidget; // Icon image URL
+  mention: string; // Text shown when selected (e.g., "@gmail")
 }
 ```
 
@@ -83,7 +92,7 @@ interface AppIcon {
 
 ```typescript
 interface TypingPhrase {
-  text: string;  // Full text to be typed
+  text: string; // Full text to be typed
 }
 ```
 
@@ -91,9 +100,9 @@ interface TypingPhrase {
 
 ```typescript
 interface PromptTemplate {
-  label: string;      // Button text
-  icon: string;       // Material Design icon name
-  fullText: string;   // Full prompt text for input field
+  label: string; // Button text
+  icon: string; // Material Design icon name
+  fullText: string; // Full prompt text for input field
 }
 ```
 
@@ -170,7 +179,10 @@ Add the section to your page configuration:
 ## Technical Implementation
 
 ### Client-Side Script
-The component uses `useScript` from `@deco/deco/hooks` to inject client-side JavaScript that handles:
+
+The component uses `useScript` from `@deco/deco/hooks` to inject client-side
+JavaScript that handles:
+
 - GSAP animation initialization
 - Typing animation state machine
 - App icon click handlers
@@ -179,6 +191,7 @@ The component uses `useScript` from `@deco/deco/hooks` to inject client-side Jav
 - Carousel pause on hover
 
 ### Performance Considerations
+
 - Icons loaded lazily with `loading="lazy"`
 - Carousel uses CSS animation (hardware accelerated)
 - GSAP loaded from CDN with `defer` attribute
@@ -186,11 +199,15 @@ The component uses `useScript` from `@deco/deco/hooks` to inject client-side Jav
 
 ## Customization Tips
 
-1. **Change typing speed:** Modify `typingSpeed` and `deletingSpeed` constants in the script
-2. **Adjust carousel speed:** Change `animationDuration` style prop (default: "90s")
+1. **Change typing speed:** Modify `typingSpeed` and `deletingSpeed` constants
+   in the script
+2. **Adjust carousel speed:** Change `animationDuration` style prop (default:
+   "90s")
 3. **Modify icon size:** Update `w-14 h-14` classes on `.app-icon` buttons
-4. **Change pause durations:** Edit `pauseAfterTyping` and `pauseAfterDeleting` constants
-5. **Customize GSAP animations:** Adjust duration, delay, and easing in `initGSAPAnimations`
+4. **Change pause durations:** Edit `pauseAfterTyping` and `pauseAfterDeleting`
+   constants
+5. **Customize GSAP animations:** Adjust duration, delay, and easing in
+   `initGSAPAnimations`
 
 ## Browser Compatibility
 
@@ -210,8 +227,9 @@ The component uses `useScript` from `@deco/deco/hooks` to inject client-side Jav
 
 ## Notes
 
-- The carousel creates 8 repetitions of the apps array to ensure smooth infinite scrolling
+- The carousel creates 8 repetitions of the apps array to ensure smooth infinite
+  scrolling
 - Selected app state is maintained in a Set for O(1) lookup
 - Typing animation can be interrupted by clicking a prompt template
-- All animations respect `prefers-reduced-motion` media query (via GSAP defaults)
-
+- All animations respect `prefers-reduced-motion` media query (via GSAP
+  defaults)

@@ -5,37 +5,44 @@
 ### 📋 Lista de Páginas Criadas:
 
 #### 1. 🏠 Landing Page
+
 - **URL:** `https://decocms.deco.site/hackathon-os`
 - **Path:** `/hackathon-os`
 - **Descrição:** Página inicial do SaaS com hero, features e CTA
 - **Acesso:** Público
 
 #### 2. 📋 Lista de Eventos
+
 - **URL:** `https://decocms.deco.site/hackathon-os/eventos`
 - **Path:** `/hackathon-os/eventos`
 - **Descrição:** Lista de todos os hackathons com filtros
 - **Acesso:** Público (funcionalidades extras quando logado)
 
 #### 3. 🔔 Notificações
+
 - **URL:** `https://decocms.deco.site/hackathon-os/notificacoes`
 - **Path:** `/hackathon-os/notificacoes`
 - **Descrição:** Central de notificações do usuário
 - **Acesso:** Requer login (use o seletor de usuário)
 
 #### 4. 👤 Perfil
+
 - **URL:** `https://decocms.deco.site/hackathon-os/perfil`
 - **Path:** `/hackathon-os/perfil`
 - **Descrição:** Página de perfil do usuário (ver e editar)
 - **Acesso:** Requer login (use o seletor de usuário)
 
 #### 5. 🎯 Hackathon AI 2024
+
 - **URL:** `https://decocms.deco.site/hackathon-os/evento/evt1`
 - **Path:** `/hackathon-os/evento/evt1`
 - **Descrição:** Página completa do evento com 9 tabs
 - **Acesso:** Requer login (use o seletor de usuário)
-- **Tabs:** Intro, Premiação, Participantes, Times, Jurados, Desafios, Submissões, Classificação, Organização
+- **Tabs:** Intro, Premiação, Participantes, Times, Jurados, Desafios,
+  Submissões, Classificação, Organização
 
 #### 6. 🌱 GreenTech Challenge
+
 - **URL:** `https://decocms.deco.site/hackathon-os/evento/evt2`
 - **Path:** `/hackathon-os/evento/evt2`
 - **Descrição:** Página completa do evento GreenTech
@@ -43,6 +50,7 @@
 - **Tabs:** 9 tabs (mesmo padrão do evt1)
 
 #### 7. 💰 FinTech Innovation
+
 - **URL:** `https://decocms.deco.site/hackathon-os/evento/evt3`
 - **Path:** `/hackathon-os/evento/evt3`
 - **Descrição:** Página completa do evento FinTech (Encerrado)
@@ -50,6 +58,7 @@
 - **Tabs:** 9 tabs (mesmo padrão)
 
 #### 8. ⚙️ Admin - Criar Evento
+
 - **URL:** `https://decocms.deco.site/hackathon-os/admin/evento/novo`
 - **Path:** `/hackathon-os/admin/evento/novo`
 - **Descrição:** Formulário completo para criar novo evento
@@ -60,14 +69,17 @@
 ## 🎮 Como Testar AGORA
 
 ### 1️⃣ Acesse a Landing Page
+
 ```
 URL: https://decocms.deco.site/hackathon-os
 ```
 
 ### 2️⃣ Use o Seletor de Usuário
+
 No canto superior direito, você verá uma caixa amarela 🧪 **MODO TESTE**
 
 Opções disponíveis:
+
 - 👤 Não logado
 - 🔧 Admin Master
 - 📋 Maria Organizadora
@@ -80,6 +92,7 @@ Opções disponíveis:
 ### 3️⃣ Navegue pelo Sistema
 
 #### Fluxo Rápido de Teste (5 minutos):
+
 ```
 1. Acesse /hackathon-os
 2. Selecione "👨‍💻 João Silva" no seletor
@@ -100,6 +113,7 @@ Opções disponíveis:
 ## 🎯 Principais Funcionalidades
 
 ### ✅ Sistema de Navegação
+
 - Header com logo e menu
 - Dropdown de notificações (com badge de contador)
 - Dropdown de "Meus Eventos" (eventos aprovados)
@@ -107,12 +121,14 @@ Opções disponíveis:
 - Menu mobile responsivo
 
 ### ✅ Lista de Eventos
+
 - Filtros: Todos, Abertos, Encerrados, Pendentes, Ativos
 - Cards com banner, descrição, número de inscritos
 - Botões: "Saiba Mais", "Inscrever-se", "Pendente", "Acessar Evento"
 - Botão "Criar Novo Evento" (admin/organizador)
 
 ### ✅ Página de Evento (9 Tabs)
+
 1. **📋 Intro e Regras** - Boas-vindas, regras, prazos
 2. **🏆 Premiação** - Prêmios e critérios de avaliação
 3. **👥 Participantes** - Lista de inscritos (conforme privacidade)
@@ -124,6 +140,7 @@ Opções disponíveis:
 9. **🏢 Organização** - Equipe organizadora
 
 ### ✅ Notificações
+
 - Lista de mensagens do usuário
 - Tipos: Aprovação, Mensagem, Convite, Anúncio
 - Marcar como lida (individual ou todas)
@@ -131,13 +148,16 @@ Opções disponíveis:
 - Badge de contador não lidas
 
 ### ✅ Perfil
+
 - Avatar com iniciais (se não tem foto)
 - Informações: nome, email, role, linkedin, github, senioridade, área, bio
 - Modo edição com formulários
 - Salvar/Cancelar alterações
 
 ### ✅ Admin - Criar Evento
+
 Formulário completo com:
+
 - Informações básicas (nome, descrição, banner, status)
 - Configurações de inscrição (campos extras opcionais)
 - Tamanho máximo do time
@@ -153,6 +173,7 @@ Formulário completo com:
 ## 🎨 Design System
 
 ### Cores
+
 - **Primary:** Purple (#8B5CF6)
 - **Secondary:** Pink (#EC4899)
 - **Gradientes:** Purple → Pink
@@ -162,11 +183,13 @@ Formulário completo com:
   - Encerrado: Gray (#6B7280)
 
 ### Tipografia
+
 - Font: System fonts (sans-serif)
 - Headings: Bold, escala de tamanhos
 - Body: Regular, line-height confortável
 
 ### Componentes
+
 - Cards com hover shadow
 - Botões com transition-colors
 - Badges de status coloridos
@@ -179,16 +202,19 @@ Formulário completo com:
 ## 📱 Responsividade
 
 ### Mobile (<768px)
+
 - Menu hamburger
 - Cards em coluna única
 - Tabs scrolláveis horizontalmente
 - Seletor fixo no topo
 
 ### Tablet (768px-1024px)
+
 - Grid de 2 colunas
 - Menu dropdown
 
 ### Desktop (>1024px)
+
 - Grid de 3 colunas
 - Menu completo
 - Todos dropdowns visíveis
@@ -218,18 +244,22 @@ Formulário completo com:
 ## 🐛 Troubleshooting
 
 ### Página não carrega
+
 - Verifique se está acessando o domínio correto: `decocms.deco.site`
 - Aguarde o deploy (pode levar alguns segundos)
 
 ### Seletor não aparece
+
 - O seletor sempre aparece no canto superior direito em todas as páginas
 - Se não aparecer, recarregue a página
 
 ### Dados não aparecem
+
 - Os dados são mockados e vêm do arquivo `mockData.ts`
 - Se não aparecer, pode ser erro de import
 
 ### Links quebrados
+
 - Todas as 8 páginas foram criadas
 - Se algum link não funcionar, pode ser que precise aguardar o deploy
 
@@ -250,13 +280,11 @@ Para mais informações, consulte:
 
 ## 🎉 Sistema Completo e Funcionando!
 
-✅ **8 páginas criadas**
-✅ **22 arquivos de código**
-✅ **~4700 linhas de código**
-✅ **100% funcional no frontend**
-✅ **Pronto para demonstração**
+✅ **8 páginas criadas** ✅ **22 arquivos de código** ✅ **~4700 linhas de
+código** ✅ **100% funcional no frontend** ✅ **Pronto para demonstração**
 
 ### 🚀 Comece Agora:
+
 ```
 https://decocms.deco.site/hackathon-os
 ```

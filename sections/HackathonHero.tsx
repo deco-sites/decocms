@@ -95,13 +95,17 @@ export default function HackathonHero({
               {/* Eyebrow */}
               {eyebrowText && (
                 <div class="flex items-center gap-2 bg-[#282524] px-4 py-2 rounded-full">
-                  <Icon name="calendar_month" size="small" class="text-[#D6D3D1]" />
+                  <Icon
+                    name="calendar_month"
+                    size="small"
+                    class="text-[#D6D3D1]"
+                  />
                   <span class="text-sm sm:text-base font-medium text-[#D6D3D1]">
                     {eyebrowText}
                   </span>
                 </div>
               )}
-              
+
               <h1 class="text-primary-light text-4xl sm:text-5xl lg:text-8xl font-medium leading-tight tracking-tight text-center">
                 {title}
               </h1>
@@ -116,79 +120,125 @@ export default function HackathonHero({
             <div class="flex gap-2 items-start justify-start relative z-30">
               {primaryButtonText && (
                 <>
-                  {primaryButtonUrl ? (
-                    // If URL is provided, render a simple button link
-                    <Button
-                      variant="primary"
-                      size="medium"
-                      href={primaryButtonUrl}
-                      class="!bg-primary-light !text-primary-dark hover:!bg-primary-light/90 relative z-30"
-                    >
-                      {primaryButtonText}
-                    </Button>
-                  ) : (
-                    // If no URL, render the form modal
-                    <FormModal
-                      buttonText={primaryButtonText}
-                      buttonClassName="px-6 py-3 bg-primary-light text-primary-dark rounded-lg font-semibold hover:bg-primary-light/90 transition-colors relative z-30"
-                      modalTitle="Inscrição"
-                      formFields={[
-                        { label: "Nome", name: "Nome", type: "text", required: true, placeholder: "Seu nome completo" },
-                        { label: "Email", name: "Email", type: "email", required: true, placeholder: "seu@email.com" },
-                        { label: "Número", name: "Número", type: "tel", required: true, placeholder: "+55 (11) 99999-9999" },
-                        { label: "Empresa", name: "Empresa", type: "text", required: true, placeholder: "Nome da empresa" },
-                        { label: "Cargo", name: "Cargo", type: "text", required: true, placeholder: "Seu cargo" },
-                        { 
-                          label: "Pretende participar em qual dia?", 
-                          name: "Dia de participação", 
-                          type: "multiselect", 
-                          required: true,
-                          options: ["31/10", "01/11"]
-                        },
-                        { label: "Possui time?", name: "Possui time", type: "checkbox" },
-                        { 
-                          label: "Tamanho do time",
-                          name: "Tamanho do time",
-                          type: "number",
-                          placeholder: "Ex: 4",
-                          showIfChecked: "Possui time"
-                        },
-                        { 
-                          label: "Nome e e-mail dos membros", 
-                          name: "Nome e e-mail dos membros", 
-                          type: "textarea", 
-                          placeholder: "Nome 1: email1@example.com\nNome 2: email2@example.com",
-                          showIfChecked: "Possui time"
-                        },
-                        { label: "Observação", name: "Observações", type: "textarea", placeholder: "Alguma observação adicional..." },
-                      ]}
-                      submitButtonText="Enviar Inscrição"
-                      successMessage="Inscrição enviada com sucesso! Entraremos em contato em breve."
-                    />
-                  )}
+                  {primaryButtonUrl
+                    ? (
+                      // If URL is provided, render a simple button link
+                      <Button
+                        variant="primary"
+                        size="medium"
+                        href={primaryButtonUrl}
+                        class="!bg-primary-light !text-primary-dark hover:!bg-primary-light/90 relative z-30"
+                      >
+                        {primaryButtonText}
+                      </Button>
+                    )
+                    : (
+                      // If no URL, render the form modal
+                      <FormModal
+                        buttonText={primaryButtonText}
+                        buttonClassName="px-6 py-3 bg-primary-light text-primary-dark rounded-lg font-semibold hover:bg-primary-light/90 transition-colors relative z-30"
+                        modalTitle="Inscrição"
+                        formFields={[
+                          {
+                            label: "Nome",
+                            name: "Nome",
+                            type: "text",
+                            required: true,
+                            placeholder: "Seu nome completo",
+                          },
+                          {
+                            label: "Email",
+                            name: "Email",
+                            type: "email",
+                            required: true,
+                            placeholder: "seu@email.com",
+                          },
+                          {
+                            label: "Número",
+                            name: "Número",
+                            type: "tel",
+                            required: true,
+                            placeholder: "+55 (11) 99999-9999",
+                          },
+                          {
+                            label: "Empresa",
+                            name: "Empresa",
+                            type: "text",
+                            required: true,
+                            placeholder: "Nome da empresa",
+                          },
+                          {
+                            label: "Cargo",
+                            name: "Cargo",
+                            type: "text",
+                            required: true,
+                            placeholder: "Seu cargo",
+                          },
+                          {
+                            label: "Pretende participar em qual dia?",
+                            name: "Dia de participação",
+                            type: "multiselect",
+                            required: true,
+                            options: ["31/10", "01/11"],
+                          },
+                          {
+                            label: "Possui time?",
+                            name: "Possui time",
+                            type: "checkbox",
+                          },
+                          {
+                            label: "Tamanho do time",
+                            name: "Tamanho do time",
+                            type: "number",
+                            placeholder: "Ex: 4",
+                            showIfChecked: "Possui time",
+                          },
+                          {
+                            label: "Nome e e-mail dos membros",
+                            name: "Nome e e-mail dos membros",
+                            type: "textarea",
+                            placeholder:
+                              "Nome 1: email1@example.com\nNome 2: email2@example.com",
+                            showIfChecked: "Possui time",
+                          },
+                          {
+                            label: "Observação",
+                            name: "Observações",
+                            type: "textarea",
+                            placeholder: "Alguma observação adicional...",
+                          },
+                        ]}
+                        submitButtonText="Enviar Inscrição"
+                        successMessage="Inscrição enviada com sucesso! Entraremos em contato em breve."
+                      />
+                    )}
                 </>
               )}
               {secondaryButtonText && (
                 <>
-                  {secondaryButtonTargetId ? (
-                    // If target ID is provided, use scroll button
-                    <ScrollToButton
-                      targetId={secondaryButtonTargetId}
-                      class="px-6 py-3 bg-dc-50 text-dc-900 hover:bg-dc-100 rounded-lg font-semibold transition-colors relative z-30"
-                    >
-                      <span>{secondaryButtonText}</span>
-                    </ScrollToButton>
-                  ) : secondaryButtonUrl ? (
-                    // Otherwise use regular link button
-                    <Button
-                      variant="secondary"
-                      size="medium"
-                      href={secondaryButtonUrl}
-                      class="!bg-dc-50 !text-dc-900 hover:!bg-dc-100 relative z-30"
-                    >
-                      {secondaryButtonText}
-                    </Button>
-                  ) : null}
+                  {secondaryButtonTargetId
+                    ? (
+                      // If target ID is provided, use scroll button
+                      <ScrollToButton
+                        targetId={secondaryButtonTargetId}
+                        class="px-6 py-3 bg-dc-50 text-dc-900 hover:bg-dc-100 rounded-lg font-semibold transition-colors relative z-30"
+                      >
+                        <span>{secondaryButtonText}</span>
+                      </ScrollToButton>
+                    )
+                    : secondaryButtonUrl
+                    ? (
+                      // Otherwise use regular link button
+                      <Button
+                        variant="secondary"
+                        size="medium"
+                        href={secondaryButtonUrl}
+                        class="!bg-dc-50 !text-dc-900 hover:!bg-dc-100 relative z-30"
+                      >
+                        {secondaryButtonText}
+                      </Button>
+                    )
+                    : null}
                 </>
               )}
             </div>

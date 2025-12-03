@@ -192,7 +192,9 @@ export default function ComparisonTable({
 
   return (
     <section
-      class={`w-full px-4 py-12 sm:py-16 lg:py-24 ${bgColorMap[backgroundColor]} flex justify-center items-center`}
+      class={`w-full px-4 py-12 sm:py-16 lg:py-24 ${
+        bgColorMap[backgroundColor]
+      } flex justify-center items-center`}
     >
       <div class="w-full max-w-4xl flex flex-col gap-8 lg:gap-12">
         {/* Title */}
@@ -237,13 +239,13 @@ export default function ComparisonTable({
                   <div class="bg-white rounded-2xl border border-dc-200 overflow-hidden shadow-sm">
                     {/* Column Title */}
                     <div class="px-6 py-8 flex flex-col items-center justify-center gap-3 border-b border-dc-200">
-                      {column.highlighted ? (
-                        <DecoLogo isMobile={true} />
-                      ) : (
-                        <h3 class="text-3xl font-bold text-dc-900">
-                          {column.name}
-                        </h3>
-                      )}
+                      {column.highlighted
+                        ? <DecoLogo isMobile={true} />
+                        : (
+                          <h3 class="text-3xl font-bold text-dc-900">
+                            {column.name}
+                          </h3>
+                        )}
                     </div>
 
                     {/* Features for this column */}
@@ -300,15 +302,17 @@ export default function ComparisonTable({
                   </th>
                   {columns?.map((column) => (
                     <th class="px-4 py-4 text-center w-40">
-                      {column.highlighted ? (
-                        <div class="flex items-center justify-center">
-                          <DecoLogo />
-                        </div>
-                      ) : (
-                        <span class="text-lg font-bold text-dc-900">
-                          {column.name}
-                        </span>
-                      )}
+                      {column.highlighted
+                        ? (
+                          <div class="flex items-center justify-center">
+                            <DecoLogo />
+                          </div>
+                        )
+                        : (
+                          <span class="text-lg font-bold text-dc-900">
+                            {column.name}
+                          </span>
+                        )}
                     </th>
                   ))}
                 </tr>
@@ -463,4 +467,3 @@ export default function ComparisonTable({
     </section>
   );
 }
-

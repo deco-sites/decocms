@@ -1,6 +1,8 @@
 import type { BlockquoteBlock } from "../../../types/blogContent.ts";
 
-export function Blockquote({ text, cite, variant = "default" }: BlockquoteBlock) {
+export function Blockquote(
+  { text, cite, variant = "default" }: BlockquoteBlock,
+) {
   if (variant === "quote") {
     return (
       <blockquote className="border-l-4 border-l-primary-dark bg-dc-50 border border-dc-200 p-6 rounded-lg my-8">
@@ -20,4 +22,3 @@ export function Blockquote({ text, cite, variant = "default" }: BlockquoteBlock)
     </blockquote>
   );
 }
-

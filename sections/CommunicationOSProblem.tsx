@@ -36,7 +36,8 @@ interface Props {
 
 export default function CommunicationOSProblem({
   title = "Communication Overload is killing your strategy",
-  description = "The biggest bottleneck for scale-ups isn't a lack of ideas—it's disconnection. Executives become \"human bottlenecks\" because they have to constantly organize context so the team can execute.",
+  description =
+    "The biggest bottleneck for scale-ups isn't a lack of ideas—it's disconnection. Executives become \"human bottlenecks\" because they have to constantly organize context so the team can execute.",
   statCards = [
     {
       title: "The Middleman",
@@ -55,7 +56,9 @@ export default function CommunicationOSProblem({
     },
   ],
 }: Props) {
-  const sectionId = `comm-os-problem-${Math.random().toString(36).substr(2, 9)}`;
+  const sectionId = `comm-os-problem-${
+    Math.random().toString(36).substr(2, 9)
+  }`;
 
   return (
     <section id="problem" class="w-full bg-dc-50 py-16 md:py-24 lg:py-32">
@@ -92,7 +95,10 @@ export default function CommunicationOSProblem({
       </div>
 
       {/* GSAP Animation Script */}
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer />
+      <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+        defer
+      />
 
       <script
         dangerouslySetInnerHTML={{
@@ -119,13 +125,13 @@ export default function CommunicationOSProblem({
                           duration: 0.7,
                           stagger: 0.15,
                           ease: "power2.out",
-                        }
+                        },
                       );
                       observer.unobserve(entry.target);
                     }
                   });
                 },
-                { threshold: 0.2 }
+                { threshold: 0.2 },
               );
 
               observer.observe(section);
@@ -146,4 +152,3 @@ export default function CommunicationOSProblem({
 export function Preview() {
   return <CommunicationOSProblem />;
 }
-

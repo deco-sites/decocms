@@ -1,7 +1,6 @@
 import { createContext } from "preact";
-import { useContext, useState, useEffect } from "preact/hooks";
+import { useContext, useEffect, useState } from "preact/hooks";
 import type { User } from "../data/mockData.ts";
-import { mockUsers } from "../data/mockData.ts";
 
 interface UserContextType {
   currentUser: User | null;
@@ -36,11 +35,13 @@ export function UserProvider({ children }: { children: any }) {
   };
 
   return (
-    <UserContext.Provider value={{ 
-      currentUser, 
-      setCurrentUser,
-      isLoggedIn: !!currentUser 
-    }}>
+    <UserContext.Provider
+      value={{
+        currentUser,
+        setCurrentUser,
+        isLoggedIn: !!currentUser,
+      }}
+    >
       {children}
     </UserContext.Provider>
   );

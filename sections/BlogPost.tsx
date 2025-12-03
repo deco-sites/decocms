@@ -329,7 +329,10 @@ export default function BlogPost({ page }: Props) {
         <div className="flex-1 max-w-full md:max-w-[700px] flex flex-col justify-start items-start">
           {(() => {
             // Try to detect if content is structured blocks (JSON array)
-            if (content && typeof content === "string" && content.trim().startsWith("[")) {
+            if (
+              content && typeof content === "string" &&
+              content.trim().startsWith("[")
+            ) {
               try {
                 const parsed = JSON.parse(content);
                 if (Array.isArray(parsed)) {
@@ -343,17 +346,19 @@ export default function BlogPost({ page }: Props) {
                 // Not valid JSON, fall through to HTML rendering
               }
             }
-            
+
             // Fallback to legacy HTML string rendering
             return (
               <div
                 className={`${CONTENT_STYLES} w-full`}
                 id="blog-post-content"
                 dangerouslySetInnerHTML={{
-                  __html: content.replaceAll("&lt;iframe", "<iframe ").replaceAll(
-                    "&lt;/iframe&gt;",
-                    " </iframe>",
-                  ).replaceAll("allowfullscreen&gt;", "allowfullscreen>") || "",
+                  __html:
+                    content.replaceAll("&lt;iframe", "<iframe ").replaceAll(
+                      "&lt;/iframe&gt;",
+                      " </iframe>",
+                    ).replaceAll("allowfullscreen&gt;", "allowfullscreen>") ||
+                    "",
                 }}
               />
             );

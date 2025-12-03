@@ -13,11 +13,14 @@ export default function LandingPage() {
             <span class="text-white font-bold text-2xl">Hackathon OS</span>
           </div>
           <div class="flex gap-4">
-            <a href="/hackathon-os/login" class="text-white hover:text-purple-300 transition-colors">
+            <a
+              href="/hackathon-os/login"
+              class="text-white hover:text-purple-300 transition-colors"
+            >
               Login
             </a>
-            <a 
-              href="/hackathon-os/cadastro" 
+            <a
+              href="/hackathon-os/cadastro"
               class="bg-purple-500 hover:bg-purple-600 text-white px-6 py-2 rounded-lg transition-colors"
             >
               Cadastre-se
@@ -36,17 +39,18 @@ export default function LandingPage() {
           </span>
         </h1>
         <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
-          TypeScript/React/Next.js + Agents + Workflows + DB + Auth. US$50 de créditos para todos.
+          TypeScript/React/Next.js + Agents + Workflows + DB + Auth. US$50 de
+          créditos para todos.
         </p>
         <div class="flex gap-4 justify-center">
-          <a 
-            href="/hackathon-os/eventos" 
+          <a
+            href="/hackathon-os/eventos"
             class="bg-purple-500 hover:bg-purple-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors"
           >
             Explorar Eventos
           </a>
-          <a 
-            href="/hackathon-os/cadastro" 
+          <a
+            href="/hackathon-os/cadastro"
             class="bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors border border-white/20"
           >
             Criar Conta
@@ -66,7 +70,8 @@ export default function LandingPage() {
             </div>
             <h3 class="text-2xl font-bold text-white mb-3">Gestão de Times</h3>
             <p class="text-gray-300">
-              Crie times, convide membros e organize colaborações de forma eficiente
+              Crie times, convide membros e organize colaborações de forma
+              eficiente
             </p>
           </div>
 
@@ -76,7 +81,8 @@ export default function LandingPage() {
             </div>
             <h3 class="text-2xl font-bold text-white mb-3">Desafios</h3>
             <p class="text-gray-300">
-              Defina desafios customizados e permita que participantes proponham novos
+              Defina desafios customizados e permita que participantes proponham
+              novos
             </p>
           </div>
 
@@ -84,9 +90,12 @@ export default function LandingPage() {
             <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mb-4">
               <span class="text-2xl">⚖️</span>
             </div>
-            <h3 class="text-2xl font-bold text-white mb-3">Sistema de Avaliação</h3>
+            <h3 class="text-2xl font-bold text-white mb-3">
+              Sistema de Avaliação
+            </h3>
             <p class="text-gray-300">
-              Configure critérios personalizados e permita que jurados avaliem projetos
+              Configure critérios personalizados e permita que jurados avaliem
+              projetos
             </p>
           </div>
 
@@ -116,7 +125,8 @@ export default function LandingPage() {
             </div>
             <h3 class="text-2xl font-bold text-white mb-3">Configurável</h3>
             <p class="text-gray-300">
-              Personalize cada aspecto do seu hackathon conforme suas necessidades
+              Personalize cada aspecto do seu hackathon conforme suas
+              necessidades
             </p>
           </div>
         </div>
@@ -129,10 +139,11 @@ export default function LandingPage() {
             Pronto para começar?
           </h2>
           <p class="text-xl text-white/90 mb-8">
-            Crie sua conta gratuitamente e organize seu próximo hackathon hoje mesmo
+            Crie sua conta gratuitamente e organize seu próximo hackathon hoje
+            mesmo
           </p>
-          <a 
-            href="/hackathon-os/cadastro" 
+          <a
+            href="/hackathon-os/cadastro"
             class="inline-block bg-white text-purple-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-colors"
           >
             Começar Agora

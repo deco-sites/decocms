@@ -6,7 +6,9 @@ interface Props {
   class?: string;
 }
 
-export default function ScrollToButton({ targetId, children, class: className }: Props) {
+export default function ScrollToButton(
+  { targetId, children, class: className }: Props,
+) {
   const handleClick = (e: Event) => {
     e.preventDefault();
     const target = document.getElementById(targetId);

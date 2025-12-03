@@ -11,4 +11,3 @@ export function Video({ embedUrl }: VideoBlock) {
     </div>
   );
 }
-

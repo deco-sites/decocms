@@ -109,7 +109,9 @@ export default function MCPMeshBenefits({
         dangerouslySetInnerHTML={{
           __html: useScript((sectionId: string) => {
             const section = document.getElementById(sectionId);
-            if (!section) return;
+            if (!section) {
+              return;
+            }
 
             const elements = section.querySelectorAll(".animate-on-scroll");
 
@@ -120,32 +122,37 @@ export default function MCPMeshBenefits({
                     const el = entry.target as HTMLElement;
                     el.style.opacity = "1";
                     el.style.transform = "translateY(0)";
-                    
+
                     // Also animate the number circle with scale
-                    const circle = el.querySelector(".animate-scale") as HTMLElement;
+                    const circle = el.querySelector(
+                      ".animate-scale",
+                    ) as HTMLElement;
                     if (circle) {
                       circle.style.transform = "scale(1)";
                     }
-                    
+
                     observer.unobserve(el);
                   }
                 });
               },
-              { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
+              { threshold: 0.1, rootMargin: "0px 0px -50px 0px" },
             );
 
             elements.forEach((el) => {
               const element = el as HTMLElement;
               element.style.transition =
                 "opacity 0.6s ease-out, transform 0.6s ease-out";
-              
+
               // Set initial scale for circles
-              const circle = element.querySelector(".animate-scale") as HTMLElement;
+              const circle = element.querySelector(
+                ".animate-scale",
+              ) as HTMLElement;
               if (circle) {
                 circle.style.transform = "scale(0.5)";
-                circle.style.transition = "transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)";
+                circle.style.transition =
+                  "transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)";
               }
-              
+
               observer.observe(el);
             });
           }, sectionId),

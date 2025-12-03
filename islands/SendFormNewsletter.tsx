@@ -10,7 +10,9 @@ export interface Props {
   successMessage?: string;
 }
 
-export default function SendFormNewsletter({ actionUrl, inputPlaceholder, buttonText, term, successMessage }: Props) {
+export default function SendFormNewsletter(
+  { actionUrl, inputPlaceholder, buttonText, term, successMessage }: Props,
+) {
   const [success, setSuccess] = useState(false);
 
   const handleSubmit = async (e: Event) => {
@@ -18,8 +20,7 @@ export default function SendFormNewsletter({ actionUrl, inputPlaceholder, button
     const formData = new FormData(e.target as HTMLFormElement);
     const response = await invoke.site.actions.resend.createContact({
       email: formData.get("email") as string,
-    },
-    );
+    });
     console.log(response);
     if (response.status === 200 || response.status === 201) {
       setSuccess(true);
@@ -35,7 +36,12 @@ export default function SendFormNewsletter({ actionUrl, inputPlaceholder, button
   }
 
   return (
-    <form action={actionUrl} method="POST" class="w-full max-w-xl" onSubmit={handleSubmit}>
+    <form
+      action={actionUrl}
+      method="POST"
+      class="w-full max-w-xl"
+      onSubmit={handleSubmit}
+    >
       <div class="flex flex-col sm:flex-row gap-3 w-full">
         {/* Email Input */}
         <input

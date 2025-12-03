@@ -39,4 +39,3 @@ export function Table({ headers, rows }: TableBlock) {
     </div>
   );
 }
-

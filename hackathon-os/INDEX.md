@@ -3,6 +3,7 @@
 ## 🏠 Páginas Principais (Para Adicionar no Admin da Deco)
 
 ### 1. Landing Page
+
 ```
 Path: /hackathon-os
 Section: site/hackathon-os/sections/LandingPageComplete.tsx
@@ -11,6 +12,7 @@ Acesso: Público
 ```
 
 ### 2. Lista de Eventos
+
 ```
 Path: /hackathon-os/eventos
 Section: site/hackathon-os/eventos/sections/EventsListComplete.tsx
@@ -23,6 +25,7 @@ Features:
 ```
 
 ### 3. Notificações
+
 ```
 Path: /hackathon-os/notificacoes
 Section: site/hackathon-os/notificacoes/sections/NotificationsListComplete.tsx
@@ -35,6 +38,7 @@ Features:
 ```
 
 ### 4. Perfil do Usuário
+
 ```
 Path: /hackathon-os/perfil
 Section: site/hackathon-os/perfil/sections/ProfilePageComplete.tsx
@@ -47,6 +51,7 @@ Features:
 ```
 
 ### 5. Página do Evento (Hackathon AI 2024)
+
 ```
 Path: /hackathon-os/evento/evt1
 Section: site/hackathon-os/evento/sections/EventPageIntro.tsx
@@ -66,6 +71,7 @@ Tabs:
 ```
 
 ### 6. Página do Evento (GreenTech Challenge)
+
 ```
 Path: /hackathon-os/evento/evt2
 Section: site/hackathon-os/evento/sections/EventPageIntro.tsx
@@ -75,6 +81,7 @@ Acesso: Requer login e aprovação no evento
 ```
 
 ### 7. Página do Evento (FinTech Innovation)
+
 ```
 Path: /hackathon-os/evento/evt3
 Section: site/hackathon-os/evento/sections/EventPageIntro.tsx
@@ -84,6 +91,7 @@ Acesso: Requer login e aprovação no evento
 ```
 
 ### 8. Admin - Criar Evento
+
 ```
 Path: /hackathon-os/admin/evento/novo
 Section: site/hackathon-os/admin/sections/AdminEventCreate.tsx
@@ -105,6 +113,7 @@ Features:
 ## 🗂️ Arquivos de Suporte
 
 ### Data/Mock
+
 ```
 File: /hackathon-os/data/mockData.ts
 Conteúdo:
@@ -116,6 +125,7 @@ Conteúdo:
 ```
 
 ### Context/Islands
+
 ```
 File: /hackathon-os/islands/UserContext.tsx
 Descrição: Context API para gerenciar usuário logado
@@ -146,6 +156,7 @@ Features:
 ```
 
 ### Sections/Components
+
 ```
 File: /hackathon-os/sections/AppWrapper.tsx
 Descrição: Wrapper que combina UserProvider + UserSelector + MainLayout
@@ -188,6 +199,7 @@ Features:
 ## 🎯 Fluxo de Navegação Recomendado
 
 ### Fluxo 1: Visitante → Participante Aprovado
+
 1. Landing Page (`/hackathon-os`)
 2. Ver eventos (`/hackathon-os/eventos`)
 3. Clicar "Inscrever-se" → Cadastro (mock: selecionar usuário)
@@ -201,6 +213,7 @@ Features:
 11. Submeter projeto
 
 ### Fluxo 2: Organizador Cria Evento
+
 1. Selecionar "📋 Maria Organizadora"
 2. Ir para eventos (`/hackathon-os/eventos`)
 3. Clicar "Criar Novo Evento"
@@ -210,6 +223,7 @@ Features:
 7. Aprovar desafios propostos
 
 ### Fluxo 3: Admin Oversight
+
 1. Selecionar "🔧 Admin Master"
 2. Ver todos os eventos
 3. Acessar qualquer evento
@@ -220,26 +234,34 @@ Features:
 ## 📊 Dados de Teste Importantes
 
 ### Usuários e suas Inscrições:
-- **João Silva (id: 4):** Aprovado no evt1 (Hackathon AI), Pendente no evt2 (GreenTech)
+
+- **João Silva (id: 4):** Aprovado no evt1 (Hackathon AI), Pendente no evt2
+  (GreenTech)
 - **Ana Costa (id: 5):** Aprovada no evt1 e evt2
 - **Pedro Santos (id: 6):** Pendente no evt1
 
 ### Times Criados:
-- **AI Pioneers:** João Silva (líder) + Ana Costa | Evento: evt1 | Desafio: Healthcare AI
-- **Green Warriors:** Ana Costa (líder) | Evento: evt2 | Desafio: Energia Renovável
+
+- **AI Pioneers:** João Silva (líder) + Ana Costa | Evento: evt1 | Desafio:
+  Healthcare AI
+- **Green Warriors:** Ana Costa (líder) | Evento: evt2 | Desafio: Energia
+  Renovável
 
 ### Submissões:
+
 - **MediScan AI:** Time AI Pioneers | Evento evt1 | Score: 85
 
 ## 🎨 Customização Futura
 
 ### Para adicionar novo tipo de página:
+
 1. Criar section em `/hackathon-os/[pasta]/sections/[NomePage].tsx`
 2. Criar wrapper em `/hackathon-os/[pasta]/sections/[NomePage]Complete.tsx`
 3. Usar `AppWrapper` com `currentPage` apropriado
 4. Adicionar rota no admin da deco
 
 ### Para adicionar nova funcionalidade:
+
 1. Adicionar dados em `/hackathon-os/data/mockData.ts`
 2. Criar componente/section
 3. Integrar com UserContext se necessário
@@ -247,8 +269,7 @@ Features:
 
 ---
 
-**Total de Páginas Criadas:** 8 principais + componentes auxiliares
-**Total de Arquivos:** 18 arquivos TypeScript/TSX
-**Linhas de Código:** ~3.500+ linhas
+**Total de Páginas Criadas:** 8 principais + componentes auxiliares **Total de
+Arquivos:** 18 arquivos TypeScript/TSX **Linhas de Código:** ~3.500+ linhas
 
 🚀 Sistema completo e navegável para demonstração do Hackathon OS!

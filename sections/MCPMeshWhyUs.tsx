@@ -126,7 +126,7 @@ export default function MCPMeshWhyUs({
                   }
                 });
               },
-              { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
+              { threshold: 0.1, rootMargin: "0px 0px -50px 0px" },
             );
 
             elements.forEach((el) => {
@@ -145,7 +145,7 @@ export default function MCPMeshWhyUs({
         dangerouslySetInnerHTML={{
           __html: useScript((sectionId: string) => {
             const canvas = document.getElementById(
-              `dither-canvas-${sectionId}`
+              `dither-canvas-${sectionId}`,
             ) as HTMLCanvasElement;
 
             if (!canvas) return;
@@ -184,7 +184,10 @@ export default function MCPMeshWhyUs({
 
               ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-              const imageData = ctx.createImageData(canvas.width, canvas.height);
+              const imageData = ctx.createImageData(
+                canvas.width,
+                canvas.height,
+              );
               const data = imageData.data;
 
               for (let y = 0; y < canvas.height; y += cellSize) {
@@ -195,17 +198,19 @@ export default function MCPMeshWhyUs({
                   // Wave patterns - slower and more subtle for background
                   const waveBase = Math.sin(nx * 3 + time * 0.0002) * 0.12;
                   const waveSecond = Math.cos(ny * 5 + time * 0.00015) * 0.08;
-                  const waveThird = Math.sin((nx + ny) * 2 + time * 0.0001) * 0.06;
+                  const waveThird = Math.sin((nx + ny) * 2 + time * 0.0001) *
+                    0.06;
 
                   // Radial gradient from center
                   const centerX = 0.5;
                   const centerY = 0.5;
                   const distFromCenter = Math.sqrt(
-                    Math.pow(nx - centerX, 2) + Math.pow(ny - centerY, 2)
+                    Math.pow(nx - centerX, 2) + Math.pow(ny - centerY, 2),
                   );
                   const radialGradient = Math.min(distFromCenter * 1.5, 1);
 
-                  let intensity = 0.15 + (radialGradient * 0.25) + waveBase + waveSecond + waveThird;
+                  let intensity = 0.15 + (radialGradient * 0.25) + waveBase +
+                    waveSecond + waveThird;
 
                   const noise = (Math.random() - 0.5) * 0.02;
                   intensity += noise;
@@ -222,9 +227,18 @@ export default function MCPMeshWhyUs({
                   const g = ditherResult ? 0x25 : 0x19;
                   const b = ditherResult ? 0x24 : 0x17;
 
-                  for (let dy = 0; dy < cellSize && y + dy < canvas.height; dy++) {
-                    for (let dx = 0; dx < cellSize && x + dx < canvas.width; dx++) {
-                      const pixelIndex = ((y + dy) * canvas.width + (x + dx)) * 4;
+                  for (
+                    let dy = 0;
+                    dy < cellSize && y + dy < canvas.height;
+                    dy++
+                  ) {
+                    for (
+                      let dx = 0;
+                      dx < cellSize && x + dx < canvas.width;
+                      dx++
+                    ) {
+                      const pixelIndex = ((y + dy) * canvas.width + (x + dx)) *
+                        4;
                       data[pixelIndex] = r;
                       data[pixelIndex + 1] = g;
                       data[pixelIndex + 2] = b;

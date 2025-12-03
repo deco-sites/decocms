@@ -295,11 +295,13 @@
 ## 🎭 Personas e Jornadas
 
 ### 👤 Visitante (Não-logado)
+
 ```
 Landing → Explorar Eventos → Ver lista (só abertos) → Tentar inscrever → Redirecionar p/ cadastro
 ```
 
 ### 👨‍💻 Participante Novo (Pedro Santos)
+
 ```
 Login → Lista de Eventos → Inscrever em Hackathon AI → Status: Pendente
 → Ver Notificação "Inscrição Pendente"
@@ -307,6 +309,7 @@ Login → Lista de Eventos → Inscrever em Hackathon AI → Status: Pendente
 ```
 
 ### 👨‍💻 Participante Aprovado (João Silva)
+
 ```
 Login → Ver notificação "Aprovado!" → Lista de Eventos → "Acessar Evento"
 → Navegar tabs → Times (já está em "AI Pioneers")
@@ -315,6 +318,7 @@ Login → Ver notificação "Aprovado!" → Lista de Eventos → "Acessar Evento
 ```
 
 ### 📋 Organizador (Maria)
+
 ```
 Login → Lista de Eventos → "Criar Novo Evento"
 → Preencher formulário completo → Criar
@@ -324,6 +328,7 @@ Login → Lista de Eventos → "Criar Novo Evento"
 ```
 
 ### 🔧 Admin (Admin Master)
+
 ```
 Login → Acesso total a tudo
 → Criar eventos → Ver listas privadas
@@ -331,6 +336,7 @@ Login → Acesso total a tudo
 ```
 
 ### ⚖️ Jurado (Carlos/Fernanda)
+
 ```
 Login → Ver eventos onde é jurado
 → Entrar no evento → Tab Submissões
@@ -372,5 +378,5 @@ Desktop (>1024px):
 
 ---
 
-**🎉 Sistema Completo e Navegável!**
-Use este guia visual para entender o fluxo e apresentar o sistema.
+**🎉 Sistema Completo e Navegável!** Use este guia visual para entender o fluxo
+e apresentar o sistema.
