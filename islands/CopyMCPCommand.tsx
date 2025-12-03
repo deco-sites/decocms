@@ -60,25 +60,40 @@ export default function CopyMCPCommand({
       onClick={handleCopy}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => !copied && setHovered(false)}
-      class={`px-4 py-3 bg-dc-200 rounded-xl inline-flex flex-col items-center justify-center gap-1 transition-all duration-300 ${
+      class={`px-4 py-3 bg-dc-200 rounded-xl inline-flex transition-all duration-300 ${
         disabled ? "cursor-default" : "hover:bg-dc-300 cursor-pointer"
       } ${className}`}
     >
-      <span class="text-dc-700 text-base font-medium leading-5 font-mono">
-        {command}
-      </span>
-      <span
-        class={`text-xs font-medium transition-all duration-300 ${
-          copied ? "text-primary-dark" : "text-dc-400"
-        }`}
-        style={{
-          maxHeight: showLabel ? "20px" : "0px",
-          opacity: showLabel ? 1 : 0,
-          overflow: "hidden",
-        }}
-      >
-        {getLabelText()}
-      </span>
+      {/* Mobile layout (vertical) */}
+      <div class="flex flex-col items-center gap-1 md:hidden">
+        <span class="text-dc-700 text-base font-medium leading-5 font-mono">
+          {command}
+        </span>
+        {disabled && isMobile && (
+          <span class="text-xs font-medium text-dc-400">
+            Coming soon
+          </span>
+        )}
+      </div>
+
+      {/* Desktop layout (horizontal with animation) */}
+      <div class="hidden md:flex items-center gap-0">
+        <span class="text-dc-700 text-base font-medium leading-5 font-mono">
+          {command}
+        </span>
+        <span
+          class={`text-sm font-medium overflow-hidden whitespace-nowrap transition-all duration-300 ${
+            copied ? "text-primary-dark" : "text-dc-500"
+          }`}
+          style={{
+            maxWidth: showLabel ? "120px" : "0px",
+            opacity: showLabel ? 1 : 0,
+            marginLeft: showLabel ? "12px" : "0px",
+          }}
+        >
+          {getLabelText()}
+        </span>
+      </div>
     </button>
   );
 }
