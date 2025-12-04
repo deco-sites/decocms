@@ -1,4 +1,5 @@
 import { useSignal } from "@preact/signals";
+import { useEffect, useRef } from "preact/hooks";
 
 interface Feature {
   id: number;
@@ -8,24 +9,30 @@ interface Feature {
   upvotes: number;
   category?: string;
   created_at: string;
+  isPriority?: boolean;
 }
 
 interface Props {
   features: Feature[];
+  onOpenModal?: () => void;
 }
 
 const ITEMS_PER_PAGE = 10;
 
+const STATUS_KEYS = ["backlog", "in_progress", "under_review", "released"] as const;
+
 const statusConfig: Record<string, { label: string; aliases: string[] }> = {
-  all: { label: "All", aliases: [] },
-  planned: { label: "Planned", aliases: ["planned", "Planned"] },
+  backlog: { label: "Backlog", aliases: ["backlog", "Backlog", "priority", "Priority"] },
   in_progress: { label: "In Progress", aliases: ["in_progress", "In Progress", "in progress"] },
   under_review: { label: "Under Review", aliases: ["under_review", "Under Review", "under review"] },
-  released: { label: "Released", aliases: ["released", "Released"] },
+  released: { label: "Released", aliases: ["released", "Released", "done", "Done"] },
 };
 
 function normalizeStatus(status: string): string {
   const normalized = status.toLowerCase().replace(/\s+/g, '_');
+  // Map priority and backlog to the same category
+  if (normalized === "priority") return "backlog";
+  if (normalized === "done") return "released";
   return normalized;
 }
 
@@ -48,94 +55,57 @@ function formatRelativeTime(dateString: string): string {
   } else {
     return date.toLocaleDateString('en-US', { 
       month: 'long', 
-      day: 'numeric', 
+      day: 'numeric',
       year: 'numeric' 
     });
   }
 }
 
-const ChevronUpIcon = () => (
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <polyline points="18 15 12 9 6 15"></polyline>
-  </svg>
-);
-
-// UpvoteButton chama ACTION via fetch (padrão correto para Islands)
-function UpvoteButton({ featureId, initialUpvotes }: { featureId: number; initialUpvotes: number }) {
-  const upvotes = useSignal(initialUpvotes);
-  const isUpvoting = useSignal(false);
-  const hasUpvoted = useSignal(false);
-
-  const handleUpvote = async () => {
-    if (isUpvoting.value || hasUpvoted.value) return;
-    
-    isUpvoting.value = true;
-    
-    try {
-      console.log("🗳️ [ISLAND] Upvoting feature", featureId);
-      
-      // CORRIGIDO: Island chama ACTION via fetch
-      const response = await fetch('/live/invoke/site/actions/upvoteFeature.ts', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ featureId }),
-      });
-      
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      
-      const result = await response.json();
-      console.log("✅ [ISLAND] Upvote result:", result);
-      
-      // Atualiza com o novo valor retornado pela action
-      if (result?.success && result?.upvotes !== undefined) {
-        upvotes.value = result.upvotes;
-        hasUpvoted.value = true;
-        
-        // Remove o feedback visual após 2 segundos
-        setTimeout(() => {
-          hasUpvoted.value = false;
-        }, 2000);
-      }
-    } catch (error) {
-      console.error("❌ [ISLAND ERROR] Error upvoting:", error);
-    } finally {
-      isUpvoting.value = false;
-    }
-  };
-
-  return (
-    <button
-      onClick={handleUpvote}
-      disabled={isUpvoting.value}
-      class={`flex-shrink-0 flex flex-col items-center gap-1 px-3 py-2 rounded-lg border transition-all cursor-pointer ${
-        hasUpvoted.value 
-          ? 'border-blue-400 bg-blue-50 text-blue-600'
-          : 'border-gray-200 hover:border-gray-300 hover:bg-gray-50'
-      } ${isUpvoting.value ? 'opacity-50 cursor-wait' : ''}`}
-      title={hasUpvoted.value ? 'Thanks for voting!' : 'Upvote this feature'}
-    >
-      <ChevronUpIcon />
-      <span class="text-sm font-medium">{upvotes.value}</span>
-    </button>
-  );
-}
-
-export default function RoadmapFiltered({ features }: Props) {
-  const selectedFilter = useSignal<string>("all");
+export default function RoadmapFiltered({ features, onOpenModal }: Props) {
+  const selectedFilter = useSignal<string>("backlog");
   const currentPage = useSignal<number>(1);
+  const indicatorStyle = useSignal<{ left: number; width: number }>({ left: 0, width: 0 });
+  const tabsContainerRef = useRef<HTMLDivElement>(null);
+  const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
 
   const filteredFeatures = features
     .filter((f) => {
-      if (selectedFilter.value === "all") return true;
       return normalizeStatus(f.status) === selectedFilter.value;
     })
-    .sort((a, b) => b.upvotes - a.upvotes);
+    .sort((a, b) => {
+      // Priority items first
+      if (a.isPriority && !b.isPriority) return -1;
+      if (!a.isPriority && b.isPriority) return 1;
+      // Then sort by date (newest first)
+      return new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
+    });
 
   const totalPages = Math.ceil(filteredFeatures.length / ITEMS_PER_PAGE);
   const startIndex = (currentPage.value - 1) * ITEMS_PER_PAGE;
   const paginatedFeatures = filteredFeatures.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+
+  // Update indicator position when selected filter changes
+  useEffect(() => {
+    const updateIndicator = () => {
+      const activeIndex = STATUS_KEYS.indexOf(selectedFilter.value as typeof STATUS_KEYS[number]);
+      const activeTab = tabRefs.current[activeIndex];
+      const container = tabsContainerRef.current;
+      
+      if (activeTab && container) {
+        const containerRect = container.getBoundingClientRect();
+        const tabRect = activeTab.getBoundingClientRect();
+        indicatorStyle.value = {
+          left: tabRect.left - containerRect.left,
+          width: tabRect.width,
+        };
+      }
+    };
+
+    updateIndicator();
+    // Also update on window resize
+    globalThis.addEventListener('resize', updateIndicator);
+    return () => globalThis.removeEventListener('resize', updateIndicator);
+  }, [selectedFilter.value]);
 
   const handleFilterChange = (filter: string) => {
     selectedFilter.value = filter;
@@ -149,10 +119,10 @@ export default function RoadmapFiltered({ features }: Props) {
 
   const getStatusBadge = (status: string) => {
     const normalizedStatus = normalizeStatus(status);
-    const config = statusConfig[normalizedStatus] || statusConfig.planned;
+    const config = statusConfig[normalizedStatus] || statusConfig.backlog;
     return (
       <span class={`px-3 py-1 rounded-full text-xs font-medium whitespace-nowrap ${
-        normalizedStatus === "planned" ? "bg-blue-100 text-blue-700" :
+        normalizedStatus === "backlog" ? "bg-blue-100 text-blue-700" :
         normalizedStatus === "in_progress" ? "bg-yellow-100 text-yellow-700" :
         normalizedStatus === "under_review" ? "bg-purple-100 text-purple-700" :
         "bg-green-100 text-green-700"
@@ -162,34 +132,72 @@ export default function RoadmapFiltered({ features }: Props) {
     );
   };
 
+  const getPriorityBadge = (isPriority: boolean) => {
+    if (!isPriority) return null;
+    return (
+      <span class="px-2 py-1 rounded-full text-xs font-semibold bg-red-100 text-red-700 border border-red-200 flex items-center gap-1">
+        <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z" clip-rule="evenodd" />
+        </svg>
+        Priority
+      </span>
+    );
+  };
+
   return (
     <div class="w-full max-w-6xl mx-auto">
       {/* Switchbar */}
-      <div class="flex gap-6 mb-8 border-b border-gray-200">
-        {Object.entries(statusConfig).map(([key, config]) => {
-          const count = key === "all" 
-            ? features.length 
-            : features.filter(f => normalizeStatus(f.status) === key).length;
+      <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 mb-8">
+        <div class="relative" ref={tabsContainerRef}>
+          {/* Tabs */}
+          <div class="flex gap-4 sm:gap-6 overflow-x-auto">
+            {STATUS_KEYS.map((key, index) => {
+              const config = statusConfig[key];
+              const isActive = selectedFilter.value === key;
+              
+              return (
+                <button
+                  key={key}
+                  ref={(el) => { tabRefs.current[index] = el; }}
+                  onClick={() => handleFilterChange(key)}
+                  class={`pb-3 font-medium transition-colors duration-200 whitespace-nowrap text-sm sm:text-base ${
+                    isActive
+                      ? "text-primary-dark"
+                      : "text-gray-500 hover:text-gray-700"
+                  }`}
+                >
+                  {config.label}
+                </button>
+              );
+            })}
+          </div>
           
-          const isActive = selectedFilter.value === key;
+          {/* Border line */}
+          <div class="absolute bottom-0 left-0 right-0 h-[1px] bg-gray-200" />
           
-          return (
-            <button
-              key={key}
-              onClick={() => handleFilterChange(key)}
-              class={`pb-3 font-medium transition-all duration-200 relative ${
-                isActive
-                  ? "text-primary-dark"
-                  : "text-gray-500 hover:text-gray-700"
-              }`}
-            >
-              {config.label}
-              {isActive && (
-                <div class="absolute bottom-0 left-0 right-0 h-0.5 bg-primary-dark"></div>
-              )}
-            </button>
-          );
-        })}
+          {/* Sliding indicator */}
+          <div
+            class="absolute bottom-0 h-[2px] bg-primary-dark transition-all duration-300 ease-in-out"
+            style={{
+              left: `${indicatorStyle.value.left}px`,
+              width: `${indicatorStyle.value.width}px`,
+            }}
+          />
+        </div>
+        
+        {/* Submit Feature Request Button */}
+        {onOpenModal && (
+          <button
+            onClick={onOpenModal}
+            class="flex items-center justify-center gap-2 px-4 py-2 bg-primary-dark text-primary-light font-medium rounded-lg hover:bg-primary-dark/90 transition-colors text-sm w-full sm:w-auto"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+            Submit Feature Request
+          </button>
+        )}
       </div>
 
       {/* Cards Container */}
@@ -205,22 +213,19 @@ export default function RoadmapFiltered({ features }: Props) {
                 key={feature.id}
                 class="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-200 p-6 border border-gray-100"
               >
-                <div class="flex items-start gap-4">
-                  <UpvoteButton featureId={feature.id} initialUpvotes={feature.upvotes} />
-
-                  <div class="flex-1">
-                    <div class="flex items-start justify-between gap-4 mb-2">
-                      <h3 class="text-xl font-semibold text-gray-900">{feature.title}</h3>
-                      {getStatusBadge(feature.status)}
-                    </div>
-                    <p class="text-gray-600 mb-3">{feature.description}</p>
-                    <div class="flex items-center gap-4 text-sm text-gray-500">
-                      {feature.category && (
-                        <span class="px-2 py-1 bg-gray-100 rounded-md">{feature.category}</span>
-                      )}
-                      <span>{formatRelativeTime(feature.created_at)}</span>
-                    </div>
+                <div class="flex items-start justify-between gap-4 mb-2">
+                  <h3 class="text-xl font-semibold text-gray-900">{feature.title}</h3>
+                  <div class="flex items-center gap-2 flex-shrink-0">
+                    {getPriorityBadge(feature.isPriority || false)}
+                    {getStatusBadge(feature.status)}
                   </div>
+                </div>
+                <p class="text-gray-600 mb-3">{feature.description}</p>
+                <div class="flex items-center gap-4 text-sm text-gray-500">
+                  {feature.category && (
+                    <span class="px-2 py-1 bg-gray-100 rounded-md">{feature.category}</span>
+                  )}
+                  <span>{formatRelativeTime(feature.created_at)}</span>
                 </div>
               </div>
             ))}
@@ -246,7 +251,7 @@ export default function RoadmapFiltered({ features }: Props) {
                 onClick={() => handlePageChange(page)}
                 class={`w-10 h-10 rounded-lg font-medium transition-all duration-200 ${
                   currentPage.value === page
-                    ? "bg-blue-500 text-white shadow-md"
+                    ? "bg-primary-dark text-primary-light shadow-md"
                     : "bg-white hover:bg-gray-50 text-gray-700 border border-gray-200"
                 }`}
               >

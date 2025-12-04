@@ -1,16 +1,26 @@
 import { useState } from "preact/hooks";
 import { invoke } from "../runtime.ts";
+import RoadmapFiltered from "./RoadmapFiltered.tsx";
 
-export interface Props {
-  buttonText?: string;
-  buttonClassName?: string;
+interface Feature {
+  id: number;
+  title: string;
+  description: string;
+  status: string;
+  upvotes: number;
+  category?: string;
+  created_at: string;
+  isPriority?: boolean;
+}
+
+interface Props {
+  features: Feature[];
   modalTitle?: string;
   successMessage?: string;
 }
 
-export default function SuggestFeatureModal({
-  buttonText = "Submit Feature Request",
-  buttonClassName = "inline-flex items-center gap-2 px-6 py-3 bg-primary-dark text-primary-light font-medium rounded-lg hover:bg-primary-dark/90 transition-colors",
+export default function RoadmapWithModal({
+  features,
   modalTitle = "Request a Feature",
   successMessage = "Thank you! Your feature request has been submitted successfully.",
 }: Props) {
@@ -30,7 +40,6 @@ export default function SuggestFeatureModal({
       const description = formData.get("description")?.toString() || "";
       const email = formData.get("email")?.toString() || "";
 
-      // Chama a tool SUBMIT_FEATURE_SUGGESTION que salva na database
       const response = await invoke["site/actions/submitFeatureSuggestion"]({
         title,
         description,
@@ -62,27 +71,16 @@ export default function SuggestFeatureModal({
 
   return (
     <>
-      <button
-        onClick={() => setIsOpen(true)}
-        class={buttonClassName}
-        type="button"
-      >
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <line x1="12" y1="5" x2="12" y2="19"></line>
-          <line x1="5" y1="12" x2="19" y2="12"></line>
-        </svg>
-        {buttonText}
-      </button>
+      <RoadmapFiltered features={features} onOpenModal={() => setIsOpen(true)} />
 
       {isOpen && (
         <div
-          class="fixed inset-0 z-50 flex bg-black/50 backdrop-blur-sm animate-in fade-in duration-200"
-          style={{ padding: "100px 32px 100px 32px" }}
+          class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm animate-in fade-in duration-200 p-4"
           onClick={handleClose}
         >
           <div
-            class="bg-white rounded-2xl shadow-2xl w-full mx-auto flex flex-col animate-in zoom-in-95 duration-200"
-            style={{ maxWidth: "500px", maxHeight: "calc(100vh - 200px)", alignSelf: "flex-start" }}
+            class="bg-white rounded-2xl shadow-2xl w-full flex flex-col animate-in zoom-in-95 duration-200"
+            style={{ maxWidth: "500px", maxHeight: "calc(100vh - 100px)" }}
             onClick={(e) => e.stopPropagation()}
           >
             {/* Header */}
@@ -184,3 +182,4 @@ export default function SuggestFeatureModal({
     </>
   );
 }
+
