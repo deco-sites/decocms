@@ -1,0 +1,25 @@
+{
+  "__resolveType": "website/pages/Page.tsx",
+  "name": "Roadmap",
+  "path": "/roadmap",
+  "sections": [
+    {
+      "__resolveType": "Header-decocms"
+    },
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "site/sections/RoadmapPage.tsx"
+      }
+    },
+    {
+      "__resolveType": "Footer"
+    }
+  ],
+  "seo": {
+    "__resolveType": "website/sections/Seo/SeoV2.tsx",
+    "title": "Roadmap - deco CMS",
+    "description": "Vote for features and help shape the future of deco CMS",
+    "canonical": "/roadmap"
+  }
+}

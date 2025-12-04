@@ -46,7 +46,7 @@ export default defineApp(async (_req, ctx) => {
 
         {/* Tailwind v3 CSS file */}
         <link
-          href={asset(`/styles.css?revision=${revision}`)}
+          href={asset(`/tailwind.css?revision=${revision}`)}
           rel="stylesheet"
         />
 

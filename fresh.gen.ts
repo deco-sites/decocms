@@ -19,10 +19,14 @@ import * as $GitHubStars from "./islands/GitHubStars.tsx";
 import * as $HeroInteractiveClient from "./islands/HeroInteractiveClient.tsx";
 import * as $PostHogProvider from "./islands/PostHogProvider.tsx";
 import * as $ProjectGrid from "./islands/ProjectGrid.tsx";
+import * as $RoadmapFeaturesList from "./islands/RoadmapFeaturesList.tsx";
+import * as $RoadmapFiltered from "./islands/RoadmapFiltered.tsx";
+import * as $RoadmapIsland from "./islands/RoadmapIsland.tsx";
 import * as $ScrollToButton from "./islands/ScrollToButton.tsx";
 import * as $SendFormNewsletter from "./islands/SendFormNewsletter.tsx";
-import * as $TrackedLink from "./islands/TrackedLink.tsx";
+import * as $SuggestFeatureModal from "./islands/SuggestFeatureModal.tsx";
 import * as $UnicornStudioBackground from "./islands/UnicornStudioBackground.tsx";
+import * as $UpvoteButton from "./islands/UpvoteButton.tsx";
 import type { Manifest } from "$fresh/server.ts";
 
 const manifest = {
@@ -46,10 +50,14 @@ const manifest = {
     "./islands/HeroInteractiveClient.tsx": $HeroInteractiveClient,
     "./islands/PostHogProvider.tsx": $PostHogProvider,
     "./islands/ProjectGrid.tsx": $ProjectGrid,
+    "./islands/RoadmapFeaturesList.tsx": $RoadmapFeaturesList,
+    "./islands/RoadmapFiltered.tsx": $RoadmapFiltered,
+    "./islands/RoadmapIsland.tsx": $RoadmapIsland,
     "./islands/ScrollToButton.tsx": $ScrollToButton,
     "./islands/SendFormNewsletter.tsx": $SendFormNewsletter,
-    "./islands/TrackedLink.tsx": $TrackedLink,
+    "./islands/SuggestFeatureModal.tsx": $SuggestFeatureModal,
     "./islands/UnicornStudioBackground.tsx": $UnicornStudioBackground,
+    "./islands/UpvoteButton.tsx": $UpvoteButton,
   },
   baseUrl: import.meta.url,
 } satisfies Manifest;

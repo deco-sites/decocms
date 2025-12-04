@@ -19,8 +19,10 @@ export interface SiteProps extends Props {
   airtableApiKey?: Secret;
   /** @title Airtable Base ID */
   airtableBaseId?: string;
-  /** @title Airtable Table ID */
+  /** @title Airtable Table ID (Hackathon) */
   airtableTableId?: string;
+  /** @title Airtable Roadmap Table ID */
+  airtableRoadmapTableId?: string;
 }
 
 export default function Site(state: SiteProps): App<Manifest, SiteProps, [
