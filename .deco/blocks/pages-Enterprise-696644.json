@@ -6,6 +6,151 @@
       "__resolveType": "Header-decocms"
     },
     {
+      "__resolveType": "site/sections/EnterpriseHero.tsx",
+      "badge": "Ahead of the curve: Built on new MCP standards",
+      "titleLine1": "Govern AI at scale",
+      "titleLine2": "without slowing down.",
+      "subtitle": "Empower every team to build production AI apps with enterprise security, observability, and control. Deploy anywhere. Own everything.",
+      "primaryButtonText": "Schedule Enterprise Demo",
+      "primaryButtonUrl": "https://form.typeform.com/to/LxKZbN9N?typeform-source=www.decocms.com",
+      "trustedByText": "Trusted by forward-thinking engineering teams",
+      "partnerLogos": [
+        "https://assets.decocache.com/decocms/c2926b2f-4d1f-4105-a1bc-4f3b9c735c76/Live-Mode.svg",
+        "https://assets.decocache.com/decocms/6cd6e7b3-a2d0-473a-b80c-a2692a0c563e/leroy.svg",
+        "https://assets.decocache.com/decocms/c0f75585-df9d-4e00-90a4-e4df23ce5596/farm-rio.svg",
+        "https://assets.decocache.com/decocms/b6a9b09d-2992-49d3-a641-5c5fa16f1d15/gupy_logo.svg"
+      ]
+    },
+    {
+      "__resolveType": "site/sections/EnterprisePainPoints.tsx",
+      "title": "Your teams are building AI.",
+      "titleHighlight": "Are you governing it?",
+      "description": "Business teams are prototyping in Lovable, n8n, and ChatGPT—but prototypes don't ship. Engineering becomes a bottleneck. Shadow IT spreads. Compliance gets nervous. You're stuck choosing between innovation velocity and control.",
+      "painPoints": [
+        {
+          "title": "Shadow IT Chaos",
+          "description": "Ungoverned tools leading to data leaks."
+        },
+        {
+          "title": "Prototypes Never Ship",
+          "description": "No auth, no audit trails, no prod infra."
+        },
+        {
+          "title": "Cost Surprises",
+          "description": "Runaway token usage and fragmented billing."
+        }
+      ]
+    },
+    {
+      "__resolveType": "site/sections/MCPMeshBenefits.tsx",
+      "title": "From Chaos to Control",
+      "subtitle": "What your organization gains by adopting MCP Mesh.",
+      "benefits": [
+        {
+          "title": "Predictability & FinOps",
+          "description": "Turn the \"black box\" of AI costs into a clear dashboard. Allocate budgets per team and avoid bill shocks from OpenAI/Anthropic."
+        },
+        {
+          "title": "Accelerated Procurement",
+          "description": "Once the Mesh is homologated, any tool inside is pre-approved. Developers gain speed without asking for permission for every new API."
+        },
+        {
+          "title": "Output Quality",
+          "description": "Managing context with precision increases generation quality. Deliver the right data, with the right limits, to the right agents."
+        },
+        {
+          "title": "Visibility & Alignment",
+          "description": "Centralize all AI contracts. Get macro visibility into how your organization is using autonomous agents."
+        }
+      ]
+    },
+    {
+      "__resolveType": "site/sections/EnterpriseComparison.tsx",
+      "title": "Why DecoCMS vs. Alternatives",
+      "subtitle": "Don't settle for prototypes or internal-only tools.",
+      "productName": "DecoCMS",
+      "competitor1Name": "Lovable + n8n",
+      "competitor2Name": "LangGraph + DIY",
+      "rows": [
+        {
+          "capability": "Full-Stack AI Apps",
+          "deco": "✅ Built-in",
+          "competitor1": "❌ Separate tools",
+          "competitor2": "❌ Agent-only"
+        },
+        {
+          "capability": "Enterprise Governance",
+          "deco": "✅ Central Control",
+          "competitor1": "❌ None",
+          "competitor2": "❌ DIY"
+        },
+        {
+          "capability": "MCP Apps (React 19)",
+          "deco": "✅ Native",
+          "competitor1": "❌ Not supported",
+          "competitor2": "❌ Build yourself"
+        },
+        {
+          "capability": "Code Execution Pattern",
+          "deco": "✅ -98.7% Token Cost",
+          "competitor1": "❌ Expensive",
+          "competitor2": "⚠️ Manual"
+        },
+        {
+          "capability": "Self-Host / BYOK",
+          "deco": "✅ Deploy Anywhere",
+          "competitor1": "❌ SaaS Only",
+          "competitor2": "✅ Yes"
+        },
+        {
+          "capability": "Vibecoding to Prod",
+          "deco": "✅ One Platform",
+          "competitor1": "⚠️ Prototypes only",
+          "competitor2": "❌ Code-heavy"
+        }
+      ]
+    },
+    {
+      "__resolveType": "site/sections/EnterpriseValueProp.tsx",
+      "title": "One platform.\nBusiness builds. Tech governs.",
+      "subtitle": "DecoCMS unifies the entire AI application lifecycle. From vibecoding to enterprise governance in a single pane of glass.",
+      "cards": [
+        {
+          "icon": "bolt",
+          "iconColor": "orange",
+          "title": "Empower AI Builders",
+          "description": "Business users create full-stack AI apps with vibecoding. No code required—just describe the tool, workflow, or dashboard you need. Get to production in days.",
+          "bulletPoints": [
+            "Natural language to App",
+            "Custom React UIs",
+            "Zero setup time"
+          ]
+        },
+        {
+          "icon": "shield",
+          "iconColor": "blue",
+          "title": "Govern the MCP Mesh",
+          "description": "Context Engineers manage centralized MCP infrastructure. Control access to data, tools, and models across all apps from a single control plane.",
+          "bulletPoints": [
+            "Policy-based Access Control",
+            "Virtualized MCPs",
+            "Full Data Sovereignty"
+          ]
+        },
+        {
+          "icon": "eye",
+          "iconColor": "purple",
+          "title": "Observe Everything",
+          "description": "Every AI interaction traced. Follow the path: User Action → Agent Call → Model Response → Cost. Real-time auditing for compliance.",
+          "bulletPoints": [
+            "User-level Traceability",
+            "Cost Attribution",
+            "SOC2-ready Logs"
+          ]
+        }
+      ]
+    },
+    {
       "__resolveType": "site/sections/FAQ.tsx",
       "title": "FAQs",
       "faqItems": [
@@ -23,7 +168,7 @@
         },
         {
           "question": "What is the Context Mesh, and why is it important?",
-          "answer": "The Context Mesh is DecoCMS’s governed layer for connecting data, tools, and models. It provides typed connectors with built-in policy routing, RBAC, observability, and spend controls — ensuring the right context is delivered safely every time."
+          "answer": "The Context Mesh is DecoCMS's governed layer for connecting data, tools, and models. It provides typed connectors with built-in policy routing, RBAC, observability, and spend controls — ensuring the right context is delivered safely every time."
         },
         {
           "question": "Does deco CMS support edge deployment?",
@@ -39,14 +184,10 @@
     },
     {
       "__resolveType": "site/sections/FinalCTA.tsx",
-      "title": "Join our thriving community of Al builders ",
+      "title": "Ready to govern AI at scale?",
       "primaryButton": {
-        "text": "Join our Discord community",
-        "url": "https://decocms.com/discord"
-      },
-      "secondaryButton": {
-        "text": "Get started building",
-        "url": "https://deco.new/"
+        "text": "Schedule Enterprise Demo",
+        "url": "#demo"
       }
     },
     {

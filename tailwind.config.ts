@@ -10,6 +10,14 @@ export default {
     "font-serif",
     "font-mono",
 
+    // Line height classes
+    "leading-[48px]",
+    "leading-[56px]",
+    "leading-[24px]",
+    "!leading-[48px]",
+    "!leading-[56px]",
+    "!leading-[24px]",
+
     // Animation classes
     "animate-spin",
 
