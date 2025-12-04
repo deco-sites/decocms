@@ -1,0 +1,459 @@
+{
+  "name": "Enterprise AI Partner",
+  "path": "/enterprise-ai-partner",
+  "sections": [
+    {
+      "__resolveType": "site/sections/AIPartnerHero.tsx",
+      "eyebrow": "For Select Executives Only",
+      "titleLine1": "Your Personal Executive OS,",
+      "titleLine2": "Built by an Elite AI Team",
+      "subtitle": "A dedicated pod of AI engineers builds and runs a custom Executive OS around how you lead — so you reclaim time and make sharper decisions.",
+      "valueProps": [
+        {
+          "text": "Done-for-you AI systems"
+        },
+        {
+          "text": "Personalized to your workflow"
+        },
+        {
+          "text": "Fully confidential"
+        },
+        {
+          "text": "Zero new tools to learn"
+        }
+      ],
+      "limitedText": "Limited to 12 executives per year",
+      "ctaButtonText": "Apply for a Private Interview",
+      "ctaButtonUrl": "https://form.typeform.com/to/LxKZbN9N",
+      "ctaSubtext": "Limited spots — designed for 12 visionary leaders"
+    },
+    {
+      "__resolveType": "site/sections/AIPartnerSocialProof.tsx",
+      "badge": "What This Program Is Designed to Achieve",
+      "outcomes": [
+        {
+          "text": "Reclaim meaningful hours every week from email, reporting, and meeting prep"
+        },
+        {
+          "text": "Shorten the time from 'question' to 'clarity' in your decision-making"
+        },
+        {
+          "text": "Reduce context switching and cognitive overload across tools and channels"
+        },
+        {
+          "text": "Turn your routine into a Personal Executive OS that runs quietly in the background"
+        }
+      ],
+      "foundingBadge": "Founding Cohort",
+      "foundingTitle": "This is the first version of the Executive AI Partner Program.",
+      "foundingDescription": "We're inviting a small group of executives to be our founding cohort. You'll work directly with the core team behind the program, influence the playbook and evolution of the Personal Executive OS, and get white-glove, high-touch implementation built around your way of leading."
+    },
+    {
+      "__resolveType": "site/sections/AIPartnerWhoThisIsFor.tsx",
+      "badge": "Who This Is For",
+      "titleLine1": "For Executives Who Must Lead AI Transformation —",
+      "titleLine2": "Without Becoming AI Experts.",
+      "criteriaIntro": "This is for you if you are:",
+      "criteria": [
+        {
+          "text": "A C-level or P&L-owner in a complex business"
+        },
+        {
+          "text": "Expected to 'make AI happen' for your company"
+        },
+        {
+          "text": "Operating with a 120% calendar and constant context-switching"
+        },
+        {
+          "text": "With no time for experimentation, hype, or new tools to learn"
+        }
+      ],
+      "conclusionTitle": "This program exists for you.",
+      "conclusionDescription": "Because your AI transformation must start with <em>you</em> — your routine, your mental models, your decisions — not with a generic dashboard or an off-the-shelf assistant."
+    },
+    {
+      "__resolveType": "site/sections/AIPartnerTheShift.tsx",
+      "badge": "The Shift",
+      "title": "You already operate at the highest level.",
+      "subtitle": "AI is the next multiplier — but only if it adapts to you.",
+      "realityTitle": "The Reality",
+      "realityItems": [
+        {
+          "text": "You don't need another \"AI app.\""
+        },
+        {
+          "text": "You don't need to become a prompt engineer."
+        },
+        {
+          "text": "You don't need conferences, newsletters, or 200 articles to \"keep up.\""
+        }
+      ],
+      "needsTitle": "What You Actually Need",
+      "needsItems": [
+        {
+          "text": "A Personal Executive OS built specifically for your role"
+        },
+        {
+          "text": "An embedded team that understands how you think and decide"
+        },
+        {
+          "text": "Confidential access to your tools, files, and context"
+        },
+        {
+          "text": "Custom automations aligned with your decision-making style"
+        },
+        {
+          "text": "A second brain that dramatically compresses your cognitive workload"
+        }
+      ],
+      "bottomLine1": "Anything repetitive or cognitively heavy →",
+      "bottomLine1Highlight": "we automate.",
+      "bottomLine2": "Anything strategic →",
+      "bottomLine2Highlight": "we augment with intelligence."
+    },
+    {
+      "__resolveType": "site/sections/AIPartnerProgramOverview.tsx",
+      "badge": "The Program",
+      "titleLine1": "The Executive AI",
+      "titleLine2": "Partner Program",
+      "taglineLine1": "Your Personal AI Transformation Team.",
+      "taglineLine2": "Your Custom Personal Executive OS.",
+      "taglineLine3": "Built Completely Around You.",
+      "notThisLabel": "This is not:",
+      "notThings": [
+        {
+          "text": "Not consulting."
+        },
+        {
+          "text": "Not coaching."
+        },
+        {
+          "text": "Not a SaaS subscription."
+        }
+      ],
+      "thisIsLabel": "This Is",
+      "thisIsDescription": "An embedded elite team of AI engineers + automation architects,",
+      "thisIsHighlight": "dedicated exclusively to your workflow, your systems, your company.",
+      "capabilities": [
+        {
+          "text": "We integrate with every system you use,"
+        },
+        {
+          "text": "build AI agents that work exactly like you think,"
+        },
+        {
+          "text": "and create custom tools no vendor will ever build for your role."
+        }
+      ],
+      "bottomLine1": "Your job is to",
+      "bottomLine1Highlight": "show up",
+      "bottomLine2": "Our job is to automate everything else."
+    },
+    {
+      "__resolveType": "site/sections/AIPartnerValueProposition.tsx",
+      "badge": "The Value",
+      "title": "We turn your daily routine into an automated system that works for you, learns from you, and amplifies your leadership.",
+      "automationsIntro": "Examples of what we automate or enhance:",
+      "automations": [
+        {
+          "text": "Email triage"
+        },
+        {
+          "text": "Decision-making process"
+        },
+        {
+          "text": "Competitor intelligence"
+        },
+        {
+          "text": "Content creation"
+        },
+        {
+          "text": "Contract review"
+        },
+        {
+          "text": "Investor communications"
+        },
+        {
+          "text": "Internal alignment"
+        },
+        {
+          "text": "Meeting prep & debrief"
+        },
+        {
+          "text": "Financial digestion"
+        },
+        {
+          "text": "Strategic analysis"
+        },
+        {
+          "text": "Follow-ups"
+        },
+        {
+          "text": "Board narrative"
+        },
+        {
+          "text": "KPIs understanding"
+        },
+        {
+          "text": "Slack / Teams overload"
+        },
+        {
+          "text": "Personal operating rhythms"
+        }
+      ],
+      "bottomLine1": "Anything repetitive or cognitively heavy →",
+      "bottomLine1Highlight": "we automate.",
+      "bottomLine2": "Anything strategic →",
+      "bottomLine2Highlight": "we augment with intelligence."
+    },
+    {
+      "__resolveType": "site/sections/AIPartnerProcessSteps.tsx",
+      "badge": "How We Work",
+      "title": "The Process",
+      "steps": [
+        {
+          "number": "01",
+          "title": "Executive Deep Dive",
+          "timeline": "Weeks 1–2",
+          "description": "We plug into your entire ecosystem:",
+          "details": [
+            {
+              "text": "Your calendar"
+            },
+            {
+              "text": "Your inbox"
+            },
+            {
+              "text": "Your Slack / Teams"
+            },
+            {
+              "text": "Your CRM"
+            },
+            {
+              "text": "Your file systems"
+            },
+            {
+              "text": "Your KPIs"
+            },
+            {
+              "text": "Your decision logs"
+            },
+            {
+              "text": "Your written communication"
+            },
+            {
+              "text": "Your preferred frameworks"
+            },
+            {
+              "text": "Your leadership rhythm"
+            }
+          ],
+          "highlight": "You don't change how you work. We adapt to you."
+        },
+        {
+          "number": "02",
+          "title": "Build Your Personal Executive OS",
+          "timeline": "Weeks 2–6",
+          "description": "We unify your:",
+          "details": [
+            {
+              "text": "Data"
+            },
+            {
+              "text": "Tools"
+            },
+            {
+              "text": "Documents"
+            },
+            {
+              "text": "Meetings"
+            },
+            {
+              "text": "Context"
+            },
+            {
+              "text": "History"
+            },
+            {
+              "text": "Insights"
+            }
+          ],
+          "highlight": "All in a secure, private, auditable system designed around your role."
+        },
+        {
+          "number": "03",
+          "title": "Build Your Custom AI Agents",
+          "timeline": "Weeks 4–12",
+          "description": "You get custom-built agents — like specialized chiefs of staff:",
+          "details": [
+            {
+              "text": "Executive Briefing Agent"
+            },
+            {
+              "text": "Inbox Triage Agent"
+            },
+            {
+              "text": "Competitor Radar"
+            },
+            {
+              "text": "Board Deck Generator"
+            },
+            {
+              "text": "Contract Analyzer"
+            },
+            {
+              "text": "Decision Simulator"
+            },
+            {
+              "text": "People & Culture Monitor"
+            },
+            {
+              "text": "Strategy Summarizer"
+            },
+            {
+              "text": "\"State of the Company\" Agent"
+            }
+          ],
+          "highlight": "Each one tuned precisely to your workflow, vocabulary, priorities, and blind spots."
+        },
+        {
+          "number": "04",
+          "title": "Automate Your Workflow End-to-End",
+          "timeline": "Months 3–6",
+          "description": "We build automations for:",
+          "details": [
+            {
+              "text": "Meetings"
+            },
+            {
+              "text": "Decisions"
+            },
+            {
+              "text": "Insights"
+            },
+            {
+              "text": "Alerts"
+            },
+            {
+              "text": "Summaries"
+            },
+            {
+              "text": "Follow-ups"
+            },
+            {
+              "text": "Approvals"
+            },
+            {
+              "text": "Reporting"
+            },
+            {
+              "text": "Cross-functional alignment"
+            },
+            {
+              "text": "Personal productivity"
+            }
+          ],
+          "highlight": "Your day becomes lighter. Your decisions become sharper. Your leadership becomes exponential."
+        },
+        {
+          "number": "05",
+          "title": "Continuous Optimization",
+          "timeline": "Months 6–12",
+          "description": "Your system improves with use:",
+          "details": [
+            {
+              "text": "We adjust"
+            },
+            {
+              "text": "We refine"
+            },
+            {
+              "text": "We add new agents"
+            },
+            {
+              "text": "We integrate new tools"
+            },
+            {
+              "text": "We extend new capabilities"
+            }
+          ],
+          "highlight": "Your Personal Executive OS becomes a competitive weapon."
+        }
+      ]
+    },
+    {
+      "__resolveType": "site/sections/AIPartnerExclusivity.tsx",
+      "badge": "Exclusivity",
+      "titleLine1": "We work with",
+      "titleLine2": "12 executives per year.",
+      "subtitle": "No exceptions.",
+      "traitsIntro": "Because this is:",
+      "traits": [
+        {
+          "text": "Deep work."
+        },
+        {
+          "text": "High-touch."
+        },
+        {
+          "text": "White-glove."
+        },
+        {
+          "text": "Confidential."
+        }
+      ],
+      "traitsOutro": "And requires a dedicated engineering pod per executive.",
+      "acceptanceText": "If you're accepted, you get a dedicated engineering pod building and evolving your Personal Executive OS,",
+      "acceptanceHighlight": "for your unique way of leading."
+    },
+    {
+      "__resolveType": "site/sections/AIPartnerFinalCTA.tsx",
+      "titleLine1": "Lead the AI future by becoming",
+      "titleLine2": "the first AI-augmented version of yourself.",
+      "subtitle": "You can't scale AI in your company until you scale your own executive capabilities.",
+      "keyPoints": [
+        {
+          "text": "This is your",
+          "highlight": "edge"
+        },
+        {
+          "text": "This is your",
+          "highlight": "leverage"
+        },
+        {
+          "text": "This is your",
+          "highlight": "transformation"
+        }
+      ],
+      "keyPointsOutro": "Built around you — not around a tool.",
+      "ctaButtonText": "Apply for a Private Interview",
+      "ctaButtonUrl": "https://form.typeform.com/to/LxKZbN9N",
+      "ctaSubtext": "Only 12 seats per year",
+      "nextStepsLabel": "After You Apply",
+      "nextSteps": [
+        {
+          "step": "1",
+          "text": "15–20 min confidential call"
+        },
+        {
+          "step": "2",
+          "text": "If there's mutual fit, we sign NDA"
+        },
+        {
+          "step": "3",
+          "text": "We schedule your Executive Deep Dive"
+        }
+      ]
+    },
+    {
+      "__resolveType": "site/sections/AIPartnerFooter.tsx",
+      "programName": "The Executive AI Partner Program",
+      "tagline": "Private. Tailored. Confidential.",
+      "copyrightText": "© {year} All rights reserved."
+    }
+  ],
+  "seo": {
+    "__resolveType": "website/sections/Seo/SeoV2.tsx"
+  },
+  "__resolveType": "website/pages/Page.tsx"
+}
