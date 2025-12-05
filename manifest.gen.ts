@@ -11,8 +11,9 @@ import * as $$$$$$$$$$$1 from "./apps/deco/htmx.ts";
 import * as $$$$$$$$$$$2 from "./apps/deco/nuvemshop.ts";
 import * as $$$$$$$$$$$3 from "./apps/site.ts";
 import * as $$$0 from "./loaders/getRoadmapFeatures.ts";
-import * as $$$1 from "./loaders/posthogConfig.ts";
-import * as $$$2 from "./loaders/sitemap.ts";
+import * as $$$1 from "./loaders/listFeatures.ts";
+import * as $$$2 from "./loaders/posthogConfig.ts";
+import * as $$$3 from "./loaders/sitemap.ts";
 import * as $$$$$$10 from "./sections/AgentTavano/Benefits.tsx";
 import * as $$$$$$12 from "./sections/AgentTavano/Context.tsx";
 import * as $$$$$$11 from "./sections/AgentTavano/CTA.tsx";
@@ -108,8 +109,9 @@ import * as $$$$$$90 from "./sections/WhoShouldApply.tsx";
 const manifest = {
   "loaders": {
     "site/loaders/getRoadmapFeatures.ts": $$$0,
-    "site/loaders/posthogConfig.ts": $$$1,
-    "site/loaders/sitemap.ts": $$$2,
+    "site/loaders/listFeatures.ts": $$$1,
+    "site/loaders/posthogConfig.ts": $$$2,
+    "site/loaders/sitemap.ts": $$$3,
   },
   "sections": {
     "site/sections/AgentTavano/Benefits.tsx": $$$$$$10,
