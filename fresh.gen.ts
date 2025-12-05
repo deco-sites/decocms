@@ -17,6 +17,7 @@ import * as $FeaturesInteractive from "./islands/FeaturesInteractive.tsx";
 import * as $FormModal from "./islands/FormModal.tsx";
 import * as $GitHubStars from "./islands/GitHubStars.tsx";
 import * as $HeroInteractiveClient from "./islands/HeroInteractiveClient.tsx";
+import * as $PostHog from "./islands/PostHog.tsx";
 import * as $PostHogProvider from "./islands/PostHogProvider.tsx";
 import * as $ProjectGrid from "./islands/ProjectGrid.tsx";
 import * as $RoadmapFeaturesList from "./islands/RoadmapFeaturesList.tsx";
@@ -50,6 +51,7 @@ const manifest = {
     "./islands/FormModal.tsx": $FormModal,
     "./islands/GitHubStars.tsx": $GitHubStars,
     "./islands/HeroInteractiveClient.tsx": $HeroInteractiveClient,
+    "./islands/PostHog.tsx": $PostHog,
     "./islands/PostHogProvider.tsx": $PostHogProvider,
     "./islands/ProjectGrid.tsx": $ProjectGrid,
     "./islands/RoadmapFeaturesList.tsx": $RoadmapFeaturesList,
