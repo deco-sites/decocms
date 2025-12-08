@@ -12,18 +12,11 @@ export interface Props {
   posthogHost?: string;
 }
 
-export default function PostHogAnalytics({ posthogKey, posthogHost }: Props) {
-  const key = posthogKey?.get();
-  const host = posthogHost ?? "https://us.i.posthog.com";
+export default function PostHogAnalytics({ posthogKey, posthogHost }: {posthogKey: string, posthogHost: string}) {
+  const key = posthogKey;
+  const host = posthogHost;
 
   useEffect(() => {
-    console.log("[PostHog] Component mounted, key exists:", !!key);
-
-    if (!key) {
-      console.warn("[PostHog] No API key configured");
-      return;
-    }
-
     const win = globalThis as typeof globalThis & { posthog?: PostHog };
 
     if (!win.posthog) {
