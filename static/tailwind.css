@@ -3913,6 +3913,9 @@ input.tab:checked + .tab-content,
 .right-10{
   right: 2.5rem;
 }
+.right-20{
+  right: 5rem;
+}
 .right-3{
   right: 0.75rem;
 }
@@ -4304,6 +4307,9 @@ input.tab:checked + .tab-content,
 .h-96{
   height: 24rem;
 }
+.h-\[100px\]{
+  height: 100px;
+}
 .h-\[10px\]{
   height: 10px;
 }
@@ -4345,6 +4351,9 @@ input.tab:checked + .tab-content,
 }
 .h-\[70px\]{
   height: 70px;
+}
+.h-\[777px\]{
+  height: 777px;
 }
 .h-\[79px\]{
   height: 79px;
@@ -4562,8 +4571,8 @@ input.tab:checked + .tab-content,
 .w-\[800px\]{
   width: 800px;
 }
-.w-\[calc\(100\%-32px\)\]{
-  width: calc(100% - 32px);
+.w-\[906px\]{
+  width: 906px;
 }
 .w-\[clamp\(14px\2c 1\.8vh\2c 20px\)\]{
   width: clamp(14px,1.8vh,20px);
@@ -4694,14 +4703,14 @@ input.tab:checked + .tab-content,
 .max-w-\[420px\]{
   max-width: 420px;
 }
+.max-w-\[474px\]{
+  max-width: 474px;
+}
 .max-w-\[480px\]{
   max-width: 480px;
 }
 .max-w-\[522px\]{
   max-width: 522px;
-}
-.max-w-\[542px\]{
-  max-width: 542px;
 }
 .max-w-\[594px\]{
   max-width: 594px;
@@ -4832,6 +4841,10 @@ input.tab:checked + .tab-content,
   --tw-translate-x: -20px;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
+.translate-y-0{
+  --tw-translate-y: 0px;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
 .translate-y-1\/3{
   --tw-translate-y: 33.333333%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -4945,11 +4958,6 @@ input.tab:checked + .tab-content,
 }
 .cursor-pointer{
   cursor: pointer;
-}
-.select-none{
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
 }
 .resize-none{
   resize: none;
@@ -5237,9 +5245,6 @@ input.tab:checked + .tab-content,
 }
 .rounded-3xl{
   border-radius: 1.5rem;
-}
-.rounded-\[10px\]{
-  border-radius: 10px;
 }
 .rounded-\[16px\]{
   border-radius: 16px;
@@ -5674,9 +5679,6 @@ input.tab:checked + .tab-content,
 .border-gray-200{
   --tw-border-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
-}
-.border-gray-200\/50{
-  border-color: rgb(229 231 235 / 0.5);
 }
 .border-gray-300{
   --tw-border-opacity: 1;
@@ -7690,10 +7692,6 @@ input.tab:checked + .tab-content,
   --tw-bg-opacity: 1;
   background-color: rgb(66 32 6 / var(--tw-bg-opacity));
 }
-.bg-yellow-light{
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 193 22 / var(--tw-bg-opacity));
-}
 .bg-zinc-100{
   --tw-bg-opacity: 1;
   background-color: rgb(244 244 245 / var(--tw-bg-opacity));
@@ -8838,9 +8836,6 @@ input.tab:checked + .tab-content,
 .pr-4{
   padding-right: 1rem;
 }
-.pr-6{
-  padding-right: 1.5rem;
-}
 .pt-0{
   padding-top: 0px;
 }
@@ -9105,9 +9100,6 @@ input.tab:checked + .tab-content,
 .leading-\[20px\]{
   line-height: 20px;
 }
-.leading-\[21px\]{
-  line-height: 21px;
-}
 .leading-\[22px\]{
   line-height: 22px;
 }
@@ -9146,6 +9138,12 @@ input.tab:checked + .tab-content,
 }
 .tracking-\[-0\.96px\]{
   letter-spacing: -0.96px;
+}
+.tracking-\[-1\.28px\]{
+  letter-spacing: -1.28px;
+}
+.tracking-\[-1\.6px\]{
+  letter-spacing: -1.6px;
 }
 .tracking-\[0\.15em\]{
   letter-spacing: 0.15em;
@@ -10490,6 +10488,10 @@ input.tab:checked + .tab-content,
 .ring-purple-500{
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(168 85 247 / var(--tw-ring-opacity));
+}
+.ring-red-500{
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(239 68 68 / var(--tw-ring-opacity));
 }
 .blur-2xl{
   --tw-blur: blur(40px);
@@ -12782,6 +12784,11 @@ input.tab:checked + .tab-content,
     padding-right: 0px;
   }
 
+  .sm\:px-10{
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+
   .sm\:px-2{
     padding-left: 0.5rem;
     padding-right: 0.5rem;
@@ -13490,6 +13497,10 @@ input.tab:checked + .tab-content,
     width: 45%;
   }
 
+  .lg\:w-\[512px\]{
+    width: 512px;
+  }
+
   .lg\:w-\[530px\]{
     width: 530px;
   }
@@ -13552,6 +13563,10 @@ input.tab:checked + .tab-content,
 
   .lg\:justify-center{
     justify-content: center;
+  }
+
+  .lg\:justify-between{
+    justify-content: space-between;
   }
 
   .lg\:gap-0{
@@ -13634,6 +13649,11 @@ input.tab:checked + .tab-content,
   .lg\:px-16{
     padding-left: 4rem;
     padding-right: 4rem;
+  }
+
+  .lg\:px-20{
+    padding-left: 5rem;
+    padding-right: 5rem;
   }
 
   .lg\:px-32{
@@ -13752,6 +13772,10 @@ input.tab:checked + .tab-content,
 
   .lg\:text-\[64px\]{
     font-size: 64px;
+  }
+
+  .lg\:text-\[80px\]{
+    font-size: 80px;
   }
 
   .lg\:text-lg{

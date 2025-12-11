@@ -23,6 +23,7 @@ import * as $ScrollToButton from "./islands/ScrollToButton.tsx";
 import * as $SendFormNewsletter from "./islands/SendFormNewsletter.tsx";
 import * as $TrackedLink from "./islands/TrackedLink.tsx";
 import * as $UnicornStudioBackground from "./islands/UnicornStudioBackground.tsx";
+import * as $UsernameForm from "./islands/UsernameForm.tsx";
 import type { Manifest } from "$fresh/server.ts";
 
 const manifest = {
@@ -50,6 +51,7 @@ const manifest = {
     "./islands/SendFormNewsletter.tsx": $SendFormNewsletter,
     "./islands/TrackedLink.tsx": $TrackedLink,
     "./islands/UnicornStudioBackground.tsx": $UnicornStudioBackground,
+    "./islands/UsernameForm.tsx": $UsernameForm,
   },
   baseUrl: import.meta.url,
 } satisfies Manifest;

@@ -7,12 +7,15 @@
     },
     {
       "__resolveType": "site/sections/HeroMCPMesh.tsx",
-      "titleLine1": "Your Context.",
-      "titleLine2": "Every AI.",
-      "subtitle": "The unified infrastructure layer for the autonomous software era. Centralize MCP connections, control access, and govern AI usage across your organization.",
+      "titleLine1": "Control Your Context. ",
+      "subtitle": "The open-source infrastructure to govern AI context. \nCentralize MCP connections, enforce policies, and monitor every interaction. \nWith smart tool selection and code execution that reduce tokens by 90% and improve results 10x.",
       "copyCommand": "npx create-deco-mesh@latest",
       "docsButtonText": "Read Documentation",
-      "docsButtonUrl": "https://docs.decocms.com/en/introduction/"
+      "docsButtonUrl": "https://docs.decocms.com/en/introduction/",
+      "illustration": "https://assets.decocache.com/decocms/0d8c09cf-37a0-473f-98c8-06e391557fe3/mesh2.png",
+      "titleLine3": "Scale Your AI.",
+      "title": "Manage your context.",
+      "titleHighlighted": "Scale AI results."
     },
     {
       "__resolveType": "site/sections/MCPMeshProblemStatement.tsx",
@@ -68,7 +71,11 @@
           "title": "Zero Config & Local First",
           "description": "Runs locally with built-in SQLite. No complex database setup. Scale to Postgres when needed.",
           "size": "wide",
-          "tags": ["SQLite", "Better Auth", "OpenTelemetry"]
+          "tags": [
+            "SQLite",
+            "Better Auth",
+            "OpenTelemetry"
+          ]
         }
       ]
     },
