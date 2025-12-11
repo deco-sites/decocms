@@ -25,9 +25,10 @@ export default function UsernameForm({
       const textWidth = measureRef.current.offsetWidth;
       // Check if mobile (window width < 640px)
       const isMobile = typeof window !== 'undefined' && window.innerWidth < 640;
-      const maxWidth = isMobile ? 300 : 200;
-      // Minimum width of 70px (for placeholder "username"), max reasonable width
-      inputWidth.value = Math.max(70, Math.min(textWidth + 4, maxWidth));
+      const maxWidth = isMobile ? 500 : 200;
+      // Minimum width of 120px (for placeholder "username"), max reasonable width
+      const minWidth = isMobile ? 120 : 70;
+      inputWidth.value = Math.max(minWidth, Math.min(textWidth + 4, maxWidth));
     }
   });
 
@@ -37,8 +38,9 @@ export default function UsernameForm({
       if (measureRef.current) {
         const textWidth = measureRef.current.offsetWidth;
         const isMobile = typeof window !== 'undefined' && window.innerWidth < 640;
-        const maxWidth = isMobile ? 300 : 200;
-        inputWidth.value = Math.max(70, Math.min(textWidth + 4, maxWidth));
+        const maxWidth = isMobile ? 500 : 200;
+        const minWidth = isMobile ? 120 : 70;
+        inputWidth.value = Math.max(minWidth, Math.min(textWidth + 4, maxWidth));
       }
     };
 
@@ -58,8 +60,9 @@ export default function UsernameForm({
       measureRef.current.textContent = username.value || "username";
       const textWidth = measureRef.current.offsetWidth;
       const isMobile = typeof window !== 'undefined' && window.innerWidth < 640;
-      const maxWidth = isMobile ? 300 : 200;
-      inputWidth.value = Math.max(70, Math.min(textWidth + 4, maxWidth));
+      const maxWidth = isMobile ? 500 : 200;
+      const minWidth = isMobile ? 120 : 70;
+      inputWidth.value = Math.max(minWidth, Math.min(textWidth + 4, maxWidth));
     }
   };
 
@@ -90,7 +93,7 @@ export default function UsernameForm({
       <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
         {/* Username Input Container */}
         <div
-          class={`bg-dc-200 flex items-center gap-2 px-3 py-2 rounded-xl transition-all w-full sm:w-auto ${
+          class={`bg-dc-200 flex items-center gap-2 px-3 py-2 rounded-xl transition-all w-full sm:w-auto animate-glow ${
             isShaking.value ? "animate-shake" : ""
           } ${showError.value ? "ring-2 ring-red-500" : ""}`}
         >
@@ -151,6 +154,17 @@ export default function UsernameForm({
           }
           .animate-shake {
             animation: shake 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+          }
+          @keyframes glow {
+            0%, 100% {
+              box-shadow: 0 0 0 0 rgba(208, 236, 26, 0);
+            }
+            50% {
+              box-shadow: 0 0 20px 4px rgba(208, 236, 26, 0.4);
+            }
+          }
+          .animate-glow {
+            animation: glow 2s ease-in-out infinite;
           }
         `}
       </style>

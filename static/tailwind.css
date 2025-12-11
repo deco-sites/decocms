@@ -4734,9 +4734,6 @@ input.tab:checked + .tab-content,
 .max-w-\[420px\]{
   max-width: 420px;
 }
-.max-w-\[474px\]{
-  max-width: 474px;
-}
 .max-w-\[480px\]{
   max-width: 480px;
 }
@@ -12940,16 +12937,16 @@ input.tab:checked + .tab-content,
     padding-top: 6rem;
   }
 
-  .sm\:pt-28{
-    padding-top: 7rem;
-  }
-
   .sm\:pt-3{
     padding-top: 0.75rem;
   }
 
   .sm\:pt-32{
     padding-top: 8rem;
+  }
+
+  .sm\:pt-40{
+    padding-top: 10rem;
   }
 
   .sm\:pt-48{
@@ -13588,6 +13585,10 @@ input.tab:checked + .tab-content,
 
   .lg\:w-\[55\%\]{
     width: 55%;
+  }
+
+  .lg\:max-w-\[474px\]{
+    max-width: 474px;
   }
 
   .lg\:max-w-\[520px\]{

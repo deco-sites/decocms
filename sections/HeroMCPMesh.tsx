@@ -2,6 +2,7 @@ import type { ImageWidget } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
 import UsernameForm from "../islands/UsernameForm.tsx";
 import StatsCarousel from "../islands/StatsCarousel.tsx";
+import GitHubStarsInline from "../islands/GitHubStarsInline.tsx";
 
 export interface Props {
   /**
@@ -95,6 +96,18 @@ export interface Props {
    * @description The mesh illustration image
    */
   illustration?: ImageWidget;
+
+  /**
+   * @title GitHub Repository
+   * @description Repository in format "owner/repo" to fetch stars from
+   */
+  githubRepo?: string;
+
+  /**
+   * @title GitHub Icon
+   * @description Icon for GitHub stars display
+   */
+  githubIcon?: ImageWidget;
 }
 
 export default function HeroMCPMesh({
@@ -115,6 +128,8 @@ export default function HeroMCPMesh({
   stat3Label = "Observability",
   stat3Eyebrow = "OPENTELEMETRY TRACING",
   illustration = "https://assets.decocache.com/decocms/6216bd1e-7bc1-40df-8ae1-6e431919f1e7/mesh_image.png",
+  githubRepo = "deco-cx/chat",
+  githubIcon,
 }: Props) {
   // Handle multiple bold parts in subtitle
   const boldParts = ["open-source", "govern AI context", "monitor every interaction"];
@@ -173,11 +188,24 @@ export default function HeroMCPMesh({
     <section class="w-full bg-dc-50 flex flex-col p-2">
       <div class="bg-dc-100 rounded-[24px] flex flex-col min-h-[calc(100vh-16px)] relative overflow-hidden">
         {/* Main Content Area */}
-        <div class="flex flex-col lg:flex-row items-center lg:items-center justify-center lg:justify-between pt-24 pb-16 sm:pt-28 sm:pb-20 lg:py-16 px-4 sm:px-10 lg:px-20 relative z-20 flex-1">
+        <div class="flex flex-col lg:flex-row items-center lg:items-center justify-center lg:justify-between pt-32 pb-16 sm:pt-40 sm:pb-20 lg:py-16 px-6 sm:px-10 lg:px-20 relative z-20 flex-1">
           {/* Left Content */}
-          <div class="w-full lg:w-[512px] flex flex-col gap-12 shrink-0 justify-center">
+          <div class="w-full max-w-full lg:w-[512px] flex flex-col gap-8 shrink-0 justify-center">
             {/* Text Content */}
-            <div class="flex flex-col gap-6">
+            <div class="flex flex-col gap-4">
+              {/* GitHub Badge */}
+              {githubRepo && (
+                <a
+                  href={`https://github.com/${githubRepo}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="backdrop-blur-sm bg-white/80 rounded-full py-1.5 pl-3 pr-3 flex items-center gap-2 mb-2 w-fit hover:bg-white/90 transition-colors"
+                >
+                  <span class="text-dc-500 text-sm font-normal">Give us a star</span>
+                  <GitHubStarsInline repo={githubRepo} icon={githubIcon} />
+                </a>
+              )}
+
               {/* Title */}
               <h1 class="text-dc-900 text-5xl sm:text-6xl md:text-7xl lg:text-[80px] font-medium leading-none tracking-[-1.6px]">
                 {title}
@@ -186,7 +214,7 @@ export default function HeroMCPMesh({
               </h1>
 
               {/* Subtitle */}
-              <p class="text-dc-500 text-lg lg:text-xl font-normal leading-[1.4] max-w-[474px]">
+              <p class="text-dc-500 text-lg lg:text-xl font-normal leading-[1.4] max-w-full lg:max-w-[474px]">
                 {renderSubtitle(subtitle)}
               </p>
 

@@ -16,14 +16,22 @@ import * as $CountdownIsland from "./islands/CountdownIsland.tsx";
 import * as $FeaturesInteractive from "./islands/FeaturesInteractive.tsx";
 import * as $FormModal from "./islands/FormModal.tsx";
 import * as $GitHubStars from "./islands/GitHubStars.tsx";
+import * as $GitHubStarsInline from "./islands/GitHubStarsInline.tsx";
 import * as $HeroInteractiveClient from "./islands/HeroInteractiveClient.tsx";
+import * as $PostHog from "./islands/PostHog.tsx";
 import * as $PostHogProvider from "./islands/PostHogProvider.tsx";
 import * as $ProjectGrid from "./islands/ProjectGrid.tsx";
+import * as $RoadmapFeaturesList from "./islands/RoadmapFeaturesList.tsx";
+import * as $RoadmapFiltered from "./islands/RoadmapFiltered.tsx";
+import * as $RoadmapIsland from "./islands/RoadmapIsland.tsx";
+import * as $RoadmapWithModal from "./islands/RoadmapWithModal.tsx";
 import * as $ScrollToButton from "./islands/ScrollToButton.tsx";
 import * as $SendFormNewsletter from "./islands/SendFormNewsletter.tsx";
 import * as $StatsCarousel from "./islands/StatsCarousel.tsx";
+import * as $SuggestFeatureModal from "./islands/SuggestFeatureModal.tsx";
 import * as $TrackedLink from "./islands/TrackedLink.tsx";
 import * as $UnicornStudioBackground from "./islands/UnicornStudioBackground.tsx";
+import * as $UpvoteButton from "./islands/UpvoteButton.tsx";
 import * as $UsernameForm from "./islands/UsernameForm.tsx";
 import type { Manifest } from "$fresh/server.ts";
 
@@ -45,14 +53,22 @@ const manifest = {
     "./islands/FeaturesInteractive.tsx": $FeaturesInteractive,
     "./islands/FormModal.tsx": $FormModal,
     "./islands/GitHubStars.tsx": $GitHubStars,
+    "./islands/GitHubStarsInline.tsx": $GitHubStarsInline,
     "./islands/HeroInteractiveClient.tsx": $HeroInteractiveClient,
+    "./islands/PostHog.tsx": $PostHog,
     "./islands/PostHogProvider.tsx": $PostHogProvider,
     "./islands/ProjectGrid.tsx": $ProjectGrid,
+    "./islands/RoadmapFeaturesList.tsx": $RoadmapFeaturesList,
+    "./islands/RoadmapFiltered.tsx": $RoadmapFiltered,
+    "./islands/RoadmapIsland.tsx": $RoadmapIsland,
+    "./islands/RoadmapWithModal.tsx": $RoadmapWithModal,
     "./islands/ScrollToButton.tsx": $ScrollToButton,
     "./islands/SendFormNewsletter.tsx": $SendFormNewsletter,
     "./islands/StatsCarousel.tsx": $StatsCarousel,
+    "./islands/SuggestFeatureModal.tsx": $SuggestFeatureModal,
     "./islands/TrackedLink.tsx": $TrackedLink,
     "./islands/UnicornStudioBackground.tsx": $UnicornStudioBackground,
+    "./islands/UpvoteButton.tsx": $UpvoteButton,
     "./islands/UsernameForm.tsx": $UsernameForm,
   },
   baseUrl: import.meta.url,
