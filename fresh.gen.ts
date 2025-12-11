@@ -21,6 +21,7 @@ import * as $PostHogProvider from "./islands/PostHogProvider.tsx";
 import * as $ProjectGrid from "./islands/ProjectGrid.tsx";
 import * as $ScrollToButton from "./islands/ScrollToButton.tsx";
 import * as $SendFormNewsletter from "./islands/SendFormNewsletter.tsx";
+import * as $StatsCarousel from "./islands/StatsCarousel.tsx";
 import * as $TrackedLink from "./islands/TrackedLink.tsx";
 import * as $UnicornStudioBackground from "./islands/UnicornStudioBackground.tsx";
 import * as $UsernameForm from "./islands/UsernameForm.tsx";
@@ -49,6 +50,7 @@ const manifest = {
     "./islands/ProjectGrid.tsx": $ProjectGrid,
     "./islands/ScrollToButton.tsx": $ScrollToButton,
     "./islands/SendFormNewsletter.tsx": $SendFormNewsletter,
+    "./islands/StatsCarousel.tsx": $StatsCarousel,
     "./islands/TrackedLink.tsx": $TrackedLink,
     "./islands/UnicornStudioBackground.tsx": $UnicornStudioBackground,
     "./islands/UsernameForm.tsx": $UsernameForm,

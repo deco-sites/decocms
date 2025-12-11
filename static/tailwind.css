@@ -3913,9 +3913,6 @@ input.tab:checked + .tab-content,
 .right-10{
   right: 2.5rem;
 }
-.right-20{
-  right: 5rem;
-}
 .right-3{
   right: 0.75rem;
 }
@@ -4027,6 +4024,10 @@ input.tab:checked + .tab-content,
 .m-8{
   margin: 2rem;
 }
+.-mx-4{
+  margin-left: -1rem;
+  margin-right: -1rem;
+}
 .mx-2{
   margin-left: 0.5rem;
   margin-right: 0.5rem;
@@ -4057,6 +4058,9 @@ input.tab:checked + .tab-content,
 }
 .-mr-2{
   margin-right: -0.5rem;
+}
+.-mt-2{
+  margin-top: -0.5rem;
 }
 .-mt-8{
   margin-top: -2rem;
@@ -4745,6 +4749,9 @@ input.tab:checked + .tab-content,
 .max-w-\[936px\]{
   max-width: 936px;
 }
+.max-w-\[95vw\]{
+  max-width: 95vw;
+}
 .max-w-full{
   max-width: 100%;
 }
@@ -4958,6 +4965,11 @@ input.tab:checked + .tab-content,
 }
 .cursor-pointer{
   cursor: pointer;
+}
+.select-none{
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 .resize-none{
   resize: none;
@@ -8770,6 +8782,9 @@ input.tab:checked + .tab-content,
 .pb-10{
   padding-bottom: 2.5rem;
 }
+.pb-16{
+  padding-bottom: 4rem;
+}
 .pb-20{
   padding-bottom: 5rem;
 }
@@ -8946,6 +8961,9 @@ input.tab:checked + .tab-content,
 }
 .text-\[30px\]{
   font-size: 30px;
+}
+.text-\[32px\]{
+  font-size: 32px;
 }
 .text-\[48px\]{
   font-size: 48px;
@@ -9138,9 +9156,6 @@ input.tab:checked + .tab-content,
 }
 .tracking-\[-0\.96px\]{
   letter-spacing: -0.96px;
-}
-.tracking-\[-1\.28px\]{
-  letter-spacing: -1.28px;
 }
 .tracking-\[-1\.6px\]{
   letter-spacing: -1.6px;
@@ -12543,6 +12558,11 @@ input.tab:checked + .tab-content,
     top: 3.5rem;
   }
 
+  .sm\:-mx-10{
+    margin-left: -2.5rem;
+    margin-right: -2.5rem;
+  }
+
   .sm\:-mt-10{
     margin-top: -2.5rem;
   }
@@ -12867,12 +12887,20 @@ input.tab:checked + .tab-content,
     padding-bottom: 0.5rem;
   }
 
+  .sm\:pb-20{
+    padding-bottom: 5rem;
+  }
+
   .sm\:pt-20{
     padding-top: 5rem;
   }
 
   .sm\:pt-24{
     padding-top: 6rem;
+  }
+
+  .sm\:pt-28{
+    padding-top: 7rem;
   }
 
   .sm\:pt-3{
@@ -12993,6 +13021,10 @@ input.tab:checked + .tab-content,
 
   .md\:mb-6{
     margin-bottom: 1.5rem;
+  }
+
+  .md\:mb-8{
+    margin-bottom: 2rem;
   }
 
   .md\:block{
@@ -13379,6 +13411,10 @@ input.tab:checked + .tab-content,
 
   .lg\:block{
     display: block;
+  }
+
+  .lg\:inline{
+    display: inline;
   }
 
   .lg\:flex{

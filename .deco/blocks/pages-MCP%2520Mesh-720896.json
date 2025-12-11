@@ -6,16 +6,10 @@
       "__resolveType": "Header-decocms"
     },
     {
-      "__resolveType": "site/sections/HeroMCPMesh.tsx",
-      "titleLine1": "Control Your Context. ",
-      "subtitle": "The open-source infrastructure to govern AI context. \nCentralize MCP connections, enforce policies, and monitor every interaction. \nWith smart tool selection and code execution that reduce tokens by 90% and improve results 10x.",
-      "copyCommand": "npx create-deco-mesh@latest",
-      "docsButtonText": "Read Documentation",
-      "docsButtonUrl": "https://docs.decocms.com/en/introduction/",
-      "illustration": "https://assets.decocache.com/decocms/0d8c09cf-37a0-473f-98c8-06e391557fe3/mesh2.png",
-      "titleLine3": "Scale Your AI.",
-      "title": "Manage your context.",
-      "titleHighlighted": "Scale AI results."
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "site/sections/HeroMCPMesh.tsx"
+      }
     },
     {
       "__resolveType": "site/sections/MCPMeshProblemStatement.tsx",
@@ -39,6 +33,11 @@
           "description": "Developers pasting personal API keys into local .env files. Sharing credentials via Slack. Zero access control."
         }
       ]
+    },
+    {
+      "__resolveType": "site/sections/MCPMeshProblem.tsx",
+      "highlightedQuote": "the vast majority of proof of concepts die before reaching production.",
+      "description": "It's easy to make something work 80% of the time, but critical software needs to work 99.9% of the time, safely."
     },
     {
       "__resolveType": "site/sections/MCPMeshFeatures.tsx",

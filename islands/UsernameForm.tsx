@@ -23,10 +23,30 @@ export default function UsernameForm({
   useEffect(() => {
     if (measureRef.current) {
       const textWidth = measureRef.current.offsetWidth;
+      // Check if mobile (window width < 640px)
+      const isMobile = typeof window !== 'undefined' && window.innerWidth < 640;
+      const maxWidth = isMobile ? 300 : 200;
       // Minimum width of 70px (for placeholder "username"), max reasonable width
-      inputWidth.value = Math.max(70, Math.min(textWidth + 4, 200));
+      inputWidth.value = Math.max(70, Math.min(textWidth + 4, maxWidth));
     }
   });
+
+  // Update on window resize
+  useEffect(() => {
+    const handleResize = () => {
+      if (measureRef.current) {
+        const textWidth = measureRef.current.offsetWidth;
+        const isMobile = typeof window !== 'undefined' && window.innerWidth < 640;
+        const maxWidth = isMobile ? 300 : 200;
+        inputWidth.value = Math.max(70, Math.min(textWidth + 4, maxWidth));
+      }
+    };
+
+    if (typeof window !== 'undefined') {
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
+    }
+  }, []);
 
   const handleInputChange = (e: Event) => {
     const target = e.target as HTMLInputElement;
@@ -37,7 +57,9 @@ export default function UsernameForm({
     if (measureRef.current) {
       measureRef.current.textContent = username.value || "username";
       const textWidth = measureRef.current.offsetWidth;
-      inputWidth.value = Math.max(70, Math.min(textWidth + 4, 200));
+      const isMobile = typeof window !== 'undefined' && window.innerWidth < 640;
+      const maxWidth = isMobile ? 300 : 200;
+      inputWidth.value = Math.max(70, Math.min(textWidth + 4, maxWidth));
     }
   };
 
@@ -65,10 +87,10 @@ export default function UsernameForm({
 
   return (
     <div class="flex flex-col gap-2">
-      <div class="flex flex-wrap items-center gap-2">
+      <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
         {/* Username Input Container */}
         <div
-          class={`bg-dc-200 flex items-center gap-2 px-3 py-2 rounded-xl transition-all ${
+          class={`bg-dc-200 flex items-center gap-2 px-3 py-2 rounded-xl transition-all w-full sm:w-auto ${
             isShaking.value ? "animate-shake" : ""
           } ${showError.value ? "ring-2 ring-red-500" : ""}`}
         >
@@ -102,7 +124,7 @@ export default function UsernameForm({
         <button
           type="button"
           onClick={handleSubmit}
-          class="px-4 py-3 bg-primary-light rounded-xl inline-flex items-center justify-center hover:bg-primary-light/90 transition-colors cursor-pointer"
+          class="px-4 py-3 bg-primary-light rounded-xl inline-flex items-center justify-center hover:bg-primary-light/90 transition-colors cursor-pointer w-full sm:w-auto"
         >
           <span class="text-primary-dark text-sm font-medium leading-5">
             {ctaButtonText}

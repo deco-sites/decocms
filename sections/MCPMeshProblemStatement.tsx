@@ -93,7 +93,7 @@ export default function MCPMeshProblemStatement({
     return (
       <>
         {parts[0]}
-        <span class="font-semibold text-primary-light">{highlightWord}</span>
+        <span class="font-semibold text-red-600">{highlightWord}</span>
         {parts[1]}
       </>
     );
@@ -109,7 +109,7 @@ export default function MCPMeshProblemStatement({
           </h2>
           <p class="text-dc-500 text-base md:text-lg lg:text-xl leading-relaxed">
             {renderSubtitle()}{" "}
-            <span class="font-semibold text-primary-light">
+            <span class="font-semibold text-red-600">
               {highlightWord}
             </span>{" "}
             is the new technical debt.
@@ -121,7 +121,7 @@ export default function MCPMeshProblemStatement({
           {problems?.map((problem, index) => (
             <div
               key={index}
-              class="bg-dc-100 rounded-2xl p-6 md:p-8 border border-dc-200 hover:border-primary-light/50 transition-all duration-300 animate-on-scroll opacity-0 translate-y-8"
+              class="rounded-2xl p-6 md:p-8 border border-dc-200 animate-on-scroll opacity-0 translate-y-8"
               style={{ transitionDelay: `${index * 100}ms` }}
             >
               {/* Icon */}
