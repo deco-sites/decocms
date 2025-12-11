@@ -239,6 +239,7 @@
     {
       "__resolveType": "site/sections/Features.tsx",
       "title": "The MCP-native platform for full-stack AI apps",
+      "subtitle": "Build workflows like n8n, design interfaces like Lovable, deploy MCP-native apps - all in a single governed environment.",
       "features": [
         {
           "title": "Connect your context",
@@ -286,8 +287,7 @@
           ],
           "imagePosition": "left"
         }
-      ],
-      "subtitle": "Build workflows like n8n, design interfaces like Lovable, deploy MCP-native apps - all in a single governed environment."
+      ]
     },
     {
       "__resolveType": "site/sections/OnePlatformTwoSurfaces.tsx",

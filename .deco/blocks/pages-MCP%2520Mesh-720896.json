@@ -6,13 +6,10 @@
       "__resolveType": "Header-decocms"
     },
     {
-      "__resolveType": "site/sections/HeroMCPMesh.tsx",
-      "titleLine1": "Your Context.",
-      "titleLine2": "Every AI.",
-      "subtitle": "The unified infrastructure layer for the autonomous software era. Centralize MCP connections, control access, and govern AI usage across your organization.",
-      "copyCommand": "npx create-deco-mesh@latest",
-      "docsButtonText": "Read Documentation",
-      "docsButtonUrl": "https://docs.decocms.com/en/introduction/"
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "site/sections/HeroMCPMesh.tsx"
+      }
     },
     {
       "__resolveType": "site/sections/MCPMeshProblemStatement.tsx",
@@ -36,6 +33,11 @@
           "description": "Developers pasting personal API keys into local .env files. Sharing credentials via Slack. Zero access control."
         }
       ]
+    },
+    {
+      "__resolveType": "site/sections/MCPMeshProblem.tsx",
+      "highlightedQuote": "the vast majority of proof of concepts die before reaching production.",
+      "description": "It's easy to make something work 80% of the time, but critical software needs to work 99.9% of the time, safely."
     },
     {
       "__resolveType": "site/sections/MCPMeshFeatures.tsx",
@@ -68,7 +70,11 @@
           "title": "Zero Config & Local First",
           "description": "Runs locally with built-in SQLite. No complex database setup. Scale to Postgres when needed.",
           "size": "wide",
-          "tags": ["SQLite", "Better Auth", "OpenTelemetry"]
+          "tags": [
+            "SQLite",
+            "Better Auth",
+            "OpenTelemetry"
+          ]
         }
       ]
     },
