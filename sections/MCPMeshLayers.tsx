@@ -31,7 +31,7 @@ export default function MCPMeshLayers({
   layer3Image = "https://assets.decocache.com/decocms/74d273a8-eca8-4925-9f20-62534cc0067c/layer3.svg",
 }: Props) {
   return (
-    <section class="w-full bg-dc-50 py-16 md:py-24 lg:py-32">
+    <section class="w-full bg-dc-50 pt-16 md:pt-24 lg:pt-32 pb-16 md:pb-20 lg:pb-24">
       <div class="max-w-[1600px] mx-auto px-6 sm:px-10 lg:px-20">
         {/* Header */}
         <div class="mb-16 md:mb-20 lg:mb-24 text-center">
@@ -44,14 +44,14 @@ export default function MCPMeshLayers({
         </div>
 
         {/* Main Content - Two Column Layout */}
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           {/* Left Column - Content */}
           <div class="space-y-40 lg:space-y-48">
             {/* Layer 1: MCP Mesh */}
             <div class="scroll-section" id="layer-1">
               <div class="mb-6">
                 <p class="font-mono text-dc-500 text-xs uppercase tracking-wider mb-4">
-                  The Foundation
+                  LAYER 1: THE FOUNDATION
                 </p>
                 <h3 class="text-dc-900 text-3xl md:text-4xl font-medium mb-4">
                   MCP Mesh
@@ -62,6 +62,15 @@ export default function MCPMeshLayers({
                 <p class="text-dc-500 text-base md:text-lg leading-relaxed">
                   Production-ready MCP gateway that centralizes all your organization's context—CRMs, ERPs, databases, SaaS platforms, internal APIs—into one governed endpoint accessible by any AI tool.
                 </p>
+              </div>
+
+              {/* Mobile: SVG Layer 1 */}
+              <div class="lg:hidden mb-8 flex justify-center">
+                <img
+                  src={layer1Image}
+                  alt="Layer 1"
+                  class="w-full max-w-[400px] h-auto"
+                />
               </div>
 
               {/* Core Capabilities - Bento Grid */}
@@ -123,7 +132,7 @@ export default function MCPMeshLayers({
             <div class="scroll-section" id="layer-2">
               <div class="mb-6">
                 <p class="font-mono text-dc-500 text-xs uppercase tracking-wider mb-4">
-                  The Builder
+                  LAYER 2: THE BUILDER
                 </p>
                 <h3 class="text-dc-900 text-3xl md:text-4xl font-medium mb-4">
                   AI Studio
@@ -134,6 +143,15 @@ export default function MCPMeshLayers({
                 <p class="text-dc-500 text-base md:text-lg leading-relaxed">
                   Development platform that transforms your mesh into a complete app-building environment. Two modes working together: vibecoding for business users, TypeScript SDK for developers.
                 </p>
+              </div>
+
+              {/* Mobile: SVG Layer 2 */}
+              <div class="lg:hidden mb-8 flex justify-center">
+                <img
+                  src="https://assets.decocache.com/decocms/f2665c08-cdeb-499f-b08a-3aaf4ea84116/layer1-2.png"
+                  alt="Layer 2"
+                  class="w-full max-w-[400px] h-auto"
+                />
               </div>
 
               {/* Two Building Modes */}
@@ -169,7 +187,7 @@ export default function MCPMeshLayers({
             <div class="scroll-section" id="layer-3">
               <div class="mb-6">
                 <p class="font-mono text-dc-500 text-xs uppercase tracking-wider mb-4">
-                  The Marketplace
+                  LAYER 3: THE MARKETPLACE
                 </p>
                 <h3 class="text-dc-900 text-3xl md:text-4xl font-medium mb-4">
                   MCP Store
@@ -180,6 +198,15 @@ export default function MCPMeshLayers({
                 <p class="text-dc-500 text-base md:text-lg leading-relaxed">
                   Curated marketplace for pre-built MCP solutions. Like an app store for enterprise AI—browse, install, and use immediately within your governed mesh.
                 </p>
+              </div>
+
+              {/* Mobile: SVG Layer 3 */}
+              <div class="lg:hidden mb-8 flex justify-center">
+                <img
+                  src="https://assets.decocache.com/decocms/1cb8a672-2f4a-42cc-b7a0-b709984e0c94/all_layers.png"
+                  alt="Layer 3"
+                  class="w-full max-w-[400px] h-auto"
+                />
               </div>
 
               {/* Store Features */}
@@ -219,40 +246,15 @@ export default function MCPMeshLayers({
 
           {/* Right Column - Sticky Animation */}
           <div 
-            class="hidden lg:block lg:self-start" 
+            class="hidden lg:block lg:self-start relative"
             style={{
-              minHeight: "3000px",
+              minHeight: "2500px",
             }}
           >
             <MCPMeshLayersAnimation
               layer1Src={layer1Image}
               layer2Src={layer2Image}
               layer3Src={layer3Image}
-            />
-          </div>
-        </div>
-
-        {/* Mobile: Show images stacked */}
-        <div class="lg:hidden mt-16 space-y-8">
-          <div class="flex justify-center">
-            <img
-              src={layer1Image}
-              alt="Layer 1"
-              class="w-full max-w-[400px] h-auto"
-            />
-          </div>
-          <div class="flex justify-center">
-            <img
-              src={layer2Image}
-              alt="Layer 2"
-              class="w-full max-w-[400px] h-auto"
-            />
-          </div>
-          <div class="flex justify-center">
-            <img
-              src={layer3Image}
-              alt="Layer 3"
-              class="w-full max-w-[400px] h-auto"
             />
           </div>
         </div>

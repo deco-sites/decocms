@@ -13358,12 +13358,20 @@ input.tab:checked + .tab-content,
     padding-bottom: 3rem;
   }
 
+  .md\:pb-20{
+    padding-bottom: 5rem;
+  }
+
   .md\:pb-6{
     padding-bottom: 1.5rem;
   }
 
   .md\:pl-6{
     padding-left: 1.5rem;
+  }
+
+  .md\:pt-24{
+    padding-top: 6rem;
   }
 
   .md\:pt-32{
@@ -13851,6 +13859,10 @@ input.tab:checked + .tab-content,
     padding-bottom: 2rem;
   }
 
+  .lg\:pb-24{
+    padding-bottom: 6rem;
+  }
+
   .lg\:pl-8{
     padding-left: 2rem;
   }
@@ -13861,6 +13873,10 @@ input.tab:checked + .tab-content,
 
   .lg\:pt-16{
     padding-top: 4rem;
+  }
+
+  .lg\:pt-32{
+    padding-top: 8rem;
   }
 
   .lg\:pt-40{

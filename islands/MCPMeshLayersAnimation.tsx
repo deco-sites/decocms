@@ -17,10 +17,16 @@ export default function MCPMeshLayersAnimation({
   const layer3Ref = useRef<HTMLDivElement>(null);
   const prevProgressRef = useRef({ layer1: 0, layer2: 0, layer3: 0 });
   const maxProgressReachedRef = useRef({ layer1: 0, layer2: 0, layer3: 0 });
+  const prevScrollYRef = useRef(0);
 
   useEffect(() => {
+    // Initialize scroll position on client side
+    if (typeof window !== "undefined") {
+      prevScrollYRef.current = window.scrollY;
+    }
+
     const handleScroll = () => {
-      if (!containerRef.current) return;
+      if (!containerRef.current || typeof window === "undefined") return;
 
       // Find the parent section
       const section = containerRef.current.closest("section");
@@ -43,28 +49,41 @@ export default function MCPMeshLayersAnimation({
         const sectionHeight = rect.height;
         const sectionCenter = sectionTop + (sectionHeight / 2);
         const sectionBottom = sectionTop + sectionHeight;
+        const viewportCenter = windowHeight / 2;
         
-        // When section is below viewport
+        // When section is completely below viewport (not yet visible)
         if (sectionTop > windowHeight) return 0;
         
-        // When section is above viewport
-        if (sectionBottom < 0) return 1;
+        // When section is completely above viewport (already passed) - return 0 immediately
+        if (sectionBottom < 0) return 0;
+        
+        // When section top is above viewport but bottom is still visible
+        // This means we've scrolled past it - return 0 to prevent reappearing
+        if (sectionTop < 0 && sectionBottom < viewportCenter) return 0;
         
         // Calculate progress based on section center position relative to viewport center
-        const viewportCenter = windowHeight / 2;
         const distanceFromCenter = Math.abs(sectionCenter - viewportCenter);
         
         // Animation is most active when section center is near viewport center
         // Use a smooth curve that responds to scroll position
         const maxDistance = windowHeight * 0.8;
-        const progress = Math.max(0, Math.min(1, 1 - (distanceFromCenter / maxDistance)));
+        let progress = Math.max(0, Math.min(1, 1 - (distanceFromCenter / maxDistance)));
         
         // Boost progress when section is in the active zone (middle 60% of viewport)
         const activeZoneTop = windowHeight * 0.2;
         const activeZoneBottom = windowHeight * 0.8;
         
         if (sectionCenter >= activeZoneTop && sectionCenter <= activeZoneBottom) {
-          return Math.min(1, progress * 1.2);
+          progress = Math.min(1, progress * 1.2);
+        }
+        
+        // If section is above viewport center but still partially visible, reduce progress significantly
+        // This helps layers disappear more quickly when scrolling up
+        if (sectionBottom < viewportCenter && sectionBottom > 0) {
+          const distanceFromBottom = viewportCenter - sectionBottom;
+          const fadeOutDistance = windowHeight * 0.4;
+          const fadeOutProgress = Math.min(1, distanceFromBottom / fadeOutDistance);
+          progress = progress * (1 - fadeOutProgress * 0.9); // Fade out 90% when above center
         }
         
         return progress;
@@ -74,12 +93,12 @@ export default function MCPMeshLayersAnimation({
       let layer2Progress = calculateProgress(layer2Section);
       let layer3Progress = calculateProgress(layer3Section);
 
-      // Detect scroll direction
-      const isScrollingDown = layer3Progress > prevProgressRef.current.layer3 || 
-                               layer2Progress > prevProgressRef.current.layer2 || 
-                               layer1Progress > prevProgressRef.current.layer1;
+      // Detect scroll direction using scroll position
+      const scrollY = window.scrollY;
+      const isScrollingDown = scrollY > prevScrollYRef.current;
+      prevScrollYRef.current = scrollY;
       
-      // Update previous progress
+      // Update previous progress for comparison
       prevProgressRef.current = { layer1: layer1Progress, layer2: layer2Progress, layer3: layer3Progress };
 
       // Track maximum progress reached for each layer
@@ -94,20 +113,37 @@ export default function MCPMeshLayersAnimation({
         layer2Progress = maxProgressReachedRef.current.layer2;
         layer3Progress = maxProgressReachedRef.current.layer3;
       } else {
-        // When scrolling up: allow layers to disappear, but ensure proper order
-        // Layer 1 should only disappear after layer 2 disappears
-        if (layer2Progress > 0) {
-          layer1Progress = Math.max(layer1Progress, layer2Progress);
+        // When scrolling up: use current calculated progress directly
+        // Reset maxProgressReached when a layer completely disappears to prevent reappearing
+        if (layer3Progress <= 0) {
+          maxProgressReachedRef.current.layer3 = 0;
         }
-        // Layer 2 should only disappear after layer 3 disappears
-        if (layer3Progress > 0) {
-          layer2Progress = Math.max(layer2Progress, layer3Progress);
+        if (layer2Progress <= 0) {
+          maxProgressReachedRef.current.layer2 = 0;
+        }
+        if (layer1Progress <= 0) {
+          maxProgressReachedRef.current.layer1 = 0;
         }
         
-        // Update max progress if we're going back up (for smooth transitions)
-        maxProgressReachedRef.current.layer1 = Math.max(maxProgressReachedRef.current.layer1, layer1Progress);
-        maxProgressReachedRef.current.layer2 = Math.max(maxProgressReachedRef.current.layer2, layer2Progress);
-        maxProgressReachedRef.current.layer3 = Math.max(maxProgressReachedRef.current.layer3, layer3Progress);
+        // When scrolling up, ensure proper disappearing order:
+        // Layer 3 disappears first, then layer 2, then layer 1
+        // Layer 2 should disappear when layer 3 is gone (or very low)
+        if (layer3Progress <= 0.1) {
+          // Layer 3 is gone or almost gone, allow layer 2 to disappear
+          // Don't force it to stay visible
+        } else {
+          // Layer 3 is still visible, keep layer 2 visible too (but not forced)
+          layer2Progress = Math.max(layer2Progress, layer3Progress * 0.9);
+        }
+        
+        // Layer 1 should disappear when layer 2 is gone (or very low)
+        if (layer2Progress <= 0.1) {
+          // Layer 2 is gone or almost gone, allow layer 1 to disappear
+          // Don't force it to stay visible
+        } else {
+          // Layer 2 is still visible, keep layer 1 visible too (but not forced)
+          layer1Progress = Math.max(layer1Progress, layer2Progress * 0.9);
+        }
       }
 
       // Animate Layer 3 - smooth slide in/out from top (top layer, appears first)
