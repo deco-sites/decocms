@@ -35,12 +35,18 @@
       ]
     },
     {
-      "__resolveType": "site/sections/MCPMeshProblem.tsx",
+      "__resolveType": "site/sections/MCPMeshProblemRedShadow.tsx",
       "highlightedQuote": "the vast majority of proof of concepts die before reaching production.",
       "description": "It's easy to make something work 80% of the time, but critical software needs to work 99.9% of the time, safely."
     },
     {
       "__resolveType": "site/sections/MCPMeshDecoCMS.tsx"
+    },
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "site/sections/MCPMeshLayers.tsx"
+      }
     },
     {
       "__resolveType": "site/sections/MCPMeshFeatures.tsx",

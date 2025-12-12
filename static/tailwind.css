@@ -3964,6 +3964,9 @@ input.tab:checked + .tab-content,
 .top-20{
   top: 5rem;
 }
+.top-24{
+  top: 6rem;
+}
 .top-3{
   top: 0.75rem;
 }
@@ -4377,6 +4380,9 @@ input.tab:checked + .tab-content,
 .h-\[60px\]{
   height: 60px;
 }
+.h-\[700px\]{
+  height: 700px;
+}
 .h-\[70px\]{
   height: 70px;
 }
@@ -4739,6 +4745,9 @@ input.tab:checked + .tab-content,
 }
 .max-w-\[480px\]{
   max-width: 480px;
+}
+.max-w-\[500px\]{
+  max-width: 500px;
 }
 .max-w-\[522px\]{
   max-width: 522px;
@@ -5206,6 +5215,11 @@ input.tab:checked + .tab-content,
   --tw-space-y-reverse: 0;
   margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(1rem * var(--tw-space-y-reverse));
+}
+.space-y-40 > :not([hidden]) ~ :not([hidden]){
+  --tw-space-y-reverse: 0;
+  margin-top: calc(10rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(10rem * var(--tw-space-y-reverse));
 }
 .space-y-5 > :not([hidden]) ~ :not([hidden]){
   --tw-space-y-reverse: 0;
@@ -7671,6 +7685,9 @@ input.tab:checked + .tab-content,
 }
 .bg-white\/5{
   background-color: rgb(255 255 255 / 0.05);
+}
+.bg-white\/50{
+  background-color: rgb(255 255 255 / 0.5);
 }
 .bg-white\/70{
   background-color: rgb(255 255 255 / 0.7);
@@ -10574,6 +10591,10 @@ input.tab:checked + .tab-content,
 }
 .blur-xl{
   --tw-blur: blur(24px);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+.drop-shadow-lg{
+  --tw-drop-shadow: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 .grayscale{
@@ -13724,6 +13745,16 @@ input.tab:checked + .tab-content,
 
   .lg\:gap-8{
     gap: 2rem;
+  }
+
+  .lg\:space-y-48 > :not([hidden]) ~ :not([hidden]){
+    --tw-space-y-reverse: 0;
+    margin-top: calc(12rem * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(12rem * var(--tw-space-y-reverse));
+  }
+
+  .lg\:self-start{
+    align-self: flex-start;
   }
 
   .lg\:rounded-3xl{

@@ -18,6 +18,7 @@ import * as $FormModal from "./islands/FormModal.tsx";
 import * as $GitHubStars from "./islands/GitHubStars.tsx";
 import * as $GitHubStarsInline from "./islands/GitHubStarsInline.tsx";
 import * as $HeroInteractiveClient from "./islands/HeroInteractiveClient.tsx";
+import * as $MCPMeshLayersAnimation from "./islands/MCPMeshLayersAnimation.tsx";
 import * as $PostHog from "./islands/PostHog.tsx";
 import * as $PostHogProvider from "./islands/PostHogProvider.tsx";
 import * as $ProjectGrid from "./islands/ProjectGrid.tsx";
@@ -55,6 +56,7 @@ const manifest = {
     "./islands/GitHubStars.tsx": $GitHubStars,
     "./islands/GitHubStarsInline.tsx": $GitHubStarsInline,
     "./islands/HeroInteractiveClient.tsx": $HeroInteractiveClient,
+    "./islands/MCPMeshLayersAnimation.tsx": $MCPMeshLayersAnimation,
     "./islands/PostHog.tsx": $PostHog,
     "./islands/PostHogProvider.tsx": $PostHogProvider,
     "./islands/ProjectGrid.tsx": $ProjectGrid,
