@@ -40,6 +40,9 @@
       "description": "It's easy to make something work 80% of the time, but critical software needs to work 99.9% of the time, safely."
     },
     {
+      "__resolveType": "site/sections/MCPMeshDecoCMS.tsx"
+    },
+    {
       "__resolveType": "site/sections/MCPMeshFeatures.tsx",
       "title": "MCP-Native Architecture",
       "subtitle": "A unified platform to centralize connections, manage authentication, and orchestrate tools.",

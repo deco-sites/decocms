@@ -4707,6 +4707,9 @@ input.tab:checked + .tab-content,
 .max-w-\[1440px\]{
   max-width: 1440px;
 }
+.max-w-\[1600px\]{
+  max-width: 1600px;
+}
 .max-w-\[2px\]{
   max-width: 2px;
 }
@@ -13057,6 +13060,10 @@ input.tab:checked + .tab-content,
     margin-bottom: 4rem;
   }
 
+  .md\:mb-20{
+    margin-bottom: 5rem;
+  }
+
   .md\:mb-4{
     margin-bottom: 1rem;
   }
@@ -13447,6 +13454,14 @@ input.tab:checked + .tab-content,
     margin-bottom: 5rem;
   }
 
+  .lg\:mb-24{
+    margin-bottom: 6rem;
+  }
+
+  .lg\:ml-auto{
+    margin-left: auto;
+  }
+
   .lg\:mt-0{
     margin-top: 0px;
   }
@@ -13587,8 +13602,16 @@ input.tab:checked + .tab-content,
     width: 55%;
   }
 
+  .lg\:max-w-\[35\%\]{
+    max-width: 35%;
+  }
+
   .lg\:max-w-\[474px\]{
     max-width: 474px;
+  }
+
+  .lg\:max-w-\[50\%\]{
+    max-width: 50%;
   }
 
   .lg\:max-w-\[520px\]{
@@ -13597,6 +13620,10 @@ input.tab:checked + .tab-content,
 
   .lg\:max-w-\[524px\]{
     max-width: 524px;
+  }
+
+  .lg\:max-w-\[600px\]{
+    max-width: 600px;
   }
 
   .lg\:flex-\[100px\]{
@@ -13809,6 +13836,10 @@ input.tab:checked + .tab-content,
     padding-top: 10rem;
   }
 
+  .lg\:text-right{
+    text-align: right;
+  }
+
   .lg\:text-2xl{
     font-size: 1.5rem;
     line-height: 2rem;
@@ -13891,6 +13922,11 @@ input.tab:checked + .tab-content,
 
   .xl\:grid-cols-5{
     grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .xl\:px-20{
+    padding-left: 5rem;
+    padding-right: 5rem;
   }
 
   .xl\:text-6xl{
