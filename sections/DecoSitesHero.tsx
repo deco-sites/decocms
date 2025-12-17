@@ -54,7 +54,7 @@ export default function PartnersHero({
 }: Props) {
   return (
     <section className="w-full bg-dc-50 flex flex-col p-2 relative z-10">
-      <div className="bg-primary-dark pt-20 sm:pt-24 rounded-3xl flex flex-col min-h-[90vh] relative">
+      <div className="bg-primary-dark pt-20 sm:pt-24 rounded-3xl flex flex-col min-h-[90vh] relative overflow-hidden">
         {/* Unicorn Studio Background */}
         {enableUnicornBackground && (
           <UnicornStudioBackground
@@ -99,7 +99,7 @@ export default function PartnersHero({
             <div className="flex flex-col gap-6 items-center justify-start w-full">
               {/* Eyebrow */}
               <div className="text-white text-xs sm:text-sm font-mono uppercase tracking-widest text-center">
-                deco sites
+                DECO.CX
               </div>
               <h1 className="text-primary-light text-4xl sm:text-5xl lg:text-8xl font-medium leading-tight tracking-tight text-center">
                 {title}
@@ -113,26 +113,14 @@ export default function PartnersHero({
 
             {/* Buttons */}
             <div className="flex gap-2 items-start justify-start relative z-30">
-              {primaryButtonText && primaryButtonUrl && (
-                <Button
-                  variant="primary"
-                  size="medium"
-                  href={primaryButtonUrl}
-                  className="!bg-primary-light !text-primary-dark hover:!bg-primary-light/90 relative z-30"
-                >
-                  {primaryButtonText}
-                </Button>
-              )}
-              {secondaryButtonText && secondaryButtonUrl && (
-                <Button
-                  variant="secondary"
-                  size="medium"
-                  href={secondaryButtonUrl}
-                  className="!bg-dc-50 !text-dc-900 hover:!bg-dc-100 relative z-30"
-                >
-                  {secondaryButtonText}
-                </Button>
-              )}
+              <Button
+                variant="secondary"
+                size="medium"
+                href="https://form.typeform.com/to/LxKZbN9N"
+                className="!bg-dc-50 !text-dc-900 hover:!bg-dc-100 relative z-30"
+              >
+                Talk to sales
+              </Button>
             </div>
           </div>
         </div>

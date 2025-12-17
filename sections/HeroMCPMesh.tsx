@@ -1,10 +1,35 @@
 import type { ImageWidget } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
-import UsernameForm from "../islands/UsernameForm.tsx";
-import StatsCarousel from "../islands/StatsCarousel.tsx";
-import GitHubStarsInline from "../islands/GitHubStarsInline.tsx";
+import CopyMCPCommand from "../islands/CopyMCPCommand.tsx";
+import Icon from "../components/ui/Icon.tsx";
+
+/**
+ * @titleBy text
+ */
+interface FeatureBullet {
+  /** @title Feature Text */
+  text: string;
+}
 
 export interface Props {
+  /**
+   * @title Badge Label
+   * @description Label shown in the badge (e.g., "Read more")
+   */
+  badgeLabel?: string;
+
+  /**
+   * @title Badge Text
+   * @description Main text in the badge
+   */
+  badgeText?: string;
+
+  /**
+   * @title Badge URL
+   * @description Link for the badge (e.g., blog post URL)
+   */
+  badgeUrl?: string;
+
   /**
    * @title Title
    * @description Main title text (appears in black)
@@ -25,295 +50,144 @@ export interface Props {
   subtitle?: string;
 
   /**
-   * @title Highlighted Text in Subtitle
-   * @description Text that appears bold in the subtitle
+   * @title Feature Bullets
+   * @description List of features with checkmarks
    */
-  subtitleHighlight?: string;
+  featureBullets?: FeatureBullet[];
 
   /**
-   * @title Domain Suffix
-   * @description The domain suffix shown after username input
+   * @title CLI Command
+   * @description The CLI command to display and copy
    */
-  domainSuffix?: string;
+  command?: string;
 
   /**
-   * @title CTA Button Text
+   * @title Secondary CTA Text
+   * @description Text for the secondary button
    */
-  ctaButtonText?: string;
+  secondaryCtaText?: string;
 
   /**
-   * @title CTA Button URL
+   * @title Secondary CTA URL
+   * @description URL for the secondary button
    */
-  ctaButtonUrl?: string;
-
-  /**
-   * @title Stat 1 Value
-   */
-  stat1Value?: string;
-
-  /**
-   * @title Stat 1 Label
-   */
-  stat1Label?: string;
-
-  /**
-   * @title Stat 2 Value
-   */
-  stat2Value?: string;
-
-  /**
-   * @title Stat 2 Label
-   */
-  stat2Label?: string;
-
-  /**
-   * @title Stat 1 Eyebrow
-   */
-  stat1Eyebrow?: string;
-
-  /**
-   * @title Stat 2 Eyebrow
-   */
-  stat2Eyebrow?: string;
-
-  /**
-   * @title Stat 3 Value
-   */
-  stat3Value?: string;
-
-  /**
-   * @title Stat 3 Label
-   */
-  stat3Label?: string;
-
-  /**
-   * @title Stat 3 Eyebrow
-   */
-  stat3Eyebrow?: string;
+  secondaryCtaUrl?: string;
 
   /**
    * @title Illustration Image
    * @description The mesh illustration image
    */
   illustration?: ImageWidget;
-
-  /**
-   * @title GitHub Repository
-   * @description Repository in format "owner/repo" to fetch stars from
-   */
-  githubRepo?: string;
-
-  /**
-   * @title GitHub Icon
-   * @description Icon for GitHub stars display
-   */
-  githubIcon?: ImageWidget;
 }
 
 export default function HeroMCPMesh({
-  title = "Manage your context.",
-  titleHighlighted = "Scale AI results.",
-  subtitle = "The open-source infrastructure to govern AI context. Centralize MCP connections, enforce policies, and monitor every interaction.",
-  subtitleHighlight = "smart tool selection and code execution",
-  domainSuffix = ".decomcp.com",
-  ctaButtonText = "Get your mesh",
-  ctaButtonUrl = "/signup",
-  stat1Value = "90%",
-  stat1Label = "Token Reduction",
-  stat1Eyebrow = "CODE EXECUTION",
-  stat2Value = "10X",
-  stat2Label = "Better Results",
-  stat2Eyebrow = "SMART ROUTING",
-  stat3Value = "Real time",
-  stat3Label = "Observability",
-  stat3Eyebrow = "OPENTELEMETRY TRACING",
+  badgeLabel = "Read more:",
+  badgeText = "Introducing deco's Enterprise-ready MCP Mesh",
+  badgeUrl = "#",
+  title = "One secure endpoint for",
+  titleHighlighted = "every MCP server.",
+  subtitle = "Self-hosted, open-source control plane to connect, proxy, and optimize all MCP traffic. Own your context. Deploy anywhere.",
+  featureBullets = [
+    { text: "One endpoint" },
+    { text: "Smart tool selection" },
+    { text: "Access management" },
+    { text: "Full observability" },
+    { text: "Cost control" },
+  ],
+  command = "npx @deco/context-mesh init",
+  secondaryCtaText = "Read our Docs",
+  secondaryCtaUrl = "/docs",
   illustration = "https://assets.decocache.com/decocms/6216bd1e-7bc1-40df-8ae1-6e431919f1e7/mesh_image.png",
-  githubRepo = "deco-cx/chat",
-  githubIcon,
 }: Props) {
-  // Handle multiple bold parts in subtitle
-  const boldParts = ["open-source", "govern AI context", "monitor every interaction"];
-  
-  // Function to render subtitle with bold parts
-  const renderSubtitle = (text: string) => {
-    const matches: Array<{ start: number; end: number; text: string }> = [];
-    
-    // Find all matches
-    boldParts.forEach((boldPart) => {
-      const regex = new RegExp(boldPart.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), "gi");
-      let match;
-      while ((match = regex.exec(text)) !== null) {
-        matches.push({
-          start: match.index,
-          end: match.index + match[0].length,
-          text: match[0],
-        });
-      }
-    });
-    
-    // Sort matches by start position
-    matches.sort((a, b) => a.start - b.start);
-    
-    // Remove overlapping matches (keep first one)
-    const nonOverlapping: typeof matches = [];
-    matches.forEach((match) => {
-      if (nonOverlapping.length === 0 || match.start >= nonOverlapping[nonOverlapping.length - 1].end) {
-        nonOverlapping.push(match);
-      }
-    });
-    
-    // Build parts array
-    const parts: (string | JSX.Element)[] = [];
-    let lastIndex = 0;
-    
-    nonOverlapping.forEach((match) => {
-      // Add text before match
-      if (match.start > lastIndex) {
-        parts.push(text.substring(lastIndex, match.start));
-      }
-      // Add bold match
-      parts.push(<strong>{match.text}</strong>);
-      lastIndex = match.end;
-    });
-    
-    // Add remaining text
-    if (lastIndex < text.length) {
-      parts.push(text.substring(lastIndex));
-    }
-    
-    return parts.length > 0 ? parts : [text];
-  };
-
   return (
     <section class="w-full bg-dc-50 flex flex-col p-2">
       <div class="bg-dc-100 rounded-[24px] flex flex-col min-h-[calc(100vh-16px)] relative overflow-hidden">
-        {/* Main Content Area */}
-        <div class="flex flex-col lg:flex-row items-center lg:items-center justify-center lg:justify-between pt-32 pb-16 sm:pt-40 sm:pb-20 lg:py-16 px-6 sm:px-10 lg:px-20 relative z-20 flex-1">
-          {/* Left Content */}
-          <div class="w-full max-w-full lg:w-[512px] flex flex-col gap-8 shrink-0 justify-center">
-            {/* Text Content */}
-            <div class="flex flex-col gap-4">
-              {/* GitHub Badge */}
-              {githubRepo && (
-                <a
-                  href={`https://github.com/${githubRepo}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="backdrop-blur-sm bg-white/80 rounded-full py-1.5 pl-3 pr-3 flex items-center gap-2 mb-2 w-fit hover:bg-white/90 transition-colors"
-                >
-                  <span class="text-dc-500 text-sm font-normal">Give us a star</span>
-                  <GitHubStarsInline repo={githubRepo} icon={githubIcon} />
-                </a>
-              )}
-
-              {/* Title */}
-              <h1 class="text-dc-900 text-5xl sm:text-6xl md:text-7xl lg:text-[80px] font-medium leading-none tracking-[-1.6px]">
-                {title}
-                {" "}
-                <span class="text-[#8caa25]">{titleHighlighted}</span>
-              </h1>
-
-              {/* Subtitle */}
-              <p class="text-dc-500 text-lg lg:text-xl font-normal leading-[1.4] max-w-full lg:max-w-[474px]">
-                {renderSubtitle(subtitle)}
-              </p>
-
-              {/* CTA Form */}
-              <UsernameForm
-                domainSuffix={domainSuffix}
-                ctaButtonText={ctaButtonText}
-                ctaButtonUrl={ctaButtonUrl}
-              />
-
-              {/* Subtext below CTA */}
-              <p class="text-dc-500 text-xs font-normal leading-[1.4] -mt-2">
-                Takes 30 seconds. Free. Open source.
-              </p>
-            </div>
-
-            {/* Stats - Carousel on mobile, static on desktop */}
-            <div class="lg:hidden">
-              <StatsCarousel
-                stat1Value={stat1Value}
-                stat1Label={stat1Label}
-                stat1Eyebrow={stat1Eyebrow}
-                stat2Value={stat2Value}
-                stat2Label={stat2Label}
-                stat2Eyebrow={stat2Eyebrow}
-                stat3Value={stat3Value}
-                stat3Label={stat3Label}
-                stat3Eyebrow={stat3Eyebrow}
-              />
-            </div>
-
-            {/* Stats - Desktop */}
-            <div class="hidden lg:flex items-start gap-10">
-              {/* Stat 1 */}
-              <div class="flex flex-col gap-2">
-                {stat1Eyebrow && (
-                  <span class="font-mono text-dc-500 text-xs uppercase leading-5">
-                    {stat1Eyebrow}
-                  </span>
-                )}
-                <span class="text-dc-900 text-[32px] font-medium leading-none tracking-[-0.64px]">
-                  {stat1Value}
-                </span>
-                <span class="text-dc-500 text-lg lg:text-xl font-normal leading-[1.4] whitespace-nowrap">
-                  {stat1Label}
-                </span>
-              </div>
-
-              {/* Divider between Stat 1 and Stat 2 */}
-              <div class="w-px h-[100px] flex-shrink-0" style="background-color: #D6D3D1;" />
-
-              {/* Stat 2 */}
-              <div class="flex flex-col gap-2">
-                {stat2Eyebrow && (
-                  <span class="font-mono text-dc-500 text-xs uppercase leading-5">
-                    {stat2Eyebrow}
-                  </span>
-                )}
-                <span class="text-dc-900 text-[32px] font-medium leading-none tracking-[-0.64px]">
-                  {stat2Value}
-                </span>
-                <span class="text-dc-500 text-lg lg:text-xl font-normal leading-[1.4] whitespace-nowrap">
-                  {stat2Label}
-                </span>
-              </div>
-
-              {/* Divider between Stat 2 and Stat 3 */}
-              {stat3Value && (
-                <div class="w-px h-[100px] flex-shrink-0" style="background-color: #D6D3D1;" />
-              )}
-              
-              {/* Stat 3 */}
-              {stat3Value && (
-                <div class="flex flex-col gap-2">
-                  {stat3Eyebrow && (
-                    <span class="font-mono text-dc-500 text-xs uppercase leading-5 whitespace-nowrap">
-                      {stat3Eyebrow}
+        {/* Main Content Area - centered container for wider screens */}
+        <div class="flex flex-col lg:flex-row items-center justify-center pt-32 pb-16 sm:pt-40 sm:pb-20 lg:py-16 px-6 sm:px-10 lg:px-16 xl:px-24 relative z-20 flex-1">
+          {/* Inner container with max-width for centering on wide screens */}
+          <div class="w-full max-w-[1400px] flex flex-col lg:flex-row items-center lg:items-center gap-8 lg:gap-12">
+            {/* Left Content - 50% on desktop */}
+            <div class="w-full lg:w-1/2 flex flex-col gap-6 justify-center">
+              {/* Text Content */}
+              <div class="flex flex-col gap-4">
+                {/* Badge/Tag */}
+                {badgeText && (
+                  <a
+                    href={badgeUrl}
+                    class="backdrop-blur-sm bg-white/80 border border-dc-200 rounded-full py-1.5 px-3 flex items-center gap-2 mb-2 w-fit hover:bg-white/95 hover:border-dc-300 transition-all group"
+                  >
+                    {badgeLabel && (
+                      <span class="text-primary-dark text-sm font-semibold">
+                        {badgeLabel}
+                      </span>
+                    )}
+                    <span class="text-dc-600 text-sm font-medium">
+                      {badgeText}
                     </span>
-                  )}
-                  <span class="text-dc-900 text-[32px] font-medium leading-none tracking-[-0.64px]">
-                    {stat3Value}
-                  </span>
-                  <span class="text-dc-500 text-lg lg:text-xl font-normal leading-[1.4] whitespace-nowrap">
-                    {stat3Label}
-                  </span>
-                </div>
-              )}
-            </div>
-          </div>
+                    <Icon
+                      name="arrow_forward"
+                      size="small"
+                      class="text-dc-400 group-hover:translate-x-0.5 transition-transform"
+                    />
+                  </a>
+                )}
 
-          {/* Right Illustration - PNG Image */}
-          <div class="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 w-[906px] h-[777px]">
-            <Image
-              src={illustration}
-              alt="MCP Mesh Illustration"
-              width={906}
-              height={777}
-              class="w-full h-full object-cover object-center"
-            />
+                {/* Title */}
+                <h1 class="text-dc-900 text-5xl sm:text-6xl lg:text-7xl xl:text-[80px] font-medium leading-[1.05] tracking-[-1.6px]">
+                  {title}
+                  {" "}
+                  <span class="text-[#8caa25]">{titleHighlighted}</span>
+                </h1>
+
+                {/* Subtitle */}
+                <p class="text-dc-500 text-lg lg:text-xl font-normal leading-[1.4] max-w-[540px]">
+                  {subtitle}
+                </p>
+
+                {/* Feature Bullets */}
+                {featureBullets && featureBullets.length > 0 && (
+                  <ul class="flex flex-wrap gap-x-5 gap-y-2 mt-2">
+                    {featureBullets.map((feature, index) => (
+                      <li key={index} class="flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-[#8caa25]/10 flex items-center justify-center flex-shrink-0">
+                          <Icon name="check" size="xs" class="text-[#8caa25]" />
+                        </span>
+                        <span class="text-dc-700 text-sm sm:text-base font-medium">
+                          {feature.text}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+
+                {/* CTAs */}
+                <div class="flex flex-col sm:flex-row items-start sm:items-center gap-3 mt-4">
+                  {/* Primary CTA - Command Copy Button */}
+                  <CopyMCPCommand command={command} />
+
+                  {/* Secondary CTA */}
+                  {secondaryCtaText && (
+                    <a
+                      href={secondaryCtaUrl}
+                      class="bg-[#d0ec1a] text-[#07401a] text-sm font-medium px-4 py-3 rounded-xl hover:bg-[#c4e016] transition-colors whitespace-nowrap"
+                    >
+                      {secondaryCtaText}
+                    </a>
+                  )}
+                </div>
+              </div>
+            </div>
+
+            {/* Right Illustration - 50% on desktop */}
+            <div class="hidden lg:flex w-1/2 items-center justify-center">
+              <Image
+                src={illustration}
+                alt="MCP Mesh Illustration"
+                width={700}
+                height={600}
+                class="w-full max-w-[700px] h-auto object-contain"
+              />
+            </div>
           </div>
 
           {/* Mobile Illustration */}

@@ -1,6 +1,6 @@
 {
-  "name": "deco sites",
-  "path": "/use-case/deco-sites",
+  "name": "deco.cx",
+  "path": "/use-case/deco-cx",
   "sections": [
     {
       "__resolveType": "Header-decocms"
@@ -16,7 +16,7 @@
       "titleImage": "https://assets.decocache.com/decocms/2d0a9317-86a0-49f6-8c9c-b52b2bcef095/deco-dark.svg",
       "secondaryButtonText": "Start now (Beta)",
       "secondaryButtonUrl": "https://admin.decocms.com",
-      "trustSignalTitle": "Leading brand already use deco Sites",
+      "trustSignalTitle": "Leading brand already use deco.cx",
       "showPartnerLogos": true,
       "subtitle": "An AI-ready platform with visual editing, agent workflows, and full code control.",
       "partnerLogos": [
@@ -216,7 +216,7 @@
       "__resolveType": "website/sections/Rendering/Lazy.tsx",
       "section": {
         "__resolveType": "site/sections/ProjectGrid.tsx",
-        "projectsTitle": "deco sites live projects",
+        "projectsTitle": "deco.cx live projects",
         "itensPerPage": 12,
         "projects": [
           {
@@ -896,27 +896,27 @@
       "__resolveType": "site/sections/FAQ.tsx",
       "title": "FAQs",
       "eyebrow": "Frequently Asked Questions",
-      "description": "Here are some frequently asked questions about deco Sites.",
+      "description": "Here are some frequently asked questions about deco.cx.",
       "faqItems": [
         {
-          "question": "What is deco Sites and how is it different from other e-commerce builders?",
-          "answer": "deco Sites is an AI-powered e-commerce builder that combines visual editing with code-level control. Unlike traditional builders, it generates TypeScript code, offers real-time collaboration, and provides enterprise-grade performance and SEO optimization."
+          "question": "What is deco.cx and how is it different from other e-commerce builders?",
+          "answer": "deco.cx is an AI-powered e-commerce builder that combines visual editing with code-level control. Unlike traditional builders, it generates TypeScript code, offers real-time collaboration, and provides enterprise-grade performance and SEO optimization."
         },
         {
-          "question": "Do I need coding knowledge to use deco Sites?",
+          "question": "Do I need coding knowledge to use deco.cx?",
           "answer": "Not at all. Business users can create and edit content using our visual editor and natural language prompts, while developers can extend functionality with TypeScript when needed. The platform grows with your team's capabilities."
         },
         {
-          "question": "How does deco Sites ensure fast performance?",
-          "answer": "deco Sites generates optimized code, uses edge deployment, implements automatic image optimization, and follows modern web performance best practices. All sites are built for Core Web Vitals compliance and superior SEO performance."
+          "question": "How does deco.cx ensure fast performance?",
+          "answer": "deco.cx generates optimized code, uses edge deployment, implements automatic image optimization, and follows modern web performance best practices. All sites are built for Core Web Vitals compliance and superior SEO performance."
         },
         {
-          "question": "Can I integrate deco Sites with my existing tools?",
-          "answer": "Yes. deco Sites offers extensive integrations with popular tools like Shopify, Stripe, Google Analytics, CRMs, and more. You can also build custom integrations using our TypeScript SDK."
+          "question": "Can I integrate deco.cx with my existing tools?",
+          "answer": "Yes. deco.cx offers extensive integrations with popular tools like Shopify, Stripe, Google Analytics, CRMs, and more. You can also build custom integrations using our TypeScript SDK."
         },
         {
           "question": "What kind of support and collaboration features are available?",
-          "answer": "deco Sites includes real-time collaboration, role-based permissions, version control with Git integration, commenting system, and approval workflows. Teams can work together seamlessly from design to deployment."
+          "answer": "deco.cx includes real-time collaboration, role-based permissions, version control with Git integration, commenting system, and approval workflows. Teams can work together seamlessly from design to deployment."
         }
       ]
     },
@@ -926,7 +926,7 @@
   ],
   "seo": {
     "__resolveType": "website/sections/Seo/SeoV2.tsx",
-    "title": "deco Sites - AI-Powered E-commerce Builder",
+    "title": "deco.cx - AI-Powered E-commerce Builder",
     "description": "Build high-performance storefronts with AI assistance. Visual editing, code-level control, and enterprise features for modern e-commerce.",
     "canonical": "https://decocms.com/use-case/deco-sites"
   },

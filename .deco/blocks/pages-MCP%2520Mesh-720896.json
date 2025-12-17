@@ -6,10 +6,23 @@
       "__resolveType": "Header-decocms"
     },
     {
-      "__resolveType": "website/sections/Rendering/Lazy.tsx",
-      "section": {
-        "__resolveType": "site/sections/HeroMCPMesh.tsx"
-      }
+      "__resolveType": "site/sections/HeroMCPMesh.tsx",
+      "badgeLabel": "Read more:",
+      "badgeText": "Introducing deco's Enterprise-ready MCP Mesh",
+      "badgeUrl": "#",
+      "title": "One secure endpoint for",
+      "titleHighlighted": "every MCP server.",
+      "subtitle": "Self-hosted, open-source control plane to connect, proxy, and optimize all MCP traffic. Own your context. Deploy anywhere.",
+      "featureBullets": [
+        { "text": "One endpoint" },
+        { "text": "Smart tool selection" },
+        { "text": "Access management" },
+        { "text": "Full observability" },
+        { "text": "Cost control" }
+      ],
+      "command": "npx @deco/context-mesh init",
+      "secondaryCtaText": "Read our Docs",
+      "secondaryCtaUrl": "/docs"
     },
     {
       "__resolveType": "site/sections/MCPMeshProblemStatement.tsx",
