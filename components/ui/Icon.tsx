@@ -50,9 +50,9 @@ interface IconProps {
   name: string;
   /**
    * @title Tamanho do ícone
-   * @description Tamanho do ícone (xs, small, medium, large, xl, immense)
+   * @description Tamanho do ícone (xs, small, medium, large, xl, xxl, 40, immense)
    */
-  size?: "xs" | "small" | "medium" | "large" | "xl" | "xxl" | "immense";
+  size?: "xs" | "small" | "medium" | "large" | "xl" | "xxl" | "40" | "immense";
   /**
    * @title Classes adicionais
    * @description Classes CSS adicionais para estilizar o ícone
@@ -72,6 +72,7 @@ export default function Icon({
     large: "text-lg", // 18px
     xl: "text-xl", // 20px
     xxl: "text-2xl", // 32px
+    "40": "text-4xl", // 40px
     immense: "text-8xl", // 80px
   };
 
@@ -82,13 +83,14 @@ export default function Icon({
     large: "18px",
     xl: "20px",
     xxl: "32px",
+    "40": "40px",
     immense: "80px",
   };
 
   return (
     <span
       class={`material-symbols-rounded ${sizeClasses[size]} ${className}`}
-      style={`font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0; font-size: ${
+      style={`font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 40; font-size: ${
         sizeValues[size]
       } !important;`}
     >

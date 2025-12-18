@@ -62,54 +62,59 @@ import * as $$$$$$44 from "./sections/ExplainerSection.tsx";
 import * as $$$$$$45 from "./sections/FAQ.tsx";
 import * as $$$$$$46 from "./sections/Features.tsx";
 import * as $$$$$$47 from "./sections/FinalCTA.tsx";
-import * as $$$$$$48 from "./sections/FindPartnerHero.tsx";
-import * as $$$$$$49 from "./sections/Footer.tsx";
-import * as $$$$$$50 from "./sections/FormNewsletter.tsx";
-import * as $$$$$$51 from "./sections/GoogleAbout.tsx";
-import * as $$$$$$52 from "./sections/HackathonHero.tsx";
-import * as $$$$$$53 from "./sections/Header.tsx";
-import * as $$$$$$54 from "./sections/Hero.tsx";
-import * as $$$$$$55 from "./sections/HeroInteractive.tsx";
-import * as $$$$$$56 from "./sections/HeroMCPMesh.tsx";
-import * as $$$$$$57 from "./sections/HeroSection.tsx";
-import * as $$$$$$58 from "./sections/HeroSecureEndpoint.tsx";
-import * as $$$$$$59 from "./sections/ImageShowcase.tsx";
-import * as $$$$$$60 from "./sections/ItWorks.tsx";
-import * as $$$$$$61 from "./sections/LightTerms.tsx";
-import * as $$$$$$62 from "./sections/LogoCarousel.tsx";
-import * as $$$$$$71 from "./sections/MainFeatures.tsx";
-import * as $$$$$$63 from "./sections/MCPMeshBenefits.tsx";
-import * as $$$$$$64 from "./sections/MCPMeshDecoCMS.tsx";
-import * as $$$$$$65 from "./sections/MCPMeshFeatures.tsx";
-import * as $$$$$$66 from "./sections/MCPMeshLayers.tsx";
-import * as $$$$$$67 from "./sections/MCPMeshProblem.tsx";
-import * as $$$$$$68 from "./sections/MCPMeshProblemRedShadow.tsx";
-import * as $$$$$$69 from "./sections/MCPMeshProblemStatement.tsx";
-import * as $$$$$$70 from "./sections/MCPMeshWhyUs.tsx";
-import * as $$$$$$72 from "./sections/ModelsTable.tsx";
-import * as $$$$$$73 from "./sections/OnePlatformTwoSurfaces.tsx";
-import * as $$$$$$74 from "./sections/PartnerBenefits.tsx";
-import * as $$$$$$75 from "./sections/PartnerDirectory.tsx";
-import * as $$$$$$76 from "./sections/PartnerHighlights.tsx";
-import * as $$$$$$78 from "./sections/PartnersFAQ.tsx";
-import * as $$$$$$79 from "./sections/PartnersFinalCTA.tsx";
-import * as $$$$$$80 from "./sections/PartnersHero.tsx";
-import * as $$$$$$77 from "./sections/PartnerTiers.tsx";
-import * as $$$$$$81 from "./sections/Podcasts.tsx";
-import * as $$$$$$82 from "./sections/PricingPlans.tsx";
-import * as $$$$$$83 from "./sections/ProductRoadmap.tsx";
-import * as $$$$$$84 from "./sections/ProgramSteps.tsx";
-import * as $$$$$$85 from "./sections/ProgramSteps4Col.tsx";
-import * as $$$$$$86 from "./sections/ProjectGrid.tsx";
-import * as $$$$$$87 from "./sections/RelatedBlogPosts.tsx";
-import * as $$$$$$88 from "./sections/RoadmapFeatures.tsx";
-import * as $$$$$$89 from "./sections/RoadmapPage.tsx";
-import * as $$$$$$90 from "./sections/Sitemap.tsx";
-import * as $$$$$$91 from "./sections/Statement.tsx";
-import * as $$$$$$92 from "./sections/TextMedia.tsx";
-import * as $$$$$$93 from "./sections/Theme/Theme.tsx";
-import * as $$$$$$94 from "./sections/ThreeCards.tsx";
-import * as $$$$$$95 from "./sections/WhoShouldApply.tsx";
+import * as $$$$$$48 from "./sections/FinalCTAMCPMesh.tsx";
+import * as $$$$$$49 from "./sections/FindPartnerHero.tsx";
+import * as $$$$$$50 from "./sections/Footer.tsx";
+import * as $$$$$$51 from "./sections/FormNewsletter.tsx";
+import * as $$$$$$52 from "./sections/GoogleAbout.tsx";
+import * as $$$$$$53 from "./sections/HackathonHero.tsx";
+import * as $$$$$$54 from "./sections/Header.tsx";
+import * as $$$$$$55 from "./sections/Hero.tsx";
+import * as $$$$$$56 from "./sections/HeroInteractive.tsx";
+import * as $$$$$$57 from "./sections/HeroMCPMesh.tsx";
+import * as $$$$$$58 from "./sections/HeroSection.tsx";
+import * as $$$$$$59 from "./sections/HeroSecureEndpoint.tsx";
+import * as $$$$$$60 from "./sections/ImageShowcase.tsx";
+import * as $$$$$$61 from "./sections/ItWorks.tsx";
+import * as $$$$$$62 from "./sections/LightTerms.tsx";
+import * as $$$$$$63 from "./sections/LogoCarousel.tsx";
+import * as $$$$$$76 from "./sections/MainFeatures.tsx";
+import * as $$$$$$64 from "./sections/MCPMeshBenefits.tsx";
+import * as $$$$$$65 from "./sections/MCPMeshContextManagement.tsx";
+import * as $$$$$$66 from "./sections/MCPMeshDecoCMS.tsx";
+import * as $$$$$$67 from "./sections/MCPMeshDeployAnywhere.tsx";
+import * as $$$$$$68 from "./sections/MCPMeshFeatures.tsx";
+import * as $$$$$$69 from "./sections/MCPMeshHowItWorks.tsx";
+import * as $$$$$$70 from "./sections/MCPMeshLayers.tsx";
+import * as $$$$$$71 from "./sections/MCPMeshProblem.tsx";
+import * as $$$$$$72 from "./sections/MCPMeshProblemRedShadow.tsx";
+import * as $$$$$$73 from "./sections/MCPMeshProblemStatement.tsx";
+import * as $$$$$$74 from "./sections/MCPMeshVideo.tsx";
+import * as $$$$$$75 from "./sections/MCPMeshWhyUs.tsx";
+import * as $$$$$$77 from "./sections/ModelsTable.tsx";
+import * as $$$$$$78 from "./sections/OnePlatformTwoSurfaces.tsx";
+import * as $$$$$$79 from "./sections/PartnerBenefits.tsx";
+import * as $$$$$$80 from "./sections/PartnerDirectory.tsx";
+import * as $$$$$$81 from "./sections/PartnerHighlights.tsx";
+import * as $$$$$$83 from "./sections/PartnersFAQ.tsx";
+import * as $$$$$$84 from "./sections/PartnersFinalCTA.tsx";
+import * as $$$$$$85 from "./sections/PartnersHero.tsx";
+import * as $$$$$$82 from "./sections/PartnerTiers.tsx";
+import * as $$$$$$86 from "./sections/Podcasts.tsx";
+import * as $$$$$$87 from "./sections/PricingPlans.tsx";
+import * as $$$$$$88 from "./sections/ProductRoadmap.tsx";
+import * as $$$$$$89 from "./sections/ProgramSteps.tsx";
+import * as $$$$$$90 from "./sections/ProgramSteps4Col.tsx";
+import * as $$$$$$91 from "./sections/ProjectGrid.tsx";
+import * as $$$$$$92 from "./sections/RelatedBlogPosts.tsx";
+import * as $$$$$$93 from "./sections/RoadmapFeatures.tsx";
+import * as $$$$$$94 from "./sections/RoadmapPage.tsx";
+import * as $$$$$$95 from "./sections/Sitemap.tsx";
+import * as $$$$$$96 from "./sections/Statement.tsx";
+import * as $$$$$$97 from "./sections/TextMedia.tsx";
+import * as $$$$$$98 from "./sections/Theme/Theme.tsx";
+import * as $$$$$$99 from "./sections/ThreeCards.tsx";
+import * as $$$$$$100 from "./sections/WhoShouldApply.tsx";
 
 const manifest = {
   "loaders": {
@@ -167,54 +172,59 @@ const manifest = {
     "site/sections/FAQ.tsx": $$$$$$45,
     "site/sections/Features.tsx": $$$$$$46,
     "site/sections/FinalCTA.tsx": $$$$$$47,
-    "site/sections/FindPartnerHero.tsx": $$$$$$48,
-    "site/sections/Footer.tsx": $$$$$$49,
-    "site/sections/FormNewsletter.tsx": $$$$$$50,
-    "site/sections/GoogleAbout.tsx": $$$$$$51,
-    "site/sections/HackathonHero.tsx": $$$$$$52,
-    "site/sections/Header.tsx": $$$$$$53,
-    "site/sections/Hero.tsx": $$$$$$54,
-    "site/sections/HeroInteractive.tsx": $$$$$$55,
-    "site/sections/HeroMCPMesh.tsx": $$$$$$56,
-    "site/sections/HeroSection.tsx": $$$$$$57,
-    "site/sections/HeroSecureEndpoint.tsx": $$$$$$58,
-    "site/sections/ImageShowcase.tsx": $$$$$$59,
-    "site/sections/ItWorks.tsx": $$$$$$60,
-    "site/sections/LightTerms.tsx": $$$$$$61,
-    "site/sections/LogoCarousel.tsx": $$$$$$62,
-    "site/sections/MainFeatures.tsx": $$$$$$71,
-    "site/sections/MCPMeshBenefits.tsx": $$$$$$63,
-    "site/sections/MCPMeshDecoCMS.tsx": $$$$$$64,
-    "site/sections/MCPMeshFeatures.tsx": $$$$$$65,
-    "site/sections/MCPMeshLayers.tsx": $$$$$$66,
-    "site/sections/MCPMeshProblem.tsx": $$$$$$67,
-    "site/sections/MCPMeshProblemRedShadow.tsx": $$$$$$68,
-    "site/sections/MCPMeshProblemStatement.tsx": $$$$$$69,
-    "site/sections/MCPMeshWhyUs.tsx": $$$$$$70,
-    "site/sections/ModelsTable.tsx": $$$$$$72,
-    "site/sections/OnePlatformTwoSurfaces.tsx": $$$$$$73,
-    "site/sections/PartnerBenefits.tsx": $$$$$$74,
-    "site/sections/PartnerDirectory.tsx": $$$$$$75,
-    "site/sections/PartnerHighlights.tsx": $$$$$$76,
-    "site/sections/PartnersFAQ.tsx": $$$$$$78,
-    "site/sections/PartnersFinalCTA.tsx": $$$$$$79,
-    "site/sections/PartnersHero.tsx": $$$$$$80,
-    "site/sections/PartnerTiers.tsx": $$$$$$77,
-    "site/sections/Podcasts.tsx": $$$$$$81,
-    "site/sections/PricingPlans.tsx": $$$$$$82,
-    "site/sections/ProductRoadmap.tsx": $$$$$$83,
-    "site/sections/ProgramSteps.tsx": $$$$$$84,
-    "site/sections/ProgramSteps4Col.tsx": $$$$$$85,
-    "site/sections/ProjectGrid.tsx": $$$$$$86,
-    "site/sections/RelatedBlogPosts.tsx": $$$$$$87,
-    "site/sections/RoadmapFeatures.tsx": $$$$$$88,
-    "site/sections/RoadmapPage.tsx": $$$$$$89,
-    "site/sections/Sitemap.tsx": $$$$$$90,
-    "site/sections/Statement.tsx": $$$$$$91,
-    "site/sections/TextMedia.tsx": $$$$$$92,
-    "site/sections/Theme/Theme.tsx": $$$$$$93,
-    "site/sections/ThreeCards.tsx": $$$$$$94,
-    "site/sections/WhoShouldApply.tsx": $$$$$$95,
+    "site/sections/FinalCTAMCPMesh.tsx": $$$$$$48,
+    "site/sections/FindPartnerHero.tsx": $$$$$$49,
+    "site/sections/Footer.tsx": $$$$$$50,
+    "site/sections/FormNewsletter.tsx": $$$$$$51,
+    "site/sections/GoogleAbout.tsx": $$$$$$52,
+    "site/sections/HackathonHero.tsx": $$$$$$53,
+    "site/sections/Header.tsx": $$$$$$54,
+    "site/sections/Hero.tsx": $$$$$$55,
+    "site/sections/HeroInteractive.tsx": $$$$$$56,
+    "site/sections/HeroMCPMesh.tsx": $$$$$$57,
+    "site/sections/HeroSection.tsx": $$$$$$58,
+    "site/sections/HeroSecureEndpoint.tsx": $$$$$$59,
+    "site/sections/ImageShowcase.tsx": $$$$$$60,
+    "site/sections/ItWorks.tsx": $$$$$$61,
+    "site/sections/LightTerms.tsx": $$$$$$62,
+    "site/sections/LogoCarousel.tsx": $$$$$$63,
+    "site/sections/MainFeatures.tsx": $$$$$$76,
+    "site/sections/MCPMeshBenefits.tsx": $$$$$$64,
+    "site/sections/MCPMeshContextManagement.tsx": $$$$$$65,
+    "site/sections/MCPMeshDecoCMS.tsx": $$$$$$66,
+    "site/sections/MCPMeshDeployAnywhere.tsx": $$$$$$67,
+    "site/sections/MCPMeshFeatures.tsx": $$$$$$68,
+    "site/sections/MCPMeshHowItWorks.tsx": $$$$$$69,
+    "site/sections/MCPMeshLayers.tsx": $$$$$$70,
+    "site/sections/MCPMeshProblem.tsx": $$$$$$71,
+    "site/sections/MCPMeshProblemRedShadow.tsx": $$$$$$72,
+    "site/sections/MCPMeshProblemStatement.tsx": $$$$$$73,
+    "site/sections/MCPMeshVideo.tsx": $$$$$$74,
+    "site/sections/MCPMeshWhyUs.tsx": $$$$$$75,
+    "site/sections/ModelsTable.tsx": $$$$$$77,
+    "site/sections/OnePlatformTwoSurfaces.tsx": $$$$$$78,
+    "site/sections/PartnerBenefits.tsx": $$$$$$79,
+    "site/sections/PartnerDirectory.tsx": $$$$$$80,
+    "site/sections/PartnerHighlights.tsx": $$$$$$81,
+    "site/sections/PartnersFAQ.tsx": $$$$$$83,
+    "site/sections/PartnersFinalCTA.tsx": $$$$$$84,
+    "site/sections/PartnersHero.tsx": $$$$$$85,
+    "site/sections/PartnerTiers.tsx": $$$$$$82,
+    "site/sections/Podcasts.tsx": $$$$$$86,
+    "site/sections/PricingPlans.tsx": $$$$$$87,
+    "site/sections/ProductRoadmap.tsx": $$$$$$88,
+    "site/sections/ProgramSteps.tsx": $$$$$$89,
+    "site/sections/ProgramSteps4Col.tsx": $$$$$$90,
+    "site/sections/ProjectGrid.tsx": $$$$$$91,
+    "site/sections/RelatedBlogPosts.tsx": $$$$$$92,
+    "site/sections/RoadmapFeatures.tsx": $$$$$$93,
+    "site/sections/RoadmapPage.tsx": $$$$$$94,
+    "site/sections/Sitemap.tsx": $$$$$$95,
+    "site/sections/Statement.tsx": $$$$$$96,
+    "site/sections/TextMedia.tsx": $$$$$$97,
+    "site/sections/Theme/Theme.tsx": $$$$$$98,
+    "site/sections/ThreeCards.tsx": $$$$$$99,
+    "site/sections/WhoShouldApply.tsx": $$$$$$100,
   },
   "actions": {
     "site/actions/airtable/createRecord.ts": $$$$$$$$$0,

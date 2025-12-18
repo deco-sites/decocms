@@ -261,6 +261,9 @@ export default {
           "serif",
         ],
       },
+fontSize: {
+        "heading-lg": ["56px", { lineHeight: "1", letterSpacing: "-0.03em" }],
+      },
       colors: {
         "primary-light": "#D0EC1A",
         "primary-dark": "#07401A",

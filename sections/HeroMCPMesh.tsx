@@ -84,19 +84,18 @@ export default function HeroMCPMesh({
   badgeLabel = "Read more:",
   badgeText = "Introducing deco's Enterprise-ready MCP Mesh",
   badgeUrl = "#",
-  title = "One secure endpoint for",
-  titleHighlighted = "every MCP server.",
-  subtitle = "Self-hosted, open-source control plane to connect, proxy, and optimize all MCP traffic. Own your context. Deploy anywhere.",
+  title = "for every MCP server.",
+  titleHighlighted = "One secure endpoint",
+  subtitle = "Self-hosted, open-source control plane to connect,\nproxy, and optimize all MCP traffic. Own your context.\nDeploy anywhere.",
   featureBullets = [
-    { text: "One endpoint" },
     { text: "Smart tool selection" },
     { text: "Access management" },
     { text: "Full observability" },
     { text: "Cost control" },
   ],
   command = "npx @deco/context-mesh init",
-  secondaryCtaText = "Read our Docs",
-  secondaryCtaUrl = "/docs",
+  secondaryCtaText = "View docs",
+  secondaryCtaUrl = "https://docs.decocms.com/en/introduction/",
   illustration = "https://assets.decocache.com/decocms/6216bd1e-7bc1-40df-8ae1-6e431919f1e7/mesh_image.png",
 }: Props) {
   return (
@@ -134,31 +133,31 @@ export default function HeroMCPMesh({
 
                 {/* Title */}
                 <h1 class="text-dc-900 text-5xl sm:text-6xl lg:text-7xl xl:text-[80px] font-medium leading-[1.05] tracking-[-1.6px]">
-                  {title}
-                  {" "}
                   <span class="text-[#8caa25]">{titleHighlighted}</span>
+                  {" "}
+                  {title}
                 </h1>
 
                 {/* Subtitle */}
-                <p class="text-dc-500 text-lg lg:text-xl font-normal leading-[1.4] max-w-[540px]">
+                <p class="text-dc-500 text-lg lg:text-xl font-normal leading-[1.4] max-w-[540px] whitespace-pre-line">
                   {subtitle}
                 </p>
 
-                {/* Feature Bullets */}
-                {featureBullets && featureBullets.length > 0 && (
-                  <ul class="flex flex-wrap gap-x-5 gap-y-2 mt-2">
-                    {featureBullets.map((feature, index) => (
-                      <li key={index} class="flex items-center gap-2">
-                        <span class="w-5 h-5 rounded-full bg-[#8caa25]/10 flex items-center justify-center flex-shrink-0">
-                          <Icon name="check" size="xs" class="text-[#8caa25]" />
-                        </span>
-                        <span class="text-dc-700 text-sm sm:text-base font-medium">
-                          {feature.text}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                )}
+              {/* Feature Bullets - 2x2 grid */}
+              {featureBullets && featureBullets.length > 0 && (
+                <ul class="grid grid-cols-2 gap-x-6 gap-y-3 mt-2 max-w-[400px]">
+                  {featureBullets.map((feature, index) => (
+                    <li key={index} class="flex items-center gap-2">
+                      <span class="w-5 h-5 rounded-full bg-[#8caa25]/10 flex items-center justify-center flex-shrink-0">
+                        <Icon name="check" size="xs" class="text-[#8caa25]" />
+                      </span>
+                      <span class="text-dc-700 text-sm sm:text-base font-medium">
+                        {feature.text}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              )}
 
                 {/* CTAs */}
                 <div class="flex flex-col sm:flex-row items-start sm:items-center gap-3 mt-4">

@@ -13,6 +13,7 @@ import * as $Button from "./islands/Button.tsx";
 import * as $CopyCommandButton from "./islands/CopyCommandButton.tsx";
 import * as $CopyMCPCommand from "./islands/CopyMCPCommand.tsx";
 import * as $CountdownIsland from "./islands/CountdownIsland.tsx";
+import * as $DeployAnywhereOrbit from "./islands/DeployAnywhereOrbit.tsx";
 import * as $FeaturesInteractive from "./islands/FeaturesInteractive.tsx";
 import * as $FormModal from "./islands/FormModal.tsx";
 import * as $GitHubStars from "./islands/GitHubStars.tsx";
@@ -34,6 +35,7 @@ import * as $TrackedLink from "./islands/TrackedLink.tsx";
 import * as $UnicornStudioBackground from "./islands/UnicornStudioBackground.tsx";
 import * as $UpvoteButton from "./islands/UpvoteButton.tsx";
 import * as $UsernameForm from "./islands/UsernameForm.tsx";
+import * as $YouTubeVideoPlayer from "./islands/YouTubeVideoPlayer.tsx";
 import type { Manifest } from "$fresh/server.ts";
 
 const manifest = {
@@ -51,6 +53,7 @@ const manifest = {
     "./islands/CopyCommandButton.tsx": $CopyCommandButton,
     "./islands/CopyMCPCommand.tsx": $CopyMCPCommand,
     "./islands/CountdownIsland.tsx": $CountdownIsland,
+    "./islands/DeployAnywhereOrbit.tsx": $DeployAnywhereOrbit,
     "./islands/FeaturesInteractive.tsx": $FeaturesInteractive,
     "./islands/FormModal.tsx": $FormModal,
     "./islands/GitHubStars.tsx": $GitHubStars,
@@ -72,6 +75,7 @@ const manifest = {
     "./islands/UnicornStudioBackground.tsx": $UnicornStudioBackground,
     "./islands/UpvoteButton.tsx": $UpvoteButton,
     "./islands/UsernameForm.tsx": $UsernameForm,
+    "./islands/YouTubeVideoPlayer.tsx": $YouTubeVideoPlayer,
   },
   baseUrl: import.meta.url,
 } satisfies Manifest;

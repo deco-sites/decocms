@@ -13,10 +13,10 @@ export default defineApp(async (_req, ctx) => {
 
       {/* Include Icons and manifest */}
       <Head>
-        {/* Material Design Icons - Filled Version */}
+        {/* Material Design Icons - Rounded Version */}
         <link
           rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,1,0"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,0"
         />
         {/* JetBrains Mono (and Geologica) for code/command styling */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
