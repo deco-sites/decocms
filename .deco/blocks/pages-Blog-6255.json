@@ -22,12 +22,7 @@
       "posts": {
         "__resolveType": "blog/loaders/BlogpostList.ts",
         "postSlugs": [],
-        "sortBy": "date_desc",
-        "category": {
-          "__resolveType": "website/functions/requestToParam.ts",
-          "param": "category"
-        },
-        "count": 50
+        "sortBy": "date_desc"
       }
     },
     {
