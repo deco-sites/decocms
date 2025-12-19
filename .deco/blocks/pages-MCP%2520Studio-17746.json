@@ -1,0 +1,242 @@
+{
+  "name": "MCP Studio",
+  "path": "/mcp-studio",
+  "sections": [
+    {
+      "__resolveType": "Header-decocms"
+    },
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "site/sections/HeroInteractive.tsx",
+        "tag": "EARLY ACCESS",
+        "title": "Generate internal AI apps that actually ship.",
+        "subtitle": "Connect your tools via MCP, deploy anywhere. Full-stack AI applications with custom UI, workflows and built-in governance.",
+        "apps": [
+          {
+            "name": "Sheets",
+            "mention": "sheets",
+            "icon": "https://assets.decocache.com/decocms/016d6fd8-3395-4267-a4fe-bc10ba1e728e/sheets.png"
+          },
+          {
+            "name": "Discord",
+            "mention": "discord",
+            "icon": "https://assets.decocache.com/decocms/1d97a513-09e5-402a-9bec-2ef2d99db9ed/discord.png"
+          },
+          {
+            "name": "Integration",
+            "mention": "integration",
+            "icon": "https://assets.decocache.com/decocms/5b3bfcaa-8e5b-4dc0-bcd3-df601a2d4684/integration.png"
+          },
+          {
+            "name": "Jira",
+            "mention": "jira",
+            "icon": "https://assets.decocache.com/decocms/bd9c7ae5-28fb-421d-add0-02fdc93431a1/jira.png"
+          },
+          {
+            "name": "GitHub",
+            "mention": "github",
+            "icon": "https://assets.decocache.com/decocms/ddcd9385-de10-4cd0-93df-cdbcc7a83021/github.png"
+          },
+          {
+            "name": "Coda",
+            "mention": "coda",
+            "icon": "https://assets.decocache.com/decocms/b0efa01a-1532-446a-97e9-903be7286459/coda.png"
+          },
+          {
+            "name": "Airtable",
+            "mention": "airtable",
+            "icon": "https://assets.decocache.com/decocms/c89fe4f8-df33-4cfe-ba20-696a37b3b3a4/airtable.png"
+          },
+          {
+            "name": "Drive",
+            "mention": "drive",
+            "icon": "https://assets.decocache.com/decocms/5213e98e-7409-403f-8644-a47c0874b7f5/drive.png"
+          },
+          {
+            "name": "Gmail",
+            "mention": "gmail",
+            "icon": "https://assets.decocache.com/decocms/452b8f22-f11e-4b6f-8934-2e58419ea705/integration-1.png"
+          },
+          {
+            "name": "Slack",
+            "mention": "slack",
+            "icon": "https://assets.decocache.com/decocms/452b8f22-f11e-4b6f-8934-2e58419ea705/integration-1.png"
+          },
+          {
+            "name": "Calendar",
+            "mention": "calendar",
+            "icon": "https://assets.decocache.com/decocms/07b013d3-947c-4eae-ba13-e1babe93ee1e/calendar.png"
+          },
+          {
+            "name": "WhatsApp",
+            "mention": "whatsapp",
+            "icon": "https://assets.decocache.com/decocms/e37e5504-fd97-4318-b554-334bef9cf0c2/whatsapp.png"
+          },
+          {
+            "name": "Notion",
+            "mention": "notion",
+            "icon": "https://assets.decocache.com/decocms/1152c0ec-fc39-4a31-bd54-9229fa40836a/notion.png"
+          }
+        ],
+        "promptTemplates": [
+          {
+            "label": "Task Manager",
+            "icon": "task_alt",
+            "fullText": "Create a task manager that saves tasks to a database with title, priority, due date, and status. Let me add, edit, complete, and delete tasks with everything persisted."
+          },
+          {
+            "label": "Expense Tracker",
+            "icon": "payments",
+            "fullText": "Build an expense tracker that stores all transactions in a database with amount, category, date, and description. Show monthly totals and spending charts from the saved data."
+          },
+          {
+            "label": "Customer Database",
+            "icon": "badge",
+            "fullText": "Create a CRM that stores customer records in a database with name, email, phone, notes, and last contact date. Include search and the ability to update contact information."
+          },
+          {
+            "label": "Inventory Manager",
+            "icon": "inventory",
+            "fullText": "Build an inventory system with a database to track products, quantities, SKUs, and reorder points. Let me update stock levels and get alerts when items need restocking."
+          },
+          {
+            "label": "Reading List",
+            "icon": "menu_book",
+            "fullText": "Create a book tracker with a database storing title, author, genre, status (to-read/reading/read), and my personal rating. Let me search and filter my saved books."
+          },
+          {
+            "label": "Habit Tracker",
+            "icon": "trending_up",
+            "fullText": "Build a habit tracker that saves daily check-ins to a database with habit name, completion status, and timestamp. Show my streak history and consistency patterns from stored data."
+          },
+          {
+            "label": "Project Planner",
+            "icon": "folder_special",
+            "fullText": "Create a project manager that stores projects, tasks, and assignments in a database with due dates and status. Show progress calculations based on completed vs total tasks."
+          },
+          {
+            "label": "Recipe Collection",
+            "icon": "restaurant",
+            "fullText": "Build a recipe organizer with a database storing recipe name, ingredients, instructions, prep time, and tags. Let me save new recipes and search through my collection."
+          },
+          {
+            "label": "Event Calendar",
+            "icon": "event",
+            "fullText": "Create an event scheduler that saves appointments to a database with title, date, time, location, and attendees. Let me view, edit, and delete events with all changes persisted."
+          }
+        ],
+        "themes": [
+          {
+            "name": "Deco",
+            "colors": [
+              "#d0ec1a",
+              "#ffffff",
+              "#e5e5e5",
+              "#262626"
+            ]
+          },
+          {
+            "name": "Elegant Luxury",
+            "colors": [
+              "#d0ec1a",
+              "#171717",
+              "#404040",
+              "#fafafa"
+            ]
+          },
+          {
+            "name": "Neo Brutalism",
+            "colors": [
+              "#ff3333",
+              "#ffffff",
+              "#000000",
+              "#0066ff"
+            ]
+          },
+          {
+            "name": "Graphite",
+            "colors": [
+              "#a0a0a0",
+              "#1a1a1a",
+              "#353535",
+              "#d9d9d9"
+            ]
+          },
+          {
+            "name": "Pastel Dreams",
+            "colors": [
+              "#a78bfa",
+              "#f7f3f9",
+              "#e9d8fd",
+              "#374151"
+            ]
+          },
+          {
+            "name": "Cyberpunk",
+            "colors": [
+              "#ff00c8",
+              "#0c0c1d",
+              "#2e2e5e",
+              "#eceff4"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "__resolveType": "site/sections/FAQ.tsx",
+      "title": "FAQs",
+      "faqItems": [
+        {
+          "question": "What is deco CMS, and how is it different from other AI app builders?",
+          "answer": "deco CMS is an open-source Context CMS — a control plane and runtime for building, running, and monetizing AI apps. Unlike traditional app builders, it unifies context, governance, observability, and monetization in one platform."
+        },
+        {
+          "question": "How does deco CMS handle governance and observability?",
+          "answer": "Every run is fully traced, auditable, and secure. DecoCMS includes role-based access control (RBAC), spend caps, error analytics, and per-step cost visibility — ensuring safe operations and compliance by default."
+        },
+        {
+          "question": "How does the deco CMS SDK work for developers?",
+          "answer": "The deco CMS SDK lets you build, extend, and manage agents, workflows, and UIs in TypeScript. It integrates seamlessly with the CLI, enabling local development, testing, and edge deployment from a single codebase."
+        },
+        {
+          "question": "What is the Context Mesh, and why is it important?",
+          "answer": "The Context Mesh is DecoCMS’s governed layer for connecting data, tools, and models. It provides typed connectors with built-in policy routing, RBAC, observability, and spend controls — ensuring the right context is delivered safely every time."
+        },
+        {
+          "question": "Does deco CMS support edge deployment?",
+          "answer": "Yes. deco CMS ships agents, workflows, and UIs to the edge automatically, ensuring low latency and global performance by default. You can manage environments, preview builds, and deploy updates directly from the CLI."
+        },
+        {
+          "question": "How does deco CMS integrate with Git?",
+          "answer": "deco CMS uses a Git-backed workflow by default. Every change to agents, workflows, and UIs is versioned, allowing you to branch, review, and merge updates just like any modern development stack. This ensures full traceability and safe collaboration between teams."
+        }
+      ],
+      "description": "Here are some frequently asked questions, to solve all your problems.",
+      "eyebrow": "Frequently Asked Questions"
+    },
+    {
+      "__resolveType": "site/sections/FinalCTA.tsx",
+      "title": "Join our thriving community of Al builders ",
+      "primaryButton": {
+        "text": "Join our Discord community",
+        "url": "https://decocms.com/discord"
+      },
+      "secondaryButton": {
+        "text": "Get started building",
+        "url": "https://deco.new/"
+      }
+    },
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "Footer"
+      }
+    }
+  ],
+  "seo": {
+    "__resolveType": "website/sections/Seo/SeoV2.tsx"
+  },
+  "__resolveType": "website/pages/Page.tsx"
+}

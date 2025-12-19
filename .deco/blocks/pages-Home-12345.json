@@ -7,424 +7,110 @@
       "__resolveType": "Header-decocms"
     },
     {
-      "__resolveType": "website/sections/Rendering/Lazy.tsx",
-      "section": {
-        "__resolveType": "site/sections/HeroInteractive.tsx",
-        "title": "Generate internal AI apps that actually ship.",
-        "subtitle": "Connect your tools via MCP, deploy anywhere. Full-stack AI applications with custom UI, workflows and built-in governance.",
-        "apps": [
-          {
-            "name": "Sheets",
-            "mention": "sheets",
-            "icon": "https://assets.decocache.com/decocms/016d6fd8-3395-4267-a4fe-bc10ba1e728e/sheets.png"
-          },
-          {
-            "name": "Discord",
-            "mention": "discord",
-            "icon": "https://assets.decocache.com/decocms/1d97a513-09e5-402a-9bec-2ef2d99db9ed/discord.png"
-          },
-          {
-            "name": "Integration",
-            "mention": "integration",
-            "icon": "https://assets.decocache.com/decocms/5b3bfcaa-8e5b-4dc0-bcd3-df601a2d4684/integration.png"
-          },
-          {
-            "name": "Jira",
-            "mention": "jira",
-            "icon": "https://assets.decocache.com/decocms/bd9c7ae5-28fb-421d-add0-02fdc93431a1/jira.png"
-          },
-          {
-            "name": "GitHub",
-            "mention": "github",
-            "icon": "https://assets.decocache.com/decocms/ddcd9385-de10-4cd0-93df-cdbcc7a83021/github.png"
-          },
-          {
-            "name": "Coda",
-            "mention": "coda",
-            "icon": "https://assets.decocache.com/decocms/b0efa01a-1532-446a-97e9-903be7286459/coda.png"
-          },
-          {
-            "name": "Airtable",
-            "mention": "airtable",
-            "icon": "https://assets.decocache.com/decocms/c89fe4f8-df33-4cfe-ba20-696a37b3b3a4/airtable.png"
-          },
-          {
-            "name": "Drive",
-            "mention": "drive",
-            "icon": "https://assets.decocache.com/decocms/5213e98e-7409-403f-8644-a47c0874b7f5/drive.png"
-          },
-          {
-            "name": "Gmail",
-            "mention": "gmail",
-            "icon": "https://assets.decocache.com/decocms/452b8f22-f11e-4b6f-8934-2e58419ea705/integration-1.png"
-          },
-          {
-            "name": "Slack",
-            "mention": "slack",
-            "icon": "https://assets.decocache.com/decocms/452b8f22-f11e-4b6f-8934-2e58419ea705/integration-1.png"
-          },
-          {
-            "name": "Calendar",
-            "mention": "calendar",
-            "icon": "https://assets.decocache.com/decocms/07b013d3-947c-4eae-ba13-e1babe93ee1e/calendar.png"
-          },
-          {
-            "name": "WhatsApp",
-            "mention": "whatsapp",
-            "icon": "https://assets.decocache.com/decocms/e37e5504-fd97-4318-b554-334bef9cf0c2/whatsapp.png"
-          },
-          {
-            "name": "Notion",
-            "mention": "notion",
-            "icon": "https://assets.decocache.com/decocms/1152c0ec-fc39-4a31-bd54-9229fa40836a/notion.png"
-          }
-        ],
-        "promptTemplates": [
-          {
-            "label": "Task Manager",
-            "icon": "task_alt",
-            "fullText": "Create a task manager that saves tasks to a database with title, priority, due date, and status. Let me add, edit, complete, and delete tasks with everything persisted."
-          },
-          {
-            "label": "Expense Tracker",
-            "icon": "payments",
-            "fullText": "Build an expense tracker that stores all transactions in a database with amount, category, date, and description. Show monthly totals and spending charts from the saved data."
-          },
-          {
-            "label": "Customer Database",
-            "icon": "badge",
-            "fullText": "Create a CRM that stores customer records in a database with name, email, phone, notes, and last contact date. Include search and the ability to update contact information."
-          },
-          {
-            "label": "Inventory Manager",
-            "icon": "inventory",
-            "fullText": "Build an inventory system with a database to track products, quantities, SKUs, and reorder points. Let me update stock levels and get alerts when items need restocking."
-          },
-          {
-            "label": "Reading List",
-            "icon": "menu_book",
-            "fullText": "Create a book tracker with a database storing title, author, genre, status (to-read/reading/read), and my personal rating. Let me search and filter my saved books."
-          },
-          {
-            "label": "Habit Tracker",
-            "icon": "trending_up",
-            "fullText": "Build a habit tracker that saves daily check-ins to a database with habit name, completion status, and timestamp. Show my streak history and consistency patterns from stored data."
-          },
-          {
-            "label": "Project Planner",
-            "icon": "folder_special",
-            "fullText": "Create a project manager that stores projects, tasks, and assignments in a database with due dates and status. Show progress calculations based on completed vs total tasks."
-          },
-          {
-            "label": "Recipe Collection",
-            "icon": "restaurant",
-            "fullText": "Build a recipe organizer with a database storing recipe name, ingredients, instructions, prep time, and tags. Let me save new recipes and search through my collection."
-          },
-          {
-            "label": "Event Calendar",
-            "icon": "event",
-            "fullText": "Create an event scheduler that saves appointments to a database with title, date, time, location, and attendees. Let me view, edit, and delete events with all changes persisted."
-          }
-        ],
-        "themes": [
-          {
-            "name": "Deco",
-            "colors": [
-              "#d0ec1a",
-              "#ffffff",
-              "#e5e5e5",
-              "#262626"
-            ]
-          },
-          {
-            "name": "Elegant Luxury",
-            "colors": [
-              "#d0ec1a",
-              "#171717",
-              "#404040",
-              "#fafafa"
-            ]
-          },
-          {
-            "name": "Neo Brutalism",
-            "colors": [
-              "#ff3333",
-              "#ffffff",
-              "#000000",
-              "#0066ff"
-            ]
-          },
-          {
-            "name": "Graphite",
-            "colors": [
-              "#a0a0a0",
-              "#1a1a1a",
-              "#353535",
-              "#d9d9d9"
-            ]
-          },
-          {
-            "name": "Pastel Dreams",
-            "colors": [
-              "#a78bfa",
-              "#f7f3f9",
-              "#e9d8fd",
-              "#374151"
-            ]
-          },
-          {
-            "name": "Cyberpunk",
-            "colors": [
-              "#ff00c8",
-              "#0c0c1d",
-              "#2e2e5e",
-              "#eceff4"
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "__resolveType": "website/flags/multivariate/section.ts",
-      "variants": [
+      "__resolveType": "site/sections/HeroCMS.tsx",
+      "badgeText": "Context Management for AI-Native Operations",
+      "highlightedTitle": "Context Management System",
+      "mainTitle": "for CIOs, CTOs and AI Platform teams.",
+      "subtitle": "Build a secure internal AI operating system on MCP: governed, observable, and designed to scale beyond pilots.",
+      "strategyLabel": "Control execution and access—while teams build and use MCP-native apps.",
+      "cards": [
         {
-          "value": {
-            "__resolveType": "site/sections/Hero.tsx",
-            "title": "Open-source admin for scalable AI apps",
-            "subtitle": "Generate full-stack TypeScript AI apps, from database to agentic workflows, connected to your MCPs. Deploy anywhere.",
-            "primaryButtonText": "Testar grátis",
-            "integrationsTitle": "Seamless Integrations",
-            "icons": [
-              "https://assets.decocache.com/decocms/e37e5504-fd97-4318-b554-334bef9cf0c2/whatsapp.png",
-              "https://assets.decocache.com/decocms/016d6fd8-3395-4267-a4fe-bc10ba1e728e/sheets.png",
-              "https://assets.decocache.com/decocms/1152c0ec-fc39-4a31-bd54-9229fa40836a/notion.png",
-              "https://assets.decocache.com/decocms/bd9c7ae5-28fb-421d-add0-02fdc93431a1/jira.png",
-              "https://assets.decocache.com/decocms/5b3bfcaa-8e5b-4dc0-bcd3-df601a2d4684/integration.png",
-              "https://assets.decocache.com/decocms/452b8f22-f11e-4b6f-8934-2e58419ea705/integration-1.png",
-              "https://assets.decocache.com/decocms/ddcd9385-de10-4cd0-93df-cdbcc7a83021/github.png",
-              "https://assets.decocache.com/decocms/5213e98e-7409-403f-8644-a47c0874b7f5/drive.png",
-              "https://assets.decocache.com/decocms/1d97a513-09e5-402a-9bec-2ef2d99db9ed/discord.png",
-              "https://assets.decocache.com/decocms/b0efa01a-1532-446a-97e9-903be7286459/coda.png",
-              "https://assets.decocache.com/decocms/c89fe4f8-df33-4cfe-ba20-696a37b3b3a4/airtable.png",
-              "https://assets.decocache.com/decocms/07b013d3-947c-4eae-ba13-e1babe93ee1e/calendar.png"
-            ],
-            "buttonText": "Start now (beta)",
-            "buttonUrl": "https://admin.decocms.com",
-            "backgroundImage": "https://assets.decocache.com/decocms/406169e4-18af-4858-a350-9aa75c0ec4de/herobanner2.svg",
-            "secondaryButtonUrl": "https://github.com/decocms/admin",
-            "secondaryButtonText": "Self-host (soon)"
-          },
-          "rule": {
-            "__resolveType": "website/matchers/never.ts"
-          }
+          "badge": "Context Infrastructure",
+          "title": "MCP Mesh",
+          "buttonText": "Explore the MCP Mesh",
+          "buttonLink": "/mesh"
+        },
+        {
+          "badge": "Building",
+          "title": "MCP Studio",
+          "buttonText": "Get Studio Early Access",
+          "buttonLink": "/mcp-studio"
         }
       ]
+    },
+    {
+      "__resolveType": "site/sections/ProblemCards.tsx"
+    },
+    {
+      "__resolveType": "site/sections/AutonomyControl.tsx",
+      "cards": [
+        {
+          "title": "A builder framework",
+          "descriptionBefore": "So teams can ",
+          "descriptionHighlighted": "create prototypes, automate workflows, ship internal apps, and iterate quickly",
+          "descriptionAfter": ". Self-serve for internal AI builders, complete extensibility for engineers.",
+          "image": "https://assets.decocache.com/decocms/e18a9e46-5818-4035-b656-d8b7174584fc/builder-framework.png"
+        },
+        {
+          "title": "A path to production that doesn't reset",
+          "descriptionBefore": "So validated use cases are ",
+          "descriptionHighlighted": "reliable, governed, and continuously improved",
+          "descriptionAfter": ", without being rebuilt from scratch.",
+          "image": "https://assets.decocache.com/decocms/3d1321b2-a609-4d25-83e0-9d44147c5744/path-prod.png"
+        }
+      ],
+      "title": "Autonomy with control",
+      "subtitle": "AI-native organizations need two things at the same time:",
+      "footerLine1": "decoCMS is designed for that middle path:",
+      "footerLine2": "fast iteration and durable production systems.",
+      "eyebrow": "THE FIX:"
+    },
+    {
+      "__resolveType": "site/sections/MCPMeshLayers.tsx"
     },
     {
       "__resolveType": "site/sections/TextMedia.tsx",
-      "title": "AI demos are easy. Production isn't.",
-      "eyebrow": "Control panel for your AI stack",
-      "description": "Deco Context Management System bridges the gap between prompts and production. Connect your stack, govern every step, and deploy agentic apps with built-in observability and spend controls.",
-      "image": "https://assets.decocache.com/decocms/279f8bb8-4f8f-4cb7-a3d7-93a9e2ac789e/cmspage.png",
+      "title": "Models alone rarely create results that move the needle. Systems do.",
+      "description": "When context is fragmented, outputs stay generic, unsafe, and hard to debug. When context is governed and observable, outputs become reliable—and measurable. decoCMS is designed for continuous evolution:",
+      "eyebrow": "Context Management System",
+      "image": "https://assets.decocache.com/decocms/1a57eceb-c338-4371-a2a7-49efe5779b0e/loop.png",
+      "mobileImage": "https://assets.decocache.com/decocms/3ba2ca64-e1d3-40c9-aee9-bc118bd587fe/loop-mobile.png",
       "imageAlt": "Section image",
       "keywords": [
-        "MCP mesh",
-        "safe vibe coding",
-        "observability",
-        "controls",
-        "governance",
-        "build once bill per run"
-      ]
-    },
-    {
-      "__resolveType": "site/sections/Features.tsx",
-      "title": "The MCP-native platform for full-stack AI apps",
-      "subtitle": "Build workflows like n8n, design interfaces like Lovable, deploy MCP-native apps - all in a single governed environment.",
-      "features": [
-        {
-          "title": "Connect your context",
-          "description": "Unify data, tools and models with policy, RBAC and observability — your agents always get the right context, safely.",
-          "items": [
-            {
-              "name": "MCP-native connectors",
-              "image": "https://assets.decocache.com/decocms/be9855f8-fc9c-477f-90b4-3182935b0438/mcp-native-connectors.png"
-            },
-            {
-              "name": "Policy routing & RBAC",
-              "image": "https://assets.decocache.com/decocms/b93680dd-ec8d-4eda-b20a-88bd2e941c69/policy-routing--rbac.png"
-            },
-            {
-              "name": "Spend caps & budgets",
-              "image": "https://assets.decocache.com/decocms/5aac6425-c7fe-452b-a057-06e25ee75333/spend-caps--budgets.png"
-            },
-            {
-              "name": "Audit trail",
-              "image": "https://assets.decocache.com/decocms/ed4746ae-23fa-432e-b673-a32f1f52830e/audit-trail.png"
-            }
-          ],
-          "imagePosition": "right"
-        },
-        {
-          "title": "Govern & observe your runs",
-          "description": "No vibe debugging: logs, traces, error analytics and cost-per-step to optimize quality and spend, with roles, approvals and tenancy.",
-          "items": [
-            {
-              "name": "Logs & traces",
-              "image": "https://assets.decocache.com/decocms/76e5dc95-92b8-458e-8af4-39025ca981ef/Logs--traces.png"
-            },
-            {
-              "name": "Error analytics",
-              "image": "https://assets.decocache.com/decocms/55058634-3107-4cc5-b5e2-cd706e4288e0/error.png"
-            },
-            {
-              "name": "Cost per step & budgets",
-              "image": "https://assets.decocache.com/decocms/0cb76bab-1ea6-4dc3-9997-8e07c6f91b29/Cost-per-step--budgets.png"
-            },
-            {
-              "name": "Roles, approvals & tenancy",
-              "image": "https://assets.decocache.com/decocms/93957948-af6c-4c7d-b194-bd322a81707b/Roles-approvals--tenancy.png"
-            }
-          ],
-          "imagePosition": "left"
-        }
-      ]
-    },
-    {
-      "__resolveType": "site/sections/OnePlatformTwoSurfaces.tsx",
-      "title": "Realtime\ncollaboration",
-      "subtitle": "Business users prototype in natural language. Engineers scale in code.",
-      "features": [
-        "Versioning & Git-native",
-        "Governance built-in",
-        "Fast Global Edge Deploy",
-        "Open & extensible"
-      ],
-      "card1Title": "Natural‑language builder\nfor business users",
-      "card2Title": "Open‑source TypeScript\nSDK for devs",
-      "card1ContentImage": "https://assets.decocache.com/decocms/fc7ca333-40a3-4bb6-bb4f-7929e7bbd910/bowner.png",
-      "card2ContentImage": "https://assets.decocache.com/decocms/27891745-4954-402c-a739-6aac02ba2383/dev.png",
-      "card1BackgroundImage": "https://assets.decocache.com/decocms/ab1d3369-1197-4d6f-9fdf-fdcc0c510303/image-998.png",
-      "card2BackgroundImage": "https://assets.decocache.com/decocms/f1bce085-4f76-4cd2-9b0b-b2c96ced957e/image-999.png"
-    },
-    {
-      "__resolveType": "website/flags/multivariate/section.ts",
-      "variants": [
-        {
-          "value": {
-            "__resolveType": "website/sections/Rendering/Lazy.tsx",
-            "section": {
-              "__resolveType": "site/sections/MainFeatures.tsx",
-              "title": "Prototype in chat.\nShip in code.",
-              "description": "A generative control plane for data, tools, models, permissions, and memory — so you can run & monetize agentic apps in production.",
-              "icon": "https://assets.decocache.com/decochatweb/315a119f-dfcc-46a1-a2a0-f9ee7ac54565/decologoblack.svg",
-              "featureCards": [
-                {
-                  "category": "OPEN-SOURCE",
-                  "title": "Own your context. Own your tools.",
-                  "description": "Zero lock-in with self-hosting, BYOK, and a forkable core — your code, your data, your keys, your control.",
-                  "showDescription": false,
-                  "image": "https://placehold.co/426x322?text=Open+Source",
-                  "size": "small",
-                  "imageAspectRatio": "426/322",
-                  "mediaType": "video",
-                  "videoUrl": "https://assets.decocache.com/decochatweb/83b5fdb7-c079-43e4-a47f-e64e4a8577cf/open-source.webm"
-                },
-                {
-                  "category": "EDGE DEPLOY",
-                  "title": "Deploy to the edge with typed RPC",
-                  "description": "Ship agents, workflows, and UIs together with global edge deployment and typed interfaces — fast, reliable, and scalable.",
-                  "showDescription": false,
-                  "image": "https://placehold.co/426x322?text=Edge+Deploy",
-                  "size": "small",
-                  "imageAspectRatio": "426/322",
-                  "mediaType": "video",
-                  "videoUrl": "https://assets.decocache.com/decochatweb/d440a1a3-8dbd-4b32-ae98-f76ffad0515f/Whitelabel.webm"
-                },
-                {
-                  "category": "TOOLS",
-                  "title": "MCP-native connectors with policy & RBAC",
-                  "description": "Unify data, tools and models with governed routing, permissions, and observability — your agents always get the right context, safely.",
-                  "showDescription": false,
-                  "image": "https://placehold.co/426x322?text=Tools",
-                  "size": "small",
-                  "imageAspectRatio": "426/322",
-                  "mediaType": "video",
-                  "videoUrl": "https://assets.decocache.com/decochatweb/95a7b198-c3f9-4546-a61f-4254a9d58897/Integracoes.webm"
-                },
-                {
-                  "category": "VIEWS & UIS",
-                  "title": "Compose agents, workflows, and UIs in one repo",
-                  "description": "Build custom interfaces and dashboards that connect directly to your agentic workflows — no vendor sprawl, just clean TypeScript.",
-                  "showDescription": false,
-                  "image": "https://placehold.co/643x531?text=Views+UIs",
-                  "size": "wide",
-                  "imageAspectRatio": "643/531",
-                  "mediaType": "video",
-                  "videoUrl": "https://assets.decocache.com/decochatweb/12514d1f-53e9-4591-8bb5-46963c0ed33a/Views.webm"
-                },
-                {
-                  "category": "WORKFLOWS",
-                  "title": "Orchestrate complex automations with guardrails",
-                  "description": "Chain multiple agents and tools in reliable flows with error handling, retry logic, and complete audit trails for production workloads.",
-                  "showDescription": false,
-                  "image": "https://placehold.co/643x595?text=Workflows",
-                  "size": "wide",
-                  "imageAspectRatio": "643/595",
-                  "mediaType": "video",
-                  "videoUrl": "https://assets.decocache.com/decochatweb/07b2b2c6-58cd-45c5-8abe-86764ac4cc77/Workflows.webm"
-                }
-              ]
-            }
-          },
-          "rule": {
-            "__resolveType": "website/matchers/never.ts"
-          }
-        }
+        "instrument every tool/model call",
+        "Proven-in-prod insights",
+        "Continuous policy tuning",
+        "Agents that act (not just chat)"
       ]
     },
     {
       "__resolveType": "site/sections/FAQ.tsx",
       "title": "FAQs",
+      "description": "Here are some frequently asked questions, to solve all your problems.",
+      "eyebrow": "Frequently Asked Questions",
       "faqItems": [
         {
-          "question": "What is deco CMS, and how is it different from other AI app builders?",
-          "answer": "deco CMS is an open-source Context CMS — a control plane and runtime for building, running, and monetizing AI apps. Unlike traditional app builders, it unifies context, governance, observability, and monetization in one platform."
+          "question": "Is this just another agent framework?",
+          "answer": "No. Frameworks help you build agents. decoCMS is the operating layer that makes tool access, permissions, audit trails, and observability consistent—so agents can actually survive production."
         },
         {
-          "question": "How does deco CMS handle governance and observability?",
-          "answer": "Every run is fully traced, auditable, and secure. DecoCMS includes role-based access control (RBAC), spend caps, error analytics, and per-step cost visibility — ensuring safe operations and compliance by default."
+          "question": "Do we need MCP to use this?",
+          "answer": "If you're serious about interoperability, yes—MCP is quickly becoming the shared \"tool access protocol.\" decoCMS is built around MCP because governance and scale require a standard control plane."
         },
         {
-          "question": "How does the deco CMS SDK work for developers?",
-          "answer": "The deco CMS SDK lets you build, extend, and manage agents, workflows, and UIs in TypeScript. It integrates seamlessly with the CLI, enabling local development, testing, and edge deployment from a single codebase."
+          "question": "How does this help with \"shadow AI\"?",
+          "answer": "By moving control from \"policy docs\" into runtime: SSO/IAM, access policies, audit logs, and cost attribution become enforced automatically instead of negotiated app-by-app."
         },
         {
-          "question": "What is the Context Mesh, and why is it important?",
-          "answer": "The Context Mesh is DecoCMS’s governed layer for connecting data, tools, and models. It provides typed connectors with built-in policy routing, RBAC, observability, and spend controls — ensuring the right context is delivered safely every time."
+          "question": "How do permissions work in practice?",
+          "answer": "You define who can call what—by user/team/app/agent—at the Mesh layer. So \"marketing agent\" can read CRM fields but can't write to prod systems unless explicitly allowed."
         },
         {
-          "question": "Does deco CMS support edge deployment?",
-          "answer": "Yes. deco CMS ships agents, workflows, and UIs to the edge automatically, ensuring low latency and global performance by default. You can manage environments, preview builds, and deploy updates directly from the CLI."
+          "question": "Can I self-host?",
+          "answer": "Yes. The point is portability: run on Kubernetes, on-prem, or in your cloud—while keeping the same governed endpoint and operational model."
         },
         {
-          "question": "How does deco CMS integrate with Git?",
-          "answer": "deco CMS uses a Git-backed workflow by default. Every change to agents, workflows, and UIs is versioned, allowing you to branch, review, and merge updates just like any modern development stack. This ensures full traceability and safe collaboration between teams."
+          "question": "How does this reduce cost, not increase it?",
+          "answer": "Mesh-level runtime strategies help avoid \"tool spam\" and bloated contexts, route calls intelligently, and give you cost attribution per team/app—so you can actually set limits and optimize."
+        },
+        {
+          "question": "What's the fastest path to value?",
+          "answer": "Start with one high-impact workflow where governance matters (support, sales ops, internal approvals). Use Mesh to standardize access + logging, then use Studio to turn what works into reusable assets."
         }
-      ],
-      "description": "Here are some frequently asked questions, to solve all your problems.",
-      "eyebrow": "Frequently Asked Questions"
+      ]
     },
     {
-      "__resolveType": "site/sections/FinalCTA.tsx",
-      "title": "Join our thriving community of Al builders ",
-      "primaryButton": {
-        "text": "Join our Discord community",
-        "url": "https://decocms.com/discord"
-      },
-      "secondaryButton": {
-        "text": "Get started building",
-        "url": "https://deco.new/"
-      }
+      "__resolveType": "site/sections/FinalCTACMS.tsx"
     },
     {
       "__resolveType": "website/sections/Rendering/Lazy.tsx",

@@ -17,13 +17,8 @@
       "items": []
     },
     {
-      "label": "Partners",
-      "items": [],
-      "href": "/partners"
-    },
-    {
-      "items": [],
       "label": "Blog",
+      "items": [],
       "href": "/blog"
     },
     {
@@ -37,8 +32,8 @@
           "href": "/mesh"
         },
         {
-          "label": "AI App Builder",
-          "href": "/"
+          "label": "MCP Studio",
+          "href": "/mcp-studio"
         }
       ],
       "label": "Products"

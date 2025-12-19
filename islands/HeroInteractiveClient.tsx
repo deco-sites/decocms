@@ -22,6 +22,7 @@ interface Theme {
 }
 
 export interface Props {
+  tag?: string;
   title?: string;
   subtitle?: string;
   apps?: AppIcon[];
@@ -68,6 +69,7 @@ function triggerAnimations(gsap: any) {
 }
 
 export default function HeroInteractiveClient({
+  tag,
   title,
   subtitle,
   apps = [],
@@ -186,6 +188,11 @@ export default function HeroInteractiveClient({
           <div class="w-full max-w-[1140px] flex flex-col gap-[3vh] sm:gap-12 lg:gap-16 items-center">
             {/* Title and Subtitle - Server-side rendered */}
             <div class="flex flex-col gap-[1.5vh] sm:gap-5 items-center text-center w-full">
+              {tag && (
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase bg-primary-light text-primary-dark">
+                  {tag}
+                </span>
+              )}
               <h1 class="text-[clamp(28px,4.5vh,64px)] sm:text-[48px] lg:text-[64px] font-[590] text-primary-dark leading-[0.95] sm:leading-[0.9] tracking-[-0.64px] sm:tracking-[-1.28px] max-w-[936px] px-2">
                 {title}
               </h1>

@@ -8,8 +8,11 @@ export interface Props {
   /** @title Description */
   description?: string;
   /** @title Image */
-  /** @description Image displayed on the right side */
+  /** @description Image displayed on desktop */
   image?: ImageWidget;
+  /** @title Mobile Image */
+  /** @description Image displayed on mobile devices */
+  mobileImage?: ImageWidget;
   /** @title Image Alt Text */
   imageAlt?: string;
   /** @title Keywords */
@@ -22,6 +25,7 @@ export default function TextMedia({
   title,
   description,
   image,
+  mobileImage,
   imageAlt,
   keywords,
 }: Props) {
@@ -55,16 +59,30 @@ export default function TextMedia({
         </div>
 
         {/* Image Section */}
-        {image && (
+        {(image || mobileImage) && (
           <div class="w-full bg-primary-light rounded-xl overflow-hidden">
-            <div class="w-full h-[300px] sm:h-[400px] lg:h-[450px] bg-white rounded-lg overflow-hidden">
-              <img
-                src={image}
-                alt={imageAlt || ""}
-                class="w-full h-full object-cover object-left-top"
-                loading="lazy"
-              />
-            </div>
+            {/* Mobile Image */}
+            {mobileImage && (
+              <div class="block sm:hidden w-full aspect-[390/481] bg-white rounded-lg overflow-hidden">
+                <img
+                  src={mobileImage}
+                  alt={imageAlt || ""}
+                  class="w-full h-full object-cover object-left-top"
+                  loading="lazy"
+                />
+              </div>
+            )}
+            {/* Desktop Image */}
+            {image && (
+              <div class={`${mobileImage ? "hidden sm:block" : "block"} w-full h-[300px] sm:h-[400px] lg:h-[450px] bg-white rounded-lg overflow-hidden`}>
+                <img
+                  src={image}
+                  alt={imageAlt || ""}
+                  class="w-full h-full object-cover object-left-top"
+                  loading="lazy"
+                />
+              </div>
+            )}
           </div>
         )}
 

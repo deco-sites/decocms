@@ -1,14 +1,49 @@
-import MCPMeshLayersAnimation from "../islands/MCPMeshLayersAnimation.tsx";
+import MCPMeshLayersPinned from "../islands/MCPMeshLayersPinned.tsx";
 
-export interface Props {
+export interface LayerContent {
   /**
-   * @title Section Title
+   * @title Label (e.g., "1) FOUNDATION")
+   */
+  label?: string;
+  /**
+   * @title Title
    */
   title?: string;
   /**
-   * @title Subheadline
+   * @title Subtitle - Text before highlight
    */
-  subheadline?: string;
+  subtitleBefore?: string;
+  /**
+   * @title Subtitle - Highlighted text (green)
+   */
+  subtitleHighlighted?: string;
+  /**
+   * @title Subtitle - Text after highlight
+   */
+  subtitleAfter?: string;
+  /**
+   * @title Description
+   */
+  description?: string;
+  /**
+   * @title Link Text
+   */
+  linkText?: string;
+  /**
+   * @title Link URL
+   */
+  linkHref?: string;
+}
+
+export interface Props {
+  /**
+   * @title Section Title (First Line)
+   */
+  title?: string;
+  /**
+   * @title Section Subtitle (Second Line)
+   */
+  subtitle?: string;
   /**
    * @title Layer 1 Image
    */
@@ -21,245 +56,110 @@ export interface Props {
    * @title Layer 3 Image
    */
   layer3Image?: string;
+  /**
+   * @title Layer 1 Content
+   */
+  layer1Content?: LayerContent;
+  /**
+   * @title Layer 2 Content
+   */
+  layer2Content?: LayerContent;
+  /**
+   * @title Layer 3 Content
+   */
+  layer3Content?: LayerContent;
 }
+
+const defaultLayer1Content: LayerContent = {
+  label: "1) FOUNDATION",
+  title: "MCP Mesh",
+  subtitleBefore: "A secure and ",
+  subtitleHighlighted: "complete control plane",
+  subtitleAfter: " to connect tools and data via MCP.",
+  description: "Unify tool and model calls behind one endpoint, with policy enforcement, audit trails, and runtime strategies that optimize for cost, speed, and accuracy.",
+  linkText: "Learn about MCP Mesh →",
+  linkHref: "#mcp-mesh",
+};
+
+const defaultLayer2Content: LayerContent = {
+  label: "2) BUILD",
+  title: "MCP Studio",
+  subtitleBefore: "Framework to build and curate ",
+  subtitleHighlighted: "MCP-native capabilities",
+  subtitleAfter: " that become reusable assets.",
+  description: "Create tools, workflows, and apps with consistent schemas, permissions, and interfaces, so other teams can reuse them while maintaining engineering standards.",
+  linkText: "Get Studio Early Access →",
+  linkHref: "#mcp-studio",
+};
+
+const defaultLayer3Content: LayerContent = {
+  label: "3) LEVERAGE",
+  title: "MCP Apps + Store",
+  subtitleBefore: "Marketplace to distribute and compose ",
+  subtitleHighlighted: "autonomous capabilities",
+  subtitleAfter: ".",
+  description: "Install premade solutions, publish internal apps across teams, and share / monetize through our store. Humans and agents run work safely with measurable costs and outcomes.",
+  linkText: "Explore the Store →",
+  linkHref: "#mcp-store",
+};
 
 export default function MCPMeshLayers({
-  title = "Built in layers. Designed to scale.",
-  subheadline = "From infrastructure to ecosystem, deco CMS grows with you.",
-  layer1Image = "https://assets.decocache.com/decocms/0c1061c8-6ff8-4683-a7a4-c65b8ba07492/layer1.svg",
-  layer2Image = "https://assets.decocache.com/decocms/fb45983b-4345-44e0-a692-6972fd2add82/layer2.svg",
-  layer3Image = "https://assets.decocache.com/decocms/74d273a8-eca8-4925-9f20-62534cc0067c/layer3.svg",
+  title = "The platform:",
+  subtitle = "Three layers that compound",
+  layer1Image = "https://assets.decocache.com/decocms/017dd618-6091-4de3-bd5a-eb7032fdb8c3/layer1.png",
+  layer2Image = "https://assets.decocache.com/decocms/cd46e66f-1dc0-457f-a685-9e2dcd76c1ab/layer2.png",
+  layer3Image = "https://assets.decocache.com/decocms/82d35ce7-c78b-4ce6-bfd7-94a68b9a874f/layer3.png",
+  layer1Content = defaultLayer1Content,
+  layer2Content = defaultLayer2Content,
+  layer3Content = defaultLayer3Content,
 }: Props) {
+  const contents = [
+    {
+      label: layer1Content.label || defaultLayer1Content.label!,
+      title: layer1Content.title || defaultLayer1Content.title!,
+      highlightedSubtitle: {
+        before: layer1Content.subtitleBefore || defaultLayer1Content.subtitleBefore!,
+        highlighted: layer1Content.subtitleHighlighted || defaultLayer1Content.subtitleHighlighted!,
+        after: layer1Content.subtitleAfter || defaultLayer1Content.subtitleAfter!,
+      },
+      description: layer1Content.description || defaultLayer1Content.description!,
+      linkText: layer1Content.linkText || defaultLayer1Content.linkText!,
+      linkHref: layer1Content.linkHref || defaultLayer1Content.linkHref!,
+    },
+    {
+      label: layer2Content.label || defaultLayer2Content.label!,
+      title: layer2Content.title || defaultLayer2Content.title!,
+      highlightedSubtitle: {
+        before: layer2Content.subtitleBefore || defaultLayer2Content.subtitleBefore!,
+        highlighted: layer2Content.subtitleHighlighted || defaultLayer2Content.subtitleHighlighted!,
+        after: layer2Content.subtitleAfter || defaultLayer2Content.subtitleAfter!,
+      },
+      description: layer2Content.description || defaultLayer2Content.description!,
+      linkText: layer2Content.linkText || defaultLayer2Content.linkText!,
+      linkHref: layer2Content.linkHref || defaultLayer2Content.linkHref!,
+    },
+    {
+      label: layer3Content.label || defaultLayer3Content.label!,
+      title: layer3Content.title || defaultLayer3Content.title!,
+      highlightedSubtitle: {
+        before: layer3Content.subtitleBefore || defaultLayer3Content.subtitleBefore!,
+        highlighted: layer3Content.subtitleHighlighted || defaultLayer3Content.subtitleHighlighted!,
+        after: layer3Content.subtitleAfter || defaultLayer3Content.subtitleAfter!,
+      },
+      description: layer3Content.description || defaultLayer3Content.description!,
+      linkText: layer3Content.linkText || defaultLayer3Content.linkText!,
+      linkHref: layer3Content.linkHref || defaultLayer3Content.linkHref!,
+    },
+  ];
+
   return (
-    <section class="w-full bg-dc-50 pt-16 md:pt-24 lg:pt-32 pb-16 md:pb-20 lg:pb-24">
-      <div class="max-w-[1600px] mx-auto px-6 sm:px-10 lg:px-20">
-        {/* Header */}
-        <div class="mb-16 md:mb-20 lg:mb-24 text-center">
-          <h2 class="text-dc-900 text-4xl md:text-5xl lg:text-6xl font-medium mb-4 leading-tight">
-            {title}
-          </h2>
-          <p class="text-dc-500 text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto">
-            {subheadline}
-          </p>
-        </div>
-
-        {/* Main Content - Two Column Layout */}
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-          {/* Left Column - Content */}
-          <div class="space-y-40 lg:space-y-48">
-            {/* Layer 1: MCP Mesh */}
-            <div class="scroll-section" id="layer-1">
-              <div class="mb-6">
-                <p class="font-mono text-dc-500 text-xs uppercase tracking-wider mb-4">
-                  LAYER 1: THE FOUNDATION
-                </p>
-                <h3 class="text-dc-900 text-3xl md:text-4xl font-medium mb-4">
-                  MCP Mesh
-                </h3>
-                <p class="text-dc-500 text-lg md:text-xl font-medium mb-6">
-                  Open-source infrastructure to connect, secure, and monitor your enterprise context.
-                </p>
-                <p class="text-dc-500 text-base md:text-lg leading-relaxed">
-                  Production-ready MCP gateway that centralizes all your organization's context—CRMs, ERPs, databases, SaaS platforms, internal APIs—into one governed endpoint accessible by any AI tool.
-                </p>
-              </div>
-
-              {/* Mobile: SVG Layer 1 */}
-              <div class="lg:hidden mb-8 flex justify-center">
-                <img
-                  src={layer1Image}
-                  alt="Layer 1"
-                  class="w-full max-w-[400px] h-auto"
-                />
-              </div>
-
-              {/* Core Capabilities - Bento Grid */}
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
-                {/* Connect Everything */}
-                <div class="bg-white/50 backdrop-blur-sm rounded-2xl border border-dc-200 p-6">
-                  <h4 class="text-dc-900 text-xl font-medium mb-3">Connect Everything</h4>
-                  <ul class="space-y-2 text-dc-500 text-sm">
-                    <li>• One endpoint for all MCP servers (HTTP, SSE, WebSocket)</li>
-                    <li>• One-click install from integrated Store</li>
-                    <li>• Smart routing with policy enforcement</li>
-                  </ul>
-                </div>
-
-                {/* Secure & Govern */}
-                <div class="bg-white/50 backdrop-blur-sm rounded-2xl border border-dc-200 p-6">
-                  <h4 class="text-dc-900 text-xl font-medium mb-3">Secure & Govern</h4>
-                  <ul class="space-y-2 text-dc-500 text-sm">
-                    <li>• Centralized credentials vault</li>
-                    <li>• Enterprise SSO (Okta, Azure AD)</li>
-                    <li>• Granular RBAC per tool, per user</li>
-                    <li>• Policy enforcement at protocol level</li>
-                  </ul>
-                </div>
-
-                {/* Monitor & Observe */}
-                <div class="bg-white/50 backdrop-blur-sm rounded-2xl border border-dc-200 p-6">
-                  <h4 class="text-dc-900 text-xl font-medium mb-3">Monitor & Observe</h4>
-                  <ul class="space-y-2 text-dc-500 text-sm">
-                    <li>• OpenTelemetry tracing for every tool call</li>
-                    <li>• Real-time cost attribution (per user/project/day)</li>
-                    <li>• Complete audit trails for compliance</li>
-                  </ul>
-                </div>
-
-                {/* Built for Performance */}
-                <div class="bg-white/50 backdrop-blur-sm rounded-2xl border border-dc-200 p-6">
-                  <h4 class="text-dc-900 text-xl font-medium mb-3">Built for Performance</h4>
-                  <ul class="space-y-2 text-dc-500 text-sm">
-                    <li>• Code execution native (90% token reduction)</li>
-                    <li>• Zero added latency architecture</li>
-                    <li>• AI Gateway with Open Router or BYOK/BYOM</li>
-                  </ul>
-                </div>
-
-                {/* Deploy Anywhere - Full Width */}
-                <div class="bg-white/50 backdrop-blur-sm rounded-2xl border border-dc-200 p-6 md:col-span-2">
-                  <h4 class="text-dc-900 text-xl font-medium mb-3">Deploy Anywhere</h4>
-                  <ul class="space-y-2 text-dc-500 text-sm">
-                    <li>• Open source (audit, fork, contribute)</li>
-                    <li>• Self-host on any infrastructure</li>
-                    <li>• Zero vendor lock-in</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            {/* Layer 2: AI Studio */}
-            <div class="scroll-section" id="layer-2">
-              <div class="mb-6">
-                <p class="font-mono text-dc-500 text-xs uppercase tracking-wider mb-4">
-                  LAYER 2: THE BUILDER
-                </p>
-                <h3 class="text-dc-900 text-3xl md:text-4xl font-medium mb-4">
-                  AI Studio
-                </h3>
-                <p class="text-dc-500 text-lg md:text-xl font-medium mb-6">
-                  Full-stack framework for building MCP apps—no-code + full-code.
-                </p>
-                <p class="text-dc-500 text-base md:text-lg leading-relaxed">
-                  Development platform that transforms your mesh into a complete app-building environment. Two modes working together: vibecoding for business users, TypeScript SDK for developers.
-                </p>
-              </div>
-
-              {/* Mobile: SVG Layer 2 */}
-              <div class="lg:hidden mb-8 flex justify-center">
-                <img
-                  src="https://assets.decocache.com/decocms/f2665c08-cdeb-499f-b08a-3aaf4ea84116/layer1-2.png"
-                  alt="Layer 2"
-                  class="w-full max-w-[400px] h-auto"
-                />
-              </div>
-
-              {/* Two Building Modes */}
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-                {/* No-Code */}
-                <div class="bg-white/50 backdrop-blur-sm rounded-2xl border border-dc-200 p-6">
-                  <h4 class="text-dc-900 text-xl font-medium mb-4">No-Code (Vibecoding for AI Builders)</h4>
-                  <ul class="space-y-2 text-dc-500 text-sm">
-                    <li>• Chat-based creation: describe what you need, AI generates the app</li>
-                    <li>• Visual workflow builder for agent orchestration</li>
-                    <li>• Pre-built templates (approval workflows, dashboards, alerts)</li>
-                    <li>• Instant preview and testing</li>
-                    <li>• Governed by default (IT-approved boundaries)</li>
-                  </ul>
-                </div>
-
-                {/* Full-Code */}
-                <div class="bg-white/50 backdrop-blur-sm rounded-2xl border border-dc-200 p-6">
-                  <h4 class="text-dc-900 text-xl font-medium mb-4">Full-Code (TypeScript SDK for Developers)</h4>
-                  <ul class="space-y-2 text-dc-500 text-sm">
-                    <li>• TypeScript-first with full-stack type safety</li>
-                    <li>• Agent framework with mesh tool access</li>
-                    <li>• Durable workflows with state persistence</li>
-                    <li>• Custom UIs (React 19 + Tailwind v4, MCP Apps Extension SEP-1865)</li>
-                    <li>• Extend vibecoded apps for optimization/scale</li>
-                    <li>• Full observability through mesh</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            {/* Layer 3: MCP Store */}
-            <div class="scroll-section" id="layer-3">
-              <div class="mb-6">
-                <p class="font-mono text-dc-500 text-xs uppercase tracking-wider mb-4">
-                  LAYER 3: THE MARKETPLACE
-                </p>
-                <h3 class="text-dc-900 text-3xl md:text-4xl font-medium mb-4">
-                  MCP Store
-                </h3>
-                <p class="text-dc-500 text-lg md:text-xl font-medium mb-6">
-                  Discover, install, and monetize MCP apps, one-click deployment.
-                </p>
-                <p class="text-dc-500 text-base md:text-lg leading-relaxed">
-                  Curated marketplace for pre-built MCP solutions. Like an app store for enterprise AI—browse, install, and use immediately within your governed mesh.
-                </p>
-              </div>
-
-              {/* Mobile: SVG Layer 3 */}
-              <div class="lg:hidden mb-8 flex justify-center">
-                <img
-                  src="https://assets.decocache.com/decocms/1cb8a672-2f4a-42cc-b7a0-b709984e0c94/all_layers.png"
-                  alt="Layer 3"
-                  class="w-full max-w-[400px] h-auto"
-                />
-              </div>
-
-              {/* Store Features */}
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-                {/* MCP Servers */}
-                <div class="bg-white/50 backdrop-blur-sm rounded-2xl border border-dc-200 p-6">
-                  <h4 class="text-dc-900 text-xl font-medium mb-4">MCP Servers (External Connections)</h4>
-                  <ul class="space-y-2 text-dc-500 text-sm">
-                    <li>• Connect to SaaS platforms: Salesforce, Slack, Google Drive, GitHub</li>
-                    <li>• One-click install with credentials in mesh vault</li>
-                    <li>• Run elsewhere, authenticate once</li>
-                  </ul>
-                </div>
-
-                {/* MCP Apps */}
-                <div class="bg-white/50 backdrop-blur-sm rounded-2xl border border-dc-200 p-6">
-                  <h4 class="text-dc-900 text-xl font-medium mb-4">MCP Apps (Packaged Solutions)</h4>
-                  <ul class="space-y-2 text-dc-500 text-sm">
-                    <li>• Complete applications: agents + workflows + UIs + databases</li>
-                    <li>• Built by deco, community, or your enterprise teams</li>
-                    <li>• Composable like Lego blocks</li>
-                    <li>• Governed through mesh (RBAC, audit trails, cost controls)</li>
-                  </ul>
-                </div>
-
-                {/* Vertical Bundles - Full Width */}
-                <div class="bg-white/50 backdrop-blur-sm rounded-2xl border border-dc-200 p-6 md:col-span-2">
-                  <h4 class="text-dc-900 text-xl font-medium mb-4">Vertical Bundles (Industry Solutions)</h4>
-                  <ul class="space-y-2 text-dc-500 text-sm">
-                    <li>• Starting with Digital Experience Bundle</li>
-                    <li>• Future: Finance, HR, Support, Sales bundles</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Right Column - Sticky Animation */}
-          <div 
-            class="hidden lg:block lg:self-start relative"
-            style={{
-              minHeight: "2500px",
-            }}
-          >
-            <MCPMeshLayersAnimation
-              layer1Src={layer1Image}
-              layer2Src={layer2Image}
-              layer3Src={layer3Image}
-            />
-          </div>
-        </div>
-      </div>
-    </section>
+    <MCPMeshLayersPinned
+      layer1Image={layer1Image}
+      layer2Image={layer2Image}
+      layer3Image={layer3Image}
+      contents={contents}
+      title={title}
+      subtitle={subtitle}
+    />
   );
 }
-

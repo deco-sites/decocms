@@ -6,6 +6,7 @@ import * as $_app from "./routes/_app.tsx";
 import * as $black_friday from "./routes/black-friday.tsx";
 import * as $home from "./routes/home.tsx";
 import * as $sitemap_xml from "./routes/sitemap.xml.ts";
+import * as $AutonomyControlCards from "./islands/AutonomyControlCards.tsx";
 import * as $BlogCategories from "./islands/BlogCategories.tsx";
 import * as $BlogFormSearch from "./islands/BlogFormSearch.tsx";
 import * as $BlogPostsCarousel from "./islands/BlogPostsCarousel.tsx";
@@ -18,10 +19,13 @@ import * as $FeaturesInteractive from "./islands/FeaturesInteractive.tsx";
 import * as $FormModal from "./islands/FormModal.tsx";
 import * as $GitHubStars from "./islands/GitHubStars.tsx";
 import * as $GitHubStarsInline from "./islands/GitHubStarsInline.tsx";
+import * as $HeroCMSCards from "./islands/HeroCMSCards.tsx";
 import * as $HeroInteractiveClient from "./islands/HeroInteractiveClient.tsx";
 import * as $MCPMeshLayersAnimation from "./islands/MCPMeshLayersAnimation.tsx";
+import * as $MCPMeshLayersPinned from "./islands/MCPMeshLayersPinned.tsx";
 import * as $PostHog from "./islands/PostHog.tsx";
 import * as $PostHogProvider from "./islands/PostHogProvider.tsx";
+import * as $ProblemCardsAnimated from "./islands/ProblemCardsAnimated.tsx";
 import * as $ProjectGrid from "./islands/ProjectGrid.tsx";
 import * as $RoadmapFeaturesList from "./islands/RoadmapFeaturesList.tsx";
 import * as $RoadmapFiltered from "./islands/RoadmapFiltered.tsx";
@@ -46,6 +50,7 @@ const manifest = {
     "./routes/sitemap.xml.ts": $sitemap_xml,
   },
   islands: {
+    "./islands/AutonomyControlCards.tsx": $AutonomyControlCards,
     "./islands/BlogCategories.tsx": $BlogCategories,
     "./islands/BlogFormSearch.tsx": $BlogFormSearch,
     "./islands/BlogPostsCarousel.tsx": $BlogPostsCarousel,
@@ -58,10 +63,13 @@ const manifest = {
     "./islands/FormModal.tsx": $FormModal,
     "./islands/GitHubStars.tsx": $GitHubStars,
     "./islands/GitHubStarsInline.tsx": $GitHubStarsInline,
+    "./islands/HeroCMSCards.tsx": $HeroCMSCards,
     "./islands/HeroInteractiveClient.tsx": $HeroInteractiveClient,
     "./islands/MCPMeshLayersAnimation.tsx": $MCPMeshLayersAnimation,
+    "./islands/MCPMeshLayersPinned.tsx": $MCPMeshLayersPinned,
     "./islands/PostHog.tsx": $PostHog,
     "./islands/PostHogProvider.tsx": $PostHogProvider,
+    "./islands/ProblemCardsAnimated.tsx": $ProblemCardsAnimated,
     "./islands/ProjectGrid.tsx": $ProjectGrid,
     "./islands/RoadmapFeaturesList.tsx": $RoadmapFeaturesList,
     "./islands/RoadmapFiltered.tsx": $RoadmapFiltered,

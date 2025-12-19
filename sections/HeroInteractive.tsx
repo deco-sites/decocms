@@ -48,6 +48,10 @@ interface Theme {
 }
 
 export interface Props {
+  /** @title Tag */
+  /** @description Tag displayed above the title (e.g., "EARLY ACCESS") */
+  tag?: string;
+
   /** @title Título */
   title?: string;
 
@@ -68,6 +72,7 @@ export interface Props {
 }
 
 export default function HeroInteractive({
+  tag,
   title,
   subtitle,
   apps,
@@ -137,6 +142,7 @@ export default function HeroInteractive({
 
       {/* Client-side rendered island */}
       <HeroInteractiveClient
+        tag={tag}
         title={title}
         subtitle={subtitle}
         apps={apps}
