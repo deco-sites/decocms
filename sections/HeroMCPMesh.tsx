@@ -83,10 +83,10 @@ export interface Props {
 export default function HeroMCPMesh({
   badgeLabel = "Read more:",
   badgeText = "Introducing deco's Enterprise-ready MCP Mesh",
-  badgeUrl = "#",
+  badgeUrl = "/blog/post/mcp-mesh",
   title = "for every MCP server.",
   titleHighlighted = "One secure endpoint",
-  subtitle = "Self-hosted, open-source control plane to connect,\nproxy, and optimize all MCP traffic. Own your context.\nDeploy anywhere.",
+  subtitle = "Self-hosted, open-source control plane to connect, proxy, and optimize all MCP traffic. Own your context. Deploy anywhere.",
   featureBullets = [
     { text: "Smart tool selection" },
     { text: "Access management" },
@@ -137,14 +137,14 @@ export default function HeroMCPMesh({
                 )}
 
                 {/* Title */}
-                <h1 class="text-dc-900 text-5xl sm:text-6xl lg:text-7xl xl:text-[80px] font-medium leading-[1.05] tracking-[-1.6px]">
+                <h1 class="text-dc-900 text-[52px] sm:text-6xl lg:text-7xl xl:text-[80px] font-medium leading-[1.05] tracking-[-1.6px]">
                   <span class="text-[#8caa25]">{titleHighlighted}</span>
                   {" "}
                   {title}
                 </h1>
 
                 {/* Subtitle */}
-                <p class="text-dc-500 text-lg lg:text-xl font-normal leading-[1.4] max-w-[540px] whitespace-pre-line">
+                <p class="text-dc-500 text-xl lg:text-xl font-normal leading-[1.4] max-w-[540px] lg:max-w-[460px] whitespace-pre-line">
                   {subtitle}
                 </p>
 

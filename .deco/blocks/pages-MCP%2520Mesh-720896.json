@@ -9,10 +9,10 @@
       "__resolveType": "site/sections/HeroMCPMesh.tsx",
       "badgeLabel": "Read more:",
       "badgeText": "Introducing deco's Enterprise-ready MCP Mesh",
-      "badgeUrl": "#",
+      "badgeUrl": "/blog/post/mcp-mesh",
       "titleHighlighted": "One secure endpoint",
       "title": "for every MCP server.",
-      "subtitle": "Self-hosted, open-source control plane to connect,\nproxy, and optimize all MCP traffic. Own your context.\nDeploy anywhere.",
+      "subtitle": "Self-hosted, open-source control plane to connect, proxy, and optimize all MCP traffic. Own your context. Deploy anywhere.",
       "featureBullets": [
         {
           "text": "Smart tool selection"

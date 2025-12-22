@@ -9216,6 +9216,9 @@ input.tab:checked + .tab-content,
 .text-\[48px\]{
   font-size: 48px;
 }
+.text-\[52px\]{
+  font-size: 52px;
+}
 .text-\[64px\]{
   font-size: 64px;
 }
@@ -14173,6 +14176,10 @@ input.tab:checked + .tab-content,
 
   .lg\:max-w-\[35\%\]{
     max-width: 35%;
+  }
+
+  .lg\:max-w-\[460px\]{
+    max-width: 460px;
   }
 
   .lg\:max-w-\[50\%\]{
