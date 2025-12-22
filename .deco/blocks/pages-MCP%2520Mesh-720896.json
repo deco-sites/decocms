@@ -27,9 +27,9 @@
           "text": "Cost control"
         }
       ],
-      "command": "npx @deco/context-mesh init",
       "secondaryCtaText": "View docs",
-      "secondaryCtaUrl": "https://docs.decocms.com/en/introduction/"
+      "secondaryCtaUrl": "https://docs.decocms.com/en/introduction/",
+      "command": "⁠ bunx @decocms/mesh "
     },
     {
       "__resolveType": "site/sections/MCPMeshContextManagement.tsx",

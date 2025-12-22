@@ -29,7 +29,7 @@ export interface Props {
 
 export default function FinalCTAMCPMesh({
   title = "Own your context.\nMake it portable.\nGovern it by default.",
-  command = "npx @deco/context-mesh init",
+  command = "bunx @decocms/mesh",
   secondaryCtaText = "Read our Docs",
   secondaryCtaUrl = "https://docs.decocms.com/en/introduction/",
 }: Props) {

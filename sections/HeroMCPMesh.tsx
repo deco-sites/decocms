@@ -93,7 +93,7 @@ export default function HeroMCPMesh({
     { text: "Full observability" },
     { text: "Cost control" },
   ],
-  command = "npx @deco/context-mesh init",
+  command = "bunx @decocms/mesh",
   secondaryCtaText = "View docs",
   secondaryCtaUrl = "https://docs.decocms.com/en/introduction/",
   illustration = "https://assets.decocache.com/decocms/6216bd1e-7bc1-40df-8ae1-6e431919f1e7/mesh_image.png",
