@@ -214,19 +214,19 @@ export default function MCPMeshLayersPinned({
       const animationOffset = isMobile ? 30 : 50; // How far layers start above their final position
 
       // Set initial states for layers - stacked with spacing
-      // Use xPercent/yPercent for centering (replaces CSS translate(-50%, -50%))
-      // Use y for stacking offset on top of the centering
+      // Centering is handled by CSS (inset-0 + margin:auto)
+      // GSAP only controls y offset for stacking and opacity
       // Layer 1 is at bottom (positive Y = down from center)
       // Layer 2 is in middle (Y = 0)
       // Layer 3 is at top (negative Y = up from center)
       if (layer1Ref.current) {
-        gsap.set(layer1Ref.current, { opacity: 1, xPercent: -50, yPercent: -50, y: stackOffset });
+        gsap.set(layer1Ref.current, { opacity: 1, y: stackOffset });
       }
       if (layer2Ref.current) {
-        gsap.set(layer2Ref.current, { opacity: 0, xPercent: -50, yPercent: -50, y: -animationOffset });
+        gsap.set(layer2Ref.current, { opacity: 0, y: -animationOffset });
       }
       if (layer3Ref.current) {
-        gsap.set(layer3Ref.current, { opacity: 0, xPercent: -50, yPercent: -50, y: -animationOffset - stackOffset });
+        gsap.set(layer3Ref.current, { opacity: 0, y: -animationOffset - stackOffset });
       }
 
       // Create ScrollTrigger for pinning THE ENTIRE SECTION
@@ -317,16 +317,14 @@ export default function MCPMeshLayersPinned({
         }
 
         // Use gsap.set() for immediate updates - no animation queue buildup
+        // Centering is handled by CSS, GSAP only controls y offset and opacity
         // Layer 2: floats down from -animationOffset to 0 (middle position)
         // Layer 3: floats down from -animationOffset-stackOffset to -stackOffset (top position)
-        // Always include xPercent/yPercent for centering to ensure it's preserved
         if (layer2Ref.current) {
           // Animate from -animationOffset to 0
           const layer2Y = -animationOffset * (1 - layer2Progress);
           gsap.set(layer2Ref.current, {
             opacity: layer2Progress,
-            xPercent: -50,
-            yPercent: -50,
             y: layer2Y,
           });
         }
@@ -338,8 +336,6 @@ export default function MCPMeshLayersPinned({
           const layer3Y = layer3StartY + (layer3EndY - layer3StartY) * layer3Progress;
           gsap.set(layer3Ref.current, {
             opacity: layer3Progress,
-            xPercent: -50,
-            yPercent: -50,
             y: layer3Y,
           });
         }
@@ -421,8 +417,6 @@ export default function MCPMeshLayersPinned({
         if (layer2Ref.current) {
           gsap.to(layer2Ref.current, {
             opacity: layer2TargetOpacity,
-            xPercent: -50,
-            yPercent: -50,
             y: layer2TargetY,
             duration: 0.4,
             ease: "power2.out",
@@ -432,8 +426,6 @@ export default function MCPMeshLayersPinned({
         if (layer3Ref.current) {
           gsap.to(layer3Ref.current, {
             opacity: layer3TargetOpacity,
-            xPercent: -50,
-            yPercent: -50,
             y: layer3TargetY,
             duration: 0.4,
             ease: "power2.out",
@@ -464,13 +456,13 @@ export default function MCPMeshLayersPinned({
   return (
     <section
       ref={sectionRef}
-      class="w-full min-h-screen bg-dc-50 py-6 sm:py-10 md:py-16 lg:py-24"
+      class="w-full min-h-screen bg-dc-50 py-6 sm:py-10 md:py-20 lg:pt-32 lg:pb-24"
       style={{ paddingBottom: "max(env(safe-area-inset-bottom, 0px), 1.5rem)" }}
     >
       <div class="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 h-full flex flex-col">
         {/* Header - stays with pinned section */}
         <div class="mb-4 sm:mb-6 lg:mb-14 text-center">
-          <div class="font-mono text-dc-500 text-[10px] sm:text-xs lg:text-base uppercase leading-5 mb-1 sm:mb-3">
+          <div class="font-mono text-dc-500 text-[10px] sm:text-xs lg:text-base uppercase leading-5 mb-1 sm:mb-4">
             {title}
           </div>
           <h2 class="text-dc-800 text-2xl sm:text-3xl md:text-5xl lg:text-[56px] font-medium leading-none tracking-tight">
@@ -479,10 +471,10 @@ export default function MCPMeshLayersPinned({
         </div>
 
         {/* Main Card Container */}
+        {/* Mobile: flex-1 fills available space, minHeight uses 70vh cap. Desktop: fixed 560px height */}
         <div
           ref={containerRef}
-          class="bg-dc-100 rounded-xl overflow-hidden flex flex-col lg:flex-row p-2 flex-1"
-          style={{ minHeight: "min(500px, 70vh)" }}
+          class="bg-dc-100 rounded-xl overflow-hidden flex flex-col lg:flex-row p-2 flex-1 lg:flex-initial min-h-[min(500px,70vh)] lg:min-h-[560px]"
         >
           {/* Left Side - Text Content (order-2 on mobile so images show first) */}
           <div
@@ -574,16 +566,14 @@ export default function MCPMeshLayersPinned({
             {/* Layered Illustrations Container */}
             <div class="relative w-full h-full flex items-center justify-center p-2 sm:p-4 z-10">
               {/* Layer 1 - Bottom (always visible first) */}
-              {/* CSS transform is fallback before GSAP loads; GSAP then takes over */}
+              {/* Use inset + margin:auto for centering without transforms - GSAP controls transforms for y offset */}
               <img
                 ref={layer1Ref}
                 src={layer1Image}
                 alt="Layer 1 - MCP Mesh"
-                class="absolute w-[70%] sm:w-[75%] lg:w-[85%] max-w-[500px] h-auto -translate-x-1/2 -translate-y-1/2"
+                class="absolute w-[70%] sm:w-[75%] lg:w-[85%] max-w-[500px] h-auto inset-0 m-auto"
                 style={{
                   zIndex: 1,
-                  top: "50%",
-                  left: "50%",
                   filter: "drop-shadow(0 10px 20px rgba(0,0,0,0.12))",
                   willChange: "transform, opacity",
                 }}
@@ -594,11 +584,10 @@ export default function MCPMeshLayersPinned({
                 ref={layer2Ref}
                 src={layer2Image}
                 alt="Layer 2 - MCP Studio"
-                class="absolute w-[70%] sm:w-[75%] lg:w-[85%] max-w-[500px] h-auto -translate-x-1/2 -translate-y-1/2 opacity-0"
+                class="absolute w-[70%] sm:w-[75%] lg:w-[85%] max-w-[500px] h-auto inset-0 m-auto"
                 style={{
                   zIndex: 2,
-                  top: "50%",
-                  left: "50%",
+                  opacity: 0,
                   filter: "drop-shadow(0 8px 16px rgba(0,0,0,0.1))",
                   willChange: "transform, opacity",
                 }}
@@ -609,11 +598,10 @@ export default function MCPMeshLayersPinned({
                 ref={layer3Ref}
                 src={layer3Image}
                 alt="Layer 3 - MCP Store"
-                class="absolute w-[70%] sm:w-[75%] lg:w-[85%] max-w-[500px] h-auto -translate-x-1/2 -translate-y-1/2 opacity-0"
+                class="absolute w-[70%] sm:w-[75%] lg:w-[85%] max-w-[500px] h-auto inset-0 m-auto"
                 style={{
                   zIndex: 3,
-                  top: "50%",
-                  left: "50%",
+                  opacity: 0,
                   filter: "drop-shadow(0 6px 12px rgba(0,0,0,0.08))",
                   willChange: "transform, opacity",
                 }}
