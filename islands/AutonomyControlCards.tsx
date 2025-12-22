@@ -59,14 +59,14 @@ export default function AutonomyControlCards({ cards }: Props) {
           ref={(el) => {
             if (el) cardsRef.current[index] = el;
           }}
-          class="flex-1 aspect-square bg-[#f0f4d8] rounded-2xl p-8 lg:p-10 overflow-hidden relative"
+          class="flex-1 bg-[#f0f4d8] rounded-2xl overflow-hidden flex flex-col"
         >
           {/* Card Content */}
-          <div class="flex flex-col gap-6 relative z-10">
-            <h3 class="text-dc-800 text-2xl md:text-3xl lg:text-[40px] font-medium leading-tight tracking-tight">
+          <div class="flex flex-col gap-4 md:gap-6 p-6 md:p-8 lg:p-10">
+            <h3 class="text-dc-800 text-xl md:text-3xl lg:text-[40px] font-medium leading-tight tracking-tight">
               {card.title}
             </h3>
-            <p class="text-dc-500 text-base md:text-lg lg:text-2xl leading-snug max-w-[540px]">
+            <p class="text-dc-500 text-sm md:text-lg lg:text-2xl leading-snug max-w-[540px]">
               {card.descriptionBefore}
               <span class="font-bold text-[#8caa25]">
                 {card.descriptionHighlighted}
@@ -75,8 +75,8 @@ export default function AutonomyControlCards({ cards }: Props) {
             </p>
           </div>
 
-          {/* Card Image - positioned at bottom */}
-          <div class="absolute bottom-0 left-1 right-1 h-[55%] lg:h-[60%] overflow-hidden rounded-t-lg">
+          {/* Card Image - fills remaining space */}
+          <div class="flex-1 min-h-[200px] md:min-h-[280px] lg:min-h-[320px] overflow-hidden rounded-b-2xl">
             <img
               src={card.image}
               alt={card.title}

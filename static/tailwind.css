@@ -4278,9 +4278,6 @@ input.tab:checked + .tab-content,
 .aspect-\[4\/5\]{
   aspect-ratio: 4/5;
 }
-.aspect-square{
-  aspect-ratio: 1 / 1;
-}
 .aspect-video{
   aspect-ratio: 16 / 9;
 }
@@ -4430,9 +4427,6 @@ input.tab:checked + .tab-content,
 }
 .h-\[500px\]{
   height: 500px;
-}
-.h-\[55\%\]{
-  height: 55%;
 }
 .h-\[600px\]{
   height: 600px;
@@ -13605,6 +13599,10 @@ input.tab:checked + .tab-content,
     height: 600px;
   }
 
+  .md\:min-h-\[280px\]{
+    min-height: 280px;
+  }
+
   .md\:w-1\/2{
     width: 50%;
   }
@@ -14065,10 +14063,6 @@ input.tab:checked + .tab-content,
     height: 550px;
   }
 
-  .lg\:h-\[60\%\]{
-    height: 60%;
-  }
-
   .lg\:h-\[630px\]{
     height: 630px;
   }
@@ -14091,6 +14085,10 @@ input.tab:checked + .tab-content,
 
   .lg\:min-h-80{
     min-height: 20rem;
+  }
+
+  .lg\:min-h-\[320px\]{
+    min-height: 320px;
   }
 
   .lg\:min-h-\[500px\]{
