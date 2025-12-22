@@ -92,8 +92,8 @@ export default function HeroCMS({
                 </div>
               )}
 
-              {/* Title - narrower max-width to keep "Platform teams." together */}
-              <h1 class="font-sans text-4xl md:text-6xl lg:text-[80px] text-dc-900 tracking-[-1.6px] leading-[1.05] max-w-[320px] md:max-w-[580px] lg:max-w-[920px] font-medium">
+              {/* Title - max-width tuned to break after "System" */}
+              <h1 class="font-sans text-4xl md:text-6xl lg:text-[80px] text-dc-900 tracking-[-1.6px] leading-[1.05] max-w-[350px] md:max-w-[640px] lg:max-w-[1020px] font-medium">
                 <span class="text-[#8CAA25]">{highlightedTitle}</span>
                 <span>{` ${mainTitle}`}</span>
               </h1>

@@ -42,57 +42,97 @@ export default function MCPMeshLayersPinned({
   const isAnimatingRef = useRef(false);
   const gsapRef = useRef<typeof import("gsap").default | null>(null);
   const navigateToIndexRef = useRef<((index: number) => void) | null>(null);
+  const isCanvasVisibleRef = useRef(true);
+  const imageDataRef = useRef<ImageData | null>(null);
 
-  // ASCII Dithering Animation
+  // ASCII Dithering Animation - optimized with visibility detection and reused ImageData
   useEffect(() => {
     const canvas = canvasRef.current;
-    if (!canvas) return;
+    const section = sectionRef.current;
+    if (!canvas || !section) return;
 
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
     let animationRef: number;
+    let lastWidth = 0;
+    let lastHeight = 0;
 
     const resizeCanvas = () => {
       const rect = canvas.getBoundingClientRect();
-      canvas.width = rect.width;
-      canvas.height = rect.height;
+      const newWidth = Math.floor(rect.width);
+      const newHeight = Math.floor(rect.height);
+      
+      if (newWidth !== lastWidth || newHeight !== lastHeight) {
+        canvas.width = newWidth;
+        canvas.height = newHeight;
+        lastWidth = newWidth;
+        lastHeight = newHeight;
+        // Invalidate cached ImageData on resize
+        imageDataRef.current = null;
+      }
     };
 
     resizeCanvas();
     globalThis.addEventListener("resize", resizeCanvas);
 
-    // Bayer matrix 8x8 for dithering
-    const bayerMatrix8x8 = [
-      [0, 32, 8, 40, 2, 34, 10, 42],
-      [48, 16, 56, 24, 50, 18, 58, 26],
-      [12, 44, 4, 36, 14, 46, 6, 38],
-      [60, 28, 52, 20, 62, 30, 54, 22],
-      [3, 35, 11, 43, 1, 33, 9, 41],
-      [51, 19, 59, 27, 49, 17, 57, 25],
-      [15, 47, 7, 39, 13, 45, 5, 37],
-      [63, 31, 55, 23, 61, 29, 53, 21],
-    ];
+    // IntersectionObserver to pause animation when not visible
+    const observer = new IntersectionObserver(
+      (entries) => {
+        isCanvasVisibleRef.current = entries[0].isIntersecting;
+      },
+      { threshold: 0 }
+    );
+    observer.observe(section);
+
+    // Bayer matrix 8x8 for dithering (flattened for faster lookup)
+    const bayerMatrix8x8Flat = new Uint8Array([
+      0, 32, 8, 40, 2, 34, 10, 42,
+      48, 16, 56, 24, 50, 18, 58, 26,
+      12, 44, 4, 36, 14, 46, 6, 38,
+      60, 28, 52, 20, 62, 30, 54, 22,
+      3, 35, 11, 43, 1, 33, 9, 41,
+      51, 19, 59, 27, 49, 17, 57, 25,
+      15, 47, 7, 39, 13, 45, 5, 37,
+      63, 31, 55, 23, 61, 29, 53, 21,
+    ]);
 
     let time = 0;
-    const cellSize = 3; // 1.5x larger scale (was 2)
+    const cellSize = 3;
 
     const animate = () => {
+      // Skip animation if not visible
+      if (!isCanvasVisibleRef.current) {
+        animationRef = requestAnimationFrame(animate);
+        return;
+      }
+
       if (canvas.width === 0 || canvas.height === 0) {
         resizeCanvas();
         animationRef = requestAnimationFrame(animate);
         return;
       }
 
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      const imageData = ctx.createImageData(canvas.width, canvas.height);
+      // Reuse ImageData instead of creating new one each frame
+      if (!imageDataRef.current || 
+          imageDataRef.current.width !== canvas.width || 
+          imageDataRef.current.height !== canvas.height) {
+        imageDataRef.current = ctx.createImageData(canvas.width, canvas.height);
+      }
+      
+      const imageData = imageDataRef.current;
       const data = imageData.data;
+      
+      // Clear the data array (set all to 0)
+      data.fill(0);
 
-      for (let y = 0; y < canvas.height; y += cellSize) {
-        for (let x = 0; x < canvas.width; x += cellSize) {
-          const nx = x / canvas.width;
-          const ny = y / canvas.height;
+      const w = canvas.width;
+      const h = canvas.height;
+
+      for (let y = 0; y < h; y += cellSize) {
+        for (let x = 0; x < w; x += cellSize) {
+          const nx = x / w;
+          const ny = y / h;
 
           // Wave patterns - slower and more subtle
           const waveBase = Math.sin(nx * 8 + time * 0.003) * 0.2;
@@ -113,20 +153,21 @@ export default function MCPMeshLayersPinned({
 
           intensity = Math.max(0, Math.min(1, intensity));
 
-          const matrixX = Math.floor(x / cellSize) % 8;
-          const matrixY = Math.floor(y / cellSize) % 8;
-          const threshold = bayerMatrix8x8[matrixY][matrixX] / 64;
+          const matrixIdx = ((Math.floor(y / cellSize) & 7) << 3) + (Math.floor(x / cellSize) & 7);
+          const threshold = bayerMatrix8x8Flat[matrixIdx] / 64;
 
           const ditherResult = intensity > threshold;
           // Dark green color for the particles - #07401a
           if (ditherResult) {
-            for (let dy = 0; dy < cellSize && y + dy < canvas.height; dy++) {
-              for (let dx = 0; dx < cellSize && x + dx < canvas.width; dx++) {
-                const pixelIndex = ((y + dy) * canvas.width + (x + dx)) * 4;
+            const maxDy = Math.min(cellSize, h - y);
+            const maxDx = Math.min(cellSize, w - x);
+            for (let dy = 0; dy < maxDy; dy++) {
+              for (let dx = 0; dx < maxDx; dx++) {
+                const pixelIndex = ((y + dy) * w + (x + dx)) << 2;
                 data[pixelIndex] = 7;      // R
                 data[pixelIndex + 1] = 64; // G
                 data[pixelIndex + 2] = 26; // B
-                data[pixelIndex + 3] = 25; // Alpha - ~10% opacity (very subtle texture)
+                data[pixelIndex + 3] = 25; // Alpha - ~10% opacity
               }
             }
           }
@@ -143,6 +184,7 @@ export default function MCPMeshLayersPinned({
 
     return () => {
       globalThis.removeEventListener("resize", resizeCanvas);
+      observer.disconnect();
       if (animationRef) {
         cancelAnimationFrame(animationRef);
       }
@@ -166,15 +208,23 @@ export default function MCPMeshLayersPinned({
 
       const gsap = gsapInstance;
 
+      // Detect mobile for different stacking offsets
+      const isMobile = globalThis.innerWidth < 1024;
+      const stackOffset = isMobile ? 15 : 30; // Smaller offset on mobile
+      const animationOffset = isMobile ? 30 : 50; // How far layers start above their final position
+
       // Set initial states for layers - stacked with spacing
+      // Layer 1 is at bottom (positive Y = down from center)
+      // Layer 2 is in middle (Y = 0)
+      // Layer 3 is at top (negative Y = up from center)
       if (layer1Ref.current) {
-        gsap.set(layer1Ref.current, { opacity: 1 });
+        gsap.set(layer1Ref.current, { opacity: 1, y: stackOffset });
       }
       if (layer2Ref.current) {
-        gsap.set(layer2Ref.current, { opacity: 0, yPercent: -20 });
+        gsap.set(layer2Ref.current, { opacity: 0, y: -animationOffset });
       }
       if (layer3Ref.current) {
-        gsap.set(layer3Ref.current, { opacity: 0, yPercent: -20 });
+        gsap.set(layer3Ref.current, { opacity: 0, y: -animationOffset - stackOffset });
       }
 
       // Create ScrollTrigger for pinning THE ENTIRE SECTION
@@ -186,7 +236,8 @@ export default function MCPMeshLayersPinned({
         pin: true,
         pinSpacing: true,
         anticipatePin: 1,
-        scrub: 0.8,
+        scrub: 0.3, // Reduced for snappier response (was 0.8)
+        fastScrollEnd: true, // Optimize for fast scroll
         onUpdate: (self) => {
           const progress = self.progress;
           
@@ -239,9 +290,9 @@ export default function MCPMeshLayersPinned({
       const animateLayers = (gsap: typeof import("gsap").default, progress: number) => {
         // Layer 2 animation with hold zones:
         // Starts at 20%, completes at 35%, then holds
-        // Before 20%: hidden (yPercent: -20, opacity: 0)
+        // Before 20%: hidden, above its final position
         // 20-35%: animating in (floating down into place)
-        // After 35%: fully visible (yPercent: 0, opacity: 1)
+        // After 35%: fully visible at middle stack position (y: 0)
         let layer2Progress = 0;
         if (progress < 0.20) {
           layer2Progress = 0;
@@ -253,6 +304,7 @@ export default function MCPMeshLayersPinned({
 
         // Layer 3 animation with hold zones:
         // Starts at 45%, completes at 60%, then holds
+        // Final position is at top of stack (negative Y)
         let layer3Progress = 0;
         if (progress < 0.45) {
           layer3Progress = 0;
@@ -262,21 +314,26 @@ export default function MCPMeshLayersPinned({
           layer3Progress = 1;
         }
 
+        // Use gsap.set() for immediate updates - no animation queue buildup
+        // Layer 2: floats down from -animationOffset to 0 (middle position)
+        // Layer 3: floats down from -animationOffset-stackOffset to -stackOffset (top position)
         if (layer2Ref.current) {
-          gsap.to(layer2Ref.current, {
+          // Animate from -animationOffset to 0
+          const layer2Y = -animationOffset * (1 - layer2Progress);
+          gsap.set(layer2Ref.current, {
             opacity: layer2Progress,
-            yPercent: -20 * (1 - layer2Progress), // Animate from -20% to 0 (float down)
-            duration: 0.1,
-            ease: "none",
+            y: layer2Y,
           });
         }
 
         if (layer3Ref.current) {
-          gsap.to(layer3Ref.current, {
+          // Animate from -animationOffset-stackOffset to -stackOffset (stays above center)
+          const layer3StartY = -animationOffset - stackOffset;
+          const layer3EndY = -stackOffset;
+          const layer3Y = layer3StartY + (layer3EndY - layer3StartY) * layer3Progress;
+          gsap.set(layer3Ref.current, {
             opacity: layer3Progress,
-            yPercent: -20 * (1 - layer3Progress), // Animate from -20% to 0 (float down)
-            duration: 0.1,
-            ease: "none",
+            y: layer3Y,
           });
         }
       };
@@ -348,16 +405,16 @@ export default function MCPMeshLayersPinned({
       const navigateToIndex = (targetIndex: number) => {
         if (isAnimatingRef.current || targetIndex === currentIndexRef.current) return;
         
-        // Animate layers to target state
+        // Animate layers to target state using pixel-based Y with stacking offsets
         const layer2TargetOpacity = targetIndex >= 1 ? 1 : 0;
-        const layer2TargetY = targetIndex >= 1 ? 0 : -20;
+        const layer2TargetY = targetIndex >= 1 ? 0 : -animationOffset; // Middle position or hidden above
         const layer3TargetOpacity = targetIndex >= 2 ? 1 : 0;
-        const layer3TargetY = targetIndex >= 2 ? 0 : -20;
+        const layer3TargetY = targetIndex >= 2 ? -stackOffset : -animationOffset - stackOffset; // Top position or hidden above
 
         if (layer2Ref.current) {
           gsap.to(layer2Ref.current, {
             opacity: layer2TargetOpacity,
-            yPercent: layer2TargetY,
+            y: layer2TargetY,
             duration: 0.4,
             ease: "power2.out",
           });
@@ -366,7 +423,7 @@ export default function MCPMeshLayersPinned({
         if (layer3Ref.current) {
           gsap.to(layer3Ref.current, {
             opacity: layer3TargetOpacity,
-            yPercent: layer3TargetY,
+            y: layer3TargetY,
             duration: 0.4,
             ease: "power2.out",
           });
@@ -396,15 +453,15 @@ export default function MCPMeshLayersPinned({
   return (
     <section
       ref={sectionRef}
-      class="w-full min-h-screen bg-dc-50 py-16 md:py-20 lg:py-24"
+      class="w-full min-h-screen bg-dc-50 py-8 sm:py-12 md:py-16 lg:py-24"
     >
       <div class="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 h-full flex flex-col">
         {/* Header - stays with pinned section */}
-        <div class="mb-10 lg:mb-14 text-center">
-          <div class="font-mono text-dc-500 text-sm sm:text-base uppercase leading-5 mb-4">
+        <div class="mb-6 sm:mb-8 lg:mb-14 text-center">
+          <div class="font-mono text-dc-500 text-xs sm:text-sm lg:text-base uppercase leading-5 mb-2 sm:mb-4">
             {title}
           </div>
-          <h2 class="text-dc-800 text-4xl md:text-5xl lg:text-[56px] font-medium leading-none tracking-tight">
+          <h2 class="text-dc-800 text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-medium leading-none tracking-tight">
             {subtitle}
           </h2>
         </div>
@@ -413,15 +470,15 @@ export default function MCPMeshLayersPinned({
         <div
           ref={containerRef}
           class="bg-dc-100 rounded-xl overflow-hidden flex flex-col lg:flex-row p-2 flex-1"
-          style={{ minHeight: "500px" }}
+          style={{ minHeight: "min(500px, 70vh)" }}
         >
-          {/* Left Side - Text Content */}
+          {/* Left Side - Text Content (order-2 on mobile so images show first) */}
           <div
             ref={textContainerRef}
-            class="flex-1 flex flex-col gap-6 justify-center px-6 py-8 lg:px-16 xl:px-20 lg:py-8"
+            class="flex-1 flex flex-col gap-4 lg:gap-6 justify-center px-4 py-6 lg:px-16 xl:px-20 lg:py-8 order-2 lg:order-1"
           >
             {/* Text Content */}
-            <div class="flex flex-col gap-6">
+            <div class="flex flex-col gap-3 sm:gap-4 lg:gap-6">
               <p
                 data-text="label"
                 class="font-mono text-dc-500 text-xs uppercase tracking-wider"
@@ -465,7 +522,7 @@ export default function MCPMeshLayersPinned({
               </a>
 
               {/* Progress Dots - Clickable */}
-              <div ref={progressDotsRef} class="flex items-center gap-2 mt-6">
+              <div ref={progressDotsRef} class="flex items-center gap-2 mt-2 sm:mt-4 lg:mt-6">
                 <button
                   type="button"
                   data-dot
@@ -491,10 +548,9 @@ export default function MCPMeshLayersPinned({
             </div>
           </div>
 
-          {/* Right Side - Illustration Area */}
+          {/* Right Side - Illustration Area (order-1 on mobile so it appears first) */}
           <div
-            class="flex-1 bg-[#d0ec1a] rounded-2xl relative overflow-hidden flex items-center justify-center border border-dc-300"
-            style={{ minHeight: "500px" }}
+            class="flex-1 bg-[#d0ec1a] rounded-2xl relative overflow-hidden flex items-center justify-center border border-dc-300 order-1 lg:order-2 min-h-[280px] sm:min-h-[350px] lg:min-h-[500px]"
           >
             {/* ASCII Dithering Animation Background */}
             <canvas
@@ -504,19 +560,21 @@ export default function MCPMeshLayersPinned({
             />
 
             {/* Layered Illustrations Container */}
-            <div class="relative w-full h-full flex items-center justify-center p-4 z-10">
+            <div class="relative w-full h-full flex items-center justify-center p-2 sm:p-4 z-10">
               {/* Layer 1 - Bottom (always visible first) */}
+              {/* Y position controlled by GSAP for consistent stacking */}
               <img
                 ref={layer1Ref}
                 src={layer1Image}
                 alt="Layer 1 - MCP Mesh"
-                class="absolute w-[85%] max-w-[500px] h-auto"
+                class="absolute w-[75%] sm:w-[80%] lg:w-[85%] max-w-[500px] h-auto"
                 style={{
                   zIndex: 1,
                   top: "50%",
                   left: "50%",
-                  transform: "translate(-50%, -50%) translateY(30px)",
-                  filter: "drop-shadow(0 20px 40px rgba(0,0,0,0.15))",
+                  transform: "translate(-50%, -50%)",
+                  filter: "drop-shadow(0 10px 20px rgba(0,0,0,0.12))",
+                  willChange: "transform, opacity",
                 }}
               />
               
@@ -525,13 +583,14 @@ export default function MCPMeshLayersPinned({
                 ref={layer2Ref}
                 src={layer2Image}
                 alt="Layer 2 - MCP Studio"
-                class="absolute w-[85%] max-w-[500px] h-auto"
+                class="absolute w-[75%] sm:w-[80%] lg:w-[85%] max-w-[500px] h-auto"
                 style={{
                   zIndex: 2,
                   top: "50%",
                   left: "50%",
                   transform: "translate(-50%, -50%)",
-                  filter: "drop-shadow(0 15px 30px rgba(0,0,0,0.12))",
+                  filter: "drop-shadow(0 8px 16px rgba(0,0,0,0.1))",
+                  willChange: "transform, opacity",
                 }}
               />
               
@@ -540,13 +599,14 @@ export default function MCPMeshLayersPinned({
                 ref={layer3Ref}
                 src={layer3Image}
                 alt="Layer 3 - MCP Store"
-                class="absolute w-[85%] max-w-[500px] h-auto"
+                class="absolute w-[75%] sm:w-[80%] lg:w-[85%] max-w-[500px] h-auto"
                 style={{
                   zIndex: 3,
                   top: "50%",
                   left: "50%",
-                  transform: "translate(-50%, -50%) translateY(-30px)",
-                  filter: "drop-shadow(0 10px 25px rgba(0,0,0,0.1))",
+                  transform: "translate(-50%, -50%)",
+                  filter: "drop-shadow(0 6px 12px rgba(0,0,0,0.08))",
+                  willChange: "transform, opacity",
                 }}
               />
             </div>

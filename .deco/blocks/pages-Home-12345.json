@@ -8,9 +8,9 @@
     },
     {
       "__resolveType": "site/sections/HeroCMS.tsx",
-      "badgeText": "Context Management for AI-Native Operations",
+      "badgeText": "Open-Source Self-Hosted MCP Platform",
       "highlightedTitle": "Context Management System",
-      "mainTitle": "for CIOs, CTOs and AI Platform teams.",
+      "mainTitle": "for AI Platform teams",
       "subtitle": "Build a secure internal AI operating system on MCP: governed, observable, and designed to scale beyond pilots.",
       "strategyLabel": "Control execution and access—while teams build and use MCP-native apps.",
       "cards": [

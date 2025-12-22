@@ -78,7 +78,7 @@ const defaultLayer1Content: LayerContent = {
   subtitleAfter: " to connect tools and data via MCP.",
   description: "Unify tool and model calls behind one endpoint, with policy enforcement, audit trails, and runtime strategies that optimize for cost, speed, and accuracy.",
   linkText: "Learn about MCP Mesh →",
-  linkHref: "#mcp-mesh",
+  linkHref: "/mesh",
 };
 
 const defaultLayer2Content: LayerContent = {
@@ -89,7 +89,7 @@ const defaultLayer2Content: LayerContent = {
   subtitleAfter: " that become reusable assets.",
   description: "Create tools, workflows, and apps with consistent schemas, permissions, and interfaces, so other teams can reuse them while maintaining engineering standards.",
   linkText: "Get Studio Early Access →",
-  linkHref: "#mcp-studio",
+  linkHref: "/mcp-studio",
 };
 
 const defaultLayer3Content: LayerContent = {

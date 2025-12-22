@@ -88,11 +88,11 @@ export default function TextMedia({
 
         {/* Keywords Section */}
         {keywords && keywords.length > 0 && (
-          <div class="w-full flex items-center justify-between overflow-hidden -mt-8 sm:-mt-10 lg:-mt-12">
+          <div class="w-full flex flex-col sm:flex-row items-center gap-2 sm:justify-between -mt-8 sm:-mt-10 lg:-mt-12">
             {keywords.map((keyword, index) => (
               <div
                 key={index}
-                class="bg-dc-100 px-2 py-1 rounded-lg flex items-center justify-center flex-shrink-0"
+                class="bg-dc-100 px-2 py-1 rounded-lg flex items-center justify-center"
               >
                 <span class="font-mono text-dc-500 text-sm sm:text-base uppercase leading-5 whitespace-nowrap">
                   {keyword}

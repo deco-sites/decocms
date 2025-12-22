@@ -116,11 +116,16 @@ export default function HeroMCPMesh({
                     class="backdrop-blur-sm bg-white/80 border border-dc-200 rounded-full py-1.5 px-3 flex items-center gap-2 mb-2 w-fit hover:bg-white/95 hover:border-dc-300 transition-all group"
                   >
                     {badgeLabel && (
-                      <span class="text-primary-dark text-sm font-semibold">
+                      <span class="text-primary-dark text-sm font-semibold hidden sm:inline">
                         {badgeLabel}
                       </span>
                     )}
-                    <span class="text-dc-600 text-sm font-medium">
+                    {/* Mobile: shorter text without "Introducing" */}
+                    <span class="text-dc-600 text-sm font-medium sm:hidden">
+                      {badgeText.replace(/^Introducing\s+/i, "")}
+                    </span>
+                    {/* Desktop: full text */}
+                    <span class="text-dc-600 text-sm font-medium hidden sm:inline">
                       {badgeText}
                     </span>
                     <Icon
