@@ -98,7 +98,12 @@
       ]
     },
     {
-      "__resolveType": "site/sections/MCPMeshDeployAnywhere.tsx"
+      "__resolveType": "site/sections/MCPMeshDeployAnywhere.tsx",
+      "titleLine1": "No vendor lock-in.",
+      "titleLine2": "Deploy anywhere.",
+      "highlightedText": "open-source and self-hosted by design.",
+      "descriptionPrefix": "MCP Mesh is",
+      "description": "Run it on your infra, audit the code, and control context end-to-end—no lock-in. Kubernetes-native. Or run it as a self-hosted binary or container: laptop, IoT, cloud, on-prem—anywhere."
     },
     {
       "__resolveType": "site/sections/FAQ.tsx",

@@ -1,7 +1,6 @@
 import type { BlogPost } from "apps/blog/types.ts";
 import BlogPostsCarouselIsland from "../islands/BlogPostsCarousel.tsx";
 import { join } from "jsr:@std/path@^0.225.2/join";
-import { walk } from "jsr:@std/fs@^0.229.1/walk";
 
 export interface Props {
   heading?: string;
@@ -40,52 +39,28 @@ export async function loader(
   _req: Request,
 ): Promise<Props & { posts: BlogPost[] }> {
   try {
-    // Read blog post blocks from .deco/blocks/collections/blog/posts/*.json
-    const blocksDir = join(
-      Deno.cwd(),
-      ".deco",
-      "blocks",
-      "collections%2Fblog%2Fposts%2F",
-    );
-
+    // Blog post files are directly in .deco/blocks/ with URL-encoded filenames
+    // e.g., collections%2Fblog%2Fposts%2F0ce01f2de0ac.json
+    const blocksDir = join(Deno.cwd(), ".deco", "blocks");
     const posts: BlogPost[] = [];
 
-    try {
-      for await (
-        const entry of walk(blocksDir, {
-          includeDirs: false,
-          exts: [".json"],
-          maxDepth: 1,
-        })
+    // Read all files in the blocks directory and filter for blog posts
+    for await (const entry of Deno.readDir(blocksDir)) {
+      if (
+        entry.isFile &&
+        entry.name.startsWith("collections%2Fblog%2Fposts%2F") &&
+        entry.name.endsWith(".json")
       ) {
-        const text = await Deno.readTextFile(entry.path);
-        const data = JSON.parse(text);
-        if (data && data.post) {
-          const p = data.post as BlogPost;
-          posts.push(p);
-        }
-      }
-    } catch (_e) {
-      // If path with encoded slashes is not present (varies by env), fallback to nested directories
-      const altDir = join(
-        Deno.cwd(),
-        ".deco",
-        "blocks",
-        "collections",
-        "blog",
-        "posts",
-      );
-      for await (
-        const entry of walk(altDir, {
-          includeDirs: false,
-          exts: [".json"],
-          maxDepth: 1,
-        })
-      ) {
-        const text = await Deno.readTextFile(entry.path);
-        const data = JSON.parse(text);
-        if (data && data.post) {
-          posts.push(data.post as BlogPost);
+        try {
+          const filePath = join(blocksDir, entry.name);
+          const text = await Deno.readTextFile(filePath);
+          const data = JSON.parse(text);
+          if (data && data.post) {
+            posts.push(data.post as BlogPost);
+          }
+        } catch (_parseErr) {
+          // Skip files that can't be parsed
+          continue;
         }
       }
     }

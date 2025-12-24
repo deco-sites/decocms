@@ -7,6 +7,7 @@ import * as $black_friday from "./routes/black-friday.tsx";
 import * as $home from "./routes/home.tsx";
 import * as $sitemap_xml from "./routes/sitemap.xml.ts";
 import * as $AutonomyControlCards from "./islands/AutonomyControlCards.tsx";
+import * as $BackboneScrollSection from "./islands/BackboneScrollSection.tsx";
 import * as $BlogCategories from "./islands/BlogCategories.tsx";
 import * as $BlogFormSearch from "./islands/BlogFormSearch.tsx";
 import * as $BlogPostsCarousel from "./islands/BlogPostsCarousel.tsx";
@@ -21,8 +22,11 @@ import * as $GitHubStars from "./islands/GitHubStars.tsx";
 import * as $GitHubStarsInline from "./islands/GitHubStarsInline.tsx";
 import * as $HeroCMSCards from "./islands/HeroCMSCards.tsx";
 import * as $HeroInteractiveClient from "./islands/HeroInteractiveClient.tsx";
+import * as $LatestBlogPosts from "./islands/LatestBlogPosts.tsx";
+import * as $LogoCarousel from "./islands/LogoCarousel.tsx";
 import * as $MCPMeshLayersAnimation from "./islands/MCPMeshLayersAnimation.tsx";
 import * as $MCPMeshLayersPinned from "./islands/MCPMeshLayersPinned.tsx";
+import * as $MobileLogoGrid from "./islands/MobileLogoGrid.tsx";
 import * as $PostHog from "./islands/PostHog.tsx";
 import * as $PostHogProvider from "./islands/PostHogProvider.tsx";
 import * as $ProblemCardsAnimated from "./islands/ProblemCardsAnimated.tsx";
@@ -51,6 +55,7 @@ const manifest = {
   },
   islands: {
     "./islands/AutonomyControlCards.tsx": $AutonomyControlCards,
+    "./islands/BackboneScrollSection.tsx": $BackboneScrollSection,
     "./islands/BlogCategories.tsx": $BlogCategories,
     "./islands/BlogFormSearch.tsx": $BlogFormSearch,
     "./islands/BlogPostsCarousel.tsx": $BlogPostsCarousel,
@@ -65,8 +70,11 @@ const manifest = {
     "./islands/GitHubStarsInline.tsx": $GitHubStarsInline,
     "./islands/HeroCMSCards.tsx": $HeroCMSCards,
     "./islands/HeroInteractiveClient.tsx": $HeroInteractiveClient,
+    "./islands/LatestBlogPosts.tsx": $LatestBlogPosts,
+    "./islands/LogoCarousel.tsx": $LogoCarousel,
     "./islands/MCPMeshLayersAnimation.tsx": $MCPMeshLayersAnimation,
     "./islands/MCPMeshLayersPinned.tsx": $MCPMeshLayersPinned,
+    "./islands/MobileLogoGrid.tsx": $MobileLogoGrid,
     "./islands/PostHog.tsx": $PostHog,
     "./islands/PostHogProvider.tsx": $PostHogProvider,
     "./islands/ProblemCardsAnimated.tsx": $ProblemCardsAnimated,

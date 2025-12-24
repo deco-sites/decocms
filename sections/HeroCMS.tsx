@@ -22,10 +22,15 @@ export interface StrategyButton {
 export interface Props {
   /** @title Badge Text */
   badgeText?: string;
+  /** @title Title Prefix (dark text before green) */
+  titlePrefix?: string;
   /** @title Highlighted Title (green text) */
   highlightedTitle?: string;
-  /** @title Main Title (dark text) */
+  /** @title Main Title (dark text after green) */
   mainTitle?: string;
+  /** @title Stack Title Parts on Separate Lines */
+  /** @description When enabled, each title part (prefix, highlighted, main) will appear on its own line */
+  stackTitleParts?: boolean;
   /** @title Subtitle */
   subtitle?: string;
   /** @title Strategy Label */
@@ -56,8 +61,10 @@ const ExternalLinkIcon = () => (
 
 export default function HeroCMS({
   badgeText,
+  titlePrefix,
   highlightedTitle,
   mainTitle,
+  stackTitleParts,
   subtitle,
   strategyLabel,
   strategyButton,
@@ -94,8 +101,19 @@ export default function HeroCMS({
 
               {/* Title - max-width tuned to break after "System" */}
               <h1 class="font-sans text-4xl md:text-6xl lg:text-[80px] text-dc-900 tracking-[-1.6px] leading-[1.05] max-w-[350px] md:max-w-[640px] lg:max-w-[1020px] font-medium">
+                {titlePrefix && (
+                  <>
+                    <span>{titlePrefix}</span>
+                    {stackTitleParts ? <br /> : " "}
+                  </>
+                )}
                 <span class="text-[#8CAA25]">{highlightedTitle}</span>
-                <span>{` ${mainTitle}`}</span>
+                {mainTitle && (
+                  <>
+                    {stackTitleParts ? <br /> : " "}
+                    <span>{mainTitle}</span>
+                  </>
+                )}
               </h1>
 
               {/* Subtitle */}

@@ -7,70 +7,224 @@
       "__resolveType": "Header-decocms"
     },
     {
-      "__resolveType": "site/sections/HeroCMS.tsx",
-      "badgeText": "Open-Source Self-Hosted MCP Platform",
-      "highlightedTitle": "Context Management System",
-      "mainTitle": "for AI Platform teams",
-      "subtitle": "Build a secure internal AI operating system on MCP: governed, observable, and designed to scale beyond pilots.",
-      "strategyLabel": "Control execution and access—while teams build and use MCP-native apps.",
-      "cards": [
+      "__resolveType": "site/sections/HeroAIPlatform.tsx",
+      "badgeText": "Introducing: deco MCP Mesh — The Enterprise Context Control Plane",
+      "badgeTextMobile": "The Enterprise Context Control Plane",
+      "badgeUrl": "/mesh",
+      "titleLine1": "Build your",
+      "titleLine2": "internal AI Platform",
+      "subtitle": "The composable internal AI operating system on MCP: open-source, self-hosted and designed to scale AI adoption beyond ungoverned pilots.",
+      "ctaText": "Book a demo",
+      "ctaUrl": "https://calendar.app.google/hRxm4ctTJJb51J327",
+      "centerLogo": "https://assets.decocache.com/decocms/69810c11-8a4b-4163-80c7-942ea7f6dcdd/deco-logo.svg",
+      "carouselDuration": 20,
+      "leftLogos": [
         {
-          "badge": "Context Infrastructure",
-          "title": "MCP Mesh",
-          "buttonText": "Explore the MCP Mesh",
-          "buttonLink": "/mesh"
+          "image": "https://assets.decocache.com/decocms/acfb889a-122c-4bc5-a0fb-e778fd447c18/antropic.png",
+          "alt": "Anthropic"
         },
         {
-          "badge": "Building",
-          "title": "MCP Studio",
-          "buttonText": "Get Studio Early Access",
-          "buttonLink": "/mcp-studio"
+          "image": "https://assets.decocache.com/decocms/a2aecf84-8f84-429c-95d3-02ca80fe77d0/claude-code.png",
+          "alt": "Claude Code"
+        },
+        {
+          "image": "https://assets.decocache.com/decocms/cb18dffb-2e9d-4873-afec-b70af0a66ca6/cursor.png",
+          "alt": "Cursor"
+        },
+        {
+          "image": "https://assets.decocache.com/decocms/f352f554-144d-47a4-b9a2-fbd0a9d4c4c4/deepseek.png",
+          "alt": "DeepSeek"
+        },
+        {
+          "image": "https://assets.decocache.com/decocms/d45a7d40-5b63-4893-a7b0-112daa31ceaf/gemini.png",
+          "alt": "Gemini"
+        },
+        {
+          "image": "https://assets.decocache.com/decocms/ff811cb7-08c2-4ab1-b3fe-0101bc566486/grok.png",
+          "alt": "Grok"
+        },
+        {
+          "image": "https://assets.decocache.com/decocms/55a0513a-435c-4286-bdbc-d0658c92db54/ollama.png",
+          "alt": "Ollama"
+        },
+        {
+          "image": "https://assets.decocache.com/decocms/b51001ef-ae58-4db4-8a75-9e6d2df2dd8e/openai.png",
+          "alt": "OpenAI"
+        },
+        {
+          "image": "https://assets.decocache.com/decocms/d2b576e4-322b-4bc6-accc-fe348a736db3/vscode.png",
+          "alt": "VS Code"
+        },
+        {
+          "image": "https://assets.decocache.com/decocms/c4abe24a-dede-4004-8886-fa2f8d359ab0/Windsurf.png",
+          "alt": "Windsurf"
+        }
+      ],
+      "rightLogos": [
+        {
+          "image": "https://assets.decocache.com/decocms/cb14984b-e1e2-4d8b-ac04-6de277ffed84/airtable.png",
+          "alt": "Airtable"
+        },
+        {
+          "image": "https://assets.decocache.com/decocms/0fa42131-35dd-4bcd-a4d3-26017064aa29/drive.png",
+          "alt": "Google Drive"
+        },
+        {
+          "image": "https://assets.decocache.com/decocms/c2489d51-b806-485b-8721-b53f2af71ec9/github.png",
+          "alt": "GitHub"
+        },
+        {
+          "image": "https://assets.decocache.com/decocms/913bb968-e029-4839-8e3a-7890c06f48c4/gmail.png",
+          "alt": "Gmail"
+        },
+        {
+          "image": "https://assets.decocache.com/decocms/5c36a4cc-2857-46ff-b24c-0e310fec849e/hubspot.png",
+          "alt": "HubSpot"
+        },
+        {
+          "image": "https://assets.decocache.com/decocms/ad4b46bb-a807-4dc5-8c62-a406014927ed/meets.png",
+          "alt": "Google Meet"
+        },
+        {
+          "image": "https://assets.decocache.com/decocms/740b0d4b-0174-4ef8-9c32-e576276a2527/notion.png",
+          "alt": "Notion"
+        },
+        {
+          "image": "https://assets.decocache.com/decocms/319f3c96-3ca0-4525-9d3a-c75ba855f898/slack.png",
+          "alt": "Slack"
+        },
+        {
+          "image": "https://assets.decocache.com/decocms/90855981-bc47-4d8a-993a-f3855824a8b3/teams.png",
+          "alt": "Microsoft Teams"
+        },
+        {
+          "image": "https://assets.decocache.com/decocms/f5f081bc-ef46-44ea-b19b-5df29899f803/zoom.png",
+          "alt": "Zoom"
         }
       ]
     },
     {
-      "__resolveType": "site/sections/ProblemCards.tsx"
-    },
-    {
-      "__resolveType": "site/sections/AutonomyControl.tsx",
-      "cards": [
+      "__resolveType": "site/sections/BackboneSection.tsx",
+      "title": "The Backbone of the Autonomous Enterprise.",
+      "subtitle": "A single control plane to scale AI adoption: teams ship apps and automations, while platform keeps identity, policy, and observability consistent.",
+      "bulletPoints": [
         {
-          "title": "A builder framework",
-          "descriptionBefore": "So teams can ",
-          "descriptionHighlighted": "create prototypes, automate workflows, ship internal apps, and iterate quickly",
-          "descriptionAfter": ". Self-serve for internal AI builders, complete extensibility for engineers.",
-          "image": "https://assets.decocache.com/decocms/55d99dbe-bc7c-42c4-9243-5b468447c742/build.png"
+          "label": "Context infrastructure",
+          "targetIndex": 0
         },
         {
-          "title": "A path to production that doesn't reset",
-          "descriptionBefore": "So validated use cases are ",
-          "descriptionHighlighted": "reliable, governed, and continuously improved",
-          "descriptionAfter": ", without being rebuilt from scratch.",
-          "image": "https://assets.decocache.com/decocms/2ff54fe9-5fc9-4179-b1d9-7ab2865e6786/prod.png"
+          "label": "Reusable building blocks",
+          "targetIndex": 1
+        },
+        {
+          "label": "Adoption without chaos",
+          "targetIndex": 2
         }
       ],
-      "title": "Autonomy with control",
-      "subtitle": "AI-native organizations need two things at the same time:",
-      "footerLine1": "decoCMS is designed for that middle path:",
-      "footerLine2": "fast iteration and durable production systems.",
-      "eyebrow": "THE FIX:"
+      "cards": [
+        {
+          "backgroundColor": "#a595ff",
+          "image": "https://assets.decocache.com/decocms/65cd3284-850b-469e-8920-b60af68d43fa/mcp-mesh-card-image.png",
+          "tag": "New!",
+          "tagBackgroundColor": "purple-light",
+          "tagTextColor": "purple-dark",
+          "title": "MCP Mesh",
+          "subtitleBefore": "A secure and ",
+          "subtitleHighlight": "complete context control plane",
+          "subtitleAfter": " to connect tools and data via MCP.",
+          "description": "Unify tool and model calls behind one endpoint, with policy enforcement, audit trails, and runtime strategies that optimize for cost, speed, and accuracy.",
+          "linkText": "Learn about MCP Mesh",
+          "linkUrl": "/mesh"
+        },
+        {
+          "backgroundColor": "#d0ec1a",
+          "image": "https://assets.decocache.com/decocms/b85c0010-8352-4354-a764-5ea993d2ee48/mcp-studio-image.png",
+          "tag": "Early Access",
+          "tagBackgroundColor": "primary-light",
+          "tagTextColor": "primary-dark",
+          "title": "MCP Studio",
+          "subtitleHighlight": "Generate MCP apps",
+          "subtitleAfter": " from natural language or code. Extend in your IDE.",
+          "description": "Create tools, workflows, and apps with consistent schemas, permissions, and interfaces, so other teams can reuse them while maintaining engineering standards.",
+          "linkText": "Get Studio Early Access",
+          "linkUrl": "/mcp-studio"
+        },
+        {
+          "backgroundColor": "#FFC116",
+          "image": "https://assets.decocache.com/decocms/bb1652da-063f-48d2-9657-fc88beaf6dbd/mcp-store-image.png",
+          "tag": "Coming Soon",
+          "tagBackgroundColor": "yellow-light",
+          "tagTextColor": "yellow-dark",
+          "title": "MCP App Store",
+          "subtitleBefore": "Marketplace to ",
+          "subtitleHighlight": "distribute and compose",
+          "subtitleAfter": " autonomous capabilities.",
+          "description": "Install premade solutions, publish internal apps across teams, and share / monetize through our store. Humans and agents run work safely with measurable costs and outcomes."
+        }
+      ]
     },
     {
-      "__resolveType": "site/sections/MCPMeshLayers.tsx"
-    },
-    {
-      "__resolveType": "site/sections/TextMedia.tsx",
-      "title": "Models alone rarely create results that move the needle. Systems do.",
-      "description": "When context is fragmented, outputs stay generic, unsafe, and hard to debug. When context is governed and observable, outputs become reliable—and measurable. decoCMS is designed for continuous evolution:",
-      "eyebrow": "Context Management System",
-      "image": "https://assets.decocache.com/decocms/1a57eceb-c338-4371-a2a7-49efe5779b0e/loop.png",
-      "mobileImage": "https://assets.decocache.com/decocms/3ba2ca64-e1d3-40c9-aee9-bc118bd587fe/loop-mobile.png",
-      "imageAlt": "Section image",
-      "keywords": [
-        "instrument every tool/model call",
-        "Proven-in-prod insights",
-        "Continuous policy tuning",
-        "Agents that act (not just chat)"
+      "__resolveType": "site/sections/MainFeatures.tsx",
+      "icon": "https://assets.decocache.com/decocms/78294d26-e393-4b94-aba5-e189435f521a/deco-logo-gray.svg",
+      "title": "Ship your internal AI platform\nin weeks. Not months.",
+      "featureCards": [
+        {
+          "category": "ALL MODELS",
+          "title": "All models in one place, with governed routing",
+          "mediaType": "image",
+          "image": "https://assets.decocache.com/decocms/4194b57d-d127-4548-9774-b7d22e663a58/all-models.png",
+          "size": "small"
+        },
+        {
+          "category": "CHAT-BASED ASSISTANTS",
+          "title": "Governed chat assistants with an audit trail",
+          "mediaType": "image",
+          "image": "https://assets.decocache.com/decocms/04d3e34d-502d-4ca2-87f2-69a6765b71c7/chat-audit.png",
+          "size": "small"
+        },
+        {
+          "category": "WORKFLOWS",
+          "title": "Multi-step workflows you can take to production",
+          "mediaType": "image",
+          "image": "https://assets.decocache.com/decocms/f973ae61-e03c-4521-95b8-163725a41fbc/workflows.png",
+          "size": "small",
+          "showDescription": false
+        },
+        {
+          "category": "MCPS",
+          "title": "One MCP gateway for every tool and system",
+          "mediaType": "image",
+          "image": "https://assets.decocache.com/decocms/73524d3f-ee98-4aa2-b190-2e15834e1592/one-mcp.png",
+          "size": "wide"
+        },
+        {
+          "category": "MONITORING & OBSERVABILITY",
+          "title": "Unified observability for models & tools",
+          "mediaType": "image",
+          "image": "https://assets.decocache.com/decocms/ac23c459-87f2-4e48-8ed2-647c5cbb8295/monitoring.png",
+          "size": "wide"
+        },
+        {
+          "category": "COST CONTROL",
+          "mediaType": "image",
+          "image": "https://assets.decocache.com/decocms/434ac8ad-4795-48a0-8047-6ee727fd6b75/budget.png",
+          "size": "small",
+          "title": "Budgets, caps, and spend by team, app or agent"
+        },
+        {
+          "category": "ACCESS MANAGEMENT",
+          "title": "SSO + RBAC with least-privilege tool access",
+          "mediaType": "image",
+          "image": "https://assets.decocache.com/decocms/04a60ec1-eafb-4098-890d-a6c752d6d5f2/RBAC.png",
+          "size": "small"
+        },
+        {
+          "category": "REAL-TIME KNOWLEDGE",
+          "title": "Fresh, real-time context from your sources",
+          "mediaType": "image",
+          "image": "https://assets.decocache.com/decocms/4a347143-87ec-4163-886b-b26d1dcd52b0/realtime.png",
+          "size": "small"
+        }
       ]
     },
     {
@@ -110,13 +264,20 @@
       ]
     },
     {
-      "__resolveType": "site/sections/FinalCTACMS.tsx"
+      "__resolveType": "site/sections/LatestBlogPosts.tsx",
+      "heading": "Latest from the blog",
+      "ctaText": "See all",
+      "ctaHref": "/blog",
+      "limit": 6
     },
     {
-      "__resolveType": "website/sections/Rendering/Lazy.tsx",
-      "section": {
-        "__resolveType": "Footer"
-      }
+      "__resolveType": "site/sections/FinalCTASimple.tsx",
+      "title": "Ready to get started?",
+      "buttonText": "Book a demo",
+      "buttonUrl": "https://calendar.app.google/hRxm4ctTJJb51J327"
+    },
+    {
+      "__resolveType": "Footer"
     }
   ],
   "seo": {

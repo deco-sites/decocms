@@ -194,6 +194,20 @@ export default {
     "bg-gradient-to-b",
     "to-transparent",
 
+    // BackboneSection tag colors (using custom color tokens)
+    "bg-purple-light",
+    "bg-purple-dark",
+    "bg-primary-light",
+    "bg-primary-dark",
+    "bg-yellow-light",
+    "bg-yellow-dark",
+    "text-purple-light",
+    "text-purple-dark",
+    "text-primary-light",
+    "text-primary-dark",
+    "text-yellow-light",
+    "text-yellow-dark",
+
     // Gradient from/via/to for ALL colors (most common shades)
     ...[
       "red",

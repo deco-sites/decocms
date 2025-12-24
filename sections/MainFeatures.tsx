@@ -258,24 +258,24 @@ function FeatureCardComponent({
   index: number;
   isWide?: boolean;
 }) {
-  // Standard aspect ratios for consistent layout
-  const aspectRatio = isWide ? "16/9" : "4/3"; // Clean ratios: wide = 16:9, small = 4:3
+  // From Figma: image container aspect ratios
+  // Small cards: 420 × 320, Wide cards: 635 × 595
+  // Container maintains aspect ratio, image scales to fill
+  const aspectRatio = isWide ? "635 / 595" : "420 / 320";
 
   return (
     <div
-      class={`relative bg-dc-800 rounded-2xl overflow-hidden feature-card transition-all duration-300 flex flex-col ${
-        isWide ? "md:h-[600px]" : "md:h-[500px]"
-      }`}
+      class="relative bg-dc-800 rounded-2xl overflow-hidden feature-card transition-all duration-300 flex flex-col gap-6"
     >
-      {/* Content - at top, flexible height */}
-      <div class="relative z-10 p-6 flex flex-col gap-2.5 bg-dc-800 flex-shrink-0">
+      {/* Content - at top with 24px padding and 10px gap between elements */}
+      <div class="relative z-10 p-6 flex flex-col gap-2.5 flex-shrink-0">
         {/* Category */}
-        <div class="font-mono text-dc-500 text-sm sm:text-base uppercase leading-5">
+        <div class="font-mono text-dc-500 text-sm uppercase leading-5 font-bold">
           {feature.category}
         </div>
 
         {/* Title */}
-        <h3 class="text-dc-200 text-lg md:text-xl lg:text-2xl font-medium leading-tight">
+        <h3 class="text-dc-200 text-lg md:text-2xl font-medium leading-tight tracking-[-0.48px]">
           {feature.title}
         </h3>
 
@@ -289,61 +289,53 @@ function FeatureCardComponent({
         )}
       </div>
 
-      {/* Spacer to push media to bottom - only on desktop */}
-      <div class="hidden md:block flex-1"></div>
-
-      {/* Media Container - always at bottom with fixed aspect ratio */}
-      <div class="flex-shrink-0 overflow-hidden">
-        <div
-          class="w-full"
-          style={{
-            aspectRatio: feature.imageAspectRatio || aspectRatio,
-            minHeight: "200px",
-          }}
-        >
-          {feature.mediaType === "image" && feature.image
-            ? (
-              <Image
-                src={feature.image}
-                alt={feature.title}
-                width={isWide ? 800 : 600}
-                height={isWide ? 450 : 450}
-                class="w-full h-full object-cover object-center"
-                loading="lazy"
-                fetchPriority="low"
-              />
-            )
-            : feature.mediaType === "video" && feature.videoUrl
-            ? (
-              <video
-                class="w-full h-full object-cover object-center feature-video"
-                muted
-                playsInline
-                loop
-                preload="none"
-                data-feature-index={index}
-                poster={feature.image}
-                onError={() =>
-                  console.log("Video error for:", feature.videoUrl)}
-                onLoadedData={() =>
-                  console.log("Video loaded:", feature.videoUrl)}
-              >
-                <source src={feature.videoUrl} type="video/webm" />
-                {feature.videoUrl?.includes(".webm") && (
-                  <source
-                    src={feature.videoUrl.replace(".webm", ".mp4")}
-                    type="video/mp4"
-                  />
-                )}
-                Your browser does not support video.
-              </video>
-            )
-            : (
-              <div class="w-full h-full bg-dc-700 flex items-center justify-center">
-                <span class="text-dc-400 text-sm">No media provided</span>
-              </div>
-            )}
-        </div>
+      {/* Media Container - maintains Figma aspect ratio, scales to fill card */}
+      <div
+        class="w-full overflow-hidden flex-shrink-0"
+        style={{ aspectRatio }}
+      >
+        {feature.mediaType === "image" && feature.image
+          ? (
+            <Image
+              src={feature.image}
+              alt={feature.title}
+              width={isWide ? 1270 : 840}
+              height={isWide ? 1190 : 640}
+              class="w-full h-full object-cover object-center"
+              loading="lazy"
+              fetchPriority="low"
+            />
+          )
+          : feature.mediaType === "video" && feature.videoUrl
+          ? (
+            <video
+              class="w-full h-full object-cover object-center feature-video"
+              muted
+              playsInline
+              loop
+              preload="none"
+              data-feature-index={index}
+              poster={feature.image}
+              onError={() =>
+                console.log("Video error for:", feature.videoUrl)}
+              onLoadedData={() =>
+                console.log("Video loaded:", feature.videoUrl)}
+            >
+              <source src={feature.videoUrl} type="video/webm" />
+              {feature.videoUrl?.includes(".webm") && (
+                <source
+                  src={feature.videoUrl.replace(".webm", ".mp4")}
+                  type="video/mp4"
+                />
+              )}
+              Your browser does not support video.
+            </video>
+          )
+          : (
+            <div class="w-full h-full bg-dc-700 flex items-center justify-center">
+              <span class="text-dc-400 text-sm">No media provided</span>
+            </div>
+          )}
       </div>
     </div>
   );
