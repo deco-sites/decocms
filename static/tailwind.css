@@ -4037,11 +4037,11 @@ input.tab:checked + .tab-content,
 .top-\[46px\]{
   top: 46px;
 }
+.top-\[56px\]{
+  top: 56px;
+}
 .top-\[5px\]{
   top: 5px;
-}
-.top-\[60px\]{
-  top: 60px;
 }
 .top-\[70px\]{
   top: 70px;
@@ -4456,6 +4456,9 @@ input.tab:checked + .tab-content,
 .h-\[322px\]{
   height: 322px;
 }
+.h-\[35dvh\]{
+  height: 35dvh;
+}
 .h-\[3px\]{
   height: 3px;
 }
@@ -4467,9 +4470,6 @@ input.tab:checked + .tab-content,
 }
 .h-\[45\%\]{
   height: 45%;
-}
-.h-\[45vh\]{
-  height: 45vh;
 }
 .h-\[50\%\]{
   height: 50%;
@@ -4524,6 +4524,9 @@ input.tab:checked + .tab-content,
 }
 .max-h-\[110px\]{
   max-height: 110px;
+}
+.max-h-\[16px\]{
+  max-height: 16px;
 }
 .max-h-\[215px\]{
   max-height: 215px;
@@ -4584,6 +4587,9 @@ input.tab:checked + .tab-content,
 }
 .min-h-\[800px\]{
   min-height: 800px;
+}
+.min-h-\[8px\]{
+  min-height: 8px;
 }
 .min-h-\[90vh\]{
   min-height: 90vh;
@@ -5370,8 +5376,8 @@ input.tab:checked + .tab-content,
 .gap-\[88px\]{
   gap: 88px;
 }
-.gap-\[clamp\(14px\2c 2vh\2c 24px\)\]{
-  gap: clamp(14px,2vh,24px);
+.gap-\[clamp\(10px\2c 1\.5dvh\2c 16px\)\]{
+  gap: clamp(10px,1.5dvh,16px);
 }
 .gap-\[clamp\(4px\2c 0\.6vh\2c 8px\)\]{
   gap: clamp(4px,0.6vh,8px);
@@ -9264,8 +9270,8 @@ input.tab:checked + .tab-content,
 .pt-8{
   padding-top: 2rem;
 }
-.pt-\[70px\]{
-  padding-top: 70px;
+.pt-\[64px\]{
+  padding-top: 64px;
 }
 .text-left{
   text-align: left;
@@ -9369,8 +9375,8 @@ input.tab:checked + .tab-content,
 .text-\[clamp\(13px\2c 1\.8vh\2c 18px\)\]{
   font-size: clamp(13px,1.8vh,18px);
 }
-.text-\[clamp\(14px\2c 3\.5vw\2c 16px\)\]{
-  font-size: clamp(14px,3.5vw,16px);
+.text-\[clamp\(13px\2c 3\.2vw\2c 15px\)\]{
+  font-size: clamp(13px,3.2vw,15px);
 }
 .text-\[clamp\(28px\2c 4\.5vh\2c 64px\)\]{
   font-size: clamp(28px,4.5vh,64px);

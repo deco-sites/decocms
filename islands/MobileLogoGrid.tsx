@@ -42,26 +42,26 @@ export default function MobileLogoGrid({
     }
   }, [horizontalLogos, verticalLogos]);
 
-  // Render a single logo card - responsive sizing based on viewport height
+  // Render a single logo card - dynamic sizing based on viewport
   const LogoCard = ({ logo }: { logo: Logo }) => {
     return (
       <div 
         class="flex-shrink-0 bg-white border-[1.2px] border-dc-200 flex items-center justify-center overflow-hidden"
         style={{
-          width: "clamp(56px, 9vh, 100px)",
-          height: "clamp(56px, 9vh, 100px)",
-          borderRadius: "clamp(14px, 2.2vh, 25px)"
+          width: "clamp(52px, 9.5dvh, 100px)",
+          height: "clamp(52px, 9.5dvh, 100px)",
+          borderRadius: "clamp(13px, 2.4dvh, 25px)"
         }}
       >
         <Image
           src={logo.image}
           alt={logo.alt || "Integration logo"}
-          width={65}
-          height={65}
+          width={64}
+          height={64}
           class="object-contain"
           style={{
-            width: "clamp(36px, 6vh, 65px)",
-            height: "clamp(36px, 6vh, 65px)"
+            width: "clamp(32px, 6dvh, 64px)",
+            height: "clamp(32px, 6dvh, 64px)"
           }}
         />
       </div>
@@ -78,7 +78,7 @@ export default function MobileLogoGrid({
   return (
     <div 
       class="relative w-full"
-      style={{ height: "clamp(220px, 45vh, 420px)" }}
+      style={{ height: "clamp(200px, 44dvh, 460px)" }}
     >
       {/* Inject CSS keyframes */}
       <style>
@@ -106,16 +106,16 @@ export default function MobileLogoGrid({
       <div 
         class="absolute top-0 overflow-hidden"
         style={{
-          left: "clamp(8px, 2vw, 19px)",
-          width: "clamp(60px, 10vh, 110px)",
-          height: "calc(100% - clamp(36px, 6vh, 60px))"
+          left: "clamp(8px, 2vw, 16px)",
+          width: "clamp(56px, 10.5dvh, 108px)",
+          height: "calc(100% - clamp(28px, 5.5dvh, 60px))"
         }}
       >
         {/* Gradient mask - fade on top edge */}
         <div
           class="absolute top-0 inset-x-0 z-10 pointer-events-none"
           style={{
-            height: "30px",
+            height: "clamp(25px, 4dvh, 40px)",
             background: "linear-gradient(to bottom, #F1F0EE 0%, transparent 100%)"
           }}
         />
@@ -123,7 +123,7 @@ export default function MobileLogoGrid({
         <div
           class="absolute bottom-0 inset-x-0 z-10 pointer-events-none"
           style={{
-            height: "50px",
+            height: "clamp(40px, 6dvh, 60px)",
             background: "linear-gradient(to top, #F1F0EE 0%, transparent 100%)"
           }}
         />
@@ -131,8 +131,8 @@ export default function MobileLogoGrid({
         {hasVertical && (
           <div
             ref={verticalTrackRef}
-            class={`flex flex-col gap-2 ${verticalHeight > 0 ? 'animate-scroll-vertical' : ''}`}
-            style={{ animationDirection: 'reverse' }}
+            class={`flex flex-col ${verticalHeight > 0 ? 'animate-scroll-vertical' : ''}`}
+            style={{ animationDirection: 'reverse', gap: 'clamp(8px, 1.2dvh, 12px)' }}
           >
             {duplicatedVertical.map((logo, index) => (
               <LogoCard key={`v-${index}`} logo={logo} />
@@ -147,14 +147,14 @@ export default function MobileLogoGrid({
         style={{
           left: "clamp(40px, 8vw, 70px)",
           bottom: "0",
-          height: "clamp(56px, 9vh, 100px)"
+          height: "clamp(52px, 9.5dvh, 100px)"
         }}
       >
         {/* Gradient mask - fade on right edge */}
         <div
           class="absolute right-0 inset-y-0 z-10 pointer-events-none"
           style={{
-            width: "50px",
+            width: "clamp(40px, 6dvh, 60px)",
             background: "linear-gradient(to left, #F1F0EE 0%, transparent 100%)"
           }}
         />
@@ -162,7 +162,8 @@ export default function MobileLogoGrid({
         {hasHorizontal && (
           <div
             ref={horizontalTrackRef}
-            class={`flex gap-2 ${horizontalWidth > 0 ? 'animate-scroll-horizontal' : ''}`}
+            class={`flex ${horizontalWidth > 0 ? 'animate-scroll-horizontal' : ''}`}
+            style={{ gap: 'clamp(8px, 1.2dvh, 12px)' }}
           >
             {duplicatedHorizontal.map((logo, index) => (
               <LogoCard key={`h-${index}`} logo={logo} />
@@ -171,25 +172,25 @@ export default function MobileLogoGrid({
         )}
       </div>
 
-      {/* Featured deco logo card - large, bottom-left corner - responsive sizing */}
+      {/* Featured deco logo card - bottom-left corner - dynamic sizing */}
       <div class="absolute left-0 bottom-0 z-20">
         <div 
           class="bg-[#d0ec1a] border-[1.5px] border-[#bddf4a] flex items-center justify-center overflow-hidden"
           style={{
-            width: "clamp(100px, 18vh, 180px)",
-            height: "clamp(100px, 18vh, 180px)",
-            borderRadius: "clamp(24px, 4vh, 45px)"
+            width: "clamp(96px, 19dvh, 176px)",
+            height: "clamp(96px, 19dvh, 176px)",
+            borderRadius: "clamp(24px, 4.8dvh, 44px)"
           }}
         >
           <Image
             src={featuredLogo}
             alt="deco logo"
-            width={120}
-            height={120}
+            width={110}
+            height={110}
             class="object-contain"
             style={{
-              width: "clamp(64px, 12vh, 120px)",
-              height: "clamp(64px, 12vh, 120px)"
+              width: "clamp(60px, 12dvh, 110px)",
+              height: "clamp(60px, 12dvh, 110px)"
             }}
           />
         </div>

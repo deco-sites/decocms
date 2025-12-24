@@ -48,6 +48,24 @@ interface Theme {
 }
 
 export interface Props {
+  /**
+   * @title Badge Label
+   * @description Label shown in the badge (e.g., "Note:")
+   */
+  badgeLabel?: string;
+
+  /**
+   * @title Badge Text
+   * @description Main text in the badge
+   */
+  badgeText?: string;
+
+  /**
+   * @title Badge URL
+   * @description Link for the badge (e.g., blog post URL)
+   */
+  badgeUrl?: string;
+
   /** @title Tag */
   /** @description Tag displayed above the title (e.g., "EARLY ACCESS") */
   tag?: string;
@@ -72,6 +90,9 @@ export interface Props {
 }
 
 export default function HeroInteractive({
+  badgeLabel,
+  badgeText,
+  badgeUrl,
   tag,
   title,
   subtitle,
@@ -142,6 +163,9 @@ export default function HeroInteractive({
 
       {/* Client-side rendered island */}
       <HeroInteractiveClient
+        badgeLabel={badgeLabel}
+        badgeText={badgeText}
+        badgeUrl={badgeUrl}
         tag={tag}
         title={title}
         subtitle={subtitle}

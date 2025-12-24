@@ -9,7 +9,9 @@
       "__resolveType": "website/sections/Rendering/Lazy.tsx",
       "section": {
         "__resolveType": "site/sections/HeroInteractive.tsx",
-        "tag": "EARLY ACCESS",
+        "badgeLabel": "Note:",
+        "badgeText": "We're porting this to the new MCP Studio + MCP Mesh—this version is being replaced soon",
+        "badgeUrl": "https://www.decocms.com/blog/post/ai-native-company",
         "title": "Generate internal AI apps that actually ship.",
         "subtitle": "Connect your tools via MCP, deploy anywhere. Full-stack AI applications with custom UI, workflows and built-in governance.",
         "apps": [

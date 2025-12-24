@@ -22,6 +22,9 @@ interface Theme {
 }
 
 export interface Props {
+  badgeLabel?: string;
+  badgeText?: string;
+  badgeUrl?: string;
   tag?: string;
   title?: string;
   subtitle?: string;
@@ -69,6 +72,9 @@ function triggerAnimations(gsap: any) {
 }
 
 export default function HeroInteractiveClient({
+  badgeLabel,
+  badgeText,
+  badgeUrl,
   tag,
   title,
   subtitle,
@@ -188,6 +194,28 @@ export default function HeroInteractiveClient({
           <div class="w-full max-w-[1140px] flex flex-col gap-[3vh] sm:gap-12 lg:gap-16 items-center">
             {/* Title and Subtitle - Server-side rendered */}
             <div class="flex flex-col gap-[1.5vh] sm:gap-5 items-center text-center w-full">
+              {/* Badge/Tag Link */}
+              {badgeText && (
+                <a
+                  href={badgeUrl}
+                  class="backdrop-blur-sm bg-white/80 border border-dc-200 rounded-full py-1.5 px-3 flex items-center gap-2 hover:bg-white/95 hover:border-dc-300 transition-all group"
+                >
+                  {badgeLabel && (
+                    <span class="text-primary-dark text-sm font-semibold hidden sm:inline">
+                      {badgeLabel}
+                    </span>
+                  )}
+                  <span class="text-dc-600 text-sm font-medium">
+                    {badgeText}
+                  </span>
+                  <Icon
+                    name="arrow_forward"
+                    size="small"
+                    class="text-dc-400 group-hover:translate-x-0.5 transition-transform"
+                  />
+                </a>
+              )}
+
               {tag && (
                 <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase bg-primary-light text-primary-dark">
                   {tag}

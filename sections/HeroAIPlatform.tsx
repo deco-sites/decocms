@@ -148,33 +148,33 @@ export default function HeroAIPlatform({
         </div>
 
         {/* MOBILE LAYOUT */}
-        <div class="flex flex-col md:hidden relative z-10 min-h-[calc(100vh-16px)] pb-6">
+        <div class="flex flex-col md:hidden relative z-10 min-h-[calc(100dvh-16px)] pb-4">
           {/* CSS for responsive title sizing by screen width */}
           <style>
             {`
               .mobile-hero-title {
-                font-size: 32px;
+                font-size: 28px;
               }
               @media (min-width: 375px) {
                 .mobile-hero-title {
-                  font-size: 36px;
+                  font-size: 32px;
                 }
               }
               @media (min-width: 390px) {
                 .mobile-hero-title {
-                  font-size: 40px;
+                  font-size: 36px;
                 }
               }
               @media (min-width: 430px) {
                 .mobile-hero-title {
-                  font-size: 44px;
+                  font-size: 40px;
                 }
               }
             `}
           </style>
 
           {/* ASCII Dithering Animation - starts BELOW navbar on mobile, flipped */}
-          <div class="absolute top-[60px] left-1/2 -translate-x-1/2 h-[45vh] w-[2562px] overflow-hidden pointer-events-none z-[1] scale-y-[-1] opacity-20">
+          <div class="absolute top-[56px] left-1/2 -translate-x-1/2 h-[35dvh] w-[2562px] overflow-hidden pointer-events-none z-[1] scale-y-[-1] opacity-20">
             <canvas
               id={`dither-canvas-mobile-${sectionId}`}
               class="absolute inset-0 w-full h-full"
@@ -183,9 +183,9 @@ export default function HeroAIPlatform({
           </div>
 
           {/* Content with padding - starts below navbar */}
-          <div class="flex flex-col flex-1 pt-[70px] px-4">
-            {/* Top section: Logo Grid Animation - grows to fill space */}
-            <div class="flex-1 flex items-start">
+          <div class="flex flex-col flex-1 pt-[64px] px-4">
+            {/* Top section: Logo Grid Animation */}
+            <div class="flex-shrink-0">
               <MobileLogoGrid
                 horizontalLogos={rightLogos}
                 verticalLogos={leftLogos}
@@ -194,15 +194,18 @@ export default function HeroAIPlatform({
               />
             </div>
 
+            {/* Spacer - flexible gap between animation and text */}
+            <div class="flex-1 min-h-[8px] max-h-[16px]" />
+
             {/* Bottom section: Badge + Title + Subtitle + Button - fixed at bottom */}
-            <div class="flex-shrink-0 flex flex-col gap-[clamp(14px,2vh,24px)] w-full">
+            <div class="flex-shrink-0 flex flex-col gap-[clamp(10px,1.5dvh,16px)] w-full">
               {/* Badge - between animation and title */}
               {badgeText && (
                 <a
                   href={badgeUrl}
-                  class="self-start bg-dc-50 border border-dc-200 rounded-full py-1.5 px-3 flex items-center gap-2 hover:bg-white hover:border-dc-300 transition-all group"
+                  class="self-start bg-dc-50 border border-dc-200 rounded-full py-1 px-3 flex items-center gap-2 hover:bg-white hover:border-dc-300 transition-all group"
                 >
-                  <span class="text-dc-500 text-[clamp(14px,3.5vw,16px)] font-normal leading-[1.4]">
+                  <span class="text-dc-500 text-[clamp(13px,3.2vw,15px)] font-normal leading-[1.4]">
                     {badgeTextMobile || badgeText}
                   </span>
                   <Icon
@@ -214,7 +217,7 @@ export default function HeroAIPlatform({
               )}
 
               {/* Title - responsive sizing with breakpoints */}
-              <h1 class="mobile-hero-title font-sans leading-none text-dc-900 font-medium tracking-[-0.8px] text-left">
+              <h1 class="mobile-hero-title font-sans leading-[1.05] text-dc-900 font-medium tracking-[-0.8px] text-left">
                 {titleLine1}
                 <br />
                 <span class="text-[#8caa25]">{titleLine2}</span>
@@ -223,17 +226,16 @@ export default function HeroAIPlatform({
               {/* Subtitle - responsive sizing */}
               <p 
                 class="text-dc-500 font-normal leading-[1.4] text-left"
-                style={{ fontSize: "clamp(16px, 4.5vw, 22px)" }}
+                style={{ fontSize: "clamp(15px, 4vw, 19px)" }}
               >
                 {subtitle}
               </p>
 
-              {/* CTA Button - Full width, responsive height */}
+              {/* CTA Button - Full width */}
               {ctaText && (
                 <a
                   href={ctaUrl}
-                  class="w-full inline-flex items-center justify-center px-8 py-2 bg-[#d0ec1a] text-[#07401a] text-sm font-medium rounded-lg hover:bg-[#c4e016] transition-colors"
-                  style={{ height: "clamp(40px, 5vh, 48px)" }}
+                  class="w-full inline-flex items-center justify-center h-[44px] px-8 py-2 bg-[#d0ec1a] text-[#07401a] text-sm font-medium rounded-lg hover:bg-[#c4e016] transition-colors mt-1"
                 >
                   {ctaText}
                 </a>
