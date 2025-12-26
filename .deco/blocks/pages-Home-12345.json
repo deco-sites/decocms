@@ -109,15 +109,15 @@
       "subtitle": "A single control plane to scale AI adoption: teams ship apps and automations, while platform keeps identity, policy, and observability consistent.",
       "bulletPoints": [
         {
-          "label": "Context infrastructure",
+          "label": "Enterprise Context Layer",
           "targetIndex": 0
         },
         {
-          "label": "Reusable building blocks",
-          "targetIndex": 1
+          "targetIndex": 1,
+          "label": "Generate MCP Apps"
         },
         {
-          "label": "Adoption without chaos",
+          "label": "Distribute and scale adoption",
           "targetIndex": 2
         }
       ],
