@@ -5385,6 +5385,9 @@ input.tab:checked + .tab-content,
 .gap-\[clamp\(10px\2c 1\.5dvh\2c 16px\)\]{
   gap: clamp(10px,1.5dvh,16px);
 }
+.gap-\[clamp\(14px\2c 2vh\2c 24px\)\]{
+  gap: clamp(14px,2vh,24px);
+}
 .gap-\[clamp\(4px\2c 0\.6vh\2c 8px\)\]{
   gap: clamp(4px,0.6vh,8px);
 }
@@ -9275,6 +9278,9 @@ input.tab:checked + .tab-content,
 }
 .pt-\[64px\]{
   padding-top: 64px;
+}
+.pt-\[clamp\(80px\2c 16vh\2c 240px\)\]{
+  padding-top: clamp(80px,16vh,240px);
 }
 .text-left{
   text-align: left;

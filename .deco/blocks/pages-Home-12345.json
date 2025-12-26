@@ -8,7 +8,7 @@
     },
     {
       "__resolveType": "site/sections/HeroAIPlatform.tsx",
-      "badgeText": "Introducing: deco MCP Mesh — The Enterprise Context Control Plane",
+      "badgeText": "deco MCP Mesh — The Enterprise Context Control Plane",
       "badgeTextMobile": "The Enterprise Context Control Plane",
       "badgeUrl": "/mesh",
       "titleLine1": "Build your",

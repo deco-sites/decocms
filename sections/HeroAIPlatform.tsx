@@ -245,9 +245,9 @@ export default function HeroAIPlatform({
         </div>
 
         {/* DESKTOP LAYOUT */}
-        <div class="hidden md:flex flex-col items-center pt-32 lg:pt-40 px-6 relative z-10">
+        <div class="hidden md:flex flex-col items-center pt-[clamp(80px,16vh,240px)] px-6 relative z-10">
           {/* Hero Text Content */}
-          <div class="flex flex-col items-center gap-6 w-full max-w-[1066px]">
+          <div class="flex flex-col items-center gap-[clamp(14px,2vh,24px)] w-full max-w-[1066px]">
             {/* Badge */}
             {badgeText && (
               <a
@@ -271,7 +271,10 @@ export default function HeroAIPlatform({
             )}
 
             {/* Title */}
-            <h1 class="font-sans text-5xl md:text-6xl lg:text-[80px] text-dc-900 font-medium leading-none tracking-[-1.6px] text-center">
+            <h1 
+              class="font-sans text-dc-900 font-medium leading-none tracking-[-1.6px] text-center"
+              style={{ fontSize: "clamp(48px, 6vw, 90px)" }}
+            >
               {titleLine1}
               <br />
               <span class="text-[#8caa25]">{titleLine2}</span>
@@ -295,8 +298,52 @@ export default function HeroAIPlatform({
         </div>
 
         {/* Logo Carousel Section - Desktop only */}
-        <div class="hidden md:block relative z-10 mt-auto pb-20 px-6">
-          <div class="w-full max-w-[1576px] mx-auto">
+        <style>
+          {`
+            .logo-carousel-wrapper {
+              --carousel-scale: 1;
+              transform: scale(var(--carousel-scale));
+              transform-origin: center bottom;
+            }
+            /* Scale down for smaller screens */
+            @media (min-width: 768px) and (max-height: 800px) {
+              .logo-carousel-wrapper {
+                --carousel-scale: 0.85;
+              }
+            }
+            @media (min-width: 768px) and (max-height: 700px) {
+              .logo-carousel-wrapper {
+                --carousel-scale: 0.75;
+              }
+            }
+            @media (min-width: 768px) and (max-height: 600px) {
+              .logo-carousel-wrapper {
+                --carousel-scale: 0.65;
+              }
+            }
+            /* Scale up for larger screens */
+            @media (min-width: 768px) and (min-height: 950px) {
+              .logo-carousel-wrapper {
+                --carousel-scale: 1.15;
+              }
+            }
+            @media (min-width: 768px) and (min-height: 1100px) {
+              .logo-carousel-wrapper {
+                --carousel-scale: 1.3;
+              }
+            }
+            @media (min-width: 768px) and (min-height: 1300px) {
+              .logo-carousel-wrapper {
+                --carousel-scale: 1.45;
+              }
+            }
+          `}
+        </style>
+        <div 
+          class="hidden md:block relative z-10 mt-auto px-6"
+          style={{ paddingBottom: "clamp(32px, 8vh, 160px)" }}
+        >
+          <div class="w-full max-w-[1576px] mx-auto logo-carousel-wrapper">
             <LogoCarousel
               leftLogos={leftLogos}
               rightLogos={rightLogos}
