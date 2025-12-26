@@ -1,184 +1,78 @@
 # LLM.txt
-
 # https://decocms.com llms-full.txt
 
-## Deco CMS Overview
+## deco CMS
 
-Home Docs Community Partners Blog Use Cases
+deco is a **Context Management System** to help companies scale AI in production.
+Value prop: **Build your context engine.**
 
-Digital Experience Internal AI Apps
+### The pitch
+**Your Context. Every AI.**
+Stop rebuilding integrations for every AI tool.
+Stop losing context when you switch between Claude and Cursor.
+Stop letting vendors control your data.
 
-167
+Own your context. Run your mesh. Take it everywhere.
 
-# The open-source admin for your internal AI apps
+## What we're building
 
-Prototype in chat, ship in code, and run & monetize agentic apps in production.
+We're building the future where companies run AI-native internal software: business teams can solve problems without waiting on engineering cycles, and developers can compose complex systems from reusable building blocks.
 
-Get early access Talk to sales
+This requires an MCP-first architecture: agents, tools, and workflows communicate through standard protocols instead of rigid APIs.
 
-Control panel for your AI stack
+deco CMS has three layers:
 
-# AI demos are easy. Production isn't.
+1) **MCP Mesh** (Infrastructure) — gateway + runtime + control panel  
+2) **MCP Studio** (Development) — no-code builder + full-code SDK  
+3) **MCP App Store** (Consumption) — marketplace to discover, install, compose, and (soon) monetize
 
-deco Context Management System bridges the gap between prompts and production. Connect your stack, govern every step, and deploy agentic apps with built-in observability, spend controls, and a marketplace to reuse or monetize your modules.
+## Layer 1 — MCP Mesh (The Foundation)
 
-observability
+Open-source MCP gateway where context engineers organize company-wide context.
 
-controls
+### What it does
+- **One endpoint for all MCP servers** (internal + external)
+- **Connect & authenticate MCPs**
+- **One-click install from the App Store**
+- **Monitor & trace every tool call** (latency, errors, usage)
+- **Control & budget** (rate limits, spend caps, cost attribution)
+- **Smart routing** with policy enforcement
+- **Code execution support** for major token reduction
+- **AI gateway routing** or BYOK/BYOM
+- **Centralized credentials vault**
+- **Enterprise auth** (Okta / Azure AD / IdPs)
+- **High performance** (designed for zero added latency)
+- **Deploy anywhere** (self-host on Kubernetes or run on deco infra; no vendor lock-in)
 
-marketplace
+### Who it's for
+Enterprise AI Platform Teams (Platform Engineering / Enterprise IT) and Context Engineers who own SSO, access policies, audit trails, and safe rollout of MCP servers.
 
-governance
+### Status
+Launching **December 2025**: open-source, self-hosted gateway with observability + monitoring, plus an integrated App Store for one-click installs (small initial catalog). Wallet/sharing comes later.
 
-context mesh
+## Layer 2 — MCP Studio (The Builder)
 
-safe vibe coding
+Full-stack framework for building MCP apps on the mesh — **no-code + full-code**.
 
-build once bill per run
+Two modes that work together:
+- **No-code vibecoding for business users:** chat-based app creation, templates, visual workflows, instant preview
+- **Full-code for developers:** TypeScript-first SDK, agents, durable workflows, custom UIs, full observability through the mesh
 
-## One place to build, run, and monetize your agents
+Core idea: business users start fast; developers harden, scale, and extend.
 
-Govern access, trace every step, and turn reusable modules into paid products.
+## Layer 3 — MCP App Store (The Marketplace)
 
-### Connect your context
+Catalog of packaged MCP-native solutions where users discover and install:
+- **MCP Servers** (external connections like Slack / Drive / Salesforce, etc.)
+- **MCP Apps** (packaged solutions: agents + workflows + UIs + databases)
+- **Vertical bundles** (industry-specific packages)
 
-Unify data, tools and models with policy, RBAC and observability — your agents always get the right context, safely.
+Wallet-based monetization is part of the vision; initial launch focuses on a small catalog and one-click installs.
 
-MCP-native connectors
-
-Policy routing & RBAC
-
-Spend caps & budgets
-
-Audit trail
-
-### Connect your context
-
-Unify data, tools and models with policy, RBAC and observability — your agents always get the right context, safely.
-
-MCP-native connectors
-
-Policy routing & RBAC
-
-Spend caps & budgets
-
-Audit trail
-
-### Govern & observe your runs
-
-No vibe debugging: logs, traces, error analytics and cost-per-step to optimize quality and spend, with roles, approvals and tenancy.
-
-Logs & traces
-
-Error analytics
-
-Cost per step & budgets
-
-Roles, approvals & tenancy
-
-### Govern & observe your runs
-
-No vibe debugging: logs, traces, error analytics and cost-per-step to optimize quality and spend, with roles, approvals and tenancy.
-
-Logs & traces
-
-Error analytics
-
-Cost per step & budgets
-
-Roles, approvals & tenancy
-
-### Reuse & monetize with our marketplace
-
-Install ready-made modules — or publish your own. Wallet-based per-run billing turns apps into revenue.
-
-One-click installs
-
-Publish modules
-
-Per-run billing (wallet)
-
-Templates & packages
-
-### Reuse & monetize with our marketplace
-
-Install ready-made modules — or publish your own. Wallet-based per-run billing turns apps into revenue.
-
-One-click installs
-
-Publish modules
-
-Per-run billing (wallet)
-
-Templates & packages
-
-## Realtime collaboration
-
-Business users prototype in natural language. Engineers scale in code.
-
-### Natural‑language builder for business users
-
-### Open‑source TypeScript SDK for devs
-
-Versioning & Git-native
-
-Governance built-in
-
-Fast Global Edge Deploy
-
-Open & extensible
-
-Frequently Asked Questions
-
-## FAQs
-
-Is deco CMS in closed beta? How can I get early access?
-
-Yes—deco CMS is currently in closed beta. You can get early access by joining our webinars, where we share invites during each session. Follow our social channels to catch the next dates.
-
-What is deco CMS, and how is it different from other AI app builders?
-
-deco CMS is an open-source Context CMS — a control plane and runtime for building, running, and monetizing AI apps. Unlike traditional app builders, it unifies context, governance, observability, and monetization in one platform.
-
-How does deco CMS handle governance and observability?
-
-Every run is fully traced, auditable, and secure. DecoCMS includes role-based access control (RBAC), spend caps, error analytics, and per-step cost visibility — ensuring safe operations and compliance by default.
-
-How does the deco CMS SDK work for developers?
-
-The deco CMS SDK lets you build, extend, and manage agents, workflows, and UIs in TypeScript. It integrates seamlessly with the CLI, enabling local development, testing, and edge deployment from a single codebase.
-
-What is the Context Mesh, and why is it important?
-
-The Context Mesh is DecoCMS's governed layer for connecting data, tools, and models. It provides typed connectors with built-in policy routing, RBAC, observability, and spend controls — ensuring the right context is delivered safely every time.
-
-Does deco CMS support edge deployment?
-
-Yes. deco CMS ships agents, workflows, and UIs to the edge automatically, ensuring low latency and global performance by default. You can manage environments, preview builds, and deploy updates directly from the CLI.
-
-How does deco CMS integrate with Git?
-
-deco CMS uses a Git-backed workflow by default. Every change to agents, workflows, and UIs is versioned, allowing you to branch, review, and merge updates just like any modern development stack. This ensures full traceability and safe collaboration between teams.
-
-## Join our thriving community of Al builders
-
-Join our Discord community
-
-### Company
-
-Docs
-
-Community
-
-Blog
-
-### Social
-
-Linkedin
-
-Instagram
-
-Twitter
+## Entry points (by maturity)
+- **App Store:** start by installing pre-built apps
+- **Studio:** start building custom apps
+- **Mesh:** standardize + govern everything at scale
 
 ## Robots.txt Access Rules
 

@@ -9,6 +9,7 @@ import * as $sitemap_xml from "./routes/sitemap.xml.ts";
 import * as $AutonomyControlCards from "./islands/AutonomyControlCards.tsx";
 import * as $BackboneScrollSection from "./islands/BackboneScrollSection.tsx";
 import * as $BlogCategories from "./islands/BlogCategories.tsx";
+import * as $BlogFilteredPosts from "./islands/BlogFilteredPosts.tsx";
 import * as $BlogFormSearch from "./islands/BlogFormSearch.tsx";
 import * as $BlogPostsCarousel from "./islands/BlogPostsCarousel.tsx";
 import * as $Button from "./islands/Button.tsx";
@@ -57,6 +58,7 @@ const manifest = {
     "./islands/AutonomyControlCards.tsx": $AutonomyControlCards,
     "./islands/BackboneScrollSection.tsx": $BackboneScrollSection,
     "./islands/BlogCategories.tsx": $BlogCategories,
+    "./islands/BlogFilteredPosts.tsx": $BlogFilteredPosts,
     "./islands/BlogFormSearch.tsx": $BlogFormSearch,
     "./islands/BlogPostsCarousel.tsx": $BlogPostsCarousel,
     "./islands/Button.tsx": $Button,

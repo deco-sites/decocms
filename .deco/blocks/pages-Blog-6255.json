@@ -6,22 +6,14 @@
       "__resolveType": "Header-decocms"
     },
     {
-      "__resolveType": "site/sections/BlogCategories.tsx",
-      "useCategoryPath": true,
+      "__resolveType": "site/sections/BlogFilteredPosts.tsx",
+      "searchPlaceholder": "Search posts",
+      "blogUrl": "/blog",
+      "perPage": 6,
+      "showMoreText": "Show more",
       "posts": {
         "__resolveType": "blog/loaders/BlogpostList.ts",
-        "count": 50,
-        "category": {
-          "__resolveType": "website/functions/requestToParam.ts",
-          "param": "category"
-        }
-      }
-    },
-    {
-      "__resolveType": "site/sections/BlogPosts.tsx",
-      "posts": {
-        "__resolveType": "blog/loaders/BlogpostList.ts",
-        "postSlugs": [],
+        "count": 100,
         "sortBy": "date_desc"
       }
     },

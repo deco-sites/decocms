@@ -10976,6 +10976,9 @@ input.tab:checked + .tab-content,
 .outline-dc-300{
   outline-color: #D6D3D1;
 }
+.outline-dc-400{
+  outline-color: #A6A09D;
+}
 .outline-dc-50{
   outline-color: #FAFAF9;
 }
