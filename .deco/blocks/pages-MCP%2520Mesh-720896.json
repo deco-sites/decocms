@@ -27,9 +27,9 @@
           "text": "Cost control"
         }
       ],
-      "secondaryCtaText": "View docs",
+      "secondaryCtaText": "Read our docs",
       "secondaryCtaUrl": "https://docs.decocms.com/en/introduction/",
-      "command": "⁠ bunx @decocms/mesh "
+      "command": "npx @decocms/mesh"
     },
     {
       "__resolveType": "site/sections/MCPMeshContextManagement.tsx",

@@ -117,9 +117,17 @@ export default function PartnersHero({
                 variant="secondary"
                 size="medium"
                 href="https://form.typeform.com/to/LxKZbN9N"
-                className="!bg-dc-50 !text-dc-900 hover:!bg-dc-100 relative z-30"
+                className="!bg-primary-light !text-primary-dark !outline-primary-light hover:!bg-primary-light/90 relative z-30"
               >
                 Talk to sales
+              </Button>
+              <Button
+                variant="secondary"
+                size="medium"
+                href="https://docs.deco.cx/en/getting-started/overview"
+                className="!bg-dc-50 !text-dc-900 hover:!bg-dc-100 relative z-30"
+              >
+                Read our docs
               </Button>
             </div>
           </div>

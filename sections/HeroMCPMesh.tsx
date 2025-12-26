@@ -167,13 +167,13 @@ export default function HeroMCPMesh({
                 {/* CTAs */}
                 <div class="flex flex-col sm:flex-row items-start sm:items-center gap-3 mt-4">
                   {/* Primary CTA - Command Copy Button */}
-                  <CopyMCPCommand command={command} />
+                  <CopyMCPCommand command={command} variant="lime" />
 
                   {/* Secondary CTA */}
                   {secondaryCtaText && (
                     <a
                       href={secondaryCtaUrl}
-                      class="bg-[#d0ec1a] text-[#07401a] text-sm font-medium px-4 py-3 rounded-xl hover:bg-[#c4e016] transition-colors whitespace-nowrap"
+                      class="bg-dc-200 text-dc-700 text-sm font-medium px-4 py-3 rounded-xl hover:bg-dc-300 transition-colors whitespace-nowrap"
                     >
                       {secondaryCtaText}
                     </a>

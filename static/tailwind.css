@@ -9719,12 +9719,6 @@ input.tab:checked + .tab-content,
   --tw-text-opacity: 1;
   color: rgb(208 236 26 / var(--tw-text-opacity));
 }
-.text-\[\#D0EC1A\]\/70{
-  color: rgb(208 236 26 / 0.7);
-}
-.text-\[\#D0EC1A\]\/80{
-  color: rgb(208 236 26 / 0.8);
-}
 .text-\[\#D1EC1A\]{
   --tw-text-opacity: 1;
   color: rgb(209 236 26 / var(--tw-text-opacity));
@@ -10359,6 +10353,12 @@ input.tab:checked + .tab-content,
   --tw-text-opacity: 1;
   color: rgb(208 236 26 / var(--tw-text-opacity));
 }
+.text-primary-light\/70{
+  color: rgb(208 236 26 / 0.7);
+}
+.text-primary-light\/80{
+  color: rgb(208 236 26 / 0.8);
+}
 .text-purple-100{
   --tw-text-opacity: 1;
   color: rgb(243 232 255 / var(--tw-text-opacity));
@@ -10966,6 +10966,9 @@ input.tab:checked + .tab-content,
 }
 .outline-offset-\[-1px\]{
   outline-offset: -1px;
+}
+.\!outline-primary-light{
+  outline-color: #D0EC1A !important;
 }
 .outline-dc-200{
   outline-color: #E7E5E4;
