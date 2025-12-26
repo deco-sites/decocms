@@ -17,23 +17,23 @@ const PARAGRAPH_STYLES =
   "[&_p]:text-dc-600 [&_p]:text-[16px] [&_p]:font-normal [&_p]:font-sans [&_p]:leading-[1.5] [&_p]:mb-6 [&_p]:break-words";
 
 const HEADING_STYLES =
-  "[&>h1]:text-[#292524] [&>h1]:text-[30px] [&>h1]:font-bold [&>h1]:font-sans [&>h1]:leading-[1.25] [&>h1]:mt-2 [&>h1]:mb-4 [&>h1]:break-words " +
-  "[&>h2]:text-[#292524] [&>h2]:text-2xl [&>h2]:font-semibold [&>h2]:font-sans [&>h2]:leading-[1.25] [&>h2]:mt-12 [&>h2]:mb-4 [&>h2]:break-words " +
-  "[&>h3]:text-[#292524] [&>h3]:text-xl [&>h3]:font-semibold [&>h3]:font-sans [&>h3]:leading-[1.25] [&>h3]:mt-8 [&>h3]:mb-4 [&>h3]:break-words " +
-  "[&>h4]:text-[#292524] [&>h4]:text-base [&>h4]:font-semibold [&>h4]:font-sans [&>h4]:leading-[1.5] [&>h4]:mt-6 [&>h4]:mb-4 [&>h4]:break-words " +
-  "[&>h5]:text-[#292524] [&>h5]:text-sm [&>h5]:font-medium [&>h5]:font-sans [&>h5]:leading-[1.5] [&>h5]:mt-4 [&>h5]:mb-4 [&>h5]:break-words " +
-  "[&>h6]:text-[#292524] [&>h6]:text-sm [&>h6]:font-medium [&>h6]:font-sans [&>h6]:leading-[1.5] [&>h6]:mt-4 [&>h6]:mb-4 [&>h6]:break-words";
+  "[&>h1]:text-dc-800 [&>h1]:text-[30px] [&>h1]:font-bold [&>h1]:font-sans [&>h1]:leading-[1.25] [&>h1]:mt-2 [&>h1]:mb-4 [&>h1]:break-words " +
+  "[&>h2]:text-dc-800 [&>h2]:text-2xl [&>h2]:font-semibold [&>h2]:font-sans [&>h2]:leading-[1.25] [&>h2]:mt-12 [&>h2]:mb-4 [&>h2]:break-words " +
+  "[&>h3]:text-dc-800 [&>h3]:text-xl [&>h3]:font-semibold [&>h3]:font-sans [&>h3]:leading-[1.25] [&>h3]:mt-8 [&>h3]:mb-4 [&>h3]:break-words " +
+  "[&>h4]:text-dc-800 [&>h4]:text-base [&>h4]:font-semibold [&>h4]:font-sans [&>h4]:leading-[1.5] [&>h4]:mt-6 [&>h4]:mb-4 [&>h4]:break-words " +
+  "[&>h5]:text-dc-800 [&>h5]:text-sm [&>h5]:font-medium [&>h5]:font-sans [&>h5]:leading-[1.5] [&>h5]:mt-4 [&>h5]:mb-4 [&>h5]:break-words " +
+  "[&>h6]:text-dc-800 [&>h6]:text-sm [&>h6]:font-medium [&>h6]:font-sans [&>h6]:leading-[1.5] [&>h6]:mt-4 [&>h6]:mb-4 [&>h6]:break-words";
 
 const CODE_BLOCK_STYLES =
   "[&>pre]:bg-[#f5f5f4] [&>pre]:text-dc-600 [&>pre]:p-4 [&>pre]:font-mono [&>pre]:text-[16px] [&>pre]:rounded-[2px] [&>pre]:overflow-x-auto [&>pre]:max-w-full [&>pre]:my-4 [&>pre]:leading-[1.5] " +
   "[&_pre_code]:block [&_pre_code]:w-full [&_pre_code]:whitespace-pre " +
-  "[&_code]:bg-[#f5f5f4] [&_code]:text-[#292524] [&_code]:px-2 [&_code]:py-px [&_code]:rounded-md [&_code]:font-mono [&_code]:text-[16px] [&_code]:leading-[1.5]";
+  "[&_code]:bg-[#f5f5f4] [&_code]:text-dc-800 [&_code]:px-2 [&_code]:py-px [&_code]:rounded-md [&_code]:font-mono [&_code]:text-[16px] [&_code]:leading-[1.5]";
 
 const IMAGE_STYLES =
   "[&_img]:rounded-lg [&_img]:w-full [&_img]:h-auto [&_img]:my-6 [&_img]:object-cover";
 
 const BLOCKQUOTE_STYLES =
-  "[&>blockquote]:my-8 [&>blockquote]:border-l-4 [&>blockquote]:border-dc-200 [&>blockquote]:text-[16px] [&>blockquote]:pl-6 [&>blockquote]:text-[#292524] [&>blockquote]:leading-[1.5] [&>blockquote]:break-words " +
+  "[&>blockquote]:my-8 [&>blockquote]:border-l-4 [&>blockquote]:border-dc-200 [&>blockquote]:text-[16px] [&>blockquote]:pl-6 [&>blockquote]:text-dc-800 [&>blockquote]:leading-[1.5] [&>blockquote]:break-words " +
   "[&_blockquote[data-quote]]:border-l-4 [&_blockquote[data-quote]]:border-l-primary-dark [&_blockquote[data-quote]]:bg-dc-50 [&_blockquote[data-quote]]:border [&_blockquote[data-quote]]:border-dc-200 [&_blockquote[data-quote]]:p-6 [&_blockquote[data-quote]]:rounded-lg [&_blockquote[data-quote]]:my-8 " +
   "[&_blockquote[data-quote]_cite]:block [&_blockquote[data-quote]_cite]:mt-3 [&_blockquote[data-quote]_cite]:text-sm [&_blockquote[data-quote]_cite]:not-italic [&_blockquote[data-quote]_cite]:text-dc-600 [&_blockquote[data-quote]_cite]:font-semibold";
 
@@ -63,14 +63,14 @@ const FIGURE_STYLES = "[&_figure]:my-6 " +
 
 const DETAILS_STYLES =
   "[&_details]:my-6 [&_details]:border [&_details]:border-dc-200 [&_details]:rounded-xl [&_details]:p-4 [&_details]:bg-white " +
-  "[&_summary]:cursor-pointer [&_summary]:font-semibold [&_summary]:text-[#292524] [&_summary]:text-[16px] [&_summary]:select-none [&_summary]:flex [&_summary]:items-center [&_summary]:gap-2 " +
+  "[&_summary]:cursor-pointer [&_summary]:font-semibold [&_summary]:text-dc-800 [&_summary]:text-[16px] [&_summary]:select-none [&_summary]:flex [&_summary]:items-center [&_summary]:gap-2 " +
   "[&_details[open]_summary]:mb-3 " +
   "[&_summary::-webkit-details-marker]:hidden [&_summary::marker]:hidden";
 
 // Figma callout styles - default and specific types
 const CALLOUT_STYLES =
   "[&_div[data-callout]]:bg-white [&_div[data-callout]]:border [&_div[data-callout]]:border-dc-200 [&_div[data-callout]]:rounded-xl [&_div[data-callout]]:p-6 [&_div[data-callout]]:my-6 [&_div[data-callout]]:flex [&_div[data-callout]]:flex-col [&_div[data-callout]]:gap-2 " +
-  "[&_div[data-callout]_strong]:text-[16px] [&_div[data-callout]_strong]:font-medium [&_div[data-callout]_strong]:text-[#292524] [&_div[data-callout]_strong]:block [&_div[data-callout]_strong]:leading-[1.5] " +
+  "[&_div[data-callout]_strong]:text-[16px] [&_div[data-callout]_strong]:font-medium [&_div[data-callout]_strong]:text-dc-800 [&_div[data-callout]_strong]:block [&_div[data-callout]_strong]:leading-[1.5] " +
   "[&_div[data-callout]_p]:text-[16px] [&_div[data-callout]_p]:text-dc-600 [&_div[data-callout]_p]:mb-0 [&_div[data-callout]_p]:leading-[1.5] " +
   "[&_div[data-callout]_ul]:text-[16px] [&_div[data-callout]_ul]:leading-[1.5] " +
   "[&_div[data-callout]_ol]:text-[16px] [&_div[data-callout]_ol]:leading-[1.5] " +
@@ -86,8 +86,8 @@ const CARD_STYLES =
   "[&_div[data-card]]:bg-white [&_div[data-card]]:border [&_div[data-card]]:border-dc-200 [&_div[data-card]]:rounded-xl [&_div[data-card]]:p-6 [&_div[data-card]]:my-6 [&_div[data-card]]:flex [&_div[data-card]]:flex-col [&_div[data-card]]:items-start [&_div[data-card]]:gap-4 " +
   "[&_div[data-card-icon]]:size-6 [&_div[data-card-icon]]:text-dc-600 [&_div[data-card-icon]]:shrink-0 " +
   "[&_div[data-card-content]]:flex [&_div[data-card-content]]:flex-col [&_div[data-card-content]]:gap-0.5 [&_div[data-card-content]]:w-full " +
-  "[&_div[data-card]_h3]:text-[16px] [&_div[data-card]_h3]:font-medium [&_div[data-card]_h3]:text-[#292524] [&_div[data-card]_h3]:mb-0 [&_div[data-card]_h3]:mt-0 [&_div[data-card]_h3]:leading-[1.5] " +
-  "[&_div[data-card]_h4]:text-[16px] [&_div[data-card]_h4]:font-medium [&_div[data-card]_h4]:text-[#292524] [&_div[data-card]_h4]:mb-0 [&_div[data-card]_h4]:mt-0 [&_div[data-card]_h4]:leading-[1.5] " +
+  "[&_div[data-card]_h3]:text-[16px] [&_div[data-card]_h3]:font-medium [&_div[data-card]_h3]:text-dc-800 [&_div[data-card]_h3]:mb-0 [&_div[data-card]_h3]:mt-0 [&_div[data-card]_h3]:leading-[1.5] " +
+  "[&_div[data-card]_h4]:text-[16px] [&_div[data-card]_h4]:font-medium [&_div[data-card]_h4]:text-dc-800 [&_div[data-card]_h4]:mb-0 [&_div[data-card]_h4]:mt-0 [&_div[data-card]_h4]:leading-[1.5] " +
   "[&_div[data-card]_p]:text-[16px] [&_div[data-card]_p]:text-dc-600 [&_div[data-card]_p]:mb-0 [&_div[data-card]_p]:leading-[1.5] " +
   "[&_div[data-card]_ul]:text-[16px] [&_div[data-card]_ul]:text-dc-600 [&_div[data-card]_ul]:leading-[1.5] " +
   "[&_div[data-card]_ol]:text-[16px] [&_div[data-card]_ol]:text-dc-600 [&_div[data-card]_ol]:leading-[1.5] " +
@@ -105,9 +105,9 @@ const CARD_GRID_STYLES =
 const STEPS_STYLES = "[&_div[data-steps]]:my-8 " +
   "[&_div[data-step]]:flex [&_div[data-step]]:gap-5 [&_div[data-step]]:items-start [&_div[data-step]]:relative [&_div[data-step]]:pb-5 " +
   "[&_div[data-step]:not(:last-child)]:after:content-[''] [&_div[data-step]:not(:last-child)]:after:absolute [&_div[data-step]:not(:last-child)]:after:left-[11px] [&_div[data-step]:not(:last-child)]:after:top-[24px] [&_div[data-step]:not(:last-child)]:after:bottom-0 [&_div[data-step]:not(:last-child)]:after:w-[2px] [&_div[data-step]:not(:last-child)]:after:bg-neutral-300 " +
-  "[&_div[data-step-number]]:flex-shrink-0 [&_div[data-step-number]]:w-6 [&_div[data-step-number]]:h-6 [&_div[data-step-number]]:rounded-full [&_div[data-step-number]]:bg-primary-light [&_div[data-step-number]]:text-[#292524] [&_div[data-step-number]]:flex [&_div[data-step-number]]:items-center [&_div[data-step-number]]:justify-center [&_div[data-step-number]]:font-normal [&_div[data-step-number]]:text-[16px] [&_div[data-step-number]]:relative [&_div[data-step-number]]:z-10 [&_div[data-step-number]]:leading-none " +
+  "[&_div[data-step-number]]:flex-shrink-0 [&_div[data-step-number]]:w-6 [&_div[data-step-number]]:h-6 [&_div[data-step-number]]:rounded-full [&_div[data-step-number]]:bg-primary-light [&_div[data-step-number]]:text-dc-800 [&_div[data-step-number]]:flex [&_div[data-step-number]]:items-center [&_div[data-step-number]]:justify-center [&_div[data-step-number]]:font-normal [&_div[data-step-number]]:text-[16px] [&_div[data-step-number]]:relative [&_div[data-step-number]]:z-10 [&_div[data-step-number]]:leading-none " +
   "[&_div[data-step-content]]:flex-1 [&_div[data-step-content]]:flex [&_div[data-step-content]]:flex-col [&_div[data-step-content]]:gap-2.5 [&_div[data-step-content]]:pt-0.5 " +
-  "[&_div[data-step-content]_h3]:text-xl [&_div[data-step-content]_h3]:font-medium [&_div[data-step-content]_h3]:text-[#292524] [&_div[data-step-content]_h3]:mb-0 [&_div[data-step-content]_h3]:mt-0 [&_div[data-step-content]_h3]:leading-[1.5] " +
+  "[&_div[data-step-content]_h3]:text-xl [&_div[data-step-content]_h3]:font-medium [&_div[data-step-content]_h3]:text-dc-800 [&_div[data-step-content]_h3]:mb-0 [&_div[data-step-content]_h3]:mt-0 [&_div[data-step-content]_h3]:leading-[1.5] " +
   "[&_div[data-step-content]_p]:text-[16px] [&_div[data-step-content]_p]:text-dc-600 [&_div[data-step-content]_p]:mb-0 [&_div[data-step-content]_p]:leading-[1.5] " +
   "[&_div[data-step-content]_ol]:text-[16px] [&_div[data-step-content]_ol]:leading-[1.5] " +
   "[&_div[data-step-content]_ul]:text-[16px] [&_div[data-step-content]_ul]:leading-[1.5] " +
@@ -257,7 +257,7 @@ export default function BlogPost({ page }: Props) {
                   <span>Blog</span>
                 </Button>
               </div>
-              <h1 className="self-stretch text-center text-dc-800 text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold font-sans leading-tight break-words hyphens-auto">
+              <h1 className="self-stretch text-center text-dc-800 text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold font-sans leading-tight">
                 {title}
               </h1>
             </div>
@@ -328,7 +328,16 @@ export default function BlogPost({ page }: Props) {
       <div className="w-full min-w-full bg-dc-50 flex justify-center items-start px-4 md:px-8 lg:px-16 py-12 md:py-16">
         <div className="flex-1 max-w-full md:max-w-[700px] flex flex-col justify-start items-start">
           {(() => {
-            // Try to detect if content is structured blocks (JSON array)
+            // Check if content is already an array (parsed from JSON)
+            if (Array.isArray(content)) {
+              return (
+                <div className="w-full" id="blog-post-content">
+                  <BlockRenderer blocks={content} />
+                </div>
+              );
+            }
+
+            // Try to detect if content is structured blocks (JSON string)
             if (
               content && typeof content === "string" &&
               content.trim().startsWith("[")
@@ -354,11 +363,12 @@ export default function BlogPost({ page }: Props) {
                 id="blog-post-content"
                 dangerouslySetInnerHTML={{
                   __html:
-                    content.replaceAll("&lt;iframe", "<iframe ").replaceAll(
-                      "&lt;/iframe&gt;",
-                      " </iframe>",
-                    ).replaceAll("allowfullscreen&gt;", "allowfullscreen>") ||
-                    "",
+                    typeof content === "string"
+                      ? content.replaceAll("&lt;iframe", "<iframe ").replaceAll(
+                        "&lt;/iframe&gt;",
+                        " </iframe>",
+                      ).replaceAll("allowfullscreen&gt;", "allowfullscreen>")
+                      : "",
                 }}
               />
             );

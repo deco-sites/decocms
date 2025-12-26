@@ -1,0 +1,506 @@
+[
+  {
+    "type": "paragraph",
+    "text": "In the previous post, we argued that scaling AI inside an enterprise is an operating problem: how tools and data are exposed, controlled, observed, and paid for as usage spreads across teams and environments."
+  },
+  {
+    "type": "paragraph",
+    "text": "We saw this firsthand throughout 2025 while building alongside design partners who were early to agentic workflows. In almost every case, the pattern was the same: a few proof-of-concepts that looked promising, followed by the hard part—shipping agents that <strong>close the loop</strong> and deliver reliable outcomes in real systems. That's where the bottlenecks showed up repeatedly: connection sprawl, missing observability, inconsistent permissions, and rising costs without attribution."
+  },
+  {
+    "type": "paragraph",
+    "text": "Those constraints pushed us toward <strong>context infrastructure</strong>: treating MCP traffic as a first-class production surface. That's what the MCP Mesh is. We originally built it as an internal layer to ship these systems with customers. This release turns that layer into a <strong>self-hosted</strong> component and shares it with the open-source community—because many platform teams seem to be running into the same issues."
+  },
+  {
+    "type": "callout",
+    "variant": "info",
+    "title": "The Core Problem",
+    "content": "Moving from proof-of-concepts to production-ready AI agents reveals the same bottlenecks: connection sprawl, missing observability, inconsistent permissions, and rising costs without clear attribution."
+  },
+  {
+    "type": "hr"
+  },
+  {
+    "type": "heading",
+    "level": 2,
+    "text": "Why teams end up paying an \"integration tax\""
+  },
+  {
+    "type": "paragraph",
+    "text": "Once you move beyond a few PoCs, you start paying for MCP integrations in three places at once:"
+  },
+  {
+    "type": "list",
+    "ordered": false,
+    "items": [
+      "<strong>Engineering time:</strong> fragile, duplicated integration logic spread across codebases",
+      "<strong>Operations:</strong> debugging without a single source of truth",
+      "<strong>Risk + cost:</strong> policies enforced inconsistently (or not at all), no attribution, weak guardrails"
+    ]
+  },
+  {
+    "type": "paragraph",
+    "text": "An MCP Mesh is our answer to that: a self-hosted control plane that sits between your apps/agents and your MCP servers, so you can manage MCP traffic like any other production surface—with routing, access control, observability, and runtime strategies."
+  },
+  {
+    "type": "stats",
+    "stats": [
+      {
+        "number": "3x",
+        "label": "Integration Tax Areas"
+      },
+      {
+        "number": "1",
+        "label": "Unified Endpoint"
+      },
+      {
+        "number": "100%",
+        "label": "Self-Hosted Control"
+      }
+    ]
+  },
+  {
+    "type": "hr"
+  },
+  {
+    "type": "heading",
+    "level": 2,
+    "text": "What the MCP Mesh is (and where it sits)"
+  },
+  {
+    "type": "paragraph",
+    "text": "[Diagram: MCP clients → MCP Mesh → MCP servers]"
+  },
+  {
+    "type": "paragraph",
+    "text": "The MCP Mesh sits between your applications (agents, internal tools, IDE clients) and your MCP servers."
+  },
+  {
+    "type": "paragraph",
+    "text": "Your code integrates with <strong>one endpoint</strong>. Behind that endpoint, the mesh can call any MCP server—GitHub, Jira, internal databases, custom tools, even LLM providers exposed as MCP—while centralizing the concerns you don't want reimplemented across every app:"
+  },
+  {
+    "type": "cardGrid",
+    "columns": 2,
+    "cards": [
+      {
+        "title": "Routing + execution",
+        "content": "Which MCP to call, how to authenticate, how to retry, how to fail"
+      },
+      {
+        "title": "Policy enforcement",
+        "content": "Who (team/user/agent) can access which tools and data"
+      },
+      {
+        "title": "Observability",
+        "content": "Logs, traces, latency, errors across MCP calls and model calls"
+      },
+      {
+        "title": "Cost + rate controls",
+        "content": "Attribution and enforceable guardrails"
+      },
+      {
+        "title": "Runtime strategies",
+        "content": "Different ways to expose tools and context depending on latency/cost/accuracy needs"
+      }
+    ]
+  },
+  {
+    "type": "paragraph",
+    "text": "This is the difference between \"we connected tools to agents\" and \"we can operate tool access in production.\""
+  },
+  {
+    "type": "hr"
+  },
+  {
+    "type": "heading",
+    "level": 2,
+    "text": "Core primitives (what it's built from)"
+  },
+  {
+    "type": "heading",
+    "level": 3,
+    "text": "What teams need as MCP moves into production"
+  },
+  {
+    "type": "heading",
+    "level": 4,
+    "text": "Phase 1: Connect & Debug"
+  },
+  {
+    "type": "paragraph",
+    "text": "First you need it to run end-to-end. Most teams do this with ad hoc integration logic. The mesh is about making that step fast <em>without</em> creating long-term sprawl."
+  },
+  {
+    "type": "paragraph",
+    "text": "<strong>Deploy anywhere</strong>"
+  },
+  {
+    "type": "paragraph",
+    "text": "The mesh is self-hosted by design with zero-config for local setup."
+  },
+  {
+    "type": "paragraph",
+    "text": "Other typical setups:"
+  },
+  {
+    "type": "list",
+    "ordered": false,
+    "items": [
+      "Docker Compose (SQLite or Postgres)",
+      "Bun/Node runtime",
+      "Kubernetes via Helm"
+    ]
+  },
+  {
+    "type": "callout",
+    "variant": "tip",
+    "title": "Dev-Time Tunneling",
+    "content": "We support dev-time tunneling (deco.host) so you can run and test MCP servers locally during development without publishing them."
+  },
+  {
+    "type": "paragraph",
+    "text": "<strong>Connection consolidation (and dev-time tunneling)</strong>"
+  },
+  {
+    "type": "heading",
+    "level": 3,
+    "text": "Instead of managing eight MCP server connections in your client—each with separate config and auth—you configure one endpoint. All your organization's MCP traffic flows through it."
+  },
+  {
+    "type": "heading",
+    "level": 4,
+    "text": "Phase 2: Control"
+  },
+  {
+    "type": "paragraph",
+    "text": "Once it works, it needs to work reliably, securely, and predictably."
+  },
+  {
+    "type": "paragraph",
+    "text": "This is where teams typically discover they don't just need \"an MCP aggregator\"—they need a control plane."
+  },
+  {
+    "type": "paragraph",
+    "text": "<strong>Observability</strong>"
+  },
+  {
+    "type": "paragraph",
+    "text": "Without centralized observability, you're guessing:"
+  },
+  {
+    "type": "checklist",
+    "items": [
+      "no audit trail",
+      "hard-to-debug failures",
+      "limited ability to attribute latency/costs",
+      "avoidable compliance risk"
+    ]
+  },
+  {
+    "type": "paragraph",
+    "text": "With the mesh: unified logging of model calls and MCP tool invocations, latency tracking per provider, error rates, and traces across multi-step workflows."
+  },
+  {
+    "type": "paragraph",
+    "text": "When something breaks, you can see the chain: <em>which MCP call failed, how long it took, what it returned, and what happened next.</em>"
+  },
+  {
+    "type": "paragraph",
+    "text": "<strong>Cost Control</strong>"
+  },
+  {
+    "type": "paragraph",
+    "text": "Token-level cost tracking by team/user/agent/application, plus guardrails like budget caps and rate limits."
+  },
+  {
+    "type": "callout",
+    "variant": "success",
+    "title": "Governance & Security",
+    "content": "Role-based access control at the model, MCP, and tool level. Policies enforced at the control plane, not duplicated across apps. Audit logs suitable for regulated environments. The goal is to make \"safe by default\" the easiest path."
+  },
+  {
+    "type": "heading",
+    "level": 4,
+    "text": "Phase 3: Optimize (runtime strategies as gateways)"
+  },
+  {
+    "type": "paragraph",
+    "text": "Once agents run in production, a new problem shows up: they work, but they get slow and expensive as tool surfaces grow."
+  },
+  {
+    "type": "paragraph",
+    "text": "<strong>The Tool Discovery Problem</strong>"
+  },
+  {
+    "type": "paragraph",
+    "text": "The naive approach is to describe every tool to the model on every call. That's workable with a small toolset. It breaks when you have dozens of MCP servers and hundreds of tools: context balloons, latency climbs, and tool selection gets harder."
+  },
+  {
+    "type": "paragraph",
+    "text": "Concrete example: <strong>50 MCPs × 10 tools each = 500 tools</strong>. Even if descriptions are short, you can spend a meaningful chunk of the context window just listing capabilities—paying in tokens and time, often with worse tool selection."
+  },
+  {
+    "type": "callout",
+    "variant": "warning",
+    "title": "Context Window Problem",
+    "content": "With 500 tools to describe, you can easily consume 30-40% of your context window just listing capabilities—before your agent even starts working on the actual task."
+  },
+  {
+    "type": "paragraph",
+    "text": "<strong>Gateways: one endpoint, different exposure strategies</strong>"
+  },
+  {
+    "type": "paragraph",
+    "text": "Internally, we started modeling \"runtime strategies\" as gateway implementations."
+  },
+  {
+    "type": "paragraph",
+    "text": "A gateway still gives you one endpoint (usable from Cursor, Claude Desktop, internal agents, etc.), but it changes how tools are exposed:"
+  },
+  {
+    "type": "cardGrid",
+    "columns": 3,
+    "cards": [
+      {
+        "title": "Full context mode",
+        "content": "Expose everything, always. Simple, deterministic, best for small tool surfaces."
+      },
+      {
+        "title": "Smart tool selection",
+        "content": "A two-stage approach that narrows the toolset before execution."
+      },
+      {
+        "title": "Code execution mode",
+        "content": "Let the model write code against a constrained interface and run it in a sandbox."
+      }
+    ]
+  },
+  {
+    "type": "paragraph",
+    "text": "Gateways are configurable and extensible. You can create new gateways, experiment with different strategies, and adopt whichever one fits your latency/cost/accuracy constraints."
+  },
+  {
+    "type": "heading",
+    "level": 4,
+    "text": "Phase 4 — Compose & extend (from gateways to durable capabilities)"
+  },
+  {
+    "type": "paragraph",
+    "text": "Over time, teams stop thinking in one-off agents and start building reusable components. Two things matter here:"
+  },
+  {
+    "type": "paragraph",
+    "text": "<strong>Virtual MCPs: bundling and curation</strong>"
+  },
+  {
+    "type": "paragraph",
+    "text": "Because gateways can choose what to expose, they can also become a way to curate and bundle tools from multiple MCP servers into a single \"virtual MCP.\""
+  },
+  {
+    "type": "paragraph",
+    "text": "That's useful even before you have a full app framework:"
+  },
+  {
+    "type": "list",
+    "ordered": false,
+    "items": [
+      "bundle the few tools an agent should have (and nothing else)",
+      "present stable interfaces even as underlying MCP servers evolve",
+      "create purpose-built toolsets per team or environment"
+    ]
+  },
+  {
+    "type": "paragraph",
+    "text": "This bundling/curation logic is also how we think about MCP apps (coming soon): packaging durable capabilities that can be shared across teams—and eventually distributed more broadly through a store."
+  },
+  {
+    "type": "callout",
+    "variant": "info",
+    "title": "Coming Soon: MCP Apps",
+    "content": "Package durable capabilities that can be shared across teams and distributed through a store. Think of it as turning your agent workflows into reusable, shareable components."
+  },
+  {
+    "type": "paragraph",
+    "text": "<strong>Bindings: keep apps stable while tools change</strong>"
+  },
+  {
+    "type": "paragraph",
+    "text": "At enterprise scale, tools change constantly—vendors, internal systems, schemas, ownership. If every app is coupled to a specific MCP implementation, your agentic layer becomes brittle."
+  },
+  {
+    "type": "paragraph",
+    "text": "Bindings define contracts for common capability types (collections, agents, workflows), so apps can target the contract instead of the provider. Swap the MCP behind the interface, keep your UIs and workflows intact."
+  },
+  {
+    "type": "cardGrid",
+    "columns": 3,
+    "cards": [
+      {
+        "title": "Collection bindings",
+        "content": "A standard interface for \"things that contain other things.\""
+      },
+      {
+        "title": "Agent bindings",
+        "content": "A standard interface for AI agents, independent of provider."
+      },
+      {
+        "title": "Workflow bindings",
+        "content": "A standard interface for deterministic multi-tool orchestration."
+      }
+    ]
+  },
+  {
+    "type": "paragraph",
+    "text": "(We'll go deeper on agent/workflow bindings in a future post.)"
+  },
+  {
+    "type": "paragraph",
+    "text": "<strong>Multi-tenancy</strong>"
+  },
+  {
+    "type": "paragraph",
+    "text": "With contracts and shared interfaces, the same application code can work across teams with different permissions and toolsets—without branching your system into per-team variants."
+  },
+  {
+    "type": "paragraph",
+    "text": "<strong>The middle path: consolidate what you must, stay flexible where you can</strong>"
+  },
+  {
+    "type": "paragraph",
+    "text": "There's a tension we keep seeing: build everything yourself, or integrate a dozen tools and live with sprawl."
+  },
+  {
+    "type": "paragraph",
+    "text": "Our approach is to centralize the infrastructure you shouldn't rebuild repeatedly—connections, governance, observability, routing, cost controls—while keeping the edges composable. When a strong MCP server appears (vendor, internal, open source), you can adopt it. When you need something domain-specific, you can build it. When implementations change, your contracts can stay stable."
+  },
+  {
+    "type": "paragraph",
+    "text": "The interesting part is what happens over time: your investment compounds instead of fragmenting."
+  },
+  {
+    "type": "comparison",
+    "before": {
+      "title": "Without MCP Mesh",
+      "items": [
+        "Fragmented integration logic",
+        "No centralized observability",
+        "Inconsistent policies",
+        "Rising costs without attribution",
+        "Brittle, tightly-coupled systems"
+      ]
+    },
+    "after": {
+      "title": "With MCP Mesh",
+      "items": [
+        "Single unified endpoint",
+        "Complete visibility and tracing",
+        "Centralized policy enforcement",
+        "Token-level cost tracking",
+        "Stable contracts, composable edges"
+      ]
+    }
+  },
+  {
+    "type": "hr"
+  },
+  {
+    "type": "heading",
+    "level": 2,
+    "text": "Product Roadmap"
+  },
+  {
+    "type": "paragraph",
+    "text": "<strong>Available Now (Q4 2025):</strong>"
+  },
+  {
+    "type": "checklist",
+    "items": [
+      "MCP aggregation + proxy",
+      "Tool logs; rate limits per user/MCP",
+      "RBAC + permissions",
+      "Registry integration with verified MCPs",
+      "Copy to Cursor / Claude Code / Windsurf",
+      "Zero-config local setup",
+      "Self-hosted infra",
+      "Docker Compose + Helm Chart (Kubernetes)",
+      "Runtime strategies as gateways",
+      "OAuth proxy for MCP authentication",
+      "Multi-tenancy"
+    ]
+  },
+  {
+    "type": "paragraph",
+    "text": "<strong>Coming up Q1 2026:</strong>"
+  },
+  {
+    "type": "list",
+    "ordered": false,
+    "items": [
+      "Studio foundation: bindings for agents, workflows, views",
+      "MCP App support (virtual MCPs with QuickJS)",
+      "Version history for mesh configs",
+      "NPM package runtime",
+      "Visual workflow builder",
+      "Unified wallet: cost tracking + analytics",
+      "Self-optimizing runtime selection",
+      "Prebuilt module: blogpost generator"
+    ]
+  },
+  {
+    "type": "paragraph",
+    "text": "Feedback from our clients and community shape this roadmap."
+  },
+  {
+    "type": "hr"
+  },
+  {
+    "type": "heading",
+    "level": 2,
+    "text": "Get started"
+  },
+  {
+    "type": "code",
+    "code": "npx @deco/context-mesh init",
+    "language": "bash"
+  },
+  {
+    "type": "heroBox",
+    "title": "Ready to deploy MCP in production?",
+    "content": "Start with our self-hosted MCP Mesh and gain the control plane you need for production AI systems.",
+    "variant": "accent",
+    "buttons": [
+      {
+        "text": "Read docs",
+        "href": "https://docs.decocms.com/en/introduction/",
+        "variant": "primary"
+      },
+      {
+        "text": "GitHub Repository",
+        "href": "https://github.com/decocms/mesh",
+        "variant": "secondary"
+      },
+      {
+        "text": "Join Discord",
+        "href": "https://discord.com/invite/deco-cx",
+        "variant": "ghost"
+      }
+    ]
+  },
+  {
+    "type": "hr"
+  },
+  {
+    "type": "heading",
+    "level": 2,
+    "text": "Why we're starting here"
+  },
+  {
+    "type": "paragraph",
+    "text": "The MCP Mesh solves the immediate infrastructure problems teams hit when MCP moves into production: sprawl, missing visibility, inconsistent policies, and costs without attribution."
+  },
+  {
+    "type": "paragraph",
+    "text": "More importantly, it makes the next step practical: turning one-off agent setups into reusable capabilities that can be packaged, governed, and shared—without rewriting integrations every time."
+  }
+]

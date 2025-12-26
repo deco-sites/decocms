@@ -4228,6 +4228,9 @@ input.tab:checked + .tab-content,
 .mt-12{
   margin-top: 3rem;
 }
+.mt-14{
+  margin-top: 3.5rem;
+}
 .mt-16{
   margin-top: 4rem;
 }
@@ -4248,6 +4251,9 @@ input.tab:checked + .tab-content,
 }
 .mt-8{
   margin-top: 2rem;
+}
+.mt-9{
+  margin-top: 2.25rem;
 }
 .mt-\[5px\]{
   margin-top: 5px;
@@ -5500,9 +5506,6 @@ input.tab:checked + .tab-content,
 }
 .overflow-ellipsis{
   text-overflow: ellipsis;
-}
-.hyphens-auto{
-  hyphens: auto;
 }
 .whitespace-nowrap{
   white-space: nowrap;
@@ -15077,9 +15080,9 @@ input.tab:checked + .tab-content,
   line-height: 1.5;
 }
 
-.\[\&\>blockquote\]\:text-\[\#292524\]>blockquote{
+.\[\&\>blockquote\]\:text-dc-800>blockquote{
   --tw-text-opacity: 1;
-  color: rgb(41 37 36 / var(--tw-text-opacity));
+  color: rgb(40 37 36 / var(--tw-text-opacity));
 }
 
 .\[\&\>h1\]\:mb-4>h1{
@@ -15110,9 +15113,9 @@ input.tab:checked + .tab-content,
   line-height: 1.25;
 }
 
-.\[\&\>h1\]\:text-\[\#292524\]>h1{
+.\[\&\>h1\]\:text-dc-800>h1{
   --tw-text-opacity: 1;
-  color: rgb(41 37 36 / var(--tw-text-opacity));
+  color: rgb(40 37 36 / var(--tw-text-opacity));
 }
 
 .\[\&\>h2\]\:mb-4>h2{
@@ -15144,9 +15147,9 @@ input.tab:checked + .tab-content,
   line-height: 1.25;
 }
 
-.\[\&\>h2\]\:text-\[\#292524\]>h2{
+.\[\&\>h2\]\:text-dc-800>h2{
   --tw-text-opacity: 1;
-  color: rgb(41 37 36 / var(--tw-text-opacity));
+  color: rgb(40 37 36 / var(--tw-text-opacity));
 }
 
 .\[\&\>h3\]\:mb-4>h3{
@@ -15178,9 +15181,9 @@ input.tab:checked + .tab-content,
   line-height: 1.25;
 }
 
-.\[\&\>h3\]\:text-\[\#292524\]>h3{
+.\[\&\>h3\]\:text-dc-800>h3{
   --tw-text-opacity: 1;
-  color: rgb(41 37 36 / var(--tw-text-opacity));
+  color: rgb(40 37 36 / var(--tw-text-opacity));
 }
 
 .\[\&\>h4\]\:mb-4>h4{
@@ -15212,9 +15215,9 @@ input.tab:checked + .tab-content,
   line-height: 1.5;
 }
 
-.\[\&\>h4\]\:text-\[\#292524\]>h4{
+.\[\&\>h4\]\:text-dc-800>h4{
   --tw-text-opacity: 1;
-  color: rgb(41 37 36 / var(--tw-text-opacity));
+  color: rgb(40 37 36 / var(--tw-text-opacity));
 }
 
 .\[\&\>h5\]\:mb-4>h5{
@@ -15246,9 +15249,9 @@ input.tab:checked + .tab-content,
   line-height: 1.5;
 }
 
-.\[\&\>h5\]\:text-\[\#292524\]>h5{
+.\[\&\>h5\]\:text-dc-800>h5{
   --tw-text-opacity: 1;
-  color: rgb(41 37 36 / var(--tw-text-opacity));
+  color: rgb(40 37 36 / var(--tw-text-opacity));
 }
 
 .\[\&\>h6\]\:mb-4>h6{
@@ -15280,9 +15283,9 @@ input.tab:checked + .tab-content,
   line-height: 1.5;
 }
 
-.\[\&\>h6\]\:text-\[\#292524\]>h6{
+.\[\&\>h6\]\:text-dc-800>h6{
   --tw-text-opacity: 1;
-  color: rgb(41 37 36 / var(--tw-text-opacity));
+  color: rgb(40 37 36 / var(--tw-text-opacity));
 }
 
 .\[\&\>hr\]\:my-8>hr{
@@ -15651,11 +15654,6 @@ input.tab:checked + .tab-content,
   line-height: 1.5;
 }
 
-.\[\&_code\]\:text-\[\#292524\] code{
-  --tw-text-opacity: 1;
-  color: rgb(41 37 36 / var(--tw-text-opacity));
-}
-
 .\[\&_code\]\:text-dc-800 code{
   --tw-text-opacity: 1;
   color: rgb(40 37 36 / var(--tw-text-opacity));
@@ -15872,9 +15870,9 @@ input.tab:checked + .tab-content,
   line-height: 1.5;
 }
 
-.\[\&_div\[data-callout\]_strong\]\:text-\[\#292524\] div[data-callout] strong{
+.\[\&_div\[data-callout\]_strong\]\:text-dc-800 div[data-callout] strong{
   --tw-text-opacity: 1;
-  color: rgb(41 37 36 / var(--tw-text-opacity));
+  color: rgb(40 37 36 / var(--tw-text-opacity));
 }
 
 .\[\&_div\[data-callout\]_ul\]\:text-\[16px\] div[data-callout] ul{
@@ -16036,9 +16034,9 @@ input.tab:checked + .tab-content,
   line-height: 1.5;
 }
 
-.\[\&_div\[data-card\]_h3\]\:text-\[\#292524\] div[data-card] h3{
+.\[\&_div\[data-card\]_h3\]\:text-dc-800 div[data-card] h3{
   --tw-text-opacity: 1;
-  color: rgb(41 37 36 / var(--tw-text-opacity));
+  color: rgb(40 37 36 / var(--tw-text-opacity));
 }
 
 .\[\&_div\[data-card\]_h4\]\:mb-0 div[data-card] h4{
@@ -16061,9 +16059,9 @@ input.tab:checked + .tab-content,
   line-height: 1.5;
 }
 
-.\[\&_div\[data-card\]_h4\]\:text-\[\#292524\] div[data-card] h4{
+.\[\&_div\[data-card\]_h4\]\:text-dc-800 div[data-card] h4{
   --tw-text-opacity: 1;
-  color: rgb(41 37 36 / var(--tw-text-opacity));
+  color: rgb(40 37 36 / var(--tw-text-opacity));
 }
 
 .\[\&_div\[data-card\]_li\]\:text-\[16px\] div[data-card] li{
@@ -16822,9 +16820,9 @@ input.tab:checked + .tab-content,
   line-height: 1.5;
 }
 
-.\[\&_div\[data-step-content\]_h3\]\:text-\[\#292524\] div[data-step-content] h3{
+.\[\&_div\[data-step-content\]_h3\]\:text-dc-800 div[data-step-content] h3{
   --tw-text-opacity: 1;
-  color: rgb(41 37 36 / var(--tw-text-opacity));
+  color: rgb(40 37 36 / var(--tw-text-opacity));
 }
 
 .\[\&_div\[data-step-content\]_li\]\:text-\[16px\] div[data-step-content] li{
@@ -16921,9 +16919,9 @@ input.tab:checked + .tab-content,
   line-height: 1;
 }
 
-.\[\&_div\[data-step-number\]\]\:text-\[\#292524\] div[data-step-number]{
+.\[\&_div\[data-step-number\]\]\:text-dc-800 div[data-step-number]{
   --tw-text-opacity: 1;
-  color: rgb(41 37 36 / var(--tw-text-opacity));
+  color: rgb(40 37 36 / var(--tw-text-opacity));
 }
 
 .\[\&_div\[data-step\]\:not\(\:last-child\)\]\:after\:absolute div[data-step]:not(:last-child)::after{
@@ -17352,9 +17350,9 @@ input.tab:checked + .tab-content,
   font-weight: 600;
 }
 
-.\[\&_summary\]\:text-\[\#292524\] summary{
+.\[\&_summary\]\:text-dc-800 summary{
   --tw-text-opacity: 1;
-  color: rgb(41 37 36 / var(--tw-text-opacity));
+  color: rgb(40 37 36 / var(--tw-text-opacity));
 }
 
 .\[\&_table\]\:my-6 table{
