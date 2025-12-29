@@ -1,0 +1,10 @@
+{
+  "name": "collections/blog/authors/3ffd6a481caa",
+  "__resolveType": "blog/loaders/Author.ts",
+  "author": {
+    "name": "Marcos Candeia",
+    "avatar": "https://assets.decocache.com/decocms/ed95bad4-f1b2-4509-9751-8e84c368bd09/528545f76ec5f0b279ec93aa787ac114.png",
+    "jobTitle": "CTO",
+    "email": "candeia@decocms.com"
+  }
+}

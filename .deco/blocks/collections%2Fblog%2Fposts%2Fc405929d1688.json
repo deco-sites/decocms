@@ -4,10 +4,11 @@
   "post": {
     "authors": [
       {
-        "name": "Rafael Crespo",
-        "email": "rafael@decocms.com",
+        "name": "Guilherme Rodrigues",
+        "email": "gui@decocms.com",
         "jobTitle": "Co-founder",
-        "avatar": "https://assets.decocache.com/decocms/d377d0fc-343d-4f45-84aa-c7e1da1beaf0/Luciano-Junior-1.png"
+        "avatar": "https://assets.decocache.com/decocms/c9ed0c46-c497-44ea-b0f8-2d1a5c02912d/vnzs5Y4T_400x400.jpg",
+        "company": "decocms.com"
       }
     ],
     "categories": [
