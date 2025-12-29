@@ -223,17 +223,11 @@ export default function BlogPost({ page }: Props) {
     ? (() => {
       try {
         const dateObj = new Date(date);
-        const dateStr = dateObj.toLocaleDateString("en-US", {
+        return dateObj.toLocaleDateString("en-US", {
           year: "numeric",
           month: "long",
           day: "numeric",
         });
-        const timeStr = dateObj.toLocaleTimeString("en-US", {
-          hour: "numeric",
-          minute: "2-digit",
-          hour12: true,
-        });
-        return `${dateStr} at ${timeStr}`;
       } catch (e) {
         return date;
       }

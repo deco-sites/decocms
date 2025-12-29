@@ -47,7 +47,7 @@ export default function BlogFilteredPosts({
   blogUrl = "/blog",
   selectedCategory = "",
   searchTerm = "",
-  perPage = 6,
+  perPage = 10,
   showMoreText = "Show more",
 }: Props) {
   return (

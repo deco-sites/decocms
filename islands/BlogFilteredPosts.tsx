@@ -55,7 +55,7 @@ export default function BlogFilteredPosts({
   initialCategory = "",
   initialSearchTerm = "",
   debounceTime = 200,
-  perPage = 6,
+  perPage = 10,
   showMoreText = "Show more",
 }: Props) {
   const [selectedCategory, setSelectedCategory] = useState(initialCategory);
@@ -175,17 +175,11 @@ export default function BlogFilteredPosts({
     if (!dateString) return "";
     try {
       const date = new Date(dateString);
-      const dateStr = date.toLocaleDateString("en-US", {
+      return date.toLocaleDateString("en-US", {
         month: "long",
         day: "numeric",
         year: "numeric",
       });
-      const timeStr = date.toLocaleTimeString("en-US", {
-        hour: "numeric",
-        minute: "2-digit",
-        hour12: true,
-      });
-      return `${dateStr} at ${timeStr}`;
     } catch (_e) {
       return dateString;
     }

@@ -19,9 +19,10 @@ export function Steps({ steps }: StepsBlock) {
             <h3 className="text-xl font-medium text-dc-800 mb-0 mt-0 leading-[1.5]">
               {step.title}
             </h3>
-            <p className="text-[16px] text-dc-600 mb-0 leading-[1.5]">
-              {step.content}
-            </p>
+            <div 
+              className="text-[16px] text-dc-600 mb-0 leading-[1.5] [&_strong]:font-semibold [&_strong]:text-dc-800 [&_em]:italic [&_p]:mb-4 [&_p:last-child]:mb-0 [&_ul]:list-disc [&_ul]:ml-5 [&_ul]:mb-4 [&_ul:last-child]:mb-0 [&_li]:mb-1 [&_li:last-child]:mb-0"
+              dangerouslySetInnerHTML={{ __html: step.content }}
+            />
             {step.goal && (
               <p className="text-[16px] text-dc-600 mb-0 leading-[1.5] font-semibold">
                 <strong>Goal:</strong> {step.goal}
