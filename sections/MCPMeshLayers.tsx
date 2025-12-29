@@ -78,7 +78,7 @@ const defaultLayer1Content: LayerContent = {
   subtitleAfter: " to connect tools and data via MCP.",
   description: "Unify tool and model calls behind one endpoint, with policy enforcement, audit trails, and runtime strategies that optimize for cost, speed, and accuracy.",
   linkText: "Learn about MCP Mesh →",
-  linkHref: "/mesh",
+  linkHref: "/mcp-mesh",
 };
 
 const defaultLayer2Content: LayerContent = {

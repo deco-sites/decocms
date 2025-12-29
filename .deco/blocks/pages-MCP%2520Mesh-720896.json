@@ -1,6 +1,6 @@
 {
   "name": "MCP Mesh",
-  "path": "/mesh",
+  "path": "/mcp-mesh",
   "sections": [
     {
       "__resolveType": "Header-decocms"

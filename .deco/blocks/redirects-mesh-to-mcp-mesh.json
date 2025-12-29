@@ -1,0 +1,9 @@
+{
+  "redirect": {
+    "from": "/mesh",
+    "to": "/mcp-mesh",
+    "type": "permanent"
+  },
+  "__resolveType": "website/loaders/redirect.ts"
+}
+

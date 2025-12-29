@@ -10,7 +10,7 @@
       "__resolveType": "site/sections/HeroAIPlatform.tsx",
       "badgeText": "deco MCP Mesh — The Enterprise Context Control Plane",
       "badgeTextMobile": "The Enterprise Context Control Plane",
-      "badgeUrl": "/mesh",
+      "badgeUrl": "/mcp-mesh",
       "titleLine1": "Build your",
       "titleLine2": "internal AI Platform",
       "subtitle": "The composable internal AI operating system on MCP: open-source, self-hosted and designed to scale AI adoption beyond ungoverned pilots.",
@@ -134,7 +134,7 @@
           "subtitleAfter": " to connect tools and data via MCP.",
           "description": "Unify tool and model calls behind one endpoint, with policy enforcement, audit trails, and runtime strategies that optimize for cost, speed, and accuracy.",
           "linkText": "Learn about MCP Mesh",
-          "linkUrl": "/mesh"
+          "linkUrl": "/mcp-mesh"
         },
         {
           "backgroundColor": "#d0ec1a",

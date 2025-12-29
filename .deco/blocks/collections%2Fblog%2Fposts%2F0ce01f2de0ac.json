@@ -41,7 +41,7 @@
     "content": [
       {
         "type": "paragraph",
-        "text": "In the previous post, we argued that scaling AI inside an enterprise is an operating problem: how tools and data are exposed, controlled, observed, and paid for as usage spreads across teams and environments."
+        "text": "<a href=\"/blog/post/ai-native-company\" style=\"color: #8CAA25;\">In the previous post</a>, we argued that scaling AI inside an enterprise is an operating problem: how tools and data are exposed, controlled, observed, and paid for as usage spreads across teams and environments."
       },
       {
         "type": "paragraph",

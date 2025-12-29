@@ -122,7 +122,7 @@ export default function HeroAIPlatform({
   badgeLabel = "Introducing:",
   badgeText = "deco MCP Mesh — The Enterprise Context Control Plane",
   badgeTextMobile = "The Enterprise Context Control Plane",
-  badgeUrl = "/mesh",
+  badgeUrl = "/mcp-mesh",
   titleLine1 = "Build your",
   titleLine2 = "internal AI Platform",
   subtitle = "The composable internal AI operating system on MCP: open-source, self-hosted and designed to scale AI adoption beyond ungoverned pilots.",
