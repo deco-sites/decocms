@@ -30,6 +30,11 @@ export const handler = (_req: Request, _ctx: RouteContext): Response => {
   <priority>0.80</priority>
 </url>
 <url>
+  <loc>https://www.decocms.com/cx</loc>
+  <lastmod>2025-12-29T00:00:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
   <loc>https://www.decocms.com/blog/culture</loc>
   <lastmod>2025-09-25T17:57:58+00:00</lastmod>
   <priority>0.64</priority>

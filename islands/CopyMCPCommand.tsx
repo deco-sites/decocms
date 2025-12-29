@@ -121,6 +121,11 @@ export default function CopyMCPCommand({
             Coming soon
           </span>
         )}
+        {copied && !disabled && (
+          <span class={`text-xs font-medium ${getCopiedTextColor()}`}>
+            Copied!
+          </span>
+        )}
       </div>
 
       {/* Desktop layout (horizontal with animation) */}

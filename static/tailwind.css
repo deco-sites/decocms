@@ -1046,6 +1046,15 @@ input[type="number"] {
 }
 @media (hover: hover){
 
+  .btm-nav > *.\!disabled:hover{
+    pointer-events: none !important;
+    --tw-border-opacity: 0 !important;
+    background-color: var(--fallback-n,oklch(var(--n)/var(--tw-bg-opacity))) !important;
+    --tw-bg-opacity: 0.1 !important;
+    color: var(--fallback-bc,oklch(var(--bc)/var(--tw-text-opacity))) !important;
+    --tw-text-opacity: 0.2 !important;
+  }
+
   .btm-nav > *.disabled:hover,
       .btm-nav > *[disabled]:hover{
     pointer-events: none;
@@ -1428,6 +1437,13 @@ input[type="number"] {
      -moz-user-select: none;
           user-select: none;
   color: var(--fallback-bc,oklch(var(--bc)/0.3));
+}
+.menu li.\!disabled{
+  cursor: not-allowed !important;
+  -webkit-user-select: none !important;
+     -moz-user-select: none !important;
+          user-select: none !important;
+  color: var(--fallback-bc,oklch(var(--bc)/0.3)) !important;
 }
 .menu :where(li > .menu-dropdown:not(.menu-dropdown-show)){
   display: none;
@@ -1893,6 +1909,14 @@ input.tab:checked + .tab-content,
   border-top-width: 2px;
   --tw-bg-opacity: 1;
   background-color: var(--fallback-b1,oklch(var(--b1)/var(--tw-bg-opacity)));
+}
+.btm-nav > *.\!disabled{
+  pointer-events: none !important;
+  --tw-border-opacity: 0 !important;
+  background-color: var(--fallback-n,oklch(var(--n)/var(--tw-bg-opacity))) !important;
+  --tw-bg-opacity: 0.1 !important;
+  color: var(--fallback-bc,oklch(var(--bc)/var(--tw-text-opacity))) !important;
+  --tw-text-opacity: 0.2 !important;
 }
 .btm-nav > *.disabled,
     .btm-nav > *[disabled]{

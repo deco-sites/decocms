@@ -1,6 +1,6 @@
 {
   "name": "deco.cx",
-  "path": "/use-case/deco-cx",
+  "path": "/cx",
   "sections": [
     {
       "__resolveType": "Header-decocms"

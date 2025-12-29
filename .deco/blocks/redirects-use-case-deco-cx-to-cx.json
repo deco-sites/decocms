@@ -1,0 +1,9 @@
+{
+  "redirect": {
+    "from": "/use-case/deco-cx",
+    "to": "/cx",
+    "type": "permanent"
+  },
+  "__resolveType": "website/loaders/redirect.ts"
+}
+
