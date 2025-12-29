@@ -129,7 +129,8 @@
       ]
     },
     {
-      "__resolveType": "site/sections/FinalCTAMCPMesh.tsx"
+      "__resolveType": "site/sections/FinalCTAMCPMesh.tsx",
+      "command": "npx @decocms/mesh"
     },
     {
       "__resolveType": "website/sections/Rendering/Lazy.tsx",
