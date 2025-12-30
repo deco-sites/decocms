@@ -1,4 +1,5 @@
 import { useSignal } from "@preact/signals";
+import { invoke } from "../runtime.ts";
 
 interface Feature {
   id: number;
@@ -31,13 +32,6 @@ const STATUS_CONFIG = {
     badgeText: "text-yellow-700",
     aliases: ["in_progress", "In Progress", "in progress"],
   },
-  under_review: {
-    label: "Under Review",
-    color: "bg-purple-500",
-    badgeBg: "bg-purple-50",
-    badgeText: "text-purple-700",
-    aliases: ["under_review", "Under Review", "under review"],
-  },
   released: {
     label: "Released",
     color: "bg-green-500",
@@ -49,44 +43,81 @@ const STATUS_CONFIG = {
 
 type StatusKey = keyof typeof STATUS_CONFIG;
 
-const STATUS_KEYS: StatusKey[] = ["backlog", "in_progress", "under_review", "released"];
+const STATUS_KEYS: StatusKey[] = ["backlog", "in_progress", "released"];
 
 function normalizeStatus(status: string): StatusKey {
   const normalized = status.toLowerCase().replace(/\s+/g, "_");
   if (normalized === "priority") return "backlog";
   if (normalized === "done") return "released";
+  if (normalized === "under_review") return "in_progress";
   return normalized as StatusKey;
 }
 
-function UpvoteButton({ count }: { count: number }) {
+function UpvoteButton({ featureId, count, onUpvoteSuccess }: { 
+  featureId: number; 
+  count: number;
+  onUpvoteSuccess?: (featureId: number, newCount: number) => void;
+}) {
   const hasVoted = useSignal(false);
+  const isLoading = useSignal(false);
+  const currentCount = useSignal(count);
+
+  const handleToggleVote = async () => {
+    if (isLoading.value) return;
+    
+    try {
+      isLoading.value = true;
+      
+      // @ts-expect-error - invoke types don't include actions, but it works at runtime
+      const result = await invoke["site/actions/upvoteFeature"]({
+        featureId,
+        action: hasVoted.value ? "downvote" : "upvote",
+      });
+      
+      if (result?.success) {
+        hasVoted.value = !hasVoted.value;
+        currentCount.value = result.upvotes ?? (hasVoted.value ? currentCount.value + 1 : currentCount.value - 1);
+        onUpvoteSuccess?.(featureId, currentCount.value);
+      }
+    } catch (err) {
+      console.error('❌ Error toggling vote:', err);
+    } finally {
+      isLoading.value = false;
+    }
+  };
 
   return (
     <button
-      onClick={() => {
-        hasVoted.value = !hasVoted.value;
-      }}
+      type="button"
+      onClick={handleToggleVote}
+      disabled={isLoading.value}
       class={`flex flex-col items-center justify-center min-w-[48px] py-2 px-2 rounded-lg border transition-all duration-200 ${
         hasVoted.value
           ? "bg-primary-dark border-primary-dark text-white"
+          : isLoading.value
+          ? "bg-gray-100 border-gray-200 text-gray-400 cursor-not-allowed"
           : "bg-white border-gray-200 text-gray-600 hover:border-gray-300 hover:bg-gray-50"
       }`}
     >
-      <svg
-        class="w-4 h-4"
-        fill={hasVoted.value ? "currentColor" : "none"}
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M5 15l7-7 7 7"
-        />
-      </svg>
+      {isLoading.value ? (
+        <span class="text-xs">⏳</span>
+      ) : (
+        <svg
+          class="w-4 h-4"
+          fill={hasVoted.value ? "currentColor" : "none"}
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M5 15l7-7 7 7"
+          />
+        </svg>
+      )}
       <span class="text-sm font-semibold mt-0.5">
-        {hasVoted.value ? count + 1 : count}
+        {currentCount.value}
       </span>
     </button>
   );
@@ -96,7 +127,7 @@ function FeatureCard({ feature }: { feature: Feature }) {
   return (
     <div class="bg-white rounded-xl border border-gray-100 p-4 shadow-sm hover:shadow-md transition-shadow duration-200">
       <div class="flex gap-3">
-        <UpvoteButton count={feature.upvotes} />
+        <UpvoteButton featureId={feature.id} count={feature.upvotes} />
         <div class="flex-1 min-w-0">
           <div class="flex items-start gap-2 mb-1">
             <h3 class="font-semibold text-gray-900 text-sm leading-tight">
@@ -186,6 +217,7 @@ export default function RoadmapKanban({ features, onOpenModal }: Props) {
       {onOpenModal && (
         <div class="flex justify-end mb-6">
           <button
+            type="button"
             onClick={onOpenModal}
             class="flex items-center justify-center gap-2 px-4 py-2 bg-primary-dark text-primary-light font-medium rounded-lg hover:bg-primary-dark/90 transition-colors text-sm"
           >

@@ -40,6 +40,7 @@ export default function RoadmapWithModal({
       const description = formData.get("description")?.toString() || "";
       const email = formData.get("email")?.toString() || "";
 
+      // @ts-expect-error - invoke types don't include actions, but it works at runtime
       const response = await invoke["site/actions/submitFeatureSuggestion"]({
         title,
         description,

@@ -20,6 +20,7 @@ export default function SuggestFeatureModal({
   const [error, setError] = useState<string | null>(null);
 
   const handleSubmit = async (e: Event) => {
+    console.log("handleSubmit", e);
     e.preventDefault();
     setIsSubmitting(true);
     setError(null);
@@ -30,12 +31,16 @@ export default function SuggestFeatureModal({
       const description = formData.get("description")?.toString() || "";
       const email = formData.get("email")?.toString() || "";
 
-      // Chama a tool SUBMIT_FEATURE_SUGGESTION que salva na database
+      console.log("title", title);
+
+      // @ts-expect-error - invoke types don't include actions, but it works at runtime
       const response = await invoke["site/actions/submitFeatureSuggestion"]({
         title,
         description,
         email,
       });
+
+      console.log("async response", response);
 
       if (response && response.success) {
         setSuccess(true);
