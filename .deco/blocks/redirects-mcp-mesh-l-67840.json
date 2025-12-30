@@ -1,0 +1,8 @@
+{
+  "redirect": {
+    "from": "/mcp-mesh-lauchvideo",
+    "to": "https://youtu.be/GkXr3NbJ7Kk",
+    "type": "permanent"
+  },
+  "__resolveType": "website/loaders/redirect.ts"
+}
