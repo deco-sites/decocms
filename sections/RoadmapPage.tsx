@@ -1,4 +1,5 @@
 import RoadmapWithModal from "../islands/RoadmapWithModal.tsx";
+import listFeatures from "../loaders/listFeatures.ts";
 
 export interface RoadmapFeature {
   id: number;
@@ -15,217 +16,9 @@ export interface Props {
   title?: string;
   subtitle?: string;
   features?: RoadmapFeature[];
-  featureId?: number; // Para upvote action
+  featureId?: number;
 }
 
-// Static features data
-const STATIC_FEATURES: RoadmapFeature[] = [
-  // BACKLOG (regular)
-  {
-    id: 1,
-    title: "Observability & PD for Workflows",
-    description: "Problem: As a customer, I don't know when my key workflows stopped running. Solution: Add an alert app to key workflows.",
-    status: "Backlog",
-    upvotes: 12,
-    created_at: "2025-10-21",
-    isPriority: false,
-  },
-  {
-    id: 2,
-    title: "Billing & Wallet Tool Usage Tracking",
-    description: "Problem: Need to have tool usage and billing visible in the wallet. Verify the current state.",
-    status: "Backlog",
-    upvotes: 8,
-    created_at: "2025-10-20",
-    isPriority: false,
-  },
-  {
-    id: 3,
-    title: "MCP Revamp",
-    description: "Add deco.chat OAuth for all MCPs (Cursor, Claude and ChatGPT); Allow customize Client ID and Client Secret for downstream OAuth (Github, Google); Add scopes; Improve DX for new OAuth apps.",
-    status: "Backlog",
-    upvotes: 25,
-    created_at: "2025-07-06",
-    isPriority: false,
-  },
-  
-  // BACKLOG (priority)
-  {
-    id: 4,
-    title: "Workspace to Project Migration",
-    description: "Today we're always converting org/project to deprecated workspace format. Need to use strong ref foreign key to project/organization. This unlocks creating multiple projects in an organization.",
-    status: "Backlog",
-    upvotes: 42,
-    created_at: "2025-09-15",
-    isPriority: true,
-  },
-  {
-    id: 5,
-    title: "Healthcheck App v1",
-    description: "Problem: Need to improve observability of business results for e-commerce stores. Solution: Healthcheck App (V1) with Order & Revenue Anomaly Tracker Dashboard, Custom Alarms via email.",
-    status: "Backlog",
-    upvotes: 38,
-    created_at: "2025-10-15",
-    isPriority: true,
-  },
-  {
-    id: 6,
-    title: "Wallet Metrics Feature",
-    description: "[WIP] Get usage metrics on wallet.",
-    status: "Backlog",
-    upvotes: 15,
-    created_at: "2025-09-01",
-    isPriority: true,
-  },
-  {
-    id: 7,
-    title: "Enable Knip to Reject Passing on CI",
-    description: "Basic knip setup returns status 0 even with errors on CI. Need to fix all errors then let knip reject by returning non-0 status.",
-    status: "Backlog",
-    upvotes: 5,
-    created_at: "2025-10-26",
-    isPriority: true,
-  },
-  {
-    id: 8,
-    title: "Decouple Auth from Supabase",
-    description: "Decouple authentication from Supabase for greater flexibility and independence.",
-    status: "Backlog",
-    upvotes: 22,
-    created_at: "2025-10-26",
-    isPriority: true,
-  },
-  {
-    id: 9,
-    title: "Database Migrations DX",
-    description: "Improve Developer Experience for database migrations, including Policy creation.",
-    status: "Backlog",
-    upvotes: 18,
-    created_at: "2025-10-26",
-    isPriority: true,
-  },
-  
-  // IN PROGRESS
-  {
-    id: 10,
-    title: "Migrate MCP Apify to MCPs Repository",
-    description: "MCP Apify currently in apps repo needs migration to dedicated MCPs repository for better organization.",
-    status: "In Progress",
-    upvotes: 14,
-    created_at: "2025-11-20",
-    isPriority: false,
-  },
-  {
-    id: 11,
-    title: "App Store UI Implementation - Figma Design",
-    description: "Implementation of the new interface based on Figma design.",
-    status: "In Progress",
-    upvotes: 31,
-    created_at: "2025-11-20",
-    isPriority: false,
-  },
-  {
-    id: 12,
-    title: "Edit Homepage or Add About Page",
-    description: "Edit the home page of decocms or add a new 'about' page to get approved by Google.",
-    status: "In Progress",
-    upvotes: 9,
-    created_at: "2025-11-10",
-    isPriority: false,
-  },
-  {
-    id: 13,
-    title: "Self-host Cloudflare Independence",
-    description: "Don't depend on Cloudflare for agents to run.",
-    status: "In Progress",
-    upvotes: 27,
-    created_at: "2025-11-25",
-    isPriority: false,
-  },
-  {
-    id: 14,
-    title: "Slack Integration",
-    description: "Slack for Gupy - communication integration.",
-    status: "In Progress",
-    upvotes: 11,
-    created_at: "2025-10-28",
-    isPriority: false,
-  },
-  
-  // RELEASED (Done)
-  {
-    id: 15,
-    title: "App Marketplace Cleanup",
-    description: "Verify current state and clean up non-functional apps from the marketplace.",
-    status: "Released",
-    upvotes: 45,
-    created_at: "2025-10-13",
-    isPriority: false,
-  },
-  {
-    id: 16,
-    title: "Update README - Running Locally",
-    description: "Running the Deco Engine Locally - guide for contributing to the engine.",
-    status: "Released",
-    upvotes: 33,
-    created_at: "2025-10-20",
-    isPriority: false,
-  },
-  {
-    id: 17,
-    title: "Vibe Coding Client-Side Views",
-    description: "Implement client-side 'Views' system with real-time generation, full refresh cycles without losing state, vibe coding experiences for front-end logic.",
-    status: "Released",
-    upvotes: 67,
-    created_at: "2025-10-09",
-    isPriority: false,
-  },
-  {
-    id: 18,
-    title: "QA Happy Path",
-    description: "Testing and guaranteeing happy path for Workshop - workflow creation, database, views.",
-    status: "Released",
-    upvotes: 28,
-    created_at: "2025-10-13",
-    isPriority: false,
-  },
-  {
-    id: 19,
-    title: "Pinned & Recent Resources Sidebar",
-    description: "Add sidebar showing Recent Threads (last 5 resources/threads interacted with) and Pinned Threads (manually pinned).",
-    status: "Released",
-    upvotes: 52,
-    created_at: "2025-10-09",
-    isPriority: false,
-  },
-  {
-    id: 20,
-    title: "Implement MCP OAuth for Deco Apps",
-    description: "It'd be amazing if deco made it easy to use MCPs created here in other agents (especially Cursor). Follow and expand protocol towards compatibility.",
-    status: "Released",
-    upvotes: 89,
-    created_at: "2025-10-17",
-    isPriority: false,
-  },
-  {
-    id: 21,
-    title: "List Workflow Runs",
-    description: "Feature to list workflow executions.",
-    status: "Released",
-    upvotes: 41,
-    created_at: "2025-09-23",
-    isPriority: false,
-  },
-  {
-    id: 22,
-    title: "Workflow UI",
-    description: "Add Intent Step, Playable Step, decopilot playing next steps, Publish, @ for tools and previous steps, decopilot creating new steps, Input/Cron/Webhook, Share.",
-    status: "Released",
-    upvotes: 76,
-    created_at: "2025-09-15",
-    isPriority: false,
-  },
-];
 
 export default function RoadmapPage({
   title = "Product Roadmap",
@@ -233,14 +26,33 @@ export default function RoadmapPage({
   features = []
 }: Props) {
   // Use static features if no features are provided
-  const displayFeatures = features.length > 0 ? features : STATIC_FEATURES;
+
+  if (!features || features.length === 0) {
+    return (
+      <section class="w-full bg-dc-50 flex flex-col p-2">
+        <div class="bg-dc-100 pt-2 rounded-[24px] flex flex-col min-h-[calc(100vh-16px)] relative overflow-hidden">
+          <div class="flex-1 flex items-center justify-center">
+            <div class="text-center px-6 py-20">
+              <div class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-dc-200 flex items-center justify-center">
+                <svg class="w-8 h-8 text-dc-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25ZM6.75 12h.008v.008H6.75V12Zm0 3h.008v.008H6.75V15Zm0 3h.008v.008H6.75V18Z" />
+                </svg>
+              </div>
+              <h2 class="text-2xl font-medium text-dc-900 mb-3">No features found</h2>
+              <p class="text-dc-500 max-w-md mx-auto">Roadmap features will be displayed here once they become available.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
   
   return (
     <section class="w-full bg-dc-50 flex flex-col p-2">
       <div class="bg-dc-100 pt-2 rounded-[24px] flex flex-col min-h-[calc(100vh-16px)] relative overflow-hidden">
         <div class="flex-1 flex relative z-10">
           <main class="flex flex-col w-full pt-40 sm:pt-48 lg:pt-40 pb-16 relative px-4 sm:px-6 lg:px-32">
-            {/* Header - Centralizado */}
+            {/* Header - Centered */}
             <div class="text-center mb-12">
               <h1 class="text-5xl sm:text-6xl md:text-6xl lg:text-7xl font-medium leading-none tracking-tight text-dc-900 mb-6">{title}</h1>
               <p class="text-lg md:text-xl text-dc-500 max-w-2xl leading-relaxed mx-auto">{subtitle}</p>
@@ -248,7 +60,7 @@ export default function RoadmapPage({
 
             {/* Island with switchbar, cards and modal */}
             <RoadmapWithModal 
-              features={displayFeatures}
+              features={features}
               modalTitle="Request a Feature"
               successMessage="Thank you! Your feature request has been submitted successfully."
             />
@@ -259,10 +71,26 @@ export default function RoadmapPage({
   );
 }
 
-// Loader: Retorna props com features estáticas como fallback
-export const loader = async (props: Props, _req: Request, _ctx: unknown) => {
+// Loader: Fetches features from database or uses static ones as fallback
+export const loader = async (props: Props, req: Request, _ctx: unknown) => {
+  try {
+    const result = await listFeatures({}, req);
+    
+    const features = result.result?.data;
+    
+    if (features && Array.isArray(features) && features.length > 0) {
+      return {
+        ...props,
+        features: features as RoadmapFeature[],
+      };
+    }
+    
+  } catch (error) {
+    console.error("❌ [RoadmapPage] Error loading features:", error);
+  }
+  
   return {
     ...props,
-    features: props.features || STATIC_FEATURES,
+    features: props.features,
   };
 };

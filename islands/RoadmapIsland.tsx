@@ -1,5 +1,6 @@
-import { useState, useEffect } from "preact/hooks";
+import { useState } from "preact/hooks";
 import type { Signal } from "@preact/signals";
+import { invoke } from "../runtime.ts";
 
 interface Feature {
   id: number;
@@ -25,23 +26,21 @@ export default function RoadmapIsland({ features }: Props) {
       
       console.log('🗳️ [ISLAND] Starting upvote for feature', featureId);
       
-      // Chama a tool DIRETAMENTE via callTool global (disponível em views)
-      const result = await globalThis.callTool({
-        integration: 'i:tools-management',
-        tool: 'UPVOTE_FEATURE',
-        arguments: { featureId }
+      // @ts-expect-error - invoke types don't include actions, but it works at runtime
+      const result = await invoke["site/actions/upvoteFeature"]({
+        featureId,
       });
       
       console.log('✅ [ISLAND] Upvote result:', result);
       
-      if (result.success) {
+      if (result?.success) {
         // Atualiza o contador localmente
         features.value = features.value.map((f) =>
           f.id === featureId ? { ...f, upvotes: result.upvotes } : f
         );
         console.log('🎉 [ISLAND] Updated features:', features.value);
       } else {
-        setError('Failed to upvote');
+        setError(result?.error || 'Failed to upvote');
       }
     } catch (err) {
       console.error('❌ [ISLAND ERROR] Error upvoting:', err);
