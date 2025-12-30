@@ -20,41 +20,33 @@ export interface SqlLoaderProps {
   ): Promise<SqlResponse> => {
     
     try {
+
+      const token = Deno.env.get("DECO_CHAT_TOKEN");
   
       const requestBody = {
         method: "tools/call",
         params: {
-          name: "INTEGRATIONS_CALL_TOOL",
-          arguments: {
-            id: "i:databases-management",
-            params: {
               name: "DATABASES_RUN_SQL",
               arguments: {
                 sql : "SELECT * FROM roadmap_features",
               }
-            }
-          }
         },
         jsonrpc: "2.0",
         id: 1
       };
   
       const response = await fetch(
-        "https://api.decocms.com/deco-team/decocms/mcp/tool/INTEGRATIONS_CALL_TOOL",
+        "https://api.decocms.com/deco-team/decocms/mcp/tool/DATABASES_RUN_SQL",
         {
           method: "POST",
           headers: {
-            "accept": "application/json, text/event-stream",
-            "accept-language": "pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7",
+            "Accept": "application/json,text/event-stream",
             "Content-Type": "application/json",
-            "Authorization": `Bearer ${Deno.env.get("DECO_CHAT_TOKEN")}`,
+            "Authorization": `Bearer ${token}`,
           },
-          body: JSON.stringify(requestBody)
+          body: JSON.stringify(requestBody),
         }
       );
-
-      console.log("🔍 [LOADER] Response status:", response.status);
-      console.log("🔍 [LOADER] Response headers:", response.headers);
 
       if (!response.ok) {
         return {
@@ -90,11 +82,20 @@ export interface SqlLoaderProps {
           }
         }
         
-        return jsonData.result.structuredContent.structuredContent.result?.[0];
+        if (!jsonData) {
+          return {
+            error: {
+              code: 500,
+              message: "Failed to parse SSE response"
+            }
+          };
+        }
+        
+        const data = jsonData?.result?.structuredContent?.result?.[0];
+        return { result: { data: data?.results } };
       } else {
         // Handle regular JSON response
         const responseData = await response.json();
-        console.log("🔍 [LOADER] JSON Response:", responseData);
         return responseData.result.structuredContent;
       }
   
