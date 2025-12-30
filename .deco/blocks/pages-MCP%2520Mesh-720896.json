@@ -140,6 +140,25 @@
     }
   ],
   "seo": {
+    "title": "MCP Mesh | One Secure Endpoint for Every MCP Server",
+    "description": "Open-source, self-hosted control plane for MCP—routing, policy, observability, and controls.",
+    "canonical": "https://deco.cx/mcp-mesh",
+    "noIndexing": false,
+    "openGraph": {
+      "title": "MCP Mesh | One Secure Endpoint for Every MCP Server",
+      "description": "Open-source, self-hosted control plane for MCP—routing, policy, observability, and controls.",
+      "image": "https://assets.decocache.com/decocms/82ac00b9-48eb-452d-95fe-5f686069f473/seo-mesh.png",
+      "url": "https://deco.cx/mcp-mesh",
+      "type": "website",
+      "siteName": "deco.cx"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "MCP Mesh | One Secure Endpoint for Every MCP Server",
+      "description": "Open-source, self-hosted control plane for MCP—routing, policy, observability, and controls.",
+      "image": "https://assets.decocache.com/decocms/82ac00b9-48eb-452d-95fe-5f686069f473/seo-mesh.png",
+      "site": "@deco_cx"
+    },
     "__resolveType": "website/sections/Seo/SeoV2.tsx"
   },
   "__resolveType": "website/pages/Page.tsx"
