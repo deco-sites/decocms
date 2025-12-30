@@ -17,6 +17,7 @@ import { Checklist } from "./blocks/Checklist.tsx";
 import { HeroBox } from "./blocks/HeroBox.tsx";
 import { ButtonGroup } from "./blocks/ButtonGroup.tsx";
 import { Video } from "./blocks/Video.tsx";
+import { YouTubeVideo } from "./blocks/YouTubeVideo.tsx";
 
 interface BlockRendererProps {
   blocks: ContentBlock[];
@@ -65,6 +66,8 @@ export function BlockRenderer({ blocks }: BlockRendererProps) {
             return <ButtonGroup key={key} {...block} />;
           case "video":
             return <Video key={key} {...block} />;
+          case "youtubeVideo":
+            return <YouTubeVideo key={key} {...block} />;
           default:
             console.warn("Unknown block type:", block);
             return null;

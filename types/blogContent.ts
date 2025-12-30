@@ -20,7 +20,8 @@ export type ContentBlock =
   | ChecklistBlock
   | HeroBoxBlock
   | ButtonGroupBlock
-  | VideoBlock;
+  | VideoBlock
+  | YouTubeVideoBlock;
 
 // Basic markdown blocks
 export interface ParagraphBlock {
@@ -175,4 +176,11 @@ export interface ButtonGroupBlock {
 export interface VideoBlock {
   type: "video";
   embedUrl: string;
+}
+
+export interface YouTubeVideoBlock {
+  type: "youtubeVideo";
+  videoId: string;
+  buttonLabel?: string;
+  thumbnailImage?: string;
 }

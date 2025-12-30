@@ -23,9 +23,10 @@ export function CardGrid({ columns, cards }: CardGridBlock) {
             <h4 className="text-[16px] font-medium text-dc-800 mb-0 mt-0 leading-[1.5]">
               {card.title}
             </h4>
-            <p className="text-[16px] text-dc-600 mb-0 leading-[1.5]">
-              {card.content}
-            </p>
+            <p
+              className="text-[16px] text-dc-600 mb-0 leading-[1.5] [&_em]:italic"
+              dangerouslySetInnerHTML={{ __html: card.content }}
+            />
           </div>
         </div>
       ))}

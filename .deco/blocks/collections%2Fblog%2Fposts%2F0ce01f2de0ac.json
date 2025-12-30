@@ -52,6 +52,11 @@
         "text": "Those constraints pushed us toward <strong>context infrastructure</strong>: treating MCP traffic as a first-class production surface. That's what the MCP Mesh is. We originally built it as an internal layer to ship these systems with customers. This release turns that layer into a <strong>self-hosted</strong> component and shares it with the open-source community—because many platform teams seem to be running into the same issues."
       },
       {
+        "type": "youtubeVideo",
+        "videoId": "GkXr3NbJ7Kk",
+        "buttonLabel": "Watch the MCP Mesh in action"
+      },
+      {
         "type": "hr"
       },
       {
@@ -121,7 +126,7 @@
         "cards": [
           {
             "title": "Cost + rate controls",
-            "content": "attribution and enforceable guardrails"
+            "content": "attribution and enforceable guardrails. <em style=\"color: #8CAA25;\">Coming soon</em>"
           },
           {
             "title": "Runtime strategies",
