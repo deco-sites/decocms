@@ -36,7 +36,7 @@
       "title": "Introducing deco’s MCP Mesh: a control plane for MCP in production",
       "description": "The MCP Mesh solves the immediate infrastructure problems teams hit when MCP moves into production: sprawl, missing visibility, inconsistent policies, and costs without attribution. More importantly, it makes the next step practical: turning one-off agent setups into reusable capabilities that can be packaged, governed, and shared—without rewriting integrations every time."
     },
-    "date": "2025-12-22",
+    "date": "2025-12-30",
     "slug": "mcp-mesh",
     "content": [
       {
