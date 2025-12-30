@@ -144,6 +144,7 @@
     "description": "Open-source, self-hosted control plane for MCP—routing, policy, observability, and controls.",
     "canonical": "https://deco.cx/mcp-mesh",
     "noIndexing": false,
+    "image": "https://assets.decocache.com/decocms/82ac00b9-48eb-452d-95fe-5f686069f473/seo-mesh.png",
     "openGraph": {
       "title": "MCP Mesh | One Secure Endpoint for Every MCP Server",
       "description": "Open-source, self-hosted control plane for MCP—routing, policy, observability, and controls.",
