@@ -35,6 +35,7 @@ import * as $ProjectGrid from "./islands/ProjectGrid.tsx";
 import * as $RoadmapFeaturesList from "./islands/RoadmapFeaturesList.tsx";
 import * as $RoadmapFiltered from "./islands/RoadmapFiltered.tsx";
 import * as $RoadmapIsland from "./islands/RoadmapIsland.tsx";
+import * as $RoadmapKanban from "./islands/RoadmapKanban.tsx";
 import * as $RoadmapWithModal from "./islands/RoadmapWithModal.tsx";
 import * as $ScrollToButton from "./islands/ScrollToButton.tsx";
 import * as $SendFormNewsletter from "./islands/SendFormNewsletter.tsx";
@@ -84,6 +85,7 @@ const manifest = {
     "./islands/RoadmapFeaturesList.tsx": $RoadmapFeaturesList,
     "./islands/RoadmapFiltered.tsx": $RoadmapFiltered,
     "./islands/RoadmapIsland.tsx": $RoadmapIsland,
+    "./islands/RoadmapKanban.tsx": $RoadmapKanban,
     "./islands/RoadmapWithModal.tsx": $RoadmapWithModal,
     "./islands/ScrollToButton.tsx": $ScrollToButton,
     "./islands/SendFormNewsletter.tsx": $SendFormNewsletter,

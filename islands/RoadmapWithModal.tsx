@@ -1,6 +1,6 @@
 import { useState } from "preact/hooks";
 import { invoke } from "../runtime.ts";
-import RoadmapFiltered from "./RoadmapFiltered.tsx";
+import RoadmapKanban from "./RoadmapKanban.tsx";
 
 interface Feature {
   id: number;
@@ -71,7 +71,7 @@ export default function RoadmapWithModal({
 
   return (
     <>
-      <RoadmapFiltered features={features} onOpenModal={() => setIsOpen(true)} />
+      <RoadmapKanban features={features} onOpenModal={() => setIsOpen(true)} />
 
       {isOpen && (
         <div
