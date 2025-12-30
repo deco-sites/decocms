@@ -16,6 +16,8 @@ export interface Props {
   term?: string;
   /** @title Mensagem de sucesso */
   successMessage?: string;
+  /** @title Mensagem de erro */
+  errorMessage?: string;
 }
 
 export default function FormNewsletter({
@@ -27,6 +29,7 @@ export default function FormNewsletter({
   actionUrl = "/api/newsletter",
   term = "We respect your privacy. Unsubscribe at any time.",
   successMessage = "Thank you for subscribing to our newsletter!",
+  errorMessage = "Something went wrong. Please try again.",
 }: Props) {
   return (
     <section class="w-full bg-dc-50 px-4 md:px-8 lg:px-16 py-8 ">
@@ -55,6 +58,7 @@ export default function FormNewsletter({
               buttonText={buttonText}
               term={term}
               successMessage={successMessage}
+              errorMessage={errorMessage}
             />
           </div>
         </div>

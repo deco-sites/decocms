@@ -301,11 +301,16 @@ fontSize: {
       },
       animation: {
         sliding: "sliding 30s linear infinite",
+        "fade-in": "fade-in 0.4s ease-out",
       },
       keyframes: {
         sliding: {
           "0%": { transform: "translateX(0)" },
           "100%": { transform: "translateX(-50%)" },
+        },
+        "fade-in": {
+          "0%": { opacity: "0", transform: "translateY(10px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
         },
       },
     },

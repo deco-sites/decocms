@@ -5204,6 +5204,21 @@ input.tab:checked + .tab-content,
 .animate-bounce{
   animation: bounce 1s infinite;
 }
+@keyframes fade-in{
+
+  0%{
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-in{
+  animation: fade-in 0.4s ease-out;
+}
 @keyframes ping{
 
   75%, 100%{
@@ -10908,6 +10923,9 @@ input.tab:checked + .tab-content,
 .opacity-20{
   opacity: 0.2;
 }
+.opacity-25{
+  opacity: 0.25;
+}
 .opacity-30{
   opacity: 0.3;
 }
@@ -13067,6 +13085,16 @@ input.tab:checked + .tab-content,
 
 .disabled\:opacity-60:disabled{
   opacity: 0.6;
+}
+
+.disabled\:opacity-70:disabled{
+  opacity: 0.7;
+}
+
+.disabled\:active\:scale-100:active:disabled{
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .group[open] .group-open\:border-b-\[4px\]{
