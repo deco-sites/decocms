@@ -10,26 +10,28 @@
       "badgeLabel": "Read more:",
       "badgeText": "Introducing deco's Enterprise-ready MCP Mesh",
       "badgeUrl": "/blog/post/mcp-mesh",
-      "titleHighlighted": "One secure endpoint",
-      "title": "for every MCP server.",
       "subtitle": "Self-hosted, open-source control plane to connect, proxy, and optimize all MCP traffic. Own your context. Deploy anywhere.",
       "featureBullets": [
         {
           "text": "Smart tool selection"
         },
         {
-          "text": "Access management"
+          "text": "Code execution strategy"
         },
         {
-          "text": "Full observability"
+          "text": "Access management + audit"
         },
         {
-          "text": "Cost control"
+          "text": "Observability + cost attribution"
         }
       ],
       "secondaryCtaText": "Read our docs",
       "secondaryCtaUrl": "https://docs.decocms.com/en/introduction/",
-      "command": "npx @decocms/mesh"
+      "command": "npx @decocms/mesh",
+      "title": "— without flooding the context.",
+      "titleHighlighted": "fast, cheap, and secure",
+      "titleBefore": "Scale MCP",
+      "titleAfter": "— without flooding the context."
     },
     {
       "__resolveType": "site/sections/MCPMeshContextManagement.tsx",
@@ -87,23 +89,22 @@
         },
         {
           "number": "2",
-          "title": "Control",
-          "description": "RBAC, policies, audit logs, and spend limits, enforced automatically in production."
+          "title": "Create Gateways",
+          "description": "Expose curated toolsets and choose a runtime strategy: smart selection, code execution, or pass-through."
         },
         {
           "number": "3",
-          "title": "Optimize",
-          "description": "Avoid tool bloat with runtime strategies (full context, smart selection, code execution)."
+          "title": "Operate at scale",
+          "description": "RBAC, policies, approvals, audit logs, observability, and cost controls - centrally enforced."
         }
       ]
     },
     {
       "__resolveType": "site/sections/MCPMeshDeployAnywhere.tsx",
-      "titleLine1": "No vendor lock-in.",
-      "titleLine2": "Deploy anywhere.",
-      "highlightedText": "open-source and self-hosted by design.",
-      "descriptionPrefix": "MCP Mesh is",
-      "description": "Run it on your infra, audit the code, and control context end-to-end—no lock-in. Kubernetes-native. Or run it as a self-hosted binary or container: laptop, IoT, cloud, on-prem—anywhere."
+      "titleLine1": "Open-source.",
+      "titleLine2": " Self-hosted.",
+      "description": "Run it on your infra, audit the code, and control context end-to-end—no lock-in. Kubernetes-native. Or run it as a self-hosted binary or container: laptop, IoT, cloud, on-prem—anywhere.",
+      "titleLine3": "No surprises."
     },
     {
       "__resolveType": "site/sections/FAQ.tsx",
@@ -130,6 +131,7 @@
     },
     {
       "__resolveType": "site/sections/FinalCTAMCPMesh.tsx",
+      "title": "Keep MCP fast, safe, and scalable — even with 100+ servers.",
       "command": "npx @decocms/mesh"
     },
     {

@@ -14,6 +14,12 @@ export interface Props {
   titleLine2?: string;
 
   /**
+   * @title Title Line 3
+   * @description Third line of the title
+   */
+  titleLine3?: string;
+
+  /**
    * @title Highlighted Text
    * @description Text that appears highlighted in lime green
    */
@@ -34,11 +40,12 @@ export interface Props {
 }
 
 export default function MCPMeshDeployAnywhere({
-  titleLine1 = "Own Your Context.",
-  titleLine2 = "Deploy anywhere.",
-  highlightedText = "open-source and self-hosted by design.",
-  descriptionPrefix = "MCP Mesh is",
-  description = "Run it on your infra, audit the code, and control context end-to-end—no lock-in. Kubernetes-native. Or run it as a self-hosted binary or container: laptop, IoT, cloud, on-prem—anywhere.",
+  titleLine1,
+  titleLine2,
+  titleLine3,
+  highlightedText,
+  descriptionPrefix,
+  description,
 }: Props) {
   return (
     <section class="w-full bg-dc-50 flex flex-col items-center p-2">
@@ -51,8 +58,9 @@ export default function MCPMeshDeployAnywhere({
             class="text-primary-light text-4xl sm:text-5xl lg:text-[56px] font-medium leading-[1.05] tracking-[-1.12px] mb-12 lg:mb-16 opacity-0"
             style="animation: slide-up 0.8s ease-out 0.2s forwards;"
           >
-            <span class="block">{titleLine1}</span>
-            <span class="block">{titleLine2}</span>
+            {titleLine1 && <span class="block">{titleLine1}</span>}
+            {titleLine2 && <span class="block">{titleLine2}</span>}
+            {titleLine3 && <span class="block italic">{titleLine3}</span>}
           </h2>
 
           {/* Description with entrance animation */}
@@ -60,13 +68,15 @@ export default function MCPMeshDeployAnywhere({
             class="flex flex-col gap-6 text-dc-100 text-lg sm:text-xl lg:text-2xl font-normal leading-[1.5] max-w-[716px] opacity-0"
             style="animation: slide-up 0.8s ease-out 0.5s forwards;"
           >
-            <p>
-              {descriptionPrefix}{" "}
-              <span class="text-primary-light font-medium">
-                {highlightedText}
-              </span>
-            </p>
-            <p class="text-dc-100/90">{description}</p>
+            {(descriptionPrefix || highlightedText) && (
+              <p>
+                {descriptionPrefix}{" "}
+                <span class="text-primary-light font-medium">
+                  {highlightedText}
+                </span>
+              </p>
+            )}
+            {description && <p class="text-dc-100/90">{description}</p>}
           </div>
         </div>
 

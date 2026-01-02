@@ -31,16 +31,22 @@ export interface Props {
   badgeUrl?: string;
 
   /**
-   * @title Title
-   * @description Main title text (appears in black)
+   * @title Title Before Highlight
+   * @description Text that appears before the highlighted part (optional)
    */
-  title?: string;
+  titleBefore?: string;
 
   /**
    * @title Title Highlighted
    * @description Part of the title that appears in green
    */
   titleHighlighted?: string;
+
+  /**
+   * @title Title After Highlight
+   * @description Text that appears after the highlighted part (optional)
+   */
+  titleAfter?: string;
 
   /**
    * @title Subtitle
@@ -84,8 +90,9 @@ export default function HeroMCPMesh({
   badgeLabel = "Read more:",
   badgeText = "Introducing deco's Enterprise-ready MCP Mesh",
   badgeUrl = "/blog/post/mcp-mesh",
-  title = "for every MCP server.",
-  titleHighlighted = "One secure endpoint",
+  titleBefore,
+  titleHighlighted,
+  titleAfter,
   subtitle = "Self-hosted, open-source control plane to connect, proxy, and optimize all MCP traffic. Own your context. Deploy anywhere.",
   featureBullets = [
     { text: "Smart tool selection" },
@@ -138,9 +145,11 @@ export default function HeroMCPMesh({
 
                 {/* Title */}
                 <h1 class="text-dc-900 text-[52px] sm:text-6xl lg:text-7xl xl:text-[80px] font-medium leading-[1.05] tracking-[-1.6px]">
-                  <span class="text-[#8caa25]">{titleHighlighted}</span>
-                  {" "}
-                  {title}
+                  {titleBefore && <>{titleBefore}{" "}</>}
+                  {titleHighlighted && (
+                    <span class="text-[#8caa25]">{titleHighlighted}</span>
+                  )}
+                  {titleAfter && <>{" "}{titleAfter}</>}
                 </h1>
 
                 {/* Subtitle */}
@@ -150,7 +159,7 @@ export default function HeroMCPMesh({
 
               {/* Feature Bullets - 2x2 grid */}
               {featureBullets && featureBullets.length > 0 && (
-                <ul class="grid grid-cols-2 gap-x-6 gap-y-3 mt-2 max-w-[400px]">
+                <ul class="grid grid-cols-2 gap-x-4 gap-y-3 mt-2 max-w-[580px]">
                   {featureBullets.map((feature, index) => (
                     <li key={index} class="flex items-center gap-2">
                       <span class="w-5 h-5 rounded-full bg-[#8caa25]/10 flex items-center justify-center flex-shrink-0">
