@@ -34,6 +34,29 @@
       "titleAfter": "— without flooding the context."
     },
     {
+      "__resolveType": "site/sections/FoundationFeatures.tsx",
+      "title": "MCP works—until context becomes the bottleneck.",
+      "highlightedWord": "bottleneck.",
+      "subtitle": "MCP is becoming the standard for agentic systems. Scaling to 10, 30, or 100 servers is where it breaks.",
+      "cards": [
+        {
+          "icon": "bomb",
+          "title": "Context bloat",
+          "description": "Tool definitions pile up, the model carries more than it can use, and you end up paying to restate schemas every run."
+        },
+        {
+          "icon": "chat_error",
+          "title": "Accuracy drops",
+          "description": "With too many similar tools in context, selection gets noisy—more mistakes, more retries, more latency, and more cost."
+        },
+        {
+          "icon": "policy_alert",
+          "title": "Governance fractures",
+          "description": "Access control and auditability drift across apps, observability gets patchy, and you lose a reliable answer to what ran, why, and what it cost."
+        }
+      ]
+    },
+    {
       "__resolveType": "site/sections/MCPMeshContextManagement.tsx",
       "title": "From MCP mess to context management.",
       "features": [
