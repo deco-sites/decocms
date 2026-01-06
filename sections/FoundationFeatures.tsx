@@ -1,4 +1,5 @@
 import { useScript } from "@deco/deco/hooks";
+import Icon from "../components/ui/Icon.tsx";
 
 /**
  * @titleBy title
@@ -67,36 +68,32 @@ function FeatureCardComponent({
         style={{ imageRendering: "pixelated" }}
       />
       
-      {/* Icon Container */}
-      <div class="relative z-10 w-12 h-12 rounded-lg flex items-center justify-center bg-white shadow-sm transition-colors duration-300 group-hover:bg-dc-50">
+      {/* Icon */}
+      <div class="relative z-10 w-10 h-10">
         {/* Default icon - visible normally, hidden on hover */}
-        <span
-          class="material-symbols-rounded text-red-500 transition-opacity duration-300 group-hover:opacity-0 absolute"
-          style={{
-            fontSize: "24px",
-            fontVariationSettings: "'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 40",
-          }}
-        >
-          {card.icon}
-        </span>
+        <div class="transition-opacity duration-300 group-hover:opacity-0 absolute inset-0">
+          <Icon
+            name={card.icon}
+            size="40"
+            class="text-red-500"
+          />
+        </div>
         {/* Skull icon - hidden normally, visible on hover */}
-        <span
-          class="material-symbols-rounded text-red-500 transition-opacity duration-300 opacity-0 group-hover:opacity-100 absolute"
-          style={{
-            fontSize: "24px",
-            fontVariationSettings: "'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 40",
-          }}
-        >
-          skull
-        </span>
+        <div class="transition-opacity duration-300 opacity-0 group-hover:opacity-100 absolute inset-0">
+          <Icon
+            name="skull"
+            size="40"
+            class="text-dc-50"
+          />
+        </div>
       </div>
 
       {/* Content - pushed to bottom */}
-      <div class="relative z-10 mt-auto flex flex-col gap-2">
-        <h3 class="text-lg md:text-xl font-semibold text-dc-900 transition-colors duration-300 group-hover:text-dc-50">
+      <div class="relative z-10 mt-auto flex flex-col gap-4">
+        <h3 class="text-dc-800 text-2xl sm:text-3xl font-medium leading-tight tracking-tight transition-colors duration-300 group-hover:text-dc-50">
           {card.title}
         </h3>
-        <p class="text-sm md:text-base leading-relaxed text-dc-500 transition-colors duration-300 group-hover:text-dc-50/90">
+        <p class="text-dc-500 text-lg sm:text-xl leading-relaxed transition-colors duration-300 group-hover:text-dc-50/90">
           {card.description}
         </p>
       </div>
@@ -159,9 +156,9 @@ export default function FoundationFeatures({
         </div>
       </div>
 
-      {/* Material Icons - Rounded, Filled */}
+      {/* Material Icons */}
       <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@40,400,1,0"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@40,400,0,0"
         rel="stylesheet"
       />
 

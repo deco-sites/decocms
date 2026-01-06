@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "preact/hooks";
+import { useEffect, useId, useRef, useState } from "preact/hooks";
 import type { ImageWidget } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
 
@@ -26,21 +26,27 @@ export default function LogoCarousel({
   centerLogo = "https://assets.decocache.com/decocms/6216bd1e-7bc1-40df-8ae1-6e431919f1e7/deco-logo.svg",
   duration = 20,
 }: Props) {
+  const instanceId = useId();
   const leftTrackRef = useRef<HTMLDivElement>(null);
   const rightTrackRef = useRef<HTMLDivElement>(null);
-  const [leftWidth, setLeftWidth] = useState(0);
-  const [rightWidth, setRightWidth] = useState(0);
+  const [trackWidth, setTrackWidth] = useState(0);
 
   useEffect(() => {
     // Calculate the width of one set of logos for animation
+    // Use the same width for both sides to ensure perfect sync
+    let leftW = 0;
+    let rightW = 0;
+    
     if (leftTrackRef.current && leftLogos.length > 0) {
-      const totalWidth = leftTrackRef.current.scrollWidth;
-      setLeftWidth(totalWidth / 2); // We duplicate once, so divide by 2
+      leftW = leftTrackRef.current.scrollWidth / 2;
     }
     if (rightTrackRef.current && rightLogos.length > 0) {
-      const totalWidth = rightTrackRef.current.scrollWidth;
-      setRightWidth(totalWidth / 2);
+      rightW = rightTrackRef.current.scrollWidth / 2;
     }
+    
+    // Use the average of both widths to keep animations in perfect sync
+    const avgWidth = (leftW + rightW) / 2 || leftW || rightW;
+    setTrackWidth(avgWidth);
   }, [leftLogos, rightLogos]);
 
   // Render a single logo card
@@ -64,26 +70,22 @@ export default function LogoCarousel({
   const hasLeftLogos = leftLogos.length > 0;
   const hasRightLogos = rightLogos.length > 0;
 
+  // Create unique animation names for this instance to avoid conflicts
+  const scrollLeftAnim = `scrollLeft-${instanceId}`;
+  const scrollRightAnim = `scrollRight-${instanceId}`;
+
   return (
     <div class="relative w-full h-[192px]">
       {/* Inject CSS keyframes for smooth GPU-accelerated animation */}
       <style>
         {`
-          @keyframes scrollLeft {
+          @keyframes ${scrollLeftAnim} {
             from { transform: translateX(0); }
-            to { transform: translateX(-${leftWidth}px); }
+            to { transform: translateX(-${trackWidth}px); }
           }
-          @keyframes scrollRight {
-            from { transform: translateX(-${rightWidth}px); }
+          @keyframes ${scrollRightAnim} {
+            from { transform: translateX(-${trackWidth}px); }
             to { transform: translateX(0); }
-          }
-          .animate-scroll-left {
-            animation: scrollLeft ${duration}s linear infinite;
-            will-change: transform;
-          }
-          .animate-scroll-right {
-            animation: scrollRight ${duration}s linear infinite;
-            will-change: transform;
           }
         `}
       </style>
@@ -123,7 +125,8 @@ export default function LogoCarousel({
         {hasLeftLogos && (
           <div
             ref={leftTrackRef}
-            class={`flex gap-4 ${leftWidth > 0 ? 'animate-scroll-right' : ''}`}
+            class="flex gap-4"
+            style={trackWidth > 0 ? { animation: `${scrollRightAnim} ${duration}s linear infinite`, willChange: "transform" } : undefined}
           >
             {duplicatedLeftLogos.map((logo, index) => (
               <LogoCard key={`left-${index}`} logo={logo} />
@@ -154,7 +157,8 @@ export default function LogoCarousel({
         {hasRightLogos && (
           <div
             ref={rightTrackRef}
-            class={`flex gap-4 ${rightWidth > 0 ? 'animate-scroll-left' : ''}`}
+            class="flex gap-4"
+            style={trackWidth > 0 ? { animation: `${scrollLeftAnim} ${duration}s linear infinite`, willChange: "transform" } : undefined}
           >
             {duplicatedRightLogos.map((logo, index) => (
               <LogoCard key={`right-${index}`} logo={logo} />

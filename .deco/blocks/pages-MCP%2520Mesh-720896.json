@@ -52,7 +52,7 @@
         {
           "icon": "policy_alert",
           "title": "Governance fractures",
-          "description": "Access control and auditability drift across apps, observability gets patchy, and you lose a reliable answer to what ran, why, and what it cost."
+          "description": "Access control and auditability drift across apps, observability gets patchy, and you lose a reliable answer to what ran, why, and cost."
         }
       ]
     },

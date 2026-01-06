@@ -2,7 +2,6 @@ import { useScript } from "@deco/deco/hooks";
 import type { ImageWidget } from "apps/admin/widgets.ts";
 import Icon from "../components/ui/Icon.tsx";
 import LogoCarousel from "../islands/LogoCarousel.tsx";
-import MobileLogoGrid from "../islands/MobileLogoGrid.tsx";
 
 /**
  * @titleBy alt
@@ -148,33 +147,9 @@ export default function HeroAIPlatform({
         </div>
 
         {/* MOBILE LAYOUT */}
-        <div class="flex flex-col md:hidden relative z-10 min-h-[calc(100dvh-16px)] pb-4">
-          {/* CSS for responsive title sizing by screen width */}
-          <style>
-            {`
-              .mobile-hero-title {
-                font-size: 28px;
-              }
-              @media (min-width: 375px) {
-                .mobile-hero-title {
-                  font-size: 32px;
-                }
-              }
-              @media (min-width: 390px) {
-                .mobile-hero-title {
-                  font-size: 36px;
-                }
-              }
-              @media (min-width: 430px) {
-                .mobile-hero-title {
-                  font-size: 40px;
-                }
-              }
-            `}
-          </style>
-
-          {/* ASCII Dithering Animation - starts BELOW navbar on mobile, flipped */}
-          <div class="absolute top-[56px] left-1/2 -translate-x-1/2 h-[35dvh] w-[2562px] overflow-hidden pointer-events-none z-[1] scale-y-[-1] opacity-20">
+        <div class="flex flex-col md:hidden relative min-h-[calc(100dvh-16px)]">
+          {/* ASCII Dithering Animation - at bottom on mobile (like desktop), behind content */}
+          <div class="absolute bottom-0 left-1/2 -translate-x-1/2 h-[280px] w-[2562px] overflow-hidden pointer-events-none" style={{ zIndex: 0 }}>
             <canvas
               id={`dither-canvas-mobile-${sectionId}`}
               class="absolute inset-0 w-full h-full"
@@ -182,30 +157,60 @@ export default function HeroAIPlatform({
             />
           </div>
 
-          {/* Content with padding - starts below navbar */}
-          <div class="flex flex-col flex-1 pt-[64px] px-4">
-            {/* Top section: Logo Grid Animation */}
-            <div class="flex-shrink-0">
-              <MobileLogoGrid
-                horizontalLogos={rightLogos}
-                verticalLogos={leftLogos}
-                featuredLogo={centerLogo}
-                duration={carouselDuration}
-              />
-            </div>
+          {/* CSS for mobile logo carousel scaling */}
+          <style>
+            {`
+              .mobile-logo-carousel-wrapper {
+                --mobile-carousel-scale: 0.52;
+                width: 100%;
+                height: calc(192px * var(--mobile-carousel-scale));
+                overflow: visible;
+                position: relative;
+              }
+              .mobile-logo-carousel-inner {
+                width: 1000px;
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%) scale(var(--mobile-carousel-scale));
+                transform-origin: top center;
+              }
+              @media (min-width: 390px) {
+                .mobile-logo-carousel-wrapper {
+                  --mobile-carousel-scale: 0.58;
+                }
+              }
+              @media (min-width: 430px) {
+                .mobile-logo-carousel-wrapper {
+                  --mobile-carousel-scale: 0.65;
+                }
+              }
+            `}
+          </style>
 
-            {/* Spacer - flexible gap between animation and text */}
-            <div class="flex-1 min-h-[8px] max-h-[16px]" />
+          {/* Centered content container for tall viewports */}
+          <div class="flex flex-col flex-1 justify-center pt-[64px] pb-6 px-4 relative" style={{ zIndex: 1 }}>
+            {/* Inner wrapper with max height to keep content grouped */}
+            <div class="flex flex-col w-full" style={{ gap: "clamp(10px, 2dvh, 20px)" }}>
+              {/* Mini Logo Carousel */}
+              <div class="mobile-logo-carousel-wrapper" style={{ marginBottom: "clamp(16px, 4dvh, 40px)" }}>
+                <div class="mobile-logo-carousel-inner">
+                  <LogoCarousel
+                    leftLogos={leftLogos}
+                    rightLogos={rightLogos}
+                    centerLogo={centerLogo}
+                    duration={carouselDuration}
+                  />
+                </div>
+              </div>
 
-            {/* Bottom section: Badge + Title + Subtitle + Button - fixed at bottom */}
-            <div class="flex-shrink-0 flex flex-col gap-[clamp(10px,1.5dvh,16px)] w-full">
-              {/* Badge - between animation and title */}
+              {/* Badge */}
               {badgeText && (
                 <a
                   href={badgeUrl}
-                  class="self-start bg-dc-50 border border-dc-200 rounded-full py-1 px-3 flex items-center gap-2 hover:bg-white hover:border-dc-300 transition-all group"
+                  class="self-start bg-dc-50 border border-dc-200 rounded-full py-1.5 px-3 flex items-center gap-2 hover:bg-white hover:border-dc-300 transition-all group"
                 >
-                  <span class="text-dc-500 text-[clamp(13px,3.2vw,15px)] font-normal leading-[1.4]">
+                  <span class="text-dc-500 font-normal leading-[1.4]" style={{ fontSize: "clamp(13px, 3.5vw, 16px)" }}>
                     {badgeTextMobile || badgeText}
                   </span>
                   <Icon
@@ -216,17 +221,20 @@ export default function HeroAIPlatform({
                 </a>
               )}
 
-              {/* Title - responsive sizing with breakpoints */}
-              <h1 class="mobile-hero-title font-sans leading-[1.05] text-dc-900 font-medium tracking-[-0.8px] text-left">
+              {/* Title - large, viewport-adaptive sizing */}
+              <h1 
+                class="font-sans text-dc-900 font-medium tracking-[-1px] text-left leading-[0.95]"
+                style={{ fontSize: "clamp(40px, 10dvh, 80px)" }}
+              >
                 {titleLine1}
                 <br />
                 <span class="text-[#8caa25]">{titleLine2}</span>
               </h1>
 
-              {/* Subtitle - responsive sizing */}
+              {/* Subtitle - larger, viewport-adaptive */}
               <p 
-                class="text-dc-500 font-normal leading-[1.4] text-left"
-                style={{ fontSize: "clamp(15px, 4vw, 19px)" }}
+                class="text-dc-500 font-normal leading-[1.35] text-left max-w-[90%]"
+                style={{ fontSize: "clamp(17px, 2.8dvh, 26px)" }}
               >
                 {subtitle}
               </p>
@@ -235,7 +243,8 @@ export default function HeroAIPlatform({
               {ctaText && (
                 <a
                   href={ctaUrl}
-                  class="w-full inline-flex items-center justify-center h-[44px] px-8 py-2 bg-[#d0ec1a] text-[#07401a] text-sm font-medium rounded-lg hover:bg-[#c4e016] transition-colors mt-1"
+                  class="w-full inline-flex items-center justify-center px-8 py-3 bg-[#d0ec1a] text-[#07401a] font-medium rounded-lg hover:bg-[#c4e016] transition-colors relative"
+                  style={{ height: "clamp(44px, 5.5dvh, 52px)", fontSize: "clamp(14px, 1.8dvh, 16px)", zIndex: 2 }}
                 >
                   {ctaText}
                 </a>
