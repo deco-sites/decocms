@@ -236,10 +236,10 @@ const defaultOption2Cards: PricingCard[] = [
     buttonVariant: "primary",
     featuresLabel: "Everything in Free, plus:",
     features: [
-      { name: "1M Tool Calls/month commitment", subtext: "Unlocks enterprise features" },
-      { name: "5% AI Wallet Fee" },
       { name: "SSO + RBAC" },
       { name: "FinOps & Cost Attribution" },
+      { name: "5% AI Wallet Fee" },
+      { name: "1M Tool Calls/month commitment", subtext: "Includes dedicated management" },
       { name: "Premium Support", subtext: "Available as add-on" },
     ],
   },
@@ -725,6 +725,16 @@ export default function PricingToggle({
               }
             });
 
+            // Check for query parameter to pre-select a tab
+            const urlParams = new URLSearchParams(globalThis.location.search);
+            const planParam = urlParams.get("plan");
+
+            if (planParam === "decocx" || planParam === "cx") {
+              // Switch to deco.cx pricing (index 1)
+              setTimeout(() => switchPanel(1), 100);
+            }
+            // ?plan=decocms or no param = AI Platform (index 0, already default)
+
             // Scroll animations
             const animatedElements = section.querySelectorAll(".animate-on-scroll");
             const observer = new IntersectionObserver(
@@ -922,10 +932,10 @@ export function Preview() {
           buttonVariant: "primary",
           featuresLabel: "Everything in Free, plus:",
           features: [
-            { name: "1M Tool Calls/month commitment", subtext: "Fully supported by deco" },
-            { name: "5% AI Wallet Fee" },
             { name: "SSO + RBAC" },
             { name: "FinOps & Cost Attribution" },
+            { name: "5% AI Wallet Fee" },
+            { name: "1M Tool Calls/month commitment", subtext: "Includes dedicated management" },
             { name: "Premium Support", subtext: "Available as add-on" },
           ],
         },
