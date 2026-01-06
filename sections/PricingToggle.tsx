@@ -163,7 +163,7 @@ const defaultOption1Cards: PricingCard[] = [
     price: "$0",
     description: "For individuals and small teams getting started",
     buttonText: "Start building",
-    buttonUrl: "https://admin.decocms.com",
+    buttonUrl: "https://admin.deco.cx",
     buttonVariant: "secondary",
     featuresLabel: "Includes:",
     features: [
@@ -180,7 +180,7 @@ const defaultOption1Cards: PricingCard[] = [
     priceSuffix: "/month",
     description: "For growing businesses with advanced needs",
     buttonText: "Get started",
-    buttonUrl: "https://admin.decocms.com",
+    buttonUrl: "https://admin.deco.cx",
     buttonVariant: "primary",
     featuresLabel: "Everything in Free, plus:",
     features: [
@@ -220,9 +220,10 @@ const defaultOption2Cards: PricingCard[] = [
     copyCommand: "npx @decocms/mesh",
     featuresLabel: "Includes:",
     features: [
-      { name: "MCP Mesh Gateway" },
-      { name: "Multi-model Access" },
-      { name: "Basic Observability" },
+      { name: "Unlimited Users" },
+      { name: "Unlimited Tool Calls", subtext: "Self-managed infrastructure" },
+      { name: "BYOK", subtext: "Bring Your Own Keys" },
+      { name: "Core Features" },
       { name: "Community Support" },
     ],
   },
@@ -235,11 +236,11 @@ const defaultOption2Cards: PricingCard[] = [
     buttonVariant: "primary",
     featuresLabel: "Everything in Free, plus:",
     features: [
-      { name: "SSO + RBAC with Least-Privilege Access" },
-      { name: "Full Audit Trails & Compliance" },
-      { name: "Cost Attribution by Team/App/Agent" },
-      { name: "Self-Hosted Deployment Options" },
-      { name: "Premium Support & SLA" },
+      { name: "1M Tool Calls/month commitment", subtext: "Unlocks enterprise features" },
+      { name: "5% AI Wallet Fee" },
+      { name: "SSO + RBAC" },
+      { name: "FinOps & Cost Attribution" },
+      { name: "Premium Support", subtext: "Available as add-on" },
     ],
   },
 ];
@@ -251,15 +252,15 @@ export default function PricingToggle({
   highlightedWord2,
   subtitle = "Choose the product that fits your needs: build sites and storefronts, or deploy your internal AI operating system.",
   option1 = {
-    title: "deco.cx",
-    description: "Build high-performance sites and storefronts with AI.",
-  },
-  option2 = {
     title: "AI Platform",
     description: "Deploy your internal AI operating system on MCP.",
   },
-  option1Cards = defaultOption1Cards,
-  option2Cards = defaultOption2Cards,
+  option2 = {
+    title: "deco.cx",
+    description: "Build and evolve high-performing sites and storefronts.",
+  },
+  option1Cards = defaultOption2Cards,
+  option2Cards = defaultOption1Cards,
   footerNote = "2.5 GB of bandwidth per 10k pageviews | <strong>$1.00 per extra GB</strong> | 20 requests per pageview | <strong>$0.10 per additional 1,000 requests</strong>",
   footerNote2 = "Limits are subject to change without prior notice.",
 }: Props) {
@@ -271,9 +272,9 @@ export default function PricingToggle({
     section: isDark ? "bg-dc-900" : "bg-dc-50",
     title: isDark ? "text-dc-50" : "text-dc-800",
     subtitle: isDark ? "text-dc-400" : "text-dc-500",
-    toggleContainer: isDark ? "bg-dc-800" : "bg-dc-200",
-    toggleActive: isDark ? "bg-dc-700 text-dc-50" : "bg-white text-dc-800 shadow-sm",
-    toggleInactive: isDark ? "bg-transparent text-dc-400 hover:text-dc-200" : "bg-transparent text-dc-500 hover:text-dc-700",
+    toggleContainer: isDark ? "bg-dc-800 border border-dc-700" : "bg-dc-100 border border-dc-300",
+    toggleActive: isDark ? "bg-dc-700 text-dc-50 shadow-md" : "bg-white text-dc-800 shadow-md border border-dc-200",
+    toggleInactive: isDark ? "bg-transparent text-dc-400 hover:text-dc-200 hover:bg-dc-700/50" : "bg-transparent text-dc-500 hover:text-dc-700 hover:bg-dc-200/50",
     toggleSubtext: isDark ? "text-dc-400" : "text-dc-400",
     toggleSubtextInactive: isDark ? "text-dc-500" : "text-dc-400",
     card: isDark ? "bg-dc-50" : "bg-white border border-dc-200",
@@ -323,8 +324,17 @@ export default function PricingToggle({
   };
 
   return (
-    <section id={sectionId} class={`w-full ${styles.section} py-16 md:py-20 lg:py-28`}>
-      <div class="w-full max-w-7xl mx-auto px-4 md:px-8 lg:px-16">
+    <section id={sectionId} class={`w-full ${styles.section} py-16 md:py-20 lg:py-28 relative overflow-hidden`}>
+      {/* ASCII Dithering Animation - Behind everything, bottom half only */}
+      <div class="absolute bottom-0 left-0 right-0 h-1/2 pointer-events-none z-0">
+        <canvas
+          id={`dither-canvas-${sectionId}`}
+          class="absolute inset-0 w-full h-full"
+          style={{ imageRendering: "pixelated" }}
+        />
+      </div>
+      
+      <div class="w-full max-w-7xl mx-auto px-4 md:px-8 lg:px-16 relative z-10">
         {/* Header */}
         <div class="flex flex-col items-center gap-4 mb-10 md:mb-12 animate-on-scroll opacity-0 translate-y-8">
           <h2 class={`${styles.title} text-3xl sm:text-4xl lg:text-heading-lg font-medium text-center max-w-3xl leading-tight`}>
@@ -338,15 +348,18 @@ export default function PricingToggle({
         </div>
 
         {/* Toggle */}
-        <div class="flex justify-center mb-10 md:mb-14 animate-on-scroll opacity-0 translate-y-8" style={{ transitionDelay: "100ms" }}>
-          <div class={`${styles.toggleContainer} rounded-xl p-1.5 flex gap-1`}>
+        <div class="flex flex-col items-center gap-3 mb-10 md:mb-14 animate-on-scroll opacity-0 translate-y-8" style={{ transitionDelay: "100ms" }}>
+          <span class={`text-xs uppercase tracking-widest font-medium ${styles.subtitle}`}>
+            Select your plan
+          </span>
+          <div class={`${styles.toggleContainer} rounded-xl p-1.5 flex gap-1 shadow-inner`}>
             {/* Option 1 Button */}
             <button
               type="button"
               data-toggle-btn="0"
               data-active-class={styles.toggleActive}
               data-inactive-class={styles.toggleInactive}
-              class={`pricing-toggle-btn group flex flex-col items-start gap-1 px-4 py-3 sm:px-6 sm:py-4 rounded-lg transition-all duration-300 ${styles.toggleActive} min-w-40 sm:min-w-56`}
+              class={`pricing-toggle-btn group flex flex-col items-start gap-1 px-4 py-3 sm:px-6 sm:py-4 rounded-lg transition-all duration-300 cursor-pointer ${styles.toggleActive} min-w-40 sm:min-w-56`}
             >
               <span class="text-sm sm:text-base font-medium leading-tight">
                 {option1?.title}
@@ -362,7 +375,7 @@ export default function PricingToggle({
               data-toggle-btn="1"
               data-active-class={styles.toggleActive}
               data-inactive-class={styles.toggleInactive}
-              class={`pricing-toggle-btn group flex flex-col items-start gap-1 px-4 py-3 sm:px-6 sm:py-4 rounded-lg transition-all duration-300 ${styles.toggleInactive} min-w-40 sm:min-w-56`}
+              class={`pricing-toggle-btn group flex flex-col items-start gap-1 px-4 py-3 sm:px-6 sm:py-4 rounded-lg transition-all duration-300 cursor-pointer ${styles.toggleInactive} min-w-40 sm:min-w-56`}
             >
               <span class="text-sm sm:text-base font-medium leading-tight">
                 {option2?.title}
@@ -376,10 +389,10 @@ export default function PricingToggle({
 
         {/* Pricing Cards Container */}
         <div class="relative min-h-96">
-          {/* Option 1 Cards */}
+          {/* Option 1 Cards - AI Platform (2 cards) */}
           <div
             data-pricing-panel="0"
-            class="pricing-panel w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
+            class="pricing-panel w-full grid grid-cols-1 md:grid-cols-2 gap-4"
           >
             {option1Cards?.map((card) => (
               <div
@@ -479,10 +492,10 @@ export default function PricingToggle({
             ))}
           </div>
 
-          {/* Option 2 Cards */}
+          {/* Option 2 Cards - deco.cx (3 cards) */}
           <div
             data-pricing-panel="1"
-            class="pricing-panel hidden w-full grid-cols-1 md:grid-cols-2 gap-4 absolute inset-0"
+            class="pricing-panel hidden w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 absolute inset-0"
           >
             {option2Cards?.map((card) => (
               <div
@@ -583,12 +596,12 @@ export default function PricingToggle({
           </div>
         </div>
 
-        {/* Footer Notes - Only visible for option 1 (deco.cx Sites) */}
+        {/* Footer Notes - Only visible for option 2 (deco.cx) */}
         {(footerNote || footerNote2) && (
           <div 
             data-footer-notes
-            class="flex flex-col items-center gap-2 mt-10 md:mt-14 animate-on-scroll opacity-0 translate-y-8 transition-all duration-300" 
-            style={{ transitionDelay: "400ms" }}
+            class="flex flex-col items-center gap-2 mt-10 md:mt-14 animate-on-scroll translate-y-8 transition-all duration-300 overflow-hidden" 
+            style={{ transitionDelay: "400ms", opacity: 0, maxHeight: 0, marginTop: 0 }}
           >
             {footerNote && (
               <p class={`${styles.footerText} text-sm text-center flex items-center gap-2`}>
@@ -619,8 +632,15 @@ export default function PricingToggle({
             const panels = section.querySelectorAll("[data-pricing-panel]");
             let activeIndex = 0;
 
-            // Footer notes element (only visible for option 0 - deco.cx Sites)
+            // Footer notes element (only visible for option 1 - deco.cx)
             const footerNotes = section.querySelector("[data-footer-notes]") as HTMLElement;
+
+            // Initialize footer as hidden (AI Platform is default)
+            if (footerNotes) {
+              footerNotes.style.opacity = "0";
+              footerNotes.style.maxHeight = "0px";
+              footerNotes.style.marginTop = "0";
+            }
 
             const switchPanel = (index: number) => {
               if (index === activeIndex) return;
@@ -640,9 +660,9 @@ export default function PricingToggle({
                 }
               });
 
-              // Toggle footer notes visibility (only show for option 0)
+              // Toggle footer notes visibility (only show for option 1 - deco.cx)
               if (footerNotes) {
-                if (index === 0) {
+                if (index === 1) {
                   footerNotes.style.opacity = "1";
                   footerNotes.style.maxHeight = "200px";
                   footerNotes.style.marginTop = "";
@@ -730,6 +750,134 @@ export default function PricingToggle({
           }, sectionId),
         }}
       />
+
+      {/* ASCII Dithering Animation Script */}
+      <script
+        type="module"
+        dangerouslySetInnerHTML={{
+          __html: useScript((sectionId: string, isDark: boolean) => {
+            const canvas = document.getElementById(
+              `dither-canvas-${sectionId}`,
+            ) as HTMLCanvasElement;
+
+            if (!canvas) return;
+
+            const ctx = canvas.getContext("2d");
+            if (!ctx) return;
+
+            let animationRef: number;
+
+            const resizeCanvas = () => {
+              const rect = canvas.getBoundingClientRect();
+              canvas.width = rect.width;
+              canvas.height = rect.height;
+            };
+
+            resizeCanvas();
+            globalThis.addEventListener("resize", resizeCanvas);
+
+            // Bayer matrix 8x8 for dithering
+            const bayerMatrix8x8 = [
+              [0, 32, 8, 40, 2, 34, 10, 42],
+              [48, 16, 56, 24, 50, 18, 58, 26],
+              [12, 44, 4, 36, 14, 46, 6, 38],
+              [60, 28, 52, 20, 62, 30, 54, 22],
+              [3, 35, 11, 43, 1, 33, 9, 41],
+              [51, 19, 59, 27, 49, 17, 57, 25],
+              [15, 47, 7, 39, 13, 45, 5, 37],
+              [63, 31, 55, 23, 61, 29, 53, 21],
+            ];
+
+            let time = 0;
+            const cellSize = 3;
+
+            // Colors based on theme
+            // Light theme: dc-50 (#FAFAF9) and dc-100 (#F1F0EE)
+            // Dark theme: dc-900 (#1C1917) and dc-800 (#292524)
+            const colorLight = isDark ? [0x1c, 0x19, 0x17] : [0xfa, 0xfa, 0xf9];
+            const colorDark = isDark ? [0x29, 0x25, 0x24] : [0xf1, 0xf0, 0xee];
+
+            const animate = () => {
+              if (canvas.width === 0 || canvas.height === 0) return;
+
+              ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+              const imageData = ctx.createImageData(
+                canvas.width,
+                canvas.height,
+              );
+              const data = imageData.data;
+
+              for (let y = 0; y < canvas.height; y += cellSize) {
+                for (let x = 0; x < canvas.width; x += cellSize) {
+                  const nx = x / canvas.width;
+                  const ny = y / canvas.height;
+
+                  // Wave patterns (1.5x faster)
+                  const waveBase = Math.sin(nx * 4 + time * 0.0006) * 0.15;
+                  const waveSecond = Math.cos(nx * 7 + time * 0.00045) * 0.1;
+                  const waveThird = Math.sin((nx + ny) * 3 + time * 0.0003) * 0.08;
+
+                  // Subtle gradient effect
+                  const verticalGradient = Math.pow(ny, 1.5) * 0.3;
+
+                  let intensity = 0.85 - verticalGradient + waveBase + waveSecond + waveThird;
+
+                  const noise = (Math.random() - 0.5) * 0.02;
+                  intensity += noise;
+
+                  intensity = Math.max(0, Math.min(1, intensity));
+
+                  const matrixX = Math.floor(x / cellSize) % 8;
+                  const matrixY = Math.floor(y / cellSize) % 8;
+                  const threshold = bayerMatrix8x8[matrixY][matrixX] / 64;
+
+                  const ditherResult = intensity > threshold;
+                  const r = ditherResult ? colorLight[0] : colorDark[0];
+                  const g = ditherResult ? colorLight[1] : colorDark[1];
+                  const b = ditherResult ? colorLight[2] : colorDark[2];
+
+                  for (
+                    let dy = 0;
+                    dy < cellSize && y + dy < canvas.height;
+                    dy++
+                  ) {
+                    for (
+                      let dx = 0;
+                      dx < cellSize && x + dx < canvas.width;
+                      dx++
+                    ) {
+                      const pixelIndex = ((y + dy) * canvas.width + (x + dx)) * 4;
+                      data[pixelIndex] = r;
+                      data[pixelIndex + 1] = g;
+                      data[pixelIndex + 2] = b;
+                      data[pixelIndex + 3] = 255;
+                    }
+                  }
+                }
+              }
+
+              ctx.putImageData(imageData, 0, 0);
+
+              time += 16;
+              animationRef = requestAnimationFrame(animate);
+            };
+
+            animate();
+
+            const cleanup = () => {
+              globalThis.removeEventListener("resize", resizeCanvas);
+              if (animationRef) {
+                cancelAnimationFrame(animationRef);
+              }
+            };
+
+            globalThis.addEventListener("beforeunload", cleanup);
+
+            return cleanup;
+          }, sectionId, isDark),
+        }}
+      />
     </section>
   );
 }
@@ -742,19 +890,53 @@ export function Preview() {
       highlightedWord="scales with you"
       subtitle="Choose the product that fits your needs: build sites and storefronts, or deploy your internal AI operating system."
       option1={{
-        title: "deco.cx",
-        description: "Build high-performance sites and storefronts with AI.",
-      }}
-      option2={{
         title: "AI Platform",
         description: "Deploy your internal AI operating system on MCP.",
+      }}
+      option2={{
+        title: "deco.cx",
+        description: "Build and evolve high-performing sites and storefronts.",
       }}
       option1Cards={[
         {
           name: "Free",
           price: "$0",
+          priceSuffix: "/month",
+          description: "For teams exploring AI capabilities",
+          copyCommand: "npx @decocms/mesh",
+          featuresLabel: "Includes:",
+          features: [
+            { name: "Unlimited Users" },
+            { name: "Unlimited Tool Calls", subtext: "Self-managed infrastructure" },
+            { name: "BYOK", subtext: "Bring Your Own Keys" },
+            { name: "Core Features" },
+            { name: "Community Support" },
+          ],
+        },
+        {
+          name: "Enterprise",
+          price: "Custom",
+          description: "For organizations deploying AI at scale",
+          buttonText: "Book a demo",
+          buttonUrl: "https://calendar.app.google/hRxm4ctTJJb51J327",
+          buttonVariant: "primary",
+          featuresLabel: "Everything in Free, plus:",
+          features: [
+            { name: "1M Tool Calls/month commitment", subtext: "Fully supported by deco" },
+            { name: "5% AI Wallet Fee" },
+            { name: "SSO + RBAC" },
+            { name: "FinOps & Cost Attribution" },
+            { name: "Premium Support", subtext: "Available as add-on" },
+          ],
+        },
+      ]}
+      option2Cards={[
+        {
+          name: "Free",
+          price: "$0",
           description: "For individuals and small teams getting started",
           buttonText: "Start building",
+          buttonUrl: "https://admin.deco.cx",
           buttonVariant: "secondary",
           featuresLabel: "Includes:",
           features: [
@@ -771,6 +953,7 @@ export function Preview() {
           priceSuffix: "/month",
           description: "For growing businesses with advanced needs",
           buttonText: "Get started",
+          buttonUrl: "https://admin.deco.cx",
           buttonVariant: "primary",
           featuresLabel: "Everything in Free, plus:",
           features: [
@@ -780,6 +963,8 @@ export function Preview() {
             { name: "3 Hosted Projects", subtext: "$9 per additional project" },
             { name: "5 Team Members", subtext: "$9 per additional member" },
             { name: "Hosting & CDN", subtext: "Up to 200k pageviews/month" },
+            { name: "", subtext: "Up to 4M requests/month" },
+            { name: "", subtext: "Up to 50 GB bandwidth/month" },
           ],
         },
         {
@@ -798,42 +983,10 @@ export function Preview() {
           ],
         },
       ]}
-      option2Cards={[
-        {
-          name: "Free",
-          price: "$0",
-          priceSuffix: "/month",
-          description: "For teams exploring AI capabilities",
-          buttonText: "Start now",
-          buttonVariant: "secondary",
-          featuresLabel: "Includes:",
-          features: [
-            { name: "MCP Mesh Gateway" },
-            { name: "Multi-model Access" },
-            { name: "Basic Observability" },
-            { name: "Community Support" },
-          ],
-        },
-        {
-          name: "Enterprise",
-          price: "Custom",
-          description: "For organizations deploying AI at scale",
-          buttonText: "Book a demo",
-          buttonUrl: "https://calendar.app.google/hRxm4ctTJJb51J327",
-          buttonVariant: "primary",
-          featuresLabel: "Everything in Free, plus:",
-          features: [
-            { name: "SSO + RBAC with Least-Privilege Access" },
-            { name: "Full Audit Trails & Compliance" },
-            { name: "Cost Attribution by Team/App/Agent" },
-            { name: "Self-Hosted Deployment Options" },
-            { name: "Premium Support & SLA" },
-          ],
-        },
-      ]}
       footerNote="2.5 GB of bandwidth per 10k pageviews | <strong>$1.00 per extra GB</strong> | 20 requests per pageview | <strong>$0.10 per additional 1,000 requests</strong>"
       footerNote2="Limits are subject to change without prior notice."
     />
   );
 }
+
 
