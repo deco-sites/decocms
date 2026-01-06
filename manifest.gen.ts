@@ -111,21 +111,22 @@ import * as $$$$$$94 from "./sections/PartnersHero.tsx";
 import * as $$$$$$91 from "./sections/PartnerTiers.tsx";
 import * as $$$$$$95 from "./sections/Podcasts.tsx";
 import * as $$$$$$96 from "./sections/PricingPlans.tsx";
-import * as $$$$$$97 from "./sections/ProblemCards.tsx";
-import * as $$$$$$98 from "./sections/ProblemStatement.tsx";
-import * as $$$$$$99 from "./sections/ProductRoadmap.tsx";
-import * as $$$$$$100 from "./sections/ProgramSteps.tsx";
-import * as $$$$$$101 from "./sections/ProgramSteps4Col.tsx";
-import * as $$$$$$102 from "./sections/ProjectGrid.tsx";
-import * as $$$$$$103 from "./sections/RelatedBlogPosts.tsx";
-import * as $$$$$$104 from "./sections/RoadmapFeatures.tsx";
-import * as $$$$$$105 from "./sections/RoadmapPage.tsx";
-import * as $$$$$$106 from "./sections/Sitemap.tsx";
-import * as $$$$$$107 from "./sections/Statement.tsx";
-import * as $$$$$$108 from "./sections/TextMedia.tsx";
-import * as $$$$$$109 from "./sections/Theme/Theme.tsx";
-import * as $$$$$$110 from "./sections/ThreeCards.tsx";
-import * as $$$$$$111 from "./sections/WhoShouldApply.tsx";
+import * as $$$$$$97 from "./sections/PricingToggle.tsx";
+import * as $$$$$$98 from "./sections/ProblemCards.tsx";
+import * as $$$$$$99 from "./sections/ProblemStatement.tsx";
+import * as $$$$$$100 from "./sections/ProductRoadmap.tsx";
+import * as $$$$$$101 from "./sections/ProgramSteps.tsx";
+import * as $$$$$$102 from "./sections/ProgramSteps4Col.tsx";
+import * as $$$$$$103 from "./sections/ProjectGrid.tsx";
+import * as $$$$$$104 from "./sections/RelatedBlogPosts.tsx";
+import * as $$$$$$105 from "./sections/RoadmapFeatures.tsx";
+import * as $$$$$$106 from "./sections/RoadmapPage.tsx";
+import * as $$$$$$107 from "./sections/Sitemap.tsx";
+import * as $$$$$$108 from "./sections/Statement.tsx";
+import * as $$$$$$109 from "./sections/TextMedia.tsx";
+import * as $$$$$$110 from "./sections/Theme/Theme.tsx";
+import * as $$$$$$111 from "./sections/ThreeCards.tsx";
+import * as $$$$$$112 from "./sections/WhoShouldApply.tsx";
 
 const manifest = {
   "loaders": {
@@ -232,21 +233,22 @@ const manifest = {
     "site/sections/PartnerTiers.tsx": $$$$$$91,
     "site/sections/Podcasts.tsx": $$$$$$95,
     "site/sections/PricingPlans.tsx": $$$$$$96,
-    "site/sections/ProblemCards.tsx": $$$$$$97,
-    "site/sections/ProblemStatement.tsx": $$$$$$98,
-    "site/sections/ProductRoadmap.tsx": $$$$$$99,
-    "site/sections/ProgramSteps.tsx": $$$$$$100,
-    "site/sections/ProgramSteps4Col.tsx": $$$$$$101,
-    "site/sections/ProjectGrid.tsx": $$$$$$102,
-    "site/sections/RelatedBlogPosts.tsx": $$$$$$103,
-    "site/sections/RoadmapFeatures.tsx": $$$$$$104,
-    "site/sections/RoadmapPage.tsx": $$$$$$105,
-    "site/sections/Sitemap.tsx": $$$$$$106,
-    "site/sections/Statement.tsx": $$$$$$107,
-    "site/sections/TextMedia.tsx": $$$$$$108,
-    "site/sections/Theme/Theme.tsx": $$$$$$109,
-    "site/sections/ThreeCards.tsx": $$$$$$110,
-    "site/sections/WhoShouldApply.tsx": $$$$$$111,
+    "site/sections/PricingToggle.tsx": $$$$$$97,
+    "site/sections/ProblemCards.tsx": $$$$$$98,
+    "site/sections/ProblemStatement.tsx": $$$$$$99,
+    "site/sections/ProductRoadmap.tsx": $$$$$$100,
+    "site/sections/ProgramSteps.tsx": $$$$$$101,
+    "site/sections/ProgramSteps4Col.tsx": $$$$$$102,
+    "site/sections/ProjectGrid.tsx": $$$$$$103,
+    "site/sections/RelatedBlogPosts.tsx": $$$$$$104,
+    "site/sections/RoadmapFeatures.tsx": $$$$$$105,
+    "site/sections/RoadmapPage.tsx": $$$$$$106,
+    "site/sections/Sitemap.tsx": $$$$$$107,
+    "site/sections/Statement.tsx": $$$$$$108,
+    "site/sections/TextMedia.tsx": $$$$$$109,
+    "site/sections/Theme/Theme.tsx": $$$$$$110,
+    "site/sections/ThreeCards.tsx": $$$$$$111,
+    "site/sections/WhoShouldApply.tsx": $$$$$$112,
   },
   "actions": {
     "site/actions/airtable/createRecord.ts": $$$$$$$$$0,
