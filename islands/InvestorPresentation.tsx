@@ -96,12 +96,41 @@ export default function InvestorPresentation({
 }: Props) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
+  const [isPortrait, setIsPortrait] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const slideRefs = useRef<(HTMLDivElement | null)[]>([]);
   const gsapRef = useRef<any>(null);
+  const touchStartRef = useRef<{ x: number; y: number } | null>(null);
 
   // Calculate total slides (including title slide)
   const totalSlides = slides.length + 1;
+
+  // Detect mobile and orientation
+  useEffect(() => {
+    const checkOrientation = () => {
+      const isMobileDevice = globalThis.innerWidth <= 1024 ||
+        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+          navigator.userAgent,
+        );
+      setIsMobile(isMobileDevice);
+
+      if (isMobileDevice) {
+        setIsPortrait(globalThis.innerHeight > globalThis.innerWidth);
+      } else {
+        setIsPortrait(false);
+      }
+    };
+
+    checkOrientation();
+    globalThis.addEventListener("resize", checkOrientation);
+    globalThis.addEventListener("orientationchange", checkOrientation);
+
+    return () => {
+      globalThis.removeEventListener("resize", checkOrientation);
+      globalThis.removeEventListener("orientationchange", checkOrientation);
+    };
+  }, []);
 
   useEffect(() => {
     const loadGSAP = async () => {
@@ -131,6 +160,37 @@ export default function InvestorPresentation({
     globalThis.addEventListener("keydown", handleKeyDown);
     return () => globalThis.removeEventListener("keydown", handleKeyDown);
   }, [currentSlide, isAnimating]);
+
+  // Touch/swipe handlers for mobile
+  const handleTouchStart = (e: TouchEvent) => {
+    touchStartRef.current = {
+      x: e.touches[0].clientX,
+      y: e.touches[0].clientY,
+    };
+  };
+
+  const handleTouchEnd = (e: TouchEvent) => {
+    if (!touchStartRef.current) return;
+
+    const touchEnd = {
+      x: e.changedTouches[0].clientX,
+      y: e.changedTouches[0].clientY,
+    };
+
+    const deltaX = touchEnd.x - touchStartRef.current.x;
+    const deltaY = touchEnd.y - touchStartRef.current.y;
+
+    // Only trigger if horizontal swipe is dominant and significant
+    if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 50) {
+      if (deltaX < 0) {
+        goToNextSlide();
+      } else {
+        goToPrevSlide();
+      }
+    }
+
+    touchStartRef.current = null;
+  };
 
   const animateSlideIn = (slideIndex: number, gsap: any) => {
     const slideElement = slideRefs.current[slideIndex];
@@ -505,10 +565,75 @@ export default function InvestorPresentation({
     }
   };
 
+  // Portrait mode overlay for mobile
+  if (isMobile && isPortrait) {
+    return (
+      <div class="fixed inset-0 w-screen h-screen bg-dc-950 flex flex-col items-center justify-center p-8 z-50">
+        <div class="animate-bounce mb-8">
+          <svg
+            width="80"
+            height="80"
+            viewBox="0 0 24 24"
+            fill="none"
+            class="text-primary-light"
+          >
+            <path
+              d="M16.5 2.25H7.5C6.25736 2.25 5.25 3.25736 5.25 4.5V19.5C5.25 20.7426 6.25736 21.75 7.5 21.75H16.5C17.7426 21.75 18.75 20.7426 18.75 19.5V4.5C18.75 3.25736 17.7426 2.25 16.5 2.25Z"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M12 18.75H12.0075"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+        <div class="relative mb-6">
+          <svg
+            width="48"
+            height="48"
+            viewBox="0 0 24 24"
+            fill="none"
+            class="text-primary-light animate-spin"
+            style={{ animationDuration: "2s" }}
+          >
+            <path
+              d="M4 12C4 16.4183 7.58172 20 12 20C16.4183 20 20 16.4183 20 12"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+            <path
+              d="M20 12L17 9M20 12L23 9"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+        <h2 class="text-white text-2xl font-medium text-center mb-4">
+          Rotate your device
+        </h2>
+        <p class="text-dc-400 text-center text-base max-w-xs">
+          This presentation is optimized for landscape mode. Please rotate your
+          device to continue.
+        </p>
+      </div>
+    );
+  }
+
   return (
     <div
       ref={containerRef}
-      class="fixed inset-0 w-screen h-screen bg-dc-950 overflow-hidden"
+      class="fixed inset-0 w-screen h-screen bg-dc-950 overflow-hidden touch-pan-y"
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
     >
       {/* Aspect ratio container for 16:9 */}
       <div class="absolute inset-0 flex items-center justify-center">
@@ -549,7 +674,7 @@ export default function InvestorPresentation({
               )}
               <div class="animate-item mt-12 lg:mt-16 flex items-center gap-2 text-dc-500">
                 <span class="text-sm lg:text-base">
-                  Press arrow keys to navigate
+                  {isMobile ? "Swipe or tap arrows to navigate" : "Press arrow keys to navigate"}
                 </span>
                 <Icon name="arrow_forward" size="small" class="text-dc-500" />
               </div>

@@ -5293,6 +5293,10 @@ input.tab:checked + .tab-content,
 .cursor-pointer{
   cursor: pointer;
 }
+.touch-pan-y{
+  --tw-pan-y: pan-y;
+  touch-action: var(--tw-pan-x) var(--tw-pan-y) var(--tw-pinch-zoom);
+}
 .select-none{
   -webkit-user-select: none;
      -moz-user-select: none;
