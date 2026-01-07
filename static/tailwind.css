@@ -4937,6 +4937,9 @@ input.tab:checked + .tab-content,
 .max-w-\[1600px\]{
   max-width: 1600px;
 }
+.max-w-\[280px\]{
+  max-width: 280px;
+}
 .max-w-\[2px\]{
   max-width: 2px;
 }
@@ -13524,6 +13527,10 @@ input.tab:checked + .tab-content,
     max-width: 488px;
   }
 
+  .sm\:max-w-md{
+    max-width: 28rem;
+  }
+
   .sm\:grid-cols-2{
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -14600,6 +14607,10 @@ input.tab:checked + .tab-content,
 
   .lg\:w-auto{
     width: auto;
+  }
+
+  .lg\:max-w-2xl{
+    max-width: 42rem;
   }
 
   .lg\:max-w-3xl{

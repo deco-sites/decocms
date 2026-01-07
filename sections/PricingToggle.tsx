@@ -238,7 +238,6 @@ const defaultOption2Cards: PricingCard[] = [
     features: [
       { name: "SSO + RBAC" },
       { name: "FinOps & Cost Attribution" },
-      { name: "5% AI Wallet Fee" },
       { name: "1M Tool Calls/month commitment", subtext: "Includes dedicated management" },
       { name: "Premium Support", subtext: "Available as add-on" },
     ],
@@ -336,8 +335,8 @@ export default function PricingToggle({
       
       <div class="w-full max-w-7xl mx-auto px-4 md:px-8 lg:px-16 relative z-10">
         {/* Header */}
-        <div class="flex flex-col items-center gap-4 mb-10 md:mb-12 animate-on-scroll opacity-0 translate-y-8">
-          <h2 class={`${styles.title} text-3xl sm:text-4xl lg:text-heading-lg font-medium text-center max-w-3xl leading-tight`}>
+        <div class="flex flex-col items-center gap-4 mb-10 md:mb-12">
+          <h2 class={`${styles.title} text-3xl sm:text-4xl lg:text-heading-lg font-medium text-center max-w-[280px] sm:max-w-md lg:max-w-2xl tracking-tight`}>
             {renderTitle()}
           </h2>
           {subtitle && (
@@ -348,7 +347,7 @@ export default function PricingToggle({
         </div>
 
         {/* Toggle */}
-        <div class="flex flex-col items-center gap-3 mb-10 md:mb-14 animate-on-scroll opacity-0 translate-y-8" style={{ transitionDelay: "100ms" }}>
+        <div class="flex flex-col items-center gap-3 mb-10 md:mb-14">
           <span class={`text-xs uppercase tracking-widest font-medium ${styles.subtitle}`}>
             Select your plan
           </span>
@@ -741,27 +740,21 @@ export default function PricingToggle({
             }
             // ?plan=decocms or no param = AI Platform (index 0, already default)
 
-            // Scroll animations
+            // Scroll animations - immediately show elements, no hidden state
             const animatedElements = section.querySelectorAll(".animate-on-scroll");
-            const observer = new IntersectionObserver(
-              (entries) => {
-                entries.forEach((entry) => {
-                  if (entry.isIntersecting) {
-                    const el = entry.target as HTMLElement;
-                    el.style.opacity = "1";
-                    el.style.transform = "translateY(0)";
-                    observer.unobserve(el);
-                  }
-                });
-              },
-              { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
-            );
-
-            animatedElements.forEach((el) => {
+            
+            // Set initial visible state for all elements immediately
+            animatedElements.forEach((el, index) => {
               const element = el as HTMLElement;
-              element.style.transition =
-                "opacity 0.6s ease-out, transform 0.6s ease-out";
-              observer.observe(el);
+              element.style.opacity = "0";
+              element.style.transform = "translateY(20px)";
+              element.style.transition = "opacity 0.6s ease-out, transform 0.6s ease-out";
+              
+              // Stagger the animation
+              setTimeout(() => {
+                element.style.opacity = "1";
+                element.style.transform = "translateY(0)";
+              }, 50 + index * 100);
             });
           }, sectionId),
         }}
@@ -940,7 +933,6 @@ export function Preview() {
           features: [
             { name: "SSO + RBAC" },
             { name: "FinOps & Cost Attribution" },
-            { name: "5% AI Wallet Fee" },
             { name: "1M Tool Calls/month commitment", subtext: "Includes dedicated management" },
             { name: "Premium Support", subtext: "Available as add-on" },
           ],
