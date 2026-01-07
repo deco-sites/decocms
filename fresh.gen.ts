@@ -24,6 +24,7 @@ import * as $GitHubStars from "./islands/GitHubStars.tsx";
 import * as $GitHubStarsInline from "./islands/GitHubStarsInline.tsx";
 import * as $HeroCMSCards from "./islands/HeroCMSCards.tsx";
 import * as $HeroInteractiveClient from "./islands/HeroInteractiveClient.tsx";
+import * as $InvestorPresentation from "./islands/InvestorPresentation.tsx";
 import * as $LatestBlogPosts from "./islands/LatestBlogPosts.tsx";
 import * as $LogoCarousel from "./islands/LogoCarousel.tsx";
 import * as $MCPMeshLayersAnimation from "./islands/MCPMeshLayersAnimation.tsx";
@@ -75,6 +76,7 @@ const manifest = {
     "./islands/GitHubStarsInline.tsx": $GitHubStarsInline,
     "./islands/HeroCMSCards.tsx": $HeroCMSCards,
     "./islands/HeroInteractiveClient.tsx": $HeroInteractiveClient,
+    "./islands/InvestorPresentation.tsx": $InvestorPresentation,
     "./islands/LatestBlogPosts.tsx": $LatestBlogPosts,
     "./islands/LogoCarousel.tsx": $LogoCarousel,
     "./islands/MCPMeshLayersAnimation.tsx": $MCPMeshLayersAnimation,

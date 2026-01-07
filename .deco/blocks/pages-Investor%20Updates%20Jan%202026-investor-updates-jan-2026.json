@@ -1,0 +1,457 @@
+{
+  "__resolveType": "website/pages/Page.tsx",
+  "name": "Investor Updates Jan 2026",
+  "path": "/investor-updates-jan-2026",
+  "sections": [
+    {
+      "__resolveType": "site/sections/InvestorPresentation.tsx",
+      "presentationTitle": "Investor Updates",
+      "presentationSubtitle": "January 2026 — We have successfully transitioned to an AI native company",
+      "logo": "https://assets.decocache.com/decocms/69810c11-8a4b-4163-80c7-942ea7f6dcdd/deco-logo.svg",
+      "slides": [
+        {
+          "title": "2025 Journey",
+          "subtitle": "Our transformation into an AI-native, MCP-first company",
+          "layout": "timeline",
+          "backgroundColor": "dc-950",
+          "textColor": "light",
+          "tag": "THE YEAR IN REVIEW",
+          "items": [
+            {
+              "title": "Q1",
+              "bullets": [
+                { "text": "Ended WebDraw" }
+              ]
+            },
+            {
+              "title": "Q2",
+              "bullets": [
+                { "text": "Design partners for deco.chat" }
+              ]
+            },
+            {
+              "title": "Q3",
+              "bullets": [
+                { "text": "deco.day event" },
+                { "text": "Finalizing Q2 cases" },
+                { "text": "Black Friday focus" }
+              ]
+            },
+            {
+              "title": "Q4",
+              "bullets": [
+                { "text": "Future-proof architecture" },
+                { "text": "MCP Mesh launch" }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Results",
+          "layout": "title",
+          "backgroundColor": "primary-light",
+          "textColor": "dark",
+          "tag": "SECTION 1",
+          "slideNumber": "01"
+        },
+        {
+          "title": "Storefront High Season",
+          "subtitle": "Black Friday & December Performance",
+          "layout": "stats",
+          "backgroundColor": "dc-950",
+          "textColor": "light",
+          "tag": "1.1 STOREFRONT",
+          "items": [
+            {
+              "value": "3x",
+              "label": "Revenue Record"
+            },
+            {
+              "value": "↑",
+              "label": "Traffic Resilience"
+            },
+            {
+              "value": "YoY",
+              "label": "Client Sales Growth"
+            }
+          ]
+        },
+        {
+          "title": "Operational Wins",
+          "layout": "list",
+          "backgroundColor": "dc-900",
+          "textColor": "light",
+          "tag": "1.2 OPERATIONS",
+          "items": [
+            {
+              "title": "Infrastructure & CDN Optimization",
+              "subtitle": "Cost reduction, margin increase"
+            },
+            {
+              "title": "Contract Negotiations",
+              "subtitle": "Excellent results achieved"
+            },
+            {
+              "title": "Client Contract Growth",
+              "subtitle": "20-30% contract increases"
+            }
+          ]
+        },
+        {
+          "title": "deco CMS Expansion",
+          "layout": "two-column",
+          "backgroundColor": "dc-950",
+          "textColor": "light",
+          "tag": "1.3 CMS",
+          "items": [
+            {
+              "title": "Superfrete",
+              "bullets": [
+                { "text": "Anti-fraud system" },
+                { "text": "Customer service automation" }
+              ]
+            },
+            {
+              "title": "New Clients",
+              "bullets": [
+                { "text": "Gupy — RFP process" },
+                { "text": "Libertas" },
+                { "text": "Livemode" }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "MCP Mesh Launch",
+          "subtitle": "We launched the architectural foundation for Internal AI Platform as OSS",
+          "layout": "content",
+          "backgroundColor": "purple-dark",
+          "textColor": "light",
+          "tag": "1.4 PLATFORM",
+          "items": [
+            {
+              "bullets": [
+                { "text": "Cogna — self-hosted, adoption contract", "highlight": true },
+                { "text": "Interest from Fortune 500 enterprises" },
+                { "text": "Open-source distribution model" }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "AI Native Transformation",
+          "subtitle": "We became an AI native, MCP-first, AI-first company",
+          "layout": "list",
+          "backgroundColor": "primary-light",
+          "textColor": "dark",
+          "tag": "TRANSFORMATION",
+          "items": [
+            {
+              "title": "Team using AI tools daily"
+            },
+            {
+              "title": "External teams consulting us on AI adoption"
+            },
+            {
+              "title": "Leaders matured in AI-first mindset"
+            }
+          ]
+        },
+        {
+          "title": "What We Learned",
+          "layout": "title",
+          "backgroundColor": "purple-light",
+          "textColor": "dark",
+          "tag": "SECTION 2",
+          "slideNumber": "02"
+        },
+        {
+          "title": "Key Learnings",
+          "layout": "content",
+          "backgroundColor": "dc-950",
+          "textColor": "light",
+          "tag": "2.1 INSIGHTS",
+          "items": [
+            {
+              "title": "Product Hypotheses Validated",
+              "bullets": [
+                { "text": "Companies will create agentic teams", "highlight": true },
+                { "text": "They need a home — an Internal AI Platform" },
+                { "text": "Platform orchestrates agents (iFood, MELI pattern)" },
+                { "text": "Few companies can build this themselves" },
+                { "text": "We provide building blocks to be 50x faster" }
+              ]
+            },
+            {
+              "title": "Collaboration is Key",
+              "bullets": [
+                { "text": "Dev & non-dev collaboration is essential" },
+                { "text": "Autonomy is not the main value prop" },
+                { "text": "Result: MCP Mesh" }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Strategic Shift 2026",
+          "layout": "two-column",
+          "backgroundColor": "dc-900",
+          "textColor": "light",
+          "tag": "2.2 STRATEGY",
+          "items": [
+            {
+              "title": "2025: Divided Focus",
+              "bullets": [
+                { "text": "Service vs Platform tension" },
+                { "text": "Partner spinoff: Severino Biu" },
+                { "text": "First SIP project" }
+              ]
+            },
+            {
+              "title": "2026: Clear Path",
+              "bullets": [
+                { "text": "SIP: 100% autonomous company design" },
+                { "text": "Platform-first approach" },
+                { "text": "Scalable architecture" }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Product Vision",
+          "layout": "title",
+          "backgroundColor": "yellow-light",
+          "textColor": "dark",
+          "tag": "SECTION 3",
+          "slideNumber": "03"
+        },
+        {
+          "title": "Internal AI Platform",
+          "subtitle": "Where you connect your services and agents",
+          "layout": "content",
+          "backgroundColor": "dc-950",
+          "textColor": "light",
+          "tag": "3.1 VISION",
+          "items": [
+            {
+              "title": "Core Premise",
+              "bullets": [
+                { "text": "Software is becoming increasingly personalized", "highlight": true }
+              ]
+            },
+            {
+              "title": "Our Thesis",
+              "bullets": [
+                { "text": "Internal AI Platform as the central hub" },
+                { "text": "Connect services and agents in one place" }
+              ]
+            },
+            {
+              "title": "Building Blocks Redesigned",
+              "bullets": [
+                { "text": "Open Source (OSS)" },
+                { "text": "Composable" },
+                { "text": "Extensible" }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Go-to-Market Strategy",
+          "layout": "two-column",
+          "backgroundColor": "dc-900",
+          "textColor": "light",
+          "tag": "3.2 GTM",
+          "items": [
+            {
+              "title": "Horizontal Motion",
+              "bullets": [
+                { "text": "Internal AI Platform", "highlight": true },
+                { "text": "Governed, self-hostable" },
+                { "text": "RBAC/audit/cost control" },
+                { "text": "Operability & extensibility" },
+                { "text": "Community engine distribution" }
+              ]
+            },
+            {
+              "title": "Vertical Motion",
+              "bullets": [
+                { "text": "AI Software for E-commerce/Sites", "highlight": true },
+                { "text": "Pre-built automations" },
+                { "text": "PDP, search, content, monitoring" },
+                { "text": "Site editor + infra plugins" }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "2026 Milestones",
+          "layout": "title",
+          "backgroundColor": "primary-light",
+          "textColor": "dark",
+          "tag": "SECTION 4",
+          "slideNumber": "04"
+        },
+        {
+          "title": "Annual Goals",
+          "layout": "list",
+          "backgroundColor": "dc-950",
+          "textColor": "light",
+          "tag": "4.1 YEAR GOALS",
+          "items": [
+            {
+              "title": "Profitable operation all year round"
+            },
+            {
+              "title": "Community becomes primary distribution channel"
+            },
+            {
+              "title": "Adopt platform internally & automate our company"
+            },
+            {
+              "title": "Bring autonomous agents to e-commerce clients"
+            }
+          ]
+        },
+        {
+          "title": "Q1 2026 Milestones",
+          "layout": "content",
+          "backgroundColor": "dc-900",
+          "textColor": "light",
+          "tag": "4.2 Q1 GOALS",
+          "items": [
+            {
+              "title": "Cases",
+              "bullets": [
+                { "text": "Farm — ship/validate first vertical apps in production", "highlight": true },
+                { "text": "Cogna deployment" },
+                { "text": "FSB integration" },
+                { "text": "Itaú partnership" }
+              ]
+            },
+            {
+              "title": "Revenue Growth",
+              "bullets": [
+                { "text": "Pricing/contracts optimization" },
+                { "text": "Short-cycle actions for cash generation" }
+              ]
+            },
+            {
+              "title": "Community Engine",
+              "bullets": [
+                { "text": "Content cadence + distribution loop" },
+                { "text": "Compound into H2" }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Revenue & Pipeline",
+          "layout": "title",
+          "backgroundColor": "purple-dark",
+          "textColor": "light",
+          "tag": "SECTION 5",
+          "slideNumber": "05"
+        },
+        {
+          "title": "Revenue Streams",
+          "layout": "stats",
+          "backgroundColor": "dc-950",
+          "textColor": "light",
+          "tag": "5.1 REVENUE TYPES",
+          "items": [
+            {
+              "value": "ARR",
+              "label": "Storefront Revenue"
+            },
+            {
+              "value": "New",
+              "label": "Expected ARR (Cogna)"
+            },
+            {
+              "value": "1x",
+              "label": "One-time Services"
+            },
+            {
+              "value": "%",
+              "label": "Success Fee (Farm/Miess)"
+            }
+          ]
+        },
+        {
+          "title": "Pipeline Overview",
+          "layout": "two-column",
+          "backgroundColor": "dc-900",
+          "textColor": "light",
+          "tag": "5.2 PIPELINE",
+          "items": [
+            {
+              "title": "Active Opportunities",
+              "bullets": [
+                { "text": "Cogna — ARR expansion potential", "highlight": true },
+                { "text": "FSB" },
+                { "text": "Itaú" },
+                { "text": "Afya (in recess)" }
+              ]
+            },
+            {
+              "title": "Exploration",
+              "bullets": [
+                { "text": "Nubank" },
+                { "text": "Vanto (scope TBD)" },
+                { "text": "Mercado Livre" }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Our Asks",
+          "layout": "title",
+          "backgroundColor": "primary-light",
+          "textColor": "dark",
+          "tag": "SECTION 6",
+          "slideNumber": "06"
+        },
+        {
+          "title": "How You Can Help",
+          "layout": "content",
+          "backgroundColor": "dc-950",
+          "textColor": "light",
+          "tag": "ASKS",
+          "items": [
+            {
+              "title": "Primary Ask",
+              "bullets": [
+                { "text": "Intros to forward-thinking leaders at large enterprises", "highlight": true },
+                { "text": "Building automation/AI ops architecture" },
+                { "text": "Platform heads and decision makers" }
+              ]
+            },
+            {
+              "title": "Secondary Ask",
+              "bullets": [
+                { "text": "Intros to large e-commerce players", "highlight": true },
+                { "text": "Appetite for replicable wedge" },
+                { "text": "Content/checkout focus areas" }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Thank You",
+          "subtitle": "Questions?",
+          "layout": "title",
+          "backgroundColor": "primary-light",
+          "textColor": "dark"
+        }
+      ]
+    }
+  ],
+  "seo": {
+    "__resolveType": "website/sections/Seo/SeoV2.tsx",
+    "title": "Investor Updates Jan 2026 | deco.cx",
+    "description": "deco.cx Investor Updates - January 2026. Our journey to becoming an AI native company.",
+    "noIndexing": true
+  }
+}
+
