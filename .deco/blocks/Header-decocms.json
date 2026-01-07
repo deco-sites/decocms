@@ -7,21 +7,7 @@
       "items": []
     },
     {
-      "label": "Docs",
-      "href": "https://docs.decocms.com",
-      "items": []
-    },
-    {
-      "label": "Community",
-      "href": "https://decocms.com/discord",
-      "items": []
-    },
-    {
-      "label": "Blog",
-      "items": [],
-      "href": "/blog"
-    },
-    {
+      "label": "Products",
       "items": [
         {
           "label": "deco.cx",
@@ -35,8 +21,27 @@
           "label": "MCP Studio",
           "href": "/mcp-studio"
         }
-      ],
-      "label": "Products"
+      ]
+    },
+    {
+      "label": "Pricing",
+      "href": "/pricing",
+      "items": []
+    },
+    {
+      "label": "Blog",
+      "items": [],
+      "href": "/blog"
+    },
+    {
+      "items": [],
+      "label": "Docs",
+      "href": "https://docs.decocms.com"
+    },
+    {
+      "items": [],
+      "label": "Community",
+      "href": "https://decocms.com/discord"
     }
   ],
   "ctaText": "Book a demo",
