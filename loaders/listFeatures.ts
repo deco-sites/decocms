@@ -34,6 +34,8 @@ export interface SqlLoaderProps {
         jsonrpc: "2.0",
         id: 1
       };
+
+      console.log("🔍 [LOADER] Token:", token);
   
       const response = await fetch(
         "https://api.decocms.com/deco-team/decocms/mcp/tool/DATABASES_RUN_SQL",
@@ -49,6 +51,7 @@ export interface SqlLoaderProps {
       );
 
       if (!response.ok) {
+        console.log("🔍 [LOADER] Response not ok:", response);
         return {
           error: {
             code: response.status,
@@ -56,6 +59,8 @@ export interface SqlLoaderProps {
           }
         };
       }
+
+      console.log("🔍 [LOADER] Response:", response);
 
       const contentType = response.headers.get("content-type") || "";
       
