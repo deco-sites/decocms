@@ -17,6 +17,7 @@ export default function CopyCommandSimple({
     try {
       await navigator.clipboard.writeText(command);
       setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
     } catch (_error) {
       // ignore
     }
@@ -26,12 +27,12 @@ export default function CopyCommandSimple({
     <button
       type="button"
       onClick={handleCopy}
-      class={`w-full px-4 py-3 rounded-xl inline-flex items-center justify-center gap-3 transition-all duration-200 bg-dc-100 hover:bg-dc-200 cursor-pointer ${className}`}
+      class={`w-full px-4 py-2.5 rounded-xl inline-flex items-center justify-center gap-3 bg-dc-50 outline outline-1 outline-offset-[-0.5px] outline-dc-300 hover:bg-dc-100 active:bg-dc-200 hover:scale-95 transition-transform duration-200 ease-in-out cursor-pointer ${className}`}
     >
-      <span class="text-sm font-medium leading-5 font-mono text-dc-700">
+      <span class="text-sm font-medium leading-5 font-mono text-dc-800">
         {command}
       </span>
-      <span class={`text-xs font-medium transition-colors duration-200 ${copied ? "text-[#8caa25]" : "text-dc-400"}`}>
+      <span class={`text-xs font-medium transition-colors duration-200 ${copied ? "text-[#8caa25]" : "text-dc-500"}`}>
         {copied ? "Copied!" : "Click to copy"}
       </span>
     </button>

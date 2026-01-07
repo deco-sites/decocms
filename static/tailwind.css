@@ -13536,6 +13536,10 @@ input.tab:checked + .tab-content,
     flex-wrap: wrap;
   }
 
+  .sm\:items-start{
+    align-items: flex-start;
+  }
+
   .sm\:items-center{
     align-items: center;
   }
