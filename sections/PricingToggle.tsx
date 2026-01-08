@@ -445,7 +445,10 @@ export default function PricingToggle({
 
                 {/* CTA Button or Copy Command */}
                 {card.copyCommand ? (
-                  <CopyCommandSimple command={card.copyCommand} />
+                  <CopyCommandSimple
+                    command={card.copyCommand}
+                    trackEventName={`pricing_ai_platform_${card.name?.toLowerCase().replace(/\s+/g, "_")}_copy_click`}
+                  />
                 ) : (
                   <Button
                     variant={card.buttonVariant || "primary"}
@@ -453,6 +456,7 @@ export default function PricingToggle({
                     href={card.buttonUrl}
                     className="w-full"
                     target="_self"
+                    trackEventName={`pricing_ai_platform_${card.name?.toLowerCase().replace(/\s+/g, "_")}_cta_click`}
                   >
                     {card.buttonText}
                   </Button>
@@ -548,7 +552,10 @@ export default function PricingToggle({
 
                 {/* CTA Button or Copy Command */}
                 {card.copyCommand ? (
-                  <CopyCommandSimple command={card.copyCommand} />
+                  <CopyCommandSimple
+                    command={card.copyCommand}
+                    trackEventName={`pricing_deco_cx_${card.name?.toLowerCase().replace(/\s+/g, "_")}_copy_click`}
+                  />
                 ) : (
                   <Button
                     variant={card.buttonVariant || "primary"}
@@ -556,6 +563,7 @@ export default function PricingToggle({
                     href={card.buttonUrl}
                     className="w-full"
                     target="_self"
+                    trackEventName={`pricing_deco_cx_${card.name?.toLowerCase().replace(/\s+/g, "_")}_cta_click`}
                   >
                     {card.buttonText}
                   </Button>
@@ -713,6 +721,12 @@ export default function PricingToggle({
             toggleBtns.forEach((btn) => {
               btn.addEventListener("click", () => {
                 const index = parseInt((btn as HTMLElement).dataset.toggleBtn || "0");
+
+                // Track toggle click
+                const win = globalThis as typeof globalThis & { posthog?: { capture: (event: string, properties?: Record<string, unknown>) => void } };
+                const eventName = index === 0 ? "pricing_toggle_ai_platform_click" : "pricing_toggle_deco_cx_click";
+                win.posthog?.capture(eventName);
+
                 switchPanel(index);
               });
             });

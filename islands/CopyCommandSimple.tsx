@@ -1,15 +1,22 @@
 import { useState } from "preact/hooks";
+import { trackEvent } from "../sdk/tracking.ts";
 
 interface Props {
   /** @title Command Text */
   command?: string;
   /** @title Class Name */
   class?: string;
+  /** @title Tracking event name */
+  trackEventName?: string;
+  /** @title Additional tracking properties */
+  trackProperties?: Record<string, unknown>;
 }
 
 export default function CopyCommandSimple({
   command = "npx @decocms/mesh",
   class: className = "",
+  trackEventName,
+  trackProperties,
 }: Props) {
   const [copied, setCopied] = useState(false);
 
@@ -18,6 +25,13 @@ export default function CopyCommandSimple({
       await navigator.clipboard.writeText(command);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
+
+      if (trackEventName) {
+        trackEvent(trackEventName, {
+          command,
+          ...trackProperties,
+        });
+      }
     } catch (_error) {
       // ignore
     }

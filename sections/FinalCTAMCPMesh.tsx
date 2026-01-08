@@ -1,5 +1,6 @@
 import { useScript } from "@deco/deco/hooks";
 import CopyMCPCommand from "../islands/CopyMCPCommand.tsx";
+import TrackedLink from "../islands/TrackedLink.tsx";
 
 export interface Props {
   /**
@@ -54,16 +55,22 @@ export default function FinalCTAMCPMesh({
               {/* Right Content - Buttons */}
               <div class="flex-1 flex flex-col items-start gap-3 w-full lg:items-end">
                 {/* Primary CTA - Command Copy Button */}
-                <CopyMCPCommand command={command} variant="green" />
+                <CopyMCPCommand
+                  command={command}
+                  variant="green"
+                  trackEventName="mcp_mesh_final_cta_copy_command_click"
+                />
 
                 {/* Secondary CTA */}
                 {secondaryCtaText && (
-                  <a
+                  <TrackedLink
                     href={secondaryCtaUrl}
+                    event="mcp_mesh_final_cta_docs_click"
+                    properties={{ button_text: secondaryCtaText }}
                     class="bg-[#07401A] text-[#D0EC1A] text-sm font-medium px-4 py-3 rounded-xl hover:bg-[#07401A]/90 transition-colors whitespace-nowrap"
                   >
                     {secondaryCtaText}
-                  </a>
+                  </TrackedLink>
                 )}
               </div>
             </div>

@@ -40,6 +40,7 @@ import * as $RoadmapIsland from "./islands/RoadmapIsland.tsx";
 import * as $RoadmapKanban from "./islands/RoadmapKanban.tsx";
 import * as $RoadmapWithModal from "./islands/RoadmapWithModal.tsx";
 import * as $ScrollToButton from "./islands/ScrollToButton.tsx";
+import * as $ScrollTracker from "./islands/ScrollTracker.tsx";
 import * as $SendFormNewsletter from "./islands/SendFormNewsletter.tsx";
 import * as $StatsCarousel from "./islands/StatsCarousel.tsx";
 import * as $SuggestFeatureModal from "./islands/SuggestFeatureModal.tsx";
@@ -92,6 +93,7 @@ const manifest = {
     "./islands/RoadmapKanban.tsx": $RoadmapKanban,
     "./islands/RoadmapWithModal.tsx": $RoadmapWithModal,
     "./islands/ScrollToButton.tsx": $ScrollToButton,
+    "./islands/ScrollTracker.tsx": $ScrollTracker,
     "./islands/SendFormNewsletter.tsx": $SendFormNewsletter,
     "./islands/StatsCarousel.tsx": $StatsCarousel,
     "./islands/SuggestFeatureModal.tsx": $SuggestFeatureModal,

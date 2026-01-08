@@ -1,4 +1,5 @@
 import { useEffect, useState } from "preact/hooks";
+import { trackEvent } from "../sdk/tracking.ts";
 
 interface Props {
   /** @title Command Text */
@@ -12,6 +13,10 @@ interface Props {
   /** @title Variant */
   /** @description Visual variant - "light" for light backgrounds, "dark" for green/dark backgrounds, "green" for #8CAA25 style, "lime" for bright lime background */
   variant?: "light" | "dark" | "green" | "lime";
+  /** @title Tracking event name */
+  trackEventName?: string;
+  /** @title Additional tracking properties */
+  trackProperties?: Record<string, unknown>;
 }
 
 export default function CopyMCPCommand({
@@ -19,6 +24,8 @@ export default function CopyMCPCommand({
   class: className = "",
   disabled = false,
   variant = "light",
+  trackEventName,
+  trackProperties,
 }: Props) {
   const [copied, setCopied] = useState(false);
   const [hovered, setHovered] = useState(false);
@@ -42,7 +49,13 @@ export default function CopyMCPCommand({
     try {
       await navigator.clipboard.writeText(command);
       setCopied(true);
-      // Don't reset - keep "Copied!" visible forever
+
+      if (trackEventName) {
+        trackEvent(trackEventName, {
+          command,
+          ...trackProperties,
+        });
+      }
     } catch (_error) {
       // ignore
     }

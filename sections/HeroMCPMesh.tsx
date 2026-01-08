@@ -1,6 +1,7 @@
 import type { ImageWidget } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
 import CopyMCPCommand from "../islands/CopyMCPCommand.tsx";
+import TrackedLink from "../islands/TrackedLink.tsx";
 import Icon from "../components/ui/Icon.tsx";
 
 /**
@@ -176,16 +177,22 @@ export default function HeroMCPMesh({
                 {/* CTAs */}
                 <div class="flex flex-col sm:flex-row items-start sm:items-center gap-3 mt-4">
                   {/* Primary CTA - Command Copy Button */}
-                  <CopyMCPCommand command={command} variant="lime" />
+                  <CopyMCPCommand
+                    command={command}
+                    variant="lime"
+                    trackEventName="mcp_mesh_hero_copy_command_click"
+                  />
 
                   {/* Secondary CTA */}
                   {secondaryCtaText && (
-                    <a
+                    <TrackedLink
                       href={secondaryCtaUrl}
+                      event="mcp_mesh_hero_docs_click"
+                      properties={{ button_text: secondaryCtaText }}
                       class="bg-dc-200 text-dc-700 text-sm font-medium px-4 py-3 rounded-xl hover:bg-dc-300 transition-colors whitespace-nowrap"
                     >
                       {secondaryCtaText}
-                    </a>
+                    </TrackedLink>
                   )}
                 </div>
               </div>

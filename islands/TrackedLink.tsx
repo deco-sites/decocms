@@ -1,4 +1,4 @@
-import { ComponentChildren } from "preact";
+import { ComponentChildren, JSX } from "preact";
 import { trackEvent } from "../sdk/tracking.ts";
 
 export interface Props {
@@ -10,6 +10,8 @@ export interface Props {
   properties?: Record<string, unknown>;
   /** @title CSS classes */
   class?: string;
+  /** @title Inline styles */
+  style?: JSX.CSSProperties;
   /** @title Target */
   target?: string;
   /** @title Rel */
@@ -23,6 +25,7 @@ export default function TrackedLink({
   event,
   properties,
   class: className,
+  style,
   target,
   rel,
   children,
@@ -35,6 +38,7 @@ export default function TrackedLink({
     <a
       href={href}
       class={className}
+      style={style}
       target={target}
       rel={rel}
       onClick={handleClick}

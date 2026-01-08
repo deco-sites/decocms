@@ -37,6 +37,7 @@ export default function MCPMeshVideo({
           videoId={videoId}
           thumbnailUrl={thumbnailUrl}
           buttonLabel={buttonLabel}
+          trackEventName="mcp_mesh_video_play_click"
         />
       </div>
     </section>

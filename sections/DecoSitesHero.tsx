@@ -118,6 +118,7 @@ export default function PartnersHero({
                 size="medium"
                 href="https://form.typeform.com/to/LxKZbN9N"
                 className="!bg-primary-light !text-primary-dark !outline-primary-light hover:!bg-primary-light/90 relative z-30"
+                trackEventName="deco_sites_hero_talk_to_sales_click"
               >
                 Talk to sales
               </Button>
@@ -126,6 +127,7 @@ export default function PartnersHero({
                 size="medium"
                 href="https://docs.deco.cx/en/getting-started/overview"
                 className="!bg-dc-50 !text-dc-900 hover:!bg-dc-100 relative z-30"
+                trackEventName="deco_sites_hero_read_docs_click"
               >
                 Read our docs
               </Button>
