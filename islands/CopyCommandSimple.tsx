@@ -21,19 +21,20 @@ export default function CopyCommandSimple({
   const [copied, setCopied] = useState(false);
 
   const handleCopy = async () => {
+    // Track click event first, regardless of clipboard success
+    if (trackEventName) {
+      trackEvent(trackEventName, {
+        command,
+        ...trackProperties,
+      });
+    }
+
     try {
       await navigator.clipboard.writeText(command);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
-
-      if (trackEventName) {
-        trackEvent(trackEventName, {
-          command,
-          ...trackProperties,
-        });
-      }
     } catch (_error) {
-      // ignore
+      // ignore clipboard errors
     }
   };
 

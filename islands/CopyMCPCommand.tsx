@@ -46,18 +46,19 @@ export default function CopyMCPCommand({
   const handleCopy = async () => {
     if (disabled) return;
 
+    // Track click event first, regardless of clipboard success
+    if (trackEventName) {
+      trackEvent(trackEventName, {
+        command,
+        ...trackProperties,
+      });
+    }
+
     try {
       await navigator.clipboard.writeText(command);
       setCopied(true);
-
-      if (trackEventName) {
-        trackEvent(trackEventName, {
-          command,
-          ...trackProperties,
-        });
-      }
     } catch (_error) {
-      // ignore
+      // ignore clipboard errors
     }
   };
 
