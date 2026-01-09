@@ -2483,12 +2483,12 @@ export default function InvestorPresentation({
 
               {/* Right side - Unicorn Studio Animation */}
               <div
-                class="relative overflow-hidden"
+                class="relative overflow-hidden flex items-end"
                 style={{ width: "50%", transform: "scaleX(-1)" }}
               >
                 <div
                   data-us-project="3u9H2SGWSifD8DQZHG4X"
-                  style={{ width: "100%", height: "100%" }}
+                  style={{ width: "100%", height: "900px" }}
                 />
               </div>
             </div>
