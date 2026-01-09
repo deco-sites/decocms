@@ -2,6 +2,7 @@ import { useScript } from "@deco/deco/hooks";
 import type { ImageWidget } from "apps/admin/widgets.ts";
 import Icon from "../components/ui/Icon.tsx";
 import LogoCarousel from "../islands/LogoCarousel.tsx";
+import TrackedLink from "../islands/TrackedLink.tsx";
 
 /**
  * @titleBy alt
@@ -241,13 +242,18 @@ export default function HeroAIPlatform({
 
               {/* CTA Button - Full width */}
               {ctaText && (
-                <a
+                <TrackedLink
                   href={ctaUrl}
+                  event="hero_ai_platform_cta_click"
+                  properties={{
+                    button_text: ctaText,
+                    device: "mobile",
+                  }}
                   class="w-full inline-flex items-center justify-center px-8 py-3 bg-[#d0ec1a] text-[#07401a] font-medium rounded-lg hover:bg-[#c4e016] transition-colors relative"
                   style={{ height: "clamp(44px, 5.5dvh, 52px)", fontSize: "clamp(14px, 1.8dvh, 16px)", zIndex: 2 }}
                 >
                   {ctaText}
-                </a>
+                </TrackedLink>
               )}
             </div>
           </div>
@@ -296,12 +302,17 @@ export default function HeroAIPlatform({
 
             {/* CTA Button */}
             {ctaText && (
-              <a
+              <TrackedLink
                 href={ctaUrl}
+                event="hero_ai_platform_cta_click"
+                properties={{
+                  button_text: ctaText,
+                  device: "desktop",
+                }}
                 class="inline-flex items-center justify-center h-[44px] px-8 py-2 bg-[#d0ec1a] text-[#07401a] text-sm font-medium rounded-lg hover:bg-[#c4e016] transition-colors"
               >
                 {ctaText}
-              </a>
+              </TrackedLink>
             )}
           </div>
         </div>

@@ -1,4 +1,5 @@
 import { useScript } from "@deco/deco/hooks";
+import TrackedLink from "../islands/TrackedLink.tsx";
 
 export interface Props {
   /**
@@ -52,14 +53,19 @@ export default function FinalCTASimple({
 
               {/* Right Content - Button */}
               <div class="flex-1 flex flex-col items-start lg:items-stretch w-full lg:w-auto">
-                <a
+                <TrackedLink
                   href={buttonUrl}
+                  event="final_cta_simple_click"
+                  properties={{
+                    button_text: buttonText,
+                    section_title: title,
+                  }}
                   class="w-full lg:w-auto min-w-[280px] px-6 py-4 bg-primary-dark rounded-xl flex justify-center items-center hover:bg-primary-dark/90 transition-colors"
                 >
                   <span class="text-primary-light text-base font-medium leading-snug">
                     {buttonText}
                   </span>
-                </a>
+                </TrackedLink>
               </div>
             </div>
           </div>

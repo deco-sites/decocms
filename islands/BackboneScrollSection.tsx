@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "preact/hooks";
+import { trackEvent } from "../sdk/tracking.ts";
 
 interface CardContent {
   backgroundColor: string;
@@ -86,9 +87,14 @@ export default function BackboneScrollSection({
 
   // Handle bullet point click to scroll to card
   // Positions the card's top to align with the sticky title's top
-  const scrollToCard = (index: number) => {
+  const scrollToCard = (index: number, bulletLabel: string) => {
     const card = cardRefs.current[index];
     if (!card) return;
+
+    const cardTitle = cards[index]?.title?.toLowerCase().replace(/\s+/g, "_") || `card_${index}`;
+    trackEvent(`backbone_${cardTitle}_bullet_click`, {
+      bullet_label: bulletLabel,
+    });
 
     const rect = card.getBoundingClientRect();
     const scrollTop = globalThis.scrollY;
@@ -158,6 +164,14 @@ export default function BackboneScrollSection({
                   <a
                     href={card.linkUrl}
                     class="inline-flex items-center gap-2 text-dc-900 text-sm font-medium hover:text-[#8caa25] transition-colors group mt-2"
+                    onClick={() => {
+                      const cardSlug = card.title.toLowerCase().replace(/\s+/g, "_");
+                      trackEvent(`backbone_${cardSlug}_link_click`, {
+                        link_text: card.linkText,
+                        link_url: card.linkUrl,
+                        device: "mobile",
+                      });
+                    }}
                   >
                     {card.linkText}
                     <svg
@@ -208,7 +222,7 @@ export default function BackboneScrollSection({
                 <button
                   key={index}
                   type="button"
-                  onClick={() => scrollToCard(bullet.targetIndex)}
+                  onClick={() => scrollToCard(bullet.targetIndex, bullet.label)}
                   class={`text-left text-[18px] leading-[1.4] transition-colors duration-300 cursor-pointer hover:text-[#8caa25] ${
                     activeIndex === bullet.targetIndex
                       ? "text-[#8caa25]"
@@ -275,6 +289,14 @@ export default function BackboneScrollSection({
                 <a
                   href={card.linkUrl}
                   class="inline-flex items-center gap-2 text-dc-900 text-sm font-medium py-3 hover:text-[#8caa25] transition-colors group"
+                  onClick={() => {
+                    const cardSlug = card.title.toLowerCase().replace(/\s+/g, "_");
+                    trackEvent(`backbone_${cardSlug}_link_click`, {
+                      link_text: card.linkText,
+                      link_url: card.linkUrl,
+                      device: "desktop",
+                    });
+                  }}
                 >
                   {card.linkText}
                   <svg

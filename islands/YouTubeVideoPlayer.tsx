@@ -1,5 +1,19 @@
-import { useRef, useState } from "preact/hooks";
+import { useEffect, useRef, useState } from "preact/hooks";
 import Icon from "../components/ui/Icon.tsx";
+import { trackEvent } from "../sdk/tracking.ts";
+
+// YouTube Player types
+interface YTPlayer {
+  getCurrentTime: () => number;
+  getDuration: () => number;
+  getPlayerState: () => number;
+  destroy: () => void;
+}
+
+interface YTPlayerEvent {
+  target: YTPlayer;
+  data: number;
+}
 
 interface Props {
   /** @title YouTube Video ID */
@@ -8,20 +22,195 @@ interface Props {
   thumbnailUrl: string;
   /** @title Button Label */
   buttonLabel?: string;
+  /** @title Tracking event name */
+  trackEventName?: string;
+  /** @title Additional tracking properties */
+  trackProperties?: Record<string, unknown>;
 }
+
+// YouTube Player States
+const YT_STATES = {
+  UNSTARTED: -1,
+  ENDED: 0,
+  PLAYING: 1,
+  PAUSED: 2,
+  BUFFERING: 3,
+  CUED: 5,
+};
 
 export default function YouTubeVideoPlayer({
   videoId,
   thumbnailUrl,
   buttonLabel = "Watch the MCP Mesh in action",
+  trackEventName,
+  trackProperties,
 }: Props) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
+  const playerRef = useRef<YTPlayer | null>(null);
+  const progressMilestonesRef = useRef<Set<number>>(new Set());
+  const progressIntervalRef = useRef<number | null>(null);
+  const pauseTimeoutRef = useRef<number | null>(null);
+  const playerContainerId = `yt-player-${videoId}`;
+
+  // Track video event
+  const trackVideoEvent = (action: string, extraProps?: Record<string, unknown>) => {
+    if (trackEventName) {
+      trackEvent(`${trackEventName}_${action}`, {
+        video_id: videoId,
+        ...trackProperties,
+        ...extraProps,
+      });
+    }
+  };
+
+  // Check and track progress milestones
+  const checkProgress = () => {
+    if (!playerRef.current) return;
+
+    const currentTime = playerRef.current.getCurrentTime();
+    const duration = playerRef.current.getDuration();
+
+    if (duration <= 0) return;
+
+    const percentWatched = (currentTime / duration) * 100;
+    const milestones = [25, 50, 75];
+
+    for (const milestone of milestones) {
+      if (percentWatched >= milestone && !progressMilestonesRef.current.has(milestone)) {
+        progressMilestonesRef.current.add(milestone);
+        trackVideoEvent(`progress_${milestone}`, {
+          current_time: Math.round(currentTime),
+          duration: Math.round(duration),
+        });
+      }
+    }
+  };
+
+  // Initialize YouTube player
+  const initPlayer = () => {
+    const win = globalThis as typeof globalThis & {
+      YT?: {
+        Player: new (
+          elementId: string,
+          config: {
+            videoId: string;
+            playerVars: Record<string, number>;
+            events: {
+              onReady: (event: YTPlayerEvent) => void;
+              onStateChange: (event: YTPlayerEvent) => void;
+            };
+          }
+        ) => YTPlayer;
+      };
+      onYouTubeIframeAPIReady?: () => void;
+    };
+
+    const createPlayer = () => {
+      if (!win.YT) return;
+
+      playerRef.current = new win.YT.Player(playerContainerId, {
+        videoId,
+        playerVars: {
+          autoplay: 1,
+          rel: 0,
+          modestbranding: 1,
+        },
+        events: {
+          onReady: () => {
+            trackVideoEvent("play");
+            // Start progress tracking
+            progressIntervalRef.current = globalThis.setInterval(checkProgress, 1000);
+          },
+          onStateChange: (event: YTPlayerEvent) => {
+            switch (event.data) {
+              case YT_STATES.PAUSED:
+                // Use debounce to avoid tracking pause when user is seeking
+                // If video resumes within 500ms, it was likely a seek, not a real pause
+                if (pauseTimeoutRef.current) {
+                  globalThis.clearTimeout(pauseTimeoutRef.current);
+                }
+                pauseTimeoutRef.current = globalThis.setTimeout(() => {
+                  trackVideoEvent("pause", {
+                    current_time: Math.round(playerRef.current?.getCurrentTime() || 0),
+                  });
+                  // Stop progress tracking when truly paused
+                  if (progressIntervalRef.current) {
+                    globalThis.clearInterval(progressIntervalRef.current);
+                    progressIntervalRef.current = null;
+                  }
+                  pauseTimeoutRef.current = null;
+                }, 500);
+                break;
+              case YT_STATES.ENDED:
+                // Clear any pending pause event
+                if (pauseTimeoutRef.current) {
+                  globalThis.clearTimeout(pauseTimeoutRef.current);
+                  pauseTimeoutRef.current = null;
+                }
+                trackVideoEvent("complete");
+                if (progressIntervalRef.current) {
+                  globalThis.clearInterval(progressIntervalRef.current);
+                }
+                break;
+              case YT_STATES.PLAYING:
+                // Cancel pending pause event (user was seeking, not pausing)
+                // If there was a pending pause, user was seeking - don't track play
+                const wasSeeking = pauseTimeoutRef.current !== null;
+                if (pauseTimeoutRef.current) {
+                  globalThis.clearTimeout(pauseTimeoutRef.current);
+                  pauseTimeoutRef.current = null;
+                }
+                // Track play/resume only if it wasn't a seek operation
+                // and if progress tracking was stopped (meaning video was actually paused)
+                if (!wasSeeking && !progressIntervalRef.current) {
+                  trackVideoEvent("play");
+                }
+                // Resume progress tracking if it was stopped
+                if (!progressIntervalRef.current) {
+                  progressIntervalRef.current = globalThis.setInterval(checkProgress, 1000);
+                }
+                break;
+            }
+          },
+        },
+      });
+    };
+
+    // Load YouTube IFrame API if not loaded
+    if (!win.YT) {
+      const tag = document.createElement("script");
+      tag.src = "https://www.youtube.com/iframe_api";
+      const firstScriptTag = document.getElementsByTagName("script")[0];
+      firstScriptTag.parentNode?.insertBefore(tag, firstScriptTag);
+
+      win.onYouTubeIframeAPIReady = createPlayer;
+    } else {
+      createPlayer();
+    }
+  };
+
+  // Cleanup on unmount
+  useEffect(() => {
+    return () => {
+      if (progressIntervalRef.current) {
+        globalThis.clearInterval(progressIntervalRef.current);
+      }
+      if (pauseTimeoutRef.current) {
+        globalThis.clearTimeout(pauseTimeoutRef.current);
+      }
+      if (playerRef.current) {
+        playerRef.current.destroy();
+      }
+    };
+  }, []);
 
   const handlePlay = () => {
     setIsPlaying(true);
+    // Player initialization happens after render
+    setTimeout(initPlayer, 100);
   };
 
   const handleMouseMove = (e: MouseEvent) => {
@@ -48,7 +237,7 @@ export default function YouTubeVideoPlayer({
       onMouseMove={handleMouseMove}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      onClick={handlePlay}
+      onClick={!isPlaying ? handlePlay : undefined}
     >
       {!isPlaying ? (
         <>
@@ -60,7 +249,7 @@ export default function YouTubeVideoPlayer({
           />
           {/* Dark overlay */}
           <div class="absolute inset-0 bg-[rgba(68,64,60,0.4)]" />
-          
+
           {/* Play button - centered */}
           <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
             <div class="w-20 h-20 rounded-full bg-dc-200 flex items-center justify-center group-hover:bg-dc-300 transition-colors">
@@ -96,15 +285,8 @@ export default function YouTubeVideoPlayer({
           </div>
         </>
       ) : (
-        /* YouTube iframe */
-        <iframe
-          src={`https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`}
-          title="YouTube video player"
-          class="absolute inset-0 w-full h-full"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowFullScreen
-        />
+        /* YouTube Player Container */
+        <div id={playerContainerId} class="absolute inset-0 w-full h-full" />
       )}
     </div>
   );
