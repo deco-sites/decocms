@@ -414,48 +414,99 @@ function AnimatedBar({
   );
 }
 
-// Retrospective Slide 1: Intro - minimalist
-function RetrospectiveIntroSlide({ isActive = false }: { isActive?: boolean }) {
-  const [showElements, setShowElements] = useState<number[]>([]);
-
-  useEffect(() => {
-    if (!isActive) {
-      setShowElements([]);
-      return;
-    }
-
-    const timeouts = [0, 1, 2].map((i) =>
-      setTimeout(() => {
-        setShowElements((prev) => [...prev, i]);
-      }, 300 + i * 150)
-    );
-
-    return () => timeouts.forEach(clearTimeout);
-  }, [isActive]);
-
-  const isVisible = (idx: number) => showElements.includes(idx);
-
+// Retrospective Slide 1: Intro - title layout with TOC
+function RetrospectiveIntroSlide({ 
+  isActive: _isActive = false,
+  tocItems = [],
+  goToSlide,
+}: { 
+  isActive?: boolean;
+  tocItems?: { slideIndex: number; label: string; tocNumber: string }[];
+  goToSlide?: (index: number) => void;
+}) {
   return (
-    <div class="w-full h-full flex flex-col items-center justify-center bg-dc-950 text-dc-50">
-      <span
-        class={`animate-item font-mono uppercase tracking-[0.2em] text-dc-500 block transition-all duration-700 ${isVisible(0) ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
-        style={{ fontSize: "12px", marginBottom: "24px" }}
+    <div 
+      class="w-full h-full flex flex-col bg-dc-950 text-dc-50"
+      style={{ padding: "64px 80px" }}
+    >
+      {/* Table of Contents - top left */}
+      <div class="animate-item" style={{ marginBottom: "auto" }}>
+        <div class="flex flex-col" style={{ gap: "2px" }}>
+          {tocItems.map((item) => {
+            const isCurrentSection = item.slideIndex === 1;
+            return (
+              <button
+                key={item.slideIndex}
+                type="button"
+                onClick={() => goToSlide?.(item.slideIndex)}
+                class="flex items-center text-left transition-colors duration-200 cursor-pointer hover:opacity-80"
+                style={{ gap: "24px" }}
+              >
+                <span
+                  style={{ 
+                    fontSize: "15px", 
+                    width: "24px",
+                    color: isCurrentSection ? "#faf9f7" : "#52504c",
+                  }}
+                >
+                  {item.tocNumber}
+                </span>
+                <span
+                  style={{ 
+                    fontSize: "15px",
+                    color: isCurrentSection ? "#faf9f7" : "#52504c",
+                  }}
+                >
+                  {item.label}
+                </span>
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Title content - bottom left */}
+      <div class="flex flex-col" style={{ marginTop: "auto" }}>
+        <span
+          class="animate-item font-mono uppercase tracking-[0.2em] block"
+          style={{ 
+            fontSize: "11px", 
+            marginBottom: "16px",
+            color: "#6d6a66",
+          }}
+        >
+          RETROSPECTIVE
+        </span>
+        <h1
+          class="animate-item leading-none"
+          style={{ fontSize: "180px", letterSpacing: "-4px" }}
+        >
+          2025 in Review
+        </h1>
+        <p
+          class="animate-item"
+          style={{
+            fontSize: "18px",
+            marginTop: "20px",
+            opacity: 0.5,
+          }}
+        >
+          All Sites
+        </p>
+      </div>
+
+      {/* Page number - bottom right */}
+      <div
+        class="absolute font-mono"
+        style={{ 
+          bottom: "64px", 
+          right: "80px", 
+          fontSize: "13px",
+          color: "#52504c",
+        }}
       >
-        RETROSPECTIVE
-      </span>
-      <h1
-        class={`animate-item text-center leading-tight transition-all duration-700 ${isVisible(1) ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
-        style={{ fontSize: "48px", letterSpacing: "-0.5px" }}
-      >
-        <span class="text-primary-light">2025</span>
-        <span class="text-dc-200"> in Review</span>
-      </h1>
-      <p
-        class={`animate-item text-dc-500 text-center transition-all duration-700 ${isVisible(2) ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
-        style={{ fontSize: "16px", marginTop: "20px" }}
-      >
-        All Sites
-      </p>
+        02
+      </div>
     </div>
   );
 }
@@ -1823,6 +1874,112 @@ export default function InvestorPresentation({
     }
   }, []);
 
+  // ASCII Dithering animation for intro slide
+  useEffect(() => {
+    const canvas = document.getElementById("intro-dither-canvas") as HTMLCanvasElement | null;
+    if (!canvas) return;
+
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    let animationRef: number;
+
+    const resizeCanvas = () => {
+      const rect = canvas.getBoundingClientRect();
+      // Account for scale factor
+      canvas.width = rect.width / scale;
+      canvas.height = rect.height / scale;
+    };
+
+    resizeCanvas();
+    globalThis.addEventListener("resize", resizeCanvas);
+
+    // Bayer matrix 8x8 for dithering
+    const bayerMatrix8x8 = [
+      [0, 32, 8, 40, 2, 34, 10, 42],
+      [48, 16, 56, 24, 50, 18, 58, 26],
+      [12, 44, 4, 36, 14, 46, 6, 38],
+      [60, 28, 52, 20, 62, 30, 54, 22],
+      [3, 35, 11, 43, 1, 33, 9, 41],
+      [51, 19, 59, 27, 49, 17, 57, 25],
+      [15, 47, 7, 39, 13, 45, 5, 37],
+      [63, 31, 55, 23, 61, 29, 53, 21],
+    ];
+
+    let time = 0;
+    const cellSize = 4;
+
+    const animate = () => {
+      if (canvas.width === 0 || canvas.height === 0) {
+        animationRef = requestAnimationFrame(animate);
+        return;
+      }
+
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      const imageData = ctx.createImageData(canvas.width, canvas.height);
+      const data = imageData.data;
+
+      for (let y = 0; y < canvas.height; y += cellSize) {
+        for (let x = 0; x < canvas.width; x += cellSize) {
+          const nx = x / canvas.width;
+          const ny = y / canvas.height;
+
+          // Wave patterns
+          const waveBase = Math.sin(nx * 4 + time * 0.0004) * 0.15;
+          const waveSecond = Math.cos(nx * 7 + time * 0.0003) * 0.1;
+          const waveThird = Math.sin((nx + ny) * 3 + time * 0.0002) * 0.08;
+
+          // Gradient - more visible in center/bottom
+          const verticalGradient = Math.pow(ny, 0.6);
+          const horizontalGradient = 1 - Math.abs(nx - 0.5) * 0.5;
+
+          let intensity = 0.92 - (verticalGradient * 0.4 * horizontalGradient) + waveBase + waveSecond + waveThird;
+
+          const noise = (Math.random() - 0.5) * 0.04 * verticalGradient;
+          intensity += noise;
+
+          intensity = Math.max(0, Math.min(1, intensity));
+
+          const matrixX = Math.floor(x / cellSize) % 8;
+          const matrixY = Math.floor(y / cellSize) % 8;
+          const threshold = bayerMatrix8x8[matrixY][matrixX] / 64;
+
+          const ditherResult = intensity > threshold;
+          
+          // primary-light: #d0ec1a, particle color: #8CAA25
+          const r = ditherResult ? 0xd0 : 0x8c;
+          const g = ditherResult ? 0xec : 0xaa;
+          const b = ditherResult ? 0x1a : 0x25;
+
+          for (let dy = 0; dy < cellSize && y + dy < canvas.height; dy++) {
+            for (let dx = 0; dx < cellSize && x + dx < canvas.width; dx++) {
+              const pixelIndex = ((y + dy) * canvas.width + (x + dx)) * 4;
+              data[pixelIndex] = r;
+              data[pixelIndex + 1] = g;
+              data[pixelIndex + 2] = b;
+              data[pixelIndex + 3] = 255;
+            }
+          }
+        }
+      }
+
+      ctx.putImageData(imageData, 0, 0);
+
+      time += 16;
+      animationRef = requestAnimationFrame(animate);
+    };
+
+    animate();
+
+    return () => {
+      globalThis.removeEventListener("resize", resizeCanvas);
+      if (animationRef) {
+        cancelAnimationFrame(animationRef);
+      }
+    };
+  }, [scale]);
+
   // Handle keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -1954,6 +2111,30 @@ export default function InvestorPresentation({
     }, 100);
   };
 
+  // Build table of contents from title slides
+  // Exclude intro/outro slides, include retrospective intro
+  const contentSlideTitles = slides
+    .map((s, idx) => ({
+      slide: s,
+      slideIndex: idx + 1 + RETROSPECTIVE_SLIDE_COUNT, // account for cover + retrospective slides
+      originalIndex: idx,
+    }))
+    .filter((item) => 
+      item.slide.layout === "title" && 
+      !item.slide.title.includes("successfully transitioned") &&
+      item.slide.title !== "Thank You"
+    );
+
+  // Add retrospective intro at the beginning
+  const tocItems = [
+    { slideIndex: 1, label: "2025 in Review", tocNumber: "01" },
+    ...contentSlideTitles.map((item, tocIdx) => ({
+      ...item,
+      tocNumber: String(tocIdx + 2).padStart(2, "0"),
+      label: item.slide.title,
+    })),
+  ];
+
   // Render individual slide content based on layout
   // Minimalist design: uniform weight, color-only hierarchy, generous spacing
   const renderSlideContent = (slide: Slide, _index: number, isActive: boolean) => {
@@ -1962,40 +2143,139 @@ export default function InvestorPresentation({
       ? "text-dc-50"
       : "text-dc-900";
 
+    // Find current slide in TOC (for potential future use)
+    const _currentTocIndex = tocItems.findIndex(
+      (item) => item.slideIndex === _index + 1 + RETROSPECTIVE_SLIDE_COUNT
+    );
+
+    // Determine if this is a green (primary-light) background
+    const isGreenBg = slide.backgroundColor === "primary-light";
+    const activeColor = isGreenBg ? "#8CAA25" : undefined;
+    const inactiveColor = isGreenBg ? "rgba(0,0,0,0.4)" : undefined;
+
+    // Check if this is an intro/outro slide (centered, no TOC)
+    const isIntroSlide = slide.title.includes("successfully transitioned") || slide.title === "Thank You";
+    const isMainIntroSlide = slide.title.includes("successfully transitioned");
+
     switch (slide.layout) {
       case "title":
+        // Intro/outro slides: centered, no TOC, no tag
+        if (isIntroSlide) {
+          return (
+            <div
+              class={`w-full h-full flex flex-col items-center justify-center ${bgClass} ${textColorClass} relative overflow-hidden`}
+              style={{ padding: "96px" }}
+            >
+              {/* ASCII Dithering Animation Background */}
+              {isMainIntroSlide && (
+                <canvas
+                  id="intro-dither-canvas"
+                  class="absolute inset-0 w-full h-full pointer-events-none"
+                  style={{ imageRendering: "pixelated", opacity: 0.2 }}
+                />
+              )}
+              
+              <h1
+                class="animate-item leading-none text-center relative z-10"
+                style={{ fontSize: "140px", letterSpacing: "-3px", maxWidth: "1400px", lineHeight: "1" }}
+              >
+                {slide.title}
+              </h1>
+              {slide.subtitle && (
+                <p
+                  class="animate-item text-center relative z-10"
+                  style={{
+                    fontSize: "24px",
+                    marginTop: "32px",
+                    opacity: 0.5,
+                  }}
+                >
+                  {slide.subtitle}
+                </p>
+              )}
+            </div>
+          );
+        }
+
+        // Regular section slides: TOC + bottom-aligned title
         return (
           <div
-            class={`w-full h-full flex flex-col items-center justify-center ${bgClass} ${textColorClass}`}
-            style={{ padding: "96px" }}
+            class={`w-full h-full flex flex-col ${bgClass} ${textColorClass}`}
+            style={{ padding: "64px 80px" }}
           >
-            {slide.tag && (
-              <span
-                class="animate-item font-mono uppercase tracking-[0.2em] text-dc-500 block"
-                style={{ fontSize: "12px", marginBottom: "40px" }}
+            {/* Table of Contents - top left */}
+            <div class="animate-item" style={{ marginBottom: "auto" }}>
+              <div class="flex flex-col" style={{ gap: "2px" }}>
+                {tocItems.map((item) => {
+                  const isCurrentSection = item.slideIndex === _index + 1 + RETROSPECTIVE_SLIDE_COUNT;
+                  return (
+                    <button
+                      key={item.slideIndex}
+                      type="button"
+                      onClick={() => goToSlide(item.slideIndex)}
+                      class={`flex items-center text-left transition-colors duration-200 cursor-pointer hover:opacity-80`}
+                      style={{ gap: "24px" }}
+                    >
+                      <span
+                        style={{ 
+                          fontSize: "15px", 
+                          width: "24px",
+                          color: isCurrentSection 
+                            ? (activeColor || (slide.textColor === "dark" ? "#1f1e1c" : "#faf9f7"))
+                            : (inactiveColor || "#52504c"),
+                        }}
+                      >
+                        {item.tocNumber}
+                      </span>
+                      <span
+                        style={{ 
+                          fontSize: "15px",
+                          color: isCurrentSection 
+                            ? (activeColor || (slide.textColor === "dark" ? "#1f1e1c" : "#faf9f7"))
+                            : (inactiveColor || "#52504c"),
+                        }}
+                      >
+                        {item.label}
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Title content - bottom left */}
+            <div class="flex flex-col" style={{ marginTop: "auto" }}>
+              {slide.tag && (
+                <span
+                  class="animate-item font-mono uppercase tracking-[0.2em] block"
+                  style={{ 
+                    fontSize: "11px", 
+                    marginBottom: "16px",
+                    color: inactiveColor || "#6d6a66",
+                  }}
+                >
+                  {slide.tag}
+                </span>
+              )}
+              <h1
+                class="animate-item leading-none"
+                style={{ fontSize: "180px", letterSpacing: "-4px" }}
               >
-                {slide.tag}
-              </span>
-            )}
-            <h1
-              class="animate-item text-center leading-tight"
-              style={{ fontSize: "48px", maxWidth: "1000px", letterSpacing: "-0.5px" }}
-            >
-              {slide.title}
-            </h1>
-            {slide.subtitle && (
-              <p
-                class="animate-item text-center"
-                style={{
-                  fontSize: "20px",
-                  marginTop: "32px",
-                  maxWidth: "700px",
-                  opacity: 0.6,
-                }}
-              >
-                {slide.subtitle}
-              </p>
-            )}
+                {slide.title}
+              </h1>
+              {slide.subtitle && (
+                <p
+                  class="animate-item"
+                  style={{
+                    fontSize: "18px",
+                    marginTop: "20px",
+                    opacity: 0.5,
+                  }}
+                >
+                  {slide.subtitle}
+                </p>
+              )}
+            </div>
           </div>
         );
 
@@ -2505,7 +2785,11 @@ export default function InvestorPresentation({
                 : "opacity-0 pointer-events-none"
             }`}
           >
-            <RetrospectiveIntroSlide isActive={currentSlide === 1} />
+            <RetrospectiveIntroSlide 
+              isActive={currentSlide === 1} 
+              tocItems={tocItems}
+              goToSlide={goToSlide}
+            />
           </div>
 
           {/* Retrospective Slide 2: Stats (Slide 2) */}
