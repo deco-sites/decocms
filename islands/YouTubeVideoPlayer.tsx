@@ -52,6 +52,7 @@ export default function YouTubeVideoPlayer({
   const playerRef = useRef<YTPlayer | null>(null);
   const progressMilestonesRef = useRef<Set<number>>(new Set());
   const progressIntervalRef = useRef<number | null>(null);
+  const pauseTimeoutRef = useRef<number | null>(null);
   const playerContainerId = `yt-player-${videoId}`;
 
   // Track video event
@@ -126,18 +127,48 @@ export default function YouTubeVideoPlayer({
           onStateChange: (event: YTPlayerEvent) => {
             switch (event.data) {
               case YT_STATES.PAUSED:
-                trackVideoEvent("pause", {
-                  current_time: Math.round(playerRef.current?.getCurrentTime() || 0),
-                });
+                // Use debounce to avoid tracking pause when user is seeking
+                // If video resumes within 500ms, it was likely a seek, not a real pause
+                if (pauseTimeoutRef.current) {
+                  globalThis.clearTimeout(pauseTimeoutRef.current);
+                }
+                pauseTimeoutRef.current = globalThis.setTimeout(() => {
+                  trackVideoEvent("pause", {
+                    current_time: Math.round(playerRef.current?.getCurrentTime() || 0),
+                  });
+                  // Stop progress tracking when truly paused
+                  if (progressIntervalRef.current) {
+                    globalThis.clearInterval(progressIntervalRef.current);
+                    progressIntervalRef.current = null;
+                  }
+                  pauseTimeoutRef.current = null;
+                }, 500);
                 break;
               case YT_STATES.ENDED:
+                // Clear any pending pause event
+                if (pauseTimeoutRef.current) {
+                  globalThis.clearTimeout(pauseTimeoutRef.current);
+                  pauseTimeoutRef.current = null;
+                }
                 trackVideoEvent("complete");
                 if (progressIntervalRef.current) {
                   globalThis.clearInterval(progressIntervalRef.current);
                 }
                 break;
               case YT_STATES.PLAYING:
-                // Resume tracking if it was paused
+                // Cancel pending pause event (user was seeking, not pausing)
+                // If there was a pending pause, user was seeking - don't track play
+                const wasSeeking = pauseTimeoutRef.current !== null;
+                if (pauseTimeoutRef.current) {
+                  globalThis.clearTimeout(pauseTimeoutRef.current);
+                  pauseTimeoutRef.current = null;
+                }
+                // Track play/resume only if it wasn't a seek operation
+                // and if progress tracking was stopped (meaning video was actually paused)
+                if (!wasSeeking && !progressIntervalRef.current) {
+                  trackVideoEvent("play");
+                }
+                // Resume progress tracking if it was stopped
                 if (!progressIntervalRef.current) {
                   progressIntervalRef.current = globalThis.setInterval(checkProgress, 1000);
                 }
@@ -166,6 +197,9 @@ export default function YouTubeVideoPlayer({
     return () => {
       if (progressIntervalRef.current) {
         globalThis.clearInterval(progressIntervalRef.current);
+      }
+      if (pauseTimeoutRef.current) {
+        globalThis.clearTimeout(pauseTimeoutRef.current);
       }
       if (playerRef.current) {
         playerRef.current.destroy();
