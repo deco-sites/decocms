@@ -4,6 +4,10 @@
   "path": "/",
   "sections": [
     {
+      "__resolveType": "site/sections/Analytics/ScrollTracking.tsx",
+      "eventName": "home_page"
+    },
+    {
       "__resolveType": "Header-decocms"
     },
     {
