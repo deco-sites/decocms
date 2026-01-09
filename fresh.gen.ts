@@ -30,6 +30,7 @@ import * as $LogoCarousel from "./islands/LogoCarousel.tsx";
 import * as $MCPMeshLayersAnimation from "./islands/MCPMeshLayersAnimation.tsx";
 import * as $MCPMeshLayersPinned from "./islands/MCPMeshLayersPinned.tsx";
 import * as $MobileLogoGrid from "./islands/MobileLogoGrid.tsx";
+import * as $PasswordProtectedPresentation from "./islands/PasswordProtectedPresentation.tsx";
 import * as $PostHog from "./islands/PostHog.tsx";
 import * as $PostHogProvider from "./islands/PostHogProvider.tsx";
 import * as $ProblemCardsAnimated from "./islands/ProblemCardsAnimated.tsx";
@@ -82,6 +83,8 @@ const manifest = {
     "./islands/MCPMeshLayersAnimation.tsx": $MCPMeshLayersAnimation,
     "./islands/MCPMeshLayersPinned.tsx": $MCPMeshLayersPinned,
     "./islands/MobileLogoGrid.tsx": $MobileLogoGrid,
+    "./islands/PasswordProtectedPresentation.tsx":
+      $PasswordProtectedPresentation,
     "./islands/PostHog.tsx": $PostHog,
     "./islands/PostHogProvider.tsx": $PostHogProvider,
     "./islands/ProblemCardsAnimated.tsx": $ProblemCardsAnimated,

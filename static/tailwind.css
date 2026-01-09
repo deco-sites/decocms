@@ -5973,6 +5973,10 @@ input.tab:checked + .tab-content,
   --tw-border-opacity: 1;
   border-color: rgb(40 37 36 / var(--tw-border-opacity));
 }
+.border-dc-950{
+  --tw-border-opacity: 1;
+  border-color: rgb(18 17 16 / var(--tw-border-opacity));
+}
 .border-emerald-100{
   --tw-border-opacity: 1;
   border-color: rgb(209 250 229 / var(--tw-border-opacity));
@@ -6870,6 +6874,9 @@ input.tab:checked + .tab-content,
 .border-l-primary-dark{
   --tw-border-opacity: 1;
   border-left-color: rgb(7 64 26 / var(--tw-border-opacity));
+}
+.border-t-transparent{
+  border-top-color: transparent;
 }
 .\!bg-dc-50{
   --tw-bg-opacity: 1 !important;
@@ -10020,6 +10027,10 @@ input.tab:checked + .tab-content,
   --tw-text-opacity: 1;
   color: rgb(28 25 23 / var(--tw-text-opacity));
 }
+.text-dc-950{
+  --tw-text-opacity: 1;
+  color: rgb(18 17 16 / var(--tw-text-opacity));
+}
 .text-emerald-100{
   --tw-text-opacity: 1;
   color: rgb(209 250 229 / var(--tw-text-opacity));
@@ -10964,6 +10975,14 @@ input.tab:checked + .tab-content,
   --tw-placeholder-opacity: 1;
   color: rgb(166 162 159 / var(--tw-placeholder-opacity));
 }
+.placeholder-dc-600::-moz-placeholder{
+  --tw-placeholder-opacity: 1;
+  color: rgb(86 82 78 / var(--tw-placeholder-opacity));
+}
+.placeholder-dc-600::placeholder{
+  --tw-placeholder-opacity: 1;
+  color: rgb(86 82 78 / var(--tw-placeholder-opacity));
+}
 .opacity-0{
   opacity: 0;
 }
@@ -11851,6 +11870,10 @@ input.tab:checked + .tab-content,
 .hover\:bg-dc-800:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(40 37 36 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-dc-900\/30:hover{
+  background-color: rgb(28 25 23 / 0.3);
 }
 
 .hover\:bg-emerald-100:hover{
@@ -13033,6 +13056,11 @@ input.tab:checked + .tab-content,
   color: rgb(7 64 26 / var(--tw-text-opacity));
 }
 
+.hover\:text-primary-light:hover{
+  --tw-text-opacity: 1;
+  color: rgb(208 236 26 / var(--tw-text-opacity));
+}
+
 .hover\:text-purple-300:hover{
   --tw-text-opacity: 1;
   color: rgb(216 180 254 / var(--tw-text-opacity));
@@ -13101,6 +13129,10 @@ input.tab:checked + .tab-content,
 .hover\:grayscale-0:hover{
   --tw-grayscale: grayscale(0);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.focus\:border-primary-light\/50:focus{
+  border-color: rgb(208 236 26 / 0.5);
 }
 
 .focus\:border-transparent:focus{

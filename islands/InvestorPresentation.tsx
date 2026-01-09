@@ -477,37 +477,14 @@ function RetrospectiveIntroSlide({
         >
           RETROSPECTIVE
         </span>
-        <h1
-          class="animate-item leading-none"
-          style={{ fontSize: "180px", letterSpacing: "-4px" }}
-        >
-          2025 in Review
-        </h1>
-        <p
-          class="animate-item"
-          style={{
-            fontSize: "18px",
-            marginTop: "20px",
-            opacity: 0.5,
-          }}
-        >
-          All Sites
-        </p>
-      </div>
-
-      {/* Page number - bottom right */}
-      <div
-        class="absolute font-mono"
-        style={{ 
-          bottom: "64px", 
-          right: "80px", 
-          fontSize: "13px",
-          color: "#52504c",
-        }}
-      >
-        02
-      </div>
-    </div>
+              <h1
+                class="animate-item leading-none"
+                style={{ fontSize: "180px", letterSpacing: "-4px" }}
+              >
+                2025 in Review
+              </h1>
+            </div>
+          </div>
   );
 }
 
@@ -555,10 +532,15 @@ function RetrospectiveStatsSlide({ isActive = false }: { isActive?: boolean }) {
           OVERVIEW
         </span>
         <h2
-          class="animate-item text-dc-200 leading-tight"
-          style={{ fontSize: "32px", letterSpacing: "-0.5px" }}
+          class="animate-item text-dc-200 leading-tight flex items-baseline"
+          style={{ fontSize: "32px", letterSpacing: "-0.5px", gap: "12px" }}
         >
-          <span class="text-primary-light">2025</span> in Numbers
+          <img 
+            src="https://assets.decocache.com/decocms/ea17311a-2a1e-4926-a75b-0710b37f0807/decocx-logo.png"
+            alt="deco"
+            style={{ height: "32px", width: "auto", display: "inline-block" }}
+          />
+          <span>in Numbers</span>
         </h2>
       </div>
 
@@ -1179,6 +1161,234 @@ function InteractiveBarChart({
   );
 }
 
+// Detailed revenue line chart for expanded view
+function DetailedRevenueChart({
+  height = 400,
+  id = "revenue-detailed",
+}: {
+  height?: number;
+  id?: string;
+}) {
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+
+  // More detailed monthly data
+  const detailedData: { month: string; value: number; label: string; highlight?: boolean }[] = [
+    { month: "Jan 2025", value: 85, label: "$85K" },
+    { month: "Feb 2025", value: 90, label: "$90K" },
+    { month: "Mar 2025", value: 88, label: "$88K" },
+    { month: "Apr 2025", value: 95, label: "$95K" },
+    { month: "May 2025", value: 98, label: "$98K" },
+    { month: "Jun 2025", value: 100, label: "$100K" },
+    { month: "Jul 2025", value: 105, label: "$105K" },
+    { month: "Aug 2025", value: 120, label: "$120K" },
+    { month: "Sep 2025", value: 115, label: "$115K" },
+    { month: "Oct 2025", value: 140, label: "$140K" },
+    { month: "Nov 2025", value: 280, label: "$280K", highlight: true },
+    { month: "Dec 2025", value: 320, label: "$320K", highlight: true },
+  ];
+
+  const color = "#d0ec1a";
+  const secondaryColor = "#8caa25";
+  const padding = { top: 40, right: 40, bottom: 60, left: 60 };
+  const chartWidth = 700;
+  const chartHeight = height;
+
+  const maxValue = Math.max(...detailedData.map((d) => d.value)) * 1.1;
+  const minValue = Math.min(...detailedData.map((d) => d.value)) * 0.9;
+
+  const getX = (index: number) =>
+    padding.left + (index / (detailedData.length - 1)) * (chartWidth - padding.left - padding.right);
+  const getY = (value: number) =>
+    padding.top + ((maxValue - value) / (maxValue - minValue)) * (chartHeight - padding.top - padding.bottom);
+
+  // Create path for the line
+  const linePath = detailedData
+    .map((d, i) => {
+      const x = getX(i);
+      const y = getY(d.value);
+      return i === 0 ? `M ${x} ${y}` : `L ${x} ${y}`;
+    })
+    .join(" ");
+
+  // Create area path (fill below line)
+  const areaPath = `${linePath} L ${getX(detailedData.length - 1)} ${chartHeight - padding.bottom} L ${getX(0)} ${chartHeight - padding.bottom} Z`;
+
+  // Y-axis labels
+  const yAxisLabels = [0, 100, 200, 300, 350];
+
+  return (
+    <svg
+      width="100%"
+      height={chartHeight}
+      viewBox={`0 0 ${chartWidth} ${chartHeight}`}
+      preserveAspectRatio="xMidYMid meet"
+      style={{ overflow: "visible" }}
+    >
+      {/* Gradient definition */}
+      <defs>
+        <linearGradient id={`lineGradient-${id}`} x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stopColor={color} stopOpacity="0.4" />
+          <stop offset="100%" stopColor={color} stopOpacity="0.05" />
+        </linearGradient>
+      </defs>
+
+      {/* Grid lines */}
+      {yAxisLabels.map((val) => (
+        <line
+          key={val}
+          x1={padding.left}
+          y1={getY(val)}
+          x2={chartWidth - padding.right}
+          y2={getY(val)}
+          stroke="#3d3b38"
+          strokeWidth="1"
+          strokeDasharray="4,4"
+        />
+      ))}
+
+      {/* Y-axis labels */}
+      {yAxisLabels.map((val) => (
+        <text
+          key={val}
+          x={padding.left - 12}
+          y={getY(val)}
+          textAnchor="end"
+          dominantBaseline="middle"
+          fill="#6d6a66"
+          fontSize="12"
+        >
+          ${val}K
+        </text>
+      ))}
+
+      {/* Area fill */}
+      <path d={areaPath} fill={`url(#lineGradient-${id})`} />
+
+      {/* Main line */}
+      <path
+        d={linePath}
+        fill="none"
+        stroke={color}
+        strokeWidth="3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+
+      {/* Interactive points */}
+      {detailedData.map((d, i) => (
+        <g key={i}>
+          {/* Invisible larger hit area */}
+          <circle
+            cx={getX(i)}
+            cy={getY(d.value)}
+            r={20}
+            fill="transparent"
+            class="cursor-pointer"
+            onMouseEnter={() => setHoveredIndex(i)}
+            onMouseLeave={() => setHoveredIndex(null)}
+          />
+          {/* Visible point */}
+          <circle
+            cx={getX(i)}
+            cy={getY(d.value)}
+            r={hoveredIndex === i ? 8 : d.highlight ? 6 : 4}
+            fill={hoveredIndex === i || d.highlight ? color : secondaryColor}
+            class="transition-all duration-200"
+            style={{ pointerEvents: "none" }}
+          />
+          {/* X-axis labels */}
+          <text
+            x={getX(i)}
+            y={chartHeight - padding.bottom + 20}
+            textAnchor="middle"
+            fill={d.highlight ? color : "#6d6a66"}
+            fontSize="11"
+            style={{ pointerEvents: "none" }}
+          >
+            {d.month.split(" ")[0]}
+          </text>
+        </g>
+      ))}
+
+      {/* Tooltip */}
+      {hoveredIndex !== null && (() => {
+        const pointX = getX(hoveredIndex);
+        const pointY = getY(detailedData[hoveredIndex].value);
+        const tooltipWidth = 120;
+        const tooltipHeight = 52;
+        const tooltipX = Math.max(tooltipWidth / 2, Math.min(chartWidth - tooltipWidth / 2, pointX));
+        const tooltipY = Math.max(tooltipHeight + 10, pointY - 15);
+        
+        return (
+          <g style={{ pointerEvents: "none" }}>
+            <line
+              x1={pointX}
+              y1={pointY}
+              x2={pointX}
+              y2={chartHeight - padding.bottom}
+              stroke={color}
+              strokeWidth="1"
+              strokeDasharray="4,4"
+              opacity="0.5"
+            />
+            <rect
+              x={tooltipX - tooltipWidth / 2}
+              y={tooltipY - tooltipHeight - 10}
+              width={tooltipWidth}
+              height={tooltipHeight}
+              rx="8"
+              fill="#1f1e1c"
+              stroke={color}
+              strokeWidth="1.5"
+            />
+            <text
+              x={tooltipX}
+              y={tooltipY - tooltipHeight + 8}
+              textAnchor="middle"
+              dominantBaseline="hanging"
+              fill={color}
+              fontSize="16"
+              fontWeight="bold"
+            >
+              {detailedData[hoveredIndex].label}
+            </text>
+            <text
+              x={tooltipX}
+              y={tooltipY - tooltipHeight + 30}
+              textAnchor="middle"
+              dominantBaseline="hanging"
+              fill="#a8a5a0"
+              fontSize="13"
+            >
+              {detailedData[hoveredIndex].month}
+            </text>
+          </g>
+        );
+      })()}
+
+      {/* Highlight annotation for BF/Dec */}
+      <text
+        x={getX(10) + 20}
+        y={getY(280) - 30}
+        fill={color}
+        fontSize="13"
+        fontWeight="bold"
+      >
+        Black Friday
+      </text>
+      <text
+        x={getX(11) + 20}
+        y={getY(320) - 30}
+        fill={color}
+        fontSize="13"
+        fontWeight="bold"
+      >
+        Record Dec
+      </text>
+    </svg>
+  );
+}
+
 // Revenue, Resilience & Customer Results slide component - minimalist
 function RevenueResilienceSlide({
   slide,
@@ -1191,6 +1401,8 @@ function RevenueResilienceSlide({
   textColorClass: string;
   isActive?: boolean;
 }) {
+  const [isFirstCardExpanded, setIsFirstCardExpanded] = useState(false);
+
   // Sample data for the revenue line chart
   const revenueData = [
     { month: "Jul 2025", value: 100, label: "$100K" },
@@ -1231,6 +1443,7 @@ function RevenueResilienceSlide({
       metric: "~3×",
       metricLabel: "YoY",
       chart: <InteractiveLineChart data={revenueData} height={280} id="revenue" />,
+      expandable: true,
     },
     {
       tag: "RESILIENCE",
@@ -1239,6 +1452,7 @@ function RevenueResilienceSlide({
       metric: ">10×",
       metricLabel: null,
       chart: <InteractiveBarChart data={trafficData} height={300} id="traffic" />,
+      expandable: false,
     },
     {
       tag: "IMPACT",
@@ -1247,6 +1461,7 @@ function RevenueResilienceSlide({
       metric: "2–5×",
       metricLabel: "YoY",
       chart: <InteractiveLineChart data={customerData} height={280} id="customer" />,
+      expandable: false,
     },
   ];
 
@@ -1273,12 +1488,262 @@ function RevenueResilienceSlide({
         </h2>
       </div>
 
-      {/* Three cards container - generous spacing */}
+      {/* Three cards container - reduced spacing */}
+      <div
+        class="flex-1 grid animate-item transition-all duration-500 ease-in-out"
+        style={{
+          gridTemplateColumns: isFirstCardExpanded ? "1fr 56px 56px" : "1fr 1fr 1fr",
+          gap: "16px",
+        }}
+      >
+        {cards.map((card, index) => {
+          const isCompressed = index !== 0 && isFirstCardExpanded;
+          const isExpanded = index === 0 && isFirstCardExpanded;
+          
+          // Compressed cards (Resilience & Impact) - only show rotated label
+          if (isCompressed) {
+            return (
+              <button
+                key={index}
+                type="button"
+                onClick={() => setIsFirstCardExpanded(false)}
+                class="relative rounded-xl border border-dc-800 overflow-hidden flex items-center justify-center transition-all duration-500 ease-in-out cursor-pointer hover:border-dc-600 hover:bg-dc-900/30"
+                style={{ padding: "16px 8px" }}
+              >
+                {/* Rotated label - bottom to top */}
+                <span
+                  class="text-dc-400 font-mono uppercase tracking-[0.15em] whitespace-nowrap transition-colors duration-200 hover:text-primary-light"
+                  style={{
+                    fontSize: "13px",
+                    writingMode: "vertical-rl",
+                    transform: "rotate(180deg)",
+                  }}
+                >
+                  {card.tag}
+                </span>
+              </button>
+            );
+          }
+
+          // Normal or expanded first card
+          return (
+            <div
+              key={index}
+              class="relative rounded-xl border border-dc-800 overflow-hidden flex flex-col transition-all duration-500 ease-in-out"
+              style={{ 
+                padding: isExpanded ? "32px 36px" : "32px 28px",
+              }}
+            >
+              {/* Expand icon for first card */}
+              {card.expandable && (
+                <button
+                  type="button"
+                  onClick={() => setIsFirstCardExpanded(!isFirstCardExpanded)}
+                  class="absolute top-4 right-4 p-2 rounded-lg bg-dc-800/50 hover:bg-dc-700/50 text-dc-400 hover:text-primary-light transition-all duration-200 cursor-pointer z-10"
+                  style={{ width: "32px", height: "32px" }}
+                  title={isExpanded ? "Collapse" : "Expand"}
+                >
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    class={`transition-transform duration-300 ${isExpanded ? "rotate-180" : ""}`}
+                  >
+                    {isExpanded ? (
+                      <>
+                        <polyline points="4 14 10 14 10 20" />
+                        <polyline points="20 10 14 10 14 4" />
+                        <line x1="14" y1="10" x2="21" y2="3" />
+                        <line x1="3" y1="21" x2="10" y2="14" />
+                      </>
+                    ) : (
+                      <>
+                        <polyline points="15 3 21 3 21 9" />
+                        <polyline points="9 21 3 21 3 15" />
+                        <line x1="21" y1="3" x2="14" y2="10" />
+                        <line x1="3" y1="21" x2="10" y2="14" />
+                      </>
+                    )}
+                  </svg>
+                </button>
+              )}
+
+              {/* Tag + Title */}
+              <div style={{ marginBottom: "16px" }}>
+                <p style={{ fontSize: isExpanded ? "18px" : "16px", lineHeight: "1.5" }}>
+                  <span class="text-primary-light">[{card.tag}]</span>
+                  <span class="text-dc-100" style={{ marginLeft: "8px" }}>{card.title}</span>
+                </p>
+              </div>
+              
+              {/* Subtitle */}
+              <p
+                class="text-dc-400"
+                style={{ 
+                  fontSize: "15px", 
+                  lineHeight: "1.6", 
+                  marginBottom: "24px",
+                }}
+              >
+                {card.subtitle}
+              </p>
+
+              {/* Metric */}
+              <div style={{ marginBottom: "auto" }}>
+                <span
+                  class="text-primary-light transition-all duration-300"
+                  style={{ 
+                    fontSize: isExpanded ? "80px" : "64px", 
+                    lineHeight: "1", 
+                    letterSpacing: "-1px",
+                  }}
+                >
+                  {card.metric}
+                </span>
+                {card.metricLabel && (
+                  <span
+                    class="text-dc-400"
+                    style={{ 
+                      fontSize: "24px", 
+                      marginLeft: "12px",
+                    }}
+                  >
+                    {card.metricLabel}
+                  </span>
+                )}
+              </div>
+
+              {/* Additional details when expanded */}
+              {isExpanded && (
+                <div class="mt-4 flex gap-8 animate-fadeIn" style={{ marginBottom: "16px" }}>
+                  <div>
+                    <span class="text-dc-500 block" style={{ fontSize: "12px", marginBottom: "4px" }}>
+                      Peak Month
+                    </span>
+                    <span class="text-dc-100" style={{ fontSize: "16px" }}>
+                      December 2025
+                    </span>
+                  </div>
+                  <div>
+                    <span class="text-dc-500 block" style={{ fontSize: "12px", marginBottom: "4px" }}>
+                      Black Friday
+                    </span>
+                    <span class="text-dc-100" style={{ fontSize: "16px" }}>
+                      $280K (+180%)
+                    </span>
+                  </div>
+                  <div>
+                    <span class="text-dc-500 block" style={{ fontSize: "12px", marginBottom: "4px" }}>
+                      Growth Trend
+                    </span>
+                    <span class="text-primary-light" style={{ fontSize: "16px" }}>
+                      ↑ Accelerating
+                    </span>
+                  </div>
+                </div>
+              )}
+
+              {/* Chart - positioned at bottom */}
+              <div
+                class="absolute bottom-0 left-0 right-0 transition-all duration-500 opacity-70"
+                style={{ 
+                  height: isExpanded ? "350px" : "280px",
+                }}
+              >
+                {isExpanded ? (
+                  <DetailedRevenueChart height={350} id="revenue-expanded" />
+                ) : (
+                  card.chart
+                )}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+// Operational Wins slide component - two-card layout similar to Revenue Resilience
+function OperationalWinsSlide({
+  slide,
+  bgClass: _bgClass,
+  textColorClass: _textColorClass,
+}: {
+  slide: Slide;
+  bgClass: string;
+  textColorClass: string;
+}) {
+  // Card data for Operational Wins
+  const cards = [
+    {
+      tag: "INFRA",
+      title: "Infra & CDN reorganization",
+      subtitle: "Significant cost reduction + margin improvement",
+      icon: (
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" class="text-primary-light">
+          <rect x="2" y="6" width="20" height="12" rx="2" />
+          <line x1="6" y1="10" x2="6" y2="14" />
+          <line x1="10" y1="10" x2="10" y2="14" />
+          <line x1="14" y1="10" x2="14" y2="14" />
+          <circle cx="18" cy="12" r="1" fill="currentColor" />
+        </svg>
+      ),
+      metrics: [
+        { label: "Cost Impact", value: "↓ Reduced" },
+        { label: "Margin", value: "↑ Improved" },
+      ],
+    },
+    {
+      tag: "PRICING",
+      title: "Diagnostic + repricing process",
+      subtitle: "Good reception, clients increasing contracts",
+      icon: (
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" class="text-primary-light">
+          <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+        </svg>
+      ),
+      metrics: [
+        { label: "Contract Growth", value: "~20-30%" },
+        { label: "Reception", value: "Positive" },
+      ],
+    },
+  ];
+
+  return (
+    <div
+      class="w-full h-full flex flex-col bg-dc-950 text-dc-50"
+      style={{ padding: "80px 96px" }}
+    >
+      {/* Header - minimal, airy */}
+      <div style={{ marginBottom: "80px" }}>
+        {slide.tag && (
+          <span
+            class="animate-item font-mono uppercase tracking-[0.2em] text-dc-500 block"
+            style={{ fontSize: "12px", marginBottom: "16px" }}
+          >
+            {slide.tag}
+          </span>
+        )}
+        <h2
+          class="animate-item text-dc-200 leading-tight"
+          style={{ fontSize: "32px", letterSpacing: "-0.5px" }}
+        >
+          {slide.title}
+        </h2>
+      </div>
+
+      {/* Two cards container */}
       <div
         class="flex-1 grid animate-item"
         style={{
-          gridTemplateColumns: "1fr 1fr 1fr",
-          gap: "32px",
+          gridTemplateColumns: "1fr 1fr",
+          gap: "16px",
         }}
       >
         {cards.map((card, index) => (
@@ -1287,6 +1752,11 @@ function RevenueResilienceSlide({
             class="relative rounded-xl border border-dc-800 overflow-hidden flex flex-col"
             style={{ padding: "32px 28px" }}
           >
+            {/* Icon */}
+            <div style={{ marginBottom: "24px" }}>
+              {card.icon}
+            </div>
+
             {/* Tag + Title */}
             <div style={{ marginBottom: "16px" }}>
               <p style={{ fontSize: "16px", lineHeight: "1.5" }}>
@@ -1294,39 +1764,31 @@ function RevenueResilienceSlide({
                 <span class="text-dc-100" style={{ marginLeft: "8px" }}>{card.title}</span>
               </p>
             </div>
-            
+
             {/* Subtitle */}
             <p
               class="text-dc-400"
-              style={{ fontSize: "15px", lineHeight: "1.6", marginBottom: "24px" }}
+              style={{
+                fontSize: "15px",
+                lineHeight: "1.6",
+                marginBottom: "auto",
+              }}
             >
               {card.subtitle}
             </p>
 
-            {/* Metric - cleaner, not oversized */}
-            <div style={{ marginBottom: "auto" }}>
-              <span
-                class="text-primary-light"
-                style={{ fontSize: "64px", lineHeight: "1", letterSpacing: "-1px" }}
-              >
-                {card.metric}
-              </span>
-              {card.metricLabel && (
-                <span
-                  class="text-dc-400"
-                  style={{ fontSize: "24px", marginLeft: "12px" }}
-                >
-                  {card.metricLabel}
-                </span>
-              )}
-            </div>
-
-            {/* Chart - positioned at bottom */}
-            <div
-              class="absolute bottom-0 left-0 right-0"
-              style={{ height: "280px", opacity: 0.7 }}
-            >
-              {card.chart}
+            {/* Metrics at bottom */}
+            <div class="flex gap-8 mt-8 pt-6 border-t border-dc-800">
+              {card.metrics.map((metric, i) => (
+                <div key={i}>
+                  <span class="text-dc-500 block" style={{ fontSize: "12px", marginBottom: "4px" }}>
+                    {metric.label}
+                  </span>
+                  <span class="text-primary-light font-medium" style={{ fontSize: "18px" }}>
+                    {metric.value}
+                  </span>
+                </div>
+              ))}
             </div>
           </div>
         ))}
@@ -1665,7 +2127,7 @@ export interface Slide {
   subtitle?: string;
 
   /** @title Layout do Slide */
-  layout: "title" | "content" | "two-column" | "stats" | "timeline" | "list" | "revenue-resilience" | "product-platform" | "organizational-maturity";
+  layout: "title" | "content" | "two-column" | "stats" | "timeline" | "list" | "revenue-resilience" | "product-platform" | "organizational-maturity" | "operational-wins";
 
   /** @title Cor de Fundo */
   backgroundColor?:
@@ -1728,18 +2190,19 @@ const BASE_HEIGHT = 1080;
 export default function InvestorPresentation({
   presentationTitle,
   presentationSubtitle,
-  logo,
+  logo: _logo,
   slides = [],
 }: Props) {
-  // Read initial slide from URL query param
+  // Read initial slide from URL query param (1-based in URL, 0-based internally)
   const getInitialSlide = () => {
     if (typeof globalThis.location === "undefined") return 0;
     const params = new URLSearchParams(globalThis.location.search);
     const slideParam = params.get("slide");
     if (slideParam) {
       const slideNum = parseInt(slideParam, 10);
-      if (!isNaN(slideNum) && slideNum >= 0) {
-        return slideNum;
+      // URL is 1-based, internal state is 0-based
+      if (!isNaN(slideNum) && slideNum >= 1) {
+        return slideNum - 1;
       }
     }
     return 0;
@@ -1765,11 +2228,12 @@ export default function InvestorPresentation({
     }
   }, [totalSlides]);
 
-  // Update URL when slide changes
+  // Update URL when slide changes (1-based in URL, 0-based internally)
   useEffect(() => {
     if (typeof globalThis.history === "undefined") return;
     const url = new URL(globalThis.location.href);
-    url.searchParams.set("slide", String(currentSlide));
+    // URL is 1-based, internal state is 0-based
+    url.searchParams.set("slide", String(currentSlide + 1));
     globalThis.history.replaceState({}, "", url.toString());
   }, [currentSlide]);
 
@@ -1845,34 +2309,75 @@ export default function InvestorPresentation({
     loadGSAP();
   }, []);
 
-  // Load Unicorn Studio script for cover animation
+  // Load Unicorn Studio script for cover slide animation
+  const [unicornScriptLoaded, setUnicornScriptLoaded] = useState(false);
+  
   useEffect(() => {
-    // @ts-ignore: UnicornStudio is a third-party global from external script
-    if (!globalThis.UnicornStudio) {
-      // @ts-ignore: UnicornStudio is a third-party global from external script
-      globalThis.UnicornStudio = { isInitialized: false };
-      const script = document.createElement("script");
-      script.src = "https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v2.0.0/dist/unicornStudio.umd.js";
-      script.onload = () => {
-        // @ts-ignore: UnicornStudio is a third-party global from external script
-        if (!globalThis.UnicornStudio.isInitialized) {
-          // @ts-ignore: UnicornStudio is a third-party global from external script
-          UnicornStudio.init();
-          // @ts-ignore: UnicornStudio is a third-party global from external script
-          globalThis.UnicornStudio.isInitialized = true;
-        }
-      };
-      (document.head || document.body).appendChild(script);
-    } else {
-      // @ts-ignore: UnicornStudio is a third-party global from external script
-      if (!globalThis.UnicornStudio.isInitialized) {
-        // @ts-ignore: UnicornStudio is a third-party global from external script
-        UnicornStudio.init();
-        // @ts-ignore: UnicornStudio is a third-party global from external script
-        globalThis.UnicornStudio.isInitialized = true;
-      }
+    if (typeof window === "undefined") return;
+    
+    // deno-lint-ignore no-explicit-any
+    const win = window as any;
+    
+    // Check if script is already loaded
+    if (win.UnicornStudio?.init) {
+      setUnicornScriptLoaded(true);
+      return;
     }
+    
+    // Check if script tag already exists
+    const existingScript = document.querySelector('script[src*="unicornStudio"]');
+    if (existingScript) {
+      existingScript.addEventListener("load", () => setUnicornScriptLoaded(true));
+      return;
+    }
+    
+    // Load the script
+    const script = document.createElement("script");
+    script.src = "https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v2.0.0/dist/unicornStudio.umd.js";
+    script.onload = () => setUnicornScriptLoaded(true);
+    (document.head || document.body).appendChild(script);
   }, []);
+
+  // Initialize Unicorn Studio after script loads AND component renders
+  useEffect(() => {
+    if (!unicornScriptLoaded || typeof window === "undefined") return;
+    
+    // deno-lint-ignore no-explicit-any
+    const win = window as any;
+    
+    const initUnicorn = () => {
+      // Use requestAnimationFrame to ensure we're in a render cycle
+      requestAnimationFrame(() => {
+        if (win.UnicornStudio?.init) {
+          win.UnicornStudio.init().catch((err: Error) => {
+            console.error("Unicorn Studio init error:", err);
+          });
+        }
+      });
+    };
+    
+    // Initial initialization - wait for DOM to be fully ready
+    const timeoutId = setTimeout(initUnicorn, 100);
+    
+    // Re-initialize when tab becomes visible (browser throttles inactive tabs)
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === "visible") {
+        // Small delay after visibility change to let browser "wake up"
+        setTimeout(initUnicorn, 50);
+      }
+    };
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+    
+    // Also re-init on window focus (backup for visibility)
+    const handleFocus = () => initUnicorn();
+    window.addEventListener("focus", handleFocus);
+    
+    return () => {
+      clearTimeout(timeoutId);
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+      window.removeEventListener("focus", handleFocus);
+    };
+  }, [unicornScriptLoaded]);
 
   // ASCII Dithering animation for intro slide
   useEffect(() => {
@@ -2173,6 +2678,20 @@ export default function InvestorPresentation({
                   class="absolute inset-0 w-full h-full pointer-events-none"
                   style={{ imageRendering: "pixelated", opacity: 0.2 }}
                 />
+              )}
+              
+              {/* RETROSPECTIVE eyebrow for main intro slide */}
+              {isMainIntroSlide && (
+                <span
+                  class="animate-item font-mono uppercase tracking-[0.2em] block relative z-10"
+                  style={{ 
+                    fontSize: "11px", 
+                    marginBottom: "24px",
+                    color: "rgba(0,0,0,0.5)",
+                  }}
+                >
+                  RETROSPECTIVE
+                </span>
               )}
               
               <h1
@@ -2501,6 +3020,15 @@ export default function InvestorPresentation({
           />
         );
 
+      case "operational-wins":
+        return (
+          <OperationalWinsSlide
+            slide={slide}
+            bgClass={bgClass}
+            textColorClass={textColorClass}
+          />
+        );
+
       case "list":
         return (
           <div
@@ -2699,7 +3227,7 @@ export default function InvestorPresentation({
               left: 0,
             }}
           >
-          {/* Cover/Title Slide (Slide 0) - minimalist with animation */}
+          {/* Cover/Title Slide (Slide 0) - Figma design */}
           <div
             ref={(el) => {
               slideRefs.current[0] = el;
@@ -2711,65 +3239,57 @@ export default function InvestorPresentation({
             }`}
           >
             <div
-              class="w-full h-full flex bg-dc-950 text-dc-50"
+              class="w-full h-full flex flex-col justify-between bg-dc-950 text-dc-50 relative overflow-hidden"
+              style={{ padding: "90px 82px" }}
             >
-              {/* Left side - Text content */}
+              {/* Unicorn Studio Animation - Bottom right, flipped horizontally */}
               <div
-                class="flex flex-col justify-center"
-                style={{ width: "50%", padding: "96px" }}
-              >
-                {logo && (
-                  <img
-                    src={logo}
-                    alt="Logo"
-                    class="animate-item"
-                    style={{
-                      width: "48px",
-                      height: "48px",
-                      marginBottom: "48px",
-                      opacity: 0.8,
-                    }}
-                  />
-                )}
-                <h1
-                  class="animate-item text-dc-200 leading-tight"
-                  style={{ fontSize: "48px", letterSpacing: "-0.5px" }}
-                >
-                  {presentationTitle}
-                </h1>
+                data-us-project="3u9H2SGWSifD8DQZHG4X"
+                data-us-production="true"
+                style={{
+                  width: "1440px",
+                  height: "900px",
+                  position: "absolute",
+                  bottom: 0,
+                  right: 0,
+                  transform: "scaleX(-1)",
+                  pointerEvents: "none",
+                  zIndex: 1,
+                }}
+              />
+
+              {/* Logo - Top left */}
+              <div class="relative z-10">
+                <img
+                  src="https://assets.decocache.com/decocms/4869c863-d677-4e5b-b3fd-4b3913a56034/deco-logo.png"
+                  alt="deco logo"
+                  class="animate-item"
+                  style={{
+                    width: "241px",
+                    height: "auto",
+                  }}
+                />
+              </div>
+
+              {/* Title content - Bottom left */}
+              <div class="flex flex-col relative z-10" style={{ gap: "22px", maxWidth: "1175px" }}>
                 {presentationSubtitle && (
                   <p
-                    class="animate-item text-dc-500"
+                    class="animate-item font-mono uppercase text-dc-400"
                     style={{
-                      fontSize: "18px",
-                      marginTop: "24px",
+                      fontSize: "24px",
+                      letterSpacing: "1.2px",
                     }}
                   >
                     {presentationSubtitle}
                   </p>
                 )}
-                <div
-                  class="animate-item flex items-center text-dc-600"
-                  style={{ marginTop: "64px", gap: "12px" }}
+                <h1
+                  class="animate-item text-dc-50 leading-none"
+                  style={{ fontSize: "140px", letterSpacing: "-2.8px" }}
                 >
-                  <span style={{ fontSize: "14px" }}>
-                    {isMobile
-                      ? "Swipe or tap arrows to navigate"
-                      : "Press arrow keys to navigate"}
-                  </span>
-                  <Icon name="arrow_forward" size="small" class="text-dc-600" />
-                </div>
-              </div>
-
-              {/* Right side - Unicorn Studio Animation */}
-              <div
-                class="relative overflow-hidden flex items-end"
-                style={{ width: "50%", transform: "scaleX(-1)" }}
-              >
-                <div
-                  data-us-project="3u9H2SGWSifD8DQZHG4X"
-                  style={{ width: "100%", height: "900px" }}
-                />
+                  {presentationTitle}
+                </h1>
               </div>
             </div>
           </div>
@@ -2896,32 +3416,6 @@ export default function InvestorPresentation({
             </button>
           </div>
 
-          {/* Slide dots navigation - more subtle */}
-          <div
-            class="absolute left-1/2 flex items-center z-50"
-            style={{
-              bottom: "40px",
-              transform: "translateX(-50%)",
-              gap: "8px",
-            }}
-          >
-            {Array.from({ length: totalSlides }).map((_, index) => (
-              <button
-                key={index}
-                type="button"
-                onClick={() => goToSlide(index)}
-                class={`rounded-full transition-all ${
-                  currentSlide === index
-                    ? "bg-primary-light"
-                    : "bg-dc-700 hover:bg-dc-600"
-                }`}
-                style={{
-                  width: currentSlide === index ? "16px" : "6px",
-                  height: "6px",
-                }}
-              />
-            ))}
-          </div>
           </div>
         </div>
       </div>

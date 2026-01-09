@@ -4,7 +4,7 @@
   "path": "/investor-updates-jan-2026",
   "sections": [
     {
-      "__resolveType": "site/sections/InvestorPresentation.tsx",
+      "__resolveType": "site/sections/InvestorPresentationProtected.tsx",
       "presentationTitle": "Investor Updates",
       "presentationSubtitle": "January 2026",
       "logo": "https://assets.decocache.com/decocms/69810c11-8a4b-4163-80c7-942ea7f6dcdd/deco-logo.svg",
@@ -71,20 +71,10 @@
         },
         {
           "title": "Operational Wins",
-          "layout": "list",
-          "backgroundColor": "dc-900",
+          "layout": "operational-wins",
+          "backgroundColor": "dc-950",
           "textColor": "light",
-          "tag": "1.2 OPERATIONS",
-          "items": [
-            {
-              "title": "Infra & CDN reorganization",
-              "subtitle": "Significant cost reduction + margin improvement"
-            },
-            {
-              "title": "Diagnostic + repricing process",
-              "subtitle": "Good reception, clients increasing contracts ~20-30%"
-            }
-          ]
+          "tag": "1.2 OPERATIONS"
         },
         {
           "title": "Product & Platform Results",
@@ -337,45 +327,12 @@
           ]
         },
         {
-          "title": "Revenue & Pipeline",
-          "layout": "title",
-          "backgroundColor": "purple-dark",
-          "textColor": "light",
-          "tag": "SECTION 5",
-          "slideNumber": "05"
-        },
-        {
-          "title": "Revenue Types",
-          "layout": "stats",
-          "backgroundColor": "dc-950",
-          "textColor": "light",
-          "tag": "5.1 REVENUE",
-          "items": [
-            {
-              "value": "ARR",
-              "label": "Storefront / Sites"
-            },
-            {
-              "value": "New",
-              "label": "Cogna / Enterprise"
-            },
-            {
-              "value": "1x",
-              "label": "One-off Services"
-            },
-            {
-              "value": "%",
-              "label": "Success-based (Farm)"
-            }
-          ]
-        },
-        {
           "title": "Our Asks",
           "layout": "title",
           "backgroundColor": "primary-light",
           "textColor": "dark",
-          "tag": "SECTION 6",
-          "slideNumber": "06"
+          "tag": "SECTION 5",
+          "slideNumber": "05"
         },
         {
           "title": "How You Can Help",
