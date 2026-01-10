@@ -1,6 +1,41 @@
 import { useEffect, useRef, useState } from "preact/hooks";
 import type { ImageWidget } from "apps/admin/widgets.ts";
 import Icon from "../components/ui/Icon.tsx";
+import RevenueChart from "../components/RevenueChart.tsx";
+import TrafficResilienceChart from "../components/TrafficResilienceChart.tsx";
+
+// Static image background for IMPACT card
+function ImpactImageBackground() {
+  return (
+    <div
+      style={{
+        position: "absolute",
+        left: 0,
+        right: 0,
+        top: "100px",
+        bottom: 0,
+        overflow: "hidden",
+        borderRadius: "inherit",
+        zIndex: 0,
+      }}
+    >
+      <img
+        src="https://assets.decocache.com/decocms/4eb395ca-5dcc-4d39-a904-6eb3fbe12736/untitled_project-(2).png"
+        alt=""
+        style={{
+          position: "absolute",
+          inset: 0,
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          objectPosition: "center",
+          display: "block",
+          pointerEvents: "none",
+        }}
+      />
+    </div>
+  );
+}
 
 // Timeline hover images configuration
 interface TimelineHoverConfig {
@@ -844,8 +879,8 @@ function RetrospectiveContributorsSlide({ isActive = false }: { isActive?: boole
   );
 }
 
-// Interactive line chart component with hover tooltips
-function InteractiveLineChart({
+// Interactive line chart component with hover tooltips (currently unused)
+function _InteractiveLineChart({
   data,
   color = "#d0ec1a",
   secondaryColor = "#8caa25",
@@ -1003,7 +1038,8 @@ function InteractiveLineChart({
   );
 }
 
-// Interactive bar chart component with hover tooltips
+// Interactive bar chart component with hover tooltips (currently unused, kept for reference)
+// deno-lint-ignore no-unused-vars
 function InteractiveBarChart({
   data,
   color = "#d0ec1a",
@@ -1018,13 +1054,34 @@ function InteractiveBarChart({
   id?: string;
 }) {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [containerWidth, setContainerWidth] = useState(400);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  // Measure container width with ResizeObserver
+  useEffect(() => {
+    if (!containerRef.current) return;
+    
+    const observer = new ResizeObserver((entries) => {
+      for (const entry of entries) {
+        setContainerWidth(entry.contentRect.width);
+      }
+    });
+    
+    observer.observe(containerRef.current);
+    // Set initial width
+    setContainerWidth(containerRef.current.clientWidth || 400);
+    
+    return () => observer.disconnect();
+  }, []);
 
   const padding = { top: 60, right: 20, bottom: 50, left: 20 };
-  const chartWidth = 500;
+  const chartWidth = containerWidth;
   const chartHeight = height;
 
   const maxValue = Math.max(...data.map((d) => d.value)) * 1.1;
-  const barWidth = (chartWidth - padding.left - padding.right) / data.length - 8;
+  // Clamp barWidth to minimum of 20px to prevent tiny/negative bars
+  const rawBarWidth = (chartWidth - padding.left - padding.right) / data.length - 8;
+  const barWidth = Math.max(20, rawBarWidth);
 
   const getX = (index: number) =>
     padding.left + index * ((chartWidth - padding.left - padding.right) / data.length) + 4;
@@ -1040,14 +1097,14 @@ function InteractiveBarChart({
   };
 
   return (
-    <svg
-      width="100%"
-      height={chartHeight}
-      viewBox={`0 0 ${chartWidth} ${chartHeight}`}
-      preserveAspectRatio="xMidYMid meet"
-      class="absolute bottom-0 left-0 right-0"
-      style={{ overflow: "visible" }}
-    >
+    <div ref={containerRef} style={{ width: "100%", height: `${chartHeight}px`, position: "relative" }}>
+      <svg
+        width="100%"
+        height={chartHeight}
+        viewBox={`0 0 ${chartWidth} ${chartHeight}`}
+        preserveAspectRatio="xMidYMid meet"
+        style={{ display: "block" }}
+      >
       {/* Gradient definitions */}
       <defs>
         <linearGradient id={`barGradient-${id}`} x1="0%" y1="0%" x2="0%" y2="100%">
@@ -1157,237 +1214,28 @@ function InteractiveBarChart({
           </g>
         );
       })}
-    </svg>
+      </svg>
+    </div>
   );
 }
 
-// Detailed revenue line chart for expanded view
-function DetailedRevenueChart({
-  height = 400,
-  id = "revenue-detailed",
-}: {
-  height?: number;
-  id?: string;
-}) {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-
-  // More detailed monthly data
-  const detailedData: { month: string; value: number; label: string; highlight?: boolean }[] = [
-    { month: "Jan 2025", value: 85, label: "$85K" },
-    { month: "Feb 2025", value: 90, label: "$90K" },
-    { month: "Mar 2025", value: 88, label: "$88K" },
-    { month: "Apr 2025", value: 95, label: "$95K" },
-    { month: "May 2025", value: 98, label: "$98K" },
-    { month: "Jun 2025", value: 100, label: "$100K" },
-    { month: "Jul 2025", value: 105, label: "$105K" },
-    { month: "Aug 2025", value: 120, label: "$120K" },
-    { month: "Sep 2025", value: 115, label: "$115K" },
-    { month: "Oct 2025", value: 140, label: "$140K" },
-    { month: "Nov 2025", value: 280, label: "$280K", highlight: true },
-    { month: "Dec 2025", value: 320, label: "$320K", highlight: true },
-  ];
-
-  const color = "#d0ec1a";
-  const secondaryColor = "#8caa25";
-  const padding = { top: 40, right: 40, bottom: 60, left: 60 };
-  const chartWidth = 700;
-  const chartHeight = height;
-
-  const maxValue = Math.max(...detailedData.map((d) => d.value)) * 1.1;
-  const minValue = Math.min(...detailedData.map((d) => d.value)) * 0.9;
-
-  const getX = (index: number) =>
-    padding.left + (index / (detailedData.length - 1)) * (chartWidth - padding.left - padding.right);
-  const getY = (value: number) =>
-    padding.top + ((maxValue - value) / (maxValue - minValue)) * (chartHeight - padding.top - padding.bottom);
-
-  // Create path for the line
-  const linePath = detailedData
-    .map((d, i) => {
-      const x = getX(i);
-      const y = getY(d.value);
-      return i === 0 ? `M ${x} ${y}` : `L ${x} ${y}`;
-    })
-    .join(" ");
-
-  // Create area path (fill below line)
-  const areaPath = `${linePath} L ${getX(detailedData.length - 1)} ${chartHeight - padding.bottom} L ${getX(0)} ${chartHeight - padding.bottom} Z`;
-
-  // Y-axis labels
-  const yAxisLabels = [0, 100, 200, 300, 350];
-
-  return (
-    <svg
-      width="100%"
-      height={chartHeight}
-      viewBox={`0 0 ${chartWidth} ${chartHeight}`}
-      preserveAspectRatio="xMidYMid meet"
-      style={{ overflow: "visible" }}
-    >
-      {/* Gradient definition */}
-      <defs>
-        <linearGradient id={`lineGradient-${id}`} x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stopColor={color} stopOpacity="0.4" />
-          <stop offset="100%" stopColor={color} stopOpacity="0.05" />
-        </linearGradient>
-      </defs>
-
-      {/* Grid lines */}
-      {yAxisLabels.map((val) => (
-        <line
-          key={val}
-          x1={padding.left}
-          y1={getY(val)}
-          x2={chartWidth - padding.right}
-          y2={getY(val)}
-          stroke="#3d3b38"
-          strokeWidth="1"
-          strokeDasharray="4,4"
-        />
-      ))}
-
-      {/* Y-axis labels */}
-      {yAxisLabels.map((val) => (
-        <text
-          key={val}
-          x={padding.left - 12}
-          y={getY(val)}
-          textAnchor="end"
-          dominantBaseline="middle"
-          fill="#6d6a66"
-          fontSize="12"
-        >
-          ${val}K
-        </text>
-      ))}
-
-      {/* Area fill */}
-      <path d={areaPath} fill={`url(#lineGradient-${id})`} />
-
-      {/* Main line */}
-      <path
-        d={linePath}
-        fill="none"
-        stroke={color}
-        strokeWidth="3"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-
-      {/* Interactive points */}
-      {detailedData.map((d, i) => (
-        <g key={i}>
-          {/* Invisible larger hit area */}
-          <circle
-            cx={getX(i)}
-            cy={getY(d.value)}
-            r={20}
-            fill="transparent"
-            class="cursor-pointer"
-            onMouseEnter={() => setHoveredIndex(i)}
-            onMouseLeave={() => setHoveredIndex(null)}
-          />
-          {/* Visible point */}
-          <circle
-            cx={getX(i)}
-            cy={getY(d.value)}
-            r={hoveredIndex === i ? 8 : d.highlight ? 6 : 4}
-            fill={hoveredIndex === i || d.highlight ? color : secondaryColor}
-            class="transition-all duration-200"
-            style={{ pointerEvents: "none" }}
-          />
-          {/* X-axis labels */}
-          <text
-            x={getX(i)}
-            y={chartHeight - padding.bottom + 20}
-            textAnchor="middle"
-            fill={d.highlight ? color : "#6d6a66"}
-            fontSize="11"
-            style={{ pointerEvents: "none" }}
-          >
-            {d.month.split(" ")[0]}
-          </text>
-        </g>
-      ))}
-
-      {/* Tooltip */}
-      {hoveredIndex !== null && (() => {
-        const pointX = getX(hoveredIndex);
-        const pointY = getY(detailedData[hoveredIndex].value);
-        const tooltipWidth = 120;
-        const tooltipHeight = 52;
-        const tooltipX = Math.max(tooltipWidth / 2, Math.min(chartWidth - tooltipWidth / 2, pointX));
-        const tooltipY = Math.max(tooltipHeight + 10, pointY - 15);
-        
-        return (
-          <g style={{ pointerEvents: "none" }}>
-            <line
-              x1={pointX}
-              y1={pointY}
-              x2={pointX}
-              y2={chartHeight - padding.bottom}
-              stroke={color}
-              strokeWidth="1"
-              strokeDasharray="4,4"
-              opacity="0.5"
-            />
-            <rect
-              x={tooltipX - tooltipWidth / 2}
-              y={tooltipY - tooltipHeight - 10}
-              width={tooltipWidth}
-              height={tooltipHeight}
-              rx="8"
-              fill="#1f1e1c"
-              stroke={color}
-              strokeWidth="1.5"
-            />
-            <text
-              x={tooltipX}
-              y={tooltipY - tooltipHeight + 8}
-              textAnchor="middle"
-              dominantBaseline="hanging"
-              fill={color}
-              fontSize="16"
-              fontWeight="bold"
-            >
-              {detailedData[hoveredIndex].label}
-            </text>
-            <text
-              x={tooltipX}
-              y={tooltipY - tooltipHeight + 30}
-              textAnchor="middle"
-              dominantBaseline="hanging"
-              fill="#a8a5a0"
-              fontSize="13"
-            >
-              {detailedData[hoveredIndex].month}
-            </text>
-          </g>
-        );
-      })()}
-
-      {/* Highlight annotation for BF/Dec */}
-      <text
-        x={getX(10) + 20}
-        y={getY(280) - 30}
-        fill={color}
-        fontSize="13"
-        fontWeight="bold"
-      >
-        Black Friday
-      </text>
-      <text
-        x={getX(11) + 20}
-        y={getY(320) - 30}
-        fill={color}
-        fontSize="13"
-        fontWeight="bold"
-      >
-        Record Dec
-      </text>
-    </svg>
-  );
-}
+// Monthly revenue data from CSV (Jan 2025 - Dec 2025)
+// Platform = Assinatura da plataforma + deco platform + deco.camp
+// Services = deco Professional Services + GetSiteDone
+const monthlyRevenueData = [
+  { month: "Jan-25", platform: 355, services: 131, grossMargin: 33 },
+  { month: "Feb-25", platform: 403, services: 56, grossMargin: 10 },
+  { month: "Mar-25", platform: 449, services: 49, grossMargin: 54 },
+  { month: "Apr-25", platform: 433, services: 62, grossMargin: 40 },
+  { month: "May-25", platform: 608, services: 40, grossMargin: 32 },
+  { month: "Jun-25", platform: 452, services: 351, grossMargin: 57 },
+  { month: "Jul-25", platform: 529, services: 120, grossMargin: 69 },
+  { month: "Aug-25", platform: 517, services: 199, grossMargin: 63 },
+  { month: "Sep-25", platform: 451, services: 201, grossMargin: 56 },
+  { month: "Oct-25", platform: 341, services: 264, grossMargin: 39 },
+  { month: "Nov-25", platform: 1039, services: 77, grossMargin: 72 },
+  { month: "Dec-25", platform: 533, services: 16, grossMargin: 79 },
+];
 
 // Revenue, Resilience & Customer Results slide component - minimalist
 function RevenueResilienceSlide({
@@ -1403,64 +1251,108 @@ function RevenueResilienceSlide({
 }) {
   const [isFirstCardExpanded, setIsFirstCardExpanded] = useState(false);
 
-  // Sample data for the revenue line chart
-  const revenueData = [
-    { month: "Jul 2025", value: 100, label: "$100K" },
-    { month: "Aug 2025", value: 120, label: "$120K" },
-    { month: "Sep 2025", value: 115, label: "$115K" },
-    { month: "Oct 2025", value: 140, label: "$140K" },
-    { month: "Nov 2025", value: 280, label: "$280K" },
-    { month: "Dec 2025", value: 320, label: "$320K" },
+  // Calculate total revenue metrics from monthlyRevenueData
+  const totalPlatformRevenue = monthlyRevenueData.reduce((sum, d) => sum + d.platform, 0);
+  const totalServicesRevenue = monthlyRevenueData.reduce((sum, d) => sum + d.services, 0);
+  const totalRevenue = totalPlatformRevenue + totalServicesRevenue;
+  
+  
+  // Daily traffic requests data (Oct-Nov 2025) - combined from Azion + Cloudflare
+  const trafficRequestsDaily = [
+    { date: "2025-10-01", total: 75546597, azion: 75546597, cloudflare: 0 },
+    { date: "2025-10-02", total: 80992271, azion: 80992271, cloudflare: 0 },
+    { date: "2025-10-03", total: 75606164, azion: 75606164, cloudflare: 0 },
+    { date: "2025-10-04", total: 67585895, azion: 67585895, cloudflare: 0 },
+    { date: "2025-10-05", total: 67999628, azion: 67999628, cloudflare: 0 },
+    { date: "2025-10-06", total: 80609388, azion: 80609388, cloudflare: 0 },
+    { date: "2025-10-07", total: 90036480, azion: 90036480, cloudflare: 0 },
+    { date: "2025-10-08", total: 89798896, azion: 89798896, cloudflare: 0 },
+    { date: "2025-10-09", total: 85806898, azion: 85806898, cloudflare: 0 },
+    { date: "2025-10-10", total: 85933136, azion: 85933136, cloudflare: 0 },
+    { date: "2025-10-11", total: 82561816, azion: 82561816, cloudflare: 0 },
+    { date: "2025-10-12", total: 105025827, azion: 77118097, cloudflare: 27907730 },
+    { date: "2025-10-13", total: 124967138, azion: 88901735, cloudflare: 36065403 },
+    { date: "2025-10-14", total: 126228069, azion: 112125025, cloudflare: 14103044 },
+    { date: "2025-10-15", total: 128768135, azion: 119405746, cloudflare: 9362389 },
+    { date: "2025-10-16", total: 130271264, azion: 120898209, cloudflare: 9373055 },
+    { date: "2025-10-17", total: 126702176, azion: 116720598, cloudflare: 9981578 },
+    { date: "2025-10-18", total: 118845740, azion: 109383015, cloudflare: 9462725 },
+    { date: "2025-10-19", total: 121259295, azion: 111848588, cloudflare: 9410707 },
+    { date: "2025-10-20", total: 122002610, azion: 112165990, cloudflare: 9836620 },
+    { date: "2025-10-21", total: 121933402, azion: 67256822, cloudflare: 54676580 },
+    { date: "2025-10-22", total: 120926175, azion: 46688141, cloudflare: 74238034 },
+    { date: "2025-10-23", total: 115922376, azion: 44644417, cloudflare: 71277959 },
+    { date: "2025-10-24", total: 114005509, azion: 44525188, cloudflare: 69480321 },
+    { date: "2025-10-25", total: 110514389, azion: 39766146, cloudflare: 70748243 },
+    { date: "2025-10-26", total: 111496462, azion: 57620261, cloudflare: 53876201 },
+    { date: "2025-10-27", total: 134311349, azion: 122337168, cloudflare: 11974181 },
+    { date: "2025-10-28", total: 137437196, azion: 125769095, cloudflare: 11668101 },
+    { date: "2025-10-29", total: 131357728, azion: 119211840, cloudflare: 12145888 },
+    { date: "2025-10-30", total: 135888303, azion: 123429164, cloudflare: 12459139 },
+    { date: "2025-10-31", total: 130184673, azion: 118068185, cloudflare: 12116488 },
+    { date: "2025-11-01", total: 129488367, azion: 116667503, cloudflare: 12820864 },
+    { date: "2025-11-02", total: 141849882, azion: 128880762, cloudflare: 12969120 },
+    { date: "2025-11-03", total: 152705593, azion: 139770953, cloudflare: 12934640 },
+    { date: "2025-11-04", total: 170620733, azion: 154511863, cloudflare: 16108870 },
+    { date: "2025-11-05", total: 182181485, azion: 149231825, cloudflare: 32949660 },
+    { date: "2025-11-06", total: 166867675, azion: 138887815, cloudflare: 27979860 },
+    { date: "2025-11-07", total: 159689467, azion: 134217537, cloudflare: 25471930 },
+    { date: "2025-11-08", total: 148331110, azion: 125737840, cloudflare: 22593270 },
+    { date: "2025-11-09", total: 144590638, azion: 122147608, cloudflare: 22443030 },
+    { date: "2025-11-10", total: 170033763, azion: 145294533, cloudflare: 24739230 },
+    { date: "2025-11-11", total: 200496369, azion: 174817429, cloudflare: 25678940 },
+    { date: "2025-11-12", total: 187426578, azion: 159767268, cloudflare: 27659310 },
+    { date: "2025-11-13", total: 178970425, azion: 156910995, cloudflare: 22059430 },
+    { date: "2025-11-14", total: 170198041, azion: 149368871, cloudflare: 20829170 },
+    { date: "2025-11-15", total: 155882491, azion: 139838121, cloudflare: 16044370 },
+    { date: "2025-11-16", total: 157396664, azion: 141362054, cloudflare: 16034610 },
+    { date: "2025-11-17", total: 187049263, azion: 166642863, cloudflare: 20406400 },
+    { date: "2025-11-18", total: 197439992, azion: 174148552, cloudflare: 23291440 },
+    { date: "2025-11-19", total: 191423887, azion: 151470697, cloudflare: 39953190 },
+    { date: "2025-11-20", total: 213433888, azion: 181127668, cloudflare: 32306220 },
+    { date: "2025-11-21", total: 305525067, azion: 287474397, cloudflare: 18050670 },
+    { date: "2025-11-22", total: 222165782, azion: 204030812, cloudflare: 18134970 },
+    { date: "2025-11-23", total: 231876662, azion: 208119362, cloudflare: 23757300 },
+    { date: "2025-11-24", total: 250778610, azion: 228319260, cloudflare: 22459350 },
+    { date: "2025-11-25", total: 261908173, azion: 240161983, cloudflare: 21746190 },
+    { date: "2025-11-26", total: 293192080, azion: 270524850, cloudflare: 22667230 },
+    { date: "2025-11-27", total: 292473535, azion: 265604145, cloudflare: 26869390 },
+    { date: "2025-11-28", total: 410703580, azion: 367173900, cloudflare: 43529680 }, // PEAK (Black Friday)
+    { date: "2025-11-29", total: 281056647, azion: 250935357, cloudflare: 30121290 },
+    { date: "2025-11-30", total: 225234954, azion: 200940564, cloudflare: 24294390 },
   ];
 
-  // Sample data for traffic bar chart
-  const trafficData = [
-    { label: "Mon", value: 2, peak: false },
-    { label: "Tue", value: 3, peak: false },
-    { label: "Wed", value: 2.5, peak: false },
-    { label: "Thu", value: 4, peak: false },
-    { label: "Fri BF", value: 10.5, peak: true },
-    { label: "Sat", value: 8, peak: false },
-    { label: "Sun", value: 5, peak: false },
-  ];
-
-  // Sample data for customer impact
-  const customerData = [
-    { month: "2024", value: 100, label: "Baseline" },
-    { month: "Jan 2025", value: 110, label: "+10%" },
-    { month: "Apr 2025", value: 140, label: "+40%" },
-    { month: "Jul 2025", value: 180, label: "+80%" },
-    { month: "Oct 2025", value: 250, label: "+150%" },
-    { month: "BF 2025", value: 400, label: "2-5× YoY" },
-  ];
+  // Filter to start from first Cloudflare day (exclude Azion-only days)
+  const trafficRequestsDailyChart = trafficRequestsDaily.filter(d => d.date >= "2025-10-12");
 
   // Card configurations
   const cards = [
     {
       tag: "REVENUE",
-      title: "Record revenue",
-      subtitle: "Black Friday and December",
-      metric: "~3×",
+      title: "3Q25 Gross Revenue grew 2.8x YoY",
+      collapsedTitle: "Record revenue in BF & December",
+      subtitle: "",
+      metric: "2.8×",
       metricLabel: "YoY",
-      chart: <InteractiveLineChart data={revenueData} height={280} id="revenue" />,
+      chart: <RevenueChart data={monthlyRevenueData.slice(-3)} />,
       expandable: true,
     },
     {
       tag: "RESILIENCE",
-      title: "Traffic resilience",
-      subtitle: "Handled peak load successfully",
-      metric: ">10×",
+      title: "We handled peak load successfully",
+      subtitle: "",
+      metric: ">4.5×",
       metricLabel: null,
-      chart: <InteractiveBarChart data={trafficData} height={300} id="traffic" />,
+      chart: <TrafficResilienceChart data={trafficRequestsDailyChart} />,
       expandable: false,
     },
     {
       tag: "IMPACT",
-      title: "Customer impact",
-      subtitle: "Most customers grew sales on BF",
+      title: "Most customers sales doubled during BF",
+      subtitle: "",
       metric: "2–5×",
       metricLabel: "YoY",
-      chart: <InteractiveLineChart data={customerData} height={280} id="customer" />,
+      chart: null, // Replaced with static image background
       expandable: false,
     },
   ];
@@ -1512,14 +1404,14 @@ function RevenueResilienceSlide({
               >
                 {/* Rotated label - bottom to top */}
                 <span
-                  class="text-dc-400 font-mono uppercase tracking-[0.15em] whitespace-nowrap transition-colors duration-200 hover:text-primary-light"
+                  class="text-primary-light font-mono uppercase tracking-[0.15em] whitespace-nowrap transition-colors duration-200"
                   style={{
                     fontSize: "13px",
                     writingMode: "vertical-rl",
                     transform: "rotate(180deg)",
                   }}
                 >
-                  {card.tag}
+                  [{card.tag}]
                 </span>
               </button>
             );
@@ -1529,138 +1421,215 @@ function RevenueResilienceSlide({
           return (
             <div
               key={index}
-              class="relative rounded-xl border border-dc-800 overflow-hidden flex flex-col transition-all duration-500 ease-in-out"
+              class="relative rounded-xl border border-dc-800 overflow-hidden flex flex-col min-h-0 transition-all duration-500 ease-in-out"
               style={{ 
                 padding: isExpanded ? "32px 36px" : "32px 28px",
               }}
             >
-              {/* Expand icon for first card */}
-              {card.expandable && (
-                <button
-                  type="button"
-                  onClick={() => setIsFirstCardExpanded(!isFirstCardExpanded)}
-                  class="absolute top-4 right-4 p-2 rounded-lg bg-dc-800/50 hover:bg-dc-700/50 text-dc-400 hover:text-primary-light transition-all duration-200 cursor-pointer z-10"
-                  style={{ width: "32px", height: "32px" }}
-                  title={isExpanded ? "Collapse" : "Expand"}
-                >
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    class={`transition-transform duration-300 ${isExpanded ? "rotate-180" : ""}`}
+              {/* Image background for IMPACT card */}
+              {card.tag === "IMPACT" && <ImpactImageBackground />}
+
+              {card.tag === "IMPACT" ? (
+                /* IMPACT card: content wrapped in z-10 container, no chart */
+                <div class="relative z-10 flex flex-col h-full">
+                  {/* Tag */}
+                  <div style={{ marginBottom: "8px" }}>
+                    <p style={{ fontSize: "16px", lineHeight: "1.5" }}>
+                      <span class="text-primary-light">[{card.tag}]</span>
+                    </p>
+                  </div>
+                  {/* Title */}
+                  <p
+                    class="text-dc-100"
+                    style={{ fontSize: "28px", lineHeight: "1.5", marginBottom: "24px" }}
                   >
-                    {isExpanded ? (
-                      <>
-                        <polyline points="4 14 10 14 10 20" />
-                        <polyline points="20 10 14 10 14 4" />
-                        <line x1="14" y1="10" x2="21" y2="3" />
-                        <line x1="3" y1="21" x2="10" y2="14" />
-                      </>
-                    ) : (
-                      <>
-                        <polyline points="15 3 21 3 21 9" />
-                        <polyline points="9 21 3 21 3 15" />
-                        <line x1="21" y1="3" x2="14" y2="10" />
-                        <line x1="3" y1="21" x2="10" y2="14" />
-                      </>
+                    {card.collapsedTitle ?? card.title}
+                  </p>
+                  {/* Subtitle (only if not empty) */}
+                  {card.subtitle && (
+                    <p
+                      class="text-dc-400"
+                      style={{ fontSize: "15px", lineHeight: "1.6", marginBottom: "24px" }}
+                    >
+                      {card.subtitle}
+                    </p>
+                  )}
+                  {/* Metric */}
+                  <div style={{ marginBottom: "auto" }}>
+                    <span
+                      class="text-primary-light"
+                      style={{ fontSize: "64px", lineHeight: "1", letterSpacing: "-1px" }}
+                    >
+                      {card.metric}
+                    </span>
+                    {card.metricLabel && (
+                      <span
+                        class="text-dc-400"
+                        style={{ fontSize: "24px", marginLeft: "12px" }}
+                      >
+                        {card.metricLabel}
+                      </span>
                     )}
-                  </svg>
-                </button>
-              )}
-
-              {/* Tag + Title */}
-              <div style={{ marginBottom: "16px" }}>
-                <p style={{ fontSize: isExpanded ? "18px" : "16px", lineHeight: "1.5" }}>
-                  <span class="text-primary-light">[{card.tag}]</span>
-                  <span class="text-dc-100" style={{ marginLeft: "8px" }}>{card.title}</span>
-                </p>
-              </div>
-              
-              {/* Subtitle */}
-              <p
-                class="text-dc-400"
-                style={{ 
-                  fontSize: "15px", 
-                  lineHeight: "1.6", 
-                  marginBottom: "24px",
-                }}
-              >
-                {card.subtitle}
-              </p>
-
-              {/* Metric */}
-              <div style={{ marginBottom: "auto" }}>
-                <span
-                  class="text-primary-light transition-all duration-300"
-                  style={{ 
-                    fontSize: isExpanded ? "80px" : "64px", 
-                    lineHeight: "1", 
-                    letterSpacing: "-1px",
-                  }}
-                >
-                  {card.metric}
-                </span>
-                {card.metricLabel && (
-                  <span
-                    class="text-dc-400"
-                    style={{ 
-                      fontSize: "24px", 
-                      marginLeft: "12px",
-                    }}
-                  >
-                    {card.metricLabel}
-                  </span>
-                )}
-              </div>
-
-              {/* Additional details when expanded */}
-              {isExpanded && (
-                <div class="mt-4 flex gap-8 animate-fadeIn" style={{ marginBottom: "16px" }}>
-                  <div>
-                    <span class="text-dc-500 block" style={{ fontSize: "12px", marginBottom: "4px" }}>
-                      Peak Month
-                    </span>
-                    <span class="text-dc-100" style={{ fontSize: "16px" }}>
-                      December 2025
-                    </span>
                   </div>
-                  <div>
-                    <span class="text-dc-500 block" style={{ fontSize: "12px", marginBottom: "4px" }}>
-                      Black Friday
-                    </span>
-                    <span class="text-dc-100" style={{ fontSize: "16px" }}>
-                      $280K (+180%)
-                    </span>
-                  </div>
-                  <div>
-                    <span class="text-dc-500 block" style={{ fontSize: "12px", marginBottom: "4px" }}>
-                      Growth Trend
-                    </span>
-                    <span class="text-primary-light" style={{ fontSize: "16px" }}>
-                      ↑ Accelerating
-                    </span>
-                  </div>
+                  {/* No chart for IMPACT - image background is the visual */}
                 </div>
-              )}
+              ) : (
+                /* Non-IMPACT cards: render existing structure unchanged */
+                <>
+                  {/* Expand icon for first card */}
+                  {card.expandable && (
+                    <button
+                      type="button"
+                      onClick={() => setIsFirstCardExpanded(!isFirstCardExpanded)}
+                      class="absolute top-4 right-4 p-2 rounded-lg bg-dc-800/50 hover:bg-dc-700/50 text-dc-400 hover:text-primary-light transition-all duration-200 cursor-pointer z-10"
+                      style={{ width: "32px", height: "32px" }}
+                      title={isExpanded ? "Collapse" : "Expand"}
+                    >
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        class={`transition-transform duration-300 ${isExpanded ? "rotate-180" : ""}`}
+                      >
+                        {isExpanded ? (
+                          <>
+                            <polyline points="4 14 10 14 10 20" />
+                            <polyline points="20 10 14 10 14 4" />
+                            <line x1="14" y1="10" x2="21" y2="3" />
+                            <line x1="3" y1="21" x2="10" y2="14" />
+                          </>
+                        ) : (
+                          <>
+                            <polyline points="15 3 21 3 21 9" />
+                            <polyline points="9 21 3 21 3 15" />
+                            <line x1="21" y1="3" x2="14" y2="10" />
+                            <line x1="3" y1="21" x2="10" y2="14" />
+                          </>
+                        )}
+                      </svg>
+                    </button>
+                  )}
 
-              {/* Chart - positioned at bottom */}
-              <div
-                class="absolute bottom-0 left-0 right-0 transition-all duration-500 opacity-70"
-                style={{ 
-                  height: isExpanded ? "350px" : "280px",
-                }}
-              >
-                {isExpanded ? (
-                  <DetailedRevenueChart height={350} id="revenue-expanded" />
-                ) : (
-                  card.chart
-                )}
-              </div>
+                  {isExpanded ? (
+                    /* Expanded: Tag + Title inline */
+                    <>
+                      <div style={{ marginBottom: "16px" }}>
+                        <p style={{ fontSize: "18px", lineHeight: "1.5" }}>
+                          <span class="text-primary-light">[{card.tag}]</span>
+                          <span class="text-dc-100" style={{ marginLeft: "8px" }}>{card.title}</span>
+                        </p>
+                      </div>
+                      
+                      {/* Subtitle */}
+                      <p
+                        class="text-dc-400"
+                        style={{ 
+                          fontSize: "15px", 
+                          lineHeight: "1.6", 
+                          marginBottom: "24px",
+                        }}
+                      >
+                        {card.subtitle}
+                      </p>
+                    </>
+                  ) : (
+                    /* Collapsed: Tag and Title on separate lines */
+                    <>
+                      {/* Tag */}
+                      <div style={{ marginBottom: "8px" }}>
+                        <p style={{ fontSize: "16px", lineHeight: "1.5" }}>
+                          <span class="text-primary-light">[{card.tag}]</span>
+                        </p>
+                      </div>
+                      {/* Title */}
+                      <p
+                        class="text-dc-100"
+                        style={{ fontSize: "28px", lineHeight: "1.5", marginBottom: "24px" }}
+                      >
+                        {card.collapsedTitle ?? card.title}
+                      </p>
+                      {/* Subtitle (only if not empty) */}
+                      {card.subtitle && (
+                        <p
+                          class="text-dc-400"
+                          style={{ fontSize: "15px", lineHeight: "1.6", marginBottom: "24px" }}
+                        >
+                          {card.subtitle}
+                        </p>
+                      )}
+                    </>
+                  )}
+
+                  {/* Metric */}
+                  <div style={{ marginBottom: "auto" }}>
+                    <span
+                      class="text-primary-light transition-all duration-300"
+                      style={{ 
+                        fontSize: isExpanded ? "80px" : "64px", 
+                        lineHeight: "1", 
+                        letterSpacing: "-1px",
+                      }}
+                    >
+                      {card.metric}
+                    </span>
+                    {card.metricLabel && (
+                      <span
+                        class="text-dc-400"
+                        style={{ 
+                          fontSize: "24px", 
+                          marginLeft: "12px",
+                        }}
+                      >
+                        {card.metricLabel}
+                      </span>
+                    )}
+                  </div>
+
+                  {/* Additional details when expanded - inline with metric */}
+                  {isExpanded && (
+                    <div class="flex gap-6 animate-fadeIn" style={{ marginTop: "20px" }}>
+                      <div>
+                        <span class="text-dc-500 block" style={{ fontSize: "11px", marginBottom: "2px" }}>
+                          Total 2025
+                        </span>
+                        <span class="text-dc-100" style={{ fontSize: "14px", fontWeight: "600" }}>
+                          R${totalRevenue}K
+                        </span>
+                      </div>
+                      <div>
+                        <span class="text-dc-500 block" style={{ fontSize: "11px", marginBottom: "2px" }}>
+                          Platform
+                        </span>
+                        <span class="text-primary-light" style={{ fontSize: "14px", fontWeight: "600" }}>
+                          R${totalPlatformRevenue}K
+                        </span>
+                      </div>
+                      <div>
+                        <span class="text-dc-500 block" style={{ fontSize: "11px", marginBottom: "2px" }}>
+                          Services
+                        </span>
+                        <span style={{ fontSize: "14px", fontWeight: "600", color: "#a78bfa" }}>
+                          R${totalServicesRevenue}K
+                        </span>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Chart - fills remaining space using flexbox */}
+                  <div class={`mt-auto flex-1 min-h-0 px-2 pb-1 ${isExpanded ? "" : "pt-4"}`}>
+                    {isExpanded ? (
+                      <RevenueChart data={monthlyRevenueData} variant="expanded" />
+                    ) : (
+                      card.chart
+                    )}
+                  </div>
+                </>
+              )}
             </div>
           );
         })}

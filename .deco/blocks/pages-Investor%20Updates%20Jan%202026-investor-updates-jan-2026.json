@@ -10,13 +10,6 @@
       "logo": "https://assets.decocache.com/decocms/69810c11-8a4b-4163-80c7-942ea7f6dcdd/deco-logo.svg",
       "slides": [
         {
-          "title": "We successfully transitioned into an AI-native company",
-          "layout": "title",
-          "backgroundColor": "primary-light",
-          "textColor": "dark",
-          "tag": "2025 RECAP"
-        },
-        {
           "title": "2025 Journey",
           "layout": "timeline",
           "backgroundColor": "dc-950",
@@ -26,32 +19,56 @@
             {
               "title": "Q1",
               "bullets": [
-                { "text": "Webdraw sunset" },
-                { "text": "Hard focus decisions" }
+                {
+                  "text": "Webdraw sunset"
+                },
+                {
+                  "text": "Hard focus decisions"
+                }
               ]
             },
             {
               "title": "Q2",
               "bullets": [
-                { "text": "Design partners" },
-                { "text": "deco.chat → early enterprise usage" }
+                {
+                  "text": "Design partners"
+                },
+                {
+                  "text": "deco.chat → early enterprise usage"
+                }
               ]
             },
             {
               "title": "Q3",
               "bullets": [
-                { "text": "Product consolidation" },
-                { "text": "Black Friday preparation" }
+                {
+                  "text": "Product consolidation"
+                },
+                {
+                  "text": "Black Friday preparation"
+                }
               ]
             },
             {
               "title": "Q4",
               "bullets": [
-                { "text": "Black Friday scale" },
-                { "text": "MCP Mesh launch", "highlight": true }
+                {
+                  "text": "Black Friday scale"
+                },
+                {
+                  "text": "MCP Mesh launch",
+                  "highlight": true
+                }
               ]
             }
           ]
+        },
+        {
+          "title": "We successfully transitioned into an AI-native company",
+          "layout": "title",
+          "backgroundColor": "primary-light",
+          "textColor": "dark",
+          "tag": "2025 RECAP"
         },
         {
           "title": "Results",
@@ -71,7 +88,7 @@
         },
         {
           "title": "Operational Wins",
-          "layout": "operational-wins",
+          "layout": "title",
           "backgroundColor": "dc-950",
           "textColor": "light",
           "tag": "1.2 OPERATIONS"
@@ -108,16 +125,30 @@
           "items": [
             {
               "bullets": [
-                { "text": "Focus = willingness to let go", "highlight": true },
-                { "text": "Reduced surface area, killed good ideas" },
-                { "text": "Committed to fewer, sharper bets" }
+                {
+                  "text": "Focus = willingness to let go",
+                  "highlight": true
+                },
+                {
+                  "text": "Reduced surface area, killed good ideas"
+                },
+                {
+                  "text": "Committed to fewer, sharper bets"
+                }
               ]
             },
             {
               "bullets": [
-                { "text": "Discipline-first, not optimism-first", "highlight": true },
-                { "text": "Decisions grounded in numbers, constraints" },
-                { "text": "Based on what actually works" }
+                {
+                  "text": "Discipline-first, not optimism-first",
+                  "highlight": true
+                },
+                {
+                  "text": "Decisions grounded in numbers, constraints"
+                },
+                {
+                  "text": "Based on what actually works"
+                }
               ]
             }
           ]
@@ -152,16 +183,30 @@
           "items": [
             {
               "bullets": [
-                { "text": "Full commitment to platform", "highlight": true },
-                { "text": "Services only as a means to make the platform real" }
+                {
+                  "text": "Full commitment to platform",
+                  "highlight": true
+                },
+                {
+                  "text": "Services only as a means to make the platform real"
+                }
               ]
             },
             {
               "bullets": [
-                { "text": "Co-founder spin-out", "highlight": true },
-                { "text": "More aligned with services path → separate company" },
-                { "text": "First project (SIP) incubated inside Deco" },
-                { "text": "Useful learning environment for autonomous systems" }
+                {
+                  "text": "Co-founder spin-out",
+                  "highlight": true
+                },
+                {
+                  "text": "More aligned with services path → separate company"
+                },
+                {
+                  "text": "First project (SIP) incubated inside Deco"
+                },
+                {
+                  "text": "Useful learning environment for autonomous systems"
+                }
               ]
             }
           ]
@@ -229,10 +274,19 @@
           "items": [
             {
               "bullets": [
-                { "text": "Open-source AI operating system", "highlight": true },
-                { "text": "Composable and extensible" },
-                { "text": "MCP-first architecture" },
-                { "text": "Enterprises build their own internal AI platforms" }
+                {
+                  "text": "Open-source AI operating system",
+                  "highlight": true
+                },
+                {
+                  "text": "Composable and extensible"
+                },
+                {
+                  "text": "MCP-first architecture"
+                },
+                {
+                  "text": "Enterprises build their own internal AI platforms"
+                }
               ]
             }
           ]
@@ -248,19 +302,35 @@
             {
               "title": "Horizontal — Internal AI Platform",
               "bullets": [
-                { "text": "For platform, infra, engineering leaders" },
-                { "text": "Self-hosted, governed, extensible" },
-                { "text": "Build, run, manage internal agents" },
-                { "text": "OSS community distribution" }
+                {
+                  "text": "For platform, infra, engineering leaders"
+                },
+                {
+                  "text": "Self-hosted, governed, extensible"
+                },
+                {
+                  "text": "Build, run, manage internal agents"
+                },
+                {
+                  "text": "OSS community distribution"
+                }
               ]
             },
             {
               "title": "Vertical — AI for E-commerce & Sites",
               "bullets": [
-                { "text": "For digital and commerce teams" },
-                { "text": "Pre-built, repeatable AI software" },
-                { "text": "Moves real metrics immediately" },
-                { "text": "Site editor + managed infra plugins" }
+                {
+                  "text": "For digital and commerce teams"
+                },
+                {
+                  "text": "Pre-built, repeatable AI software"
+                },
+                {
+                  "text": "Moves real metrics immediately"
+                },
+                {
+                  "text": "Site editor + managed infra plugins"
+                }
               ]
             }
           ]
@@ -304,24 +374,40 @@
             {
               "title": "Ship & Validate Production Cases",
               "bullets": [
-                { "text": "Cogna, FSB, Itaú — horizontal motion" },
-                { "text": "Farm — vertical motion" }
+                {
+                  "text": "Cogna, FSB, Itaú — horizontal motion"
+                },
+                {
+                  "text": "Farm — vertical motion"
+                }
               ]
             },
             {
               "title": "Increase deco.cx Revenue & Efficiency",
               "bullets": [
-                { "text": "New pricing and contract standard" },
-                { "text": "Infra and site optimization" },
-                { "text": "Platform foundation integration" }
+                {
+                  "text": "New pricing and contract standard"
+                },
+                {
+                  "text": "Infra and site optimization"
+                },
+                {
+                  "text": "Platform foundation integration"
+                }
               ]
             },
             {
               "title": "Launch Community Growth Loop",
               "bullets": [
-                { "text": "Consistent content cadence" },
-                { "text": "Distribution loops → compound into H2" },
-                { "text": "Store launch" }
+                {
+                  "text": "Consistent content cadence"
+                },
+                {
+                  "text": "Distribution loops → compound into H2"
+                },
+                {
+                  "text": "Store launch"
+                }
               ]
             }
           ]
