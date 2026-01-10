@@ -88,7 +88,7 @@
         },
         {
           "title": "Operational Wins",
-          "layout": "title",
+          "layout": "operational-wins",
           "backgroundColor": "dc-950",
           "textColor": "light",
           "tag": "1.2 OPERATIONS"

@@ -3,6 +3,7 @@ import type { ImageWidget } from "apps/admin/widgets.ts";
 import Icon from "../components/ui/Icon.tsx";
 import RevenueChart from "../components/RevenueChart.tsx";
 import TrafficResilienceChart from "../components/TrafficResilienceChart.tsx";
+import McpMeshDownloadsChart from "../components/McpMeshDownloadsChart.tsx";
 
 // Static image background for IMPACT card
 function ImpactImageBackground() {
@@ -20,7 +21,7 @@ function ImpactImageBackground() {
       }}
     >
       <img
-        src="https://assets.decocache.com/decocms/4eb395ca-5dcc-4d39-a904-6eb3fbe12736/untitled_project-(2).png"
+        src="https://assets.decocache.com/decocms/f7196254-458c-4d02-bf8f-629f85329c6c/capiecomer.png"
         alt=""
         style={{
           position: "absolute",
@@ -1348,9 +1349,9 @@ function RevenueResilienceSlide({
     },
     {
       tag: "IMPACT",
-      title: "Most customers sales doubled during BF",
-      subtitle: "",
-      metric: "2–5×",
+      title: "Largest store sold significantly above expectations YoY",
+      subtitle: "Most customers sold:",
+      metric: "2×",
       metricLabel: "YoY",
       chart: null, // Replaced with static image background
       expandable: false,
@@ -1449,7 +1450,7 @@ function RevenueResilienceSlide({
                   {card.subtitle && (
                     <p
                       class="text-dc-400"
-                      style={{ fontSize: "15px", lineHeight: "1.6", marginBottom: "24px" }}
+                      style={{ fontSize: "16px", lineHeight: "24px", marginBottom: "24px" }}
                     >
                       {card.subtitle}
                     </p>
@@ -1557,7 +1558,7 @@ function RevenueResilienceSlide({
                       {card.subtitle && (
                         <p
                           class="text-dc-400"
-                          style={{ fontSize: "15px", lineHeight: "1.6", marginBottom: "24px" }}
+                          style={{ fontSize: "16px", lineHeight: "24px", marginBottom: "24px" }}
                         >
                           {card.subtitle}
                         </p>
@@ -1638,7 +1639,7 @@ function RevenueResilienceSlide({
   );
 }
 
-// Operational Wins slide component - two-card layout similar to Revenue Resilience
+// Operational Wins slide component - matches IMPACT card visual system
 function OperationalWinsSlide({
   slide,
   bgClass: _bgClass,
@@ -1648,39 +1649,23 @@ function OperationalWinsSlide({
   bgClass: string;
   textColorClass: string;
 }) {
-  // Card data for Operational Wins
+  // Card data for Operational Wins - matches Revenue/Resilience card structure
   const cards = [
     {
       tag: "INFRA",
       title: "Infra & CDN reorganization",
       subtitle: "Significant cost reduction + margin improvement",
-      icon: (
-        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" class="text-primary-light">
-          <rect x="2" y="6" width="20" height="12" rx="2" />
-          <line x1="6" y1="10" x2="6" y2="14" />
-          <line x1="10" y1="10" x2="10" y2="14" />
-          <line x1="14" y1="10" x2="14" y2="14" />
-          <circle cx="18" cy="12" r="1" fill="currentColor" />
-        </svg>
-      ),
-      metrics: [
-        { label: "Cost Impact", value: "↓ Reduced" },
-        { label: "Margin", value: "↑ Improved" },
-      ],
+      metric: "↓ 40%",
+      metricLabel: "Cost",
+      imageUrl: "https://assets.decocache.com/decocms/29fd1524-0562-4708-ac50-c97b6ff6a713/capicapi.png",
     },
     {
       tag: "PRICING",
       title: "Diagnostic + repricing process",
       subtitle: "Good reception, clients increasing contracts",
-      icon: (
-        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" class="text-primary-light">
-          <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
-        </svg>
-      ),
-      metrics: [
-        { label: "Contract Growth", value: "~20-30%" },
-        { label: "Reception", value: "Positive" },
-      ],
+      metric: "~20–30%",
+      metricLabel: "Increase",
+      imageUrl: "https://assets.decocache.com/decocms/e12242bf-dae7-4465-93e6-5a296088cb79/capiprice.png",
     },
   ];
 
@@ -1707,7 +1692,7 @@ function OperationalWinsSlide({
         </h2>
       </div>
 
-      {/* Two cards container */}
+      {/* Two cards container - matching IMPACT card layout */}
       <div
         class="flex-1 grid animate-item"
         style={{
@@ -1721,43 +1706,81 @@ function OperationalWinsSlide({
             class="relative rounded-xl border border-dc-800 overflow-hidden flex flex-col"
             style={{ padding: "32px 28px" }}
           >
-            {/* Icon */}
-            <div style={{ marginBottom: "24px" }}>
-              {card.icon}
-            </div>
+            {/* Image background - static, object-fit cover */}
+            {card.imageUrl && (
+              <div
+                class="absolute inset-0 z-0"
+                style={{
+                  opacity: "1",
+                }}
+              >
+                <img
+                  src={card.imageUrl}
+                  alt=""
+                  class="w-full h-full object-cover"
+                  style={{
+                    objectFit: "cover",
+                    objectPosition: "center",
+                  }}
+                />
+              </div>
+            )}
 
-            {/* Tag + Title */}
-            <div style={{ marginBottom: "16px" }}>
-              <p style={{ fontSize: "16px", lineHeight: "1.5" }}>
-                <span class="text-primary-light">[{card.tag}]</span>
-                <span class="text-dc-100" style={{ marginLeft: "8px" }}>{card.title}</span>
-              </p>
-            </div>
-
-            {/* Subtitle */}
-            <p
-              class="text-dc-400"
+            {/* Subtle gradient overlay for readability - bottom-left focus */}
+            <div
+              class="absolute inset-0 pointer-events-none"
               style={{
-                fontSize: "15px",
-                lineHeight: "1.6",
-                marginBottom: "auto",
+                zIndex: "5",
+                background: "linear-gradient(to top, rgba(18, 17, 15, 0.85) 0%, rgba(18, 17, 15, 0.4) 30%, transparent 60%)",
               }}
-            >
-              {card.subtitle}
-            </p>
+            />
 
-            {/* Metrics at bottom */}
-            <div class="flex gap-8 mt-8 pt-6 border-t border-dc-800">
-              {card.metrics.map((metric, i) => (
-                <div key={i}>
-                  <span class="text-dc-500 block" style={{ fontSize: "12px", marginBottom: "4px" }}>
-                    {metric.label}
+            {/* Content - elevated above background */}
+            <div class="relative z-10 flex flex-col h-full">
+              {/* Tag on its own line */}
+              <div style={{ marginBottom: "8px" }}>
+                <p style={{ fontSize: "16px", lineHeight: "1.5" }}>
+                  <span class="text-primary-light">[{card.tag}]</span>
+                </p>
+              </div>
+
+              {/* Headline - 28px font size */}
+              <p
+                class="text-dc-100"
+                style={{ fontSize: "28px", lineHeight: "1.5", marginBottom: "16px" }}
+              >
+                {card.title}
+              </p>
+
+              {/* Subtitle - 16px font, 24px line-height */}
+              {card.subtitle && (
+                <p
+                  class="text-dc-400"
+                  style={{ fontSize: "16px", lineHeight: "24px", marginBottom: "auto" }}
+                >
+                  {card.subtitle}
+                </p>
+              )}
+
+              {/* Metric at bottom (optional) */}
+              {card.metric && (
+                <div style={{ marginTop: "24px" }}>
+                  <span
+                    class="text-primary-light"
+                    style={{ fontSize: "48px", lineHeight: "1", letterSpacing: "-1px" }}
+                  >
+                    {card.metric}
                   </span>
-                  <span class="text-primary-light font-medium" style={{ fontSize: "18px" }}>
-                    {metric.value}
-                  </span>
+                  {card.metricLabel && (
+                    <span
+                      class="text-dc-400"
+                      style={{ fontSize: "18px", marginLeft: "12px" }}
+                    >
+                      {card.metricLabel}
+                    </span>
+                  )}
                 </div>
-              ))}
+              )}
             </div>
           </div>
         ))}
@@ -1776,22 +1799,52 @@ function ProductPlatformSlide({
   bgClass: string;
   textColorClass: string;
 }) {
+  // MCP Mesh downloads data
+  const downloadsDaily = [
+    { date: "2025-12-20", downloads: 0 },
+    { date: "2025-12-21", downloads: 319 },
+    { date: "2025-12-22", downloads: 642 },
+    { date: "2025-12-23", downloads: 854 },
+    { date: "2025-12-24", downloads: 277 },
+    { date: "2025-12-25", downloads: 161 },
+    { date: "2025-12-26", downloads: 368 },
+    { date: "2025-12-27", downloads: 44 },
+    { date: "2025-12-28", downloads: 291 },
+    { date: "2025-12-29", downloads: 590 },
+    { date: "2025-12-30", downloads: 1470 },
+    { date: "2025-12-31", downloads: 293 },
+    { date: "2026-01-01", downloads: 159 },
+    { date: "2026-01-02", downloads: 774 },
+    { date: "2026-01-03", downloads: 29 },
+    { date: "2026-01-04", downloads: 188 },
+    { date: "2026-01-05", downloads: 802 },
+    { date: "2026-01-06", downloads: 649 },
+    { date: "2026-01-07", downloads: 844 },
+    { date: "2026-01-08", downloads: 1387 },
+    { date: "2026-01-09", downloads: 881 },
+  ];
+
+  const totalDownloads = 11022;
+
   // Card data for Product & Platform Results
   const cards = [
     {
       tag: "PARTNERS",
-      title: "Design Partner Cases",
-      description: "Superfrete, Gupy, Libertas, Livemode. Antifraud agent cut fraud detection from 7.5 days to minutes.",
+      title: "Proven \"AI software in production\" through Design Partners",
+      subtitle: "e.g., an anti-fraud agent cut fraud detection time from 7.5 days to minutes",
+      imageUrl: "",
     },
     {
-      tag: "PLATFORM",
-      title: "MCP Mesh Launch",
-      description: "Open-source, self-hostable foundation. Early adoption from the developer community.",
+      tag: "MCP MESH",
+      title: "MCP Mesh launch — open-source, self-hosted foundation for Internal AI Platform",
+      subtitle: "",
+      imageUrl: "",
     },
     {
       tag: "ENTERPRISE",
-      title: "Enterprise Adoption",
-      description: "First large-scale enterprise: Cogna. Inbound interest from 5+ others.",
+      title: "Enterprise adoption: first self-hosted AI OS customer + interest from 5 others",
+      subtitle: "",
+      imageUrl: "",
     },
   ];
 
@@ -1818,38 +1871,120 @@ function ProductPlatformSlide({
         </h2>
       </div>
 
-      {/* Three cards container - generous spacing */}
+      {/* Three cards container - matching IMPACT card layout */}
       <div
         class="flex-1 grid animate-item"
         style={{
           gridTemplateColumns: "1fr 1fr 1fr",
-          gap: "32px",
+          gap: "16px",
         }}
       >
         {cards.map((card, index) => (
           <div
             key={index}
-            class="rounded-xl border border-dc-800 flex flex-col"
+            class="relative rounded-xl border border-dc-800 overflow-hidden flex flex-col"
             style={{ padding: "32px 28px" }}
           >
-            {/* Tag + Title */}
-            <div style={{ marginBottom: "24px" }}>
-              <p style={{ fontSize: "16px", lineHeight: "1.5" }}>
-                <span class="text-primary-light">[{card.tag}]</span>
-                <span class="text-dc-100" style={{ marginLeft: "8px" }}>{card.title}</span>
-              </p>
-            </div>
-            
-            {/* Description */}
-            <p
-              class="text-dc-400"
-              style={{ fontSize: "15px", lineHeight: "1.6" }}
-            >
-              {card.description}
-            </p>
+            {/* Image background - static, object-fit cover */}
+            {card.imageUrl && (
+              <div
+                class="absolute inset-0 z-0"
+                style={{
+                  opacity: "1",
+                }}
+              >
+                <img
+                  src={card.imageUrl}
+                  alt=""
+                  class="w-full h-full object-cover"
+                  style={{
+                    objectFit: "cover",
+                    objectPosition: "center",
+                  }}
+                />
+              </div>
+            )}
 
-            {/* Spacer for visual balance */}
-            <div class="flex-1" style={{ minHeight: "120px" }} />
+            {/* Subtle gradient overlay for readability - bottom-left focus */}
+            <div
+              class="absolute inset-0 pointer-events-none"
+              style={{
+                zIndex: "5",
+                background: "linear-gradient(to top, rgba(18, 17, 15, 0.85) 0%, rgba(18, 17, 15, 0.4) 30%, transparent 60%)",
+              }}
+            />
+
+            {/* Content - elevated above background */}
+            <div class="relative z-10 flex flex-col h-full">
+              {/* Tag on its own line */}
+              <div style={{ marginBottom: "8px" }}>
+                <p style={{ fontSize: "16px", lineHeight: "1.5" }}>
+                  <span class="text-primary-light">[{card.tag}]</span>
+                </p>
+              </div>
+
+              {/* Headline - 28px font size */}
+              <p
+                class="text-dc-100"
+                style={{ fontSize: "28px", lineHeight: "1.5", marginBottom: "16px" }}
+              >
+                {card.title}
+              </p>
+
+              {/* Subtitle - 16px font, 24px line-height */}
+              {card.subtitle && (
+                <p
+                  class="text-dc-400"
+                  style={{ fontSize: "16px", lineHeight: "24px", marginBottom: index === 1 ? "16px" : "auto" }}
+                >
+                  {card.subtitle}
+                </p>
+              )}
+
+              {/* MCP MESH card: Big number + chart */}
+              {index === 1 && (
+                <>
+                  {/* Big number metric */}
+                  <div style={{ marginBottom: "16px" }}>
+                    <span
+                      class="text-primary-light"
+                      style={{ fontSize: "64px", lineHeight: "1", letterSpacing: "-1px" }}
+                    >
+                      {totalDownloads.toLocaleString()}
+                    </span>
+                    <div
+                      class="text-dc-400"
+                      style={{ fontSize: "16px", marginTop: "4px" }}
+                    >
+                      Downloads
+                    </div>
+                  </div>
+
+                  {/* Chart fills remaining space */}
+                  <div class="flex-1 min-h-0">
+                    <McpMeshDownloadsChart data={downloadsDaily} />
+                  </div>
+                </>
+              )}
+
+              {/* ENTERPRISE card: Big number metric */}
+              {index === 2 && (
+                <div style={{ marginTop: "24px" }}>
+                  <span
+                    class="text-primary-light"
+                    style={{ fontSize: "48px", lineHeight: "1", letterSpacing: "-1px" }}
+                  >
+                    $70k–$150k
+                  </span>
+                  <span
+                    class="text-dc-400"
+                    style={{ fontSize: "18px", marginLeft: "12px" }}
+                  >
+                    ACV
+                  </span>
+                </div>
+              )}
+            </div>
           </div>
         ))}
       </div>
@@ -1870,19 +2005,22 @@ function OrganizationalMaturitySlide({
   // Card data for Organizational Maturity
   const cards = [
     {
-      tag: "PRACTICE",
-      title: "AI-first",
-      description: "Agents used daily. Engineers build in Cursor. Business teams vibecode. Everything is MCP-first.",
+      tag: "AI-FIRST",
+      title: "Fully AI-first in practice: agents daily, engineers in Cursor, business teams vibecoding, MCP-first by default",
+      subtitle: "",
+      imageUrl: "",
     },
     {
       tag: "PRODUCTION",
-      title: "Real AI team",
-      description: "Hands-on with real systems, failures, and constraints. We operate with actual production workloads.",
+      title: "We now operate as a production AI team: real systems, real constraints, real failures",
+      subtitle: "",
+      imageUrl: "",
     },
     {
-      tag: "EXTERNAL",
-      title: "Recognized expertise",
-      description: "Leaders come to us for advice on scaling AI in their organizations.",
+      tag: "PULL",
+      title: "This shows externally. Platform and engineering leaders increasingly come to us for advice on scaling AI internally.",
+      subtitle: "",
+      imageUrl: "",
     },
   ];
 
@@ -1909,38 +2047,76 @@ function OrganizationalMaturitySlide({
         </h2>
       </div>
 
-      {/* Three cards container - generous spacing */}
+      {/* Three cards container - matching IMPACT card layout */}
       <div
         class="flex-1 grid animate-item"
         style={{
           gridTemplateColumns: "1fr 1fr 1fr",
-          gap: "32px",
+          gap: "16px",
         }}
       >
         {cards.map((card, index) => (
           <div
             key={index}
-            class="rounded-xl border border-dc-800 flex flex-col"
+            class="relative rounded-xl border border-dc-800 overflow-hidden flex flex-col"
             style={{ padding: "32px 28px" }}
           >
-            {/* Tag + Title */}
-            <div style={{ marginBottom: "24px" }}>
-              <p style={{ fontSize: "16px", lineHeight: "1.5" }}>
-                <span class="text-primary-light">[{card.tag}]</span>
-                <span class="text-dc-100" style={{ marginLeft: "8px" }}>{card.title}</span>
-              </p>
-            </div>
-            
-            {/* Description */}
-            <p
-              class="text-dc-400"
-              style={{ fontSize: "15px", lineHeight: "1.6" }}
-            >
-              {card.description}
-            </p>
+            {/* Image background - static, object-fit cover */}
+            {card.imageUrl && (
+              <div
+                class="absolute inset-0 z-0"
+                style={{
+                  opacity: "1",
+                }}
+              >
+                <img
+                  src={card.imageUrl}
+                  alt=""
+                  class="w-full h-full object-cover"
+                  style={{
+                    objectFit: "cover",
+                    objectPosition: "center",
+                  }}
+                />
+              </div>
+            )}
 
-            {/* Spacer for visual balance */}
-            <div class="flex-1" style={{ minHeight: "120px" }} />
+            {/* Subtle gradient overlay for readability - bottom-left focus */}
+            <div
+              class="absolute inset-0 pointer-events-none"
+              style={{
+                zIndex: "5",
+                background: "linear-gradient(to top, rgba(18, 17, 15, 0.85) 0%, rgba(18, 17, 15, 0.4) 30%, transparent 60%)",
+              }}
+            />
+
+            {/* Content - elevated above background */}
+            <div class="relative z-10 flex flex-col h-full">
+              {/* Tag on its own line */}
+              <div style={{ marginBottom: "8px" }}>
+                <p style={{ fontSize: "16px", lineHeight: "1.5" }}>
+                  <span class="text-primary-light">[{card.tag}]</span>
+                </p>
+              </div>
+
+              {/* Headline - 28px font size */}
+              <p
+                class="text-dc-100"
+                style={{ fontSize: "28px", lineHeight: "1.5", marginBottom: "16px" }}
+              >
+                {card.title}
+              </p>
+
+              {/* Subtitle - 16px font, 24px line-height */}
+              {card.subtitle && (
+                <p
+                  class="text-dc-400"
+                  style={{ fontSize: "16px", lineHeight: "24px", marginBottom: "auto" }}
+                >
+                  {card.subtitle}
+                </p>
+              )}
+            </div>
           </div>
         ))}
       </div>
@@ -3353,6 +3529,21 @@ export default function InvestorPresentation({
               {String(currentSlide + 1).padStart(2, "0")} /{" "}
               {String(totalSlides).padStart(2, "0")}
             </span>
+
+            {/* First button */}
+            <button
+              type="button"
+              onClick={() => goToSlide(0)}
+              disabled={currentSlide === 0 || isAnimating}
+              class={`rounded-full flex items-center justify-center transition-all border ${
+                currentSlide === 0
+                  ? "border-dc-800 text-dc-700 cursor-not-allowed"
+                  : "border-dc-700 hover:border-dc-600 text-dc-400 hover:text-dc-300 cursor-pointer"
+              }`}
+              style={{ width: "36px", height: "36px" }}
+            >
+              <Icon name="first_page" size="small" />
+            </button>
 
             {/* Previous button */}
             <button
