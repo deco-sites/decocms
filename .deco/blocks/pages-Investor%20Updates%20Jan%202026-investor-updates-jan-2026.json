@@ -117,99 +117,25 @@
           "slideNumber": "02"
         },
         {
-          "title": "Focus & Leadership",
-          "layout": "content",
+          "title": "Execution",
+          "layout": "learnings-execution",
           "backgroundColor": "dc-950",
           "textColor": "light",
-          "tag": "2.1 LEADERSHIP",
-          "items": [
-            {
-              "bullets": [
-                {
-                  "text": "Focus = willingness to let go",
-                  "highlight": true
-                },
-                {
-                  "text": "Reduced surface area, killed good ideas"
-                },
-                {
-                  "text": "Committed to fewer, sharper bets"
-                }
-              ]
-            },
-            {
-              "bullets": [
-                {
-                  "text": "Discipline-first, not optimism-first",
-                  "highlight": true
-                },
-                {
-                  "text": "Decisions grounded in numbers, constraints"
-                },
-                {
-                  "text": "Based on what actually works"
-                }
-              ]
-            }
-          ]
+          "tag": "2.1 EXECUTION"
         },
         {
-          "title": "Product Learning",
-          "layout": "list",
-          "backgroundColor": "dc-900",
-          "textColor": "light",
-          "tag": "2.2 PRODUCT INSIGHTS",
-          "items": [
-            {
-              "title": "Agents are software",
-              "subtitle": "They need real engineering, observability, governance"
-            },
-            {
-              "title": "Autonomy is not the main value prop",
-              "subtitle": "Reliability + control + collaboration is"
-            },
-            {
-              "title": "Devs and non-devs must collaborate",
-              "subtitle": "In the same system"
-            }
-          ]
-        },
-        {
-          "title": "Strategic Consequence",
-          "layout": "content",
+          "title": "Product",
+          "layout": "learnings-product",
           "backgroundColor": "dc-950",
           "textColor": "light",
-          "tag": "2.3 STRATEGY",
-          "items": [
-            {
-              "bullets": [
-                {
-                  "text": "Full commitment to platform",
-                  "highlight": true
-                },
-                {
-                  "text": "Services only as a means to make the platform real"
-                }
-              ]
-            },
-            {
-              "bullets": [
-                {
-                  "text": "Co-founder spin-out",
-                  "highlight": true
-                },
-                {
-                  "text": "More aligned with services path → separate company"
-                },
-                {
-                  "text": "First project (SIP) incubated inside Deco"
-                },
-                {
-                  "text": "Useful learning environment for autonomous systems"
-                }
-              ]
-            }
-          ]
+          "tag": "2.2 PRODUCT"
+        },
+        {
+          "title": "Strategy",
+          "layout": "learnings-strategy",
+          "backgroundColor": "dc-950",
+          "textColor": "light",
+          "tag": "2.3 STRATEGY"
         },
         {
           "title": "Direction",
@@ -221,119 +147,27 @@
           "slideNumber": "03"
         },
         {
-          "title": "Our Premise",
-          "subtitle": "We believe software is becoming:",
-          "layout": "list",
+          "title": "Q1 Validation Phase",
+          "subtitle": "Choosing our path forward",
+          "layout": "q1-validation",
           "backgroundColor": "dc-950",
           "textColor": "light",
-          "tag": "3.1 PREMISE",
-          "items": [
-            {
-              "title": "Custom",
-              "subtitle": "Shaped around each company's workflows and data"
-            },
-            {
-              "title": "Composable",
-              "subtitle": "Built from interoperable, replaceable parts"
-            },
-            {
-              "title": "Owned",
-              "subtitle": "Not locked inside black-box SaaS"
-            }
-          ]
+          "tag": "3.1 Q1 2026"
         },
         {
-          "title": "Our Thesis",
-          "subtitle": "An Internal AI Platform is the system where:",
-          "layout": "list",
-          "backgroundColor": "dc-900",
+          "title": "What never changes",
+          "subtitle": "We plan around what does not change:",
+          "layout": "what-never-changes",
+          "backgroundColor": "yellow-dark",
           "textColor": "light",
-          "tag": "3.2 THESIS",
-          "items": [
-            {
-              "title": "Humans, developers and agents collaborate"
-            },
-            {
-              "title": "Context is continuously managed"
-            },
-            {
-              "title": "Governance is enforced"
-            },
-            {
-              "title": "Autonomy is made safe"
-            }
-          ]
+          "tag": "3.2 FOUNDATION"
         },
         {
-          "title": "deco CMS",
-          "subtitle": "Our implementation of this thesis",
-          "layout": "content",
-          "backgroundColor": "primary-light",
-          "textColor": "dark",
-          "tag": "THE PRODUCT",
-          "items": [
-            {
-              "bullets": [
-                {
-                  "text": "Open-source AI operating system",
-                  "highlight": true
-                },
-                {
-                  "text": "Composable and extensible"
-                },
-                {
-                  "text": "MCP-first architecture"
-                },
-                {
-                  "text": "Enterprises build their own internal AI platforms"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Go-to-Market",
-          "subtitle": "Two motions",
-          "layout": "two-column",
+          "title": "Our approach",
+          "layout": "our-approach",
           "backgroundColor": "dc-950",
           "textColor": "light",
-          "tag": "3.4 GTM",
-          "items": [
-            {
-              "title": "Horizontal — Internal AI Platform",
-              "bullets": [
-                {
-                  "text": "For platform, infra, engineering leaders"
-                },
-                {
-                  "text": "Self-hosted, governed, extensible"
-                },
-                {
-                  "text": "Build, run, manage internal agents"
-                },
-                {
-                  "text": "OSS community distribution"
-                }
-              ]
-            },
-            {
-              "title": "Vertical — AI for E-commerce & Sites",
-              "bullets": [
-                {
-                  "text": "For digital and commerce teams"
-                },
-                {
-                  "text": "Pre-built, repeatable AI software"
-                },
-                {
-                  "text": "Moves real metrics immediately"
-                },
-                {
-                  "text": "Site editor + managed infra plugins"
-                }
-              ]
-            }
-          ]
+          "tag": "3.3 APPROACH"
         },
         {
           "title": "2026 Priorities",
@@ -344,73 +178,11 @@
           "slideNumber": "04"
         },
         {
-          "title": "Annual Priorities",
-          "layout": "list",
+          "title": "2026 priorities",
+          "layout": "priorities-2026",
           "backgroundColor": "dc-950",
           "textColor": "light",
-          "tag": "2026 GOALS",
-          "items": [
-            {
-              "title": "Operate profitably all year round",
-              "subtitle": "Disciplined cost, pricing, and delivery"
-            },
-            {
-              "title": "Make OSS community our primary growth engine",
-              "subtitle": "Main distribution, learning, and adoption channel"
-            },
-            {
-              "title": "Turn production usage into repeatable AI software",
-              "subtitle": "Productize what works for e-commerce and internal ops"
-            }
-          ]
-        },
-        {
-          "title": "Q1 Milestones",
-          "layout": "two-column",
-          "backgroundColor": "dc-900",
-          "textColor": "light",
-          "tag": "Q1 2026",
-          "items": [
-            {
-              "title": "Ship & Validate Production Cases",
-              "bullets": [
-                {
-                  "text": "Cogna, FSB, Itaú — horizontal motion"
-                },
-                {
-                  "text": "Farm — vertical motion"
-                }
-              ]
-            },
-            {
-              "title": "Increase deco.cx Revenue & Efficiency",
-              "bullets": [
-                {
-                  "text": "New pricing and contract standard"
-                },
-                {
-                  "text": "Infra and site optimization"
-                },
-                {
-                  "text": "Platform foundation integration"
-                }
-              ]
-            },
-            {
-              "title": "Launch Community Growth Loop",
-              "bullets": [
-                {
-                  "text": "Consistent content cadence"
-                },
-                {
-                  "text": "Distribution loops → compound into H2"
-                },
-                {
-                  "text": "Store launch"
-                }
-              ]
-            }
-          ]
+          "tag": "ANNUAL FOCUS"
         },
         {
           "title": "Our Asks",
@@ -421,21 +193,11 @@
           "slideNumber": "05"
         },
         {
-          "title": "How You Can Help",
-          "layout": "list",
+          "title": "Asks",
+          "layout": "our-asks",
           "backgroundColor": "dc-950",
           "textColor": "light",
-          "tag": "ASKS",
-          "items": [
-            {
-              "title": "1. Intros to platform / infra / automation leaders",
-              "subtitle": "In large companies building AI operations"
-            },
-            {
-              "title": "2. (Optional) Intros to large e-commerce players",
-              "subtitle": "With appetite for operational AI"
-            }
-          ]
+          "tag": "HOW YOU CAN HELP"
         },
         {
           "title": "Thank You",

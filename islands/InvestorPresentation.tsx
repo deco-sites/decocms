@@ -5,6 +5,23 @@ import RevenueChart from "../components/RevenueChart.tsx";
 import TrafficResilienceChart from "../components/TrafficResilienceChart.tsx";
 import McpMeshDownloadsChart from "../components/McpMeshDownloadsChart.tsx";
 
+// Material Symbols Component - Sharp style, outlined, weight 100
+function MaterialSymbol({ icon, size = 24, className = "" }: { icon: string; size?: number; className?: string }) {
+  return (
+    <span
+      class={`material-symbols-sharp ${className}`}
+      style={{
+        fontSize: `${size}px`,
+        fontVariationSettings: "'FILL' 0, 'wght' 100, 'GRAD' 0, 'opsz' 48",
+        lineHeight: 1,
+        userSelect: "none",
+      }}
+    >
+      {icon}
+    </span>
+  );
+}
+
 // Static image background for IMPACT card
 function ImpactImageBackground() {
   return (
@@ -1831,7 +1848,7 @@ function ProductPlatformSlide({
     {
       tag: "PARTNERS",
       title: "Proven \"AI software in production\" through Design Partners",
-      subtitle: "e.g., an anti-fraud agent cut fraud detection time from 7.5 days to minutes",
+      subtitle: "One anti-fraud agent cut fraud detection time from:",
       imageUrl: "",
     },
     {
@@ -1844,7 +1861,7 @@ function ProductPlatformSlide({
       tag: "ENTERPRISE",
       title: "Enterprise adoption: first self-hosted AI OS customer + interest from 5 others",
       subtitle: "",
-      imageUrl: "",
+      imageUrl: "https://assets.decocache.com/decocms/e3f1b9b4-a2e6-4978-ac50-e29db64f7167/cog2.png",
     },
   ];
 
@@ -1935,10 +1952,28 @@ function ProductPlatformSlide({
               {card.subtitle && (
                 <p
                   class="text-dc-400"
-                  style={{ fontSize: "16px", lineHeight: "24px", marginBottom: index === 1 ? "16px" : "auto" }}
+                  style={{ fontSize: "16px", lineHeight: "24px", marginBottom: (index === 0 || index === 1) ? "0px" : "auto" }}
                 >
                   {card.subtitle}
                 </p>
+              )}
+
+              {/* PARTNERS card: Time savings big number */}
+              {index === 0 && (
+                <div style={{ marginTop: "16px" }}>
+                  <span
+                    class="text-dc-400"
+                    style={{ fontSize: "28px", lineHeight: "1", letterSpacing: "-0.5px" }}
+                  >
+                    7.5 days →
+                  </span>
+                  <span
+                    class="text-primary-light"
+                    style={{ fontSize: "48px", lineHeight: "1", letterSpacing: "-1px", marginLeft: "12px" }}
+                  >
+                    MINUTES
+                  </span>
+                </div>
               )}
 
               {/* MCP MESH card: Big number + chart */}
@@ -2124,6 +2159,1247 @@ function OrganizationalMaturitySlide({
   );
 }
 
+// Execution Learnings slide - Large typography with centered layout and illustration
+function ExecutionLearningsSlide({
+  slide,
+  bgClass: _bgClass,
+  textColorClass: _textColorClass,
+}: {
+  slide: Slide;
+  bgClass: string;
+  textColorClass: string;
+}) {
+  // Execution learnings - punchy, inspirational statements with purple highlights
+  const statements = [
+    { text: "Focus = willingness to let go", highlight: "Focus" },
+    { text: "Finish bets before starting new ones", highlight: "Finish bets" },
+    { text: "Shoot bullets before cannonballs", highlight: "Shoot bullets" },
+  ];
+
+  return (
+    <div
+      class="w-full h-full relative bg-purple-dark text-dc-50 flex flex-col overflow-hidden"
+      style={{ padding: "80px 96px" }}
+    >
+      {/* Background illustration - positioned at the bottom center */}
+      <img
+        src="https://assets.decocache.com/decocms/f4d2e0a7-551f-49b3-a06b-f6db6376e246/image-909-(Traced).png"
+        alt=""
+        class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none"
+        style={{
+          width: "auto",
+          height: "100%",
+          maxWidth: "none",
+          objectFit: "contain",
+        }}
+      />
+
+      {/* Header - centered horizontally at the top */}
+      <div class="text-center relative z-10" style={{ marginBottom: "64px" }}>
+        {slide.tag && (
+          <span
+            class="animate-item font-mono uppercase tracking-[0.2em] text-dc-400 block"
+            style={{ fontSize: "12px", letterSpacing: "2.28px", marginBottom: "16px" }}
+          >
+            {slide.tag}
+          </span>
+        )}
+        <h2
+          class="animate-item text-dc-200 leading-tight"
+          style={{ fontSize: "32px", letterSpacing: "-0.5px" }}
+        >
+          New principles
+        </h2>
+      </div>
+
+      {/* Three large statements - centered both horizontally and vertically */}
+      <div
+        class="flex-1 flex flex-col justify-center items-center animate-item relative z-10"
+        style={{ gap: "24px" }}
+      >
+        {statements.map((statement, index) => {
+          const parts = statement.text.split(statement.highlight);
+          return (
+            <p
+              key={index}
+              class="text-dc-50 text-center font-sans"
+              style={{
+                fontSize: "88px",
+                lineHeight: "88px",
+                letterSpacing: "-1.76px",
+                fontWeight: "normal",
+              }}
+            >
+              <span class="text-purple-light">{statement.highlight}</span>
+              <span>{parts[1]}</span>
+            </p>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+// Product Learnings slide - 2x2 grid of insight cards with icons
+function ProductLearningsSlide({
+  slide,
+  bgClass: _bgClass,
+  textColorClass: _textColorClass,
+}: {
+  slide: Slide;
+  bgClass: string;
+  textColorClass: string;
+}) {
+  // Product learnings - insights about agents and collaboration with Material Symbols
+  const insights = [
+    {
+      icon: "trending_up",
+      title: "Business impact first",
+      description: "Impact from a few agentic solutions comes before team autonomy",
+    },
+    {
+      icon: "smart_toy",
+      title: "Autonomy is earned",
+      description: "Start with reliable, pre-built agents, then compose new ones",
+    },
+    {
+      icon: "engineering",
+      title: "Agents are software",
+      description: "They require engineering, observability, and governance",
+    },
+    {
+      icon: "handshake",
+      title: "One system for all",
+      description: "Devs and non-devs must work in the same system",
+    },
+  ];
+
+  return (
+    <>
+      {/* Material Symbols Font - Sharp style, weight 100 */}
+      <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100,0,0"
+        rel="stylesheet"
+      />
+      
+      <div
+        class="w-full h-full flex flex-col bg-dc-950 text-dc-50"
+        style={{ padding: "80px 96px" }}
+      >
+        {/* Header */}
+        <div style={{ marginBottom: "48px" }}>
+          {slide.tag && (
+            <span
+              class="animate-item font-mono uppercase tracking-[0.2em] text-dc-500 block"
+              style={{ fontSize: "12px", marginBottom: "16px" }}
+            >
+              {slide.tag}
+            </span>
+          )}
+          <h2
+            class="animate-item text-dc-200 leading-tight"
+            style={{ fontSize: "32px", letterSpacing: "-0.5px" }}
+          >
+            Building with AI agents
+          </h2>
+        </div>
+
+        {/* 2x2 Grid of insight cards - increased height */}
+        <div
+          class="flex-1 grid animate-item"
+          style={{
+            gridTemplateColumns: "1fr 1fr",
+            gap: "24px",
+          }}
+        >
+          {insights.map((insight, index) => (
+            <div
+              key={index}
+              class="rounded-xl border border-dc-800 flex flex-col"
+              style={{ padding: "40px" }}
+            >
+              {/* Large Icon - purple-light, left-aligned */}
+              <div
+                class="text-purple-light"
+                style={{
+                  marginBottom: "32px",
+                }}
+              >
+                <MaterialSymbol icon={insight.icon} size={160} />
+              </div>
+              {/* Title - larger size, left-aligned */}
+              <h3
+                class="text-purple-light"
+                style={{
+                  fontSize: "40px",
+                  lineHeight: "48px",
+                  marginBottom: "16px",
+                  letterSpacing: "-0.5px",
+                }}
+              >
+                {insight.title}
+              </h3>
+              {/* Description - increased size */}
+              <p
+                class="text-dc-300"
+                style={{
+                  fontSize: "22px",
+                  lineHeight: "28px",
+                }}
+              >
+                {insight.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </>
+  );
+}
+
+// Strategy Learnings slide - Spin-off highlight + dual hypothesis
+function StrategyLearningsSlide({
+  slide,
+  bgClass: _bgClass,
+  textColorClass: _textColorClass,
+}: {
+  slide: Slide;
+  bgClass: string;
+  textColorClass: string;
+}) {
+  return (
+    <div
+      class="w-full h-full flex flex-col bg-dc-950 text-dc-50"
+      style={{ padding: "80px 96px" }}
+    >
+      {/* Header */}
+      <div style={{ marginBottom: "48px" }}>
+        {slide.tag && (
+          <span
+            class="animate-item font-mono uppercase tracking-[0.2em] text-dc-500 block"
+            style={{ fontSize: "12px", marginBottom: "16px" }}
+          >
+            {slide.tag}
+          </span>
+        )}
+        <h2
+          class="animate-item text-dc-200 leading-tight"
+          style={{ fontSize: "32px", letterSpacing: "-0.5px" }}
+        >
+          Path forward
+        </h2>
+      </div>
+
+      {/* Content: Spin-off + Dual Hypothesis */}
+      <div
+        class="flex-1 flex flex-col animate-item"
+        style={{ gap: "32px" }}
+      >
+        {/* Spin-off highlight - full width card with image placeholder */}
+        <div
+          class="rounded-xl border border-dc-800 flex items-center"
+          style={{ padding: "32px 40px", gap: "32px" }}
+        >
+          {/* Image placeholder - empty space for photo */}
+          <div
+            class="flex-shrink-0 rounded-full bg-dc-900 border border-dc-800"
+            style={{ width: "72px", height: "72px" }}
+          />
+          {/* Content */}
+          <div class="flex-1">
+            <p
+              class="text-dc-100"
+              style={{
+                fontSize: "28px",
+                lineHeight: "1.4",
+                marginBottom: "8px",
+              }}
+            >
+              Co-founder spun out a services company{" "}
+              <span class="text-purple-light">(SIP)</span>
+            </p>
+            <p
+              class="text-dc-400"
+              style={{
+                fontSize: "18px",
+                lineHeight: "1.5",
+              }}
+            >
+              First deco spin-off. Praise to Lucis.
+            </p>
+          </div>
+        </div>
+
+        {/* Dual hypothesis card - contains title and two nested cards */}
+        <div
+          class="flex-1 rounded-xl border border-dc-800 flex flex-col"
+          style={{ padding: "40px" }}
+        >
+          {/* Title */}
+          <h3
+            class="text-dc-200"
+            style={{
+              fontSize: "28px",
+              lineHeight: "1.4",
+              marginBottom: "32px",
+              letterSpacing: "-0.5px",
+            }}
+          >
+            We are validating two hypotheses in parallel and will choose one based on evidence:
+          </h3>
+
+          {/* Two hypothesis cards side by side */}
+          <div
+            class="flex-1 grid"
+            style={{
+              gridTemplateColumns: "1fr 1fr",
+              gap: "24px",
+            }}
+          >
+            {/* Horizontal hypothesis */}
+            <div
+              class="rounded-xl border border-dc-800 flex flex-col relative overflow-hidden"
+              style={{ padding: "32px" }}
+            >
+              {/* Space for background image */}
+              <div
+                class="absolute inset-0 bg-dc-900/50"
+                style={{ zIndex: 0 }}
+              />
+              {/* Content */}
+              <div class="relative z-10 flex flex-col h-full">
+                {/* Badge */}
+                <span
+                  class="font-mono uppercase tracking-[0.15em] text-purple-light"
+                  style={{ fontSize: "13px", marginBottom: "16px" }}
+                >
+                  [HORIZONTAL]
+                </span>
+                {/* Title */}
+                <h4
+                  class="text-dc-100"
+                  style={{
+                    fontSize: "32px",
+                    lineHeight: "1.2",
+                    letterSpacing: "-0.5px",
+                  }}
+                >
+                  Internal AI Platform
+                </h4>
+              </div>
+            </div>
+
+            {/* Vertical hypothesis */}
+            <div
+              class="rounded-xl border border-dc-800 flex flex-col relative overflow-hidden"
+              style={{ padding: "32px" }}
+            >
+              {/* Space for background image */}
+              <div
+                class="absolute inset-0 bg-dc-900/50"
+                style={{ zIndex: 0 }}
+              />
+              {/* Content */}
+              <div class="relative z-10 flex flex-col h-full">
+                {/* Badge */}
+                <span
+                  class="font-mono uppercase tracking-[0.15em] text-purple-light"
+                  style={{ fontSize: "13px", marginBottom: "16px" }}
+                >
+                  [VERTICAL]
+                </span>
+                {/* Title */}
+                <h4
+                  class="text-dc-100"
+                  style={{
+                    fontSize: "32px",
+                    lineHeight: "1.2",
+                    letterSpacing: "-0.5px",
+                  }}
+                >
+                  AI software for e-commerce
+                </h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// Q1 Validation slide - Two hypotheses comparison with yellow accents
+function Q1ValidationSlide({
+  slide,
+  bgClass: _bgClass,
+  textColorClass: _textColorClass,
+}: {
+  slide: Slide;
+  bgClass: string;
+  textColorClass: string;
+}) {
+  const [hoveredHypothesis, setHoveredHypothesis] = useState<string | null>(null);
+
+  // ASCII Dithering animation for hypothesis cards - faster with more movement
+  useEffect(() => {
+    const canvasA = document.getElementById("hypothesis-a-canvas") as HTMLCanvasElement | null;
+    const canvasB = document.getElementById("hypothesis-b-canvas") as HTMLCanvasElement | null;
+    
+    const animateCanvas = (canvas: HTMLCanvasElement, offset: number) => {
+      const ctx = canvas.getContext("2d");
+      if (!ctx) return null;
+
+      let animationRef: number;
+      const scale = 2;
+
+      const resizeCanvas = () => {
+        const rect = canvas.getBoundingClientRect();
+        canvas.width = rect.width / scale;
+        canvas.height = rect.height / scale;
+      };
+
+      resizeCanvas();
+      globalThis.addEventListener("resize", resizeCanvas);
+
+      // Bayer matrix 8x8 for dithering
+      const bayerMatrix8x8 = [
+        [0, 32, 8, 40, 2, 34, 10, 42],
+        [48, 16, 56, 24, 50, 18, 58, 26],
+        [12, 44, 4, 36, 14, 46, 6, 38],
+        [60, 28, 52, 20, 62, 30, 54, 22],
+        [3, 35, 11, 43, 1, 33, 9, 41],
+        [51, 19, 59, 27, 49, 17, 57, 25],
+        [15, 47, 7, 39, 13, 45, 5, 37],
+        [63, 31, 55, 23, 61, 29, 53, 21],
+      ];
+
+      let time = 0;
+      const cellSize = 4;
+
+      const animate = () => {
+        if (canvas.width === 0 || canvas.height === 0) {
+          animationRef = requestAnimationFrame(animate);
+          return;
+        }
+
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        const imageData = ctx.createImageData(canvas.width, canvas.height);
+        const data = imageData.data;
+
+        for (let y = 0; y < canvas.height; y += cellSize) {
+          for (let x = 0; x < canvas.width; x += cellSize) {
+            const nx = x / canvas.width;
+            const ny = y / canvas.height;
+
+            // Wave patterns - faster and more pronounced
+            const waveBase = Math.sin(nx * 5 + time * 0.0008 + offset) * 0.2;
+            const waveSecond = Math.cos(nx * 8 + time * 0.0006 + offset) * 0.15;
+            const waveThird = Math.sin((nx + ny) * 4 + time * 0.0005 + offset) * 0.12;
+            const waveFourth = Math.cos(ny * 6 + time * 0.0007 + offset) * 0.1;
+
+            // Gradient - more visible in center/bottom
+            const verticalGradient = Math.pow(ny, 0.5);
+            const horizontalGradient = 1 - Math.abs(nx - 0.5) * 0.6;
+
+            let intensity = 0.9 - (verticalGradient * 0.45 * horizontalGradient) + 
+                           waveBase + waveSecond + waveThird + waveFourth;
+
+            const noise = (Math.random() - 0.5) * 0.06 * verticalGradient;
+            intensity += noise;
+
+            intensity = Math.max(0, Math.min(1, intensity));
+
+            const matrixX = Math.floor(x / cellSize) % 8;
+            const matrixY = Math.floor(y / cellSize) % 8;
+            const threshold = bayerMatrix8x8[matrixY][matrixX] / 64;
+
+            const ditherResult = intensity > threshold;
+
+            // yellow-light: #FFC116
+            const r = ditherResult ? 0xff : 0xcc;
+            const g = ditherResult ? 0xc1 : 0x99;
+            const b = ditherResult ? 0x16 : 0x11;
+
+            for (let dy = 0; dy < cellSize && y + dy < canvas.height; dy++) {
+              for (let dx = 0; dx < cellSize && x + dx < canvas.width; dx++) {
+                const pixelIndex = ((y + dy) * canvas.width + (x + dx)) * 4;
+                data[pixelIndex] = r;
+                data[pixelIndex + 1] = g;
+                data[pixelIndex + 2] = b;
+                data[pixelIndex + 3] = 255;
+              }
+            }
+          }
+        }
+
+        ctx.putImageData(imageData, 0, 0);
+
+        time += 20; // Faster animation
+        animationRef = requestAnimationFrame(animate);
+      };
+
+      animate();
+
+      return () => {
+        globalThis.removeEventListener("resize", resizeCanvas);
+        if (animationRef) {
+          cancelAnimationFrame(animationRef);
+        }
+      };
+    };
+
+    const cleanupA = canvasA ? animateCanvas(canvasA, 0) : null;
+    const cleanupB = canvasB ? animateCanvas(canvasB, Math.PI) : null;
+
+    return () => {
+      cleanupA?.();
+      cleanupB?.();
+    };
+  }, []);
+
+  return (
+    <div
+      class="w-full h-full flex flex-col bg-dc-950 text-dc-50"
+      style={{ padding: "80px 96px" }}
+    >
+      {/* Header */}
+      <div style={{ marginBottom: "48px" }}>
+        {slide.tag && (
+          <span
+            class="animate-item font-mono uppercase tracking-[0.2em] text-dc-500 block"
+            style={{ fontSize: "12px", marginBottom: "16px" }}
+          >
+            {slide.tag}
+          </span>
+        )}
+        <h2
+          class="animate-item text-dc-200 leading-tight"
+          style={{ fontSize: "32px", letterSpacing: "-0.5px" }}
+        >
+          {slide.title}
+        </h2>
+        {slide.subtitle && (
+          <p
+            class="animate-item text-dc-400"
+            style={{
+              fontSize: "17px",
+              marginTop: "12px",
+            }}
+          >
+            {slide.subtitle}
+          </p>
+        )}
+      </div>
+
+      {/* Main content - validation statement - centered */}
+      <div
+        class="animate-item text-center"
+        style={{ marginBottom: "56px" }}
+      >
+        <p
+          class="text-dc-200"
+          style={{
+            fontSize: "36px",
+            lineHeight: "1.4",
+            letterSpacing: "-0.4px",
+          }}
+        >
+          In Q1, we will validate{" "}
+          <span class="text-yellow-light">two hypotheses in parallel</span>{" "}
+          and choose one to scale.
+        </p>
+      </div>
+
+      {/* Two hypothesis cards side by side */}
+      <div
+        class="flex-1 grid animate-item"
+        style={{
+          gridTemplateColumns: "1fr 1fr",
+          gap: "24px",
+        }}
+      >
+        {/* Hypothesis A - Internal AI Platform */}
+        <div
+          class="rounded-xl border border-dc-800 flex flex-col relative overflow-hidden transition-all duration-300 cursor-pointer"
+          style={{
+            padding: "40px",
+            backgroundColor: hoveredHypothesis === "A" ? "rgba(255, 193, 22, 0.05)" : "transparent",
+            borderColor: hoveredHypothesis === "A" ? "#FFC116" : "",
+          }}
+          onMouseEnter={() => setHoveredHypothesis("A")}
+          onMouseLeave={() => setHoveredHypothesis(null)}
+        >
+          {/* ASCII Dithering Animation Background */}
+          <canvas
+            id="hypothesis-a-canvas"
+            class="absolute inset-0 w-full h-full pointer-events-none transition-opacity duration-300"
+            style={{
+              imageRendering: "pixelated",
+              opacity: hoveredHypothesis === "A" ? 0.15 : 0,
+            }}
+          />
+
+          {/* Badge */}
+          <span
+            class="relative z-10 font-mono uppercase tracking-[0.15em] transition-colors duration-300"
+            style={{
+              fontSize: "13px",
+              marginBottom: "20px",
+              color: hoveredHypothesis === "A" ? "#FFC116" : "#A6A09D",
+            }}
+          >
+            HYPOTHESIS A
+          </span>
+
+          {/* Title */}
+          <h3
+            class="relative z-10 transition-colors duration-300"
+            style={{
+              fontSize: "28px",
+              lineHeight: "1.3",
+              letterSpacing: "-0.5px",
+              marginBottom: "16px",
+              color: hoveredHypothesis === "A" ? "#FFC116" : "#F1F0EE",
+            }}
+          >
+            Internal AI Platform
+          </h3>
+
+          {/* Subtitle */}
+          <p
+            class="relative z-10 text-dc-400"
+            style={{
+              fontSize: "15px",
+              lineHeight: "1.5",
+              marginBottom: "24px",
+              fontStyle: "italic",
+            }}
+          >
+            Cogna + other enterprises
+          </p>
+
+          {/* Description */}
+          <p
+            class="relative z-10 text-dc-300"
+            style={{
+              fontSize: "32px",
+              lineHeight: "1.4",
+              letterSpacing: "-0.4px",
+              marginBottom: "20px",
+            }}
+          >
+            Companies need a governed, extensible platform to build, run, and manage internal agents — and our MCP-first, open, composable approach can meet that need in a scalable, adoptable way.
+          </p>
+
+          {/* Article link */}
+          <a
+            href="https://simple.ai/p/what-are-context-graphs?_bhlid=e447f49ab61733e0e0abdbc49de9febe37f7a2e9"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="relative z-10 inline-flex items-center gap-2 text-dc-500 hover:text-yellow-light transition-colors duration-200"
+            style={{
+              fontSize: "14px",
+              marginTop: "auto",
+              paddingTop: "8px",
+            }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <span>Read the reference article</span>
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+              <polyline points="15 3 21 3 21 9" />
+              <line x1="10" y1="14" x2="21" y2="3" />
+            </svg>
+          </a>
+
+          {/* Visual accent line at bottom */}
+          <div
+            class="absolute bottom-0 left-0 right-0 transition-all duration-300"
+            style={{
+              height: "3px",
+              backgroundColor: hoveredHypothesis === "A" ? "#FFC116" : "transparent",
+            }}
+          />
+        </div>
+
+        {/* Hypothesis B - AI Agents for E-commerce */}
+        <div
+          class="rounded-xl border border-dc-800 flex flex-col relative overflow-hidden transition-all duration-300 cursor-pointer"
+          style={{
+            padding: "40px",
+            backgroundColor: hoveredHypothesis === "B" ? "rgba(255, 193, 22, 0.05)" : "transparent",
+            borderColor: hoveredHypothesis === "B" ? "#FFC116" : "",
+          }}
+          onMouseEnter={() => setHoveredHypothesis("B")}
+          onMouseLeave={() => setHoveredHypothesis(null)}
+        >
+          {/* ASCII Dithering Animation Background */}
+          <canvas
+            id="hypothesis-b-canvas"
+            class="absolute inset-0 w-full h-full pointer-events-none transition-opacity duration-300"
+            style={{
+              imageRendering: "pixelated",
+              opacity: hoveredHypothesis === "B" ? 0.15 : 0,
+            }}
+          />
+
+          {/* Badge */}
+          <span
+            class="relative z-10 font-mono uppercase tracking-[0.15em] transition-colors duration-300"
+            style={{
+              fontSize: "13px",
+              marginBottom: "20px",
+              color: hoveredHypothesis === "B" ? "#FFC116" : "#A6A09D",
+            }}
+          >
+            HYPOTHESIS B
+          </span>
+
+          {/* Title */}
+          <h3
+            class="relative z-10 transition-colors duration-300"
+            style={{
+              fontSize: "28px",
+              lineHeight: "1.3",
+              letterSpacing: "-0.5px",
+              marginBottom: "16px",
+              color: hoveredHypothesis === "B" ? "#FFC116" : "#F1F0EE",
+            }}
+          >
+            AI Agents for site & commerce evolution
+          </h3>
+
+          {/* Subtitle */}
+          <p
+            class="relative z-10 text-dc-400"
+            style={{
+              fontSize: "15px",
+              lineHeight: "1.5",
+              marginBottom: "24px",
+              fontStyle: "italic",
+            }}
+          >
+            Farm + deco.cx customer base
+          </p>
+
+          {/* Description */}
+          <p
+            class="relative z-10 text-dc-300 flex-1"
+            style={{
+              fontSize: "32px",
+              lineHeight: "1.4",
+              letterSpacing: "-0.4px",
+            }}
+          >
+            Digital teams will pay for packaged AI software that moves real metrics — and our way of building and operating these agents can deliver that reliably and repeatably.
+          </p>
+
+          {/* Visual accent line at bottom */}
+          <div
+            class="absolute bottom-0 left-0 right-0 transition-all duration-300"
+            style={{
+              height: "3px",
+              backgroundColor: hoveredHypothesis === "B" ? "#FFC116" : "transparent",
+            }}
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// What Never Changes slide - Foundation principles with yellow accents (inspired by ExecutionLearningsSlide)
+function WhatNeverChangesSlide({
+  slide,
+  bgClass: _bgClass,
+  textColorClass: _textColorClass,
+}: {
+  slide: Slide;
+  bgClass: string;
+  textColorClass: string;
+}) {
+  // Foundation principles - key statements with yellow highlights on important concepts
+  const statements = [
+    { text: "Software becomes more custom, composable, and owned", highlight: "custom, composable, and owned" },
+    { text: "Companies need a system where humans, developers, and agents collaborate", highlight: "humans, developers, and agents" },
+    { text: "Context is continuously optimized", highlight: "Context" },
+    { text: "Governance is enforced", highlight: "Governance" },
+    { text: "Autonomy is made safe", highlight: "Autonomy" },
+  ];
+
+  return (
+    <div
+      class="w-full h-full relative bg-yellow-dark text-dc-50 flex flex-col overflow-hidden"
+      style={{ padding: "80px 96px" }}
+    >
+      {/* Background illustration - positioned at the center */}
+      <img
+        src="https://assets.decocache.com/decocms/f4d2e0a7-551f-49b3-a06b-f6db6376e246/image-909-(Traced).png"
+        alt=""
+        class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none"
+        style={{
+          width: "auto",
+          height: "100%",
+          maxWidth: "none",
+          objectFit: "contain",
+          opacity: "0.15",
+        }}
+      />
+
+      {/* Header - centered horizontally at the top */}
+      <div class="text-center relative z-10" style={{ marginBottom: "64px" }}>
+        {slide.tag && (
+          <span
+            class="animate-item font-mono uppercase tracking-[0.2em] text-dc-400 block"
+            style={{ fontSize: "12px", letterSpacing: "2.28px", marginBottom: "16px" }}
+          >
+            {slide.tag}
+          </span>
+        )}
+        <h2
+          class="animate-item text-dc-200 leading-tight"
+          style={{ fontSize: "32px", letterSpacing: "-0.5px" }}
+        >
+          {slide.title}
+        </h2>
+      </div>
+
+      {/* Five statements - centered both horizontally and vertically */}
+      <div
+        class="flex-1 flex flex-col justify-center items-center animate-item relative z-10"
+        style={{ gap: "20px" }}
+      >
+        {statements.map((statement, index) => {
+          const parts = statement.text.split(statement.highlight);
+          return (
+            <p
+              key={index}
+              class="text-dc-50 text-center font-sans"
+              style={{
+                fontSize: "52px",
+                lineHeight: "60px",
+                letterSpacing: "-1.04px",
+                fontWeight: "normal",
+              }}
+            >
+              <span>{parts[0]}</span>
+              <span class="text-yellow-light">{statement.highlight}</span>
+              <span>{parts[1]}</span>
+            </p>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+// Our Approach slide - 3 horizontal cards with Material Design icons and yellow accents
+function OurApproachSlide({
+  slide,
+  bgClass: _bgClass,
+  textColorClass: _textColorClass,
+}: {
+  slide: Slide;
+  bgClass: string;
+  textColorClass: string;
+}) {
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+
+  // Three approach cards with Material Symbols icons
+  const approaches = [
+    {
+      icon: "architecture",
+      tag: "OUR ROLE",
+      description: "We build the AI OS primitives enterprises use to assemble, run, and evolve their own internal AI platforms.",
+    },
+    {
+      icon: "extension",
+      tag: "OUR IMPLEMENTATION",
+      description: "deco CMS is our implementation: open-source, composable, extensible, MCP-first.",
+    },
+    {
+      icon: "hub",
+      tag: "OUR DISTRIBUTION",
+      description: "The open-source community is central, not just for distribution, but for credibility, learning, and compounding.",
+    },
+  ];
+
+  return (
+    <>
+      {/* Material Symbols Font - Sharp style, weight 100 */}
+      <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100,0,0"
+        rel="stylesheet"
+      />
+
+      <div
+        class="w-full h-full flex flex-col bg-dc-950 text-dc-50"
+        style={{ padding: "80px 96px" }}
+      >
+        {/* Header */}
+        <div style={{ marginBottom: "48px" }}>
+          {slide.tag && (
+            <span
+              class="animate-item font-mono uppercase tracking-[0.2em] text-dc-500 block"
+              style={{ fontSize: "12px", marginBottom: "16px" }}
+            >
+              {slide.tag}
+            </span>
+          )}
+          <h2
+            class="animate-item text-dc-200 leading-tight"
+            style={{ fontSize: "32px", letterSpacing: "-0.5px" }}
+          >
+            {slide.title}
+          </h2>
+        </div>
+
+        {/* 3 horizontal cards */}
+        <div
+          class="flex-1 grid animate-item"
+          style={{
+            gridTemplateColumns: "1fr 1fr 1fr",
+            gap: "24px",
+          }}
+        >
+          {approaches.map((approach, index) => (
+            <div
+              key={index}
+              class="rounded-xl border flex flex-col relative overflow-hidden transition-all duration-300 cursor-pointer"
+              style={{
+                padding: "40px",
+                backgroundColor: hoveredCard === index ? "rgba(255, 193, 22, 0.05)" : "transparent",
+                borderColor: hoveredCard === index ? "#FFC116" : "#282524",
+              }}
+              onMouseEnter={() => setHoveredCard(index)}
+              onMouseLeave={() => setHoveredCard(null)}
+            >
+              {/* Large Icon - yellow-light, left-aligned */}
+              <div
+                class="transition-colors duration-300"
+                style={{
+                  marginBottom: "40px",
+                  color: hoveredCard === index ? "#FFC116" : "#FFC116",
+                }}
+              >
+                <MaterialSymbol icon={approach.icon} size={288} />
+              </div>
+              {/* Tag - small bracketed tag */}
+              <span
+                class="font-mono uppercase tracking-[0.15em] transition-colors duration-300"
+                style={{
+                  fontSize: "13px",
+                  marginBottom: "24px",
+                  color: hoveredCard === index ? "#FFC116" : "#A6A09D",
+                }}
+              >
+                [{approach.tag}]
+              </span>
+              {/* Description - with hover highlights on key phrases */}
+              <p
+                class="flex-1 text-dc-300"
+                style={{
+                  fontSize: "40px",
+                  lineHeight: "1.3",
+                  letterSpacing: "-0.6px",
+                }}
+              >
+                {index === 0 && (
+                  <>
+                    We build the{" "}
+                    <span
+                      class="transition-colors duration-300"
+                      style={{ color: hoveredCard === index ? "#FFC116" : "#D6D3D1" }}
+                    >
+                      AI OS primitives
+                    </span>{" "}
+                    enterprises use to assemble, run, and evolve their own internal AI platforms.
+                  </>
+                )}
+                {index === 1 && (
+                  <>
+                    <span
+                      class="transition-colors duration-300"
+                      style={{ color: hoveredCard === index ? "#FFC116" : "#D6D3D1" }}
+                    >
+                      deco CMS
+                    </span>{" "}
+                    is our implementation:{" "}
+                    <span
+                      class="transition-colors duration-300"
+                      style={{ color: hoveredCard === index ? "#FFC116" : "#D6D3D1" }}
+                    >
+                      open-source, composable, extensible, MCP-first
+                    </span>
+                    .
+                  </>
+                )}
+                {index === 2 && (
+                  <>
+                    The{" "}
+                    <span
+                      class="transition-colors duration-300"
+                      style={{ color: hoveredCard === index ? "#FFC116" : "#D6D3D1" }}
+                    >
+                      open-source community
+                    </span>{" "}
+                    is central, not just for distribution, but for{" "}
+                    <span
+                      class="transition-colors duration-300"
+                      style={{ color: hoveredCard === index ? "#FFC116" : "#D6D3D1" }}
+                    >
+                      credibility, learning, and compounding
+                    </span>
+                    .
+                  </>
+                )}
+              </p>
+              
+              {/* Visual accent line at bottom */}
+              <div
+                class="absolute bottom-0 left-0 right-0 transition-all duration-300"
+                style={{
+                  height: "3px",
+                  backgroundColor: hoveredCard === index ? "#FFC116" : "transparent",
+                }}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </>
+  );
+}
+
+// 2026 Priorities slide - 4 cards with green accents (following ProductLearningsSlide structure)
+function Priorities2026Slide({
+  slide,
+  bgClass: _bgClass,
+  textColorClass: _textColorClass,
+}: {
+  slide: Slide;
+  bgClass: string;
+  textColorClass: string;
+}) {
+  // Four priority cards
+  const priorities = [
+    {
+      icon: "task_alt",
+      title: "Validate and choose",
+      description: "Generate decisive signal and commit",
+    },
+    {
+      icon: "money_bag",
+      title: "Operate profitably during discovery",
+      description: "Disciplined cost, pricing, delivery",
+    },
+    {
+      icon: "precision_manufacturing",
+      title: "Turn production into product",
+      description: "Systematically productize what works",
+    },
+    {
+      icon: "diversity_3",
+      title: "Grow through community",
+      description: "OSS as the primary learning and distribution engine",
+    },
+  ];
+
+  return (
+    <>
+      {/* Material Symbols Font - Sharp style, weight 100 */}
+      <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100,0,0"
+        rel="stylesheet"
+      />
+
+      <div
+        class="w-full h-full flex flex-col bg-dc-950 text-dc-50"
+        style={{ padding: "80px 96px" }}
+      >
+        {/* Header */}
+        <div style={{ marginBottom: "48px" }}>
+          {slide.tag && (
+            <span
+              class="animate-item font-mono uppercase tracking-[0.2em] text-dc-500 block"
+              style={{ fontSize: "12px", marginBottom: "16px" }}
+            >
+              {slide.tag}
+            </span>
+          )}
+          <h2
+            class="animate-item text-dc-200 leading-tight"
+            style={{ fontSize: "32px", letterSpacing: "-0.5px" }}
+          >
+            {slide.title}
+          </h2>
+        </div>
+
+        {/* 2x2 Grid of priority cards - exact same structure as ProductLearningsSlide */}
+        <div
+          class="flex-1 grid animate-item"
+          style={{
+            gridTemplateColumns: "1fr 1fr",
+            gap: "24px",
+          }}
+        >
+          {priorities.map((priority, index) => (
+            <div
+              key={index}
+              class="rounded-xl border border-dc-800 flex flex-col"
+              style={{ padding: "40px" }}
+            >
+              {/* Large Icon - green (primary-light), left-aligned */}
+              <div
+                class="text-primary-light"
+                style={{
+                  marginBottom: "32px",
+                }}
+              >
+                <MaterialSymbol icon={priority.icon} size={160} />
+              </div>
+              {/* Title - larger size, left-aligned, green */}
+              <h3
+                class="text-primary-light"
+                style={{
+                  fontSize: "40px",
+                  lineHeight: "48px",
+                  marginBottom: "16px",
+                  letterSpacing: "-0.5px",
+                }}
+              >
+                {priority.title}
+              </h3>
+              {/* Description - increased size */}
+              <p
+                class="text-dc-300"
+                style={{
+                  fontSize: "22px",
+                  lineHeight: "28px",
+                }}
+              >
+                {priority.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </>
+  );
+}
+
+// Our Asks slide - centered layout with 2 cards
+function OurAsksSlide({
+  slide,
+  bgClass: _bgClass,
+  textColorClass: _textColorClass,
+}: {
+  slide: Slide;
+  bgClass: string;
+  textColorClass: string;
+}) {
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+
+  const asks = [
+    {
+      number: "1",
+      text: "Intros to platform / infra / automation leaders in large companies",
+    },
+    {
+      number: "2",
+      text: "(Optional) Intros to large e-commerce players with appetite for operational AI",
+    },
+  ];
+
+  return (
+    <div
+      class="w-full h-full flex flex-col bg-dc-950 text-dc-50"
+      style={{ padding: "80px 96px" }}
+    >
+      {/* Header */}
+      <div style={{ marginBottom: "64px" }}>
+        {slide.tag && (
+          <span
+            class="animate-item font-mono uppercase tracking-[0.2em] text-dc-500 block"
+            style={{ fontSize: "12px", marginBottom: "16px" }}
+          >
+            {slide.tag}
+          </span>
+        )}
+        <h2
+          class="animate-item text-dc-200 leading-tight"
+          style={{ fontSize: "32px", letterSpacing: "-0.5px" }}
+        >
+          {slide.title}
+        </h2>
+      </div>
+
+      {/* Two centered cards */}
+      <div
+        class="flex-1 flex flex-col justify-center animate-item"
+        style={{ gap: "32px" }}
+      >
+        {asks.map((ask, index) => (
+          <div
+            key={index}
+            class="rounded-xl border flex items-center transition-all duration-300 cursor-pointer"
+            style={{
+              padding: "48px 56px",
+              backgroundColor: hoveredCard === index ? "rgba(208, 236, 26, 0.05)" : "transparent",
+              borderColor: hoveredCard === index ? "#D0EC1A" : "#282524",
+              gap: "32px",
+            }}
+            onMouseEnter={() => setHoveredCard(index)}
+            onMouseLeave={() => setHoveredCard(null)}
+          >
+            {/* Number badge */}
+            <div
+              class="rounded-full flex items-center justify-center flex-shrink-0 transition-colors duration-300"
+              style={{
+                width: "56px",
+                height: "56px",
+                backgroundColor: hoveredCard === index ? "#D0EC1A" : "#282524",
+              }}
+            >
+              <span
+                class="font-mono font-bold transition-colors duration-300"
+                style={{
+                  fontSize: "24px",
+                  color: hoveredCard === index ? "#121110" : "#78726E",
+                }}
+              >
+                {ask.number}
+              </span>
+            </div>
+            {/* Text */}
+            <p
+              class="flex-1 transition-colors duration-300"
+              style={{
+                fontSize: "32px",
+                lineHeight: "1.4",
+                letterSpacing: "-0.4px",
+                color: hoveredCard === index ? "#D6D3D1" : "#A6A09D",
+              }}
+            >
+              {ask.text}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 // Custom timeline slide component - minimalist design
 function TimelineSlide({
   slide,
@@ -2272,7 +3548,7 @@ export interface Slide {
   subtitle?: string;
 
   /** @title Layout do Slide */
-  layout: "title" | "content" | "two-column" | "stats" | "timeline" | "list" | "revenue-resilience" | "product-platform" | "organizational-maturity" | "operational-wins";
+  layout: "title" | "content" | "two-column" | "stats" | "timeline" | "list" | "revenue-resilience" | "product-platform" | "organizational-maturity" | "operational-wins" | "learnings-execution" | "learnings-product" | "learnings-strategy" | "what-never-changes" | "our-approach" | "q1-validation" | "priorities-2026" | "our-asks";
 
   /** @title Cor de Fundo */
   backgroundColor?:
@@ -3168,6 +4444,78 @@ export default function InvestorPresentation({
       case "operational-wins":
         return (
           <OperationalWinsSlide
+            slide={slide}
+            bgClass={bgClass}
+            textColorClass={textColorClass}
+          />
+        );
+
+      case "learnings-execution":
+        return (
+          <ExecutionLearningsSlide
+            slide={slide}
+            bgClass={bgClass}
+            textColorClass={textColorClass}
+          />
+        );
+
+      case "learnings-product":
+        return (
+          <ProductLearningsSlide
+            slide={slide}
+            bgClass={bgClass}
+            textColorClass={textColorClass}
+          />
+        );
+
+      case "learnings-strategy":
+        return (
+          <StrategyLearningsSlide
+            slide={slide}
+            bgClass={bgClass}
+            textColorClass={textColorClass}
+          />
+        );
+
+      case "what-never-changes":
+        return (
+          <WhatNeverChangesSlide
+            slide={slide}
+            bgClass={bgClass}
+            textColorClass={textColorClass}
+          />
+        );
+
+      case "our-approach":
+        return (
+          <OurApproachSlide
+            slide={slide}
+            bgClass={bgClass}
+            textColorClass={textColorClass}
+          />
+        );
+
+      case "priorities-2026":
+        return (
+          <Priorities2026Slide
+            slide={slide}
+            bgClass={bgClass}
+            textColorClass={textColorClass}
+          />
+        );
+
+      case "our-asks":
+        return (
+          <OurAsksSlide
+            slide={slide}
+            bgClass={bgClass}
+            textColorClass={textColorClass}
+          />
+        );
+
+      case "q1-validation":
+        return (
+          <Q1ValidationSlide
             slide={slide}
             bgClass={bgClass}
             textColorClass={textColorClass}
